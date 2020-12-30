@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Sportlog\ActivityProtocol\FIT\Message;
+namespace FIT\Message;
 
-use Sportlog\ActivityProtocol\FIT\FitBaseType;
+use FIT\FitBaseType;
 
 class FileIdMessage extends Message
 {

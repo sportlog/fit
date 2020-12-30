@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace FIT\Message;
 
-use Sportlog\ActivityProtocol\FIT\FitBaseType;
+use FIT\FitBaseType;
 
 class FileCreatorMessage extends Message
 {

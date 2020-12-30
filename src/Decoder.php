@@ -39,7 +39,7 @@ class Decoder
             throw new InvalidArgumentException("invalid file {$file} provided");
         }
 
-        $this->logger->info("************ START decoding of file {$file}");
+        $this->logger->info("************ START decoding of file '{$file}'");
         $handle = fopen($file, 'rb');
         try {
             $reader = new IOReader($handle);
@@ -136,7 +136,7 @@ class Decoder
                     if (!is_null($this->fileType) && $this->fileType !== $message->type) {
                         throw new Exception('file type already set');
                     }
-                    $this->fileType = $message->type;
+                    // $this->fileType = $message->type;
                 }
 
                 $this->logger->info("#{$i}: " . $recordHeader['message_type'] . " '{$localMessagType}' -->" . $message->__toString());

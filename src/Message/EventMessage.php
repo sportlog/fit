@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace FIT\Message;
 
+use FIT\FitBaseType;
+
 final class EventMessage extends Message
 {
     #[Field("Timestamp", 253, FitBaseType::UINT32, ProfileType::DATETIME, units: "s")]
