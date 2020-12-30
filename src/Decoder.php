@@ -107,7 +107,7 @@ class Decoder
                     // The size indicates the size of the defined field in bytes. The size may be a 
                     // multiple of the underlying FIT Base Type size indicating the field contains multiple 
                     // elements represented as an array.
-                    $fitBaseTypeSize = $fitBaseType['bytes'];
+                    $fitBaseTypeSize = $fitBaseType->getBytes();
                     if (($size % $fitBaseTypeSize) !== 0) {
                         throw new Exception('size must be a multiple of fit-base-type size');
                     }

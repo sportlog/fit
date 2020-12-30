@@ -15,6 +15,7 @@ use Exception;
 use ReflectionClass;
 use ReflectionProperty;
 use FIT\FitBaseType;
+use FIT\FitBaseTypeDefinition;
 
 final class MessageFactory
 {
@@ -31,23 +32,27 @@ final class MessageFactory
 
         $copiedFieldValues = $fieldValues;
         foreach ($properties as $key => $property) {
-            // @var ReflectionProperty $reflectionProperty
+            /** @var ReflectionProperty $reflectionProperty */
             $reflectionProperty = $property['reflectionProperty'];
             $fieldValue = null;
             $baseType = FitBaseType::fromType($property['field']->getType());
 
             // Check if a value is present for the property
             if (isset($copiedFieldValues[$key])) {
+                if ($baseType !== $fieldTypes[$property['field']->getNumber()]) {
+                    throw new Exception(sprintf('mismatch between base type in FIT message and base type declared in meta data of property "%s::%s"', 
+                        $instance::class, $reflectionProperty->getName()));
+                }
+
                 $fieldValue = $copiedFieldValues[$key];
                 unset($copiedFieldValues[$key]);
             } else {
-                
                 if (is_null($baseType)) {
                     throw new Exception(sprintf('Invalid base type in meta data for "%s:%s"', $instance::class, $reflectionProperty->getName()));
                 }
                 // According to the FIT protocol any missing values should be field
                 // with the invalid value.
-                $fieldValue = $baseType['invalid_value'];
+                $fieldValue = $baseType->getInvalidValue();
             }
 
             // $instance->values[$property['field']->getNumber()] = $fieldValue;

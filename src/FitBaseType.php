@@ -11,6 +11,9 @@ declare(strict_types=1);
 
 namespace FIT;
 
+use Exception;
+use ReflectionClass;
+
 class FitBaseType
 {
 	const ENUM		= 0;
@@ -32,31 +35,41 @@ class FitBaseType
 	const UINT64Z   = 144;
 	const Invalid   = 255;
 
-	private static $baseTypes = array(
-		self::ENUM		=> array('endian_ability' => false,	'name'	=> 'enum',		'bytes' => 1, 'invalid_value' => 0xFF),
-		self::SINT8		=> array('endian_ability' => false,	'name'	=> 'sint8',		'bytes' => 1, 'invalid_value' => 0x7F),
-		self::UINT8		=> array('endian_ability' => false,	'name'	=> 'uint8',		'bytes' => 1, 'invalid_value' => 0xFF),
-		self::SINT16	=> array('endian_ability' => true,	'name'	=> 'sint16',	'bytes' => 2, 'invalid_value' => 0x7FFF),
-		self::UINT16	=> array('endian_ability' => true,	'name'	=> 'uint16',	'bytes' => 2, 'invalid_value' => 0xFFFF),
-		self::SINT32	=> array('endian_ability' => true,	'name'	=> 'sint32',	'bytes' => 4, 'invalid_value' => 0x7FFFFFFF),
-		self::UINT32	=> array('endian_ability' => true,	'name'	=> 'uint32',	'bytes' => 4, 'invalid_value' => 0xFFFFFFFF),
-		self::STRING	=> array('endian_ability' => false,	'name'	=> 'string',	'bytes' => 1, 'invalid_value' => 0x00),
-		self::FLOAT32	=> array('endian_ability' => true,	'name'	=> 'float32',	'bytes' => 4, 'invalid_value' => 0xFFFFFFFF),
-		self::FLOAT64	=> array('endian_ability' => true,	'name'	=> 'float64',	'bytes' => 8, 'invalid_value' => 0xFFFFFFFFFFFFFFFF),
-		self::UINT8Z	=> array('endian_ability' => false,	'name'	=> 'uint8z',	'bytes' => 1, 'invalid_value' => 0x00),
-		self::UINT16Z	=> array('endian_ability' => true,	'name'	=> 'uint16z',	'bytes' => 2, 'invalid_value' => 0x0000),
-		self::UINT32Z	=> array('endian_ability' => true,	'name'	=> 'uint32z',	'bytes' => 4, 'invalid_value' => 0x00000000),
-		self::BYTE		=> array('endian_ability' => false,	'name'	=> 'byte',		'bytes' => 1, 'invalid_value' => 0xFF),
-		self::SINT64	=> array('endian_ability' => true,	'name'	=> 'sint64',	'bytes' => 8, 'invalid_value' => 0x7FFFFFFFFFFFFFFF),
-		self::UINT64	=> array('endian_ability' => true,	'name'	=> 'uint64',	'bytes' => 8, 'invalid_value' => 0xFFFFFFFFFFFFFFFF),
-		self::UINT64Z	=> array('endian_ability' => true,	'name'	=> 'uint64z',	'bytes' => 8, 'invalid_value' => 0x0000000000000000)
-	);
+	private static ?array $fieldDefinitions = null;
 
-	public static function fromType(int $baseType): ?array {
-		if (!isset(self::$baseTypes[$baseType])) {
-			return null;			
+	private static function getFieldDefinitions(): array
+	{
+		if (is_null(self::$fieldDefinitions)) {
+			self::$fieldDefinitions = [
+				self::ENUM		=> new FitBaseTypeDefinition(false, "enum",		1, 0xFF),
+				self::SINT8		=> new FitBaseTypeDefinition(false, "sint8",		1, 0x7F),
+				self::UINT8		=> new FitBaseTypeDefinition(false, "uint8",		1, 0xFF),
+				self::SINT16	=> new FitBaseTypeDefinition(true, "sint16",	2, 0x7FFF),
+				self::UINT16	=> new FitBaseTypeDefinition(true, "uint16",	2, 0xFFFF),
+				self::SINT32	=> new FitBaseTypeDefinition(true, "sint32",	4, 0x7FFFFFFF),
+				self::UINT32	=> new FitBaseTypeDefinition(true, "uint32",	4, 0xFFFFFFFF),
+				self::STRING	=> new FitBaseTypeDefinition(false, "string",	1, 0x00),
+				self::FLOAT32	=> new FitBaseTypeDefinition(true, "float32",	4, 0xFFFFFFFF),
+				self::FLOAT64	=> new FitBaseTypeDefinition(true, "float64",	8, 0xFFFFFFFFFFFFFFFF),
+				self::UINT8Z	=> new FitBaseTypeDefinition(false, "uint8z",	1, 0x00),
+				self::UINT16Z	=> new FitBaseTypeDefinition(true, "uint16z",	2, 0x0000),
+				self::UINT32Z	=> new FitBaseTypeDefinition(true, "uint32z",	4, 0x00000000),
+				self::BYTE		=> new FitBaseTypeDefinition(false, "byte",		1, 0xFF),
+				self::SINT64	=> new FitBaseTypeDefinition(true, "sint64",	8, 0x7FFFFFFFFFFFFFFF),
+				self::UINT64	=> new FitBaseTypeDefinition(true, "uint64",	8, 0xFFFFFFFFFFFFFFFF),
+				self::UINT64Z	=> new FitBaseTypeDefinition(true, "uint64z",	8, 0x0000000000000000)
+			];
 		}
 
-		return self::$baseTypes[$baseType];
+		return self::$fieldDefinitions;
+	}
+
+	public static function fromType(int $baseType): ?FitBaseTypeDefinition
+	{
+		if (!isset(self::getFieldDefinitions()[$baseType])) {
+			return null;
+		}
+
+		return self::getFieldDefinitions()[$baseType];
 	}
 }

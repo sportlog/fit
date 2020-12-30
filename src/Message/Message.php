@@ -45,15 +45,16 @@ abstract class Message implements Stringable
 
         foreach ($this->values as $key => $fieldValue) {
             $mapped[] = $fieldValue['name'];
-            if (is_array($fieldValue['value'])) {
+            $value = $fieldValue['value'];
+            if (is_array($value)) {
                 $singleValues = [];
-                foreach ($fieldValue['value'] as $singeValue) {
-                    $singleValues[] = $fieldValue['type']['invalid_value'] !== $singeValue ? $singeValue : '';
+                foreach ($value as $singeValue) {
+                    $singleValues[] = !$fieldValue['type']->isInvalid($singeValue) ? $singeValue : '';
                 }
                 $mapped[] = sprintf('[%s]', join(",", $singleValues));
             }
             else {
-                $mapped[] = $fieldValue['type']['invalid_value'] !== $fieldValue['value'] ? $fieldValue['value'] : '';
+                $mapped[] = !$fieldValue['type']->isInvalid($value) ? $value : '';
             }
 
             // $mapped[] = is_array($value) ? join("", $value) : $value;
