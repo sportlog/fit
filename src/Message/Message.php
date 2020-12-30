@@ -42,14 +42,22 @@ abstract class Message implements Stringable
 
     public function __toString() {
         $mapped = [];
-        foreach ($this->values as $key => $value) {
-            if (is_array($value)) {
-                $mapped[] = "{$key}: " . join("", $value);
+
+        foreach ($this->values as $key => $fieldValue) {
+            $mapped[] = $fieldValue['name'];
+            if (is_array($fieldValue['value'])) {
+                $singleValues = [];
+                foreach ($fieldValue['value'] as $singeValue) {
+                    $singleValues[] = $fieldValue['type']['invalid_value'] !== $singeValue ? $singeValue : '';
+                }
+                $mapped[] = sprintf('[%s]', join(",", $singleValues));
             }
             else {
-                $mapped[] = "{$key}: {$value}";
+                $mapped[] = $fieldValue['type']['invalid_value'] !== $fieldValue['value'] ? $fieldValue['value'] : '';
             }
+
+            // $mapped[] = is_array($value) ? join("", $value) : $value;
         }
-        return sprintf('%s: %s', $this->name, join(", ", $mapped));
+        return sprintf('%s: %s', $this->name, join(",", $mapped));
     }
 }

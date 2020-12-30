@@ -48,9 +48,7 @@ class Decoder
 
             $this->logger->info("Header: " . print_r(fstat($handle), true));
 
-            // while (!$reader->eof()) {
             $i = 0;
-            // while ($reader->available()) {
             while ($reader->getOffset() - $header['header_size'] < $header['data_size']) {
                 $this->nextRecord($reader, $i++);
             }
@@ -96,6 +94,7 @@ class Decoder
                 // Assoociative array with the field definition number as key
                 // and it's decoded value.
                 $fieldValues = [];
+                $fieldTypes = [];
                 foreach ($definition['field_definitions'] as $fieldDefinition) {
                     $size = $fieldDefinition['size'];
                     $fitBaseType = FitBaseType::fromType($fieldDefinition['base_type']);
@@ -119,27 +118,26 @@ class Decoder
                     if ($size === $fitBaseTypeSize || $fieldDefinition['base_type'] === FitBaseType::BYTE || $fieldDefinition['base_type'] === FitBaseType::STRING) {
                         $fieldValues[$fieldDefinition['field_definition_number']] = $this->readValue($fieldDefinition, $order, $reader);
                     } else {
-                        $fieldValues = [];
+                        $multipleFieldValues = [];
                         $tmpSize = $size;
                         while ($tmpSize >= $fitBaseTypeSize) {
-                            $fieldValues[] = $this->readValue($fieldDefinition, $order, $reader);
+                            $multipleFieldValues[] = $this->readValue($fieldDefinition, $order, $reader);
                             $tmpSize -= $fitBaseTypeSize;
                         }
-                        $fieldValues[$fieldDefinition['field_definition_number']] = $fieldValues;
+                        $fieldValues[$fieldDefinition['field_definition_number']] = $multipleFieldValues;
                     }
-
-
+                    $fieldTypes[$fieldDefinition['field_definition_number']] = $fitBaseType;
                 }
 
-                $message = MessageFactory::create($definition['global_message_number'], $fieldValues);
+                $message = MessageFactory::create($definition['global_message_number'], $fieldValues, $fieldTypes);
                 if ($message->getMessageNumber() === MessageNumber::FileId) {
                     if (!is_null($this->fileType) && $this->fileType !== $message->type) {
                         throw new Exception('file type already set');
                     }
-                    // $this->fileType = $message->type;
+                    $this->fileType = $message->type;
                 }
 
-                $this->logger->info("#{$i}: " . $recordHeader['message_type'] . " '{$localMessagType}' -->" . $message->__toString());
+                $this->logger->info("#{$i}: " . $recordHeader['message_type'] . " '{$localMessagType}' --> " . $message->__toString());
                 $this->records[] = $message;
                 // $this->logger->info("Read value: " . print_r($message, true));
 

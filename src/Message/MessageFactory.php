@@ -24,7 +24,7 @@ final class MessageFactory
      * Creates the appropriate Message according to the provided global message number
      * and assigns the values.
      */
-    public static function create(int $globalMessageNumber, array $fieldValues): Message
+    public static function create(int $globalMessageNumber, array $fieldValues, array $fieldTypes): Message
     {
         $instance = self::newInstance($globalMessageNumber);
         $properties = self::getReflectionProperties($instance::class);
@@ -34,11 +34,14 @@ final class MessageFactory
             // @var ReflectionProperty $reflectionProperty
             $reflectionProperty = $property['reflectionProperty'];
             $fieldValue = null;
+            $baseType = FitBaseType::fromType($property['field']->getType());
+
+            // Check if a value is present for the property
             if (isset($copiedFieldValues[$key])) {
                 $fieldValue = $copiedFieldValues[$key];
                 unset($copiedFieldValues[$key]);
             } else {
-                $baseType = FitBaseType::fromType($property['field']->getType());
+                
                 if (is_null($baseType)) {
                     throw new Exception(sprintf('Invalid base type in meta data for "%s:%s"', $instance::class, $reflectionProperty->getName()));
                 }
@@ -47,13 +50,23 @@ final class MessageFactory
                 $fieldValue = $baseType['invalid_value'];
             }
 
-            $instance->values[$property['field']->getName()] = $fieldValue;
+            // $instance->values[$property['field']->getNumber()] = $fieldValue;
+            $instance->values[] = [
+                'name' => $property['field']->getName(),
+                'type' => $baseType,
+                'value' => $fieldValue
+            ];
             $reflectionProperty->setValue($instance, $fieldValue);
         }
 
         // All values which still remain in the array have not been mapped to a property.
-        foreach ($copiedFieldValues as $key => $value) {
-            $instance->values["def-no-{$key}"] = $value;
+        foreach ($copiedFieldValues as $key => $fieldValue) {
+            // $instance->values["def-no-{$key}"] = $value;
+            $instance->values[] = [
+                'name' => "def-no-{$key}",
+                'type' => $fieldTypes[$key],
+                'value' => $fieldValue
+            ];
         }
 
         return $instance;
@@ -74,8 +87,10 @@ final class MessageFactory
             case MessageNumber::DeviceInfo:
                 return new DeviceInfoMessage();
 
-            case MessageNumber::Capabilities:
             case MessageNumber::DeviceSettings:
+                return new DeviceSettingMessage();
+
+            case MessageNumber::Capabilities:
             case MessageNumber::UserProfile:
             case MessageNumber::HrmProfile:
             case MessageNumber::SdmProfile:
