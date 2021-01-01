@@ -95,6 +95,9 @@ final class MessageFactory
             case MessageNumber::DeviceSettings:
                 return new DeviceSettingMessage();
 
+            case MessageNumber::Record:
+                return new RecordMessage();
+
             case MessageNumber::Capabilities:
             case MessageNumber::UserProfile:
             case MessageNumber::HrmProfile:
@@ -108,7 +111,6 @@ final class MessageFactory
             case MessageNumber::Goal:
             case MessageNumber::Session:
             case MessageNumber::Lap:
-            case MessageNumber::Record:
             case MessageNumber::Workout:
             case MessageNumber::WorkoutStep:
             case MessageNumber::Schedule:

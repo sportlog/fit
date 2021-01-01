@@ -198,7 +198,7 @@ class Decoder
 
     private function nextRecordDefinition(array $recordHeader, IOReader $reader): array
     {
-        $reserved = $reader->readUInt8();
+        $reader->readUInt8();    // Reserverd; required to read it to advance file pointer
         // Architecture Type
         // 0: Definition and Data Messages are Little Endian
         // 1: Definition and Data Message are Big Endian
@@ -219,15 +219,10 @@ class Decoder
             // 5–6	Reserved	Reserved
             // 0–4	Base Type Number	Number assigned to Base Type (provided in SDK)
             $fieldBaseType = $reader->readUInt8();
-            $fieldBaseTypeNumber = $this->getBits($fieldBaseType, 0, 5);
-            $fieldEndianAbility = $this->getBits($fieldBaseType, 7) === 1;
-
             $fieldDefinitions[] = [
                 'field_definition_number' => $fieldNumber,
                 'size' => $fieldSize,
-                'base_type' => $fieldBaseType,
-                'base_type_number' => $fieldBaseTypeNumber,
-                'endian_ability' => $fieldEndianAbility
+                'base_type' => $fieldBaseType
             ];
         }
 
@@ -271,36 +266,24 @@ class Decoder
     {
         $byte = $reader->readUInt8();
 
-        if ($this->isBitSet($byte, 7)) {
-            // if the 7th bit is set the record is a compressed timestamp header
+        if (($byte >> 7) & 1) {     // bit shift to the right by 7; checks the msb
+            // if the msb bit is set the record is a compressed timestamp header
             return [
                 'header_type' => 'compressed timestamp',
                 'message_type' => self::MESSAGE_TYPE_DATA,
-                'local_message_type' => $this->getBits($byte, 5, 2),  // Bits 5-6
-                'time_offset' => $this->getBits($byte, 0, 5),  // Bits 0-4, Value 0-31
+                'local_message_type' => ($byte >> 5) & 3,  // Bits 5-6, Value 0-3
+                'time_offset' =>  $byte & 31,  // Bits 0-4, Value 0-31
                 'has_developer_data' => false
             ];
         } else {
-            // 7th is not set: this is a normal header
+            // If the msb is not set: this is a normal header
             return [
                 'header_type' => 'normal',
-                'message_type' => $this->isBitSet($byte, 6) ? self::MESSAGE_TYPE_DEFINITION : self::MESSAGE_TYPE_DATA,
-                'local_message_type' => $this->getBits($byte, 0, 4),    // Bits 0-3, Value 0-15,
-                'has_developer_data' => false // $this->isBitSet($byte, 5)
+                'message_type' => ($byte >> 6) & 1 ? self::MESSAGE_TYPE_DEFINITION : self::MESSAGE_TYPE_DATA,
+                'local_message_type' => $byte & 15,    // Bits 0-3, Value 0-15,
+                'has_developer_data' => false
             ];
         }
-    }
-
-    private function getBits(int $value, int $start, int $length = 1): int
-    {
-        // Example: $value = 4, 100 => 00000100
-        $binaryStringReversed = strrev(str_pad(decbin($value), 8, '0', STR_PAD_LEFT));
-        return bindec(strrev(substr($binaryStringReversed, $start, $length)));
-    }
-
-    private function isBitSet(int $value, int $bitIndex): bool
-    {
-        return ($value & (1 << $bitIndex)) !== 0;
     }
 
     private function getHeader(IOReader $reader): array
@@ -308,11 +291,11 @@ class Decoder
         $headerSize = $reader->readUInt8();
 
         $header = [
-            'header_size'        => $headerSize,        // FIT_FILE_HDR_SIZE (size of this structure)
-            'protocol_version'    => $reader->readUInt8(),        // FIT_PROTOCOL_VERSION
-            'profile_version'    => $reader->readUInt16(),        // FIT_PROFILE_VERSION
-            'data_size'            => $reader->readUInt32LE(),    // Does not include file header or crc.  Little endian format.
-            'data_type'            => $reader->readString8(4)    // ".FIT"
+            'header_size' => $headerSize,        
+            'protocol_version' => $reader->readUInt8(),
+            'profile_version' => $reader->readUInt16(),
+            'data_size' => $reader->readUInt32LE(),
+            'data_type' => $reader->readString8(4)
         ];
 
         if ($headerSize > 12) {

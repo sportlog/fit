@@ -27,29 +27,16 @@ final class DeviceSettingMessage extends Message
     public int $TimeZoneOffset;
     #[Field("BacklightMode", 12, FitBaseType::ENUM, ProfileType::BACKLIGHTMODE)]
     public int $backlightMode;
-    
-    /*#[Field("HardwareVersion", 6, FitBaseType::UINT8, ProfileType::UINT8)]
-    public int $hardwareVersion;
-    #[Field("CumOperatingTime", 7, FitBaseType::UINT32, ProfileType::UINT32, units: "s")]
-    public int $cumOperatingTime;
-    #[Field("BatteryVoltage", 10, FitBaseType::UINT16, ProfileType::UINT16, units: "V")]
-    public int $batteryVoltage;
-    #[Field("BatteryStatus", 11, FitBaseType::UINT8, ProfileType::BATTERYSTATUS)]
-    public int $batteryStatus;
-    #[Field("SensorPosition", 18, FitBaseType::ENUM, ProfileType::BODYLOCATION)]
-    public int $sensorPosition;
-    #[Field("Descriptor", 19, FitBaseType::STRING, ProfileType::STRING)]
-    public string $descriptor;
-    #[Field("AntTransmissionType", 20, FitBaseType::UINT8Z, ProfileType::UINT8Z)]
-    public int $antTransmissionType;
-    #[Field("AntDeviceNumber", 21, FitBaseType::UINT16Z, ProfileType::UINT16Z)]
-    public int $antDeviceNumber;
-    #[Field("AntNetwork", 22, FitBaseType::ENUM, ProfileType::ANTNETWORK)]
-    public int $antNetwork;
-    #[Field("SourceType", 25, FitBaseType::ENUM, ProfileType::SOURCETYPE)]
-    public int $sourceType;
-    #[Field("ProductName", 27, FitBaseType::STRING, ProfileType::STRING)]
-    public string $productName;*/
+    #[Field("ActivityTrackerEnabled", 36, FitBaseType::ENUM, ProfileType::BOOL)]
+    public int $activityTrackerEnabled;
+    #[Field("ClockTime", 39, FitBaseType::UINT32, ProfileType::DATETIME)]
+    public int $clockTime;
+    #[Field("PagesEnabled", 40, FitBaseType::UINT16, ProfileType::UINT16)]
+    public int $pagesEnabled;
+    #[Field("MoveAlertEnabled", 46, FitBaseType::ENUM, ProfileType::BOOL)]
+    public int $moveAlertEnabled;
+
+    // TODO: other fields not mapped
 
     public function __construct()
     {
