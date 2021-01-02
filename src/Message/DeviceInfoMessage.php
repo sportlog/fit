@@ -11,12 +11,13 @@ declare(strict_types=1);
 
 namespace FIT\Message;
 
+use DateTime;
 use FIT\FitBaseType;
 
 final class DeviceInfoMessage extends Message
 {
     #[Field("Timestamp", 253, FitBaseType::UINT32, ProfileType::DATETIME, units: "s")]
-    public float $timestamp;
+    public DateTime $timestamp;
     #[Field("DeviceIndex", 0, FitBaseType::UINT8, ProfileType::DEVICEINDEX)]
     public int $deviceIndex;
     #[Field("DeviceType", 1, FitBaseType::UINT8, ProfileType::UINT8)]

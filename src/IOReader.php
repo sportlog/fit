@@ -52,7 +52,7 @@ class IOReader
      * Constructs the Zend_Io_Reader class with given open file descriptor.
      *
      * @param resource $fd The file descriptor.
-     * @throws Zend_Io_Exception if given file descriptor is not valid
+     * @throws Exception if given file descriptor is not valid
      */
     public function __construct($fd)
     {
@@ -84,7 +84,7 @@ class IOReader
      * otherwise.
      *
      * @return boolean
-     * @throws Zend_Io_Exception if an I/O error occurs
+     * @throws Exception if an I/O error occurs
      */
     public function available()
     {
@@ -95,7 +95,7 @@ class IOReader
      * Returns the current point of operation.
      *
      * @return integer
-     * @throws Zend_Io_Exception if an I/O error occurs
+     * @throws Exception if an I/O error occurs
      */
     public function getOffset()
     {
@@ -169,7 +169,7 @@ class IOReader
      * Reads 1 byte from the stream and returns binary data as an 8-bit integer.
      *
      * @return integer
-     * @throws Zend_Io_Exception if an I/O error occurs
+     * @throws Exception if an I/O error occurs
      */
     public final function readInt8()
     {
@@ -186,7 +186,7 @@ class IOReader
      * integer.
      *
      * @return integer
-     * @throws Zend_Io_Exception if an I/O error occurs
+     * @throws Exception if an I/O error occurs
      */
     public final function readUInt8()
     {
@@ -210,7 +210,7 @@ class IOReader
      * data as signed 16-bit integer.
      *
      * @return integer
-     * @throws Zend_Io_Exception if an I/O error occurs
+     * @throws Exception if an I/O error occurs
      */
     public final function readInt16LE()
     {
@@ -226,7 +226,7 @@ class IOReader
      * as signed 16-bit integer.
      *
      * @return integer
-     * @throws Zend_Io_Exception if an I/O error occurs
+     * @throws Exception if an I/O error occurs
      */
     public final function readInt16BE()
     {
@@ -242,7 +242,7 @@ class IOReader
      * as signed 16-bit integer.
      *
      * @return integer
-     * @throws Zend_Io_Exception if an I/O error occurs
+     * @throws Exception if an I/O error occurs
      */
     public final function readInt16(int $order = self::MACHINE_ENDIAN_ORDER): int
     {
@@ -323,7 +323,7 @@ class IOReader
      * data as signed 32-bit integer.
      *
      * @return integer
-     * @throws Zend_Io_Exception if an I/O error occurs
+     * @throws Exception if an I/O error occurs
      */
     public final function readInt32LE()
     {
@@ -338,7 +338,7 @@ class IOReader
      * as signed 32-bit integer.
      *
      * @return integer
-     * @throws Zend_Io_Exception if an I/O error occurs
+     * @throws Exception if an I/O error occurs
      */
     public final function readInt32BE()
     {
@@ -373,7 +373,7 @@ class IOReader
      * data as unsigned 32-bit integer.
      *
      * @return integer
-     * @throws Zend_Io_Exception if an I/O error occurs
+     * @throws Exception if an I/O error occurs
      */
     public final function readUInt32LE(): int
     {
@@ -391,7 +391,7 @@ class IOReader
      * as unsigned 32-bit integer.
      *
      * @return integer
-     * @throws Zend_Io_Exception if an I/O error occurs
+     * @throws Exception if an I/O error occurs
      */
     public final function readUInt32BE(): int
     {
@@ -482,7 +482,7 @@ class IOReader
      * data as a 32-bit float point number as defined by IEEE 754.
      *
      * @return float
-     * @throws Zend_Io_Exception if an I/O error occurs
+     * @throws Exception if an I/O error occurs
      */
     public final function readFloatLE(): float
     {
@@ -498,7 +498,7 @@ class IOReader
      * as a 32-bit float point number as defined by IEEE 754.
      *
      * @return float
-     * @throws Zend_Io_Exception if an I/O error occurs
+     * @throws Exception if an I/O error occurs
      */
     public final function readFloatBE(): float
     {
@@ -527,7 +527,7 @@ class IOReader
      * data as a 64-bit floating point number as defined by IEEE 754.
      *
      * @return float
-     * @throws Zend_Io_Exception if an I/O error occurs
+     * @throws Exception if an I/O error occurs
      */
     public final function readDoubleLE(): float
     {
@@ -543,7 +543,7 @@ class IOReader
      * as a 64-bit float point number as defined by IEEE 754.
      *
      * @return float
-     * @throws Zend_Io_Exception if an I/O error occurs
+     * @throws Exception if an I/O error occurs
      */
     public final function readDoubleBE(): float
     {
@@ -561,7 +561,7 @@ class IOReader
      * @param integer $length   The amount of bytes.
      * @param string  $charList The list of characters you want to strip.
      * @return string
-     * @throws Zend_Io_Exception if <var>length</var> attribute is negative or
+     * @throws Exception if <var>length</var> attribute is negative or
      *  if an I/O error occurs
      */
     public final function readString8($length, $charList = "\0"): string
@@ -582,7 +582,7 @@ class IOReader
      * @param integer $trimOrder Whether to remove the byte order mark read the
      *                string.
      * @return string
-     * @throws Zend_Io_Exception if <var>length</var> attribute is negative or
+     * @throws Exception if <var>length</var> attribute is negative or
      *  if an I/O error occurs
      */
     public final function readString16($length, &$order = null, $trimOrder = false): string
@@ -619,7 +619,7 @@ class IOReader
      *
      * @param integer $length The amount of bytes.
      * @return string
-     * @throws Zend_Io_Exception if <var>length</var> attribute is negative or
+     * @throws Exception if <var>length</var> attribute is negative or
      *  if an I/O error occurs
      */
     public final function readHHex($length): string
@@ -634,7 +634,7 @@ class IOReader
      *
      * @param integer $length The amount of bytes.
      * @return string
-     * @throws Zend_Io_Exception if <var>length</var> attribute is negative or
+     * @throws Exception if <var>length</var> attribute is negative or
      *  if an I/O error occurs
      */
     public final function readLHex($length): string
@@ -648,7 +648,7 @@ class IOReader
      * binary data as mixed-ordered hexadecimal GUID string.
      *
      * @return string
-     * @throws Zend_Io_Exception if an I/O error occurs
+     * @throws Exception if an I/O error occurs
      */
     public final function readGuid(): string
     {

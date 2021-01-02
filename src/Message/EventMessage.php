@@ -11,12 +11,13 @@ declare(strict_types=1);
 
 namespace FIT\Message;
 
+use DateTime;
 use FIT\FitBaseType;
 
 final class EventMessage extends Message
 {
     #[Field("Timestamp", 253, FitBaseType::UINT32, ProfileType::DATETIME, units: "s")]
-    public float $timestamp;
+    public DateTime $timestamp;
     #[Field("Event", 0, FitBaseType::ENUM, ProfileType::EVENT)]
     public int $event;
     #[Field("EventType", 1, FitBaseType::ENUM, ProfileType::EVENTTYPE)]

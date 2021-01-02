@@ -11,9 +11,11 @@ declare(strict_types=1);
 
 namespace FIT\Message;
 
+use ArrayIterator;
+use IteratorAggregate;
 use Stringable;
 
-abstract class Message implements Stringable
+abstract class Message implements IteratorAggregate, Stringable
 {
     public $values = [];
 
@@ -41,7 +43,8 @@ abstract class Message implements Stringable
     }
 
     public function __toString() {
-        $mapped = [];
+        return sprintf('%s (%s)', $this->getName(), $this->getMessageNumber());
+        /*$mapped = [];
 
         foreach ($this->values as $key => $fieldValue) {
             $mapped[] = $fieldValue['name'];
@@ -56,9 +59,19 @@ abstract class Message implements Stringable
             else {
                 $mapped[] = !$fieldValue['type']->isInvalid($value) ? $value : '';
             }
-
-            // $mapped[] = is_array($value) ? join("", $value) : $value;
         }
         return sprintf('%s: %s', $this->name, join(",", $mapped));
+        */
+    }
+
+     /**
+     * Gets an iterator.
+     *
+     * {@inheritDoc}
+     * @see IteratorAggregate::getIterator()
+     */
+    public function getIterator()
+    {
+        return new ArrayIterator($this->values);
     }
 }

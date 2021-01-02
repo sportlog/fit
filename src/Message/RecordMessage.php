@@ -11,12 +11,13 @@ declare(strict_types=1);
 
 namespace FIT\Message;
 
+use DateTime;
 use FIT\FitBaseType;
 
 final class RecordMessage extends Message
 {
     #[Field("Timestamp", 253, FitBaseType::UINT32, ProfileType::DATETIME, units: "s")]
-    public float $timestamp;
+    public DateTime $timestamp;
     #[Field("PositionLat", 0, FitBaseType::SINT32, ProfileType::SINT32, units: "semicircles")]
     public int $positionLat;
     #[Field("PositionLong", 1, FitBaseType::SINT32, ProfileType::SINT32, units: "semicircles")]

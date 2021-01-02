@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace FIT\Message;
 
+use DateTime;
 use Exception;
 use ReflectionClass;
 use ReflectionProperty;
@@ -34,17 +35,22 @@ final class MessageFactory
         foreach ($properties as $key => $property) {
             /** @var ReflectionProperty $reflectionProperty */
             $reflectionProperty = $property['reflectionProperty'];
+            /** @var Field $field */
+            $field = $property['field'];
             $fieldValue = null;
-            $baseType = FitBaseType::fromType($property['field']->getType());
+            $baseType = FitBaseType::fromType($field->getType());
 
             // Check if a value is present for the property
             if (isset($copiedFieldValues[$key])) {
-                if ($baseType !== $fieldTypes[$property['field']->getNumber()]) {
-                    throw new Exception(sprintf('mismatch between base type in FIT message and base type declared in meta data of property "%s::%s"', 
-                        $instance::class, $reflectionProperty->getName()));
+                if ($baseType !== $fieldTypes[$field->getNumber()]) {
+                    throw new Exception(sprintf(
+                        'mismatch between base type in FIT message and base type declared in meta data of property "%s::%s"',
+                        $instance::class,
+                        $reflectionProperty->getName()
+                    ));
                 }
 
-                $fieldValue = $copiedFieldValues[$key];
+                $fieldValue = self::convertValueToFieldType($copiedFieldValues[$key], $field);
                 unset($copiedFieldValues[$key]);
             } else {
                 if (is_null($baseType)) {
@@ -57,7 +63,7 @@ final class MessageFactory
 
             // $instance->values[$property['field']->getNumber()] = $fieldValue;
             $instance->values[] = [
-                'name' => $property['field']->getName(),
+                'name' => $field->getName(),
                 'type' => $baseType,
                 'value' => $fieldValue
             ];
@@ -66,15 +72,43 @@ final class MessageFactory
 
         // All values which still remain in the array have not been mapped to a property.
         foreach ($copiedFieldValues as $key => $fieldValue) {
-            // $instance->values["def-no-{$key}"] = $value;
             $instance->values[] = [
-                'name' => "def-no-{$key}",
+                'name' => "field{$key}",
                 'type' => $fieldTypes[$key],
                 'value' => $fieldValue
             ];
         }
 
         return $instance;
+    }
+
+    private static function convertValueToFieldType(mixed $value, Field $field): mixed
+    {
+        $value /= $field->getScale();
+        $value -= $field->getOffset();
+
+        switch ($field->getProfileType()) {
+            case ProfileType::BOOL:
+                return $value !== 0;
+
+            case ProfileType::UINT8:
+            case ProfileType::SINT8:
+            case ProfileType::UINT16:
+            case ProfileType::SINT16:
+            case ProfileType::UINT16Z:
+            case ProfileType::UINT32:
+            case ProfileType::UINT32Z;
+            case ProfileType::SINT32:
+                return intval($value);
+
+            case ProfileType::DATETIME:
+                $date = new DateTime();
+                $date->setTimestamp(intval($value));
+                return $date;
+
+            default:
+                return $value;
+        }
     }
 
     private static function newInstance(int $globalMessageNumber): Message
@@ -223,8 +257,7 @@ final class MessageFactory
                         break;
 
                     default:
-                        throw new Exception(sprintf(
-                            'only one Field-Attribute is allowed for %s->%s',
+                        throw new Exception(sprintf('only one Field-Attribute is allowed for %s->%s',
                             $reflectionProperty->getDeclaringClass(),
                             $reflectionProperty->getName()
                         ));

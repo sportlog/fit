@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace FIT;
 
 use Exception;
+use FIT\Message\Message;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
@@ -25,15 +26,13 @@ class Decoder
 
     private LoggerInterface $logger;
     private array $messageTypeDefinitions = [];
-    private array $records = [];
-    private ?string $fileType = null;
 
     public function __construct(?LoggerInterface $logger = null)
     {
         $this->logger = $logger ?? new NullLogger();
     }
 
-    public function read(string $file): string
+    public function read(string $file): array
     {
         if (!file_exists($file)) {
             throw new InvalidArgumentException("invalid file {$file} provided");
@@ -44,16 +43,8 @@ class Decoder
         try {
             $reader = new IOReader($handle);
             $header = $this->getHeader($reader);
-
-
-            $this->logger->info("Header: " . print_r(fstat($handle), true));
-
-            $i = 0;
-            while ($reader->getOffset() - $header['header_size'] < $header['data_size']) {
-                $this->nextRecord($reader, $i++);
-            }
-
-            return '';
+            $this->logger->info("Header: " . print_r($header, true));
+            return $this->readRecords($header, $reader);
         } catch (Exception $ex) {
             $this->logger->error("Error while decoding", ['exception' => $ex]);
             throw $ex;
@@ -63,89 +54,83 @@ class Decoder
         }
     }
 
-    private function nextRecord(IOReader $reader, int $i): void
+    private function readRecords(array $header, IOReader $reader): array
     {
-        $recordHeader = $this->nextRecordHeader($reader);
-        // $this->logger->info("RecordHeader: " . print_r($recordHeader, true));
-        $localMessagType = $recordHeader['local_message_type'];
+        $records = [];
+        while ($reader->getOffset() - $header['header_size'] < $header['data_size']) {
+            $recordHeader = $this->nextRecordHeader($reader);
+            $localMessagType = $recordHeader['local_message_type'];
 
+            switch ($recordHeader['message_type']) {
+                case self::MESSAGE_TYPE_DEFINITION:
+                    // definition message
+                    $def =  $this->nextRecordDefinition($recordHeader, $reader);
+                    $this->messageTypeDefinitions[$localMessagType] = $def;
+                    break;
 
-        switch ($recordHeader['message_type']) {
-            case self::MESSAGE_TYPE_DEFINITION:
-                // definition message
-                $def =  $this->nextRecordDefinition($recordHeader, $reader);
-                $this->messageTypeDefinitions[$localMessagType] = $def;
-                // $this->logger->info($recordHeader['message_type'] . " '{$localMessagType}'");
-                break;
+                case self::MESSAGE_TYPE_DATA:
+                    $records[] = $this->nextRecordData($localMessagType, $reader);
+                    break;
 
-            case self::MESSAGE_TYPE_DATA:
-                if (!isset($this->messageTypeDefinitions[$localMessagType])) {
-                    throw new Exception("No message definition for local message type '{$localMessagType}' found.");
-                }
-
-                $definition = $this->messageTypeDefinitions[$localMessagType];
-                /*if (is_null($this->fileType) && $definition['global_message_number'] !== MessageNumber::FileId) {
-                    throw new Exception("The first data message must be a 'File-Id' message");
-                }*/
-
-                $this->logger->info("#{$i}/" . $reader->getOffset() . " :" . $recordHeader['message_type'] . " '{$localMessagType}', " . $definition['global_message_number']);
-
-                $order = $definition['byte_order'];
-                // Assoociative array with the field definition number as key
-                // and it's decoded value.
-                $fieldValues = [];
-                $fieldTypes = [];
-                foreach ($definition['field_definitions'] as $fieldDefinition) {
-                    $size = $fieldDefinition['size'];
-                    $fitBaseType = FitBaseType::fromType($fieldDefinition['base_type']);
-                    if (is_null($fitBaseType)) {
-                        // No valid base type; just read the data to advance the file pointer
-                        $reader->read($size);
-                        continue;
-                    }
-
-                    // The size indicates the size of the defined field in bytes. The size may be a 
-                    // multiple of the underlying FIT Base Type size indicating the field contains multiple 
-                    // elements represented as an array.
-                    $fitBaseTypeSize = $fitBaseType->getBytes();
-                    if (($size % $fitBaseTypeSize) !== 0) {
-                        throw new Exception('size must be a multiple of fit-base-type size');
-                    }
-
-                    // Use the field definition number as index and assign the value.
-                    // The message factory will create the appropriate message according to the
-                    // global message number and assign the values to the created message.
-                    if ($size === $fitBaseTypeSize || $fieldDefinition['base_type'] === FitBaseType::BYTE || $fieldDefinition['base_type'] === FitBaseType::STRING) {
-                        $fieldValues[$fieldDefinition['field_definition_number']] = $this->readValue($fieldDefinition, $order, $reader);
-                    } else {
-                        $multipleFieldValues = [];
-                        $tmpSize = $size;
-                        while ($tmpSize >= $fitBaseTypeSize) {
-                            $multipleFieldValues[] = $this->readValue($fieldDefinition, $order, $reader);
-                            $tmpSize -= $fitBaseTypeSize;
-                        }
-                        $fieldValues[$fieldDefinition['field_definition_number']] = $multipleFieldValues;
-                    }
-                    $fieldTypes[$fieldDefinition['field_definition_number']] = $fitBaseType;
-                }
-
-                $message = MessageFactory::create($definition['global_message_number'], $fieldValues, $fieldTypes);
-                if ($message->getMessageNumber() === MessageNumber::FileId) {
-                    if (!is_null($this->fileType) && $this->fileType !== $message->type) {
-                        throw new Exception('file type already set');
-                    }
-                    $this->fileType = $message->type;
-                }
-
-                $this->logger->info("#{$i}: " . $recordHeader['message_type'] . " '{$localMessagType}' --> " . $message->__toString());
-                $this->records[] = $message;
-                // $this->logger->info("Read value: " . print_r($message, true));
-
-                break;
-
-            default:
-                throw new Exception('unhandled messageType');
+                default:
+                    throw new Exception('invalid message type in record header: ' . $recordHeader['message_type']);
+            }
         }
+        return $records;
+    }
+
+    private function nextRecordData(int $localMessagType, IOReader $reader): Message
+    {
+        if (!isset($this->messageTypeDefinitions[$localMessagType])) {
+            throw new Exception("No message definition for local message type '{$localMessagType}' found.");
+        }
+
+        $definition = $this->messageTypeDefinitions[$localMessagType];
+        // $this->logger->info($reader->getOffset() . " :" . $recordHeader['message_type'] . " '{$localMessagType}', " . $definition['global_message_number']);
+        
+        // Assoociative array with the field definition number as key
+        // and it's decoded value.
+        $fieldValues = [];
+        $fieldTypes = [];
+        foreach ($definition['field_definitions'] as $fieldDefinition) {
+            $size = $fieldDefinition['size'];
+            $fitBaseType = FitBaseType::fromType($fieldDefinition['base_type']);
+            if (is_null($fitBaseType)) {
+                // No valid base type; just read the data to advance the file pointer
+                $reader->read($size);
+                continue;
+            }
+
+            // The size indicates the size of the defined field in bytes. The size may be a 
+            // multiple of the underlying FIT Base Type size indicating the field contains multiple 
+            // elements represented as an array.
+            $fitBaseTypeSize = $fitBaseType->getBytes();
+            if (($size % $fitBaseTypeSize) !== 0) {
+                throw new Exception('size must be a multiple of fit-base-type size');
+            }
+
+            // Use the field definition number as index and assign the value.
+            // The message factory will create the appropriate message according to the
+            // global message number and assign the values to the created message.
+            $order = $definition['byte_order'];
+            if ($size === $fitBaseTypeSize || $fieldDefinition['base_type'] === FitBaseType::BYTE || $fieldDefinition['base_type'] === FitBaseType::STRING) {
+                $fieldValues[$fieldDefinition['field_definition_number']] = $this->readValue($fieldDefinition, $order, $reader);
+            } else {
+                $multipleFieldValues = [];
+                $tmpSize = $size;
+                while ($tmpSize >= $fitBaseTypeSize) {
+                    $multipleFieldValues[] = $this->readValue($fieldDefinition, $order, $reader);
+                    $tmpSize -= $fitBaseTypeSize;
+                }
+                $fieldValues[$fieldDefinition['field_definition_number']] = $multipleFieldValues;
+            }
+            $fieldTypes[$fieldDefinition['field_definition_number']] = $fitBaseType;
+        }
+
+        $message = MessageFactory::create($definition['global_message_number'], $fieldValues, $fieldTypes);
+        $this->logger->info("Data for '{$localMessagType}'");
+
+        return $message;
     }
 
     private function readValue(array $fieldDefinition, int $order, IOReader $reader): mixed
@@ -198,7 +183,7 @@ class Decoder
 
     private function nextRecordDefinition(array $recordHeader, IOReader $reader): array
     {
-        $reader->readUInt8();    // Reserverd; required to read it to advance file pointer
+        $reader->readUInt8();    // Reserverd; read it to advance file pointer
         // Architecture Type
         // 0: Definition and Data Messages are Little Endian
         // 1: Definition and Data Message are Big Endian
@@ -281,7 +266,7 @@ class Decoder
                 'header_type' => 'normal',
                 'message_type' => ($byte >> 6) & 1 ? self::MESSAGE_TYPE_DEFINITION : self::MESSAGE_TYPE_DATA,
                 'local_message_type' => $byte & 15,    // Bits 0-3, Value 0-15,
-                'has_developer_data' => false
+                'has_developer_data' => (($byte >> 5) & 1) === 1
             ];
         }
     }
@@ -291,7 +276,7 @@ class Decoder
         $headerSize = $reader->readUInt8();
 
         $header = [
-            'header_size' => $headerSize,        
+            'header_size' => $headerSize,
             'protocol_version' => $reader->readUInt8(),
             'profile_version' => $reader->readUInt16(),
             'data_size' => $reader->readUInt32LE(),

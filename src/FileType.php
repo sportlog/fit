@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace FIT;
 
-interface FileType {
+class FileType {
     const Activity = 4;
     const Workout = 5;
     const Course = 6;

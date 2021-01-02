@@ -11,9 +11,6 @@ declare(strict_types=1);
 
 namespace FIT;
 
-use Exception;
-use ReflectionClass;
-
 class FitBaseType
 {
 	const ENUM		= 0;
@@ -42,8 +39,8 @@ class FitBaseType
 		if (is_null(self::$fieldDefinitions)) {
 			self::$fieldDefinitions = [
 				self::ENUM		=> new FitBaseTypeDefinition(false, "enum",		1, 0xFF),
-				self::SINT8		=> new FitBaseTypeDefinition(false, "sint8",		1, 0x7F),
-				self::UINT8		=> new FitBaseTypeDefinition(false, "uint8",		1, 0xFF),
+				self::SINT8		=> new FitBaseTypeDefinition(false, "sint8",	1, 0x7F),
+				self::UINT8		=> new FitBaseTypeDefinition(false, "uint8",	1, 0xFF),
 				self::SINT16	=> new FitBaseTypeDefinition(true, "sint16",	2, 0x7FFF),
 				self::UINT16	=> new FitBaseTypeDefinition(true, "uint16",	2, 0xFFFF),
 				self::SINT32	=> new FitBaseTypeDefinition(true, "sint32",	4, 0x7FFFFFFF),

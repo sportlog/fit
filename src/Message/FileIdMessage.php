@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace FIT\Message;
 
+use DateTime;
 use FIT\FitBaseType;
 
 class FileIdMessage extends Message
@@ -24,7 +25,7 @@ class FileIdMessage extends Message
     #[Field("SerialNumber", 3, FitBaseType::UINT32Z, ProfileType::UINT32Z)]
     public float $serialNumber;
     #[Field("TimeCreated", 4, FitBaseType::UINT32, ProfileType::DATETIME)]
-    public float $created;
+    public DateTime $created;
     #[Field("Number", 5, FitBaseType::UINT16, ProfileType::UINT16)]
     public int $number;
     #[Field("ProductName", 8, FitBaseType::STRING, ProfileType::STRING)]
