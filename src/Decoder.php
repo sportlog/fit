@@ -34,12 +34,12 @@ class Decoder
 
     public function read(string $file): array
     {
-        if (!file_exists($file)) {
-            throw new InvalidArgumentException("invalid file {$file} provided");
-        }
-
-        $this->logger->info("************ START decoding of file '{$file}'");
         $handle = fopen($file, 'rb');
+        if ($handle === false) {
+            throw new InvalidArgumentException("Unable to open file '{$file}'. Did you provide the correct path?");
+        }
+        $this->logger->info("************ START decoding of file '{$file}'");
+
         try {
             $reader = new IOReader($handle);
             $header = $this->getHeader($reader);
@@ -64,7 +64,7 @@ class Decoder
             switch ($recordHeader['message_type']) {
                 case self::MESSAGE_TYPE_DEFINITION:
                     // definition message
-                    $def =  $this->nextRecordDefinition($recordHeader, $reader);
+                    $def =  $this->nextRecordDefinition($recordHeader['has_developer_data'], $reader);
                     $this->messageTypeDefinitions[$localMessagType] = $def;
                     break;
 
@@ -90,8 +90,7 @@ class Decoder
         
         // Assoociative array with the field definition number as key
         // and it's decoded value.
-        $fieldValues = [];
-        $fieldTypes = [];
+        $fields = [];
         foreach ($definition['field_definitions'] as $fieldDefinition) {
             $size = $fieldDefinition['size'];
             $fitBaseType = FitBaseType::fromType($fieldDefinition['base_type']);
@@ -113,21 +112,24 @@ class Decoder
             // The message factory will create the appropriate message according to the
             // global message number and assign the values to the created message.
             $order = $definition['byte_order'];
+            $fieldValue = null;
             if ($size === $fitBaseTypeSize || $fieldDefinition['base_type'] === FitBaseType::BYTE || $fieldDefinition['base_type'] === FitBaseType::STRING) {
-                $fieldValues[$fieldDefinition['field_definition_number']] = $this->readValue($fieldDefinition, $order, $reader);
+                $fieldValue = $this->readValue($fieldDefinition, $order, $reader);
             } else {
-                $multipleFieldValues = [];
+                $fieldValue = [];
                 $tmpSize = $size;
                 while ($tmpSize >= $fitBaseTypeSize) {
-                    $multipleFieldValues[] = $this->readValue($fieldDefinition, $order, $reader);
+                    $fieldValue[] = $this->readValue($fieldDefinition, $order, $reader);
                     $tmpSize -= $fitBaseTypeSize;
                 }
-                $fieldValues[$fieldDefinition['field_definition_number']] = $multipleFieldValues;
             }
-            $fieldTypes[$fieldDefinition['field_definition_number']] = $fitBaseType;
+            $fields[$fieldDefinition['field_definition_number']] = [
+                'value' => $fieldValue,
+                'type' => $fitBaseType
+            ];
         }
 
-        $message = MessageFactory::create($definition['global_message_number'], $fieldValues, $fieldTypes);
+        $message = MessageFactory::create($definition['global_message_number'], $fields);
         $this->logger->info("Data for '{$localMessagType}'");
 
         return $message;
@@ -181,7 +183,7 @@ class Decoder
         }
     }
 
-    private function nextRecordDefinition(array $recordHeader, IOReader $reader): array
+    private function nextRecordDefinition(bool $hasDeveloperData, IOReader $reader): array
     {
         $reader->readUInt8();    // Reserverd; read it to advance file pointer
         // Architecture Type
@@ -212,7 +214,7 @@ class Decoder
         }
 
         // $baseTypeDef = BaseTypes::fromType($fieldBaseTypeNumber);
-        if ($recordHeader['has_developer_data']) {
+        if ($hasDeveloperData) {
             // Developer data is present as defined in the header
 
             // Number of Self Descriptive fields in the Data Message

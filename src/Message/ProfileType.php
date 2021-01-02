@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace FIT\Message;
 
-interface ProfileType {
+class ProfileType {
     const ENUM = 'Enum';
     const SINT8 = 'Sint8';
     const UINT8 = 'Uint8';

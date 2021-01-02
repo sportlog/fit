@@ -106,16 +106,6 @@ class IOReader
     }
 
     /**
-     * Returns the underlying stream file descriptor.
-     *
-     * @return resource
-     */
-    public function getFileDescriptor()
-    {
-        return $this->_fd;
-    }
-
-    /**
      * Reads <var>length</var> amount of bytes from the stream.
      *
      * @param integer $length The amount of bytes.
@@ -136,34 +126,6 @@ class IOReader
         }
         return fread($this->_fd, $length);
     }
-
-
-    /**
-     * Reads 2 bytes from the stream and returns ordered binary
-     * data as unsigned 16-bit integer.
-     *
-     * @return integer
-     * @return integer $order Order to return. Machine endian if not provided.
-     */
-    /*public final function readUInt16(int $order = self::MACHINE_ENDIAN_ORDER): int
-    {
-        $getFormat = function () use ($order): string {
-            switch ($order) {
-                case self::BIG_ENDIAN_ORDER:
-                    return 'n';
-                case self::LITTLE_ENDIAN_ORDER:
-                    return 'v';
-                case self::MACHINE_ENDIAN_ORDER:
-                    return 'S';
-                default:
-                    throw new Exception("unhandled order {$order}");
-            }
-        };
-
-        $format = $getFormat($order);
-        list(, $int) = unpack("{$format}*", $this->read(2));
-        return $int;
-    }*/
 
     /**
      * Reads 1 byte from the stream and returns binary data as an 8-bit integer.

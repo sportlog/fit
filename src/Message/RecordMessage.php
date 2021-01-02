@@ -26,13 +26,15 @@ final class RecordMessage extends Message
     public int $altitude;
     #[Field("HeartRate", 3, FitBaseType::UINT8, ProfileType::UINT8, units: "bpm")]
     public int $heartRate;
-    #[Field("Cadence", 4, FitBaseType::UINT16, ProfileType::UINT16, units: "rpm")]
+    #[Field("Cadence", 4, FitBaseType::UINT8, ProfileType::UINT8, units: "rpm")]
     public int $cadence;
     #[Field("Distance", 5, FitBaseType::UINT32, ProfileType::UINT32, 100.0, units: "m")]
     public int $distance;
     #[Field("Speed", 6, FitBaseType::UINT16, ProfileType::UINT16, 1000.0, 0.0, "m/s")]
     public int $speed;
-
+    #[Field("Power", 7, FitBaseType::UINT16, ProfileType::UINT16, 1.0, 0.0, "watts")]
+    public int $power;
+    
     #[Field("EnhancedSpeed", 73, FitBaseType::UINT32, ProfileType::UINT32, 1000.0, units: "m/s")]
     public int $enhancedSpeed;
     #[Field("EnhancedAltitude", 74, FitBaseType::UINT32, ProfileType::UINT32, 5.0, 500.0, "m")]

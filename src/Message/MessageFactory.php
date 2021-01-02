@@ -26,12 +26,11 @@ final class MessageFactory
      * Creates the appropriate Message according to the provided global message number
      * and assigns the values.
      */
-    public static function create(int $globalMessageNumber, array $fieldValues, array $fieldTypes): Message
+    public static function create(int $globalMessageNumber, array $fields): Message
     {
         $instance = self::newInstance($globalMessageNumber);
         $properties = self::getReflectionProperties($instance::class);
 
-        $copiedFieldValues = $fieldValues;
         foreach ($properties as $key => $property) {
             /** @var ReflectionProperty $reflectionProperty */
             $reflectionProperty = $property['reflectionProperty'];
@@ -41,8 +40,8 @@ final class MessageFactory
             $baseType = FitBaseType::fromType($field->getType());
 
             // Check if a value is present for the property
-            if (isset($copiedFieldValues[$key])) {
-                if ($baseType !== $fieldTypes[$field->getNumber()]) {
+            if (isset($fields[$key])) {
+                if ($baseType !== $fields[$field->getNumber()]['type']) {
                     throw new Exception(sprintf(
                         'mismatch between base type in FIT message and base type declared in meta data of property "%s::%s"',
                         $instance::class,
@@ -50,8 +49,8 @@ final class MessageFactory
                     ));
                 }
 
-                $fieldValue = self::convertValueToFieldType($copiedFieldValues[$key], $field);
-                unset($copiedFieldValues[$key]);
+                $fieldValue = self::convertValueToFieldType($fields[$key]['value'], $field);
+                unset($fields[$key]);
             } else {
                 if (is_null($baseType)) {
                     throw new Exception(sprintf('Invalid base type in meta data for "%s:%s"', $instance::class, $reflectionProperty->getName()));
@@ -61,7 +60,6 @@ final class MessageFactory
                 $fieldValue = $baseType->getInvalidValue();
             }
 
-            // $instance->values[$property['field']->getNumber()] = $fieldValue;
             $instance->values[] = [
                 'name' => $field->getName(),
                 'type' => $baseType,
@@ -70,12 +68,12 @@ final class MessageFactory
             $reflectionProperty->setValue($instance, $fieldValue);
         }
 
-        // All values which still remain in the array have not been mapped to a property.
-        foreach ($copiedFieldValues as $key => $fieldValue) {
+        // All values which are still present in the array have not been mapped to a property.
+        foreach ($fields as $key => $field) {
             $instance->values[] = [
                 'name' => "field{$key}",
-                'type' => $fieldTypes[$key],
-                'value' => $fieldValue
+                'type' => $field['type'],
+                'value' => $field['value']
             ];
         }
 
@@ -103,7 +101,7 @@ final class MessageFactory
 
             case ProfileType::DATETIME:
                 $date = new DateTime();
-                $date->setTimestamp(intval($value));
+                $date->setTimestamp(intval($value) + 631065600);
                 return $date;
 
             default:
