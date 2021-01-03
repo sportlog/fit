@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace FIT\Profile\Message;
 
 use FIT\Profile\Message;
+use FIT\Profile\MessageNumber;
 
 /**
  * Represents an unknown message which is not described
@@ -19,8 +20,8 @@ use FIT\Profile\Message;
  */
 final class UnknownMessage extends Message
 {
-    public function __construct(int $number)
+    public function __construct()
     {
-        parent::__construct("Unknown", $number);
+        parent::__construct("Unknown", MessageNumber::Invalid);
     }
 }
