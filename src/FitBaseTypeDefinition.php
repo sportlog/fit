@@ -16,6 +16,10 @@ class FitBaseTypeDefinition {
     {
     }
 
+    public function getName(): string {
+        return $this->name;
+    }
+
     public function getBytes(): int {
         return $this->bytes;
     }

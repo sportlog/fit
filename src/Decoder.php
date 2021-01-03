@@ -12,12 +12,11 @@ declare(strict_types=1);
 namespace FIT;
 
 use Exception;
-use FIT\Message\Message;
+use FIT\Profile\Message;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
-use FIT\Message\MessageFactory;
-use FIT\Message\MessageNumber;
+use FIT\Profile\MessageFactory;
 
 class Decoder
 {
