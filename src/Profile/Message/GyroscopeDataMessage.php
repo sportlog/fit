@@ -21,38 +21,66 @@ use FIT\Profile\ProfileType;
  */
 final class GyroscopeDataMessage extends Message
 {
-    #[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-    public ?DateTime $timestamp;
+    public function getTimestamp(): ?DateTime
+    {
+        return $this->getValue(253);
+    }
 
-    #[Field('TimestampMs', 0, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
-    public ?int $timestampMs;
+    public function getTimestampMs(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('SampleTimeOffset', 1, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
-    public ?int $sampleTimeOffset;
+    public function getSampleTimeOffset(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('GyroX', 2, FitBaseType::UINT16, 1.0, 0.0, 'counts', false, ProfileType::UINT16)]
-    public ?int $gyroX;
+    public function getGyroX(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('GyroY', 3, FitBaseType::UINT16, 1.0, 0.0, 'counts', false, ProfileType::UINT16)]
-    public ?int $gyroY;
+    public function getGyroY(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('GyroZ', 4, FitBaseType::UINT16, 1.0, 0.0, 'counts', false, ProfileType::UINT16)]
-    public ?int $gyroZ;
+    public function getGyroZ(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('CalibratedGyroX', 5, FitBaseType::FLOAT32, 1.0, 0.0, 'deg/s', false, ProfileType::FLOAT32)]
-    public ?float $calibratedGyroX;
+    public function getCalibratedGyroX(): ?float
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('CalibratedGyroY', 6, FitBaseType::FLOAT32, 1.0, 0.0, 'deg/s', false, ProfileType::FLOAT32)]
-    public ?float $calibratedGyroY;
+    public function getCalibratedGyroY(): ?float
+    {
+        return $this->getValue(6);
+    }
 
-    #[Field('CalibratedGyroZ', 7, FitBaseType::FLOAT32, 1.0, 0.0, 'deg/s', false, ProfileType::FLOAT32)]
-    public ?float $calibratedGyroZ;
+    public function getCalibratedGyroZ(): ?float
+    {
+        return $this->getValue(7);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("GyroscopeData", MessageNumber::GyroscopeData);
+        parent::__construct("GyroscopeData", MessageNumber::GyroscopeData, [
+        new Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME),
+            new Field('TimestampMs', 0, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16),
+            new Field('SampleTimeOffset', 1, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16),
+            new Field('GyroX', 2, FitBaseType::UINT16, 1.0, 0.0, 'counts', false, ProfileType::UINT16),
+            new Field('GyroY', 3, FitBaseType::UINT16, 1.0, 0.0, 'counts', false, ProfileType::UINT16),
+            new Field('GyroZ', 4, FitBaseType::UINT16, 1.0, 0.0, 'counts', false, ProfileType::UINT16),
+            new Field('CalibratedGyroX', 5, FitBaseType::FLOAT32, 1.0, 0.0, 'deg/s', false, ProfileType::FLOAT32),
+            new Field('CalibratedGyroY', 6, FitBaseType::FLOAT32, 1.0, 0.0, 'deg/s', false, ProfileType::FLOAT32),
+            new Field('CalibratedGyroZ', 7, FitBaseType::FLOAT32, 1.0, 0.0, 'deg/s', false, ProfileType::FLOAT32)
+        ]);
     }
 }

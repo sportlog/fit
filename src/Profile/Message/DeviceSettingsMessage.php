@@ -21,83 +21,156 @@ use FIT\Profile\ProfileType;
  */
 final class DeviceSettingsMessage extends Message
 {
-    #[Field('ActiveTimeZone', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $activeTimeZone;
+    public function getActiveTimeZone(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('UtcOffset', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-    public ?int $utcOffset;
+    public function getUtcOffset(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('TimeOffset', 2, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::UINT32)]
-    public ?int $timeOffset;
+    public function getTimeOffset(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('TimeMode', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::TIMEMODE)]
-    public ?int $timeMode;
+    public function getTimeMode(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('TimeZoneOffset', 5, FitBaseType::SINT8, 4.0, 0.0, 'hr', false, ProfileType::SINT8)]
-    public ?int $timeZoneOffset;
+    public function getTimeZoneOffset(): ?int
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('BacklightMode', 12, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BACKLIGHTMODE)]
-    public ?int $backlightMode;
+    public function getBacklightMode(): ?int
+    {
+        return $this->getValue(12);
+    }
 
-    #[Field('ActivityTrackerEnabled', 36, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $activityTrackerEnabled;
+    public function getActivityTrackerEnabled(): ?bool
+    {
+        return $this->getValue(36);
+    }
 
-    #[Field('ClockTime', 39, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-    public ?DateTime $clockTime;
+    public function getClockTime(): ?DateTime
+    {
+        return $this->getValue(39);
+    }
 
-    #[Field('PagesEnabled', 40, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $pagesEnabled;
+    public function getPagesEnabled(): ?int
+    {
+        return $this->getValue(40);
+    }
 
-    #[Field('MoveAlertEnabled', 46, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $moveAlertEnabled;
+    public function getMoveAlertEnabled(): ?bool
+    {
+        return $this->getValue(46);
+    }
 
-    #[Field('DateMode', 47, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DATEMODE)]
-    public ?int $dateMode;
+    public function getDateMode(): ?int
+    {
+        return $this->getValue(47);
+    }
 
-    #[Field('DisplayOrientation', 55, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYORIENTATION)]
-    public ?int $displayOrientation;
+    public function getDisplayOrientation(): ?int
+    {
+        return $this->getValue(55);
+    }
 
-    #[Field('MountingSide', 56, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SIDE)]
-    public ?int $mountingSide;
+    public function getMountingSide(): ?int
+    {
+        return $this->getValue(56);
+    }
 
-    #[Field('DefaultPage', 57, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $defaultPage;
+    public function getDefaultPage(): ?int
+    {
+        return $this->getValue(57);
+    }
 
-    #[Field('AutosyncMinSteps', 58, FitBaseType::UINT16, 1.0, 0.0, 'steps', false, ProfileType::UINT16)]
-    public ?int $autosyncMinSteps;
+    public function getAutosyncMinSteps(): ?int
+    {
+        return $this->getValue(58);
+    }
 
-    #[Field('AutosyncMinTime', 59, FitBaseType::UINT16, 1.0, 0.0, 'minutes', false, ProfileType::UINT16)]
-    public ?int $autosyncMinTime;
+    public function getAutosyncMinTime(): ?int
+    {
+        return $this->getValue(59);
+    }
 
-    #[Field('LactateThresholdAutodetectEnabled', 80, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $lactateThresholdAutodetectEnabled;
+    public function getLactateThresholdAutodetectEnabled(): ?bool
+    {
+        return $this->getValue(80);
+    }
 
-    #[Field('BleAutoUploadEnabled', 86, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $bleAutoUploadEnabled;
+    public function getBleAutoUploadEnabled(): ?bool
+    {
+        return $this->getValue(86);
+    }
 
-    #[Field('AutoSyncFrequency', 89, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::AUTOSYNCFREQUENCY)]
-    public ?int $autoSyncFrequency;
+    public function getAutoSyncFrequency(): ?int
+    {
+        return $this->getValue(89);
+    }
 
-    #[Field('AutoActivityDetect', 90, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::AUTOACTIVITYDETECT)]
-    public ?int $autoActivityDetect;
+    public function getAutoActivityDetect(): ?int
+    {
+        return $this->getValue(90);
+    }
 
-    #[Field('NumberOfScreens', 94, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $numberOfScreens;
+    public function getNumberOfScreens(): ?int
+    {
+        return $this->getValue(94);
+    }
 
-    #[Field('SmartNotificationDisplayOrientation', 95, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYORIENTATION)]
-    public ?int $smartNotificationDisplayOrientation;
+    public function getSmartNotificationDisplayOrientation(): ?int
+    {
+        return $this->getValue(95);
+    }
 
-    #[Field('TapInterface', 134, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SWITCH)]
-    public ?int $tapInterface;
+    public function getTapInterface(): ?int
+    {
+        return $this->getValue(134);
+    }
 
-    #[Field('TapSensitivity', 174, FitBaseType::ENUM, 1.0, 1.0, '', false, ProfileType::TAPSENSITIVITY)]
-    public ?int $tapSensitivity;
+    public function getTapSensitivity(): ?int
+    {
+        return $this->getValue(174);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("DeviceSettings", MessageNumber::DeviceSettings);
+        parent::__construct("DeviceSettings", MessageNumber::DeviceSettings, [
+        new Field('ActiveTimeZone', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('UtcOffset', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32),
+            new Field('TimeOffset', 2, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::UINT32),
+            new Field('TimeMode', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::TIMEMODE),
+            new Field('TimeZoneOffset', 5, FitBaseType::SINT8, 4.0, 0.0, 'hr', false, ProfileType::SINT8),
+            new Field('BacklightMode', 12, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BACKLIGHTMODE),
+            new Field('ActivityTrackerEnabled', 36, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL),
+            new Field('ClockTime', 39, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME),
+            new Field('PagesEnabled', 40, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
+            new Field('MoveAlertEnabled', 46, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL),
+            new Field('DateMode', 47, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DATEMODE),
+            new Field('DisplayOrientation', 55, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYORIENTATION),
+            new Field('MountingSide', 56, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SIDE),
+            new Field('DefaultPage', 57, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
+            new Field('AutosyncMinSteps', 58, FitBaseType::UINT16, 1.0, 0.0, 'steps', false, ProfileType::UINT16),
+            new Field('AutosyncMinTime', 59, FitBaseType::UINT16, 1.0, 0.0, 'minutes', false, ProfileType::UINT16),
+            new Field('LactateThresholdAutodetectEnabled', 80, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL),
+            new Field('BleAutoUploadEnabled', 86, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL),
+            new Field('AutoSyncFrequency', 89, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::AUTOSYNCFREQUENCY),
+            new Field('AutoActivityDetect', 90, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::AUTOACTIVITYDETECT),
+            new Field('NumberOfScreens', 94, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('SmartNotificationDisplayOrientation', 95, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYORIENTATION),
+            new Field('TapInterface', 134, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SWITCH),
+            new Field('TapSensitivity', 174, FitBaseType::ENUM, 1.0, 1.0, '', false, ProfileType::TAPSENSITIVITY)
+        ]);
     }
 }

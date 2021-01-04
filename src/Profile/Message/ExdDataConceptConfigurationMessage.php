@@ -21,44 +21,78 @@ use FIT\Profile\ProfileType;
  */
 final class ExdDataConceptConfigurationMessage extends Message
 {
-    #[Field('ScreenIndex', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $screenIndex;
+    public function getScreenIndex(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('ConceptField', 1, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-    public ?int $conceptField;
+    public function getConceptField(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('FieldId', 2, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $fieldId;
+    public function getFieldId(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('ConceptIndex', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $conceptIndex;
+    public function getConceptIndex(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('DataPage', 4, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $dataPage;
+    public function getDataPage(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('ConceptKey', 5, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $conceptKey;
+    public function getConceptKey(): ?int
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('Scaling', 6, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $scaling;
+    public function getScaling(): ?int
+    {
+        return $this->getValue(6);
+    }
 
-    #[Field('DataUnits', 8, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::EXDDATAUNITS)]
-    public ?int $dataUnits;
+    public function getDataUnits(): ?int
+    {
+        return $this->getValue(8);
+    }
 
-    #[Field('Qualifier', 9, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::EXDQUALIFIERS)]
-    public ?int $qualifier;
+    public function getQualifier(): ?int
+    {
+        return $this->getValue(9);
+    }
 
-    #[Field('Descriptor', 10, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::EXDDESCRIPTORS)]
-    public ?int $descriptor;
+    public function getDescriptor(): ?int
+    {
+        return $this->getValue(10);
+    }
 
-    #[Field('IsSigned', 11, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $isSigned;
+    public function getIsSigned(): ?bool
+    {
+        return $this->getValue(11);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("ExdDataConceptConfiguration", MessageNumber::ExdDataConceptConfiguration);
+        parent::__construct("ExdDataConceptConfiguration", MessageNumber::ExdDataConceptConfiguration, [
+        new Field('ScreenIndex', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('ConceptField', 1, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE),
+            new Field('FieldId', 2, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('ConceptIndex', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('DataPage', 4, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('ConceptKey', 5, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('Scaling', 6, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('DataUnits', 8, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::EXDDATAUNITS),
+            new Field('Qualifier', 9, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::EXDQUALIFIERS),
+            new Field('Descriptor', 10, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::EXDDESCRIPTORS),
+            new Field('IsSigned', 11, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)
+        ]);
     }
 }

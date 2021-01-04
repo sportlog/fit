@@ -21,26 +21,42 @@ use FIT\Profile\ProfileType;
  */
 final class HrmProfileMessage extends Message
 {
-    #[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-    public ?int $messageIndex;
+    public function getMessageIndex(): ?int
+    {
+        return $this->getValue(254);
+    }
 
-    #[Field('Enabled', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $enabled;
+    public function getEnabled(): ?bool
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('HrmAntId', 1, FitBaseType::UINT16Z, 1.0, 0.0, '', false, ProfileType::UINT16Z)]
-    public ?int $hrmAntId;
+    public function getHrmAntId(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('LogHrv', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $logHrv;
+    public function getLogHrv(): ?bool
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('HrmAntIdTransType', 3, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-    public ?int $hrmAntIdTransType;
+    public function getHrmAntIdTransType(): ?int
+    {
+        return $this->getValue(3);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("HrmProfile", MessageNumber::HrmProfile);
+        parent::__construct("HrmProfile", MessageNumber::HrmProfile, [
+        new Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX),
+            new Field('Enabled', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL),
+            new Field('HrmAntId', 1, FitBaseType::UINT16Z, 1.0, 0.0, '', false, ProfileType::UINT16Z),
+            new Field('LogHrv', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL),
+            new Field('HrmAntIdTransType', 3, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)
+        ]);
     }
 }

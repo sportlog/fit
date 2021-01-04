@@ -34,95 +34,7 @@ final class MessageFactory
      * Creates the appropriate Message according to the provided global message number
      * and assigns the values.
      */
-    public static function create(int $globalMessageNumber, array $fields): Message
-    {
-        $instance = self::newInstance($globalMessageNumber);
-        $properties = self::getReflectionProperties($instance::class);
-
-        foreach ($properties as $key => $property) {
-            /** @var ReflectionProperty $reflectionProperty */
-            $reflectionProperty = $property['reflectionProperty'];
-            /** @var Field $field */
-            $field = $property['field'];
-            $baseType = FitBaseType::fromType($field->getType());
-            if (is_null($baseType)) {
-                throw new Exception(sprintf('Invalid base type in meta data for "%s:%s"', $instance::class, $reflectionProperty->getName()));
-            }
-
-            $fieldValue = null;
-
-            // Check if a value is present for the property
-            if (isset($fields[$key])) {
-                if ($baseType !== $fields[$field->getNumber()]['type']) {
-                    throw new Exception(sprintf(
-                        'mismatch between base type in FIT message and base type declared in meta data of property "%s::%s".
-                        Base type from FIT file is "%s", base type from property meta is "%s"',
-                        $instance::class,
-                        $reflectionProperty->getName(),
-                        $fields[$field->getNumber()]['type']->getName(),
-                        $baseType->getName()
-                    ));
-                }
-
-                $fieldValue = self::convertValueToFieldType($fields[$key]['value'], $field);
-                unset($fields[$key]);
-            } else {
-                // TODO: According to the FIT protocol any missing values should be filled
-                // with the invalid value.
-                $fieldValue = null; //$baseType->getInvalidValue();
-            }
-
-            $instance->values[] = [
-                'name' => $field->getName(),
-                'type' => $baseType,
-                'value' => $fieldValue
-            ];
-            $reflectionProperty->setValue($instance, $fieldValue);
-        }
-
-        // All values which are still present in the array have not been mapped to a property.
-        foreach ($fields as $key => $field) {
-            $instance->values[] = [
-                'name' => "field{$key}",
-                'type' => $field['type'],
-                'value' => $field['value']
-            ];
-        }
-
-        return $instance;
-    }
-
-    private static function convertValueToFieldType(mixed $value, Field $field): mixed
-    {
-        $value /= $field->getScale();
-        $value -= $field->getOffset();
-
-        switch ($field->getProfileType()) {
-            case ProfileType::BOOL:
-                return $value !== 0;
-
-            case ProfileType::UINT8:
-            case ProfileType::SINT8:
-            case ProfileType::UINT16:
-            case ProfileType::SINT16:
-            case ProfileType::UINT16Z:
-            case ProfileType::UINT32:
-            case ProfileType::UINT32Z;
-            case ProfileType::SINT32:
-                return intval($value);
-
-            case ProfileType::LOCALDATETIME:
-            case ProfileType::DATETIME:
-                $date = new DateTime();
-                $date->setTimestamp(intval($value) + 631065600);
-                return $date;
-
-            default:
-                return $value;
-        }
-    }
-
-    private static function newInstance(int $globalMessageNumber): Message
+    public static function create(int $globalMessageNumber,): Message
     {
         switch ($globalMessageNumber) {
             case MessageNumber::FileId:
@@ -268,7 +180,8 @@ final class MessageFactory
                         break;
 
                     default:
-                        throw new Exception(sprintf('only one Field-Attribute is allowed for %s->%s',
+                        throw new Exception(sprintf(
+                            'only one Field-Attribute is allowed for %s->%s',
                             $reflectionProperty->getDeclaringClass(),
                             $reflectionProperty->getName()
                         ));

@@ -21,23 +21,36 @@ use FIT\Profile\ProfileType;
  */
 final class CourseMessage extends Message
 {
-    #[Field('Sport', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SPORT)]
-    public ?int $sport;
+    public function getSport(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('Name', 5, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $name;
+    public function getName(): ?string
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('Capabilities', 6, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::COURSECAPABILITIES)]
-    public ?int $capabilities;
+    public function getCapabilities(): ?int
+    {
+        return $this->getValue(6);
+    }
 
-    #[Field('SubSport', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SUBSPORT)]
-    public ?int $subSport;
+    public function getSubSport(): ?int
+    {
+        return $this->getValue(7);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("Course", MessageNumber::Course);
+        parent::__construct("Course", MessageNumber::Course, [
+        new Field('Sport', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SPORT),
+            new Field('Name', 5, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING),
+            new Field('Capabilities', 6, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::COURSECAPABILITIES),
+            new Field('SubSport', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SUBSPORT)
+        ]);
     }
 }

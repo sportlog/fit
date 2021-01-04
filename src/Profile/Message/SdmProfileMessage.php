@@ -21,35 +21,60 @@ use FIT\Profile\ProfileType;
  */
 final class SdmProfileMessage extends Message
 {
-    #[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-    public ?int $messageIndex;
+    public function getMessageIndex(): ?int
+    {
+        return $this->getValue(254);
+    }
 
-    #[Field('Enabled', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $enabled;
+    public function getEnabled(): ?bool
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('SdmAntId', 1, FitBaseType::UINT16Z, 1.0, 0.0, '', false, ProfileType::UINT16Z)]
-    public ?int $sdmAntId;
+    public function getSdmAntId(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('SdmCalFactor', 2, FitBaseType::UINT16, 10.0, 0.0, '%', false, ProfileType::UINT16)]
-    public ?int $sdmCalFactor;
+    public function getSdmCalFactor(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('Odometer', 3, FitBaseType::UINT32, 100.0, 0.0, 'm', false, ProfileType::UINT32)]
-    public ?int $odometer;
+    public function getOdometer(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('SpeedSource', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $speedSource;
+    public function getSpeedSource(): ?bool
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('SdmAntIdTransType', 5, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-    public ?int $sdmAntIdTransType;
+    public function getSdmAntIdTransType(): ?int
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('OdometerRollover', 7, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $odometerRollover;
+    public function getOdometerRollover(): ?int
+    {
+        return $this->getValue(7);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("SdmProfile", MessageNumber::SdmProfile);
+        parent::__construct("SdmProfile", MessageNumber::SdmProfile, [
+        new Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX),
+            new Field('Enabled', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL),
+            new Field('SdmAntId', 1, FitBaseType::UINT16Z, 1.0, 0.0, '', false, ProfileType::UINT16Z),
+            new Field('SdmCalFactor', 2, FitBaseType::UINT16, 10.0, 0.0, '%', false, ProfileType::UINT16),
+            new Field('Odometer', 3, FitBaseType::UINT32, 100.0, 0.0, 'm', false, ProfileType::UINT32),
+            new Field('SpeedSource', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL),
+            new Field('SdmAntIdTransType', 5, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z),
+            new Field('OdometerRollover', 7, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)
+        ]);
     }
 }

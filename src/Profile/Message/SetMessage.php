@@ -21,44 +21,78 @@ use FIT\Profile\ProfileType;
  */
 final class SetMessage extends Message
 {
-    #[Field('Timestamp', 254, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-    public ?DateTime $timestamp;
+    public function getTimestamp(): ?DateTime
+    {
+        return $this->getValue(254);
+    }
 
-    #[Field('Duration', 0, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
-    public ?int $duration;
+    public function getDuration(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('Repetitions', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $repetitions;
+    public function getRepetitions(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('Weight', 4, FitBaseType::UINT16, 16.0, 0.0, 'kg', false, ProfileType::UINT16)]
-    public ?int $weight;
+    public function getWeight(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('SetType', 5, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::SETTYPE)]
-    public ?int $setType;
+    public function getSetType(): ?int
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('StartTime', 6, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-    public ?DateTime $startTime;
+    public function getStartTime(): ?DateTime
+    {
+        return $this->getValue(6);
+    }
 
-    #[Field('Category', 7, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::EXERCISECATEGORY)]
-    public ?int $category;
+    public function getCategory(): ?int
+    {
+        return $this->getValue(7);
+    }
 
-    #[Field('CategorySubtype', 8, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $categorySubtype;
+    public function getCategorySubtype(): ?int
+    {
+        return $this->getValue(8);
+    }
 
-    #[Field('WeightDisplayUnit', 9, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::FITBASEUNIT)]
-    public ?int $weightDisplayUnit;
+    public function getWeightDisplayUnit(): ?int
+    {
+        return $this->getValue(9);
+    }
 
-    #[Field('MessageIndex', 10, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-    public ?int $messageIndex;
+    public function getMessageIndex(): ?int
+    {
+        return $this->getValue(10);
+    }
 
-    #[Field('WktStepIndex', 11, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-    public ?int $wktStepIndex;
+    public function getWktStepIndex(): ?int
+    {
+        return $this->getValue(11);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("Set", MessageNumber::Set);
+        parent::__construct("Set", MessageNumber::Set, [
+        new Field('Timestamp', 254, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME),
+            new Field('Duration', 0, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32),
+            new Field('Repetitions', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
+            new Field('Weight', 4, FitBaseType::UINT16, 16.0, 0.0, 'kg', false, ProfileType::UINT16),
+            new Field('SetType', 5, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::SETTYPE),
+            new Field('StartTime', 6, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME),
+            new Field('Category', 7, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::EXERCISECATEGORY),
+            new Field('CategorySubtype', 8, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
+            new Field('WeightDisplayUnit', 9, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::FITBASEUNIT),
+            new Field('MessageIndex', 10, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX),
+            new Field('WktStepIndex', 11, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)
+        ]);
     }
 }

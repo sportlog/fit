@@ -21,107 +21,204 @@ use FIT\Profile\ProfileType;
  */
 final class BikeProfileMessage extends Message
 {
-    #[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-    public ?int $messageIndex;
+    public function getMessageIndex(): ?int
+    {
+        return $this->getValue(254);
+    }
 
-    #[Field('Name', 0, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $name;
+    public function getName(): ?string
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('Sport', 1, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SPORT)]
-    public ?int $sport;
+    public function getSport(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('SubSport', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SUBSPORT)]
-    public ?int $subSport;
+    public function getSubSport(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('Odometer', 3, FitBaseType::UINT32, 100.0, 0.0, 'm', false, ProfileType::UINT32)]
-    public ?int $odometer;
+    public function getOdometer(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('BikeSpdAntId', 4, FitBaseType::UINT16Z, 1.0, 0.0, '', false, ProfileType::UINT16Z)]
-    public ?int $bikeSpdAntId;
+    public function getBikeSpdAntId(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('BikeCadAntId', 5, FitBaseType::UINT16Z, 1.0, 0.0, '', false, ProfileType::UINT16Z)]
-    public ?int $bikeCadAntId;
+    public function getBikeCadAntId(): ?int
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('BikeSpdcadAntId', 6, FitBaseType::UINT16Z, 1.0, 0.0, '', false, ProfileType::UINT16Z)]
-    public ?int $bikeSpdcadAntId;
+    public function getBikeSpdcadAntId(): ?int
+    {
+        return $this->getValue(6);
+    }
 
-    #[Field('BikePowerAntId', 7, FitBaseType::UINT16Z, 1.0, 0.0, '', false, ProfileType::UINT16Z)]
-    public ?int $bikePowerAntId;
+    public function getBikePowerAntId(): ?int
+    {
+        return $this->getValue(7);
+    }
 
-    #[Field('CustomWheelsize', 8, FitBaseType::UINT16, 1000.0, 0.0, 'm', false, ProfileType::UINT16)]
-    public ?int $customWheelsize;
+    public function getCustomWheelsize(): ?int
+    {
+        return $this->getValue(8);
+    }
 
-    #[Field('AutoWheelsize', 9, FitBaseType::UINT16, 1000.0, 0.0, 'm', false, ProfileType::UINT16)]
-    public ?int $autoWheelsize;
+    public function getAutoWheelsize(): ?int
+    {
+        return $this->getValue(9);
+    }
 
-    #[Field('BikeWeight', 10, FitBaseType::UINT16, 10.0, 0.0, 'kg', false, ProfileType::UINT16)]
-    public ?int $bikeWeight;
+    public function getBikeWeight(): ?int
+    {
+        return $this->getValue(10);
+    }
 
-    #[Field('PowerCalFactor', 11, FitBaseType::UINT16, 10.0, 0.0, '%', false, ProfileType::UINT16)]
-    public ?int $powerCalFactor;
+    public function getPowerCalFactor(): ?int
+    {
+        return $this->getValue(11);
+    }
 
-    #[Field('AutoWheelCal', 12, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $autoWheelCal;
+    public function getAutoWheelCal(): ?bool
+    {
+        return $this->getValue(12);
+    }
 
-    #[Field('AutoPowerZero', 13, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $autoPowerZero;
+    public function getAutoPowerZero(): ?bool
+    {
+        return $this->getValue(13);
+    }
 
-    #[Field('Id', 14, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $id;
+    public function getId(): ?int
+    {
+        return $this->getValue(14);
+    }
 
-    #[Field('SpdEnabled', 15, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $spdEnabled;
+    public function getSpdEnabled(): ?bool
+    {
+        return $this->getValue(15);
+    }
 
-    #[Field('CadEnabled', 16, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $cadEnabled;
+    public function getCadEnabled(): ?bool
+    {
+        return $this->getValue(16);
+    }
 
-    #[Field('SpdcadEnabled', 17, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $spdcadEnabled;
+    public function getSpdcadEnabled(): ?bool
+    {
+        return $this->getValue(17);
+    }
 
-    #[Field('PowerEnabled', 18, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $powerEnabled;
+    public function getPowerEnabled(): ?bool
+    {
+        return $this->getValue(18);
+    }
 
-    #[Field('CrankLength', 19, FitBaseType::UINT8, 2.0, -110.0, 'mm', false, ProfileType::UINT8)]
-    public ?int $crankLength;
+    public function getCrankLength(): ?int
+    {
+        return $this->getValue(19);
+    }
 
-    #[Field('Enabled', 20, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $enabled;
+    public function getEnabled(): ?bool
+    {
+        return $this->getValue(20);
+    }
 
-    #[Field('BikeSpdAntIdTransType', 21, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-    public ?int $bikeSpdAntIdTransType;
+    public function getBikeSpdAntIdTransType(): ?int
+    {
+        return $this->getValue(21);
+    }
 
-    #[Field('BikeCadAntIdTransType', 22, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-    public ?int $bikeCadAntIdTransType;
+    public function getBikeCadAntIdTransType(): ?int
+    {
+        return $this->getValue(22);
+    }
 
-    #[Field('BikeSpdcadAntIdTransType', 23, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-    public ?int $bikeSpdcadAntIdTransType;
+    public function getBikeSpdcadAntIdTransType(): ?int
+    {
+        return $this->getValue(23);
+    }
 
-    #[Field('BikePowerAntIdTransType', 24, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-    public ?int $bikePowerAntIdTransType;
+    public function getBikePowerAntIdTransType(): ?int
+    {
+        return $this->getValue(24);
+    }
 
-    #[Field('OdometerRollover', 37, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $odometerRollover;
+    public function getOdometerRollover(): ?int
+    {
+        return $this->getValue(37);
+    }
 
-    #[Field('FrontGearNum', 38, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-    public ?int $frontGearNum;
+    public function getFrontGearNum(): ?int
+    {
+        return $this->getValue(38);
+    }
 
-    #[Field('FrontGear', 39, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-    public ?int $frontGear;
+    public function getFrontGear(): ?int
+    {
+        return $this->getValue(39);
+    }
 
-    #[Field('RearGearNum', 40, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-    public ?int $rearGearNum;
+    public function getRearGearNum(): ?int
+    {
+        return $this->getValue(40);
+    }
 
-    #[Field('RearGear', 41, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-    public ?int $rearGear;
+    public function getRearGear(): ?int
+    {
+        return $this->getValue(41);
+    }
 
-    #[Field('ShimanoDi2Enabled', 44, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $shimanoDi2Enabled;
+    public function getShimanoDi2Enabled(): ?bool
+    {
+        return $this->getValue(44);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("BikeProfile", MessageNumber::BikeProfile);
+        parent::__construct("BikeProfile", MessageNumber::BikeProfile, [
+        new Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX),
+            new Field('Name', 0, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING),
+            new Field('Sport', 1, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SPORT),
+            new Field('SubSport', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SUBSPORT),
+            new Field('Odometer', 3, FitBaseType::UINT32, 100.0, 0.0, 'm', false, ProfileType::UINT32),
+            new Field('BikeSpdAntId', 4, FitBaseType::UINT16Z, 1.0, 0.0, '', false, ProfileType::UINT16Z),
+            new Field('BikeCadAntId', 5, FitBaseType::UINT16Z, 1.0, 0.0, '', false, ProfileType::UINT16Z),
+            new Field('BikeSpdcadAntId', 6, FitBaseType::UINT16Z, 1.0, 0.0, '', false, ProfileType::UINT16Z),
+            new Field('BikePowerAntId', 7, FitBaseType::UINT16Z, 1.0, 0.0, '', false, ProfileType::UINT16Z),
+            new Field('CustomWheelsize', 8, FitBaseType::UINT16, 1000.0, 0.0, 'm', false, ProfileType::UINT16),
+            new Field('AutoWheelsize', 9, FitBaseType::UINT16, 1000.0, 0.0, 'm', false, ProfileType::UINT16),
+            new Field('BikeWeight', 10, FitBaseType::UINT16, 10.0, 0.0, 'kg', false, ProfileType::UINT16),
+            new Field('PowerCalFactor', 11, FitBaseType::UINT16, 10.0, 0.0, '%', false, ProfileType::UINT16),
+            new Field('AutoWheelCal', 12, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL),
+            new Field('AutoPowerZero', 13, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL),
+            new Field('Id', 14, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('SpdEnabled', 15, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL),
+            new Field('CadEnabled', 16, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL),
+            new Field('SpdcadEnabled', 17, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL),
+            new Field('PowerEnabled', 18, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL),
+            new Field('CrankLength', 19, FitBaseType::UINT8, 2.0, -110.0, 'mm', false, ProfileType::UINT8),
+            new Field('Enabled', 20, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL),
+            new Field('BikeSpdAntIdTransType', 21, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z),
+            new Field('BikeCadAntIdTransType', 22, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z),
+            new Field('BikeSpdcadAntIdTransType', 23, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z),
+            new Field('BikePowerAntIdTransType', 24, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z),
+            new Field('OdometerRollover', 37, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('FrontGearNum', 38, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z),
+            new Field('FrontGear', 39, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z),
+            new Field('RearGearNum', 40, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z),
+            new Field('RearGear', 41, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z),
+            new Field('ShimanoDi2Enabled', 44, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)
+        ]);
     }
 }

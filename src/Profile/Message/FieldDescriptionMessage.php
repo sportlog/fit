@@ -21,53 +21,96 @@ use FIT\Profile\ProfileType;
  */
 final class FieldDescriptionMessage extends Message
 {
-    #[Field('DeveloperDataIndex', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $developerDataIndex;
+    public function getDeveloperDataIndex(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('FieldDefinitionNumber', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $fieldDefinitionNumber;
+    public function getFieldDefinitionNumber(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('FitBaseTypeId', 2, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::FITBASETYPE)]
-    public ?int $fitBaseTypeId;
+    public function getFitBaseTypeId(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('FieldName', 3, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $fieldName;
+    public function getFieldName(): ?string
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('Array', 4, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $array;
+    public function getArray(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('Components', 5, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $components;
+    public function getComponents(): ?string
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('Scale', 6, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $scale;
+    public function getScale(): ?int
+    {
+        return $this->getValue(6);
+    }
 
-    #[Field('Offset', 7, FitBaseType::SINT8, 1.0, 0.0, '', false, ProfileType::SINT8)]
-    public ?int $offset;
+    public function getOffset(): ?int
+    {
+        return $this->getValue(7);
+    }
 
-    #[Field('Units', 8, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $units;
+    public function getUnits(): ?string
+    {
+        return $this->getValue(8);
+    }
 
-    #[Field('Bits', 9, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $bits;
+    public function getBits(): ?string
+    {
+        return $this->getValue(9);
+    }
 
-    #[Field('Accumulate', 10, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $accumulate;
+    public function getAccumulate(): ?string
+    {
+        return $this->getValue(10);
+    }
 
-    #[Field('FitBaseUnitId', 13, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::FITBASEUNIT)]
-    public ?int $fitBaseUnitId;
+    public function getFitBaseUnitId(): ?int
+    {
+        return $this->getValue(13);
+    }
 
-    #[Field('NativeMesgNum', 14, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESGNUM)]
-    public ?int $nativeMesgNum;
+    public function getNativeMesgNum(): ?int
+    {
+        return $this->getValue(14);
+    }
 
-    #[Field('NativeFieldNum', 15, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $nativeFieldNum;
+    public function getNativeFieldNum(): ?int
+    {
+        return $this->getValue(15);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("FieldDescription", MessageNumber::FieldDescription);
+        parent::__construct("FieldDescription", MessageNumber::FieldDescription, [
+        new Field('DeveloperDataIndex', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('FieldDefinitionNumber', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('FitBaseTypeId', 2, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::FITBASETYPE),
+            new Field('FieldName', 3, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING),
+            new Field('Array', 4, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('Components', 5, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING),
+            new Field('Scale', 6, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('Offset', 7, FitBaseType::SINT8, 1.0, 0.0, '', false, ProfileType::SINT8),
+            new Field('Units', 8, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING),
+            new Field('Bits', 9, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING),
+            new Field('Accumulate', 10, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING),
+            new Field('FitBaseUnitId', 13, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::FITBASEUNIT),
+            new Field('NativeMesgNum', 14, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESGNUM),
+            new Field('NativeFieldNum', 15, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)
+        ]);
     }
 }

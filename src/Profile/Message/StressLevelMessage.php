@@ -21,17 +21,24 @@ use FIT\Profile\ProfileType;
  */
 final class StressLevelMessage extends Message
 {
-    #[Field('StressLevelValue', 0, FitBaseType::SINT16, 1.0, 0.0, '', false, ProfileType::SINT16)]
-    public ?int $stressLevelValue;
+    public function getStressLevelValue(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('StressLevelTime', 1, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-    public ?DateTime $stressLevelTime;
+    public function getStressLevelTime(): ?DateTime
+    {
+        return $this->getValue(1);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("StressLevel", MessageNumber::StressLevel);
+        parent::__construct("StressLevel", MessageNumber::StressLevel, [
+        new Field('StressLevelValue', 0, FitBaseType::SINT16, 1.0, 0.0, '', false, ProfileType::SINT16),
+            new Field('StressLevelTime', 1, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)
+        ]);
     }
 }

@@ -21,35 +21,60 @@ use FIT\Profile\ProfileType;
  */
 final class CoursePointMessage extends Message
 {
-    #[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-    public ?int $messageIndex;
+    public function getMessageIndex(): ?int
+    {
+        return $this->getValue(254);
+    }
 
-    #[Field('Timestamp', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-    public ?DateTime $timestamp;
+    public function getTimestamp(): ?DateTime
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('PositionLat', 2, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32)]
-    public ?int $positionLat;
+    public function getPositionLat(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('PositionLong', 3, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32)]
-    public ?int $positionLong;
+    public function getPositionLong(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('Distance', 4, FitBaseType::UINT32, 100.0, 0.0, 'm', false, ProfileType::UINT32)]
-    public ?int $distance;
+    public function getDistance(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('Type', 5, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::COURSEPOINT)]
-    public ?int $type;
+    public function getType(): ?int
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('Name', 6, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $name;
+    public function getName(): ?string
+    {
+        return $this->getValue(6);
+    }
 
-    #[Field('Favorite', 8, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $favorite;
+    public function getFavorite(): ?bool
+    {
+        return $this->getValue(8);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("CoursePoint", MessageNumber::CoursePoint);
+        parent::__construct("CoursePoint", MessageNumber::CoursePoint, [
+        new Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX),
+            new Field('Timestamp', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME),
+            new Field('PositionLat', 2, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32),
+            new Field('PositionLong', 3, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32),
+            new Field('Distance', 4, FitBaseType::UINT32, 100.0, 0.0, 'm', false, ProfileType::UINT32),
+            new Field('Type', 5, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::COURSEPOINT),
+            new Field('Name', 6, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING),
+            new Field('Favorite', 8, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)
+        ]);
     }
 }

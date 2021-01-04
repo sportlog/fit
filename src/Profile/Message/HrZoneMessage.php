@@ -21,20 +21,30 @@ use FIT\Profile\ProfileType;
  */
 final class HrZoneMessage extends Message
 {
-    #[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-    public ?int $messageIndex;
+    public function getMessageIndex(): ?int
+    {
+        return $this->getValue(254);
+    }
 
-    #[Field('HighBpm', 1, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
-    public ?int $highBpm;
+    public function getHighBpm(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('Name', 2, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $name;
+    public function getName(): ?string
+    {
+        return $this->getValue(2);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("HrZone", MessageNumber::HrZone);
+        parent::__construct("HrZone", MessageNumber::HrZone, [
+        new Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX),
+            new Field('HighBpm', 1, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8),
+            new Field('Name', 2, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)
+        ]);
     }
 }

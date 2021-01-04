@@ -21,32 +21,54 @@ use FIT\Profile\ProfileType;
  */
 final class TimestampCorrelationMessage extends Message
 {
-    #[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-    public ?DateTime $timestamp;
+    public function getTimestamp(): ?DateTime
+    {
+        return $this->getValue(253);
+    }
 
-    #[Field('FractionalTimestamp', 0, FitBaseType::UINT16, 32768.0, 0.0, 's', false, ProfileType::UINT16)]
-    public ?int $fractionalTimestamp;
+    public function getFractionalTimestamp(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('SystemTimestamp', 1, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-    public ?DateTime $systemTimestamp;
+    public function getSystemTimestamp(): ?DateTime
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('FractionalSystemTimestamp', 2, FitBaseType::UINT16, 32768.0, 0.0, 's', false, ProfileType::UINT16)]
-    public ?int $fractionalSystemTimestamp;
+    public function getFractionalSystemTimestamp(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('LocalTimestamp', 3, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::LOCALDATETIME)]
-    public ?DateTime $localTimestamp;
+    public function getLocalTimestamp(): ?DateTime
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('TimestampMs', 4, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
-    public ?int $timestampMs;
+    public function getTimestampMs(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('SystemTimestampMs', 5, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
-    public ?int $systemTimestampMs;
+    public function getSystemTimestampMs(): ?int
+    {
+        return $this->getValue(5);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("TimestampCorrelation", MessageNumber::TimestampCorrelation);
+        parent::__construct("TimestampCorrelation", MessageNumber::TimestampCorrelation, [
+        new Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME),
+            new Field('FractionalTimestamp', 0, FitBaseType::UINT16, 32768.0, 0.0, 's', false, ProfileType::UINT16),
+            new Field('SystemTimestamp', 1, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME),
+            new Field('FractionalSystemTimestamp', 2, FitBaseType::UINT16, 32768.0, 0.0, 's', false, ProfileType::UINT16),
+            new Field('LocalTimestamp', 3, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::LOCALDATETIME),
+            new Field('TimestampMs', 4, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16),
+            new Field('SystemTimestampMs', 5, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)
+        ]);
     }
 }

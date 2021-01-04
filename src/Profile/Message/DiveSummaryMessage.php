@@ -21,50 +21,90 @@ use FIT\Profile\ProfileType;
  */
 final class DiveSummaryMessage extends Message
 {
-    #[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-    public ?DateTime $timestamp;
+    public function getTimestamp(): ?DateTime
+    {
+        return $this->getValue(253);
+    }
 
-    #[Field('ReferenceMesg', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESGNUM)]
-    public ?int $referenceMesg;
+    public function getReferenceMesg(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('ReferenceIndex', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-    public ?int $referenceIndex;
+    public function getReferenceIndex(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('AvgDepth', 2, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32)]
-    public ?int $avgDepth;
+    public function getAvgDepth(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('MaxDepth', 3, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32)]
-    public ?int $maxDepth;
+    public function getMaxDepth(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('SurfaceInterval', 4, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::UINT32)]
-    public ?int $surfaceInterval;
+    public function getSurfaceInterval(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('StartCns', 5, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
-    public ?int $startCns;
+    public function getStartCns(): ?int
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('EndCns', 6, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
-    public ?int $endCns;
+    public function getEndCns(): ?int
+    {
+        return $this->getValue(6);
+    }
 
-    #[Field('StartN2', 7, FitBaseType::UINT16, 1.0, 0.0, 'percent', false, ProfileType::UINT16)]
-    public ?int $startN2;
+    public function getStartN2(): ?int
+    {
+        return $this->getValue(7);
+    }
 
-    #[Field('EndN2', 8, FitBaseType::UINT16, 1.0, 0.0, 'percent', false, ProfileType::UINT16)]
-    public ?int $endN2;
+    public function getEndN2(): ?int
+    {
+        return $this->getValue(8);
+    }
 
-    #[Field('O2Toxicity', 9, FitBaseType::UINT16, 1.0, 0.0, 'OTUs', false, ProfileType::UINT16)]
-    public ?int $o2Toxicity;
+    public function getO2Toxicity(): ?int
+    {
+        return $this->getValue(9);
+    }
 
-    #[Field('DiveNumber', 10, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-    public ?int $diveNumber;
+    public function getDiveNumber(): ?int
+    {
+        return $this->getValue(10);
+    }
 
-    #[Field('BottomTime', 11, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
-    public ?int $bottomTime;
+    public function getBottomTime(): ?int
+    {
+        return $this->getValue(11);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("DiveSummary", MessageNumber::DiveSummary);
+        parent::__construct("DiveSummary", MessageNumber::DiveSummary, [
+        new Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME),
+            new Field('ReferenceMesg', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESGNUM),
+            new Field('ReferenceIndex', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX),
+            new Field('AvgDepth', 2, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32),
+            new Field('MaxDepth', 3, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32),
+            new Field('SurfaceInterval', 4, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::UINT32),
+            new Field('StartCns', 5, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8),
+            new Field('EndCns', 6, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8),
+            new Field('StartN2', 7, FitBaseType::UINT16, 1.0, 0.0, 'percent', false, ProfileType::UINT16),
+            new Field('EndN2', 8, FitBaseType::UINT16, 1.0, 0.0, 'percent', false, ProfileType::UINT16),
+            new Field('O2Toxicity', 9, FitBaseType::UINT16, 1.0, 0.0, 'OTUs', false, ProfileType::UINT16),
+            new Field('DiveNumber', 10, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32),
+            new Field('BottomTime', 11, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)
+        ]);
     }
 }

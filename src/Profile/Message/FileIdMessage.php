@@ -21,32 +21,54 @@ use FIT\Profile\ProfileType;
  */
 final class FileIdMessage extends Message
 {
-    #[Field('Type', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::FILE)]
-    public ?int $type;
+    public function getType(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('Manufacturer', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MANUFACTURER)]
-    public ?int $manufacturer;
+    public function getManufacturer(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('Product', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $product;
+    public function getProduct(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('SerialNumber', 3, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::UINT32Z)]
-    public ?int $serialNumber;
+    public function getSerialNumber(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('TimeCreated', 4, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-    public ?DateTime $timeCreated;
+    public function getTimeCreated(): ?DateTime
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('Number', 5, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $number;
+    public function getNumber(): ?int
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('ProductName', 8, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $productName;
+    public function getProductName(): ?string
+    {
+        return $this->getValue(8);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("FileId", MessageNumber::FileId);
+        parent::__construct("FileId", MessageNumber::FileId, [
+        new Field('Type', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::FILE),
+            new Field('Manufacturer', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MANUFACTURER),
+            new Field('Product', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
+            new Field('SerialNumber', 3, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::UINT32Z),
+            new Field('TimeCreated', 4, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME),
+            new Field('Number', 5, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
+            new Field('ProductName', 8, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)
+        ]);
     }
 }

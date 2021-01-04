@@ -21,17 +21,24 @@ use FIT\Profile\ProfileType;
  */
 final class OhrSettingsMessage extends Message
 {
-    #[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-    public ?DateTime $timestamp;
+    public function getTimestamp(): ?DateTime
+    {
+        return $this->getValue(253);
+    }
 
-    #[Field('Enabled', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SWITCH)]
-    public ?int $enabled;
+    public function getEnabled(): ?int
+    {
+        return $this->getValue(0);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("OhrSettings", MessageNumber::OhrSettings);
+        parent::__construct("OhrSettings", MessageNumber::OhrSettings, [
+        new Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME),
+            new Field('Enabled', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SWITCH)
+        ]);
     }
 }

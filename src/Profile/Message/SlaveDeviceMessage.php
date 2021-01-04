@@ -21,17 +21,24 @@ use FIT\Profile\ProfileType;
  */
 final class SlaveDeviceMessage extends Message
 {
-    #[Field('Manufacturer', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MANUFACTURER)]
-    public ?int $manufacturer;
+    public function getManufacturer(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('Product', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $product;
+    public function getProduct(): ?int
+    {
+        return $this->getValue(1);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("SlaveDevice", MessageNumber::SlaveDevice);
+        parent::__construct("SlaveDevice", MessageNumber::SlaveDevice, [
+        new Field('Manufacturer', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MANUFACTURER),
+            new Field('Product', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)
+        ]);
     }
 }

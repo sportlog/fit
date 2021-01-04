@@ -21,32 +21,54 @@ use FIT\Profile\ProfileType;
  */
 final class DiveAlarmMessage extends Message
 {
-    #[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-    public ?int $messageIndex;
+    public function getMessageIndex(): ?int
+    {
+        return $this->getValue(254);
+    }
 
-    #[Field('Depth', 0, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32)]
-    public ?int $depth;
+    public function getDepth(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('Time', 1, FitBaseType::SINT32, 1.0, 0.0, 's', false, ProfileType::SINT32)]
-    public ?int $time;
+    public function getTime(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('Enabled', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $enabled;
+    public function getEnabled(): ?bool
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('AlarmType', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DIVEALARMTYPE)]
-    public ?int $alarmType;
+    public function getAlarmType(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('Sound', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::TONE)]
-    public ?int $sound;
+    public function getSound(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('DiveTypes', 5, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SUBSPORT)]
-    public ?int $diveTypes;
+    public function getDiveTypes(): ?int
+    {
+        return $this->getValue(5);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("DiveAlarm", MessageNumber::DiveAlarm);
+        parent::__construct("DiveAlarm", MessageNumber::DiveAlarm, [
+        new Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX),
+            new Field('Depth', 0, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32),
+            new Field('Time', 1, FitBaseType::SINT32, 1.0, 0.0, 's', false, ProfileType::SINT32),
+            new Field('Enabled', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL),
+            new Field('AlarmType', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DIVEALARMTYPE),
+            new Field('Sound', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::TONE),
+            new Field('DiveTypes', 5, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SUBSPORT)
+        ]);
     }
 }

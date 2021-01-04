@@ -21,50 +21,90 @@ use FIT\Profile\ProfileType;
  */
 final class WeightScaleMessage extends Message
 {
-    #[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-    public ?DateTime $timestamp;
+    public function getTimestamp(): ?DateTime
+    {
+        return $this->getValue(253);
+    }
 
-    #[Field('Weight', 0, FitBaseType::UINT16, 100.0, 0.0, 'kg', false, ProfileType::WEIGHT)]
-    public ?int $weight;
+    public function getWeight(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('PercentFat', 1, FitBaseType::UINT16, 100.0, 0.0, '%', false, ProfileType::UINT16)]
-    public ?int $percentFat;
+    public function getPercentFat(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('PercentHydration', 2, FitBaseType::UINT16, 100.0, 0.0, '%', false, ProfileType::UINT16)]
-    public ?int $percentHydration;
+    public function getPercentHydration(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('VisceralFatMass', 3, FitBaseType::UINT16, 100.0, 0.0, 'kg', false, ProfileType::UINT16)]
-    public ?int $visceralFatMass;
+    public function getVisceralFatMass(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('BoneMass', 4, FitBaseType::UINT16, 100.0, 0.0, 'kg', false, ProfileType::UINT16)]
-    public ?int $boneMass;
+    public function getBoneMass(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('MuscleMass', 5, FitBaseType::UINT16, 100.0, 0.0, 'kg', false, ProfileType::UINT16)]
-    public ?int $muscleMass;
+    public function getMuscleMass(): ?int
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('BasalMet', 7, FitBaseType::UINT16, 4.0, 0.0, 'kcal/day', false, ProfileType::UINT16)]
-    public ?int $basalMet;
+    public function getBasalMet(): ?int
+    {
+        return $this->getValue(7);
+    }
 
-    #[Field('PhysiqueRating', 8, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $physiqueRating;
+    public function getPhysiqueRating(): ?int
+    {
+        return $this->getValue(8);
+    }
 
-    #[Field('ActiveMet', 9, FitBaseType::UINT16, 4.0, 0.0, 'kcal/day', false, ProfileType::UINT16)]
-    public ?int $activeMet;
+    public function getActiveMet(): ?int
+    {
+        return $this->getValue(9);
+    }
 
-    #[Field('MetabolicAge', 10, FitBaseType::UINT8, 1.0, 0.0, 'years', false, ProfileType::UINT8)]
-    public ?int $metabolicAge;
+    public function getMetabolicAge(): ?int
+    {
+        return $this->getValue(10);
+    }
 
-    #[Field('VisceralFatRating', 11, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $visceralFatRating;
+    public function getVisceralFatRating(): ?int
+    {
+        return $this->getValue(11);
+    }
 
-    #[Field('UserProfileIndex', 12, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-    public ?int $userProfileIndex;
+    public function getUserProfileIndex(): ?int
+    {
+        return $this->getValue(12);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("WeightScale", MessageNumber::WeightScale);
+        parent::__construct("WeightScale", MessageNumber::WeightScale, [
+        new Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME),
+            new Field('Weight', 0, FitBaseType::UINT16, 100.0, 0.0, 'kg', false, ProfileType::WEIGHT),
+            new Field('PercentFat', 1, FitBaseType::UINT16, 100.0, 0.0, '%', false, ProfileType::UINT16),
+            new Field('PercentHydration', 2, FitBaseType::UINT16, 100.0, 0.0, '%', false, ProfileType::UINT16),
+            new Field('VisceralFatMass', 3, FitBaseType::UINT16, 100.0, 0.0, 'kg', false, ProfileType::UINT16),
+            new Field('BoneMass', 4, FitBaseType::UINT16, 100.0, 0.0, 'kg', false, ProfileType::UINT16),
+            new Field('MuscleMass', 5, FitBaseType::UINT16, 100.0, 0.0, 'kg', false, ProfileType::UINT16),
+            new Field('BasalMet', 7, FitBaseType::UINT16, 4.0, 0.0, 'kcal/day', false, ProfileType::UINT16),
+            new Field('PhysiqueRating', 8, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('ActiveMet', 9, FitBaseType::UINT16, 4.0, 0.0, 'kcal/day', false, ProfileType::UINT16),
+            new Field('MetabolicAge', 10, FitBaseType::UINT8, 1.0, 0.0, 'years', false, ProfileType::UINT8),
+            new Field('VisceralFatRating', 11, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('UserProfileIndex', 12, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)
+        ]);
     }
 }

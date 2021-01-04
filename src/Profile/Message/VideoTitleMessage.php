@@ -21,20 +21,30 @@ use FIT\Profile\ProfileType;
  */
 final class VideoTitleMessage extends Message
 {
-    #[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-    public ?int $messageIndex;
+    public function getMessageIndex(): ?int
+    {
+        return $this->getValue(254);
+    }
 
-    #[Field('MessageCount', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $messageCount;
+    public function getMessageCount(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('Text', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $text;
+    public function getText(): ?string
+    {
+        return $this->getValue(1);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("VideoTitle", MessageNumber::VideoTitle);
+        parent::__construct("VideoTitle", MessageNumber::VideoTitle, [
+        new Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX),
+            new Field('MessageCount', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
+            new Field('Text', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)
+        ]);
     }
 }

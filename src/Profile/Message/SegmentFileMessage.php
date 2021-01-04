@@ -21,38 +21,66 @@ use FIT\Profile\ProfileType;
  */
 final class SegmentFileMessage extends Message
 {
-    #[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-    public ?int $messageIndex;
+    public function getMessageIndex(): ?int
+    {
+        return $this->getValue(254);
+    }
 
-    #[Field('FileUuid', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $fileUuid;
+    public function getFileUuid(): ?string
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('Enabled', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $enabled;
+    public function getEnabled(): ?bool
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('UserProfilePrimaryKey', 4, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-    public ?int $userProfilePrimaryKey;
+    public function getUserProfilePrimaryKey(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('LeaderType', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SEGMENTLEADERBOARDTYPE)]
-    public ?int $leaderType;
+    public function getLeaderType(): ?int
+    {
+        return $this->getValue(7);
+    }
 
-    #[Field('LeaderGroupPrimaryKey', 8, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-    public ?int $leaderGroupPrimaryKey;
+    public function getLeaderGroupPrimaryKey(): ?int
+    {
+        return $this->getValue(8);
+    }
 
-    #[Field('LeaderActivityId', 9, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-    public ?int $leaderActivityId;
+    public function getLeaderActivityId(): ?int
+    {
+        return $this->getValue(9);
+    }
 
-    #[Field('LeaderActivityIdString', 10, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $leaderActivityIdString;
+    public function getLeaderActivityIdString(): ?string
+    {
+        return $this->getValue(10);
+    }
 
-    #[Field('DefaultRaceLeader', 11, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $defaultRaceLeader;
+    public function getDefaultRaceLeader(): ?int
+    {
+        return $this->getValue(11);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("SegmentFile", MessageNumber::SegmentFile);
+        parent::__construct("SegmentFile", MessageNumber::SegmentFile, [
+        new Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX),
+            new Field('FileUuid', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING),
+            new Field('Enabled', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL),
+            new Field('UserProfilePrimaryKey', 4, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32),
+            new Field('LeaderType', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SEGMENTLEADERBOARDTYPE),
+            new Field('LeaderGroupPrimaryKey', 8, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32),
+            new Field('LeaderActivityId', 9, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32),
+            new Field('LeaderActivityIdString', 10, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING),
+            new Field('DefaultRaceLeader', 11, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)
+        ]);
     }
 }

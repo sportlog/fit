@@ -12,15 +12,28 @@ declare(strict_types=1);
 namespace FIT\Profile;
 
 use ArrayIterator;
+use DateTime;
+use Exception;
+use FIT\FitBaseType;
+use FIT\FitBaseTypeDefinition;
 use IteratorAggregate;
 use Stringable;
 
 abstract class Message implements IteratorAggregate, Stringable
 {
-    public $values = [];
+    private $values = [];
+    private array $fields = [];
 
-    public function __construct(private string $name, private int $number)
+    public function __construct(private string $name, private int $number, array $fields = [])
     {
+        foreach ($fields as $field) {
+            $this->addField($field);
+        }
+    }
+
+    public function addField(Field $field): void
+    {
+        $this->fields[$field->getNumber()] = $field;
     }
 
     /**
@@ -29,7 +42,8 @@ abstract class Message implements IteratorAggregate, Stringable
      *
      * @return integer
      */
-    public function getMessageNumber(): int {
+    public function getMessageNumber(): int
+    {
         return $this->number;
     }
 
@@ -38,11 +52,13 @@ abstract class Message implements IteratorAggregate, Stringable
      *
      * @return string
      */
-    public function getName(): string {
+    public function getName(): string
+    {
         return $this->name;
     }
 
-    public function __toString() {
+    public function __toString()
+    {
         return sprintf('%s (%s)', $this->getName(), $this->getMessageNumber());
         /*$mapped = [];
 
@@ -64,7 +80,34 @@ abstract class Message implements IteratorAggregate, Stringable
         */
     }
 
-     /**
+    public function getValue(int|string $fieldNumber): mixed
+    {
+        return isset($this->values[$fieldNumber]) ? $this->values[$fieldNumber] : null;
+    }
+
+    public function setValue(int $fieldNumber, mixed $value, FitBaseTypeDefinition $fitBaseType): void
+    {
+        $field = $this->getField($fieldNumber);
+        if ($field !== null) {
+            $baseType = FitBaseType::fromType($field->getType());
+            if ($baseType !== $fitBaseType) {
+                throw new Exception(sprintf(
+                    'mismatch between base type in FIT message and base type declared in meta data of property "%s::%s".
+                    Base type from FIT file is "%s", base type from property meta is "%s"',
+                    self::class,
+                    $field->getName(),
+                    $fitBaseType->getName(),
+                    $baseType->getName()
+                ));
+            }
+
+            $value = $this->convertValueToFieldType($field, $value);
+        }
+
+        $this->values[$fieldNumber] = $value;
+    }
+
+    /**
      * Gets an iterator.
      *
      * {@inheritDoc}
@@ -73,5 +116,40 @@ abstract class Message implements IteratorAggregate, Stringable
     public function getIterator()
     {
         return new ArrayIterator($this->values);
+    }
+
+    public function getField(int $fieldNumber): ?Field
+    {
+        return isset($this->fields[$fieldNumber]) ? $this->fields[$fieldNumber] : null;
+    }
+
+    private function convertValueToFieldType(Field $field, mixed $value): mixed
+    {
+        $value /= $field->getScale();
+        $value -= $field->getOffset();
+
+        switch ($field->getProfileType()) {
+            case ProfileType::BOOL:
+                return $value !== 0;
+
+            case ProfileType::UINT8:
+            case ProfileType::SINT8:
+            case ProfileType::UINT16:
+            case ProfileType::SINT16:
+            case ProfileType::UINT16Z:
+            case ProfileType::UINT32:
+            case ProfileType::UINT32Z;
+            case ProfileType::SINT32:
+                return intval($value);
+
+            case ProfileType::LOCALDATETIME:
+            case ProfileType::DATETIME:
+                $date = new DateTime();
+                $date->setTimestamp(intval($value) + 631065600);
+                return $date;
+
+            default:
+                return $value;
+        }
     }
 }

@@ -21,32 +21,54 @@ use FIT\Profile\ProfileType;
  */
 final class ScheduleMessage extends Message
 {
-    #[Field('Manufacturer', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MANUFACTURER)]
-    public ?int $manufacturer;
+    public function getManufacturer(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('Product', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $product;
+    public function getProduct(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('SerialNumber', 2, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::UINT32Z)]
-    public ?int $serialNumber;
+    public function getSerialNumber(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('TimeCreated', 3, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-    public ?DateTime $timeCreated;
+    public function getTimeCreated(): ?DateTime
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('Completed', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-    public ?bool $completed;
+    public function getCompleted(): ?bool
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('Type', 5, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SCHEDULE)]
-    public ?int $type;
+    public function getType(): ?int
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('ScheduledTime', 6, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::LOCALDATETIME)]
-    public ?DateTime $scheduledTime;
+    public function getScheduledTime(): ?DateTime
+    {
+        return $this->getValue(6);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("Schedule", MessageNumber::Schedule);
+        parent::__construct("Schedule", MessageNumber::Schedule, [
+        new Field('Manufacturer', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MANUFACTURER),
+            new Field('Product', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
+            new Field('SerialNumber', 2, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::UINT32Z),
+            new Field('TimeCreated', 3, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME),
+            new Field('Completed', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL),
+            new Field('Type', 5, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SCHEDULE),
+            new Field('ScheduledTime', 6, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::LOCALDATETIME)
+        ]);
     }
 }

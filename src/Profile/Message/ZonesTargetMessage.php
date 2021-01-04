@@ -21,26 +21,42 @@ use FIT\Profile\ProfileType;
  */
 final class ZonesTargetMessage extends Message
 {
-    #[Field('MaxHeartRate', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $maxHeartRate;
+    public function getMaxHeartRate(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('ThresholdHeartRate', 2, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $thresholdHeartRate;
+    public function getThresholdHeartRate(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('FunctionalThresholdPower', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $functionalThresholdPower;
+    public function getFunctionalThresholdPower(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('HrCalcType', 5, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::HRZONECALC)]
-    public ?int $hrCalcType;
+    public function getHrCalcType(): ?int
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('PwrCalcType', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::PWRZONECALC)]
-    public ?int $pwrCalcType;
+    public function getPwrCalcType(): ?int
+    {
+        return $this->getValue(7);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("ZonesTarget", MessageNumber::ZonesTarget);
+        parent::__construct("ZonesTarget", MessageNumber::ZonesTarget, [
+        new Field('MaxHeartRate', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('ThresholdHeartRate', 2, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('FunctionalThresholdPower', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
+            new Field('HrCalcType', 5, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::HRZONECALC),
+            new Field('PwrCalcType', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::PWRZONECALC)
+        ]);
     }
 }

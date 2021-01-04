@@ -21,29 +21,48 @@ use FIT\Profile\ProfileType;
  */
 final class AntRxMessage extends Message
 {
-    #[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-    public ?DateTime $timestamp;
+    public function getTimestamp(): ?DateTime
+    {
+        return $this->getValue(253);
+    }
 
-    #[Field('FractionalTimestamp', 0, FitBaseType::UINT16, 32768.0, 0.0, 's', false, ProfileType::UINT16)]
-    public ?int $fractionalTimestamp;
+    public function getFractionalTimestamp(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('MesgId', 1, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-    public ?int $mesgId;
+    public function getMesgId(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('MesgData', 2, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-    public ?int $mesgData;
+    public function getMesgData(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('ChannelNumber', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $channelNumber;
+    public function getChannelNumber(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('Data', 4, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-    public ?int $data;
+    public function getData(): ?int
+    {
+        return $this->getValue(4);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("AntRx", MessageNumber::AntRx);
+        parent::__construct("AntRx", MessageNumber::AntRx, [
+        new Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME),
+            new Field('FractionalTimestamp', 0, FitBaseType::UINT16, 32768.0, 0.0, 's', false, ProfileType::UINT16),
+            new Field('MesgId', 1, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE),
+            new Field('MesgData', 2, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE),
+            new Field('ChannelNumber', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('Data', 4, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)
+        ]);
     }
 }

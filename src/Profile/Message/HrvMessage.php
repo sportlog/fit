@@ -21,14 +21,18 @@ use FIT\Profile\ProfileType;
  */
 final class HrvMessage extends Message
 {
-    #[Field('Time', 0, FitBaseType::UINT16, 1000.0, 0.0, 's', false, ProfileType::UINT16)]
-    public ?int $time;
+    public function getTime(): ?int
+    {
+        return $this->getValue(0);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("Hrv", MessageNumber::Hrv);
+        parent::__construct("Hrv", MessageNumber::Hrv, [
+        new Field('Time', 0, FitBaseType::UINT16, 1000.0, 0.0, 's', false, ProfileType::UINT16)
+        ]);
     }
 }

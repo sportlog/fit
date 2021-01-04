@@ -21,23 +21,36 @@ use FIT\Profile\ProfileType;
  */
 final class ExerciseTitleMessage extends Message
 {
-    #[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-    public ?int $messageIndex;
+    public function getMessageIndex(): ?int
+    {
+        return $this->getValue(254);
+    }
 
-    #[Field('ExerciseCategory', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::EXERCISECATEGORY)]
-    public ?int $exerciseCategory;
+    public function getExerciseCategory(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('ExerciseName', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $exerciseName;
+    public function getExerciseName(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('WktStepName', 2, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $wktStepName;
+    public function getWktStepName(): ?string
+    {
+        return $this->getValue(2);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("ExerciseTitle", MessageNumber::ExerciseTitle);
+        parent::__construct("ExerciseTitle", MessageNumber::ExerciseTitle, [
+        new Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX),
+            new Field('ExerciseCategory', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::EXERCISECATEGORY),
+            new Field('ExerciseName', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
+            new Field('WktStepName', 2, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)
+        ]);
     }
 }

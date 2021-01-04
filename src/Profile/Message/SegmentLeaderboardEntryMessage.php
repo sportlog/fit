@@ -21,32 +21,54 @@ use FIT\Profile\ProfileType;
  */
 final class SegmentLeaderboardEntryMessage extends Message
 {
-    #[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-    public ?int $messageIndex;
+    public function getMessageIndex(): ?int
+    {
+        return $this->getValue(254);
+    }
 
-    #[Field('Name', 0, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $name;
+    public function getName(): ?string
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('Type', 1, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SEGMENTLEADERBOARDTYPE)]
-    public ?int $type;
+    public function getType(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('GroupPrimaryKey', 2, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-    public ?int $groupPrimaryKey;
+    public function getGroupPrimaryKey(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('ActivityId', 3, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-    public ?int $activityId;
+    public function getActivityId(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('SegmentTime', 4, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
-    public ?int $segmentTime;
+    public function getSegmentTime(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('ActivityIdString', 5, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $activityIdString;
+    public function getActivityIdString(): ?string
+    {
+        return $this->getValue(5);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("SegmentLeaderboardEntry", MessageNumber::SegmentLeaderboardEntry);
+        parent::__construct("SegmentLeaderboardEntry", MessageNumber::SegmentLeaderboardEntry, [
+        new Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX),
+            new Field('Name', 0, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING),
+            new Field('Type', 1, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SEGMENTLEADERBOARDTYPE),
+            new Field('GroupPrimaryKey', 2, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32),
+            new Field('ActivityId', 3, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32),
+            new Field('SegmentTime', 4, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32),
+            new Field('ActivityIdString', 5, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)
+        ]);
     }
 }

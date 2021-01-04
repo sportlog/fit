@@ -21,35 +21,60 @@ use FIT\Profile\ProfileType;
  */
 final class ActivityMessage extends Message
 {
-    #[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-    public ?DateTime $timestamp;
+    public function getTimestamp(): ?DateTime
+    {
+        return $this->getValue(253);
+    }
 
-    #[Field('TotalTimerTime', 0, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
-    public ?int $totalTimerTime;
+    public function getTotalTimerTime(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('NumSessions', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $numSessions;
+    public function getNumSessions(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('Type', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ACTIVITY)]
-    public ?int $type;
+    public function getType(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('Event', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::EVENT)]
-    public ?int $event;
+    public function getEvent(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('EventType', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::EVENTTYPE)]
-    public ?int $eventType;
+    public function getEventType(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('LocalTimestamp', 5, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::LOCALDATETIME)]
-    public ?DateTime $localTimestamp;
+    public function getLocalTimestamp(): ?DateTime
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('EventGroup', 6, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $eventGroup;
+    public function getEventGroup(): ?int
+    {
+        return $this->getValue(6);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("Activity", MessageNumber::Activity);
+        parent::__construct("Activity", MessageNumber::Activity, [
+        new Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME),
+            new Field('TotalTimerTime', 0, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32),
+            new Field('NumSessions', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
+            new Field('Type', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ACTIVITY),
+            new Field('Event', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::EVENT),
+            new Field('EventType', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::EVENTTYPE),
+            new Field('LocalTimestamp', 5, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::LOCALDATETIME),
+            new Field('EventGroup', 6, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)
+        ]);
     }
 }

@@ -21,26 +21,42 @@ use FIT\Profile\ProfileType;
  */
 final class CameraEventMessage extends Message
 {
-    #[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-    public ?DateTime $timestamp;
+    public function getTimestamp(): ?DateTime
+    {
+        return $this->getValue(253);
+    }
 
-    #[Field('TimestampMs', 0, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
-    public ?int $timestampMs;
+    public function getTimestampMs(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('CameraEventType', 1, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::CAMERAEVENTTYPE)]
-    public ?int $cameraEventType;
+    public function getCameraEventType(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('CameraFileUuid', 2, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $cameraFileUuid;
+    public function getCameraFileUuid(): ?string
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('CameraOrientation', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::CAMERAORIENTATIONTYPE)]
-    public ?int $cameraOrientation;
+    public function getCameraOrientation(): ?int
+    {
+        return $this->getValue(3);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("CameraEvent", MessageNumber::CameraEvent);
+        parent::__construct("CameraEvent", MessageNumber::CameraEvent, [
+        new Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME),
+            new Field('TimestampMs', 0, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16),
+            new Field('CameraEventType', 1, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::CAMERAEVENTTYPE),
+            new Field('CameraFileUuid', 2, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING),
+            new Field('CameraOrientation', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::CAMERAORIENTATIONTYPE)
+        ]);
     }
 }

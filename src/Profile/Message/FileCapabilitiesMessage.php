@@ -21,29 +21,48 @@ use FIT\Profile\ProfileType;
  */
 final class FileCapabilitiesMessage extends Message
 {
-    #[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-    public ?int $messageIndex;
+    public function getMessageIndex(): ?int
+    {
+        return $this->getValue(254);
+    }
 
-    #[Field('Type', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::FILE)]
-    public ?int $type;
+    public function getType(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('Flags', 1, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::FILEFLAGS)]
-    public ?int $flags;
+    public function getFlags(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('Directory', 2, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $directory;
+    public function getDirectory(): ?string
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('MaxCount', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $maxCount;
+    public function getMaxCount(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('MaxSize', 4, FitBaseType::UINT32, 1.0, 0.0, 'bytes', false, ProfileType::UINT32)]
-    public ?int $maxSize;
+    public function getMaxSize(): ?int
+    {
+        return $this->getValue(4);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("FileCapabilities", MessageNumber::FileCapabilities);
+        parent::__construct("FileCapabilities", MessageNumber::FileCapabilities, [
+        new Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX),
+            new Field('Type', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::FILE),
+            new Field('Flags', 1, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::FILEFLAGS),
+            new Field('Directory', 2, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING),
+            new Field('MaxCount', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
+            new Field('MaxSize', 4, FitBaseType::UINT32, 1.0, 0.0, 'bytes', false, ProfileType::UINT32)
+        ]);
     }
 }

@@ -41,6 +41,7 @@ class MessageGenerator
         $printer = new PsrPrinter();
         $file = null;
         $class = null;
+        $fields = [];
         $files = [];
 
         $fitBaseTypeReflection = new ReflectionClass(FitBaseType::class);
@@ -81,10 +82,6 @@ class MessageGenerator
                 $class->setFinal(true)
                     ->addComment("{$classname} message")
                     ->setExtends(Message::class);
-
-                $method = $class->addMethod('__construct')
-                    ->addComment("Creates a new message instance")
-                    ->setBody(sprintf('parent::__construct("%1$s", MessageNumber::%1$s);', $classId));
             }
 
             if (str_starts_with($line, self::FIELD_START) && !is_null($file)) {
@@ -102,7 +99,6 @@ class MessageGenerator
                 $units = substr($units, 1, strlen($units) - 2);
 
                 $phpType = Type::MIXED;
-                $phpTypeNullable = false;
                 switch ($profileType) {
                     case ProfileType::BOOL:
                         $phpType = Type::BOOL;
@@ -122,7 +118,6 @@ class MessageGenerator
                     case ProfileType::LOCALDATETIME:
                     case ProfileType::DATETIME:
                         $phpType = \DateTime::class;
-                        $phpTypeNullable = true;
                         break;
 
                     case ProfileType::STRING:
@@ -146,16 +141,36 @@ class MessageGenerator
                 }
 
                 /** @var ClassType $class */
-                $class->addProperty(lcfirst($name))
+                /*$class->addProperty(lcfirst($name))
                     ->setType($phpType)
                     ->setNullable()
                     ->addAttribute(Field::class, [$name, (int)$num, 
                     new Literal("FitBaseType::" . $fitBaseTypeConstants[(int)$type]), (float)$scale, (float)$offset, $units, 
-                    $accumulated === 'true', new Literal("ProfileType::" . strtoupper($profileType))]);
+                    $accumulated === 'true', new Literal("ProfileType::" . strtoupper($profileType))]);*/
+
+                $class->addMethod("get{$name}")    
+                    ->setPublic()
+                    ->setReturnType($phpType)
+                    ->setReturnNullable()
+                    ->setBody('return $this->getValue(?);', [(int)$num]);
+
+
+                $fields[] = "new Field(" . join(", ", ["'{$name}'", (int)$num, new Literal("FitBaseType::" . $fitBaseTypeConstants[(int)$type]),
+                 number_format((float)$scale, 1, '.', ''), number_format((float)$offset, 1, '.', ''),
+                  "'{$units}'", $accumulated, new Literal("ProfileType::" . strtoupper($profileType))]) . ")";
+
+
             }
 
             if (str_starts_with($line, self::MESSAGE_END) && !is_null($file)) {
+                $method = $class->addMethod('__construct')
+                ->addComment("Creates a new message instance")
+                ->setBody(sprintf('parent::__construct("%1$s", MessageNumber::%1$s, [%3$s%2$s%3$s]);', $classId, join(", " . PHP_EOL . "    ", $fields), PHP_EOL));
+
                 $files[$class->getName() . ".php"] = $printer->printFile($file);
+                $class = null;
+                // echo print_r($fields, true) . "<br>";
+                $fields = [];
             }
         }
 

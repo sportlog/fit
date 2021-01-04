@@ -21,23 +21,36 @@ use FIT\Profile\ProfileType;
  */
 final class CapabilitiesMessage extends Message
 {
-    #[Field('Languages', 0, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-    public ?int $languages;
+    public function getLanguages(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('Sports', 1, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::SPORTBITS0)]
-    public ?int $sports;
+    public function getSports(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('WorkoutsSupported', 21, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::WORKOUTCAPABILITIES)]
-    public ?int $workoutsSupported;
+    public function getWorkoutsSupported(): ?int
+    {
+        return $this->getValue(21);
+    }
 
-    #[Field('ConnectivitySupported', 23, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::CONNECTIVITYCAPABILITIES)]
-    public ?int $connectivitySupported;
+    public function getConnectivitySupported(): ?int
+    {
+        return $this->getValue(23);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("Capabilities", MessageNumber::Capabilities);
+        parent::__construct("Capabilities", MessageNumber::Capabilities, [
+        new Field('Languages', 0, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z),
+            new Field('Sports', 1, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::SPORTBITS0),
+            new Field('WorkoutsSupported', 21, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::WORKOUTCAPABILITIES),
+            new Field('ConnectivitySupported', 23, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::CONNECTIVITYCAPABILITIES)
+        ]);
     }
 }

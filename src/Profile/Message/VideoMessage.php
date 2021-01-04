@@ -21,20 +21,30 @@ use FIT\Profile\ProfileType;
  */
 final class VideoMessage extends Message
 {
-    #[Field('Url', 0, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $url;
+    public function getUrl(): ?string
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('HostingProvider', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $hostingProvider;
+    public function getHostingProvider(): ?string
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('Duration', 2, FitBaseType::UINT32, 1.0, 0.0, 'ms', false, ProfileType::UINT32)]
-    public ?int $duration;
+    public function getDuration(): ?int
+    {
+        return $this->getValue(2);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("Video", MessageNumber::Video);
+        parent::__construct("Video", MessageNumber::Video, [
+        new Field('Url', 0, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING),
+            new Field('HostingProvider', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING),
+            new Field('Duration', 2, FitBaseType::UINT32, 1.0, 0.0, 'ms', false, ProfileType::UINT32)
+        ]);
     }
 }

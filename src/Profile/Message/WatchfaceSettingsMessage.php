@@ -21,20 +21,30 @@ use FIT\Profile\ProfileType;
  */
 final class WatchfaceSettingsMessage extends Message
 {
-    #[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-    public ?int $messageIndex;
+    public function getMessageIndex(): ?int
+    {
+        return $this->getValue(254);
+    }
 
-    #[Field('Mode', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WATCHFACEMODE)]
-    public ?int $mode;
+    public function getMode(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('Layout', 1, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-    public ?int $layout;
+    public function getLayout(): ?int
+    {
+        return $this->getValue(1);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("WatchfaceSettings", MessageNumber::WatchfaceSettings);
+        parent::__construct("WatchfaceSettings", MessageNumber::WatchfaceSettings, [
+        new Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX),
+            new Field('Mode', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WATCHFACEMODE),
+            new Field('Layout', 1, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)
+        ]);
     }
 }

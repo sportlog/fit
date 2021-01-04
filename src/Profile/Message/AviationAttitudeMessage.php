@@ -21,47 +21,84 @@ use FIT\Profile\ProfileType;
  */
 final class AviationAttitudeMessage extends Message
 {
-    #[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-    public ?DateTime $timestamp;
+    public function getTimestamp(): ?DateTime
+    {
+        return $this->getValue(253);
+    }
 
-    #[Field('TimestampMs', 0, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
-    public ?int $timestampMs;
+    public function getTimestampMs(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('SystemTime', 1, FitBaseType::UINT32, 1.0, 0.0, 'ms', false, ProfileType::UINT32)]
-    public ?int $systemTime;
+    public function getSystemTime(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('Pitch', 2, FitBaseType::SINT16, 1043038.0, 0.0, 'radians', false, ProfileType::SINT16)]
-    public ?int $pitch;
+    public function getPitch(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('Roll', 3, FitBaseType::SINT16, 1043038.0, 0.0, 'radians', false, ProfileType::SINT16)]
-    public ?int $roll;
+    public function getRoll(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('AccelLateral', 4, FitBaseType::SINT16, 100.0, 0.0, 'm/s^2', false, ProfileType::SINT16)]
-    public ?int $accelLateral;
+    public function getAccelLateral(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('AccelNormal', 5, FitBaseType::SINT16, 100.0, 0.0, 'm/s^2', false, ProfileType::SINT16)]
-    public ?int $accelNormal;
+    public function getAccelNormal(): ?int
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('TurnRate', 6, FitBaseType::SINT16, 1024.0, 0.0, 'radians/second', false, ProfileType::SINT16)]
-    public ?int $turnRate;
+    public function getTurnRate(): ?int
+    {
+        return $this->getValue(6);
+    }
 
-    #[Field('Stage', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ATTITUDESTAGE)]
-    public ?int $stage;
+    public function getStage(): ?int
+    {
+        return $this->getValue(7);
+    }
 
-    #[Field('AttitudeStageComplete', 8, FitBaseType::UINT8, 1.0, 0.0, '%', false, ProfileType::UINT8)]
-    public ?int $attitudeStageComplete;
+    public function getAttitudeStageComplete(): ?int
+    {
+        return $this->getValue(8);
+    }
 
-    #[Field('Track', 9, FitBaseType::UINT16, 1043038.0, 0.0, 'radians', false, ProfileType::UINT16)]
-    public ?int $track;
+    public function getTrack(): ?int
+    {
+        return $this->getValue(9);
+    }
 
-    #[Field('Validity', 10, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::ATTITUDEVALIDITY)]
-    public ?int $validity;
+    public function getValidity(): ?int
+    {
+        return $this->getValue(10);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("AviationAttitude", MessageNumber::AviationAttitude);
+        parent::__construct("AviationAttitude", MessageNumber::AviationAttitude, [
+        new Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME),
+            new Field('TimestampMs', 0, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16),
+            new Field('SystemTime', 1, FitBaseType::UINT32, 1.0, 0.0, 'ms', false, ProfileType::UINT32),
+            new Field('Pitch', 2, FitBaseType::SINT16, 1043038.0, 0.0, 'radians', false, ProfileType::SINT16),
+            new Field('Roll', 3, FitBaseType::SINT16, 1043038.0, 0.0, 'radians', false, ProfileType::SINT16),
+            new Field('AccelLateral', 4, FitBaseType::SINT16, 100.0, 0.0, 'm/s^2', false, ProfileType::SINT16),
+            new Field('AccelNormal', 5, FitBaseType::SINT16, 100.0, 0.0, 'm/s^2', false, ProfileType::SINT16),
+            new Field('TurnRate', 6, FitBaseType::SINT16, 1024.0, 0.0, 'radians/second', false, ProfileType::SINT16),
+            new Field('Stage', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ATTITUDESTAGE),
+            new Field('AttitudeStageComplete', 8, FitBaseType::UINT8, 1.0, 0.0, '%', false, ProfileType::UINT8),
+            new Field('Track', 9, FitBaseType::UINT16, 1043038.0, 0.0, 'radians', false, ProfileType::UINT16),
+            new Field('Validity', 10, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::ATTITUDEVALIDITY)
+        ]);
     }
 }

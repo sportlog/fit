@@ -21,32 +21,54 @@ use FIT\Profile\ProfileType;
  */
 final class VideoClipMessage extends Message
 {
-    #[Field('ClipNumber', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $clipNumber;
+    public function getClipNumber(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('StartTimestamp', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-    public ?DateTime $startTimestamp;
+    public function getStartTimestamp(): ?DateTime
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('StartTimestampMs', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $startTimestampMs;
+    public function getStartTimestampMs(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('EndTimestamp', 3, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-    public ?DateTime $endTimestamp;
+    public function getEndTimestamp(): ?DateTime
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('EndTimestampMs', 4, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $endTimestampMs;
+    public function getEndTimestampMs(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('ClipStart', 6, FitBaseType::UINT32, 1.0, 0.0, 'ms', false, ProfileType::UINT32)]
-    public ?int $clipStart;
+    public function getClipStart(): ?int
+    {
+        return $this->getValue(6);
+    }
 
-    #[Field('ClipEnd', 7, FitBaseType::UINT32, 1.0, 0.0, 'ms', false, ProfileType::UINT32)]
-    public ?int $clipEnd;
+    public function getClipEnd(): ?int
+    {
+        return $this->getValue(7);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("VideoClip", MessageNumber::VideoClip);
+        parent::__construct("VideoClip", MessageNumber::VideoClip, [
+        new Field('ClipNumber', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
+            new Field('StartTimestamp', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME),
+            new Field('StartTimestampMs', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
+            new Field('EndTimestamp', 3, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME),
+            new Field('EndTimestampMs', 4, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
+            new Field('ClipStart', 6, FitBaseType::UINT32, 1.0, 0.0, 'ms', false, ProfileType::UINT32),
+            new Field('ClipEnd', 7, FitBaseType::UINT32, 1.0, 0.0, 'ms', false, ProfileType::UINT32)
+        ]);
     }
 }

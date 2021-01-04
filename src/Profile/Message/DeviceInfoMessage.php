@@ -21,65 +21,120 @@ use FIT\Profile\ProfileType;
  */
 final class DeviceInfoMessage extends Message
 {
-    #[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-    public ?DateTime $timestamp;
+    public function getTimestamp(): ?DateTime
+    {
+        return $this->getValue(253);
+    }
 
-    #[Field('DeviceIndex', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::DEVICEINDEX)]
-    public ?int $deviceIndex;
+    public function getDeviceIndex(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('DeviceType', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $deviceType;
+    public function getDeviceType(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('Manufacturer', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MANUFACTURER)]
-    public ?int $manufacturer;
+    public function getManufacturer(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('SerialNumber', 3, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::UINT32Z)]
-    public ?int $serialNumber;
+    public function getSerialNumber(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('Product', 4, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $product;
+    public function getProduct(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('SoftwareVersion', 5, FitBaseType::UINT16, 100.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $softwareVersion;
+    public function getSoftwareVersion(): ?int
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('HardwareVersion', 6, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $hardwareVersion;
+    public function getHardwareVersion(): ?int
+    {
+        return $this->getValue(6);
+    }
 
-    #[Field('CumOperatingTime', 7, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::UINT32)]
-    public ?int $cumOperatingTime;
+    public function getCumOperatingTime(): ?int
+    {
+        return $this->getValue(7);
+    }
 
-    #[Field('BatteryVoltage', 10, FitBaseType::UINT16, 256.0, 0.0, 'V', false, ProfileType::UINT16)]
-    public ?int $batteryVoltage;
+    public function getBatteryVoltage(): ?int
+    {
+        return $this->getValue(10);
+    }
 
-    #[Field('BatteryStatus', 11, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::BATTERYSTATUS)]
-    public ?int $batteryStatus;
+    public function getBatteryStatus(): ?int
+    {
+        return $this->getValue(11);
+    }
 
-    #[Field('SensorPosition', 18, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BODYLOCATION)]
-    public ?int $sensorPosition;
+    public function getSensorPosition(): ?int
+    {
+        return $this->getValue(18);
+    }
 
-    #[Field('Descriptor', 19, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $descriptor;
+    public function getDescriptor(): ?string
+    {
+        return $this->getValue(19);
+    }
 
-    #[Field('AntTransmissionType', 20, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-    public ?int $antTransmissionType;
+    public function getAntTransmissionType(): ?int
+    {
+        return $this->getValue(20);
+    }
 
-    #[Field('AntDeviceNumber', 21, FitBaseType::UINT16Z, 1.0, 0.0, '', false, ProfileType::UINT16Z)]
-    public ?int $antDeviceNumber;
+    public function getAntDeviceNumber(): ?int
+    {
+        return $this->getValue(21);
+    }
 
-    #[Field('AntNetwork', 22, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ANTNETWORK)]
-    public ?int $antNetwork;
+    public function getAntNetwork(): ?int
+    {
+        return $this->getValue(22);
+    }
 
-    #[Field('SourceType', 25, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SOURCETYPE)]
-    public ?int $sourceType;
+    public function getSourceType(): ?int
+    {
+        return $this->getValue(25);
+    }
 
-    #[Field('ProductName', 27, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $productName;
+    public function getProductName(): ?string
+    {
+        return $this->getValue(27);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("DeviceInfo", MessageNumber::DeviceInfo);
+        parent::__construct("DeviceInfo", MessageNumber::DeviceInfo, [
+        new Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME),
+            new Field('DeviceIndex', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::DEVICEINDEX),
+            new Field('DeviceType', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('Manufacturer', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MANUFACTURER),
+            new Field('SerialNumber', 3, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::UINT32Z),
+            new Field('Product', 4, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
+            new Field('SoftwareVersion', 5, FitBaseType::UINT16, 100.0, 0.0, '', false, ProfileType::UINT16),
+            new Field('HardwareVersion', 6, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('CumOperatingTime', 7, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::UINT32),
+            new Field('BatteryVoltage', 10, FitBaseType::UINT16, 256.0, 0.0, 'V', false, ProfileType::UINT16),
+            new Field('BatteryStatus', 11, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::BATTERYSTATUS),
+            new Field('SensorPosition', 18, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BODYLOCATION),
+            new Field('Descriptor', 19, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING),
+            new Field('AntTransmissionType', 20, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z),
+            new Field('AntDeviceNumber', 21, FitBaseType::UINT16Z, 1.0, 0.0, '', false, ProfileType::UINT16Z),
+            new Field('AntNetwork', 22, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ANTNETWORK),
+            new Field('SourceType', 25, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SOURCETYPE),
+            new Field('ProductName', 27, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)
+        ]);
     }
 }

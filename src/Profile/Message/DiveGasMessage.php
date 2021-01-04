@@ -21,23 +21,36 @@ use FIT\Profile\ProfileType;
  */
 final class DiveGasMessage extends Message
 {
-    #[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-    public ?int $messageIndex;
+    public function getMessageIndex(): ?int
+    {
+        return $this->getValue(254);
+    }
 
-    #[Field('HeliumContent', 0, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
-    public ?int $heliumContent;
+    public function getHeliumContent(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('OxygenContent', 1, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
-    public ?int $oxygenContent;
+    public function getOxygenContent(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('Status', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DIVEGASSTATUS)]
-    public ?int $status;
+    public function getStatus(): ?int
+    {
+        return $this->getValue(2);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("DiveGas", MessageNumber::DiveGas);
+        parent::__construct("DiveGas", MessageNumber::DiveGas, [
+        new Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX),
+            new Field('HeliumContent', 0, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8),
+            new Field('OxygenContent', 1, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8),
+            new Field('Status', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DIVEGASSTATUS)
+        ]);
     }
 }

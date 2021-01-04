@@ -21,44 +21,78 @@ use FIT\Profile\ProfileType;
  */
 final class BloodPressureMessage extends Message
 {
-    #[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-    public ?DateTime $timestamp;
+    public function getTimestamp(): ?DateTime
+    {
+        return $this->getValue(253);
+    }
 
-    #[Field('SystolicPressure', 0, FitBaseType::UINT16, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16)]
-    public ?int $systolicPressure;
+    public function getSystolicPressure(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('DiastolicPressure', 1, FitBaseType::UINT16, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16)]
-    public ?int $diastolicPressure;
+    public function getDiastolicPressure(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('MeanArterialPressure', 2, FitBaseType::UINT16, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16)]
-    public ?int $meanArterialPressure;
+    public function getMeanArterialPressure(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('Map3SampleMean', 3, FitBaseType::UINT16, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16)]
-    public ?int $map3SampleMean;
+    public function getMap3SampleMean(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('MapMorningValues', 4, FitBaseType::UINT16, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16)]
-    public ?int $mapMorningValues;
+    public function getMapMorningValues(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('MapEveningValues', 5, FitBaseType::UINT16, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16)]
-    public ?int $mapEveningValues;
+    public function getMapEveningValues(): ?int
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('HeartRate', 6, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
-    public ?int $heartRate;
+    public function getHeartRate(): ?int
+    {
+        return $this->getValue(6);
+    }
 
-    #[Field('HeartRateType', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::HRTYPE)]
-    public ?int $heartRateType;
+    public function getHeartRateType(): ?int
+    {
+        return $this->getValue(7);
+    }
 
-    #[Field('Status', 8, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BPSTATUS)]
-    public ?int $status;
+    public function getStatus(): ?int
+    {
+        return $this->getValue(8);
+    }
 
-    #[Field('UserProfileIndex', 9, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-    public ?int $userProfileIndex;
+    public function getUserProfileIndex(): ?int
+    {
+        return $this->getValue(9);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("BloodPressure", MessageNumber::BloodPressure);
+        parent::__construct("BloodPressure", MessageNumber::BloodPressure, [
+        new Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME),
+            new Field('SystolicPressure', 0, FitBaseType::UINT16, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16),
+            new Field('DiastolicPressure', 1, FitBaseType::UINT16, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16),
+            new Field('MeanArterialPressure', 2, FitBaseType::UINT16, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16),
+            new Field('Map3SampleMean', 3, FitBaseType::UINT16, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16),
+            new Field('MapMorningValues', 4, FitBaseType::UINT16, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16),
+            new Field('MapEveningValues', 5, FitBaseType::UINT16, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16),
+            new Field('HeartRate', 6, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8),
+            new Field('HeartRateType', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::HRTYPE),
+            new Field('Status', 8, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BPSTATUS),
+            new Field('UserProfileIndex', 9, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)
+        ]);
     }
 }

@@ -21,26 +21,42 @@ use FIT\Profile\ProfileType;
  */
 final class MesgCapabilitiesMessage extends Message
 {
-    #[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-    public ?int $messageIndex;
+    public function getMessageIndex(): ?int
+    {
+        return $this->getValue(254);
+    }
 
-    #[Field('File', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::FILE)]
-    public ?int $file;
+    public function getFile(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('MesgNum', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESGNUM)]
-    public ?int $mesgNum;
+    public function getMesgNum(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('CountType', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::MESGCOUNT)]
-    public ?int $countType;
+    public function getCountType(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('Count', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $count;
+    public function getCount(): ?int
+    {
+        return $this->getValue(3);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("MesgCapabilities", MessageNumber::MesgCapabilities);
+        parent::__construct("MesgCapabilities", MessageNumber::MesgCapabilities, [
+        new Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX),
+            new Field('File', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::FILE),
+            new Field('MesgNum', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESGNUM),
+            new Field('CountType', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::MESGCOUNT),
+            new Field('Count', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)
+        ]);
     }
 }

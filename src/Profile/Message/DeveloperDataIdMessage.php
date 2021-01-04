@@ -21,26 +21,42 @@ use FIT\Profile\ProfileType;
  */
 final class DeveloperDataIdMessage extends Message
 {
-    #[Field('DeveloperId', 0, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-    public ?int $developerId;
+    public function getDeveloperId(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('ApplicationId', 1, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-    public ?int $applicationId;
+    public function getApplicationId(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('ManufacturerId', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MANUFACTURER)]
-    public ?int $manufacturerId;
+    public function getManufacturerId(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('DeveloperDataIndex', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $developerDataIndex;
+    public function getDeveloperDataIndex(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('ApplicationVersion', 4, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-    public ?int $applicationVersion;
+    public function getApplicationVersion(): ?int
+    {
+        return $this->getValue(4);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("DeveloperDataId", MessageNumber::DeveloperDataId);
+        parent::__construct("DeveloperDataId", MessageNumber::DeveloperDataId, [
+        new Field('DeveloperId', 0, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE),
+            new Field('ApplicationId', 1, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE),
+            new Field('ManufacturerId', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MANUFACTURER),
+            new Field('DeveloperDataIndex', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('ApplicationVersion', 4, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)
+        ]);
     }
 }

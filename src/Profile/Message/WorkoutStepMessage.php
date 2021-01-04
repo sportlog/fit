@@ -21,56 +21,102 @@ use FIT\Profile\ProfileType;
  */
 final class WorkoutStepMessage extends Message
 {
-    #[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-    public ?int $messageIndex;
+    public function getMessageIndex(): ?int
+    {
+        return $this->getValue(254);
+    }
 
-    #[Field('WktStepName', 0, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $wktStepName;
+    public function getWktStepName(): ?string
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('DurationType', 1, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WKTSTEPDURATION)]
-    public ?int $durationType;
+    public function getDurationType(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('DurationValue', 2, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-    public ?int $durationValue;
+    public function getDurationValue(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('TargetType', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WKTSTEPTARGET)]
-    public ?int $targetType;
+    public function getTargetType(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('TargetValue', 4, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-    public ?int $targetValue;
+    public function getTargetValue(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('CustomTargetValueLow', 5, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-    public ?int $customTargetValueLow;
+    public function getCustomTargetValueLow(): ?int
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('CustomTargetValueHigh', 6, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-    public ?int $customTargetValueHigh;
+    public function getCustomTargetValueHigh(): ?int
+    {
+        return $this->getValue(6);
+    }
 
-    #[Field('Intensity', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::INTENSITY)]
-    public ?int $intensity;
+    public function getIntensity(): ?int
+    {
+        return $this->getValue(7);
+    }
 
-    #[Field('Notes', 8, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $notes;
+    public function getNotes(): ?string
+    {
+        return $this->getValue(8);
+    }
 
-    #[Field('Equipment', 9, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WORKOUTEQUIPMENT)]
-    public ?int $equipment;
+    public function getEquipment(): ?int
+    {
+        return $this->getValue(9);
+    }
 
-    #[Field('ExerciseCategory', 10, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::EXERCISECATEGORY)]
-    public ?int $exerciseCategory;
+    public function getExerciseCategory(): ?int
+    {
+        return $this->getValue(10);
+    }
 
-    #[Field('ExerciseName', 11, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $exerciseName;
+    public function getExerciseName(): ?int
+    {
+        return $this->getValue(11);
+    }
 
-    #[Field('ExerciseWeight', 12, FitBaseType::UINT16, 100.0, 0.0, 'kg', false, ProfileType::UINT16)]
-    public ?int $exerciseWeight;
+    public function getExerciseWeight(): ?int
+    {
+        return $this->getValue(12);
+    }
 
-    #[Field('WeightDisplayUnit', 13, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::FITBASEUNIT)]
-    public ?int $weightDisplayUnit;
+    public function getWeightDisplayUnit(): ?int
+    {
+        return $this->getValue(13);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("WorkoutStep", MessageNumber::WorkoutStep);
+        parent::__construct("WorkoutStep", MessageNumber::WorkoutStep, [
+        new Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX),
+            new Field('WktStepName', 0, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING),
+            new Field('DurationType', 1, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WKTSTEPDURATION),
+            new Field('DurationValue', 2, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32),
+            new Field('TargetType', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WKTSTEPTARGET),
+            new Field('TargetValue', 4, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32),
+            new Field('CustomTargetValueLow', 5, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32),
+            new Field('CustomTargetValueHigh', 6, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32),
+            new Field('Intensity', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::INTENSITY),
+            new Field('Notes', 8, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING),
+            new Field('Equipment', 9, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WORKOUTEQUIPMENT),
+            new Field('ExerciseCategory', 10, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::EXERCISECATEGORY),
+            new Field('ExerciseName', 11, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
+            new Field('ExerciseWeight', 12, FitBaseType::UINT16, 100.0, 0.0, 'kg', false, ProfileType::UINT16),
+            new Field('WeightDisplayUnit', 13, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::FITBASEUNIT)
+        ]);
     }
 }

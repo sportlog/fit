@@ -21,29 +21,48 @@ use FIT\Profile\ProfileType;
  */
 final class WeatherAlertMessage extends Message
 {
-    #[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-    public ?DateTime $timestamp;
+    public function getTimestamp(): ?DateTime
+    {
+        return $this->getValue(253);
+    }
 
-    #[Field('ReportId', 0, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $reportId;
+    public function getReportId(): ?string
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('IssueTime', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-    public ?DateTime $issueTime;
+    public function getIssueTime(): ?DateTime
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('ExpireTime', 2, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-    public ?DateTime $expireTime;
+    public function getExpireTime(): ?DateTime
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('Severity', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WEATHERSEVERITY)]
-    public ?int $severity;
+    public function getSeverity(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('Type', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WEATHERSEVERETYPE)]
-    public ?int $type;
+    public function getType(): ?int
+    {
+        return $this->getValue(4);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("WeatherAlert", MessageNumber::WeatherAlert);
+        parent::__construct("WeatherAlert", MessageNumber::WeatherAlert, [
+        new Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME),
+            new Field('ReportId', 0, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING),
+            new Field('IssueTime', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME),
+            new Field('ExpireTime', 2, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME),
+            new Field('Severity', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WEATHERSEVERITY),
+            new Field('Type', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WEATHERSEVERETYPE)
+        ]);
     }
 }

@@ -89,7 +89,7 @@ class Decoder
         
         // Assoociative array with the field definition number as key
         // and it's decoded value.
-        $fields = [];
+        $message = MessageFactory::create($definition['global_message_number']);
         foreach ($definition['field_definitions'] as $fieldDefinition) {
             $size = $fieldDefinition['size'];
             $fitBaseType = FitBaseType::fromType($fieldDefinition['base_type']);
@@ -122,13 +122,9 @@ class Decoder
                     $tmpSize -= $fitBaseTypeSize;
                 }
             }
-            $fields[$fieldDefinition['field_definition_number']] = [
-                'value' => $fieldValue,
-                'type' => $fitBaseType
-            ];
+            $message->setValue($fieldDefinition['field_definition_number'], $fieldValue, $fitBaseType);
         }
-
-        $message = MessageFactory::create($definition['global_message_number'], $fields);
+        
         $this->logger->info("Data for '{$localMessagType}'");
 
         return $message;

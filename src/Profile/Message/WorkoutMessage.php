@@ -21,32 +21,54 @@ use FIT\Profile\ProfileType;
  */
 final class WorkoutMessage extends Message
 {
-    #[Field('Sport', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SPORT)]
-    public ?int $sport;
+    public function getSport(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('Capabilities', 5, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::WORKOUTCAPABILITIES)]
-    public ?int $capabilities;
+    public function getCapabilities(): ?int
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('NumValidSteps', 6, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $numValidSteps;
+    public function getNumValidSteps(): ?int
+    {
+        return $this->getValue(6);
+    }
 
-    #[Field('WktName', 8, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-    public ?string $wktName;
+    public function getWktName(): ?string
+    {
+        return $this->getValue(8);
+    }
 
-    #[Field('SubSport', 11, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SUBSPORT)]
-    public ?int $subSport;
+    public function getSubSport(): ?int
+    {
+        return $this->getValue(11);
+    }
 
-    #[Field('PoolLength', 14, FitBaseType::UINT16, 100.0, 0.0, 'm', false, ProfileType::UINT16)]
-    public ?int $poolLength;
+    public function getPoolLength(): ?int
+    {
+        return $this->getValue(14);
+    }
 
-    #[Field('PoolLengthUnit', 15, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYMEASURE)]
-    public ?int $poolLengthUnit;
+    public function getPoolLengthUnit(): ?int
+    {
+        return $this->getValue(15);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("Workout", MessageNumber::Workout);
+        parent::__construct("Workout", MessageNumber::Workout, [
+        new Field('Sport', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SPORT),
+            new Field('Capabilities', 5, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::WORKOUTCAPABILITIES),
+            new Field('NumValidSteps', 6, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
+            new Field('WktName', 8, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING),
+            new Field('SubSport', 11, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SUBSPORT),
+            new Field('PoolLength', 14, FitBaseType::UINT16, 100.0, 0.0, 'm', false, ProfileType::UINT16),
+            new Field('PoolLengthUnit', 15, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYMEASURE)
+        ]);
     }
 }

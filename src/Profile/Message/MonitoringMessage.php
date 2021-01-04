@@ -21,98 +21,186 @@ use FIT\Profile\ProfileType;
  */
 final class MonitoringMessage extends Message
 {
-    #[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-    public ?DateTime $timestamp;
+    public function getTimestamp(): ?DateTime
+    {
+        return $this->getValue(253);
+    }
 
-    #[Field('DeviceIndex', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::DEVICEINDEX)]
-    public ?int $deviceIndex;
+    public function getDeviceIndex(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('Calories', 1, FitBaseType::UINT16, 1.0, 0.0, 'kcal', false, ProfileType::UINT16)]
-    public ?int $calories;
+    public function getCalories(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('Distance', 2, FitBaseType::UINT32, 100.0, 0.0, 'm', false, ProfileType::UINT32)]
-    public ?int $distance;
+    public function getDistance(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('Cycles', 3, FitBaseType::UINT32, 2.0, 0.0, 'cycles', false, ProfileType::UINT32)]
-    public ?int $cycles;
+    public function getCycles(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('ActiveTime', 4, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
-    public ?int $activeTime;
+    public function getActiveTime(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('ActivityType', 5, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ACTIVITYTYPE)]
-    public ?int $activityType;
+    public function getActivityType(): ?int
+    {
+        return $this->getValue(5);
+    }
 
-    #[Field('ActivitySubtype', 6, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ACTIVITYSUBTYPE)]
-    public ?int $activitySubtype;
+    public function getActivitySubtype(): ?int
+    {
+        return $this->getValue(6);
+    }
 
-    #[Field('ActivityLevel', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ACTIVITYLEVEL)]
-    public ?int $activityLevel;
+    public function getActivityLevel(): ?int
+    {
+        return $this->getValue(7);
+    }
 
-    #[Field('Distance16', 8, FitBaseType::UINT16, 1.0, 0.0, '100 * m', false, ProfileType::UINT16)]
-    public ?int $distance16;
+    public function getDistance16(): ?int
+    {
+        return $this->getValue(8);
+    }
 
-    #[Field('Cycles16', 9, FitBaseType::UINT16, 1.0, 0.0, '2 * cycles (steps)', false, ProfileType::UINT16)]
-    public ?int $cycles16;
+    public function getCycles16(): ?int
+    {
+        return $this->getValue(9);
+    }
 
-    #[Field('ActiveTime16', 10, FitBaseType::UINT16, 1.0, 0.0, 's', false, ProfileType::UINT16)]
-    public ?int $activeTime16;
+    public function getActiveTime16(): ?int
+    {
+        return $this->getValue(10);
+    }
 
-    #[Field('LocalTimestamp', 11, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::LOCALDATETIME)]
-    public ?DateTime $localTimestamp;
+    public function getLocalTimestamp(): ?DateTime
+    {
+        return $this->getValue(11);
+    }
 
-    #[Field('Temperature', 12, FitBaseType::SINT16, 100.0, 0.0, 'C', false, ProfileType::SINT16)]
-    public ?int $temperature;
+    public function getTemperature(): ?int
+    {
+        return $this->getValue(12);
+    }
 
-    #[Field('TemperatureMin', 14, FitBaseType::SINT16, 100.0, 0.0, 'C', false, ProfileType::SINT16)]
-    public ?int $temperatureMin;
+    public function getTemperatureMin(): ?int
+    {
+        return $this->getValue(14);
+    }
 
-    #[Field('TemperatureMax', 15, FitBaseType::SINT16, 100.0, 0.0, 'C', false, ProfileType::SINT16)]
-    public ?int $temperatureMax;
+    public function getTemperatureMax(): ?int
+    {
+        return $this->getValue(15);
+    }
 
-    #[Field('ActivityTime', 16, FitBaseType::UINT16, 1.0, 0.0, 'minutes', false, ProfileType::UINT16)]
-    public ?int $activityTime;
+    public function getActivityTime(): ?int
+    {
+        return $this->getValue(16);
+    }
 
-    #[Field('ActiveCalories', 19, FitBaseType::UINT16, 1.0, 0.0, 'kcal', false, ProfileType::UINT16)]
-    public ?int $activeCalories;
+    public function getActiveCalories(): ?int
+    {
+        return $this->getValue(19);
+    }
 
-    #[Field('CurrentActivityTypeIntensity', 24, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-    public ?int $currentActivityTypeIntensity;
+    public function getCurrentActivityTypeIntensity(): ?int
+    {
+        return $this->getValue(24);
+    }
 
-    #[Field('TimestampMin8', 25, FitBaseType::UINT8, 1.0, 0.0, 'min', false, ProfileType::UINT8)]
-    public ?int $timestampMin8;
+    public function getTimestampMin8(): ?int
+    {
+        return $this->getValue(25);
+    }
 
-    #[Field('Timestamp16', 26, FitBaseType::UINT16, 1.0, 0.0, 's', false, ProfileType::UINT16)]
-    public ?int $timestamp16;
+    public function getTimestamp16(): ?int
+    {
+        return $this->getValue(26);
+    }
 
-    #[Field('HeartRate', 27, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
-    public ?int $heartRate;
+    public function getHeartRate(): ?int
+    {
+        return $this->getValue(27);
+    }
 
-    #[Field('Intensity', 28, FitBaseType::UINT8, 10.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $intensity;
+    public function getIntensity(): ?int
+    {
+        return $this->getValue(28);
+    }
 
-    #[Field('DurationMin', 29, FitBaseType::UINT16, 1.0, 0.0, 'min', false, ProfileType::UINT16)]
-    public ?int $durationMin;
+    public function getDurationMin(): ?int
+    {
+        return $this->getValue(29);
+    }
 
-    #[Field('Duration', 30, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::UINT32)]
-    public ?int $duration;
+    public function getDuration(): ?int
+    {
+        return $this->getValue(30);
+    }
 
-    #[Field('Ascent', 31, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32)]
-    public ?int $ascent;
+    public function getAscent(): ?int
+    {
+        return $this->getValue(31);
+    }
 
-    #[Field('Descent', 32, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32)]
-    public ?int $descent;
+    public function getDescent(): ?int
+    {
+        return $this->getValue(32);
+    }
 
-    #[Field('ModerateActivityMinutes', 33, FitBaseType::UINT16, 1.0, 0.0, 'minutes', false, ProfileType::UINT16)]
-    public ?int $moderateActivityMinutes;
+    public function getModerateActivityMinutes(): ?int
+    {
+        return $this->getValue(33);
+    }
 
-    #[Field('VigorousActivityMinutes', 34, FitBaseType::UINT16, 1.0, 0.0, 'minutes', false, ProfileType::UINT16)]
-    public ?int $vigorousActivityMinutes;
+    public function getVigorousActivityMinutes(): ?int
+    {
+        return $this->getValue(34);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("Monitoring", MessageNumber::Monitoring);
+        parent::__construct("Monitoring", MessageNumber::Monitoring, [
+        new Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME),
+            new Field('DeviceIndex', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::DEVICEINDEX),
+            new Field('Calories', 1, FitBaseType::UINT16, 1.0, 0.0, 'kcal', false, ProfileType::UINT16),
+            new Field('Distance', 2, FitBaseType::UINT32, 100.0, 0.0, 'm', false, ProfileType::UINT32),
+            new Field('Cycles', 3, FitBaseType::UINT32, 2.0, 0.0, 'cycles', false, ProfileType::UINT32),
+            new Field('ActiveTime', 4, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32),
+            new Field('ActivityType', 5, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ACTIVITYTYPE),
+            new Field('ActivitySubtype', 6, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ACTIVITYSUBTYPE),
+            new Field('ActivityLevel', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ACTIVITYLEVEL),
+            new Field('Distance16', 8, FitBaseType::UINT16, 1.0, 0.0, '100 * m', false, ProfileType::UINT16),
+            new Field('Cycles16', 9, FitBaseType::UINT16, 1.0, 0.0, '2 * cycles (steps)', false, ProfileType::UINT16),
+            new Field('ActiveTime16', 10, FitBaseType::UINT16, 1.0, 0.0, 's', false, ProfileType::UINT16),
+            new Field('LocalTimestamp', 11, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::LOCALDATETIME),
+            new Field('Temperature', 12, FitBaseType::SINT16, 100.0, 0.0, 'C', false, ProfileType::SINT16),
+            new Field('TemperatureMin', 14, FitBaseType::SINT16, 100.0, 0.0, 'C', false, ProfileType::SINT16),
+            new Field('TemperatureMax', 15, FitBaseType::SINT16, 100.0, 0.0, 'C', false, ProfileType::SINT16),
+            new Field('ActivityTime', 16, FitBaseType::UINT16, 1.0, 0.0, 'minutes', false, ProfileType::UINT16),
+            new Field('ActiveCalories', 19, FitBaseType::UINT16, 1.0, 0.0, 'kcal', false, ProfileType::UINT16),
+            new Field('CurrentActivityTypeIntensity', 24, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE),
+            new Field('TimestampMin8', 25, FitBaseType::UINT8, 1.0, 0.0, 'min', false, ProfileType::UINT8),
+            new Field('Timestamp16', 26, FitBaseType::UINT16, 1.0, 0.0, 's', false, ProfileType::UINT16),
+            new Field('HeartRate', 27, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8),
+            new Field('Intensity', 28, FitBaseType::UINT8, 10.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('DurationMin', 29, FitBaseType::UINT16, 1.0, 0.0, 'min', false, ProfileType::UINT16),
+            new Field('Duration', 30, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::UINT32),
+            new Field('Ascent', 31, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32),
+            new Field('Descent', 32, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32),
+            new Field('ModerateActivityMinutes', 33, FitBaseType::UINT16, 1.0, 0.0, 'minutes', false, ProfileType::UINT16),
+            new Field('VigorousActivityMinutes', 34, FitBaseType::UINT16, 1.0, 0.0, 'minutes', false, ProfileType::UINT16)
+        ]);
     }
 }

@@ -21,32 +21,54 @@ use FIT\Profile\ProfileType;
  */
 final class ClimbProMessage extends Message
 {
-    #[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-    public ?DateTime $timestamp;
+    public function getTimestamp(): ?DateTime
+    {
+        return $this->getValue(253);
+    }
 
-    #[Field('PositionLat', 0, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32)]
-    public ?int $positionLat;
+    public function getPositionLat(): ?int
+    {
+        return $this->getValue(0);
+    }
 
-    #[Field('PositionLong', 1, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32)]
-    public ?int $positionLong;
+    public function getPositionLong(): ?int
+    {
+        return $this->getValue(1);
+    }
 
-    #[Field('ClimbProEvent', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::CLIMBPROEVENT)]
-    public ?int $climbProEvent;
+    public function getClimbProEvent(): ?int
+    {
+        return $this->getValue(2);
+    }
 
-    #[Field('ClimbNumber', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-    public ?int $climbNumber;
+    public function getClimbNumber(): ?int
+    {
+        return $this->getValue(3);
+    }
 
-    #[Field('ClimbCategory', 4, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-    public ?int $climbCategory;
+    public function getClimbCategory(): ?int
+    {
+        return $this->getValue(4);
+    }
 
-    #[Field('CurrentDist', 5, FitBaseType::FLOAT32, 1.0, 0.0, 'm', false, ProfileType::FLOAT32)]
-    public ?float $currentDist;
+    public function getCurrentDist(): ?float
+    {
+        return $this->getValue(5);
+    }
 
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct("ClimbPro", MessageNumber::ClimbPro);
+        parent::__construct("ClimbPro", MessageNumber::ClimbPro, [
+        new Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME),
+            new Field('PositionLat', 0, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32),
+            new Field('PositionLong', 1, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32),
+            new Field('ClimbProEvent', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::CLIMBPROEVENT),
+            new Field('ClimbNumber', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
+            new Field('ClimbCategory', 4, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
+            new Field('CurrentDist', 5, FitBaseType::FLOAT32, 1.0, 0.0, 'm', false, ProfileType::FLOAT32)
+        ]);
     }
 }
