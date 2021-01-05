@@ -31,11 +31,17 @@ final class StressLevelMessage extends Message
         parent::__construct('StressLevel', MessageNumber::StressLevel);
     }
 
+    /**
+     * Gets the StressLevelValue
+     */
     public function getStressLevelValue(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the StressLevelTime
+     */
     public function getStressLevelTime(): ?DateTime
     {
         return $this->getValue(1);

@@ -33,21 +33,33 @@ final class DiveGasMessage extends Message
         parent::__construct('DiveGas', MessageNumber::DiveGas);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the HeliumContent
+     */
     public function getHeliumContent(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the OxygenContent
+     */
     public function getOxygenContent(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Status
+     */
     public function getStatus(): ?int
     {
         return $this->getValue(2);

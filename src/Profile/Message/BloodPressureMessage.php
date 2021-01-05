@@ -40,56 +40,89 @@ final class BloodPressureMessage extends Message
         parent::__construct('BloodPressure', MessageNumber::BloodPressure);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the SystolicPressure
+     */
     public function getSystolicPressure(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the DiastolicPressure
+     */
     public function getDiastolicPressure(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the MeanArterialPressure
+     */
     public function getMeanArterialPressure(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the Map3SampleMean
+     */
     public function getMap3SampleMean(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the MapMorningValues
+     */
     public function getMapMorningValues(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the MapEveningValues
+     */
     public function getMapEveningValues(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the HeartRate
+     */
     public function getHeartRate(): ?int
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the HeartRateType
+     */
     public function getHeartRateType(): ?int
     {
         return $this->getValue(7);
     }
 
+    /**
+     * Gets the Status
+     */
     public function getStatus(): ?int
     {
         return $this->getValue(8);
     }
 
+    /**
+     * Gets the UserProfileIndex
+     */
     public function getUserProfileIndex(): ?int
     {
         return $this->getValue(9);

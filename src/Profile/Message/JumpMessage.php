@@ -39,51 +39,81 @@ final class JumpMessage extends Message
         parent::__construct('Jump', MessageNumber::Jump);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the Distance
+     */
     public function getDistance(): ?float
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Height
+     */
     public function getHeight(): ?float
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Rotations
+     */
     public function getRotations(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the HangTime
+     */
     public function getHangTime(): ?float
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the Score
+     */
     public function getScore(): ?float
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the PositionLat
+     */
     public function getPositionLat(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the PositionLong
+     */
     public function getPositionLong(): ?int
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the Speed
+     */
     public function getSpeed(): ?int
     {
         return $this->getValue(7);
     }
 
+    /**
+     * Gets the EnhancedSpeed
+     */
     public function getEnhancedSpeed(): ?int
     {
         return $this->getValue(8);

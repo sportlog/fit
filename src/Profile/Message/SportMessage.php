@@ -32,16 +32,25 @@ final class SportMessage extends Message
         parent::__construct('Sport', MessageNumber::Sport);
     }
 
+    /**
+     * Gets the Sport
+     */
     public function getSport(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the SubSport
+     */
     public function getSubSport(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Name
+     */
     public function getName(): ?string
     {
         return $this->getValue(3);

@@ -51,111 +51,177 @@ final class DiveSettingsMessage extends Message
         parent::__construct('DiveSettings', MessageNumber::DiveSettings);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the Name
+     */
     public function getName(): ?string
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Model
+     */
     public function getModel(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the GfLow
+     */
     public function getGfLow(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the GfHigh
+     */
     public function getGfHigh(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the WaterType
+     */
     public function getWaterType(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the WaterDensity
+     */
     public function getWaterDensity(): ?float
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the Po2Warn
+     */
     public function getPo2Warn(): ?int
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the Po2Critical
+     */
     public function getPo2Critical(): ?int
     {
         return $this->getValue(7);
     }
 
+    /**
+     * Gets the Po2Deco
+     */
     public function getPo2Deco(): ?int
     {
         return $this->getValue(8);
     }
 
+    /**
+     * Gets the SafetyStopEnabled
+     */
     public function getSafetyStopEnabled(): ?bool
     {
         return $this->getValue(9);
     }
 
+    /**
+     * Gets the BottomDepth
+     */
     public function getBottomDepth(): ?float
     {
         return $this->getValue(10);
     }
 
+    /**
+     * Gets the BottomTime
+     */
     public function getBottomTime(): ?int
     {
         return $this->getValue(11);
     }
 
+    /**
+     * Gets the ApneaCountdownEnabled
+     */
     public function getApneaCountdownEnabled(): ?bool
     {
         return $this->getValue(12);
     }
 
+    /**
+     * Gets the ApneaCountdownTime
+     */
     public function getApneaCountdownTime(): ?int
     {
         return $this->getValue(13);
     }
 
+    /**
+     * Gets the BacklightMode
+     */
     public function getBacklightMode(): ?int
     {
         return $this->getValue(14);
     }
 
+    /**
+     * Gets the BacklightBrightness
+     */
     public function getBacklightBrightness(): ?int
     {
         return $this->getValue(15);
     }
 
+    /**
+     * Gets the BacklightTimeout
+     */
     public function getBacklightTimeout(): ?int
     {
         return $this->getValue(16);
     }
 
+    /**
+     * Gets the RepeatDiveInterval
+     */
     public function getRepeatDiveInterval(): ?int
     {
         return $this->getValue(17);
     }
 
+    /**
+     * Gets the SafetyStopTime
+     */
     public function getSafetyStopTime(): ?int
     {
         return $this->getValue(18);
     }
 
+    /**
+     * Gets the HeartRateSourceType
+     */
     public function getHeartRateSourceType(): ?int
     {
         return $this->getValue(19);
     }
 
+    /**
+     * Gets the HeartRateSource
+     */
     public function getHeartRateSource(): ?int
     {
         return $this->getValue(20);

@@ -38,46 +38,73 @@ final class GyroscopeDataMessage extends Message
         parent::__construct('GyroscopeData', MessageNumber::GyroscopeData);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the TimestampMs
+     */
     public function getTimestampMs(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the SampleTimeOffset
+     */
     public function getSampleTimeOffset(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the GyroX
+     */
     public function getGyroX(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the GyroY
+     */
     public function getGyroY(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the GyroZ
+     */
     public function getGyroZ(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the CalibratedGyroX
+     */
     public function getCalibratedGyroX(): ?float
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the CalibratedGyroY
+     */
     public function getCalibratedGyroY(): ?float
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the CalibratedGyroZ
+     */
     public function getCalibratedGyroZ(): ?float
     {
         return $this->getValue(7);

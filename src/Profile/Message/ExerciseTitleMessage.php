@@ -33,21 +33,33 @@ final class ExerciseTitleMessage extends Message
         parent::__construct('ExerciseTitle', MessageNumber::ExerciseTitle);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the ExerciseCategory
+     */
     public function getExerciseCategory(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the ExerciseName
+     */
     public function getExerciseName(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the WktStepName
+     */
     public function getWktStepName(): ?string
     {
         return $this->getValue(2);

@@ -35,31 +35,49 @@ final class AntTxMessage extends Message
         parent::__construct('AntTx', MessageNumber::AntTx);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the FractionalTimestamp
+     */
     public function getFractionalTimestamp(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the MesgId
+     */
     public function getMesgId(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the MesgData
+     */
     public function getMesgData(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the ChannelNumber
+     */
     public function getChannelNumber(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the Data
+     */
     public function getData(): ?int
     {
         return $this->getValue(4);

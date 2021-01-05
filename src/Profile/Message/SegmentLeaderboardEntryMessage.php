@@ -36,36 +36,57 @@ final class SegmentLeaderboardEntryMessage extends Message
         parent::__construct('SegmentLeaderboardEntry', MessageNumber::SegmentLeaderboardEntry);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the Name
+     */
     public function getName(): ?string
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Type
+     */
     public function getType(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the GroupPrimaryKey
+     */
     public function getGroupPrimaryKey(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the ActivityId
+     */
     public function getActivityId(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the SegmentTime
+     */
     public function getSegmentTime(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the ActivityIdString
+     */
     public function getActivityIdString(): ?string
     {
         return $this->getValue(5);

@@ -37,41 +37,65 @@ final class SdmProfileMessage extends Message
         parent::__construct('SdmProfile', MessageNumber::SdmProfile);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the Enabled
+     */
     public function getEnabled(): ?bool
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the SdmAntId
+     */
     public function getSdmAntId(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the SdmCalFactor
+     */
     public function getSdmCalFactor(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the Odometer
+     */
     public function getOdometer(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the SpeedSource
+     */
     public function getSpeedSource(): ?bool
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the SdmAntIdTransType
+     */
     public function getSdmAntIdTransType(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the OdometerRollover
+     */
     public function getOdometerRollover(): ?int
     {
         return $this->getValue(7);

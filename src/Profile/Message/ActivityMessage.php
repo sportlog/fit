@@ -37,41 +37,65 @@ final class ActivityMessage extends Message
         parent::__construct('Activity', MessageNumber::Activity);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the TotalTimerTime
+     */
     public function getTotalTimerTime(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the NumSessions
+     */
     public function getNumSessions(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Type
+     */
     public function getType(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the Event
+     */
     public function getEvent(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the EventType
+     */
     public function getEventType(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the LocalTimestamp
+     */
     public function getLocalTimestamp(): ?DateTime
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the EventGroup
+     */
     public function getEventGroup(): ?int
     {
         return $this->getValue(6);

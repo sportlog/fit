@@ -37,41 +37,65 @@ final class CoursePointMessage extends Message
         parent::__construct('CoursePoint', MessageNumber::CoursePoint);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the PositionLat
+     */
     public function getPositionLat(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the PositionLong
+     */
     public function getPositionLong(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the Distance
+     */
     public function getDistance(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the Type
+     */
     public function getType(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the Name
+     */
     public function getName(): ?string
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the Favorite
+     */
     public function getFavorite(): ?bool
     {
         return $this->getValue(8);

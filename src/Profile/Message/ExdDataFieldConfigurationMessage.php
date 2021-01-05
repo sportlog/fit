@@ -35,31 +35,49 @@ final class ExdDataFieldConfigurationMessage extends Message
         parent::__construct('ExdDataFieldConfiguration', MessageNumber::ExdDataFieldConfiguration);
     }
 
+    /**
+     * Gets the ScreenIndex
+     */
     public function getScreenIndex(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the ConceptField
+     */
     public function getConceptField(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the FieldId
+     */
     public function getFieldId(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the ConceptCount
+     */
     public function getConceptCount(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the DisplayType
+     */
     public function getDisplayType(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the Title
+     */
     public function getTitle(): ?string
     {
         return $this->getValue(5);

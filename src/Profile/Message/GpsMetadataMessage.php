@@ -38,46 +38,73 @@ final class GpsMetadataMessage extends Message
         parent::__construct('GpsMetadata', MessageNumber::GpsMetadata);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the TimestampMs
+     */
     public function getTimestampMs(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the PositionLat
+     */
     public function getPositionLat(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the PositionLong
+     */
     public function getPositionLong(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the EnhancedAltitude
+     */
     public function getEnhancedAltitude(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the EnhancedSpeed
+     */
     public function getEnhancedSpeed(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the Heading
+     */
     public function getHeading(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the UtcTimestamp
+     */
     public function getUtcTimestamp(): ?DateTime
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the Velocity
+     */
     public function getVelocity(): ?int
     {
         return $this->getValue(7);

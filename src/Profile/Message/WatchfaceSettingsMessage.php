@@ -32,16 +32,25 @@ final class WatchfaceSettingsMessage extends Message
         parent::__construct('WatchfaceSettings', MessageNumber::WatchfaceSettings);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the Mode
+     */
     public function getMode(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Layout
+     */
     public function getLayout(): ?int
     {
         return $this->getValue(1);

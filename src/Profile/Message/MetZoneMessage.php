@@ -33,21 +33,33 @@ final class MetZoneMessage extends Message
         parent::__construct('MetZone', MessageNumber::MetZone);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the HighBpm
+     */
     public function getHighBpm(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Calories
+     */
     public function getCalories(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the FatCalories
+     */
     public function getFatCalories(): ?int
     {
         return $this->getValue(3);

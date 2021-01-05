@@ -42,66 +42,105 @@ final class DiveSummaryMessage extends Message
         parent::__construct('DiveSummary', MessageNumber::DiveSummary);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the ReferenceMesg
+     */
     public function getReferenceMesg(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the ReferenceIndex
+     */
     public function getReferenceIndex(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the AvgDepth
+     */
     public function getAvgDepth(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the MaxDepth
+     */
     public function getMaxDepth(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the SurfaceInterval
+     */
     public function getSurfaceInterval(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the StartCns
+     */
     public function getStartCns(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the EndCns
+     */
     public function getEndCns(): ?int
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the StartN2
+     */
     public function getStartN2(): ?int
     {
         return $this->getValue(7);
     }
 
+    /**
+     * Gets the EndN2
+     */
     public function getEndN2(): ?int
     {
         return $this->getValue(8);
     }
 
+    /**
+     * Gets the O2Toxicity
+     */
     public function getO2Toxicity(): ?int
     {
         return $this->getValue(9);
     }
 
+    /**
+     * Gets the DiveNumber
+     */
     public function getDiveNumber(): ?int
     {
         return $this->getValue(10);
     }
 
+    /**
+     * Gets the BottomTime
+     */
     public function getBottomTime(): ?int
     {
         return $this->getValue(11);

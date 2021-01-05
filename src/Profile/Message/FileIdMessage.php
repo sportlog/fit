@@ -36,36 +36,57 @@ final class FileIdMessage extends Message
         parent::__construct('FileId', MessageNumber::FileId);
     }
 
+    /**
+     * Gets the Type
+     */
     public function getType(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Manufacturer
+     */
     public function getManufacturer(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Product
+     */
     public function getProduct(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the SerialNumber
+     */
     public function getSerialNumber(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the TimeCreated
+     */
     public function getTimeCreated(): ?DateTime
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the Number
+     */
     public function getNumber(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the ProductName
+     */
     public function getProductName(): ?string
     {
         return $this->getValue(8);

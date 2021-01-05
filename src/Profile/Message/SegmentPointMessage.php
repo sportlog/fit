@@ -35,31 +35,49 @@ final class SegmentPointMessage extends Message
         parent::__construct('SegmentPoint', MessageNumber::SegmentPoint);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the PositionLat
+     */
     public function getPositionLat(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the PositionLong
+     */
     public function getPositionLong(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the Distance
+     */
     public function getDistance(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the Altitude
+     */
     public function getAltitude(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the LeaderTime
+     */
     public function getLeaderTime(): ?int
     {
         return $this->getValue(5);

@@ -61,161 +61,257 @@ final class BikeProfileMessage extends Message
         parent::__construct('BikeProfile', MessageNumber::BikeProfile);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the Name
+     */
     public function getName(): ?string
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Sport
+     */
     public function getSport(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the SubSport
+     */
     public function getSubSport(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the Odometer
+     */
     public function getOdometer(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the BikeSpdAntId
+     */
     public function getBikeSpdAntId(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the BikeCadAntId
+     */
     public function getBikeCadAntId(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the BikeSpdcadAntId
+     */
     public function getBikeSpdcadAntId(): ?int
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the BikePowerAntId
+     */
     public function getBikePowerAntId(): ?int
     {
         return $this->getValue(7);
     }
 
+    /**
+     * Gets the CustomWheelsize
+     */
     public function getCustomWheelsize(): ?int
     {
         return $this->getValue(8);
     }
 
+    /**
+     * Gets the AutoWheelsize
+     */
     public function getAutoWheelsize(): ?int
     {
         return $this->getValue(9);
     }
 
+    /**
+     * Gets the BikeWeight
+     */
     public function getBikeWeight(): ?int
     {
         return $this->getValue(10);
     }
 
+    /**
+     * Gets the PowerCalFactor
+     */
     public function getPowerCalFactor(): ?int
     {
         return $this->getValue(11);
     }
 
+    /**
+     * Gets the AutoWheelCal
+     */
     public function getAutoWheelCal(): ?bool
     {
         return $this->getValue(12);
     }
 
+    /**
+     * Gets the AutoPowerZero
+     */
     public function getAutoPowerZero(): ?bool
     {
         return $this->getValue(13);
     }
 
+    /**
+     * Gets the Id
+     */
     public function getId(): ?int
     {
         return $this->getValue(14);
     }
 
+    /**
+     * Gets the SpdEnabled
+     */
     public function getSpdEnabled(): ?bool
     {
         return $this->getValue(15);
     }
 
+    /**
+     * Gets the CadEnabled
+     */
     public function getCadEnabled(): ?bool
     {
         return $this->getValue(16);
     }
 
+    /**
+     * Gets the SpdcadEnabled
+     */
     public function getSpdcadEnabled(): ?bool
     {
         return $this->getValue(17);
     }
 
+    /**
+     * Gets the PowerEnabled
+     */
     public function getPowerEnabled(): ?bool
     {
         return $this->getValue(18);
     }
 
+    /**
+     * Gets the CrankLength
+     */
     public function getCrankLength(): ?int
     {
         return $this->getValue(19);
     }
 
+    /**
+     * Gets the Enabled
+     */
     public function getEnabled(): ?bool
     {
         return $this->getValue(20);
     }
 
+    /**
+     * Gets the BikeSpdAntIdTransType
+     */
     public function getBikeSpdAntIdTransType(): ?int
     {
         return $this->getValue(21);
     }
 
+    /**
+     * Gets the BikeCadAntIdTransType
+     */
     public function getBikeCadAntIdTransType(): ?int
     {
         return $this->getValue(22);
     }
 
+    /**
+     * Gets the BikeSpdcadAntIdTransType
+     */
     public function getBikeSpdcadAntIdTransType(): ?int
     {
         return $this->getValue(23);
     }
 
+    /**
+     * Gets the BikePowerAntIdTransType
+     */
     public function getBikePowerAntIdTransType(): ?int
     {
         return $this->getValue(24);
     }
 
+    /**
+     * Gets the OdometerRollover
+     */
     public function getOdometerRollover(): ?int
     {
         return $this->getValue(37);
     }
 
+    /**
+     * Gets the FrontGearNum
+     */
     public function getFrontGearNum(): ?int
     {
         return $this->getValue(38);
     }
 
+    /**
+     * Gets the FrontGear
+     */
     public function getFrontGear(): ?int
     {
         return $this->getValue(39);
     }
 
+    /**
+     * Gets the RearGearNum
+     */
     public function getRearGearNum(): ?int
     {
         return $this->getValue(40);
     }
 
+    /**
+     * Gets the RearGear
+     */
     public function getRearGear(): ?int
     {
         return $this->getValue(41);
     }
 
+    /**
+     * Gets the ShimanoDi2Enabled
+     */
     public function getShimanoDi2Enabled(): ?bool
     {
         return $this->getValue(44);

@@ -36,36 +36,57 @@ final class VideoClipMessage extends Message
         parent::__construct('VideoClip', MessageNumber::VideoClip);
     }
 
+    /**
+     * Gets the ClipNumber
+     */
     public function getClipNumber(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the StartTimestamp
+     */
     public function getStartTimestamp(): ?DateTime
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the StartTimestampMs
+     */
     public function getStartTimestampMs(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the EndTimestamp
+     */
     public function getEndTimestamp(): ?DateTime
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the EndTimestampMs
+     */
     public function getEndTimestampMs(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the ClipStart
+     */
     public function getClipStart(): ?int
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the ClipEnd
+     */
     public function getClipEnd(): ?int
     {
         return $this->getValue(7);

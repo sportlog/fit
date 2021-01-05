@@ -36,36 +36,57 @@ final class DiveAlarmMessage extends Message
         parent::__construct('DiveAlarm', MessageNumber::DiveAlarm);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the Depth
+     */
     public function getDepth(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Time
+     */
     public function getTime(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Enabled
+     */
     public function getEnabled(): ?bool
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the AlarmType
+     */
     public function getAlarmType(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the Sound
+     */
     public function getSound(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the DiveTypes
+     */
     public function getDiveTypes(): ?int
     {
         return $this->getValue(5);

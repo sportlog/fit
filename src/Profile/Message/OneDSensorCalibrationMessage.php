@@ -35,31 +35,49 @@ final class OneDSensorCalibrationMessage extends Message
         parent::__construct('OneDSensorCalibration', MessageNumber::OneDSensorCalibration);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the SensorType
+     */
     public function getSensorType(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the CalibrationFactor
+     */
     public function getCalibrationFactor(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the CalibrationDivisor
+     */
     public function getCalibrationDivisor(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the LevelShift
+     */
     public function getLevelShift(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the OffsetCal
+     */
     public function getOffsetCal(): ?int
     {
         return $this->getValue(4);

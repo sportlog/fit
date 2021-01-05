@@ -38,46 +38,73 @@ final class SegmentIdMessage extends Message
         parent::__construct('SegmentId', MessageNumber::SegmentId);
     }
 
+    /**
+     * Gets the Name
+     */
     public function getName(): ?string
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Uuid
+     */
     public function getUuid(): ?string
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Sport
+     */
     public function getSport(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the Enabled
+     */
     public function getEnabled(): ?bool
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the UserProfilePrimaryKey
+     */
     public function getUserProfilePrimaryKey(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the DeviceId
+     */
     public function getDeviceId(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the DefaultRaceLeader
+     */
     public function getDefaultRaceLeader(): ?int
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the DeleteStatus
+     */
     public function getDeleteStatus(): ?int
     {
         return $this->getValue(7);
     }
 
+    /**
+     * Gets the SelectionType
+     */
     public function getSelectionType(): ?int
     {
         return $this->getValue(8);

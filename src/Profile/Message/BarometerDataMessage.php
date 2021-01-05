@@ -33,21 +33,33 @@ final class BarometerDataMessage extends Message
         parent::__construct('BarometerData', MessageNumber::BarometerData);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the TimestampMs
+     */
     public function getTimestampMs(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the SampleTimeOffset
+     */
     public function getSampleTimeOffset(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the BaroPres
+     */
     public function getBaroPres(): ?int
     {
         return $this->getValue(2);

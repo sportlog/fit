@@ -30,6 +30,9 @@ final class HrvMessage extends Message
         parent::__construct('Hrv', MessageNumber::Hrv);
     }
 
+    /**
+     * Gets the Time
+     */
     public function getTime(): ?int
     {
         return $this->getValue(0);

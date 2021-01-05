@@ -43,71 +43,113 @@ final class FieldDescriptionMessage extends Message
         parent::__construct('FieldDescription', MessageNumber::FieldDescription);
     }
 
+    /**
+     * Gets the DeveloperDataIndex
+     */
     public function getDeveloperDataIndex(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the FieldDefinitionNumber
+     */
     public function getFieldDefinitionNumber(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the FitBaseTypeId
+     */
     public function getFitBaseTypeId(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the FieldName
+     */
     public function getFieldName(): ?string
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the Array
+     */
     public function getArray(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the Components
+     */
     public function getComponents(): ?string
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the Scale
+     */
     public function getScale(): ?int
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the Offset
+     */
     public function getOffset(): ?int
     {
         return $this->getValue(7);
     }
 
+    /**
+     * Gets the Units
+     */
     public function getUnits(): ?string
     {
         return $this->getValue(8);
     }
 
+    /**
+     * Gets the Bits
+     */
     public function getBits(): ?string
     {
         return $this->getValue(9);
     }
 
+    /**
+     * Gets the Accumulate
+     */
     public function getAccumulate(): ?string
     {
         return $this->getValue(10);
     }
 
+    /**
+     * Gets the FitBaseUnitId
+     */
     public function getFitBaseUnitId(): ?int
     {
         return $this->getValue(13);
     }
 
+    /**
+     * Gets the NativeMesgNum
+     */
     public function getNativeMesgNum(): ?int
     {
         return $this->getValue(14);
     }
 
+    /**
+     * Gets the NativeFieldNum
+     */
     public function getNativeFieldNum(): ?int
     {
         return $this->getValue(15);

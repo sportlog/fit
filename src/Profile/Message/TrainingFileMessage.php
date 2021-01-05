@@ -35,31 +35,49 @@ final class TrainingFileMessage extends Message
         parent::__construct('TrainingFile', MessageNumber::TrainingFile);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the Type
+     */
     public function getType(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Manufacturer
+     */
     public function getManufacturer(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Product
+     */
     public function getProduct(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the SerialNumber
+     */
     public function getSerialNumber(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the TimeCreated
+     */
     public function getTimeCreated(): ?DateTime
     {
         return $this->getValue(4);

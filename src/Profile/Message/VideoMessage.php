@@ -32,16 +32,25 @@ final class VideoMessage extends Message
         parent::__construct('Video', MessageNumber::Video);
     }
 
+    /**
+     * Gets the Url
+     */
     public function getUrl(): ?string
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the HostingProvider
+     */
     public function getHostingProvider(): ?string
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Duration
+     */
     public function getDuration(): ?int
     {
         return $this->getValue(2);

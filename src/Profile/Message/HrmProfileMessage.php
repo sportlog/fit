@@ -34,26 +34,41 @@ final class HrmProfileMessage extends Message
         parent::__construct('HrmProfile', MessageNumber::HrmProfile);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the Enabled
+     */
     public function getEnabled(): ?bool
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the HrmAntId
+     */
     public function getHrmAntId(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the LogHrv
+     */
     public function getLogHrv(): ?bool
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the HrmAntIdTransType
+     */
     public function getHrmAntIdTransType(): ?int
     {
         return $this->getValue(3);

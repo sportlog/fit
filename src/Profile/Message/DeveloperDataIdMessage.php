@@ -34,26 +34,41 @@ final class DeveloperDataIdMessage extends Message
         parent::__construct('DeveloperDataId', MessageNumber::DeveloperDataId);
     }
 
+    /**
+     * Gets the DeveloperId
+     */
     public function getDeveloperId(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the ApplicationId
+     */
     public function getApplicationId(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the ManufacturerId
+     */
     public function getManufacturerId(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the DeveloperDataIndex
+     */
     public function getDeveloperDataIndex(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the ApplicationVersion
+     */
     public function getApplicationVersion(): ?int
     {
         return $this->getValue(4);

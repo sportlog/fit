@@ -36,36 +36,57 @@ final class WorkoutMessage extends Message
         parent::__construct('Workout', MessageNumber::Workout);
     }
 
+    /**
+     * Gets the Sport
+     */
     public function getSport(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the Capabilities
+     */
     public function getCapabilities(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the NumValidSteps
+     */
     public function getNumValidSteps(): ?int
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the WktName
+     */
     public function getWktName(): ?string
     {
         return $this->getValue(8);
     }
 
+    /**
+     * Gets the SubSport
+     */
     public function getSubSport(): ?int
     {
         return $this->getValue(11);
     }
 
+    /**
+     * Gets the PoolLength
+     */
     public function getPoolLength(): ?int
     {
         return $this->getValue(14);
     }
 
+    /**
+     * Gets the PoolLengthUnit
+     */
     public function getPoolLengthUnit(): ?int
     {
         return $this->getValue(15);

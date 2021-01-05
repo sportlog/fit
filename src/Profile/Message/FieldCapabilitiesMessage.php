@@ -34,26 +34,41 @@ final class FieldCapabilitiesMessage extends Message
         parent::__construct('FieldCapabilities', MessageNumber::FieldCapabilities);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the File
+     */
     public function getFile(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the MesgNum
+     */
     public function getMesgNum(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the FieldNum
+     */
     public function getFieldNum(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the Count
+     */
     public function getCount(): ?int
     {
         return $this->getValue(3);

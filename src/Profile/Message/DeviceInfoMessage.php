@@ -47,91 +47,145 @@ final class DeviceInfoMessage extends Message
         parent::__construct('DeviceInfo', MessageNumber::DeviceInfo);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the DeviceIndex
+     */
     public function getDeviceIndex(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the DeviceType
+     */
     public function getDeviceType(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Manufacturer
+     */
     public function getManufacturer(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the SerialNumber
+     */
     public function getSerialNumber(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the Product
+     */
     public function getProduct(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the SoftwareVersion
+     */
     public function getSoftwareVersion(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the HardwareVersion
+     */
     public function getHardwareVersion(): ?int
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the CumOperatingTime
+     */
     public function getCumOperatingTime(): ?int
     {
         return $this->getValue(7);
     }
 
+    /**
+     * Gets the BatteryVoltage
+     */
     public function getBatteryVoltage(): ?int
     {
         return $this->getValue(10);
     }
 
+    /**
+     * Gets the BatteryStatus
+     */
     public function getBatteryStatus(): ?int
     {
         return $this->getValue(11);
     }
 
+    /**
+     * Gets the SensorPosition
+     */
     public function getSensorPosition(): ?int
     {
         return $this->getValue(18);
     }
 
+    /**
+     * Gets the Descriptor
+     */
     public function getDescriptor(): ?string
     {
         return $this->getValue(19);
     }
 
+    /**
+     * Gets the AntTransmissionType
+     */
     public function getAntTransmissionType(): ?int
     {
         return $this->getValue(20);
     }
 
+    /**
+     * Gets the AntDeviceNumber
+     */
     public function getAntDeviceNumber(): ?int
     {
         return $this->getValue(21);
     }
 
+    /**
+     * Gets the AntNetwork
+     */
     public function getAntNetwork(): ?int
     {
         return $this->getValue(22);
     }
 
+    /**
+     * Gets the SourceType
+     */
     public function getSourceType(): ?int
     {
         return $this->getValue(25);
     }
 
+    /**
+     * Gets the ProductName
+     */
     public function getProductName(): ?string
     {
         return $this->getValue(27);

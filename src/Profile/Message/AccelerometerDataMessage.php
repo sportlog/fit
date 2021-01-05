@@ -41,61 +41,97 @@ final class AccelerometerDataMessage extends Message
         parent::__construct('AccelerometerData', MessageNumber::AccelerometerData);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the TimestampMs
+     */
     public function getTimestampMs(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the SampleTimeOffset
+     */
     public function getSampleTimeOffset(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the AccelX
+     */
     public function getAccelX(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the AccelY
+     */
     public function getAccelY(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the AccelZ
+     */
     public function getAccelZ(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the CalibratedAccelX
+     */
     public function getCalibratedAccelX(): ?float
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the CalibratedAccelY
+     */
     public function getCalibratedAccelY(): ?float
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the CalibratedAccelZ
+     */
     public function getCalibratedAccelZ(): ?float
     {
         return $this->getValue(7);
     }
 
+    /**
+     * Gets the CompressedCalibratedAccelX
+     */
     public function getCompressedCalibratedAccelX(): ?int
     {
         return $this->getValue(8);
     }
 
+    /**
+     * Gets the CompressedCalibratedAccelY
+     */
     public function getCompressedCalibratedAccelY(): ?int
     {
         return $this->getValue(9);
     }
 
+    /**
+     * Gets the CompressedCalibratedAccelZ
+     */
     public function getCompressedCalibratedAccelZ(): ?int
     {
         return $this->getValue(10);

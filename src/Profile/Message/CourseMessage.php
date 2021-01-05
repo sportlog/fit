@@ -33,21 +33,33 @@ final class CourseMessage extends Message
         parent::__construct('Course', MessageNumber::Course);
     }
 
+    /**
+     * Gets the Sport
+     */
     public function getSport(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the Name
+     */
     public function getName(): ?string
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the Capabilities
+     */
     public function getCapabilities(): ?int
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the SubSport
+     */
     public function getSubSport(): ?int
     {
         return $this->getValue(7);

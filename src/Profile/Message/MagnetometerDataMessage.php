@@ -38,46 +38,73 @@ final class MagnetometerDataMessage extends Message
         parent::__construct('MagnetometerData', MessageNumber::MagnetometerData);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the TimestampMs
+     */
     public function getTimestampMs(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the SampleTimeOffset
+     */
     public function getSampleTimeOffset(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the MagX
+     */
     public function getMagX(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the MagY
+     */
     public function getMagY(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the MagZ
+     */
     public function getMagZ(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the CalibratedMagX
+     */
     public function getCalibratedMagX(): ?float
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the CalibratedMagY
+     */
     public function getCalibratedMagY(): ?float
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the CalibratedMagZ
+     */
     public function getCalibratedMagZ(): ?float
     {
         return $this->getValue(7);

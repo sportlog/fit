@@ -35,31 +35,49 @@ final class FileCapabilitiesMessage extends Message
         parent::__construct('FileCapabilities', MessageNumber::FileCapabilities);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the Type
+     */
     public function getType(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Flags
+     */
     public function getFlags(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Directory
+     */
     public function getDirectory(): ?string
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the MaxCount
+     */
     public function getMaxCount(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the MaxSize
+     */
     public function getMaxSize(): ?int
     {
         return $this->getValue(4);

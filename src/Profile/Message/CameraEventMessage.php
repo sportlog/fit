@@ -34,26 +34,41 @@ final class CameraEventMessage extends Message
         parent::__construct('CameraEvent', MessageNumber::CameraEvent);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the TimestampMs
+     */
     public function getTimestampMs(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the CameraEventType
+     */
     public function getCameraEventType(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the CameraFileUuid
+     */
     public function getCameraFileUuid(): ?string
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the CameraOrientation
+     */
     public function getCameraOrientation(): ?int
     {
         return $this->getValue(3);

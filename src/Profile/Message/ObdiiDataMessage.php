@@ -38,46 +38,73 @@ final class ObdiiDataMessage extends Message
         parent::__construct('ObdiiData', MessageNumber::ObdiiData);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the TimestampMs
+     */
     public function getTimestampMs(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the TimeOffset
+     */
     public function getTimeOffset(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Pid
+     */
     public function getPid(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the RawData
+     */
     public function getRawData(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the PidDataSize
+     */
     public function getPidDataSize(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the SystemTime
+     */
     public function getSystemTime(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the StartTimestamp
+     */
     public function getStartTimestamp(): ?DateTime
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the StartTimestampMs
+     */
     public function getStartTimestampMs(): ?int
     {
         return $this->getValue(7);

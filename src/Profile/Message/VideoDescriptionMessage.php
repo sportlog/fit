@@ -32,16 +32,25 @@ final class VideoDescriptionMessage extends Message
         parent::__construct('VideoDescription', MessageNumber::VideoDescription);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the MessageCount
+     */
     public function getMessageCount(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Text
+     */
     public function getText(): ?string
     {
         return $this->getValue(1);

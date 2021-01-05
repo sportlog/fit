@@ -11,12 +11,6 @@ declare(strict_types=1);
 
 namespace FIT\Profile;
 
-use DateTime;
-use Exception;
-use ReflectionClass;
-use ReflectionProperty;
-use FIT\FitBaseType;
-use FIT\FitBaseTypeDefinition;
 use FIT\Profile\Message\DeviceInfoMessage;
 use FIT\Profile\Message\DeviceSettingsMessage;
 use FIT\Profile\Message\EventMessage;
@@ -28,8 +22,6 @@ use FIT\Profile\Message\UnknownMessage;
 
 final class MessageFactory
 {
-    private static $reflectionProperties = [];
-
     /**
      * Creates the appropriate Message according to the provided global message number
      * and assigns the values.
@@ -144,53 +136,5 @@ final class MessageFactory
             default:
                 return new UnknownMessage($globalMessageNumber);
         }
-    }
-
-    private static function getReflectionProperties(string $class): array
-    {
-        if (!isset(self::$reflectionProperties[$class])) {
-            $resolvedProperties = [];
-            $reflection = new ReflectionClass($class);
-            $properties = $reflection->getProperties(ReflectionProperty::IS_PUBLIC);
-
-            if (!isset(self::$reflectionProperties[Field::class])) {
-                self::$reflectionProperties[Field::class] = new ReflectionClass(Field::class);
-            }
-            $fieldReflection = self::$reflectionProperties[Field::class];
-
-            foreach ($properties as $reflectionProperty) {
-                $attributes = $reflectionProperty->getAttributes(Field::class);
-                switch (count($attributes)) {
-                    case 0:
-                        break;
-
-                    case 1:
-                        // $reflectionProperty->setAccessible(true);
-                        // $field = $attributes[0]->newInstance();
-                        // TODO: ->newInstance() not working
-                        $field = $fieldReflection->newInstanceArgs($attributes[0]->getArguments());
-                        if (array_key_exists($field->getNumber(), $resolvedProperties)) {
-                            throw new Exception("field definition number '{$field->getNumber()}' is already in use for type {$class}");
-                        }
-
-                        $resolvedProperties[$field->getNumber()] = [
-                            'reflectionProperty' => $reflectionProperty,
-                            'field' => $field
-                        ];
-                        break;
-
-                    default:
-                        throw new Exception(sprintf(
-                            'only one Field-Attribute is allowed for %s->%s',
-                            $reflectionProperty->getDeclaringClass(),
-                            $reflectionProperty->getName()
-                        ));
-                }
-            }
-
-            self::$reflectionProperties[$class] = $resolvedProperties;
-        }
-
-        return self::$reflectionProperties[$class];
     }
 }

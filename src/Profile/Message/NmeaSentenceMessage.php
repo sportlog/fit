@@ -32,16 +32,25 @@ final class NmeaSentenceMessage extends Message
         parent::__construct('NmeaSentence', MessageNumber::NmeaSentence);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the TimestampMs
+     */
     public function getTimestampMs(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Sentence
+     */
     public function getSentence(): ?string
     {
         return $this->getValue(1);

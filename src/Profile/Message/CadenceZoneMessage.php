@@ -32,16 +32,25 @@ final class CadenceZoneMessage extends Message
         parent::__construct('CadenceZone', MessageNumber::CadenceZone);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the HighValue
+     */
     public function getHighValue(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Name
+     */
     public function getName(): ?string
     {
         return $this->getValue(1);

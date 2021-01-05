@@ -34,26 +34,41 @@ final class ZonesTargetMessage extends Message
         parent::__construct('ZonesTarget', MessageNumber::ZonesTarget);
     }
 
+    /**
+     * Gets the MaxHeartRate
+     */
     public function getMaxHeartRate(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the ThresholdHeartRate
+     */
     public function getThresholdHeartRate(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the FunctionalThresholdPower
+     */
     public function getFunctionalThresholdPower(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the HrCalcType
+     */
     public function getHrCalcType(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the PwrCalcType
+     */
     public function getPwrCalcType(): ?int
     {
         return $this->getValue(7);

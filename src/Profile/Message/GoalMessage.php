@@ -42,66 +42,105 @@ final class GoalMessage extends Message
         parent::__construct('Goal', MessageNumber::Goal);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the Sport
+     */
     public function getSport(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the SubSport
+     */
     public function getSubSport(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the StartDate
+     */
     public function getStartDate(): ?DateTime
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the EndDate
+     */
     public function getEndDate(): ?DateTime
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the Type
+     */
     public function getType(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the Value
+     */
     public function getValue(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the Repeat
+     */
     public function getRepeat(): ?bool
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the TargetValue
+     */
     public function getTargetValue(): ?int
     {
         return $this->getValue(7);
     }
 
+    /**
+     * Gets the Recurrence
+     */
     public function getRecurrence(): ?int
     {
         return $this->getValue(8);
     }
 
+    /**
+     * Gets the RecurrenceValue
+     */
     public function getRecurrenceValue(): ?int
     {
         return $this->getValue(9);
     }
 
+    /**
+     * Gets the Enabled
+     */
     public function getEnabled(): ?bool
     {
         return $this->getValue(10);
     }
 
+    /**
+     * Gets the Source
+     */
     public function getSource(): ?int
     {
         return $this->getValue(11);

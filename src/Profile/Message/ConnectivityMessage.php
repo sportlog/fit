@@ -42,66 +42,105 @@ final class ConnectivityMessage extends Message
         parent::__construct('Connectivity', MessageNumber::Connectivity);
     }
 
+    /**
+     * Gets the BluetoothEnabled
+     */
     public function getBluetoothEnabled(): ?bool
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the BluetoothLeEnabled
+     */
     public function getBluetoothLeEnabled(): ?bool
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the AntEnabled
+     */
     public function getAntEnabled(): ?bool
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the Name
+     */
     public function getName(): ?string
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the LiveTrackingEnabled
+     */
     public function getLiveTrackingEnabled(): ?bool
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the WeatherConditionsEnabled
+     */
     public function getWeatherConditionsEnabled(): ?bool
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the WeatherAlertsEnabled
+     */
     public function getWeatherAlertsEnabled(): ?bool
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the AutoActivityUploadEnabled
+     */
     public function getAutoActivityUploadEnabled(): ?bool
     {
         return $this->getValue(7);
     }
 
+    /**
+     * Gets the CourseDownloadEnabled
+     */
     public function getCourseDownloadEnabled(): ?bool
     {
         return $this->getValue(8);
     }
 
+    /**
+     * Gets the WorkoutDownloadEnabled
+     */
     public function getWorkoutDownloadEnabled(): ?bool
     {
         return $this->getValue(9);
     }
 
+    /**
+     * Gets the GpsEphemerisDownloadEnabled
+     */
     public function getGpsEphemerisDownloadEnabled(): ?bool
     {
         return $this->getValue(10);
     }
 
+    /**
+     * Gets the IncidentDetectionEnabled
+     */
     public function getIncidentDetectionEnabled(): ?bool
     {
         return $this->getValue(11);
     }
 
+    /**
+     * Gets the GrouptrackEnabled
+     */
     public function getGrouptrackEnabled(): ?bool
     {
         return $this->getValue(12);

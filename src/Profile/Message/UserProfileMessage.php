@@ -58,146 +58,233 @@ final class UserProfileMessage extends Message
         parent::__construct('UserProfile', MessageNumber::UserProfile);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the FriendlyName
+     */
     public function getFriendlyName(): ?string
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Gender
+     */
     public function getGender(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Age
+     */
     public function getAge(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the Height
+     */
     public function getHeight(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the Weight
+     */
     public function getWeight(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the Language
+     */
     public function getLanguage(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the ElevSetting
+     */
     public function getElevSetting(): ?int
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the WeightSetting
+     */
     public function getWeightSetting(): ?int
     {
         return $this->getValue(7);
     }
 
+    /**
+     * Gets the RestingHeartRate
+     */
     public function getRestingHeartRate(): ?int
     {
         return $this->getValue(8);
     }
 
+    /**
+     * Gets the DefaultMaxRunningHeartRate
+     */
     public function getDefaultMaxRunningHeartRate(): ?int
     {
         return $this->getValue(9);
     }
 
+    /**
+     * Gets the DefaultMaxBikingHeartRate
+     */
     public function getDefaultMaxBikingHeartRate(): ?int
     {
         return $this->getValue(10);
     }
 
+    /**
+     * Gets the DefaultMaxHeartRate
+     */
     public function getDefaultMaxHeartRate(): ?int
     {
         return $this->getValue(11);
     }
 
+    /**
+     * Gets the HrSetting
+     */
     public function getHrSetting(): ?int
     {
         return $this->getValue(12);
     }
 
+    /**
+     * Gets the SpeedSetting
+     */
     public function getSpeedSetting(): ?int
     {
         return $this->getValue(13);
     }
 
+    /**
+     * Gets the DistSetting
+     */
     public function getDistSetting(): ?int
     {
         return $this->getValue(14);
     }
 
+    /**
+     * Gets the PowerSetting
+     */
     public function getPowerSetting(): ?int
     {
         return $this->getValue(16);
     }
 
+    /**
+     * Gets the ActivityClass
+     */
     public function getActivityClass(): ?int
     {
         return $this->getValue(17);
     }
 
+    /**
+     * Gets the PositionSetting
+     */
     public function getPositionSetting(): ?int
     {
         return $this->getValue(18);
     }
 
+    /**
+     * Gets the TemperatureSetting
+     */
     public function getTemperatureSetting(): ?int
     {
         return $this->getValue(21);
     }
 
+    /**
+     * Gets the LocalId
+     */
     public function getLocalId(): ?int
     {
         return $this->getValue(22);
     }
 
+    /**
+     * Gets the GlobalId
+     */
     public function getGlobalId(): ?int
     {
         return $this->getValue(23);
     }
 
+    /**
+     * Gets the WakeTime
+     */
     public function getWakeTime(): ?int
     {
         return $this->getValue(28);
     }
 
+    /**
+     * Gets the SleepTime
+     */
     public function getSleepTime(): ?int
     {
         return $this->getValue(29);
     }
 
+    /**
+     * Gets the HeightSetting
+     */
     public function getHeightSetting(): ?int
     {
         return $this->getValue(30);
     }
 
+    /**
+     * Gets the UserRunningStepLength
+     */
     public function getUserRunningStepLength(): ?int
     {
         return $this->getValue(31);
     }
 
+    /**
+     * Gets the UserWalkingStepLength
+     */
     public function getUserWalkingStepLength(): ?int
     {
         return $this->getValue(32);
     }
 
+    /**
+     * Gets the DepthSetting
+     */
     public function getDepthSetting(): ?int
     {
         return $this->getValue(47);
     }
 
+    /**
+     * Gets the DiveCount
+     */
     public function getDiveCount(): ?int
     {
         return $this->getValue(49);

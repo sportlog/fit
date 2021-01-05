@@ -39,51 +39,81 @@ final class TotalsMessage extends Message
         parent::__construct('Totals', MessageNumber::Totals);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the TimerTime
+     */
     public function getTimerTime(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Distance
+     */
     public function getDistance(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Calories
+     */
     public function getCalories(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the Sport
+     */
     public function getSport(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the ElapsedTime
+     */
     public function getElapsedTime(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the Sessions
+     */
     public function getSessions(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the ActiveTime
+     */
     public function getActiveTime(): ?int
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the SportIndex
+     */
     public function getSportIndex(): ?int
     {
         return $this->getValue(9);

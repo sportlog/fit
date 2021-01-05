@@ -40,56 +40,89 @@ final class SetMessage extends Message
         parent::__construct('Set', MessageNumber::Set);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the Duration
+     */
     public function getDuration(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Repetitions
+     */
     public function getRepetitions(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the Weight
+     */
     public function getWeight(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the SetType
+     */
     public function getSetType(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the StartTime
+     */
     public function getStartTime(): ?DateTime
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the Category
+     */
     public function getCategory(): ?int
     {
         return $this->getValue(7);
     }
 
+    /**
+     * Gets the CategorySubtype
+     */
     public function getCategorySubtype(): ?int
     {
         return $this->getValue(8);
     }
 
+    /**
+     * Gets the WeightDisplayUnit
+     */
     public function getWeightDisplayUnit(): ?int
     {
         return $this->getValue(9);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(10);
     }
 
+    /**
+     * Gets the WktStepIndex
+     */
     public function getWktStepIndex(): ?int
     {
         return $this->getValue(11);

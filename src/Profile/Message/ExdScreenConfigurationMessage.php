@@ -33,21 +33,33 @@ final class ExdScreenConfigurationMessage extends Message
         parent::__construct('ExdScreenConfiguration', MessageNumber::ExdScreenConfiguration);
     }
 
+    /**
+     * Gets the ScreenIndex
+     */
     public function getScreenIndex(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the FieldCount
+     */
     public function getFieldCount(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Layout
+     */
     public function getLayout(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the ScreenEnabled
+     */
     public function getScreenEnabled(): ?bool
     {
         return $this->getValue(3);

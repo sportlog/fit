@@ -35,31 +35,49 @@ final class MonitoringInfoMessage extends Message
         parent::__construct('MonitoringInfo', MessageNumber::MonitoringInfo);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the LocalTimestamp
+     */
     public function getLocalTimestamp(): ?DateTime
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the ActivityType
+     */
     public function getActivityType(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the CyclesToDistance
+     */
     public function getCyclesToDistance(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the CyclesToCalories
+     */
     public function getCyclesToCalories(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the RestingMetabolicRate
+     */
     public function getRestingMetabolicRate(): ?int
     {
         return $this->getValue(5);

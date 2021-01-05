@@ -44,76 +44,121 @@ final class WorkoutStepMessage extends Message
         parent::__construct('WorkoutStep', MessageNumber::WorkoutStep);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the WktStepName
+     */
     public function getWktStepName(): ?string
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the DurationType
+     */
     public function getDurationType(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the DurationValue
+     */
     public function getDurationValue(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the TargetType
+     */
     public function getTargetType(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the TargetValue
+     */
     public function getTargetValue(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the CustomTargetValueLow
+     */
     public function getCustomTargetValueLow(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the CustomTargetValueHigh
+     */
     public function getCustomTargetValueHigh(): ?int
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the Intensity
+     */
     public function getIntensity(): ?int
     {
         return $this->getValue(7);
     }
 
+    /**
+     * Gets the Notes
+     */
     public function getNotes(): ?string
     {
         return $this->getValue(8);
     }
 
+    /**
+     * Gets the Equipment
+     */
     public function getEquipment(): ?int
     {
         return $this->getValue(9);
     }
 
+    /**
+     * Gets the ExerciseCategory
+     */
     public function getExerciseCategory(): ?int
     {
         return $this->getValue(10);
     }
 
+    /**
+     * Gets the ExerciseName
+     */
     public function getExerciseName(): ?int
     {
         return $this->getValue(11);
     }
 
+    /**
+     * Gets the ExerciseWeight
+     */
     public function getExerciseWeight(): ?int
     {
         return $this->getValue(12);
     }
 
+    /**
+     * Gets the WeightDisplayUnit
+     */
     public function getWeightDisplayUnit(): ?int
     {
         return $this->getValue(13);

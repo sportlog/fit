@@ -160,6 +160,7 @@ class MessageGenerator
                     ->setPublic()
                     ->setReturnType($phpType)
                     ->setReturnNullable()
+                    ->addComment("Gets the {$name}")
                     ->setBody('return $this->getValue(?);', [(int)$num]);
 
 

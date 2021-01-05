@@ -38,46 +38,73 @@ final class SegmentFileMessage extends Message
         parent::__construct('SegmentFile', MessageNumber::SegmentFile);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the FileUuid
+     */
     public function getFileUuid(): ?string
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Enabled
+     */
     public function getEnabled(): ?bool
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the UserProfilePrimaryKey
+     */
     public function getUserProfilePrimaryKey(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the LeaderType
+     */
     public function getLeaderType(): ?int
     {
         return $this->getValue(7);
     }
 
+    /**
+     * Gets the LeaderGroupPrimaryKey
+     */
     public function getLeaderGroupPrimaryKey(): ?int
     {
         return $this->getValue(8);
     }
 
+    /**
+     * Gets the LeaderActivityId
+     */
     public function getLeaderActivityId(): ?int
     {
         return $this->getValue(9);
     }
 
+    /**
+     * Gets the LeaderActivityIdString
+     */
     public function getLeaderActivityIdString(): ?string
     {
         return $this->getValue(10);
     }
 
+    /**
+     * Gets the DefaultRaceLeader
+     */
     public function getDefaultRaceLeader(): ?int
     {
         return $this->getValue(11);

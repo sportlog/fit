@@ -32,16 +32,25 @@ final class SpeedZoneMessage extends Message
         parent::__construct('SpeedZone', MessageNumber::SpeedZone);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the HighValue
+     */
     public function getHighValue(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Name
+     */
     public function getName(): ?string
     {
         return $this->getValue(1);

@@ -53,121 +53,193 @@ final class DeviceSettingsMessage extends Message
         parent::__construct('DeviceSettings', MessageNumber::DeviceSettings);
     }
 
+    /**
+     * Gets the ActiveTimeZone
+     */
     public function getActiveTimeZone(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the UtcOffset
+     */
     public function getUtcOffset(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the TimeOffset
+     */
     public function getTimeOffset(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the TimeMode
+     */
     public function getTimeMode(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the TimeZoneOffset
+     */
     public function getTimeZoneOffset(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the BacklightMode
+     */
     public function getBacklightMode(): ?int
     {
         return $this->getValue(12);
     }
 
+    /**
+     * Gets the ActivityTrackerEnabled
+     */
     public function getActivityTrackerEnabled(): ?bool
     {
         return $this->getValue(36);
     }
 
+    /**
+     * Gets the ClockTime
+     */
     public function getClockTime(): ?DateTime
     {
         return $this->getValue(39);
     }
 
+    /**
+     * Gets the PagesEnabled
+     */
     public function getPagesEnabled(): ?int
     {
         return $this->getValue(40);
     }
 
+    /**
+     * Gets the MoveAlertEnabled
+     */
     public function getMoveAlertEnabled(): ?bool
     {
         return $this->getValue(46);
     }
 
+    /**
+     * Gets the DateMode
+     */
     public function getDateMode(): ?int
     {
         return $this->getValue(47);
     }
 
+    /**
+     * Gets the DisplayOrientation
+     */
     public function getDisplayOrientation(): ?int
     {
         return $this->getValue(55);
     }
 
+    /**
+     * Gets the MountingSide
+     */
     public function getMountingSide(): ?int
     {
         return $this->getValue(56);
     }
 
+    /**
+     * Gets the DefaultPage
+     */
     public function getDefaultPage(): ?int
     {
         return $this->getValue(57);
     }
 
+    /**
+     * Gets the AutosyncMinSteps
+     */
     public function getAutosyncMinSteps(): ?int
     {
         return $this->getValue(58);
     }
 
+    /**
+     * Gets the AutosyncMinTime
+     */
     public function getAutosyncMinTime(): ?int
     {
         return $this->getValue(59);
     }
 
+    /**
+     * Gets the LactateThresholdAutodetectEnabled
+     */
     public function getLactateThresholdAutodetectEnabled(): ?bool
     {
         return $this->getValue(80);
     }
 
+    /**
+     * Gets the BleAutoUploadEnabled
+     */
     public function getBleAutoUploadEnabled(): ?bool
     {
         return $this->getValue(86);
     }
 
+    /**
+     * Gets the AutoSyncFrequency
+     */
     public function getAutoSyncFrequency(): ?int
     {
         return $this->getValue(89);
     }
 
+    /**
+     * Gets the AutoActivityDetect
+     */
     public function getAutoActivityDetect(): ?int
     {
         return $this->getValue(90);
     }
 
+    /**
+     * Gets the NumberOfScreens
+     */
     public function getNumberOfScreens(): ?int
     {
         return $this->getValue(94);
     }
 
+    /**
+     * Gets the SmartNotificationDisplayOrientation
+     */
     public function getSmartNotificationDisplayOrientation(): ?int
     {
         return $this->getValue(95);
     }
 
+    /**
+     * Gets the TapInterface
+     */
     public function getTapInterface(): ?int
     {
         return $this->getValue(134);
     }
 
+    /**
+     * Gets the TapSensitivity
+     */
     public function getTapSensitivity(): ?int
     {
         return $this->getValue(174);

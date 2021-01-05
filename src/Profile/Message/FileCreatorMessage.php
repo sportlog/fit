@@ -31,11 +31,17 @@ final class FileCreatorMessage extends Message
         parent::__construct('FileCreator', MessageNumber::FileCreator);
     }
 
+    /**
+     * Gets the SoftwareVersion
+     */
     public function getSoftwareVersion(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the HardwareVersion
+     */
     public function getHardwareVersion(): ?int
     {
         return $this->getValue(1);

@@ -36,36 +36,57 @@ final class TimestampCorrelationMessage extends Message
         parent::__construct('TimestampCorrelation', MessageNumber::TimestampCorrelation);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the FractionalTimestamp
+     */
     public function getFractionalTimestamp(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the SystemTimestamp
+     */
     public function getSystemTimestamp(): ?DateTime
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the FractionalSystemTimestamp
+     */
     public function getFractionalSystemTimestamp(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the LocalTimestamp
+     */
     public function getLocalTimestamp(): ?DateTime
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the TimestampMs
+     */
     public function getTimestampMs(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the SystemTimestampMs
+     */
     public function getSystemTimestampMs(): ?int
     {
         return $this->getValue(5);

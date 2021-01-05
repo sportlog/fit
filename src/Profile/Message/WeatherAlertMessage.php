@@ -35,31 +35,49 @@ final class WeatherAlertMessage extends Message
         parent::__construct('WeatherAlert', MessageNumber::WeatherAlert);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the ReportId
+     */
     public function getReportId(): ?string
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the IssueTime
+     */
     public function getIssueTime(): ?DateTime
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the ExpireTime
+     */
     public function getExpireTime(): ?DateTime
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the Severity
+     */
     public function getSeverity(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the Type
+     */
     public function getType(): ?int
     {
         return $this->getValue(4);

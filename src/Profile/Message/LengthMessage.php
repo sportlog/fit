@@ -47,91 +47,145 @@ final class LengthMessage extends Message
         parent::__construct('Length', MessageNumber::Length);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the Event
+     */
     public function getEvent(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the EventType
+     */
     public function getEventType(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the StartTime
+     */
     public function getStartTime(): ?DateTime
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the TotalElapsedTime
+     */
     public function getTotalElapsedTime(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the TotalTimerTime
+     */
     public function getTotalTimerTime(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the TotalStrokes
+     */
     public function getTotalStrokes(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the AvgSpeed
+     */
     public function getAvgSpeed(): ?int
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the SwimStroke
+     */
     public function getSwimStroke(): ?int
     {
         return $this->getValue(7);
     }
 
+    /**
+     * Gets the AvgSwimmingCadence
+     */
     public function getAvgSwimmingCadence(): ?int
     {
         return $this->getValue(9);
     }
 
+    /**
+     * Gets the EventGroup
+     */
     public function getEventGroup(): ?int
     {
         return $this->getValue(10);
     }
 
+    /**
+     * Gets the TotalCalories
+     */
     public function getTotalCalories(): ?int
     {
         return $this->getValue(11);
     }
 
+    /**
+     * Gets the LengthType
+     */
     public function getLengthType(): ?int
     {
         return $this->getValue(12);
     }
 
+    /**
+     * Gets the PlayerScore
+     */
     public function getPlayerScore(): ?int
     {
         return $this->getValue(18);
     }
 
+    /**
+     * Gets the OpponentScore
+     */
     public function getOpponentScore(): ?int
     {
         return $this->getValue(19);
     }
 
+    /**
+     * Gets the StrokeCount
+     */
     public function getStrokeCount(): ?int
     {
         return $this->getValue(20);
     }
 
+    /**
+     * Gets the ZoneCount
+     */
     public function getZoneCount(): ?int
     {
         return $this->getValue(21);

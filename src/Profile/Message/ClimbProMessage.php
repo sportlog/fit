@@ -36,36 +36,57 @@ final class ClimbProMessage extends Message
         parent::__construct('ClimbPro', MessageNumber::ClimbPro);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the PositionLat
+     */
     public function getPositionLat(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the PositionLong
+     */
     public function getPositionLong(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the ClimbProEvent
+     */
     public function getClimbProEvent(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the ClimbNumber
+     */
     public function getClimbNumber(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the ClimbCategory
+     */
     public function getClimbCategory(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the CurrentDist
+     */
     public function getCurrentDist(): ?float
     {
         return $this->getValue(5);

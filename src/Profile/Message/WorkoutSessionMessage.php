@@ -36,36 +36,57 @@ final class WorkoutSessionMessage extends Message
         parent::__construct('WorkoutSession', MessageNumber::WorkoutSession);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the Sport
+     */
     public function getSport(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the SubSport
+     */
     public function getSubSport(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the NumValidSteps
+     */
     public function getNumValidSteps(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the FirstStepIndex
+     */
     public function getFirstStepIndex(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the PoolLength
+     */
     public function getPoolLength(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the PoolLengthUnit
+     */
     public function getPoolLengthUnit(): ?int
     {
         return $this->getValue(5);

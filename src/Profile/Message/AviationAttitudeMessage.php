@@ -41,61 +41,97 @@ final class AviationAttitudeMessage extends Message
         parent::__construct('AviationAttitude', MessageNumber::AviationAttitude);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the TimestampMs
+     */
     public function getTimestampMs(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the SystemTime
+     */
     public function getSystemTime(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Pitch
+     */
     public function getPitch(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the Roll
+     */
     public function getRoll(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the AccelLateral
+     */
     public function getAccelLateral(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the AccelNormal
+     */
     public function getAccelNormal(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the TurnRate
+     */
     public function getTurnRate(): ?int
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the Stage
+     */
     public function getStage(): ?int
     {
         return $this->getValue(7);
     }
 
+    /**
+     * Gets the AttitudeStageComplete
+     */
     public function getAttitudeStageComplete(): ?int
     {
         return $this->getValue(8);
     }
 
+    /**
+     * Gets the Track
+     */
     public function getTrack(): ?int
     {
         return $this->getValue(9);
     }
 
+    /**
+     * Gets the Validity
+     */
     public function getValidity(): ?int
     {
         return $this->getValue(10);

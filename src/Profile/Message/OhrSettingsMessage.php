@@ -31,11 +31,17 @@ final class OhrSettingsMessage extends Message
         parent::__construct('OhrSettings', MessageNumber::OhrSettings);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the Enabled
+     */
     public function getEnabled(): ?int
     {
         return $this->getValue(0);

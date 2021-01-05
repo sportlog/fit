@@ -34,26 +34,41 @@ final class AntChannelIdMessage extends Message
         parent::__construct('AntChannelId', MessageNumber::AntChannelId);
     }
 
+    /**
+     * Gets the ChannelNumber
+     */
     public function getChannelNumber(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the DeviceType
+     */
     public function getDeviceType(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the DeviceNumber
+     */
     public function getDeviceNumber(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the TransmissionType
+     */
     public function getTransmissionType(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the DeviceIndex
+     */
     public function getDeviceIndex(): ?int
     {
         return $this->getValue(4);

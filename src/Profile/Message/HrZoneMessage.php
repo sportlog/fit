@@ -32,16 +32,25 @@ final class HrZoneMessage extends Message
         parent::__construct('HrZone', MessageNumber::HrZone);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the HighBpm
+     */
     public function getHighBpm(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Name
+     */
     public function getName(): ?string
     {
         return $this->getValue(2);

@@ -33,21 +33,33 @@ final class CapabilitiesMessage extends Message
         parent::__construct('Capabilities', MessageNumber::Capabilities);
     }
 
+    /**
+     * Gets the Languages
+     */
     public function getLanguages(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Sports
+     */
     public function getSports(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the WorkoutsSupported
+     */
     public function getWorkoutsSupported(): ?int
     {
         return $this->getValue(21);
     }
 
+    /**
+     * Gets the ConnectivitySupported
+     */
     public function getConnectivitySupported(): ?int
     {
         return $this->getValue(23);

@@ -31,11 +31,17 @@ final class SlaveDeviceMessage extends Message
         parent::__construct('SlaveDevice', MessageNumber::SlaveDevice);
     }
 
+    /**
+     * Gets the Manufacturer
+     */
     public function getManufacturer(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Product
+     */
     public function getProduct(): ?int
     {
         return $this->getValue(1);

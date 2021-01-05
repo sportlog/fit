@@ -32,16 +32,25 @@ final class PowerZoneMessage extends Message
         parent::__construct('PowerZone', MessageNumber::PowerZone);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the HighValue
+     */
     public function getHighValue(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Name
+     */
     public function getName(): ?string
     {
         return $this->getValue(2);

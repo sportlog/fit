@@ -142,566 +142,905 @@ final class LapMessage extends Message
         parent::__construct('Lap', MessageNumber::Lap);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the Event
+     */
     public function getEvent(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the EventType
+     */
     public function getEventType(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the StartTime
+     */
     public function getStartTime(): ?DateTime
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the StartPositionLat
+     */
     public function getStartPositionLat(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the StartPositionLong
+     */
     public function getStartPositionLong(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the EndPositionLat
+     */
     public function getEndPositionLat(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the EndPositionLong
+     */
     public function getEndPositionLong(): ?int
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the TotalElapsedTime
+     */
     public function getTotalElapsedTime(): ?int
     {
         return $this->getValue(7);
     }
 
+    /**
+     * Gets the TotalTimerTime
+     */
     public function getTotalTimerTime(): ?int
     {
         return $this->getValue(8);
     }
 
+    /**
+     * Gets the TotalDistance
+     */
     public function getTotalDistance(): ?int
     {
         return $this->getValue(9);
     }
 
+    /**
+     * Gets the TotalCycles
+     */
     public function getTotalCycles(): ?int
     {
         return $this->getValue(10);
     }
 
+    /**
+     * Gets the TotalCalories
+     */
     public function getTotalCalories(): ?int
     {
         return $this->getValue(11);
     }
 
+    /**
+     * Gets the TotalFatCalories
+     */
     public function getTotalFatCalories(): ?int
     {
         return $this->getValue(12);
     }
 
+    /**
+     * Gets the AvgSpeed
+     */
     public function getAvgSpeed(): ?int
     {
         return $this->getValue(13);
     }
 
+    /**
+     * Gets the MaxSpeed
+     */
     public function getMaxSpeed(): ?int
     {
         return $this->getValue(14);
     }
 
+    /**
+     * Gets the AvgHeartRate
+     */
     public function getAvgHeartRate(): ?int
     {
         return $this->getValue(15);
     }
 
+    /**
+     * Gets the MaxHeartRate
+     */
     public function getMaxHeartRate(): ?int
     {
         return $this->getValue(16);
     }
 
+    /**
+     * Gets the AvgCadence
+     */
     public function getAvgCadence(): ?int
     {
         return $this->getValue(17);
     }
 
+    /**
+     * Gets the MaxCadence
+     */
     public function getMaxCadence(): ?int
     {
         return $this->getValue(18);
     }
 
+    /**
+     * Gets the AvgPower
+     */
     public function getAvgPower(): ?int
     {
         return $this->getValue(19);
     }
 
+    /**
+     * Gets the MaxPower
+     */
     public function getMaxPower(): ?int
     {
         return $this->getValue(20);
     }
 
+    /**
+     * Gets the TotalAscent
+     */
     public function getTotalAscent(): ?int
     {
         return $this->getValue(21);
     }
 
+    /**
+     * Gets the TotalDescent
+     */
     public function getTotalDescent(): ?int
     {
         return $this->getValue(22);
     }
 
+    /**
+     * Gets the Intensity
+     */
     public function getIntensity(): ?int
     {
         return $this->getValue(23);
     }
 
+    /**
+     * Gets the LapTrigger
+     */
     public function getLapTrigger(): ?int
     {
         return $this->getValue(24);
     }
 
+    /**
+     * Gets the Sport
+     */
     public function getSport(): ?int
     {
         return $this->getValue(25);
     }
 
+    /**
+     * Gets the EventGroup
+     */
     public function getEventGroup(): ?int
     {
         return $this->getValue(26);
     }
 
+    /**
+     * Gets the NumLengths
+     */
     public function getNumLengths(): ?int
     {
         return $this->getValue(32);
     }
 
+    /**
+     * Gets the NormalizedPower
+     */
     public function getNormalizedPower(): ?int
     {
         return $this->getValue(33);
     }
 
+    /**
+     * Gets the LeftRightBalance
+     */
     public function getLeftRightBalance(): ?int
     {
         return $this->getValue(34);
     }
 
+    /**
+     * Gets the FirstLengthIndex
+     */
     public function getFirstLengthIndex(): ?int
     {
         return $this->getValue(35);
     }
 
+    /**
+     * Gets the AvgStrokeDistance
+     */
     public function getAvgStrokeDistance(): ?int
     {
         return $this->getValue(37);
     }
 
+    /**
+     * Gets the SwimStroke
+     */
     public function getSwimStroke(): ?int
     {
         return $this->getValue(38);
     }
 
+    /**
+     * Gets the SubSport
+     */
     public function getSubSport(): ?int
     {
         return $this->getValue(39);
     }
 
+    /**
+     * Gets the NumActiveLengths
+     */
     public function getNumActiveLengths(): ?int
     {
         return $this->getValue(40);
     }
 
+    /**
+     * Gets the TotalWork
+     */
     public function getTotalWork(): ?int
     {
         return $this->getValue(41);
     }
 
+    /**
+     * Gets the AvgAltitude
+     */
     public function getAvgAltitude(): ?int
     {
         return $this->getValue(42);
     }
 
+    /**
+     * Gets the MaxAltitude
+     */
     public function getMaxAltitude(): ?int
     {
         return $this->getValue(43);
     }
 
+    /**
+     * Gets the GpsAccuracy
+     */
     public function getGpsAccuracy(): ?int
     {
         return $this->getValue(44);
     }
 
+    /**
+     * Gets the AvgGrade
+     */
     public function getAvgGrade(): ?int
     {
         return $this->getValue(45);
     }
 
+    /**
+     * Gets the AvgPosGrade
+     */
     public function getAvgPosGrade(): ?int
     {
         return $this->getValue(46);
     }
 
+    /**
+     * Gets the AvgNegGrade
+     */
     public function getAvgNegGrade(): ?int
     {
         return $this->getValue(47);
     }
 
+    /**
+     * Gets the MaxPosGrade
+     */
     public function getMaxPosGrade(): ?int
     {
         return $this->getValue(48);
     }
 
+    /**
+     * Gets the MaxNegGrade
+     */
     public function getMaxNegGrade(): ?int
     {
         return $this->getValue(49);
     }
 
+    /**
+     * Gets the AvgTemperature
+     */
     public function getAvgTemperature(): ?int
     {
         return $this->getValue(50);
     }
 
+    /**
+     * Gets the MaxTemperature
+     */
     public function getMaxTemperature(): ?int
     {
         return $this->getValue(51);
     }
 
+    /**
+     * Gets the TotalMovingTime
+     */
     public function getTotalMovingTime(): ?int
     {
         return $this->getValue(52);
     }
 
+    /**
+     * Gets the AvgPosVerticalSpeed
+     */
     public function getAvgPosVerticalSpeed(): ?int
     {
         return $this->getValue(53);
     }
 
+    /**
+     * Gets the AvgNegVerticalSpeed
+     */
     public function getAvgNegVerticalSpeed(): ?int
     {
         return $this->getValue(54);
     }
 
+    /**
+     * Gets the MaxPosVerticalSpeed
+     */
     public function getMaxPosVerticalSpeed(): ?int
     {
         return $this->getValue(55);
     }
 
+    /**
+     * Gets the MaxNegVerticalSpeed
+     */
     public function getMaxNegVerticalSpeed(): ?int
     {
         return $this->getValue(56);
     }
 
+    /**
+     * Gets the TimeInHrZone
+     */
     public function getTimeInHrZone(): ?int
     {
         return $this->getValue(57);
     }
 
+    /**
+     * Gets the TimeInSpeedZone
+     */
     public function getTimeInSpeedZone(): ?int
     {
         return $this->getValue(58);
     }
 
+    /**
+     * Gets the TimeInCadenceZone
+     */
     public function getTimeInCadenceZone(): ?int
     {
         return $this->getValue(59);
     }
 
+    /**
+     * Gets the TimeInPowerZone
+     */
     public function getTimeInPowerZone(): ?int
     {
         return $this->getValue(60);
     }
 
+    /**
+     * Gets the RepetitionNum
+     */
     public function getRepetitionNum(): ?int
     {
         return $this->getValue(61);
     }
 
+    /**
+     * Gets the MinAltitude
+     */
     public function getMinAltitude(): ?int
     {
         return $this->getValue(62);
     }
 
+    /**
+     * Gets the MinHeartRate
+     */
     public function getMinHeartRate(): ?int
     {
         return $this->getValue(63);
     }
 
+    /**
+     * Gets the WktStepIndex
+     */
     public function getWktStepIndex(): ?int
     {
         return $this->getValue(71);
     }
 
+    /**
+     * Gets the OpponentScore
+     */
     public function getOpponentScore(): ?int
     {
         return $this->getValue(74);
     }
 
+    /**
+     * Gets the StrokeCount
+     */
     public function getStrokeCount(): ?int
     {
         return $this->getValue(75);
     }
 
+    /**
+     * Gets the ZoneCount
+     */
     public function getZoneCount(): ?int
     {
         return $this->getValue(76);
     }
 
+    /**
+     * Gets the AvgVerticalOscillation
+     */
     public function getAvgVerticalOscillation(): ?int
     {
         return $this->getValue(77);
     }
 
+    /**
+     * Gets the AvgStanceTimePercent
+     */
     public function getAvgStanceTimePercent(): ?int
     {
         return $this->getValue(78);
     }
 
+    /**
+     * Gets the AvgStanceTime
+     */
     public function getAvgStanceTime(): ?int
     {
         return $this->getValue(79);
     }
 
+    /**
+     * Gets the AvgFractionalCadence
+     */
     public function getAvgFractionalCadence(): ?int
     {
         return $this->getValue(80);
     }
 
+    /**
+     * Gets the MaxFractionalCadence
+     */
     public function getMaxFractionalCadence(): ?int
     {
         return $this->getValue(81);
     }
 
+    /**
+     * Gets the TotalFractionalCycles
+     */
     public function getTotalFractionalCycles(): ?int
     {
         return $this->getValue(82);
     }
 
+    /**
+     * Gets the PlayerScore
+     */
     public function getPlayerScore(): ?int
     {
         return $this->getValue(83);
     }
 
+    /**
+     * Gets the AvgTotalHemoglobinConc
+     */
     public function getAvgTotalHemoglobinConc(): ?int
     {
         return $this->getValue(84);
     }
 
+    /**
+     * Gets the MinTotalHemoglobinConc
+     */
     public function getMinTotalHemoglobinConc(): ?int
     {
         return $this->getValue(85);
     }
 
+    /**
+     * Gets the MaxTotalHemoglobinConc
+     */
     public function getMaxTotalHemoglobinConc(): ?int
     {
         return $this->getValue(86);
     }
 
+    /**
+     * Gets the AvgSaturatedHemoglobinPercent
+     */
     public function getAvgSaturatedHemoglobinPercent(): ?int
     {
         return $this->getValue(87);
     }
 
+    /**
+     * Gets the MinSaturatedHemoglobinPercent
+     */
     public function getMinSaturatedHemoglobinPercent(): ?int
     {
         return $this->getValue(88);
     }
 
+    /**
+     * Gets the MaxSaturatedHemoglobinPercent
+     */
     public function getMaxSaturatedHemoglobinPercent(): ?int
     {
         return $this->getValue(89);
     }
 
+    /**
+     * Gets the AvgLeftTorqueEffectiveness
+     */
     public function getAvgLeftTorqueEffectiveness(): ?int
     {
         return $this->getValue(91);
     }
 
+    /**
+     * Gets the AvgRightTorqueEffectiveness
+     */
     public function getAvgRightTorqueEffectiveness(): ?int
     {
         return $this->getValue(92);
     }
 
+    /**
+     * Gets the AvgLeftPedalSmoothness
+     */
     public function getAvgLeftPedalSmoothness(): ?int
     {
         return $this->getValue(93);
     }
 
+    /**
+     * Gets the AvgRightPedalSmoothness
+     */
     public function getAvgRightPedalSmoothness(): ?int
     {
         return $this->getValue(94);
     }
 
+    /**
+     * Gets the AvgCombinedPedalSmoothness
+     */
     public function getAvgCombinedPedalSmoothness(): ?int
     {
         return $this->getValue(95);
     }
 
+    /**
+     * Gets the TimeStanding
+     */
     public function getTimeStanding(): ?int
     {
         return $this->getValue(98);
     }
 
+    /**
+     * Gets the StandCount
+     */
     public function getStandCount(): ?int
     {
         return $this->getValue(99);
     }
 
+    /**
+     * Gets the AvgLeftPco
+     */
     public function getAvgLeftPco(): ?int
     {
         return $this->getValue(100);
     }
 
+    /**
+     * Gets the AvgRightPco
+     */
     public function getAvgRightPco(): ?int
     {
         return $this->getValue(101);
     }
 
+    /**
+     * Gets the AvgLeftPowerPhase
+     */
     public function getAvgLeftPowerPhase(): ?int
     {
         return $this->getValue(102);
     }
 
+    /**
+     * Gets the AvgLeftPowerPhasePeak
+     */
     public function getAvgLeftPowerPhasePeak(): ?int
     {
         return $this->getValue(103);
     }
 
+    /**
+     * Gets the AvgRightPowerPhase
+     */
     public function getAvgRightPowerPhase(): ?int
     {
         return $this->getValue(104);
     }
 
+    /**
+     * Gets the AvgRightPowerPhasePeak
+     */
     public function getAvgRightPowerPhasePeak(): ?int
     {
         return $this->getValue(105);
     }
 
+    /**
+     * Gets the AvgPowerPosition
+     */
     public function getAvgPowerPosition(): ?int
     {
         return $this->getValue(106);
     }
 
+    /**
+     * Gets the MaxPowerPosition
+     */
     public function getMaxPowerPosition(): ?int
     {
         return $this->getValue(107);
     }
 
+    /**
+     * Gets the AvgCadencePosition
+     */
     public function getAvgCadencePosition(): ?int
     {
         return $this->getValue(108);
     }
 
+    /**
+     * Gets the MaxCadencePosition
+     */
     public function getMaxCadencePosition(): ?int
     {
         return $this->getValue(109);
     }
 
+    /**
+     * Gets the EnhancedAvgSpeed
+     */
     public function getEnhancedAvgSpeed(): ?int
     {
         return $this->getValue(110);
     }
 
+    /**
+     * Gets the EnhancedMaxSpeed
+     */
     public function getEnhancedMaxSpeed(): ?int
     {
         return $this->getValue(111);
     }
 
+    /**
+     * Gets the EnhancedAvgAltitude
+     */
     public function getEnhancedAvgAltitude(): ?int
     {
         return $this->getValue(112);
     }
 
+    /**
+     * Gets the EnhancedMinAltitude
+     */
     public function getEnhancedMinAltitude(): ?int
     {
         return $this->getValue(113);
     }
 
+    /**
+     * Gets the EnhancedMaxAltitude
+     */
     public function getEnhancedMaxAltitude(): ?int
     {
         return $this->getValue(114);
     }
 
+    /**
+     * Gets the AvgLevMotorPower
+     */
     public function getAvgLevMotorPower(): ?int
     {
         return $this->getValue(115);
     }
 
+    /**
+     * Gets the MaxLevMotorPower
+     */
     public function getMaxLevMotorPower(): ?int
     {
         return $this->getValue(116);
     }
 
+    /**
+     * Gets the LevBatteryConsumption
+     */
     public function getLevBatteryConsumption(): ?int
     {
         return $this->getValue(117);
     }
 
+    /**
+     * Gets the AvgVerticalRatio
+     */
     public function getAvgVerticalRatio(): ?int
     {
         return $this->getValue(118);
     }
 
+    /**
+     * Gets the AvgStanceTimeBalance
+     */
     public function getAvgStanceTimeBalance(): ?int
     {
         return $this->getValue(119);
     }
 
+    /**
+     * Gets the AvgStepLength
+     */
     public function getAvgStepLength(): ?int
     {
         return $this->getValue(120);
     }
 
+    /**
+     * Gets the AvgVam
+     */
     public function getAvgVam(): ?int
     {
         return $this->getValue(121);
     }
 
+    /**
+     * Gets the TotalGrit
+     */
     public function getTotalGrit(): ?float
     {
         return $this->getValue(149);
     }
 
+    /**
+     * Gets the TotalFlow
+     */
     public function getTotalFlow(): ?float
     {
         return $this->getValue(150);
     }
 
+    /**
+     * Gets the JumpCount
+     */
     public function getJumpCount(): ?int
     {
         return $this->getValue(151);
     }
 
+    /**
+     * Gets the AvgGrit
+     */
     public function getAvgGrit(): ?float
     {
         return $this->getValue(153);
     }
 
+    /**
+     * Gets the AvgFlow
+     */
     public function getAvgFlow(): ?float
     {
         return $this->getValue(154);
     }
 
+    /**
+     * Gets the TotalFractionalAscent
+     */
     public function getTotalFractionalAscent(): ?int
     {
         return $this->getValue(156);
     }
 
+    /**
+     * Gets the TotalFractionalDescent
+     */
     public function getTotalFractionalDescent(): ?int
     {
         return $this->getValue(157);

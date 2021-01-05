@@ -36,36 +36,57 @@ final class ScheduleMessage extends Message
         parent::__construct('Schedule', MessageNumber::Schedule);
     }
 
+    /**
+     * Gets the Manufacturer
+     */
     public function getManufacturer(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Product
+     */
     public function getProduct(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the SerialNumber
+     */
     public function getSerialNumber(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the TimeCreated
+     */
     public function getTimeCreated(): ?DateTime
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the Completed
+     */
     public function getCompleted(): ?bool
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the Type
+     */
     public function getType(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the ScheduledTime
+     */
     public function getScheduledTime(): ?DateTime
     {
         return $this->getValue(6);

@@ -33,21 +33,33 @@ final class MemoGlobMessage extends Message
         parent::__construct('MemoGlob', MessageNumber::MemoGlob);
     }
 
+    /**
+     * Gets the PartIndex
+     */
     public function getPartIndex(): ?int
     {
         return $this->getValue(250);
     }
 
+    /**
+     * Gets the Memo
+     */
     public function getMemo(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the MessageNumber
+     */
     public function getMessageNumber(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(2);

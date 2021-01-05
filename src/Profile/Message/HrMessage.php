@@ -35,31 +35,49 @@ final class HrMessage extends Message
         parent::__construct('Hr', MessageNumber::Hr);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the FractionalTimestamp
+     */
     public function getFractionalTimestamp(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Time256
+     */
     public function getTime256(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the FilteredBpm
+     */
     public function getFilteredBpm(): ?int
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the EventTimestamp
+     */
     public function getEventTimestamp(): ?int
     {
         return $this->getValue(9);
     }
 
+    /**
+     * Gets the EventTimestamp12
+     */
     public function getEventTimestamp12(): ?int
     {
         return $this->getValue(10);

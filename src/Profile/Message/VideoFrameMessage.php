@@ -32,16 +32,25 @@ final class VideoFrameMessage extends Message
         parent::__construct('VideoFrame', MessageNumber::VideoFrame);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the TimestampMs
+     */
     public function getTimestampMs(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the FrameNumber
+     */
     public function getFrameNumber(): ?int
     {
         return $this->getValue(1);

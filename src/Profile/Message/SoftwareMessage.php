@@ -32,16 +32,25 @@ final class SoftwareMessage extends Message
         parent::__construct('Software', MessageNumber::Software);
     }
 
+    /**
+     * Gets the MessageIndex
+     */
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
     }
 
+    /**
+     * Gets the Version
+     */
     public function getVersion(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the PartNumber
+     */
     public function getPartNumber(): ?string
     {
         return $this->getValue(5);

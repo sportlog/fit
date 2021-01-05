@@ -45,81 +45,129 @@ final class WeatherConditionsMessage extends Message
         parent::__construct('WeatherConditions', MessageNumber::WeatherConditions);
     }
 
+    /**
+     * Gets the Timestamp
+     */
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
     }
 
+    /**
+     * Gets the WeatherReport
+     */
     public function getWeatherReport(): ?int
     {
         return $this->getValue(0);
     }
 
+    /**
+     * Gets the Temperature
+     */
     public function getTemperature(): ?int
     {
         return $this->getValue(1);
     }
 
+    /**
+     * Gets the Condition
+     */
     public function getCondition(): ?int
     {
         return $this->getValue(2);
     }
 
+    /**
+     * Gets the WindDirection
+     */
     public function getWindDirection(): ?int
     {
         return $this->getValue(3);
     }
 
+    /**
+     * Gets the WindSpeed
+     */
     public function getWindSpeed(): ?int
     {
         return $this->getValue(4);
     }
 
+    /**
+     * Gets the PrecipitationProbability
+     */
     public function getPrecipitationProbability(): ?int
     {
         return $this->getValue(5);
     }
 
+    /**
+     * Gets the TemperatureFeelsLike
+     */
     public function getTemperatureFeelsLike(): ?int
     {
         return $this->getValue(6);
     }
 
+    /**
+     * Gets the RelativeHumidity
+     */
     public function getRelativeHumidity(): ?int
     {
         return $this->getValue(7);
     }
 
+    /**
+     * Gets the Location
+     */
     public function getLocation(): ?string
     {
         return $this->getValue(8);
     }
 
+    /**
+     * Gets the ObservedAtTime
+     */
     public function getObservedAtTime(): ?DateTime
     {
         return $this->getValue(9);
     }
 
+    /**
+     * Gets the ObservedLocationLat
+     */
     public function getObservedLocationLat(): ?int
     {
         return $this->getValue(10);
     }
 
+    /**
+     * Gets the ObservedLocationLong
+     */
     public function getObservedLocationLong(): ?int
     {
         return $this->getValue(11);
     }
 
+    /**
+     * Gets the DayOfWeek
+     */
     public function getDayOfWeek(): ?int
     {
         return $this->getValue(12);
     }
 
+    /**
+     * Gets the HighTemperature
+     */
     public function getHighTemperature(): ?int
     {
         return $this->getValue(13);
     }
 
+    /**
+     * Gets the LowTemperature
+     */
     public function getLowTemperature(): ?int
     {
         return $this->getValue(14);
