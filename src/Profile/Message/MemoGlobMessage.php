@@ -19,8 +19,20 @@ use FIT\Profile\ProfileType;
 /**
  * MemoGlobMessage message
  */
+#[Field('PartIndex', 250, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('Memo', 0, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
+#[Field('MessageNumber', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('MessageIndex', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
 final class MemoGlobMessage extends Message
 {
+    /**
+     * Creates a new message instance
+     */
+    public function __construct()
+    {
+        parent::__construct('MemoGlob', MessageNumber::MemoGlob);
+    }
+
     public function getPartIndex(): ?int
     {
         return $this->getValue(250);
@@ -39,18 +51,5 @@ final class MemoGlobMessage extends Message
     public function getMessageIndex(): ?int
     {
         return $this->getValue(2);
-    }
-
-    /**
-     * Creates a new message instance
-     */
-    public function __construct()
-    {
-        parent::__construct("MemoGlob", MessageNumber::MemoGlob, [
-        new Field('PartIndex', 250, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32),
-            new Field('Memo', 0, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE),
-            new Field('MessageNumber', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
-            new Field('MessageIndex', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)
-        ]);
     }
 }

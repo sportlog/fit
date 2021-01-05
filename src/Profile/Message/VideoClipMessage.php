@@ -19,8 +19,23 @@ use FIT\Profile\ProfileType;
 /**
  * VideoClipMessage message
  */
+#[Field('ClipNumber', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('StartTimestamp', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('StartTimestampMs', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('EndTimestamp', 3, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('EndTimestampMs', 4, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('ClipStart', 6, FitBaseType::UINT32, 1.0, 0.0, 'ms', false, ProfileType::UINT32)]
+#[Field('ClipEnd', 7, FitBaseType::UINT32, 1.0, 0.0, 'ms', false, ProfileType::UINT32)]
 final class VideoClipMessage extends Message
 {
+    /**
+     * Creates a new message instance
+     */
+    public function __construct()
+    {
+        parent::__construct('VideoClip', MessageNumber::VideoClip);
+    }
+
     public function getClipNumber(): ?int
     {
         return $this->getValue(0);
@@ -54,21 +69,5 @@ final class VideoClipMessage extends Message
     public function getClipEnd(): ?int
     {
         return $this->getValue(7);
-    }
-
-    /**
-     * Creates a new message instance
-     */
-    public function __construct()
-    {
-        parent::__construct("VideoClip", MessageNumber::VideoClip, [
-        new Field('ClipNumber', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
-            new Field('StartTimestamp', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME),
-            new Field('StartTimestampMs', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
-            new Field('EndTimestamp', 3, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME),
-            new Field('EndTimestampMs', 4, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
-            new Field('ClipStart', 6, FitBaseType::UINT32, 1.0, 0.0, 'ms', false, ProfileType::UINT32),
-            new Field('ClipEnd', 7, FitBaseType::UINT32, 1.0, 0.0, 'ms', false, ProfileType::UINT32)
-        ]);
     }
 }

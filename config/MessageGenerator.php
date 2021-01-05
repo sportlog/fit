@@ -46,7 +46,7 @@ class MessageGenerator
 
         $fitBaseTypeReflection = new ReflectionClass(FitBaseType::class);
         $fitBaseTypeConstants = [];
-        foreach($fitBaseTypeReflection->getReflectionConstants() as $fitBaseTypeReflectionConstant) {
+        foreach ($fitBaseTypeReflection->getReflectionConstants() as $fitBaseTypeReflectionConstant) {
             $fitBaseTypeConstants[$fitBaseTypeReflectionConstant->getValue()] = $fitBaseTypeReflectionConstant->getName();
         }
 
@@ -62,10 +62,10 @@ class MessageGenerator
 
                 $file = new PhpFile();
                 $file
-                ->setStrictTypes() // adds declare(strict_types=1)
+                    ->setStrictTypes() // adds declare(strict_types=1)
                     ->addComment("****WARNING****  This file is auto-generated! Do NOT edit.")
                     ->addComment("Profile Version = 21.40Release");
-                    
+
 
                 $namespace = $file->addNamespace('FIT\\Profile\\Message');
                 $namespace->addUse(\DateTime::class)
@@ -81,7 +81,10 @@ class MessageGenerator
 
                 $class->setFinal(true)
                     ->addComment("{$classname} message")
-                    ->setExtends(Message::class);
+                    ->setExtends(Message::class)
+                    ->addMethod('__construct')
+                    ->addComment("Creates a new message instance")
+                    ->setBody('parent::__construct(?, ?);', [$classId, new Literal("MessageNumber::{$classId}")]);
             }
 
             if (str_starts_with($line, self::FIELD_START) && !is_null($file)) {
@@ -147,25 +150,29 @@ class MessageGenerator
                     ->addAttribute(Field::class, [$name, (int)$num, 
                     new Literal("FitBaseType::" . $fitBaseTypeConstants[(int)$type]), (float)$scale, (float)$offset, $units, 
                     $accumulated === 'true', new Literal("ProfileType::" . strtoupper($profileType))]);*/
+                $class->addAttribute(Field::class, [
+                    $name, (int)$num,
+                    new Literal("FitBaseType::" . $fitBaseTypeConstants[(int)$type]), (float)$scale, (float)$offset, $units,
+                    $accumulated === 'true', new Literal("ProfileType::" . strtoupper($profileType))
+                ]);
 
-                $class->addMethod("get{$name}")    
+                $class->addMethod("get{$name}")
                     ->setPublic()
                     ->setReturnType($phpType)
                     ->setReturnNullable()
                     ->setBody('return $this->getValue(?);', [(int)$num]);
 
 
-                $fields[] = "new Field(" . join(", ", ["'{$name}'", (int)$num, new Literal("FitBaseType::" . $fitBaseTypeConstants[(int)$type]),
-                 number_format((float)$scale, 1, '.', ''), number_format((float)$offset, 1, '.', ''),
-                  "'{$units}'", $accumulated, new Literal("ProfileType::" . strtoupper($profileType))]) . ")";
-
-
+                $fields[] = "new Field(" . join(", ", [
+                    "'{$name}'", (int)$num, new Literal("FitBaseType::" . $fitBaseTypeConstants[(int)$type]),
+                    number_format((float)$scale, 1, '.', ''), number_format((float)$offset, 1, '.', ''),
+                    "'{$units}'", $accumulated, new Literal("ProfileType::" . strtoupper($profileType))
+                ]) . ")";
             }
 
             if (str_starts_with($line, self::MESSAGE_END) && !is_null($file)) {
-                $method = $class->addMethod('__construct')
-                ->addComment("Creates a new message instance")
-                ->setBody(sprintf('parent::__construct("%1$s", MessageNumber::%1$s, [%3$s%2$s%3$s]);', $classId, join(", " . PHP_EOL . "    ", $fields), PHP_EOL));
+                
+                    // ->setBody(sprintf('parent::__construct("%1$s", MessageNumber::%1$s, [%3$s%2$s%3$s]);', $classId, join(", " . PHP_EOL . "    ", $fields), PHP_EOL));
 
                 $files[$class->getName() . ".php"] = $printer->printFile($file);
                 $class = null;

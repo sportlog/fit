@@ -19,8 +19,19 @@ use FIT\Profile\ProfileType;
 /**
  * VideoFrameMessage message
  */
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
+#[Field('TimestampMs', 0, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
+#[Field('FrameNumber', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
 final class VideoFrameMessage extends Message
 {
+    /**
+     * Creates a new message instance
+     */
+    public function __construct()
+    {
+        parent::__construct('VideoFrame', MessageNumber::VideoFrame);
+    }
+
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
@@ -34,17 +45,5 @@ final class VideoFrameMessage extends Message
     public function getFrameNumber(): ?int
     {
         return $this->getValue(1);
-    }
-
-    /**
-     * Creates a new message instance
-     */
-    public function __construct()
-    {
-        parent::__construct("VideoFrame", MessageNumber::VideoFrame, [
-        new Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME),
-            new Field('TimestampMs', 0, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16),
-            new Field('FrameNumber', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)
-        ]);
     }
 }

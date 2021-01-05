@@ -19,8 +19,19 @@ use FIT\Profile\ProfileType;
 /**
  * SportMessage message
  */
+#[Field('Sport', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SPORT)]
+#[Field('SubSport', 1, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SUBSPORT)]
+#[Field('Name', 3, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
 final class SportMessage extends Message
 {
+    /**
+     * Creates a new message instance
+     */
+    public function __construct()
+    {
+        parent::__construct('Sport', MessageNumber::Sport);
+    }
+
     public function getSport(): ?int
     {
         return $this->getValue(0);
@@ -34,17 +45,5 @@ final class SportMessage extends Message
     public function getName(): ?string
     {
         return $this->getValue(3);
-    }
-
-    /**
-     * Creates a new message instance
-     */
-    public function __construct()
-    {
-        parent::__construct("Sport", MessageNumber::Sport, [
-        new Field('Sport', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SPORT),
-            new Field('SubSport', 1, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SUBSPORT),
-            new Field('Name', 3, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)
-        ]);
     }
 }

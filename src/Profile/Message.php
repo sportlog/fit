@@ -17,18 +17,42 @@ use Exception;
 use FIT\FitBaseType;
 use FIT\FitBaseTypeDefinition;
 use IteratorAggregate;
+use ReflectionClass;
+use ReflectionProperty;
 use Stringable;
 
 abstract class Message implements IteratorAggregate, Stringable
 {
+    private static $reflectionProperties = [];
     private $values = [];
     private array $fields = [];
 
     public function __construct(private string $name, private int $number, array $fields = [])
     {
-        foreach ($fields as $field) {
+        /*foreach ($fields as $field) {
+            $this->addField($field);
+        }*/
+
+        foreach (self::getReflectionProperties(static::class) as $field) {
             $this->addField($field);
         }
+    }
+
+    private static function getReflectionProperties(string $class): array
+    {
+        if (!isset(self::$reflectionProperties[$class])) {
+            $reflection = new ReflectionClass($class);
+            $attributes = $reflection->getAttributes(Field::class);
+
+            $fields = [];
+            foreach ($attributes as $attribute) {
+                $fields[] = $attribute->newInstance();
+            }
+
+            self::$reflectionProperties[$class] = $fields;
+        }
+
+        return self::$reflectionProperties[$class];
     }
 
     public function addField(Field $field): void

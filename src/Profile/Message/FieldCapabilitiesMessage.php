@@ -19,8 +19,21 @@ use FIT\Profile\ProfileType;
 /**
  * FieldCapabilitiesMessage message
  */
+#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('File', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::FILE)]
+#[Field('MesgNum', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESGNUM)]
+#[Field('FieldNum', 2, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('Count', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 final class FieldCapabilitiesMessage extends Message
 {
+    /**
+     * Creates a new message instance
+     */
+    public function __construct()
+    {
+        parent::__construct('FieldCapabilities', MessageNumber::FieldCapabilities);
+    }
+
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
@@ -44,19 +57,5 @@ final class FieldCapabilitiesMessage extends Message
     public function getCount(): ?int
     {
         return $this->getValue(3);
-    }
-
-    /**
-     * Creates a new message instance
-     */
-    public function __construct()
-    {
-        parent::__construct("FieldCapabilities", MessageNumber::FieldCapabilities, [
-        new Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX),
-            new Field('File', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::FILE),
-            new Field('MesgNum', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESGNUM),
-            new Field('FieldNum', 2, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
-            new Field('Count', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)
-        ]);
     }
 }

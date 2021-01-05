@@ -19,8 +19,19 @@ use FIT\Profile\ProfileType;
 /**
  * SpeedZoneMessage message
  */
+#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('HighValue', 0, FitBaseType::UINT16, 1000.0, 0.0, 'm/s', false, ProfileType::UINT16)]
+#[Field('Name', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
 final class SpeedZoneMessage extends Message
 {
+    /**
+     * Creates a new message instance
+     */
+    public function __construct()
+    {
+        parent::__construct('SpeedZone', MessageNumber::SpeedZone);
+    }
+
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
@@ -34,17 +45,5 @@ final class SpeedZoneMessage extends Message
     public function getName(): ?string
     {
         return $this->getValue(1);
-    }
-
-    /**
-     * Creates a new message instance
-     */
-    public function __construct()
-    {
-        parent::__construct("SpeedZone", MessageNumber::SpeedZone, [
-        new Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX),
-            new Field('HighValue', 0, FitBaseType::UINT16, 1000.0, 0.0, 'm/s', false, ProfileType::UINT16),
-            new Field('Name', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)
-        ]);
     }
 }

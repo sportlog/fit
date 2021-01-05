@@ -11,7 +11,9 @@ declare(strict_types=1);
 
 namespace FIT\Profile;
 
-#[Attribute]
+use Attribute;
+
+#[Attribute(Attribute::IS_REPEATABLE | Attribute::TARGET_CLASS)]
 class Field {
     public function __construct(private string $name,
         private int $num,

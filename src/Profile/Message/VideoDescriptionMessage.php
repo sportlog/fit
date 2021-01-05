@@ -19,8 +19,19 @@ use FIT\Profile\ProfileType;
 /**
  * VideoDescriptionMessage message
  */
+#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('MessageCount', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('Text', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
 final class VideoDescriptionMessage extends Message
 {
+    /**
+     * Creates a new message instance
+     */
+    public function __construct()
+    {
+        parent::__construct('VideoDescription', MessageNumber::VideoDescription);
+    }
+
     public function getMessageIndex(): ?int
     {
         return $this->getValue(254);
@@ -34,17 +45,5 @@ final class VideoDescriptionMessage extends Message
     public function getText(): ?string
     {
         return $this->getValue(1);
-    }
-
-    /**
-     * Creates a new message instance
-     */
-    public function __construct()
-    {
-        parent::__construct("VideoDescription", MessageNumber::VideoDescription, [
-        new Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX),
-            new Field('MessageCount', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
-            new Field('Text', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)
-        ]);
     }
 }

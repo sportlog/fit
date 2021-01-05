@@ -19,8 +19,18 @@ use FIT\Profile\ProfileType;
 /**
  * FileCreatorMessage message
  */
+#[Field('SoftwareVersion', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('HardwareVersion', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
 final class FileCreatorMessage extends Message
 {
+    /**
+     * Creates a new message instance
+     */
+    public function __construct()
+    {
+        parent::__construct('FileCreator', MessageNumber::FileCreator);
+    }
+
     public function getSoftwareVersion(): ?int
     {
         return $this->getValue(0);
@@ -29,16 +39,5 @@ final class FileCreatorMessage extends Message
     public function getHardwareVersion(): ?int
     {
         return $this->getValue(1);
-    }
-
-    /**
-     * Creates a new message instance
-     */
-    public function __construct()
-    {
-        parent::__construct("FileCreator", MessageNumber::FileCreator, [
-        new Field('SoftwareVersion', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16),
-            new Field('HardwareVersion', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)
-        ]);
     }
 }

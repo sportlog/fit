@@ -19,8 +19,19 @@ use FIT\Profile\ProfileType;
 /**
  * NmeaSentenceMessage message
  */
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
+#[Field('TimestampMs', 0, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
+#[Field('Sentence', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
 final class NmeaSentenceMessage extends Message
 {
+    /**
+     * Creates a new message instance
+     */
+    public function __construct()
+    {
+        parent::__construct('NmeaSentence', MessageNumber::NmeaSentence);
+    }
+
     public function getTimestamp(): ?DateTime
     {
         return $this->getValue(253);
@@ -34,17 +45,5 @@ final class NmeaSentenceMessage extends Message
     public function getSentence(): ?string
     {
         return $this->getValue(1);
-    }
-
-    /**
-     * Creates a new message instance
-     */
-    public function __construct()
-    {
-        parent::__construct("NmeaSentence", MessageNumber::NmeaSentence, [
-        new Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME),
-            new Field('TimestampMs', 0, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16),
-            new Field('Sentence', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)
-        ]);
     }
 }

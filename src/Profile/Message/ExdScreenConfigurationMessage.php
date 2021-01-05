@@ -19,8 +19,20 @@ use FIT\Profile\ProfileType;
 /**
  * ExdScreenConfigurationMessage message
  */
+#[Field('ScreenIndex', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('FieldCount', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('Layout', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::EXDLAYOUT)]
+#[Field('ScreenEnabled', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
 final class ExdScreenConfigurationMessage extends Message
 {
+    /**
+     * Creates a new message instance
+     */
+    public function __construct()
+    {
+        parent::__construct('ExdScreenConfiguration', MessageNumber::ExdScreenConfiguration);
+    }
+
     public function getScreenIndex(): ?int
     {
         return $this->getValue(0);
@@ -39,18 +51,5 @@ final class ExdScreenConfigurationMessage extends Message
     public function getScreenEnabled(): ?bool
     {
         return $this->getValue(3);
-    }
-
-    /**
-     * Creates a new message instance
-     */
-    public function __construct()
-    {
-        parent::__construct("ExdScreenConfiguration", MessageNumber::ExdScreenConfiguration, [
-        new Field('ScreenIndex', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
-            new Field('FieldCount', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8),
-            new Field('Layout', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::EXDLAYOUT),
-            new Field('ScreenEnabled', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)
-        ]);
     }
 }
