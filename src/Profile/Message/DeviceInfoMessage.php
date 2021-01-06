@@ -52,7 +52,7 @@ final class DeviceInfoMessage extends Message
      */
     public function getTimestamp(): ?DateTime
     {
-        return $this->getValue(253);
+        return $this->getFieldValue(253);
     }
 
     /**
@@ -60,7 +60,7 @@ final class DeviceInfoMessage extends Message
      */
     public function getDeviceIndex(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -68,7 +68,7 @@ final class DeviceInfoMessage extends Message
      */
     public function getDeviceType(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -76,7 +76,7 @@ final class DeviceInfoMessage extends Message
      */
     public function getManufacturer(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -84,7 +84,7 @@ final class DeviceInfoMessage extends Message
      */
     public function getSerialNumber(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -92,7 +92,7 @@ final class DeviceInfoMessage extends Message
      */
     public function getProduct(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -100,7 +100,7 @@ final class DeviceInfoMessage extends Message
      */
     public function getSoftwareVersion(): ?int
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -108,7 +108,7 @@ final class DeviceInfoMessage extends Message
      */
     public function getHardwareVersion(): ?int
     {
-        return $this->getValue(6);
+        return $this->getFieldValue(6);
     }
 
     /**
@@ -116,7 +116,7 @@ final class DeviceInfoMessage extends Message
      */
     public function getCumOperatingTime(): ?int
     {
-        return $this->getValue(7);
+        return $this->getFieldValue(7);
     }
 
     /**
@@ -124,7 +124,7 @@ final class DeviceInfoMessage extends Message
      */
     public function getBatteryVoltage(): ?int
     {
-        return $this->getValue(10);
+        return $this->getFieldValue(10);
     }
 
     /**
@@ -132,7 +132,7 @@ final class DeviceInfoMessage extends Message
      */
     public function getBatteryStatus(): ?int
     {
-        return $this->getValue(11);
+        return $this->getFieldValue(11);
     }
 
     /**
@@ -140,7 +140,7 @@ final class DeviceInfoMessage extends Message
      */
     public function getSensorPosition(): ?int
     {
-        return $this->getValue(18);
+        return $this->getFieldValue(18);
     }
 
     /**
@@ -148,7 +148,7 @@ final class DeviceInfoMessage extends Message
      */
     public function getDescriptor(): ?string
     {
-        return $this->getValue(19);
+        return $this->getFieldValue(19);
     }
 
     /**
@@ -156,7 +156,7 @@ final class DeviceInfoMessage extends Message
      */
     public function getAntTransmissionType(): ?int
     {
-        return $this->getValue(20);
+        return $this->getFieldValue(20);
     }
 
     /**
@@ -164,7 +164,7 @@ final class DeviceInfoMessage extends Message
      */
     public function getAntDeviceNumber(): ?int
     {
-        return $this->getValue(21);
+        return $this->getFieldValue(21);
     }
 
     /**
@@ -172,7 +172,7 @@ final class DeviceInfoMessage extends Message
      */
     public function getAntNetwork(): ?int
     {
-        return $this->getValue(22);
+        return $this->getFieldValue(22);
     }
 
     /**
@@ -180,7 +180,7 @@ final class DeviceInfoMessage extends Message
      */
     public function getSourceType(): ?int
     {
-        return $this->getValue(25);
+        return $this->getFieldValue(25);
     }
 
     /**
@@ -188,6 +188,6 @@ final class DeviceInfoMessage extends Message
      */
     public function getProductName(): ?string
     {
-        return $this->getValue(27);
+        return $this->getFieldValue(27);
     }
 }

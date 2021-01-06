@@ -48,7 +48,7 @@ final class FieldDescriptionMessage extends Message
      */
     public function getDeveloperDataIndex(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -56,7 +56,7 @@ final class FieldDescriptionMessage extends Message
      */
     public function getFieldDefinitionNumber(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -64,7 +64,7 @@ final class FieldDescriptionMessage extends Message
      */
     public function getFitBaseTypeId(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -72,7 +72,7 @@ final class FieldDescriptionMessage extends Message
      */
     public function getFieldName(): ?string
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -80,7 +80,7 @@ final class FieldDescriptionMessage extends Message
      */
     public function getArray(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -88,7 +88,7 @@ final class FieldDescriptionMessage extends Message
      */
     public function getComponents(): ?string
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -96,7 +96,7 @@ final class FieldDescriptionMessage extends Message
      */
     public function getScale(): ?int
     {
-        return $this->getValue(6);
+        return $this->getFieldValue(6);
     }
 
     /**
@@ -104,7 +104,7 @@ final class FieldDescriptionMessage extends Message
      */
     public function getOffset(): ?int
     {
-        return $this->getValue(7);
+        return $this->getFieldValue(7);
     }
 
     /**
@@ -112,7 +112,7 @@ final class FieldDescriptionMessage extends Message
      */
     public function getUnits(): ?string
     {
-        return $this->getValue(8);
+        return $this->getFieldValue(8);
     }
 
     /**
@@ -120,7 +120,7 @@ final class FieldDescriptionMessage extends Message
      */
     public function getBits(): ?string
     {
-        return $this->getValue(9);
+        return $this->getFieldValue(9);
     }
 
     /**
@@ -128,7 +128,7 @@ final class FieldDescriptionMessage extends Message
      */
     public function getAccumulate(): ?string
     {
-        return $this->getValue(10);
+        return $this->getFieldValue(10);
     }
 
     /**
@@ -136,7 +136,7 @@ final class FieldDescriptionMessage extends Message
      */
     public function getFitBaseUnitId(): ?int
     {
-        return $this->getValue(13);
+        return $this->getFieldValue(13);
     }
 
     /**
@@ -144,7 +144,7 @@ final class FieldDescriptionMessage extends Message
      */
     public function getNativeMesgNum(): ?int
     {
-        return $this->getValue(14);
+        return $this->getFieldValue(14);
     }
 
     /**
@@ -152,6 +152,6 @@ final class FieldDescriptionMessage extends Message
      */
     public function getNativeFieldNum(): ?int
     {
-        return $this->getValue(15);
+        return $this->getFieldValue(15);
     }
 }

@@ -42,7 +42,7 @@ final class CoursePointMessage extends Message
      */
     public function getMessageIndex(): ?int
     {
-        return $this->getValue(254);
+        return $this->getFieldValue(254);
     }
 
     /**
@@ -50,7 +50,7 @@ final class CoursePointMessage extends Message
      */
     public function getTimestamp(): ?DateTime
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -58,7 +58,7 @@ final class CoursePointMessage extends Message
      */
     public function getPositionLat(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -66,7 +66,7 @@ final class CoursePointMessage extends Message
      */
     public function getPositionLong(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -74,7 +74,7 @@ final class CoursePointMessage extends Message
      */
     public function getDistance(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -82,7 +82,7 @@ final class CoursePointMessage extends Message
      */
     public function getType(): ?int
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -90,7 +90,7 @@ final class CoursePointMessage extends Message
      */
     public function getName(): ?string
     {
-        return $this->getValue(6);
+        return $this->getFieldValue(6);
     }
 
     /**
@@ -98,6 +98,6 @@ final class CoursePointMessage extends Message
      */
     public function getFavorite(): ?bool
     {
-        return $this->getValue(8);
+        return $this->getFieldValue(8);
     }
 }

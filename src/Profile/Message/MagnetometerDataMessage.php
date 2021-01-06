@@ -43,7 +43,7 @@ final class MagnetometerDataMessage extends Message
      */
     public function getTimestamp(): ?DateTime
     {
-        return $this->getValue(253);
+        return $this->getFieldValue(253);
     }
 
     /**
@@ -51,7 +51,7 @@ final class MagnetometerDataMessage extends Message
      */
     public function getTimestampMs(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -59,7 +59,7 @@ final class MagnetometerDataMessage extends Message
      */
     public function getSampleTimeOffset(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -67,7 +67,7 @@ final class MagnetometerDataMessage extends Message
      */
     public function getMagX(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -75,7 +75,7 @@ final class MagnetometerDataMessage extends Message
      */
     public function getMagY(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -83,7 +83,7 @@ final class MagnetometerDataMessage extends Message
      */
     public function getMagZ(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -91,7 +91,7 @@ final class MagnetometerDataMessage extends Message
      */
     public function getCalibratedMagX(): ?float
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -99,7 +99,7 @@ final class MagnetometerDataMessage extends Message
      */
     public function getCalibratedMagY(): ?float
     {
-        return $this->getValue(6);
+        return $this->getFieldValue(6);
     }
 
     /**
@@ -107,6 +107,6 @@ final class MagnetometerDataMessage extends Message
      */
     public function getCalibratedMagZ(): ?float
     {
-        return $this->getValue(7);
+        return $this->getFieldValue(7);
     }
 }

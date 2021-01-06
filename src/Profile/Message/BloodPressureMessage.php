@@ -45,7 +45,7 @@ final class BloodPressureMessage extends Message
      */
     public function getTimestamp(): ?DateTime
     {
-        return $this->getValue(253);
+        return $this->getFieldValue(253);
     }
 
     /**
@@ -53,7 +53,7 @@ final class BloodPressureMessage extends Message
      */
     public function getSystolicPressure(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -61,7 +61,7 @@ final class BloodPressureMessage extends Message
      */
     public function getDiastolicPressure(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -69,7 +69,7 @@ final class BloodPressureMessage extends Message
      */
     public function getMeanArterialPressure(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -77,7 +77,7 @@ final class BloodPressureMessage extends Message
      */
     public function getMap3SampleMean(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -85,7 +85,7 @@ final class BloodPressureMessage extends Message
      */
     public function getMapMorningValues(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -93,7 +93,7 @@ final class BloodPressureMessage extends Message
      */
     public function getMapEveningValues(): ?int
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -101,7 +101,7 @@ final class BloodPressureMessage extends Message
      */
     public function getHeartRate(): ?int
     {
-        return $this->getValue(6);
+        return $this->getFieldValue(6);
     }
 
     /**
@@ -109,7 +109,7 @@ final class BloodPressureMessage extends Message
      */
     public function getHeartRateType(): ?int
     {
-        return $this->getValue(7);
+        return $this->getFieldValue(7);
     }
 
     /**
@@ -117,7 +117,7 @@ final class BloodPressureMessage extends Message
      */
     public function getStatus(): ?int
     {
-        return $this->getValue(8);
+        return $this->getFieldValue(8);
     }
 
     /**
@@ -125,6 +125,6 @@ final class BloodPressureMessage extends Message
      */
     public function getUserProfileIndex(): ?int
     {
-        return $this->getValue(9);
+        return $this->getFieldValue(9);
     }
 }

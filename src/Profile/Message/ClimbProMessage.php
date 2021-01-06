@@ -41,7 +41,7 @@ final class ClimbProMessage extends Message
      */
     public function getTimestamp(): ?DateTime
     {
-        return $this->getValue(253);
+        return $this->getFieldValue(253);
     }
 
     /**
@@ -49,7 +49,7 @@ final class ClimbProMessage extends Message
      */
     public function getPositionLat(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -57,7 +57,7 @@ final class ClimbProMessage extends Message
      */
     public function getPositionLong(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -65,7 +65,7 @@ final class ClimbProMessage extends Message
      */
     public function getClimbProEvent(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -73,7 +73,7 @@ final class ClimbProMessage extends Message
      */
     public function getClimbNumber(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -81,7 +81,7 @@ final class ClimbProMessage extends Message
      */
     public function getClimbCategory(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -89,6 +89,6 @@ final class ClimbProMessage extends Message
      */
     public function getCurrentDist(): ?float
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 }

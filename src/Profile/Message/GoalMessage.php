@@ -47,7 +47,7 @@ final class GoalMessage extends Message
      */
     public function getMessageIndex(): ?int
     {
-        return $this->getValue(254);
+        return $this->getFieldValue(254);
     }
 
     /**
@@ -55,7 +55,7 @@ final class GoalMessage extends Message
      */
     public function getSport(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -63,7 +63,7 @@ final class GoalMessage extends Message
      */
     public function getSubSport(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -71,7 +71,7 @@ final class GoalMessage extends Message
      */
     public function getStartDate(): ?DateTime
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -79,7 +79,7 @@ final class GoalMessage extends Message
      */
     public function getEndDate(): ?DateTime
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -87,7 +87,7 @@ final class GoalMessage extends Message
      */
     public function getType(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -95,7 +95,7 @@ final class GoalMessage extends Message
      */
     public function getValue(): ?int
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -103,7 +103,7 @@ final class GoalMessage extends Message
      */
     public function getRepeat(): ?bool
     {
-        return $this->getValue(6);
+        return $this->getFieldValue(6);
     }
 
     /**
@@ -111,7 +111,7 @@ final class GoalMessage extends Message
      */
     public function getTargetValue(): ?int
     {
-        return $this->getValue(7);
+        return $this->getFieldValue(7);
     }
 
     /**
@@ -119,7 +119,7 @@ final class GoalMessage extends Message
      */
     public function getRecurrence(): ?int
     {
-        return $this->getValue(8);
+        return $this->getFieldValue(8);
     }
 
     /**
@@ -127,7 +127,7 @@ final class GoalMessage extends Message
      */
     public function getRecurrenceValue(): ?int
     {
-        return $this->getValue(9);
+        return $this->getFieldValue(9);
     }
 
     /**
@@ -135,7 +135,7 @@ final class GoalMessage extends Message
      */
     public function getEnabled(): ?bool
     {
-        return $this->getValue(10);
+        return $this->getFieldValue(10);
     }
 
     /**
@@ -143,6 +143,6 @@ final class GoalMessage extends Message
      */
     public function getSource(): ?int
     {
-        return $this->getValue(11);
+        return $this->getFieldValue(11);
     }
 }

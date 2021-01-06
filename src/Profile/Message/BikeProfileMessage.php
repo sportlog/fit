@@ -66,7 +66,7 @@ final class BikeProfileMessage extends Message
      */
     public function getMessageIndex(): ?int
     {
-        return $this->getValue(254);
+        return $this->getFieldValue(254);
     }
 
     /**
@@ -74,7 +74,7 @@ final class BikeProfileMessage extends Message
      */
     public function getName(): ?string
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -82,7 +82,7 @@ final class BikeProfileMessage extends Message
      */
     public function getSport(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -90,7 +90,7 @@ final class BikeProfileMessage extends Message
      */
     public function getSubSport(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -98,7 +98,7 @@ final class BikeProfileMessage extends Message
      */
     public function getOdometer(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -106,7 +106,7 @@ final class BikeProfileMessage extends Message
      */
     public function getBikeSpdAntId(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -114,7 +114,7 @@ final class BikeProfileMessage extends Message
      */
     public function getBikeCadAntId(): ?int
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -122,7 +122,7 @@ final class BikeProfileMessage extends Message
      */
     public function getBikeSpdcadAntId(): ?int
     {
-        return $this->getValue(6);
+        return $this->getFieldValue(6);
     }
 
     /**
@@ -130,7 +130,7 @@ final class BikeProfileMessage extends Message
      */
     public function getBikePowerAntId(): ?int
     {
-        return $this->getValue(7);
+        return $this->getFieldValue(7);
     }
 
     /**
@@ -138,7 +138,7 @@ final class BikeProfileMessage extends Message
      */
     public function getCustomWheelsize(): ?int
     {
-        return $this->getValue(8);
+        return $this->getFieldValue(8);
     }
 
     /**
@@ -146,7 +146,7 @@ final class BikeProfileMessage extends Message
      */
     public function getAutoWheelsize(): ?int
     {
-        return $this->getValue(9);
+        return $this->getFieldValue(9);
     }
 
     /**
@@ -154,7 +154,7 @@ final class BikeProfileMessage extends Message
      */
     public function getBikeWeight(): ?int
     {
-        return $this->getValue(10);
+        return $this->getFieldValue(10);
     }
 
     /**
@@ -162,7 +162,7 @@ final class BikeProfileMessage extends Message
      */
     public function getPowerCalFactor(): ?int
     {
-        return $this->getValue(11);
+        return $this->getFieldValue(11);
     }
 
     /**
@@ -170,7 +170,7 @@ final class BikeProfileMessage extends Message
      */
     public function getAutoWheelCal(): ?bool
     {
-        return $this->getValue(12);
+        return $this->getFieldValue(12);
     }
 
     /**
@@ -178,7 +178,7 @@ final class BikeProfileMessage extends Message
      */
     public function getAutoPowerZero(): ?bool
     {
-        return $this->getValue(13);
+        return $this->getFieldValue(13);
     }
 
     /**
@@ -186,7 +186,7 @@ final class BikeProfileMessage extends Message
      */
     public function getId(): ?int
     {
-        return $this->getValue(14);
+        return $this->getFieldValue(14);
     }
 
     /**
@@ -194,7 +194,7 @@ final class BikeProfileMessage extends Message
      */
     public function getSpdEnabled(): ?bool
     {
-        return $this->getValue(15);
+        return $this->getFieldValue(15);
     }
 
     /**
@@ -202,7 +202,7 @@ final class BikeProfileMessage extends Message
      */
     public function getCadEnabled(): ?bool
     {
-        return $this->getValue(16);
+        return $this->getFieldValue(16);
     }
 
     /**
@@ -210,7 +210,7 @@ final class BikeProfileMessage extends Message
      */
     public function getSpdcadEnabled(): ?bool
     {
-        return $this->getValue(17);
+        return $this->getFieldValue(17);
     }
 
     /**
@@ -218,7 +218,7 @@ final class BikeProfileMessage extends Message
      */
     public function getPowerEnabled(): ?bool
     {
-        return $this->getValue(18);
+        return $this->getFieldValue(18);
     }
 
     /**
@@ -226,7 +226,7 @@ final class BikeProfileMessage extends Message
      */
     public function getCrankLength(): ?int
     {
-        return $this->getValue(19);
+        return $this->getFieldValue(19);
     }
 
     /**
@@ -234,7 +234,7 @@ final class BikeProfileMessage extends Message
      */
     public function getEnabled(): ?bool
     {
-        return $this->getValue(20);
+        return $this->getFieldValue(20);
     }
 
     /**
@@ -242,7 +242,7 @@ final class BikeProfileMessage extends Message
      */
     public function getBikeSpdAntIdTransType(): ?int
     {
-        return $this->getValue(21);
+        return $this->getFieldValue(21);
     }
 
     /**
@@ -250,7 +250,7 @@ final class BikeProfileMessage extends Message
      */
     public function getBikeCadAntIdTransType(): ?int
     {
-        return $this->getValue(22);
+        return $this->getFieldValue(22);
     }
 
     /**
@@ -258,7 +258,7 @@ final class BikeProfileMessage extends Message
      */
     public function getBikeSpdcadAntIdTransType(): ?int
     {
-        return $this->getValue(23);
+        return $this->getFieldValue(23);
     }
 
     /**
@@ -266,7 +266,7 @@ final class BikeProfileMessage extends Message
      */
     public function getBikePowerAntIdTransType(): ?int
     {
-        return $this->getValue(24);
+        return $this->getFieldValue(24);
     }
 
     /**
@@ -274,7 +274,7 @@ final class BikeProfileMessage extends Message
      */
     public function getOdometerRollover(): ?int
     {
-        return $this->getValue(37);
+        return $this->getFieldValue(37);
     }
 
     /**
@@ -282,7 +282,7 @@ final class BikeProfileMessage extends Message
      */
     public function getFrontGearNum(): ?int
     {
-        return $this->getValue(38);
+        return $this->getFieldValue(38);
     }
 
     /**
@@ -290,7 +290,7 @@ final class BikeProfileMessage extends Message
      */
     public function getFrontGear(): ?int
     {
-        return $this->getValue(39);
+        return $this->getFieldValue(39);
     }
 
     /**
@@ -298,7 +298,7 @@ final class BikeProfileMessage extends Message
      */
     public function getRearGearNum(): ?int
     {
-        return $this->getValue(40);
+        return $this->getFieldValue(40);
     }
 
     /**
@@ -306,7 +306,7 @@ final class BikeProfileMessage extends Message
      */
     public function getRearGear(): ?int
     {
-        return $this->getValue(41);
+        return $this->getFieldValue(41);
     }
 
     /**
@@ -314,6 +314,6 @@ final class BikeProfileMessage extends Message
      */
     public function getShimanoDi2Enabled(): ?bool
     {
-        return $this->getValue(44);
+        return $this->getFieldValue(44);
     }
 }

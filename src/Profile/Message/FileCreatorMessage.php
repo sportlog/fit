@@ -36,7 +36,7 @@ final class FileCreatorMessage extends Message
      */
     public function getSoftwareVersion(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -44,6 +44,6 @@ final class FileCreatorMessage extends Message
      */
     public function getHardwareVersion(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 }

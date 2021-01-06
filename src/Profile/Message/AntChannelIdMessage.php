@@ -39,7 +39,7 @@ final class AntChannelIdMessage extends Message
      */
     public function getChannelNumber(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -47,7 +47,7 @@ final class AntChannelIdMessage extends Message
      */
     public function getDeviceType(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -55,7 +55,7 @@ final class AntChannelIdMessage extends Message
      */
     public function getDeviceNumber(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -63,7 +63,7 @@ final class AntChannelIdMessage extends Message
      */
     public function getTransmissionType(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -71,6 +71,6 @@ final class AntChannelIdMessage extends Message
      */
     public function getDeviceIndex(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 }

@@ -45,7 +45,7 @@ final class SetMessage extends Message
      */
     public function getTimestamp(): ?DateTime
     {
-        return $this->getValue(254);
+        return $this->getFieldValue(254);
     }
 
     /**
@@ -53,7 +53,7 @@ final class SetMessage extends Message
      */
     public function getDuration(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -61,7 +61,7 @@ final class SetMessage extends Message
      */
     public function getRepetitions(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -69,7 +69,7 @@ final class SetMessage extends Message
      */
     public function getWeight(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -77,7 +77,7 @@ final class SetMessage extends Message
      */
     public function getSetType(): ?int
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -85,7 +85,7 @@ final class SetMessage extends Message
      */
     public function getStartTime(): ?DateTime
     {
-        return $this->getValue(6);
+        return $this->getFieldValue(6);
     }
 
     /**
@@ -93,7 +93,7 @@ final class SetMessage extends Message
      */
     public function getCategory(): ?int
     {
-        return $this->getValue(7);
+        return $this->getFieldValue(7);
     }
 
     /**
@@ -101,7 +101,7 @@ final class SetMessage extends Message
      */
     public function getCategorySubtype(): ?int
     {
-        return $this->getValue(8);
+        return $this->getFieldValue(8);
     }
 
     /**
@@ -109,7 +109,7 @@ final class SetMessage extends Message
      */
     public function getWeightDisplayUnit(): ?int
     {
-        return $this->getValue(9);
+        return $this->getFieldValue(9);
     }
 
     /**
@@ -117,7 +117,7 @@ final class SetMessage extends Message
      */
     public function getMessageIndex(): ?int
     {
-        return $this->getValue(10);
+        return $this->getFieldValue(10);
     }
 
     /**
@@ -125,6 +125,6 @@ final class SetMessage extends Message
      */
     public function getWktStepIndex(): ?int
     {
-        return $this->getValue(11);
+        return $this->getFieldValue(11);
     }
 }

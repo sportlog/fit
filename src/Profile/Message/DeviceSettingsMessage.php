@@ -58,7 +58,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getActiveTimeZone(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -66,7 +66,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getUtcOffset(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -74,7 +74,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getTimeOffset(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -82,7 +82,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getTimeMode(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -90,7 +90,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getTimeZoneOffset(): ?int
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -98,7 +98,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getBacklightMode(): ?int
     {
-        return $this->getValue(12);
+        return $this->getFieldValue(12);
     }
 
     /**
@@ -106,7 +106,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getActivityTrackerEnabled(): ?bool
     {
-        return $this->getValue(36);
+        return $this->getFieldValue(36);
     }
 
     /**
@@ -114,7 +114,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getClockTime(): ?DateTime
     {
-        return $this->getValue(39);
+        return $this->getFieldValue(39);
     }
 
     /**
@@ -122,7 +122,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getPagesEnabled(): ?int
     {
-        return $this->getValue(40);
+        return $this->getFieldValue(40);
     }
 
     /**
@@ -130,7 +130,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getMoveAlertEnabled(): ?bool
     {
-        return $this->getValue(46);
+        return $this->getFieldValue(46);
     }
 
     /**
@@ -138,7 +138,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getDateMode(): ?int
     {
-        return $this->getValue(47);
+        return $this->getFieldValue(47);
     }
 
     /**
@@ -146,7 +146,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getDisplayOrientation(): ?int
     {
-        return $this->getValue(55);
+        return $this->getFieldValue(55);
     }
 
     /**
@@ -154,7 +154,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getMountingSide(): ?int
     {
-        return $this->getValue(56);
+        return $this->getFieldValue(56);
     }
 
     /**
@@ -162,7 +162,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getDefaultPage(): ?int
     {
-        return $this->getValue(57);
+        return $this->getFieldValue(57);
     }
 
     /**
@@ -170,7 +170,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getAutosyncMinSteps(): ?int
     {
-        return $this->getValue(58);
+        return $this->getFieldValue(58);
     }
 
     /**
@@ -178,7 +178,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getAutosyncMinTime(): ?int
     {
-        return $this->getValue(59);
+        return $this->getFieldValue(59);
     }
 
     /**
@@ -186,7 +186,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getLactateThresholdAutodetectEnabled(): ?bool
     {
-        return $this->getValue(80);
+        return $this->getFieldValue(80);
     }
 
     /**
@@ -194,7 +194,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getBleAutoUploadEnabled(): ?bool
     {
-        return $this->getValue(86);
+        return $this->getFieldValue(86);
     }
 
     /**
@@ -202,7 +202,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getAutoSyncFrequency(): ?int
     {
-        return $this->getValue(89);
+        return $this->getFieldValue(89);
     }
 
     /**
@@ -210,7 +210,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getAutoActivityDetect(): ?int
     {
-        return $this->getValue(90);
+        return $this->getFieldValue(90);
     }
 
     /**
@@ -218,7 +218,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getNumberOfScreens(): ?int
     {
-        return $this->getValue(94);
+        return $this->getFieldValue(94);
     }
 
     /**
@@ -226,7 +226,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getSmartNotificationDisplayOrientation(): ?int
     {
-        return $this->getValue(95);
+        return $this->getFieldValue(95);
     }
 
     /**
@@ -234,7 +234,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function getTapInterface(): ?int
     {
-        return $this->getValue(134);
+        return $this->getFieldValue(134);
     }
 
     /**
@@ -242,6 +242,6 @@ final class DeviceSettingsMessage extends Message
      */
     public function getTapSensitivity(): ?int
     {
-        return $this->getValue(174);
+        return $this->getFieldValue(174);
     }
 }

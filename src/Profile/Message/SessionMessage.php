@@ -161,7 +161,7 @@ final class SessionMessage extends Message
      */
     public function getMessageIndex(): ?int
     {
-        return $this->getValue(254);
+        return $this->getFieldValue(254);
     }
 
     /**
@@ -169,7 +169,7 @@ final class SessionMessage extends Message
      */
     public function getTimestamp(): ?DateTime
     {
-        return $this->getValue(253);
+        return $this->getFieldValue(253);
     }
 
     /**
@@ -177,7 +177,7 @@ final class SessionMessage extends Message
      */
     public function getEvent(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -185,7 +185,7 @@ final class SessionMessage extends Message
      */
     public function getEventType(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -193,7 +193,7 @@ final class SessionMessage extends Message
      */
     public function getStartTime(): ?DateTime
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -201,7 +201,7 @@ final class SessionMessage extends Message
      */
     public function getStartPositionLat(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -209,7 +209,7 @@ final class SessionMessage extends Message
      */
     public function getStartPositionLong(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -217,7 +217,7 @@ final class SessionMessage extends Message
      */
     public function getSport(): ?int
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -225,7 +225,7 @@ final class SessionMessage extends Message
      */
     public function getSubSport(): ?int
     {
-        return $this->getValue(6);
+        return $this->getFieldValue(6);
     }
 
     /**
@@ -233,7 +233,7 @@ final class SessionMessage extends Message
      */
     public function getTotalElapsedTime(): ?int
     {
-        return $this->getValue(7);
+        return $this->getFieldValue(7);
     }
 
     /**
@@ -241,7 +241,7 @@ final class SessionMessage extends Message
      */
     public function getTotalTimerTime(): ?int
     {
-        return $this->getValue(8);
+        return $this->getFieldValue(8);
     }
 
     /**
@@ -249,7 +249,7 @@ final class SessionMessage extends Message
      */
     public function getTotalDistance(): ?int
     {
-        return $this->getValue(9);
+        return $this->getFieldValue(9);
     }
 
     /**
@@ -257,7 +257,7 @@ final class SessionMessage extends Message
      */
     public function getTotalCycles(): ?int
     {
-        return $this->getValue(10);
+        return $this->getFieldValue(10);
     }
 
     /**
@@ -265,7 +265,7 @@ final class SessionMessage extends Message
      */
     public function getTotalCalories(): ?int
     {
-        return $this->getValue(11);
+        return $this->getFieldValue(11);
     }
 
     /**
@@ -273,7 +273,7 @@ final class SessionMessage extends Message
      */
     public function getTotalFatCalories(): ?int
     {
-        return $this->getValue(13);
+        return $this->getFieldValue(13);
     }
 
     /**
@@ -281,7 +281,7 @@ final class SessionMessage extends Message
      */
     public function getAvgSpeed(): ?int
     {
-        return $this->getValue(14);
+        return $this->getFieldValue(14);
     }
 
     /**
@@ -289,7 +289,7 @@ final class SessionMessage extends Message
      */
     public function getMaxSpeed(): ?int
     {
-        return $this->getValue(15);
+        return $this->getFieldValue(15);
     }
 
     /**
@@ -297,7 +297,7 @@ final class SessionMessage extends Message
      */
     public function getAvgHeartRate(): ?int
     {
-        return $this->getValue(16);
+        return $this->getFieldValue(16);
     }
 
     /**
@@ -305,7 +305,7 @@ final class SessionMessage extends Message
      */
     public function getMaxHeartRate(): ?int
     {
-        return $this->getValue(17);
+        return $this->getFieldValue(17);
     }
 
     /**
@@ -313,7 +313,7 @@ final class SessionMessage extends Message
      */
     public function getAvgCadence(): ?int
     {
-        return $this->getValue(18);
+        return $this->getFieldValue(18);
     }
 
     /**
@@ -321,7 +321,7 @@ final class SessionMessage extends Message
      */
     public function getMaxCadence(): ?int
     {
-        return $this->getValue(19);
+        return $this->getFieldValue(19);
     }
 
     /**
@@ -329,7 +329,7 @@ final class SessionMessage extends Message
      */
     public function getAvgPower(): ?int
     {
-        return $this->getValue(20);
+        return $this->getFieldValue(20);
     }
 
     /**
@@ -337,7 +337,7 @@ final class SessionMessage extends Message
      */
     public function getMaxPower(): ?int
     {
-        return $this->getValue(21);
+        return $this->getFieldValue(21);
     }
 
     /**
@@ -345,7 +345,7 @@ final class SessionMessage extends Message
      */
     public function getTotalAscent(): ?int
     {
-        return $this->getValue(22);
+        return $this->getFieldValue(22);
     }
 
     /**
@@ -353,7 +353,7 @@ final class SessionMessage extends Message
      */
     public function getTotalDescent(): ?int
     {
-        return $this->getValue(23);
+        return $this->getFieldValue(23);
     }
 
     /**
@@ -361,7 +361,7 @@ final class SessionMessage extends Message
      */
     public function getTotalTrainingEffect(): ?int
     {
-        return $this->getValue(24);
+        return $this->getFieldValue(24);
     }
 
     /**
@@ -369,7 +369,7 @@ final class SessionMessage extends Message
      */
     public function getFirstLapIndex(): ?int
     {
-        return $this->getValue(25);
+        return $this->getFieldValue(25);
     }
 
     /**
@@ -377,7 +377,7 @@ final class SessionMessage extends Message
      */
     public function getNumLaps(): ?int
     {
-        return $this->getValue(26);
+        return $this->getFieldValue(26);
     }
 
     /**
@@ -385,7 +385,7 @@ final class SessionMessage extends Message
      */
     public function getEventGroup(): ?int
     {
-        return $this->getValue(27);
+        return $this->getFieldValue(27);
     }
 
     /**
@@ -393,7 +393,7 @@ final class SessionMessage extends Message
      */
     public function getTrigger(): ?int
     {
-        return $this->getValue(28);
+        return $this->getFieldValue(28);
     }
 
     /**
@@ -401,7 +401,7 @@ final class SessionMessage extends Message
      */
     public function getNecLat(): ?int
     {
-        return $this->getValue(29);
+        return $this->getFieldValue(29);
     }
 
     /**
@@ -409,7 +409,7 @@ final class SessionMessage extends Message
      */
     public function getNecLong(): ?int
     {
-        return $this->getValue(30);
+        return $this->getFieldValue(30);
     }
 
     /**
@@ -417,7 +417,7 @@ final class SessionMessage extends Message
      */
     public function getSwcLat(): ?int
     {
-        return $this->getValue(31);
+        return $this->getFieldValue(31);
     }
 
     /**
@@ -425,7 +425,7 @@ final class SessionMessage extends Message
      */
     public function getSwcLong(): ?int
     {
-        return $this->getValue(32);
+        return $this->getFieldValue(32);
     }
 
     /**
@@ -433,7 +433,7 @@ final class SessionMessage extends Message
      */
     public function getNumLengths(): ?int
     {
-        return $this->getValue(33);
+        return $this->getFieldValue(33);
     }
 
     /**
@@ -441,7 +441,7 @@ final class SessionMessage extends Message
      */
     public function getNormalizedPower(): ?int
     {
-        return $this->getValue(34);
+        return $this->getFieldValue(34);
     }
 
     /**
@@ -449,7 +449,7 @@ final class SessionMessage extends Message
      */
     public function getTrainingStressScore(): ?int
     {
-        return $this->getValue(35);
+        return $this->getFieldValue(35);
     }
 
     /**
@@ -457,7 +457,7 @@ final class SessionMessage extends Message
      */
     public function getIntensityFactor(): ?int
     {
-        return $this->getValue(36);
+        return $this->getFieldValue(36);
     }
 
     /**
@@ -465,7 +465,7 @@ final class SessionMessage extends Message
      */
     public function getLeftRightBalance(): ?int
     {
-        return $this->getValue(37);
+        return $this->getFieldValue(37);
     }
 
     /**
@@ -473,7 +473,7 @@ final class SessionMessage extends Message
      */
     public function getAvgStrokeCount(): ?int
     {
-        return $this->getValue(41);
+        return $this->getFieldValue(41);
     }
 
     /**
@@ -481,7 +481,7 @@ final class SessionMessage extends Message
      */
     public function getAvgStrokeDistance(): ?int
     {
-        return $this->getValue(42);
+        return $this->getFieldValue(42);
     }
 
     /**
@@ -489,7 +489,7 @@ final class SessionMessage extends Message
      */
     public function getSwimStroke(): ?int
     {
-        return $this->getValue(43);
+        return $this->getFieldValue(43);
     }
 
     /**
@@ -497,7 +497,7 @@ final class SessionMessage extends Message
      */
     public function getPoolLength(): ?int
     {
-        return $this->getValue(44);
+        return $this->getFieldValue(44);
     }
 
     /**
@@ -505,7 +505,7 @@ final class SessionMessage extends Message
      */
     public function getThresholdPower(): ?int
     {
-        return $this->getValue(45);
+        return $this->getFieldValue(45);
     }
 
     /**
@@ -513,7 +513,7 @@ final class SessionMessage extends Message
      */
     public function getPoolLengthUnit(): ?int
     {
-        return $this->getValue(46);
+        return $this->getFieldValue(46);
     }
 
     /**
@@ -521,7 +521,7 @@ final class SessionMessage extends Message
      */
     public function getNumActiveLengths(): ?int
     {
-        return $this->getValue(47);
+        return $this->getFieldValue(47);
     }
 
     /**
@@ -529,7 +529,7 @@ final class SessionMessage extends Message
      */
     public function getTotalWork(): ?int
     {
-        return $this->getValue(48);
+        return $this->getFieldValue(48);
     }
 
     /**
@@ -537,7 +537,7 @@ final class SessionMessage extends Message
      */
     public function getAvgAltitude(): ?int
     {
-        return $this->getValue(49);
+        return $this->getFieldValue(49);
     }
 
     /**
@@ -545,7 +545,7 @@ final class SessionMessage extends Message
      */
     public function getMaxAltitude(): ?int
     {
-        return $this->getValue(50);
+        return $this->getFieldValue(50);
     }
 
     /**
@@ -553,7 +553,7 @@ final class SessionMessage extends Message
      */
     public function getGpsAccuracy(): ?int
     {
-        return $this->getValue(51);
+        return $this->getFieldValue(51);
     }
 
     /**
@@ -561,7 +561,7 @@ final class SessionMessage extends Message
      */
     public function getAvgGrade(): ?int
     {
-        return $this->getValue(52);
+        return $this->getFieldValue(52);
     }
 
     /**
@@ -569,7 +569,7 @@ final class SessionMessage extends Message
      */
     public function getAvgPosGrade(): ?int
     {
-        return $this->getValue(53);
+        return $this->getFieldValue(53);
     }
 
     /**
@@ -577,7 +577,7 @@ final class SessionMessage extends Message
      */
     public function getAvgNegGrade(): ?int
     {
-        return $this->getValue(54);
+        return $this->getFieldValue(54);
     }
 
     /**
@@ -585,7 +585,7 @@ final class SessionMessage extends Message
      */
     public function getMaxPosGrade(): ?int
     {
-        return $this->getValue(55);
+        return $this->getFieldValue(55);
     }
 
     /**
@@ -593,7 +593,7 @@ final class SessionMessage extends Message
      */
     public function getMaxNegGrade(): ?int
     {
-        return $this->getValue(56);
+        return $this->getFieldValue(56);
     }
 
     /**
@@ -601,7 +601,7 @@ final class SessionMessage extends Message
      */
     public function getAvgTemperature(): ?int
     {
-        return $this->getValue(57);
+        return $this->getFieldValue(57);
     }
 
     /**
@@ -609,7 +609,7 @@ final class SessionMessage extends Message
      */
     public function getMaxTemperature(): ?int
     {
-        return $this->getValue(58);
+        return $this->getFieldValue(58);
     }
 
     /**
@@ -617,7 +617,7 @@ final class SessionMessage extends Message
      */
     public function getTotalMovingTime(): ?int
     {
-        return $this->getValue(59);
+        return $this->getFieldValue(59);
     }
 
     /**
@@ -625,7 +625,7 @@ final class SessionMessage extends Message
      */
     public function getAvgPosVerticalSpeed(): ?int
     {
-        return $this->getValue(60);
+        return $this->getFieldValue(60);
     }
 
     /**
@@ -633,7 +633,7 @@ final class SessionMessage extends Message
      */
     public function getAvgNegVerticalSpeed(): ?int
     {
-        return $this->getValue(61);
+        return $this->getFieldValue(61);
     }
 
     /**
@@ -641,7 +641,7 @@ final class SessionMessage extends Message
      */
     public function getMaxPosVerticalSpeed(): ?int
     {
-        return $this->getValue(62);
+        return $this->getFieldValue(62);
     }
 
     /**
@@ -649,7 +649,7 @@ final class SessionMessage extends Message
      */
     public function getMaxNegVerticalSpeed(): ?int
     {
-        return $this->getValue(63);
+        return $this->getFieldValue(63);
     }
 
     /**
@@ -657,7 +657,7 @@ final class SessionMessage extends Message
      */
     public function getMinHeartRate(): ?int
     {
-        return $this->getValue(64);
+        return $this->getFieldValue(64);
     }
 
     /**
@@ -665,7 +665,7 @@ final class SessionMessage extends Message
      */
     public function getTimeInHrZone(): ?int
     {
-        return $this->getValue(65);
+        return $this->getFieldValue(65);
     }
 
     /**
@@ -673,7 +673,7 @@ final class SessionMessage extends Message
      */
     public function getTimeInSpeedZone(): ?int
     {
-        return $this->getValue(66);
+        return $this->getFieldValue(66);
     }
 
     /**
@@ -681,7 +681,7 @@ final class SessionMessage extends Message
      */
     public function getTimeInCadenceZone(): ?int
     {
-        return $this->getValue(67);
+        return $this->getFieldValue(67);
     }
 
     /**
@@ -689,7 +689,7 @@ final class SessionMessage extends Message
      */
     public function getTimeInPowerZone(): ?int
     {
-        return $this->getValue(68);
+        return $this->getFieldValue(68);
     }
 
     /**
@@ -697,7 +697,7 @@ final class SessionMessage extends Message
      */
     public function getAvgLapTime(): ?int
     {
-        return $this->getValue(69);
+        return $this->getFieldValue(69);
     }
 
     /**
@@ -705,7 +705,7 @@ final class SessionMessage extends Message
      */
     public function getBestLapIndex(): ?int
     {
-        return $this->getValue(70);
+        return $this->getFieldValue(70);
     }
 
     /**
@@ -713,7 +713,7 @@ final class SessionMessage extends Message
      */
     public function getMinAltitude(): ?int
     {
-        return $this->getValue(71);
+        return $this->getFieldValue(71);
     }
 
     /**
@@ -721,7 +721,7 @@ final class SessionMessage extends Message
      */
     public function getPlayerScore(): ?int
     {
-        return $this->getValue(82);
+        return $this->getFieldValue(82);
     }
 
     /**
@@ -729,7 +729,7 @@ final class SessionMessage extends Message
      */
     public function getOpponentScore(): ?int
     {
-        return $this->getValue(83);
+        return $this->getFieldValue(83);
     }
 
     /**
@@ -737,7 +737,7 @@ final class SessionMessage extends Message
      */
     public function getOpponentName(): ?string
     {
-        return $this->getValue(84);
+        return $this->getFieldValue(84);
     }
 
     /**
@@ -745,7 +745,7 @@ final class SessionMessage extends Message
      */
     public function getStrokeCount(): ?int
     {
-        return $this->getValue(85);
+        return $this->getFieldValue(85);
     }
 
     /**
@@ -753,7 +753,7 @@ final class SessionMessage extends Message
      */
     public function getZoneCount(): ?int
     {
-        return $this->getValue(86);
+        return $this->getFieldValue(86);
     }
 
     /**
@@ -761,7 +761,7 @@ final class SessionMessage extends Message
      */
     public function getMaxBallSpeed(): ?int
     {
-        return $this->getValue(87);
+        return $this->getFieldValue(87);
     }
 
     /**
@@ -769,7 +769,7 @@ final class SessionMessage extends Message
      */
     public function getAvgBallSpeed(): ?int
     {
-        return $this->getValue(88);
+        return $this->getFieldValue(88);
     }
 
     /**
@@ -777,7 +777,7 @@ final class SessionMessage extends Message
      */
     public function getAvgVerticalOscillation(): ?int
     {
-        return $this->getValue(89);
+        return $this->getFieldValue(89);
     }
 
     /**
@@ -785,7 +785,7 @@ final class SessionMessage extends Message
      */
     public function getAvgStanceTimePercent(): ?int
     {
-        return $this->getValue(90);
+        return $this->getFieldValue(90);
     }
 
     /**
@@ -793,7 +793,7 @@ final class SessionMessage extends Message
      */
     public function getAvgStanceTime(): ?int
     {
-        return $this->getValue(91);
+        return $this->getFieldValue(91);
     }
 
     /**
@@ -801,7 +801,7 @@ final class SessionMessage extends Message
      */
     public function getAvgFractionalCadence(): ?int
     {
-        return $this->getValue(92);
+        return $this->getFieldValue(92);
     }
 
     /**
@@ -809,7 +809,7 @@ final class SessionMessage extends Message
      */
     public function getMaxFractionalCadence(): ?int
     {
-        return $this->getValue(93);
+        return $this->getFieldValue(93);
     }
 
     /**
@@ -817,7 +817,7 @@ final class SessionMessage extends Message
      */
     public function getTotalFractionalCycles(): ?int
     {
-        return $this->getValue(94);
+        return $this->getFieldValue(94);
     }
 
     /**
@@ -825,7 +825,7 @@ final class SessionMessage extends Message
      */
     public function getAvgTotalHemoglobinConc(): ?int
     {
-        return $this->getValue(95);
+        return $this->getFieldValue(95);
     }
 
     /**
@@ -833,7 +833,7 @@ final class SessionMessage extends Message
      */
     public function getMinTotalHemoglobinConc(): ?int
     {
-        return $this->getValue(96);
+        return $this->getFieldValue(96);
     }
 
     /**
@@ -841,7 +841,7 @@ final class SessionMessage extends Message
      */
     public function getMaxTotalHemoglobinConc(): ?int
     {
-        return $this->getValue(97);
+        return $this->getFieldValue(97);
     }
 
     /**
@@ -849,7 +849,7 @@ final class SessionMessage extends Message
      */
     public function getAvgSaturatedHemoglobinPercent(): ?int
     {
-        return $this->getValue(98);
+        return $this->getFieldValue(98);
     }
 
     /**
@@ -857,7 +857,7 @@ final class SessionMessage extends Message
      */
     public function getMinSaturatedHemoglobinPercent(): ?int
     {
-        return $this->getValue(99);
+        return $this->getFieldValue(99);
     }
 
     /**
@@ -865,7 +865,7 @@ final class SessionMessage extends Message
      */
     public function getMaxSaturatedHemoglobinPercent(): ?int
     {
-        return $this->getValue(100);
+        return $this->getFieldValue(100);
     }
 
     /**
@@ -873,7 +873,7 @@ final class SessionMessage extends Message
      */
     public function getAvgLeftTorqueEffectiveness(): ?int
     {
-        return $this->getValue(101);
+        return $this->getFieldValue(101);
     }
 
     /**
@@ -881,7 +881,7 @@ final class SessionMessage extends Message
      */
     public function getAvgRightTorqueEffectiveness(): ?int
     {
-        return $this->getValue(102);
+        return $this->getFieldValue(102);
     }
 
     /**
@@ -889,7 +889,7 @@ final class SessionMessage extends Message
      */
     public function getAvgLeftPedalSmoothness(): ?int
     {
-        return $this->getValue(103);
+        return $this->getFieldValue(103);
     }
 
     /**
@@ -897,7 +897,7 @@ final class SessionMessage extends Message
      */
     public function getAvgRightPedalSmoothness(): ?int
     {
-        return $this->getValue(104);
+        return $this->getFieldValue(104);
     }
 
     /**
@@ -905,7 +905,7 @@ final class SessionMessage extends Message
      */
     public function getAvgCombinedPedalSmoothness(): ?int
     {
-        return $this->getValue(105);
+        return $this->getFieldValue(105);
     }
 
     /**
@@ -913,7 +913,7 @@ final class SessionMessage extends Message
      */
     public function getSportIndex(): ?int
     {
-        return $this->getValue(111);
+        return $this->getFieldValue(111);
     }
 
     /**
@@ -921,7 +921,7 @@ final class SessionMessage extends Message
      */
     public function getTimeStanding(): ?int
     {
-        return $this->getValue(112);
+        return $this->getFieldValue(112);
     }
 
     /**
@@ -929,7 +929,7 @@ final class SessionMessage extends Message
      */
     public function getStandCount(): ?int
     {
-        return $this->getValue(113);
+        return $this->getFieldValue(113);
     }
 
     /**
@@ -937,7 +937,7 @@ final class SessionMessage extends Message
      */
     public function getAvgLeftPco(): ?int
     {
-        return $this->getValue(114);
+        return $this->getFieldValue(114);
     }
 
     /**
@@ -945,7 +945,7 @@ final class SessionMessage extends Message
      */
     public function getAvgRightPco(): ?int
     {
-        return $this->getValue(115);
+        return $this->getFieldValue(115);
     }
 
     /**
@@ -953,7 +953,7 @@ final class SessionMessage extends Message
      */
     public function getAvgLeftPowerPhase(): ?int
     {
-        return $this->getValue(116);
+        return $this->getFieldValue(116);
     }
 
     /**
@@ -961,7 +961,7 @@ final class SessionMessage extends Message
      */
     public function getAvgLeftPowerPhasePeak(): ?int
     {
-        return $this->getValue(117);
+        return $this->getFieldValue(117);
     }
 
     /**
@@ -969,7 +969,7 @@ final class SessionMessage extends Message
      */
     public function getAvgRightPowerPhase(): ?int
     {
-        return $this->getValue(118);
+        return $this->getFieldValue(118);
     }
 
     /**
@@ -977,7 +977,7 @@ final class SessionMessage extends Message
      */
     public function getAvgRightPowerPhasePeak(): ?int
     {
-        return $this->getValue(119);
+        return $this->getFieldValue(119);
     }
 
     /**
@@ -985,7 +985,7 @@ final class SessionMessage extends Message
      */
     public function getAvgPowerPosition(): ?int
     {
-        return $this->getValue(120);
+        return $this->getFieldValue(120);
     }
 
     /**
@@ -993,7 +993,7 @@ final class SessionMessage extends Message
      */
     public function getMaxPowerPosition(): ?int
     {
-        return $this->getValue(121);
+        return $this->getFieldValue(121);
     }
 
     /**
@@ -1001,7 +1001,7 @@ final class SessionMessage extends Message
      */
     public function getAvgCadencePosition(): ?int
     {
-        return $this->getValue(122);
+        return $this->getFieldValue(122);
     }
 
     /**
@@ -1009,7 +1009,7 @@ final class SessionMessage extends Message
      */
     public function getMaxCadencePosition(): ?int
     {
-        return $this->getValue(123);
+        return $this->getFieldValue(123);
     }
 
     /**
@@ -1017,7 +1017,7 @@ final class SessionMessage extends Message
      */
     public function getEnhancedAvgSpeed(): ?int
     {
-        return $this->getValue(124);
+        return $this->getFieldValue(124);
     }
 
     /**
@@ -1025,7 +1025,7 @@ final class SessionMessage extends Message
      */
     public function getEnhancedMaxSpeed(): ?int
     {
-        return $this->getValue(125);
+        return $this->getFieldValue(125);
     }
 
     /**
@@ -1033,7 +1033,7 @@ final class SessionMessage extends Message
      */
     public function getEnhancedAvgAltitude(): ?int
     {
-        return $this->getValue(126);
+        return $this->getFieldValue(126);
     }
 
     /**
@@ -1041,7 +1041,7 @@ final class SessionMessage extends Message
      */
     public function getEnhancedMinAltitude(): ?int
     {
-        return $this->getValue(127);
+        return $this->getFieldValue(127);
     }
 
     /**
@@ -1049,7 +1049,7 @@ final class SessionMessage extends Message
      */
     public function getEnhancedMaxAltitude(): ?int
     {
-        return $this->getValue(128);
+        return $this->getFieldValue(128);
     }
 
     /**
@@ -1057,7 +1057,7 @@ final class SessionMessage extends Message
      */
     public function getAvgLevMotorPower(): ?int
     {
-        return $this->getValue(129);
+        return $this->getFieldValue(129);
     }
 
     /**
@@ -1065,7 +1065,7 @@ final class SessionMessage extends Message
      */
     public function getMaxLevMotorPower(): ?int
     {
-        return $this->getValue(130);
+        return $this->getFieldValue(130);
     }
 
     /**
@@ -1073,7 +1073,7 @@ final class SessionMessage extends Message
      */
     public function getLevBatteryConsumption(): ?int
     {
-        return $this->getValue(131);
+        return $this->getFieldValue(131);
     }
 
     /**
@@ -1081,7 +1081,7 @@ final class SessionMessage extends Message
      */
     public function getAvgVerticalRatio(): ?int
     {
-        return $this->getValue(132);
+        return $this->getFieldValue(132);
     }
 
     /**
@@ -1089,7 +1089,7 @@ final class SessionMessage extends Message
      */
     public function getAvgStanceTimeBalance(): ?int
     {
-        return $this->getValue(133);
+        return $this->getFieldValue(133);
     }
 
     /**
@@ -1097,7 +1097,7 @@ final class SessionMessage extends Message
      */
     public function getAvgStepLength(): ?int
     {
-        return $this->getValue(134);
+        return $this->getFieldValue(134);
     }
 
     /**
@@ -1105,7 +1105,7 @@ final class SessionMessage extends Message
      */
     public function getTotalAnaerobicTrainingEffect(): ?int
     {
-        return $this->getValue(137);
+        return $this->getFieldValue(137);
     }
 
     /**
@@ -1113,7 +1113,7 @@ final class SessionMessage extends Message
      */
     public function getAvgVam(): ?int
     {
-        return $this->getValue(139);
+        return $this->getFieldValue(139);
     }
 
     /**
@@ -1121,7 +1121,7 @@ final class SessionMessage extends Message
      */
     public function getTotalGrit(): ?float
     {
-        return $this->getValue(181);
+        return $this->getFieldValue(181);
     }
 
     /**
@@ -1129,7 +1129,7 @@ final class SessionMessage extends Message
      */
     public function getTotalFlow(): ?float
     {
-        return $this->getValue(182);
+        return $this->getFieldValue(182);
     }
 
     /**
@@ -1137,7 +1137,7 @@ final class SessionMessage extends Message
      */
     public function getJumpCount(): ?int
     {
-        return $this->getValue(183);
+        return $this->getFieldValue(183);
     }
 
     /**
@@ -1145,7 +1145,7 @@ final class SessionMessage extends Message
      */
     public function getAvgGrit(): ?float
     {
-        return $this->getValue(186);
+        return $this->getFieldValue(186);
     }
 
     /**
@@ -1153,7 +1153,7 @@ final class SessionMessage extends Message
      */
     public function getAvgFlow(): ?float
     {
-        return $this->getValue(187);
+        return $this->getFieldValue(187);
     }
 
     /**
@@ -1161,7 +1161,7 @@ final class SessionMessage extends Message
      */
     public function getTotalFractionalAscent(): ?int
     {
-        return $this->getValue(199);
+        return $this->getFieldValue(199);
     }
 
     /**
@@ -1169,6 +1169,6 @@ final class SessionMessage extends Message
      */
     public function getTotalFractionalDescent(): ?int
     {
-        return $this->getValue(200);
+        return $this->getFieldValue(200);
     }
 }

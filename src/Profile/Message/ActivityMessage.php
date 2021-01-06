@@ -42,7 +42,7 @@ final class ActivityMessage extends Message
      */
     public function getTimestamp(): ?DateTime
     {
-        return $this->getValue(253);
+        return $this->getFieldValue(253);
     }
 
     /**
@@ -50,7 +50,7 @@ final class ActivityMessage extends Message
      */
     public function getTotalTimerTime(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -58,7 +58,7 @@ final class ActivityMessage extends Message
      */
     public function getNumSessions(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -66,7 +66,7 @@ final class ActivityMessage extends Message
      */
     public function getType(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -74,7 +74,7 @@ final class ActivityMessage extends Message
      */
     public function getEvent(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -82,7 +82,7 @@ final class ActivityMessage extends Message
      */
     public function getEventType(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -90,7 +90,7 @@ final class ActivityMessage extends Message
      */
     public function getLocalTimestamp(): ?DateTime
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -98,6 +98,6 @@ final class ActivityMessage extends Message
      */
     public function getEventGroup(): ?int
     {
-        return $this->getValue(6);
+        return $this->getFieldValue(6);
     }
 }

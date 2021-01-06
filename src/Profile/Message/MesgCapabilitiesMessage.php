@@ -39,7 +39,7 @@ final class MesgCapabilitiesMessage extends Message
      */
     public function getMessageIndex(): ?int
     {
-        return $this->getValue(254);
+        return $this->getFieldValue(254);
     }
 
     /**
@@ -47,7 +47,7 @@ final class MesgCapabilitiesMessage extends Message
      */
     public function getFile(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -55,7 +55,7 @@ final class MesgCapabilitiesMessage extends Message
      */
     public function getMesgNum(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -63,7 +63,7 @@ final class MesgCapabilitiesMessage extends Message
      */
     public function getCountType(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -71,6 +71,6 @@ final class MesgCapabilitiesMessage extends Message
      */
     public function getCount(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 }

@@ -43,7 +43,7 @@ final class SegmentFileMessage extends Message
      */
     public function getMessageIndex(): ?int
     {
-        return $this->getValue(254);
+        return $this->getFieldValue(254);
     }
 
     /**
@@ -51,7 +51,7 @@ final class SegmentFileMessage extends Message
      */
     public function getFileUuid(): ?string
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -59,7 +59,7 @@ final class SegmentFileMessage extends Message
      */
     public function getEnabled(): ?bool
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -67,7 +67,7 @@ final class SegmentFileMessage extends Message
      */
     public function getUserProfilePrimaryKey(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -75,7 +75,7 @@ final class SegmentFileMessage extends Message
      */
     public function getLeaderType(): ?int
     {
-        return $this->getValue(7);
+        return $this->getFieldValue(7);
     }
 
     /**
@@ -83,7 +83,7 @@ final class SegmentFileMessage extends Message
      */
     public function getLeaderGroupPrimaryKey(): ?int
     {
-        return $this->getValue(8);
+        return $this->getFieldValue(8);
     }
 
     /**
@@ -91,7 +91,7 @@ final class SegmentFileMessage extends Message
      */
     public function getLeaderActivityId(): ?int
     {
-        return $this->getValue(9);
+        return $this->getFieldValue(9);
     }
 
     /**
@@ -99,7 +99,7 @@ final class SegmentFileMessage extends Message
      */
     public function getLeaderActivityIdString(): ?string
     {
-        return $this->getValue(10);
+        return $this->getFieldValue(10);
     }
 
     /**
@@ -107,6 +107,6 @@ final class SegmentFileMessage extends Message
      */
     public function getDefaultRaceLeader(): ?int
     {
-        return $this->getValue(11);
+        return $this->getFieldValue(11);
     }
 }

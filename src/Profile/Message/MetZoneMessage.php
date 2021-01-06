@@ -38,7 +38,7 @@ final class MetZoneMessage extends Message
      */
     public function getMessageIndex(): ?int
     {
-        return $this->getValue(254);
+        return $this->getFieldValue(254);
     }
 
     /**
@@ -46,7 +46,7 @@ final class MetZoneMessage extends Message
      */
     public function getHighBpm(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -54,7 +54,7 @@ final class MetZoneMessage extends Message
      */
     public function getCalories(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -62,6 +62,6 @@ final class MetZoneMessage extends Message
      */
     public function getFatCalories(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 }

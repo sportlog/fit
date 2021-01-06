@@ -123,7 +123,7 @@ class Decoder
                     $tmpSize -= $fitBaseTypeSize;
                 }
             }
-            $message->setValue($fieldDefinition['field_definition_number'], $fieldValue, $fitBaseType);
+            $message->setFieldValue($fieldDefinition['field_definition_number'], $fieldValue, $fitBaseType);
         }
         
         $this->logger->info("Data for '{$localMessagType}'");

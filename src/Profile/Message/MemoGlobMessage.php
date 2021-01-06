@@ -38,7 +38,7 @@ final class MemoGlobMessage extends Message
      */
     public function getPartIndex(): ?int
     {
-        return $this->getValue(250);
+        return $this->getFieldValue(250);
     }
 
     /**
@@ -46,7 +46,7 @@ final class MemoGlobMessage extends Message
      */
     public function getMemo(): mixed
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -54,7 +54,7 @@ final class MemoGlobMessage extends Message
      */
     public function getMessageNumber(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -62,6 +62,6 @@ final class MemoGlobMessage extends Message
      */
     public function getMessageIndex(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 }

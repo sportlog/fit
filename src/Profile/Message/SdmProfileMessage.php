@@ -42,7 +42,7 @@ final class SdmProfileMessage extends Message
      */
     public function getMessageIndex(): ?int
     {
-        return $this->getValue(254);
+        return $this->getFieldValue(254);
     }
 
     /**
@@ -50,7 +50,7 @@ final class SdmProfileMessage extends Message
      */
     public function getEnabled(): ?bool
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -58,7 +58,7 @@ final class SdmProfileMessage extends Message
      */
     public function getSdmAntId(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -66,7 +66,7 @@ final class SdmProfileMessage extends Message
      */
     public function getSdmCalFactor(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -74,7 +74,7 @@ final class SdmProfileMessage extends Message
      */
     public function getOdometer(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -82,7 +82,7 @@ final class SdmProfileMessage extends Message
      */
     public function getSpeedSource(): ?bool
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -90,7 +90,7 @@ final class SdmProfileMessage extends Message
      */
     public function getSdmAntIdTransType(): ?int
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -98,6 +98,6 @@ final class SdmProfileMessage extends Message
      */
     public function getOdometerRollover(): ?int
     {
-        return $this->getValue(7);
+        return $this->getFieldValue(7);
     }
 }

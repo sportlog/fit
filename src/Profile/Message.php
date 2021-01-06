@@ -80,7 +80,7 @@ abstract class Message implements IteratorAggregate, Stringable
      *
      * @return integer
      */
-    public function getMessageNumber(): int
+    public function getGlobalMessageNumber(): int
     {
         return $this->number;
     }
@@ -95,12 +95,12 @@ abstract class Message implements IteratorAggregate, Stringable
         return $this->name;
     }
 
-    public function getValue(int|string $fieldNumber): mixed
+    public function getFieldValue(int|string $fieldNumber): mixed
     {
         return isset($this->values[$fieldNumber]) ? $this->values[$fieldNumber] : null;
     }
 
-    public function setValue(int $fieldNumber, mixed $value, FitBaseTypeDefinition $fitBaseType): void
+    public function setFieldValue(int $fieldNumber, mixed $value, FitBaseTypeDefinition $fitBaseType): void
     {
         $field = $this->getField($fieldNumber);
         if ($field !== null) {
@@ -170,6 +170,6 @@ abstract class Message implements IteratorAggregate, Stringable
 
     public function __toString()
     {
-        return sprintf('%s (%s)', $this->getMessageName(), $this->getMessageNumber());
+        return sprintf('%s (%s)', $this->getMessageName(), $this->getGlobalMessageNumber());
     }
 }

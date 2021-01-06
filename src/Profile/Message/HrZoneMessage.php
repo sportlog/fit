@@ -37,7 +37,7 @@ final class HrZoneMessage extends Message
      */
     public function getMessageIndex(): ?int
     {
-        return $this->getValue(254);
+        return $this->getFieldValue(254);
     }
 
     /**
@@ -45,7 +45,7 @@ final class HrZoneMessage extends Message
      */
     public function getHighBpm(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -53,6 +53,6 @@ final class HrZoneMessage extends Message
      */
     public function getName(): ?string
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 }

@@ -39,7 +39,7 @@ final class HrmProfileMessage extends Message
      */
     public function getMessageIndex(): ?int
     {
-        return $this->getValue(254);
+        return $this->getFieldValue(254);
     }
 
     /**
@@ -47,7 +47,7 @@ final class HrmProfileMessage extends Message
      */
     public function getEnabled(): ?bool
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -55,7 +55,7 @@ final class HrmProfileMessage extends Message
      */
     public function getHrmAntId(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -63,7 +63,7 @@ final class HrmProfileMessage extends Message
      */
     public function getLogHrv(): ?bool
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -71,6 +71,6 @@ final class HrmProfileMessage extends Message
      */
     public function getHrmAntIdTransType(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 }

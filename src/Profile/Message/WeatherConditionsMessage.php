@@ -50,7 +50,7 @@ final class WeatherConditionsMessage extends Message
      */
     public function getTimestamp(): ?DateTime
     {
-        return $this->getValue(253);
+        return $this->getFieldValue(253);
     }
 
     /**
@@ -58,7 +58,7 @@ final class WeatherConditionsMessage extends Message
      */
     public function getWeatherReport(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -66,7 +66,7 @@ final class WeatherConditionsMessage extends Message
      */
     public function getTemperature(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -74,7 +74,7 @@ final class WeatherConditionsMessage extends Message
      */
     public function getCondition(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -82,7 +82,7 @@ final class WeatherConditionsMessage extends Message
      */
     public function getWindDirection(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -90,7 +90,7 @@ final class WeatherConditionsMessage extends Message
      */
     public function getWindSpeed(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -98,7 +98,7 @@ final class WeatherConditionsMessage extends Message
      */
     public function getPrecipitationProbability(): ?int
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -106,7 +106,7 @@ final class WeatherConditionsMessage extends Message
      */
     public function getTemperatureFeelsLike(): ?int
     {
-        return $this->getValue(6);
+        return $this->getFieldValue(6);
     }
 
     /**
@@ -114,7 +114,7 @@ final class WeatherConditionsMessage extends Message
      */
     public function getRelativeHumidity(): ?int
     {
-        return $this->getValue(7);
+        return $this->getFieldValue(7);
     }
 
     /**
@@ -122,7 +122,7 @@ final class WeatherConditionsMessage extends Message
      */
     public function getLocation(): ?string
     {
-        return $this->getValue(8);
+        return $this->getFieldValue(8);
     }
 
     /**
@@ -130,7 +130,7 @@ final class WeatherConditionsMessage extends Message
      */
     public function getObservedAtTime(): ?DateTime
     {
-        return $this->getValue(9);
+        return $this->getFieldValue(9);
     }
 
     /**
@@ -138,7 +138,7 @@ final class WeatherConditionsMessage extends Message
      */
     public function getObservedLocationLat(): ?int
     {
-        return $this->getValue(10);
+        return $this->getFieldValue(10);
     }
 
     /**
@@ -146,7 +146,7 @@ final class WeatherConditionsMessage extends Message
      */
     public function getObservedLocationLong(): ?int
     {
-        return $this->getValue(11);
+        return $this->getFieldValue(11);
     }
 
     /**
@@ -154,7 +154,7 @@ final class WeatherConditionsMessage extends Message
      */
     public function getDayOfWeek(): ?int
     {
-        return $this->getValue(12);
+        return $this->getFieldValue(12);
     }
 
     /**
@@ -162,7 +162,7 @@ final class WeatherConditionsMessage extends Message
      */
     public function getHighTemperature(): ?int
     {
-        return $this->getValue(13);
+        return $this->getFieldValue(13);
     }
 
     /**
@@ -170,6 +170,6 @@ final class WeatherConditionsMessage extends Message
      */
     public function getLowTemperature(): ?int
     {
-        return $this->getValue(14);
+        return $this->getFieldValue(14);
     }
 }

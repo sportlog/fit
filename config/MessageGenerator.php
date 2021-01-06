@@ -152,7 +152,7 @@ class MessageGenerator
                     ->setPublic()
                     ->setReturnType($phpType)
                     ->addComment("Gets the {$splittedName}")
-                    ->setBody('return $this->getValue(?);', [(int)$num]);
+                    ->setBody('return $this->getFieldValue(?);', [(int)$num]);
 
                 if ($phpType !== Type::MIXED) {
                     $method->setReturnNullable();

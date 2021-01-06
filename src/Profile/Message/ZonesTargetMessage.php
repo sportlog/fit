@@ -39,7 +39,7 @@ final class ZonesTargetMessage extends Message
      */
     public function getMaxHeartRate(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -47,7 +47,7 @@ final class ZonesTargetMessage extends Message
      */
     public function getThresholdHeartRate(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -55,7 +55,7 @@ final class ZonesTargetMessage extends Message
      */
     public function getFunctionalThresholdPower(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -63,7 +63,7 @@ final class ZonesTargetMessage extends Message
      */
     public function getHrCalcType(): ?int
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -71,6 +71,6 @@ final class ZonesTargetMessage extends Message
      */
     public function getPwrCalcType(): ?int
     {
-        return $this->getValue(7);
+        return $this->getFieldValue(7);
     }
 }

@@ -107,7 +107,7 @@ final class RecordMessage extends Message
      */
     public function getTimestamp(): ?DateTime
     {
-        return $this->getValue(253);
+        return $this->getFieldValue(253);
     }
 
     /**
@@ -115,7 +115,7 @@ final class RecordMessage extends Message
      */
     public function getPositionLat(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -123,7 +123,7 @@ final class RecordMessage extends Message
      */
     public function getPositionLong(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -131,7 +131,7 @@ final class RecordMessage extends Message
      */
     public function getAltitude(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -139,7 +139,7 @@ final class RecordMessage extends Message
      */
     public function getHeartRate(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -147,7 +147,7 @@ final class RecordMessage extends Message
      */
     public function getCadence(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -155,7 +155,7 @@ final class RecordMessage extends Message
      */
     public function getDistance(): ?int
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -163,7 +163,7 @@ final class RecordMessage extends Message
      */
     public function getSpeed(): ?int
     {
-        return $this->getValue(6);
+        return $this->getFieldValue(6);
     }
 
     /**
@@ -171,7 +171,7 @@ final class RecordMessage extends Message
      */
     public function getPower(): ?int
     {
-        return $this->getValue(7);
+        return $this->getFieldValue(7);
     }
 
     /**
@@ -179,7 +179,7 @@ final class RecordMessage extends Message
      */
     public function getCompressedSpeedDistance(): mixed
     {
-        return $this->getValue(8);
+        return $this->getFieldValue(8);
     }
 
     /**
@@ -187,7 +187,7 @@ final class RecordMessage extends Message
      */
     public function getGrade(): ?int
     {
-        return $this->getValue(9);
+        return $this->getFieldValue(9);
     }
 
     /**
@@ -195,7 +195,7 @@ final class RecordMessage extends Message
      */
     public function getResistance(): ?int
     {
-        return $this->getValue(10);
+        return $this->getFieldValue(10);
     }
 
     /**
@@ -203,7 +203,7 @@ final class RecordMessage extends Message
      */
     public function getTimeFromCourse(): ?int
     {
-        return $this->getValue(11);
+        return $this->getFieldValue(11);
     }
 
     /**
@@ -211,7 +211,7 @@ final class RecordMessage extends Message
      */
     public function getCycleLength(): ?int
     {
-        return $this->getValue(12);
+        return $this->getFieldValue(12);
     }
 
     /**
@@ -219,7 +219,7 @@ final class RecordMessage extends Message
      */
     public function getTemperature(): ?int
     {
-        return $this->getValue(13);
+        return $this->getFieldValue(13);
     }
 
     /**
@@ -227,7 +227,7 @@ final class RecordMessage extends Message
      */
     public function getSpeed1s(): ?int
     {
-        return $this->getValue(17);
+        return $this->getFieldValue(17);
     }
 
     /**
@@ -235,7 +235,7 @@ final class RecordMessage extends Message
      */
     public function getCycles(): ?int
     {
-        return $this->getValue(18);
+        return $this->getFieldValue(18);
     }
 
     /**
@@ -243,7 +243,7 @@ final class RecordMessage extends Message
      */
     public function getTotalCycles(): ?int
     {
-        return $this->getValue(19);
+        return $this->getFieldValue(19);
     }
 
     /**
@@ -251,7 +251,7 @@ final class RecordMessage extends Message
      */
     public function getCompressedAccumulatedPower(): ?int
     {
-        return $this->getValue(28);
+        return $this->getFieldValue(28);
     }
 
     /**
@@ -259,7 +259,7 @@ final class RecordMessage extends Message
      */
     public function getAccumulatedPower(): ?int
     {
-        return $this->getValue(29);
+        return $this->getFieldValue(29);
     }
 
     /**
@@ -267,7 +267,7 @@ final class RecordMessage extends Message
      */
     public function getLeftRightBalance(): ?int
     {
-        return $this->getValue(30);
+        return $this->getFieldValue(30);
     }
 
     /**
@@ -275,7 +275,7 @@ final class RecordMessage extends Message
      */
     public function getGpsAccuracy(): ?int
     {
-        return $this->getValue(31);
+        return $this->getFieldValue(31);
     }
 
     /**
@@ -283,7 +283,7 @@ final class RecordMessage extends Message
      */
     public function getVerticalSpeed(): ?int
     {
-        return $this->getValue(32);
+        return $this->getFieldValue(32);
     }
 
     /**
@@ -291,7 +291,7 @@ final class RecordMessage extends Message
      */
     public function getCalories(): ?int
     {
-        return $this->getValue(33);
+        return $this->getFieldValue(33);
     }
 
     /**
@@ -299,7 +299,7 @@ final class RecordMessage extends Message
      */
     public function getVerticalOscillation(): ?int
     {
-        return $this->getValue(39);
+        return $this->getFieldValue(39);
     }
 
     /**
@@ -307,7 +307,7 @@ final class RecordMessage extends Message
      */
     public function getStanceTimePercent(): ?int
     {
-        return $this->getValue(40);
+        return $this->getFieldValue(40);
     }
 
     /**
@@ -315,7 +315,7 @@ final class RecordMessage extends Message
      */
     public function getStanceTime(): ?int
     {
-        return $this->getValue(41);
+        return $this->getFieldValue(41);
     }
 
     /**
@@ -323,7 +323,7 @@ final class RecordMessage extends Message
      */
     public function getActivityType(): ?int
     {
-        return $this->getValue(42);
+        return $this->getFieldValue(42);
     }
 
     /**
@@ -331,7 +331,7 @@ final class RecordMessage extends Message
      */
     public function getLeftTorqueEffectiveness(): ?int
     {
-        return $this->getValue(43);
+        return $this->getFieldValue(43);
     }
 
     /**
@@ -339,7 +339,7 @@ final class RecordMessage extends Message
      */
     public function getRightTorqueEffectiveness(): ?int
     {
-        return $this->getValue(44);
+        return $this->getFieldValue(44);
     }
 
     /**
@@ -347,7 +347,7 @@ final class RecordMessage extends Message
      */
     public function getLeftPedalSmoothness(): ?int
     {
-        return $this->getValue(45);
+        return $this->getFieldValue(45);
     }
 
     /**
@@ -355,7 +355,7 @@ final class RecordMessage extends Message
      */
     public function getRightPedalSmoothness(): ?int
     {
-        return $this->getValue(46);
+        return $this->getFieldValue(46);
     }
 
     /**
@@ -363,7 +363,7 @@ final class RecordMessage extends Message
      */
     public function getCombinedPedalSmoothness(): ?int
     {
-        return $this->getValue(47);
+        return $this->getFieldValue(47);
     }
 
     /**
@@ -371,7 +371,7 @@ final class RecordMessage extends Message
      */
     public function getTime128(): ?int
     {
-        return $this->getValue(48);
+        return $this->getFieldValue(48);
     }
 
     /**
@@ -379,7 +379,7 @@ final class RecordMessage extends Message
      */
     public function getStrokeType(): ?int
     {
-        return $this->getValue(49);
+        return $this->getFieldValue(49);
     }
 
     /**
@@ -387,7 +387,7 @@ final class RecordMessage extends Message
      */
     public function getZone(): ?int
     {
-        return $this->getValue(50);
+        return $this->getFieldValue(50);
     }
 
     /**
@@ -395,7 +395,7 @@ final class RecordMessage extends Message
      */
     public function getBallSpeed(): ?int
     {
-        return $this->getValue(51);
+        return $this->getFieldValue(51);
     }
 
     /**
@@ -403,7 +403,7 @@ final class RecordMessage extends Message
      */
     public function getCadence256(): ?int
     {
-        return $this->getValue(52);
+        return $this->getFieldValue(52);
     }
 
     /**
@@ -411,7 +411,7 @@ final class RecordMessage extends Message
      */
     public function getFractionalCadence(): ?int
     {
-        return $this->getValue(53);
+        return $this->getFieldValue(53);
     }
 
     /**
@@ -419,7 +419,7 @@ final class RecordMessage extends Message
      */
     public function getTotalHemoglobinConc(): ?int
     {
-        return $this->getValue(54);
+        return $this->getFieldValue(54);
     }
 
     /**
@@ -427,7 +427,7 @@ final class RecordMessage extends Message
      */
     public function getTotalHemoglobinConcMin(): ?int
     {
-        return $this->getValue(55);
+        return $this->getFieldValue(55);
     }
 
     /**
@@ -435,7 +435,7 @@ final class RecordMessage extends Message
      */
     public function getTotalHemoglobinConcMax(): ?int
     {
-        return $this->getValue(56);
+        return $this->getFieldValue(56);
     }
 
     /**
@@ -443,7 +443,7 @@ final class RecordMessage extends Message
      */
     public function getSaturatedHemoglobinPercent(): ?int
     {
-        return $this->getValue(57);
+        return $this->getFieldValue(57);
     }
 
     /**
@@ -451,7 +451,7 @@ final class RecordMessage extends Message
      */
     public function getSaturatedHemoglobinPercentMin(): ?int
     {
-        return $this->getValue(58);
+        return $this->getFieldValue(58);
     }
 
     /**
@@ -459,7 +459,7 @@ final class RecordMessage extends Message
      */
     public function getSaturatedHemoglobinPercentMax(): ?int
     {
-        return $this->getValue(59);
+        return $this->getFieldValue(59);
     }
 
     /**
@@ -467,7 +467,7 @@ final class RecordMessage extends Message
      */
     public function getDeviceIndex(): ?int
     {
-        return $this->getValue(62);
+        return $this->getFieldValue(62);
     }
 
     /**
@@ -475,7 +475,7 @@ final class RecordMessage extends Message
      */
     public function getLeftPco(): ?int
     {
-        return $this->getValue(67);
+        return $this->getFieldValue(67);
     }
 
     /**
@@ -483,7 +483,7 @@ final class RecordMessage extends Message
      */
     public function getRightPco(): ?int
     {
-        return $this->getValue(68);
+        return $this->getFieldValue(68);
     }
 
     /**
@@ -491,7 +491,7 @@ final class RecordMessage extends Message
      */
     public function getLeftPowerPhase(): ?int
     {
-        return $this->getValue(69);
+        return $this->getFieldValue(69);
     }
 
     /**
@@ -499,7 +499,7 @@ final class RecordMessage extends Message
      */
     public function getLeftPowerPhasePeak(): ?int
     {
-        return $this->getValue(70);
+        return $this->getFieldValue(70);
     }
 
     /**
@@ -507,7 +507,7 @@ final class RecordMessage extends Message
      */
     public function getRightPowerPhase(): ?int
     {
-        return $this->getValue(71);
+        return $this->getFieldValue(71);
     }
 
     /**
@@ -515,7 +515,7 @@ final class RecordMessage extends Message
      */
     public function getRightPowerPhasePeak(): ?int
     {
-        return $this->getValue(72);
+        return $this->getFieldValue(72);
     }
 
     /**
@@ -523,7 +523,7 @@ final class RecordMessage extends Message
      */
     public function getEnhancedSpeed(): ?int
     {
-        return $this->getValue(73);
+        return $this->getFieldValue(73);
     }
 
     /**
@@ -531,7 +531,7 @@ final class RecordMessage extends Message
      */
     public function getEnhancedAltitude(): ?int
     {
-        return $this->getValue(78);
+        return $this->getFieldValue(78);
     }
 
     /**
@@ -539,7 +539,7 @@ final class RecordMessage extends Message
      */
     public function getBatterySoc(): ?int
     {
-        return $this->getValue(81);
+        return $this->getFieldValue(81);
     }
 
     /**
@@ -547,7 +547,7 @@ final class RecordMessage extends Message
      */
     public function getMotorPower(): ?int
     {
-        return $this->getValue(82);
+        return $this->getFieldValue(82);
     }
 
     /**
@@ -555,7 +555,7 @@ final class RecordMessage extends Message
      */
     public function getVerticalRatio(): ?int
     {
-        return $this->getValue(83);
+        return $this->getFieldValue(83);
     }
 
     /**
@@ -563,7 +563,7 @@ final class RecordMessage extends Message
      */
     public function getStanceTimeBalance(): ?int
     {
-        return $this->getValue(84);
+        return $this->getFieldValue(84);
     }
 
     /**
@@ -571,7 +571,7 @@ final class RecordMessage extends Message
      */
     public function getStepLength(): ?int
     {
-        return $this->getValue(85);
+        return $this->getFieldValue(85);
     }
 
     /**
@@ -579,7 +579,7 @@ final class RecordMessage extends Message
      */
     public function getAbsolutePressure(): ?int
     {
-        return $this->getValue(91);
+        return $this->getFieldValue(91);
     }
 
     /**
@@ -587,7 +587,7 @@ final class RecordMessage extends Message
      */
     public function getDepth(): ?int
     {
-        return $this->getValue(92);
+        return $this->getFieldValue(92);
     }
 
     /**
@@ -595,7 +595,7 @@ final class RecordMessage extends Message
      */
     public function getNextStopDepth(): ?int
     {
-        return $this->getValue(93);
+        return $this->getFieldValue(93);
     }
 
     /**
@@ -603,7 +603,7 @@ final class RecordMessage extends Message
      */
     public function getNextStopTime(): ?int
     {
-        return $this->getValue(94);
+        return $this->getFieldValue(94);
     }
 
     /**
@@ -611,7 +611,7 @@ final class RecordMessage extends Message
      */
     public function getTimeToSurface(): ?int
     {
-        return $this->getValue(95);
+        return $this->getFieldValue(95);
     }
 
     /**
@@ -619,7 +619,7 @@ final class RecordMessage extends Message
      */
     public function getNdlTime(): ?int
     {
-        return $this->getValue(96);
+        return $this->getFieldValue(96);
     }
 
     /**
@@ -627,7 +627,7 @@ final class RecordMessage extends Message
      */
     public function getCnsLoad(): ?int
     {
-        return $this->getValue(97);
+        return $this->getFieldValue(97);
     }
 
     /**
@@ -635,7 +635,7 @@ final class RecordMessage extends Message
      */
     public function getN2Load(): ?int
     {
-        return $this->getValue(98);
+        return $this->getFieldValue(98);
     }
 
     /**
@@ -643,7 +643,7 @@ final class RecordMessage extends Message
      */
     public function getGrit(): ?float
     {
-        return $this->getValue(114);
+        return $this->getFieldValue(114);
     }
 
     /**
@@ -651,7 +651,7 @@ final class RecordMessage extends Message
      */
     public function getFlow(): ?float
     {
-        return $this->getValue(115);
+        return $this->getFieldValue(115);
     }
 
     /**
@@ -659,7 +659,7 @@ final class RecordMessage extends Message
      */
     public function getEbikeTravelRange(): ?int
     {
-        return $this->getValue(117);
+        return $this->getFieldValue(117);
     }
 
     /**
@@ -667,7 +667,7 @@ final class RecordMessage extends Message
      */
     public function getEbikeBatteryLevel(): ?int
     {
-        return $this->getValue(118);
+        return $this->getFieldValue(118);
     }
 
     /**
@@ -675,7 +675,7 @@ final class RecordMessage extends Message
      */
     public function getEbikeAssistMode(): ?int
     {
-        return $this->getValue(119);
+        return $this->getFieldValue(119);
     }
 
     /**
@@ -683,6 +683,6 @@ final class RecordMessage extends Message
      */
     public function getEbikeAssistLevelPercent(): ?int
     {
-        return $this->getValue(120);
+        return $this->getFieldValue(120);
     }
 }

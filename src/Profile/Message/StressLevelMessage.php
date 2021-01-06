@@ -36,7 +36,7 @@ final class StressLevelMessage extends Message
      */
     public function getStressLevelValue(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -44,6 +44,6 @@ final class StressLevelMessage extends Message
      */
     public function getStressLevelTime(): ?DateTime
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 }

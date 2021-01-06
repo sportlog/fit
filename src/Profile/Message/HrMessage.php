@@ -40,7 +40,7 @@ final class HrMessage extends Message
      */
     public function getTimestamp(): ?DateTime
     {
-        return $this->getValue(253);
+        return $this->getFieldValue(253);
     }
 
     /**
@@ -48,7 +48,7 @@ final class HrMessage extends Message
      */
     public function getFractionalTimestamp(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -56,7 +56,7 @@ final class HrMessage extends Message
      */
     public function getTime256(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -64,7 +64,7 @@ final class HrMessage extends Message
      */
     public function getFilteredBpm(): ?int
     {
-        return $this->getValue(6);
+        return $this->getFieldValue(6);
     }
 
     /**
@@ -72,7 +72,7 @@ final class HrMessage extends Message
      */
     public function getEventTimestamp(): ?int
     {
-        return $this->getValue(9);
+        return $this->getFieldValue(9);
     }
 
     /**
@@ -80,6 +80,6 @@ final class HrMessage extends Message
      */
     public function getEventTimestamp12(): mixed
     {
-        return $this->getValue(10);
+        return $this->getFieldValue(10);
     }
 }

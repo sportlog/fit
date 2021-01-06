@@ -49,7 +49,7 @@ final class EventMessage extends Message
      */
     public function getTimestamp(): ?DateTime
     {
-        return $this->getValue(253);
+        return $this->getFieldValue(253);
     }
 
     /**
@@ -57,7 +57,7 @@ final class EventMessage extends Message
      */
     public function getEvent(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -65,7 +65,7 @@ final class EventMessage extends Message
      */
     public function getEventType(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -73,7 +73,7 @@ final class EventMessage extends Message
      */
     public function getData16(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -81,7 +81,7 @@ final class EventMessage extends Message
      */
     public function getData(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -89,7 +89,7 @@ final class EventMessage extends Message
      */
     public function getEventGroup(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -97,7 +97,7 @@ final class EventMessage extends Message
      */
     public function getScore(): ?int
     {
-        return $this->getValue(7);
+        return $this->getFieldValue(7);
     }
 
     /**
@@ -105,7 +105,7 @@ final class EventMessage extends Message
      */
     public function getOpponentScore(): ?int
     {
-        return $this->getValue(8);
+        return $this->getFieldValue(8);
     }
 
     /**
@@ -113,7 +113,7 @@ final class EventMessage extends Message
      */
     public function getFrontGearNum(): ?int
     {
-        return $this->getValue(9);
+        return $this->getFieldValue(9);
     }
 
     /**
@@ -121,7 +121,7 @@ final class EventMessage extends Message
      */
     public function getFrontGear(): ?int
     {
-        return $this->getValue(10);
+        return $this->getFieldValue(10);
     }
 
     /**
@@ -129,7 +129,7 @@ final class EventMessage extends Message
      */
     public function getRearGearNum(): ?int
     {
-        return $this->getValue(11);
+        return $this->getFieldValue(11);
     }
 
     /**
@@ -137,7 +137,7 @@ final class EventMessage extends Message
      */
     public function getRearGear(): ?int
     {
-        return $this->getValue(12);
+        return $this->getFieldValue(12);
     }
 
     /**
@@ -145,7 +145,7 @@ final class EventMessage extends Message
      */
     public function getDeviceIndex(): ?int
     {
-        return $this->getValue(13);
+        return $this->getFieldValue(13);
     }
 
     /**
@@ -153,7 +153,7 @@ final class EventMessage extends Message
      */
     public function getRadarThreatLevelMax(): ?int
     {
-        return $this->getValue(21);
+        return $this->getFieldValue(21);
     }
 
     /**
@@ -161,6 +161,6 @@ final class EventMessage extends Message
      */
     public function getRadarThreatCount(): ?int
     {
-        return $this->getValue(22);
+        return $this->getFieldValue(22);
     }
 }

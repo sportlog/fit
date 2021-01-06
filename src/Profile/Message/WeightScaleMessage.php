@@ -47,7 +47,7 @@ final class WeightScaleMessage extends Message
      */
     public function getTimestamp(): ?DateTime
     {
-        return $this->getValue(253);
+        return $this->getFieldValue(253);
     }
 
     /**
@@ -55,7 +55,7 @@ final class WeightScaleMessage extends Message
      */
     public function getWeight(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -63,7 +63,7 @@ final class WeightScaleMessage extends Message
      */
     public function getPercentFat(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -71,7 +71,7 @@ final class WeightScaleMessage extends Message
      */
     public function getPercentHydration(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -79,7 +79,7 @@ final class WeightScaleMessage extends Message
      */
     public function getVisceralFatMass(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -87,7 +87,7 @@ final class WeightScaleMessage extends Message
      */
     public function getBoneMass(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -95,7 +95,7 @@ final class WeightScaleMessage extends Message
      */
     public function getMuscleMass(): ?int
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -103,7 +103,7 @@ final class WeightScaleMessage extends Message
      */
     public function getBasalMet(): ?int
     {
-        return $this->getValue(7);
+        return $this->getFieldValue(7);
     }
 
     /**
@@ -111,7 +111,7 @@ final class WeightScaleMessage extends Message
      */
     public function getPhysiqueRating(): ?int
     {
-        return $this->getValue(8);
+        return $this->getFieldValue(8);
     }
 
     /**
@@ -119,7 +119,7 @@ final class WeightScaleMessage extends Message
      */
     public function getActiveMet(): ?int
     {
-        return $this->getValue(9);
+        return $this->getFieldValue(9);
     }
 
     /**
@@ -127,7 +127,7 @@ final class WeightScaleMessage extends Message
      */
     public function getMetabolicAge(): ?int
     {
-        return $this->getValue(10);
+        return $this->getFieldValue(10);
     }
 
     /**
@@ -135,7 +135,7 @@ final class WeightScaleMessage extends Message
      */
     public function getVisceralFatRating(): ?int
     {
-        return $this->getValue(11);
+        return $this->getFieldValue(11);
     }
 
     /**
@@ -143,6 +143,6 @@ final class WeightScaleMessage extends Message
      */
     public function getUserProfileIndex(): ?int
     {
-        return $this->getValue(12);
+        return $this->getFieldValue(12);
     }
 }

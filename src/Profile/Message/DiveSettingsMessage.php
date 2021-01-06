@@ -56,7 +56,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getMessageIndex(): ?int
     {
-        return $this->getValue(254);
+        return $this->getFieldValue(254);
     }
 
     /**
@@ -64,7 +64,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getName(): ?string
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -72,7 +72,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getModel(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -80,7 +80,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getGfLow(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -88,7 +88,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getGfHigh(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -96,7 +96,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getWaterType(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -104,7 +104,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getWaterDensity(): ?float
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -112,7 +112,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getPo2Warn(): ?int
     {
-        return $this->getValue(6);
+        return $this->getFieldValue(6);
     }
 
     /**
@@ -120,7 +120,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getPo2Critical(): ?int
     {
-        return $this->getValue(7);
+        return $this->getFieldValue(7);
     }
 
     /**
@@ -128,7 +128,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getPo2Deco(): ?int
     {
-        return $this->getValue(8);
+        return $this->getFieldValue(8);
     }
 
     /**
@@ -136,7 +136,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getSafetyStopEnabled(): ?bool
     {
-        return $this->getValue(9);
+        return $this->getFieldValue(9);
     }
 
     /**
@@ -144,7 +144,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getBottomDepth(): ?float
     {
-        return $this->getValue(10);
+        return $this->getFieldValue(10);
     }
 
     /**
@@ -152,7 +152,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getBottomTime(): ?int
     {
-        return $this->getValue(11);
+        return $this->getFieldValue(11);
     }
 
     /**
@@ -160,7 +160,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getApneaCountdownEnabled(): ?bool
     {
-        return $this->getValue(12);
+        return $this->getFieldValue(12);
     }
 
     /**
@@ -168,7 +168,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getApneaCountdownTime(): ?int
     {
-        return $this->getValue(13);
+        return $this->getFieldValue(13);
     }
 
     /**
@@ -176,7 +176,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getBacklightMode(): ?int
     {
-        return $this->getValue(14);
+        return $this->getFieldValue(14);
     }
 
     /**
@@ -184,7 +184,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getBacklightBrightness(): ?int
     {
-        return $this->getValue(15);
+        return $this->getFieldValue(15);
     }
 
     /**
@@ -192,7 +192,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getBacklightTimeout(): ?int
     {
-        return $this->getValue(16);
+        return $this->getFieldValue(16);
     }
 
     /**
@@ -200,7 +200,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getRepeatDiveInterval(): ?int
     {
-        return $this->getValue(17);
+        return $this->getFieldValue(17);
     }
 
     /**
@@ -208,7 +208,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getSafetyStopTime(): ?int
     {
-        return $this->getValue(18);
+        return $this->getFieldValue(18);
     }
 
     /**
@@ -216,7 +216,7 @@ final class DiveSettingsMessage extends Message
      */
     public function getHeartRateSourceType(): ?int
     {
-        return $this->getValue(19);
+        return $this->getFieldValue(19);
     }
 
     /**
@@ -224,6 +224,6 @@ final class DiveSettingsMessage extends Message
      */
     public function getHeartRateSource(): ?int
     {
-        return $this->getValue(20);
+        return $this->getFieldValue(20);
     }
 }

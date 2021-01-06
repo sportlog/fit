@@ -63,7 +63,7 @@ final class UserProfileMessage extends Message
      */
     public function getMessageIndex(): ?int
     {
-        return $this->getValue(254);
+        return $this->getFieldValue(254);
     }
 
     /**
@@ -71,7 +71,7 @@ final class UserProfileMessage extends Message
      */
     public function getFriendlyName(): ?string
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -79,7 +79,7 @@ final class UserProfileMessage extends Message
      */
     public function getGender(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -87,7 +87,7 @@ final class UserProfileMessage extends Message
      */
     public function getAge(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -95,7 +95,7 @@ final class UserProfileMessage extends Message
      */
     public function getHeight(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -103,7 +103,7 @@ final class UserProfileMessage extends Message
      */
     public function getWeight(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -111,7 +111,7 @@ final class UserProfileMessage extends Message
      */
     public function getLanguage(): ?int
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -119,7 +119,7 @@ final class UserProfileMessage extends Message
      */
     public function getElevSetting(): ?int
     {
-        return $this->getValue(6);
+        return $this->getFieldValue(6);
     }
 
     /**
@@ -127,7 +127,7 @@ final class UserProfileMessage extends Message
      */
     public function getWeightSetting(): ?int
     {
-        return $this->getValue(7);
+        return $this->getFieldValue(7);
     }
 
     /**
@@ -135,7 +135,7 @@ final class UserProfileMessage extends Message
      */
     public function getRestingHeartRate(): ?int
     {
-        return $this->getValue(8);
+        return $this->getFieldValue(8);
     }
 
     /**
@@ -143,7 +143,7 @@ final class UserProfileMessage extends Message
      */
     public function getDefaultMaxRunningHeartRate(): ?int
     {
-        return $this->getValue(9);
+        return $this->getFieldValue(9);
     }
 
     /**
@@ -151,7 +151,7 @@ final class UserProfileMessage extends Message
      */
     public function getDefaultMaxBikingHeartRate(): ?int
     {
-        return $this->getValue(10);
+        return $this->getFieldValue(10);
     }
 
     /**
@@ -159,7 +159,7 @@ final class UserProfileMessage extends Message
      */
     public function getDefaultMaxHeartRate(): ?int
     {
-        return $this->getValue(11);
+        return $this->getFieldValue(11);
     }
 
     /**
@@ -167,7 +167,7 @@ final class UserProfileMessage extends Message
      */
     public function getHrSetting(): ?int
     {
-        return $this->getValue(12);
+        return $this->getFieldValue(12);
     }
 
     /**
@@ -175,7 +175,7 @@ final class UserProfileMessage extends Message
      */
     public function getSpeedSetting(): ?int
     {
-        return $this->getValue(13);
+        return $this->getFieldValue(13);
     }
 
     /**
@@ -183,7 +183,7 @@ final class UserProfileMessage extends Message
      */
     public function getDistSetting(): ?int
     {
-        return $this->getValue(14);
+        return $this->getFieldValue(14);
     }
 
     /**
@@ -191,7 +191,7 @@ final class UserProfileMessage extends Message
      */
     public function getPowerSetting(): ?int
     {
-        return $this->getValue(16);
+        return $this->getFieldValue(16);
     }
 
     /**
@@ -199,7 +199,7 @@ final class UserProfileMessage extends Message
      */
     public function getActivityClass(): ?int
     {
-        return $this->getValue(17);
+        return $this->getFieldValue(17);
     }
 
     /**
@@ -207,7 +207,7 @@ final class UserProfileMessage extends Message
      */
     public function getPositionSetting(): ?int
     {
-        return $this->getValue(18);
+        return $this->getFieldValue(18);
     }
 
     /**
@@ -215,7 +215,7 @@ final class UserProfileMessage extends Message
      */
     public function getTemperatureSetting(): ?int
     {
-        return $this->getValue(21);
+        return $this->getFieldValue(21);
     }
 
     /**
@@ -223,7 +223,7 @@ final class UserProfileMessage extends Message
      */
     public function getLocalId(): ?int
     {
-        return $this->getValue(22);
+        return $this->getFieldValue(22);
     }
 
     /**
@@ -231,7 +231,7 @@ final class UserProfileMessage extends Message
      */
     public function getGlobalId(): mixed
     {
-        return $this->getValue(23);
+        return $this->getFieldValue(23);
     }
 
     /**
@@ -239,7 +239,7 @@ final class UserProfileMessage extends Message
      */
     public function getWakeTime(): ?int
     {
-        return $this->getValue(28);
+        return $this->getFieldValue(28);
     }
 
     /**
@@ -247,7 +247,7 @@ final class UserProfileMessage extends Message
      */
     public function getSleepTime(): ?int
     {
-        return $this->getValue(29);
+        return $this->getFieldValue(29);
     }
 
     /**
@@ -255,7 +255,7 @@ final class UserProfileMessage extends Message
      */
     public function getHeightSetting(): ?int
     {
-        return $this->getValue(30);
+        return $this->getFieldValue(30);
     }
 
     /**
@@ -263,7 +263,7 @@ final class UserProfileMessage extends Message
      */
     public function getUserRunningStepLength(): ?int
     {
-        return $this->getValue(31);
+        return $this->getFieldValue(31);
     }
 
     /**
@@ -271,7 +271,7 @@ final class UserProfileMessage extends Message
      */
     public function getUserWalkingStepLength(): ?int
     {
-        return $this->getValue(32);
+        return $this->getFieldValue(32);
     }
 
     /**
@@ -279,7 +279,7 @@ final class UserProfileMessage extends Message
      */
     public function getDepthSetting(): ?int
     {
-        return $this->getValue(47);
+        return $this->getFieldValue(47);
     }
 
     /**
@@ -287,6 +287,6 @@ final class UserProfileMessage extends Message
      */
     public function getDiveCount(): ?int
     {
-        return $this->getValue(49);
+        return $this->getFieldValue(49);
     }
 }

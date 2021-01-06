@@ -44,7 +44,7 @@ final class TotalsMessage extends Message
      */
     public function getMessageIndex(): ?int
     {
-        return $this->getValue(254);
+        return $this->getFieldValue(254);
     }
 
     /**
@@ -52,7 +52,7 @@ final class TotalsMessage extends Message
      */
     public function getTimestamp(): ?DateTime
     {
-        return $this->getValue(253);
+        return $this->getFieldValue(253);
     }
 
     /**
@@ -60,7 +60,7 @@ final class TotalsMessage extends Message
      */
     public function getTimerTime(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -68,7 +68,7 @@ final class TotalsMessage extends Message
      */
     public function getDistance(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -76,7 +76,7 @@ final class TotalsMessage extends Message
      */
     public function getCalories(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -84,7 +84,7 @@ final class TotalsMessage extends Message
      */
     public function getSport(): ?int
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -92,7 +92,7 @@ final class TotalsMessage extends Message
      */
     public function getElapsedTime(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -100,7 +100,7 @@ final class TotalsMessage extends Message
      */
     public function getSessions(): ?int
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -108,7 +108,7 @@ final class TotalsMessage extends Message
      */
     public function getActiveTime(): ?int
     {
-        return $this->getValue(6);
+        return $this->getFieldValue(6);
     }
 
     /**
@@ -116,6 +116,6 @@ final class TotalsMessage extends Message
      */
     public function getSportIndex(): ?int
     {
-        return $this->getValue(9);
+        return $this->getFieldValue(9);
     }
 }

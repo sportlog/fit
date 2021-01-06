@@ -44,7 +44,7 @@ final class JumpMessage extends Message
      */
     public function getTimestamp(): ?DateTime
     {
-        return $this->getValue(253);
+        return $this->getFieldValue(253);
     }
 
     /**
@@ -52,7 +52,7 @@ final class JumpMessage extends Message
      */
     public function getDistance(): ?float
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -60,7 +60,7 @@ final class JumpMessage extends Message
      */
     public function getHeight(): ?float
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -68,7 +68,7 @@ final class JumpMessage extends Message
      */
     public function getRotations(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -76,7 +76,7 @@ final class JumpMessage extends Message
      */
     public function getHangTime(): ?float
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -84,7 +84,7 @@ final class JumpMessage extends Message
      */
     public function getScore(): ?float
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -92,7 +92,7 @@ final class JumpMessage extends Message
      */
     public function getPositionLat(): ?int
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -100,7 +100,7 @@ final class JumpMessage extends Message
      */
     public function getPositionLong(): ?int
     {
-        return $this->getValue(6);
+        return $this->getFieldValue(6);
     }
 
     /**
@@ -108,7 +108,7 @@ final class JumpMessage extends Message
      */
     public function getSpeed(): ?int
     {
-        return $this->getValue(7);
+        return $this->getFieldValue(7);
     }
 
     /**
@@ -116,6 +116,6 @@ final class JumpMessage extends Message
      */
     public function getEnhancedSpeed(): ?int
     {
-        return $this->getValue(8);
+        return $this->getFieldValue(8);
     }
 }

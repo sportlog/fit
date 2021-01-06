@@ -43,7 +43,7 @@ final class ObdiiDataMessage extends Message
      */
     public function getTimestamp(): ?DateTime
     {
-        return $this->getValue(253);
+        return $this->getFieldValue(253);
     }
 
     /**
@@ -51,7 +51,7 @@ final class ObdiiDataMessage extends Message
      */
     public function getTimestampMs(): ?int
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -59,7 +59,7 @@ final class ObdiiDataMessage extends Message
      */
     public function getTimeOffset(): ?int
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -67,7 +67,7 @@ final class ObdiiDataMessage extends Message
      */
     public function getPid(): mixed
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -75,7 +75,7 @@ final class ObdiiDataMessage extends Message
      */
     public function getRawData(): mixed
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -83,7 +83,7 @@ final class ObdiiDataMessage extends Message
      */
     public function getPidDataSize(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -91,7 +91,7 @@ final class ObdiiDataMessage extends Message
      */
     public function getSystemTime(): ?int
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -99,7 +99,7 @@ final class ObdiiDataMessage extends Message
      */
     public function getStartTimestamp(): ?DateTime
     {
-        return $this->getValue(6);
+        return $this->getFieldValue(6);
     }
 
     /**
@@ -107,6 +107,6 @@ final class ObdiiDataMessage extends Message
      */
     public function getStartTimestampMs(): ?int
     {
-        return $this->getValue(7);
+        return $this->getFieldValue(7);
     }
 }

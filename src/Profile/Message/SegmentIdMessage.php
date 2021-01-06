@@ -43,7 +43,7 @@ final class SegmentIdMessage extends Message
      */
     public function getName(): ?string
     {
-        return $this->getValue(0);
+        return $this->getFieldValue(0);
     }
 
     /**
@@ -51,7 +51,7 @@ final class SegmentIdMessage extends Message
      */
     public function getUuid(): ?string
     {
-        return $this->getValue(1);
+        return $this->getFieldValue(1);
     }
 
     /**
@@ -59,7 +59,7 @@ final class SegmentIdMessage extends Message
      */
     public function getSport(): ?int
     {
-        return $this->getValue(2);
+        return $this->getFieldValue(2);
     }
 
     /**
@@ -67,7 +67,7 @@ final class SegmentIdMessage extends Message
      */
     public function getEnabled(): ?bool
     {
-        return $this->getValue(3);
+        return $this->getFieldValue(3);
     }
 
     /**
@@ -75,7 +75,7 @@ final class SegmentIdMessage extends Message
      */
     public function getUserProfilePrimaryKey(): ?int
     {
-        return $this->getValue(4);
+        return $this->getFieldValue(4);
     }
 
     /**
@@ -83,7 +83,7 @@ final class SegmentIdMessage extends Message
      */
     public function getDeviceId(): ?int
     {
-        return $this->getValue(5);
+        return $this->getFieldValue(5);
     }
 
     /**
@@ -91,7 +91,7 @@ final class SegmentIdMessage extends Message
      */
     public function getDefaultRaceLeader(): ?int
     {
-        return $this->getValue(6);
+        return $this->getFieldValue(6);
     }
 
     /**
@@ -99,7 +99,7 @@ final class SegmentIdMessage extends Message
      */
     public function getDeleteStatus(): ?int
     {
-        return $this->getValue(7);
+        return $this->getFieldValue(7);
     }
 
     /**
@@ -107,6 +107,6 @@ final class SegmentIdMessage extends Message
      */
     public function getSelectionType(): ?int
     {
-        return $this->getValue(8);
+        return $this->getFieldValue(8);
     }
 }
