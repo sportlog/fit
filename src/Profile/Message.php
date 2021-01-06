@@ -143,6 +143,10 @@ abstract class Message implements IteratorAggregate, Stringable
             case ProfileType::BOOL:
                 return $value !== 0;
 
+            case ProfileType::UINT32:
+            case ProfileType::UINT32Z:
+                return intval($value);
+
             case ProfileType::LOCALDATETIME:
             case ProfileType::DATETIME:
                 $date = new DateTime();

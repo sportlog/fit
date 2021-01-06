@@ -141,13 +141,17 @@ class Decoder
 
                 default:
                     $numElements = $size / $fitBaseType->getBytes();
-                    for ($i = 0; $i < $numElements; $i++) {
-                        $tmpValue = $this->readValue($fitBaseType, $fieldDefinition, $order, $reader);
-                        if ($tmpValue !== null) {
-                            if ($fieldValue === null) {
-                                $fieldValue = [];
+                    if ($numElements === 1) {
+                        $fieldValue = $this->readValue($fitBaseType, $fieldDefinition, $order, $reader);
+                    } else {
+                        for ($i = 0; $i < $numElements; $i++) {
+                            $tmpValue = $this->readValue($fitBaseType, $fieldDefinition, $order, $reader);
+                            if ($tmpValue !== null) {
+                                if ($fieldValue === null) {
+                                    $fieldValue = [];
+                                }
+                                $fieldValue[] = $tmpValue;
                             }
-                            $fieldValue[] = $tmpValue;
                         }
                     }
                     break;
