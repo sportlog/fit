@@ -44,7 +44,7 @@ class IOReader
     /**
      * The resource identifier of the stream.
      *
-     * @var resource
+     * @var resource|null
      */
     private $_fd = null;
 
@@ -263,7 +263,7 @@ class IOReader
      *
      * @return integer
      */
-    public final function readUInt16($order = self::MACHINE_ENDIAN_ORDER): int
+    public final function readUInt16(int $order = self::MACHINE_ENDIAN_ORDER): int
     {
         return $this->_fromUInt16($this->read(2), $order);
     }
@@ -316,7 +316,7 @@ class IOReader
      *
      * @return integer
      */
-    public final function readInt32($order = self::MACHINE_ENDIAN_ORDER): int
+    public final function readInt32(int $order = self::MACHINE_ENDIAN_ORDER): int
     {
         switch ($order) {
             case self::MACHINE_ENDIAN_ORDER:
@@ -372,7 +372,7 @@ class IOReader
      *
      * @return integer
      */
-    public final function readUInt32($order = self::MACHINE_ENDIAN_ORDER): int
+    public final function readUInt32(int $order = self::MACHINE_ENDIAN_ORDER): int
     {
         switch ($order) {
             case self::MACHINE_ENDIAN_ORDER:
@@ -541,13 +541,13 @@ class IOReader
      *
      * @param integer $length    The amount of bytes.
      * @param integer $order     The endianess of the string.
-     * @param integer $trimOrder Whether to remove the byte order mark read the
+     * @param bool $trimOrder Whether to remove the byte order mark read the
      *                string.
      * @return string
      * @throws Exception if <var>length</var> attribute is negative or
      *  if an I/O error occurs
      */
-    public final function readString16($length, &$order = null, $trimOrder = false): string
+    public final function readString16(int $length, int &$order = null, bool $trimOrder = false): string
     {
         $value = $this->read($length);
 

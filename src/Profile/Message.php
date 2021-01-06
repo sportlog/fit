@@ -18,21 +18,35 @@ use FIT\FitBaseType;
 use FIT\FitBaseTypeDefinition;
 use IteratorAggregate;
 use ReflectionClass;
-use ReflectionProperty;
 use Stringable;
 
+/**
+ * Base class for all FIT messages.
+ * Defines the FIT fields contained within each FIT message.
+ */
 abstract class Message implements IteratorAggregate, Stringable
 {
-    private static $reflectionProperties = [];
-    private $values = [];
+    private static array $reflectionProperties = [];
+    /**
+     * Field associated with this message
+     * 
+     * @var Field[]
+     */
     private array $fields = [];
+     /**
+     * Field values, where the field number is used as index.
+     * There may be more values stored in the array than fields
+     * exist, if the message contains unknown fields.
+     * 
+     * @var mixed[]
+     */
+    private array $values = [];
 
-    public function __construct(private string $name, private int $number, array $fields = [])
+    /**
+     * Create new instance and assign fields.
+     */
+    public function __construct(private string $name, private int $number)
     {
-        /*foreach ($fields as $field) {
-            $this->addField($field);
-        }*/
-
         foreach (self::getReflectionProperties(static::class) as $field) {
             $this->addField($field);
         }
@@ -81,29 +95,6 @@ abstract class Message implements IteratorAggregate, Stringable
         return $this->name;
     }
 
-    public function __toString()
-    {
-        return sprintf('%s (%s)', $this->getMessageName(), $this->getMessageNumber());
-        /*$mapped = [];
-
-        foreach ($this->values as $key => $fieldValue) {
-            $mapped[] = $fieldValue['name'];
-            $value = $fieldValue['value'];
-            if (is_array($value)) {
-                $singleValues = [];
-                foreach ($value as $singeValue) {
-                    $singleValues[] = !$fieldValue['type']->isInvalid($singeValue) ? $singeValue : '';
-                }
-                $mapped[] = sprintf('[%s]', join(",", $singleValues));
-            }
-            else {
-                $mapped[] = !$fieldValue['type']->isInvalid($value) ? $value : '';
-            }
-        }
-        return sprintf('%s: %s', $this->name, join(",", $mapped));
-        */
-    }
-
     public function getValue(int|string $fieldNumber): mixed
     {
         return isset($this->values[$fieldNumber]) ? $this->values[$fieldNumber] : null;
@@ -129,17 +120,6 @@ abstract class Message implements IteratorAggregate, Stringable
         }
 
         $this->values[$fieldNumber] = $value;
-    }
-
-    /**
-     * Gets an iterator.
-     *
-     * {@inheritDoc}
-     * @see IteratorAggregate::getIterator()
-     */
-    public function getIterator()
-    {
-        return new ArrayIterator($this->values);
     }
 
     public function getField(int $fieldNumber): ?Field
@@ -175,5 +155,21 @@ abstract class Message implements IteratorAggregate, Stringable
             default:
                 return $value;
         }
+    }
+    
+    /**
+     * Gets an iterator.
+     *
+     * {@inheritDoc}
+     * @see IteratorAggregate::getIterator()
+     */
+    public function getIterator()
+    {
+        return new ArrayIterator($this->values);
+    }
+
+    public function __toString()
+    {
+        return sprintf('%s (%s)', $this->getMessageName(), $this->getMessageNumber());
     }
 }
