@@ -13,6 +13,7 @@ namespace FIT;
 
 use Exception;
 use FIT\Profile\Message;
+use FIT\Profile\MessageList;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
@@ -35,7 +36,7 @@ class Decoder
     const MESSAGE_TYPE_DEFINITION = 'definition';
 
     private LoggerInterface $logger;
-    
+
     /**
      * Creates a new deocder instance.
      *
@@ -50,9 +51,9 @@ class Decoder
      * Reads the file and returns the decoded array of messages
      *
      * @param string $file
-     * @return Message[]
+     * @return MessageList
      */
-    public function read(string $file): array
+    public function read(string $file): MessageList
     {
         $handle = fopen($file, 'rb');
         if ($handle === false) {
@@ -74,10 +75,10 @@ class Decoder
         }
     }
 
-    private function readRecords(array $header, IOReader $reader): array
+    private function readRecords(array $header, IOReader $reader): MessageList
     {
         $messageTypeDefinitions = [];
-        $records = [];
+        $records = new MessageList();
         while ($reader->getOffset() - $header['header_size'] < $header['data_size']) {
             $recordHeader = $this->nextRecordHeader($reader);
             $localMessagType = $recordHeader['local_message_type'];
@@ -93,9 +94,9 @@ class Decoder
                     if (!isset($messageTypeDefinitions[$localMessagType])) {
                         throw new Exception("No message definition for local message type '{$localMessagType}' found.");
                     }
-            
+
                     $this->logger->info("Data for '{$localMessagType}'");
-                    $records[] = $this->nextRecordData($messageTypeDefinitions[$localMessagType], $reader);
+                    $records->addMessage($this->nextRecordData($messageTypeDefinitions[$localMessagType], $reader));
                     break;
 
                 default:
@@ -128,68 +129,94 @@ class Decoder
 
             $order = $definition['byte_order'];
             $fieldValue = null;
-            if ($size === $fitBaseTypeSize || $fieldDefinition['base_type'] === FitBaseType::BYTE || $fieldDefinition['base_type'] === FitBaseType::STRING) {
-                $fieldValue = $this->readValue($fieldDefinition, $order, $reader);
-            } else {
-                $fieldValue = [];
-                $tmpSize = $size;
-                while ($tmpSize >= $fitBaseTypeSize) {
-                    $fieldValue[] = $this->readValue($fieldDefinition, $order, $reader);
-                    $tmpSize -= $fitBaseTypeSize;
-                }
+
+            switch ($fieldDefinition['base_type']) {
+                case FitBaseType::STRING:
+                    $fieldValue = $reader->readString8($size);
+                    break;
+
+                case FitBaseType::BYTE:
+                    $fieldValue = $reader->read($size);
+                    break;
+
+                default:
+                    $numElements = $size / $fitBaseType->getBytes();
+                    for ($i = 0; $i < $numElements; $i++) {
+                        $tmpValue = $this->readValue($fitBaseType, $fieldDefinition, $order, $reader);
+                        if ($tmpValue !== null) {
+                            if ($fieldValue === null) {
+                                $fieldValue = [];
+                            }
+                            $fieldValue[] = $tmpValue;
+                        }
+                    }
+                    break;
             }
-            $message->setFieldValue($fieldDefinition['field_definition_number'], $fieldValue, $fitBaseType);
+
+            if ($fieldValue !== null) {
+                $message->setFieldValue($fieldDefinition['field_definition_number'], $fieldValue, $fitBaseType);
+            }
         }
- 
+
         return $message;
     }
 
-    private function readValue(array $fieldDefinition, int $order, IOReader $reader): mixed
+    private function readValue(FitBaseTypeDefinition $fitBaseType, array $fieldDefinition, int $order, IOReader $reader): mixed
     {
         $bigEndian = $order === IOReader::BIG_ENDIAN_ORDER;
+        $value = null;
         switch ($fieldDefinition['base_type']) {
             case FitBaseType::SINT8:
-                return $reader->readInt8();
+                $value = $reader->readInt8();
+                break;
 
             case FitBaseType::ENUM:
             case FitBaseType::UINT8:
             case FitBaseType::UINT8Z:
-                return $reader->readUInt8();
+                $value = $reader->readUInt8();
+                break;
 
             case FitBaseType::SINT16:
-                return $reader->readInt16($order);
+                $value = $reader->readInt16($order);
+                break;
 
             case FitBaseType::UINT16:
             case FitBaseType::UINT16Z:
-                return $reader->readUInt16($order);
-
-            case FitBaseType::STRING:
-                return $reader->readString8($fieldDefinition['size']);
+                $value = $reader->readUInt16($order);
+                break;
 
             case FitBaseType::SINT32:
-                return $reader->readInt32($order);
+                $value = $reader->readInt32($order);
+                break;
 
             case FitBaseType::UINT32:
             case FitBaseType::UINT32Z:
-                return $reader->readUInt32($order);
+                $value = $reader->readUInt32($order);
+                break;
 
             case FitBaseType::FLOAT32:
-                return $bigEndian ? $reader->readFloatBE() : $reader->readFloatLE();
+                $value = $bigEndian ? $reader->readFloatBE() : $reader->readFloatLE();
+                break;
 
             case FitBaseType::SINT64:
-                return $bigEndian ? $reader->readInt64BE() : $reader->readInt64LE();
+                $value = $bigEndian ? $reader->readInt64BE() : $reader->readInt64LE();
+                break;
 
             case FitBaseType::UINT64:
             case FitBaseType::UINT64Z:
             case FitBaseType::FLOAT64:
-                return $bigEndian ? $reader->readDoubleBE() : $reader->readDoubleLE();
+                $value = $bigEndian ? $reader->readDoubleBE() : $reader->readDoubleLE();
+                break;
 
+            case FitBaseType::STRING:
             case FitBaseType::BYTE:
-                return $reader->read($fieldDefinition['size']);
+                throw new Exception("Base types 'String|Byte' must be handled separately");
 
             default:
-                throw new Exception(sprintf('unknown fit base type "%s"', $fieldDefinition['base_type']));
+                throw new Exception(sprintf('unknown fit base type "%s".', $fieldDefinition['base_type']));
         }
+
+        return !$fitBaseType->isInvalid($value) ? $value : null;
     }
 
     private function nextRecordDefinition(bool $hasDeveloperData, IOReader $reader): array

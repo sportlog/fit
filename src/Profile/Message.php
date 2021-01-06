@@ -33,7 +33,7 @@ abstract class Message implements IteratorAggregate, Stringable
      * @var Field[]
      */
     private array $fields = [];
-     /**
+    /**
      * Field values, where the field number is used as index.
      * There may be more values stored in the array than fields
      * exist, if the message contains unknown fields.
@@ -98,9 +98,15 @@ abstract class Message implements IteratorAggregate, Stringable
     /**
      * Gets a field value.
      */
-    public function getFieldValue(int|string $fieldNumber): mixed
+    public function getFieldValue(int $fieldNumber): mixed
     {
-        return isset($this->values[$fieldNumber]) ? $this->values[$fieldNumber] : null;
+        $value = isset($this->values[$fieldNumber]) ? $this->values[$fieldNumber] : null;
+        if ($value === null) {
+            return null;
+        }
+
+        $field = $this->getField($fieldNumber);
+        return ($field !== null) ? $this->convertValueToFieldType($field, $value) : $value;
     }
 
     /**
@@ -111,7 +117,7 @@ abstract class Message implements IteratorAggregate, Stringable
     {
         $field = $this->getField($fieldNumber);
         if ($field !== null) {
-            $baseType = FitBaseType::fromType($field->getType());
+            $baseType = $field->getTypeDefinition();
             if ($baseType !== $fitBaseType) {
                 throw new Exception(sprintf(
                     'mismatch between base type in FIT message and base type declared in meta data of property "%s::%s".
@@ -122,8 +128,6 @@ abstract class Message implements IteratorAggregate, Stringable
                     $baseType->getName()
                 ));
             }
-
-            $value = $this->convertValueToFieldType($field, $value);
         }
 
         $this->values[$fieldNumber] = $value;
@@ -136,22 +140,14 @@ abstract class Message implements IteratorAggregate, Stringable
 
     private function convertValueToFieldType(Field $field, mixed $value): mixed
     {
+        if ($field->getTypeDefinition()->isNumeric()) {
+            $value /= $field->getScale();
+            $value -= $field->getOffset();
+        }
+
         switch ($field->getProfileType()) {
             case ProfileType::BOOL:
                 return $value !== 0;
-
-            case ProfileType::UINT8:
-            case ProfileType::SINT8:
-            case ProfileType::UINT16:
-            case ProfileType::SINT16:
-            case ProfileType::UINT16Z:
-            case ProfileType::UINT32:
-            case ProfileType::UINT32Z;
-            case ProfileType::SINT32:
-                $value /= $field->getScale();
-                $value -= $field->getOffset();
-
-                return intval($value);
 
             case ProfileType::LOCALDATETIME:
             case ProfileType::DATETIME:
@@ -163,7 +159,7 @@ abstract class Message implements IteratorAggregate, Stringable
                 return $value;
         }
     }
-    
+
     /**
      * Gets an iterator.
      *
