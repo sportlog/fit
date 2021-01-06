@@ -26,6 +26,8 @@ use FIT\Profile\Profile;
  * - does not handle compress time stamp headers correctly
  * - ignores subfields
  * - does not handle accumulated fields
+ * - no profile validation (allowed messages according to file type)
+ * - ...and many more
  */
 class Decoder
 {

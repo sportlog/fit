@@ -3,7 +3,7 @@
 /**
  * Sportlog (https://sportlog.at)
  *
- * Parts of this code are taken and modified from
+ * The bigger part of this code is taken and modified from
  * Zend_Io_Reader, therefore this copyright notice.
  * 
  * Copyright (c) 2005-2020, Zend, a Rogue Wave Company. All rights reserved.
