@@ -13,6 +13,9 @@ namespace FIT\Profile;
 
 use Attribute;
 
+/**
+ * Describes a message field.
+ */
 #[Attribute(Attribute::IS_REPEATABLE | Attribute::TARGET_CLASS)]
 class Field {
     public function __construct(private string $name,

@@ -16,22 +16,40 @@ use FIT\Profile\Message;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
-use FIT\Profile\MessageFactory;
 use FIT\Profile\Profile;
 
+/**
+ * A decoder for FIT files.
+ * For a documentation of the FIT protocol see https://developer.garmin.com/fit/protocol/
+ * 
+ * Current limitations:
+ * - does not handle compress time stamp headers correctly
+ * - ignores subfields
+ * - does not handle accumulated fields
+ */
 class Decoder
 {
     const MESSAGE_TYPE_DATA = 'data';
     const MESSAGE_TYPE_DEFINITION = 'definition';
 
     private LoggerInterface $logger;
-    private array $messageTypeDefinitions = [];
-
+    
+    /**
+     * Creates a new deocder instance.
+     *
+     * @param LoggerInterface|null $logger
+     */
     public function __construct(?LoggerInterface $logger = null)
     {
         $this->logger = $logger ?? new NullLogger();
     }
 
+    /**
+     * Reads the file and returns the decoded array of messages
+     *
+     * @param string $file
+     * @return Message[]
+     */
     public function read(string $file): array
     {
         $handle = fopen($file, 'rb');
@@ -56,6 +74,7 @@ class Decoder
 
     private function readRecords(array $header, IOReader $reader): array
     {
+        $messageTypeDefinitions = [];
         $records = [];
         while ($reader->getOffset() - $header['header_size'] < $header['data_size']) {
             $recordHeader = $this->nextRecordHeader($reader);
@@ -65,11 +84,16 @@ class Decoder
                 case self::MESSAGE_TYPE_DEFINITION:
                     // definition message
                     $def =  $this->nextRecordDefinition($recordHeader['has_developer_data'], $reader);
-                    $this->messageTypeDefinitions[$localMessagType] = $def;
+                    $messageTypeDefinitions[$localMessagType] = $def;
                     break;
 
                 case self::MESSAGE_TYPE_DATA:
-                    $records[] = $this->nextRecordData($localMessagType, $reader);
+                    if (!isset($messageTypeDefinitions[$localMessagType])) {
+                        throw new Exception("No message definition for local message type '{$localMessagType}' found.");
+                    }
+            
+                    $this->logger->info("Data for '{$localMessagType}'");
+                    $records[] = $this->nextRecordData($messageTypeDefinitions[$localMessagType], $reader);
                     break;
 
                 default:
@@ -79,17 +103,9 @@ class Decoder
         return $records;
     }
 
-    private function nextRecordData(int $localMessagType, IOReader $reader): Message
+    private function nextRecordData(array $definition, IOReader $reader): Message
     {
-        if (!isset($this->messageTypeDefinitions[$localMessagType])) {
-            throw new Exception("No message definition for local message type '{$localMessagType}' found.");
-        }
-
-        $definition = $this->messageTypeDefinitions[$localMessagType];
-        // $this->logger->info($reader->getOffset() . " :" . $recordHeader['message_type'] . " '{$localMessagType}', " . $definition['global_message_number']);
-        
-        // Assoociative array with the field definition number as key
-        // and it's decoded value.
+        // Create the message for the global message number
         $message = Profile::createMessage($definition['global_message_number']);
         foreach ($definition['field_definitions'] as $fieldDefinition) {
             $size = $fieldDefinition['size'];
@@ -108,9 +124,6 @@ class Decoder
                 throw new Exception('size must be a multiple of fit-base-type size');
             }
 
-            // Use the field definition number as index and assign the value.
-            // The message factory will create the appropriate message according to the
-            // global message number and assign the values to the created message.
             $order = $definition['byte_order'];
             $fieldValue = null;
             if ($size === $fitBaseTypeSize || $fieldDefinition['base_type'] === FitBaseType::BYTE || $fieldDefinition['base_type'] === FitBaseType::STRING) {
@@ -125,9 +138,7 @@ class Decoder
             }
             $message->setFieldValue($fieldDefinition['field_definition_number'], $fieldValue, $fitBaseType);
         }
-        
-        $this->logger->info("Data for '{$localMessagType}'");
-
+ 
         return $message;
     }
 
@@ -209,7 +220,6 @@ class Decoder
             ];
         }
 
-        // $baseTypeDef = BaseTypes::fromType($fieldBaseTypeNumber);
         if ($hasDeveloperData) {
             // Developer data is present as defined in the header
 

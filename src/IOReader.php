@@ -26,7 +26,6 @@ namespace FIT;
 
 use Exception;
 use InvalidArgumentException;
-use YaMVC\Http\Stream;
 
 class IOReader
 {
@@ -70,7 +69,7 @@ class IOReader
      *
      * @return void
      */
-    public function close()
+    public function close(): void
     {
         if ($this->_fd !== null) {
             @fclose($this->_fd);
@@ -86,7 +85,7 @@ class IOReader
      * @return boolean
      * @throws Exception if an I/O error occurs
      */
-    public function available()
+    public function available(): bool
     {
         return !feof($this->_fd);
     }
@@ -97,7 +96,7 @@ class IOReader
      * @return integer
      * @throws Exception if an I/O error occurs
      */
-    public function getOffset()
+    public function getOffset(): int
     {
         if ($this->_fd === null) {
             throw new Exception('Cannot operate on a closed stream');
@@ -113,7 +112,7 @@ class IOReader
      * @throws Exception if <var>length</var> attribute is negative or
      *  if an I/O error occurs
      */
-    public function read($length)
+    public function read($length): string
     {
         if ($length < 0) {
             throw new Exception('Length cannot be negative');
@@ -133,7 +132,7 @@ class IOReader
      * @return integer
      * @throws Exception if an I/O error occurs
      */
-    public final function readInt8()
+    public final function readInt8(): int
     {
         $ord = ord($this->read(1));
         if ($ord > 127) {
@@ -150,7 +149,7 @@ class IOReader
      * @return integer
      * @throws Exception if an I/O error occurs
      */
-    public final function readUInt8()
+    public final function readUInt8(): int
     {
         return ord($this->read(1));
     }

@@ -95,11 +95,18 @@ abstract class Message implements IteratorAggregate, Stringable
         return $this->name;
     }
 
+    /**
+     * Gets a field value.
+     */
     public function getFieldValue(int|string $fieldNumber): mixed
     {
         return isset($this->values[$fieldNumber]) ? $this->values[$fieldNumber] : null;
     }
 
+    /**
+     * Sets a field value.
+     * @throws Exception Base type in field meta data is not identical to the base type from FIT file definition
+     */
     public function setFieldValue(int $fieldNumber, mixed $value, FitBaseTypeDefinition $fitBaseType): void
     {
         $field = $this->getField($fieldNumber);

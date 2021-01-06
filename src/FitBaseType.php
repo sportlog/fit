@@ -11,6 +11,11 @@ declare(strict_types=1);
 
 namespace FIT;
 
+/**
+ * Available FIT base types.
+ * Defined according to FIT protocol documentation.
+ * Table 7. FIT Base Types and Invalid Values
+ */
 class FitBaseType
 {
 	const ENUM		= 0;
@@ -61,6 +66,13 @@ class FitBaseType
 		return self::$fieldDefinitions;
 	}
 
+	/**
+	 * Get the definition for the provided base type.
+	 *
+	 * @param integer $baseType
+	 * @return FitBaseTypeDefinition|null The definition of the base type, or null if no matching
+	 *                                    definition could be found.
+	 */
 	public static function fromType(int $baseType): ?FitBaseTypeDefinition
 	{
 		if (!isset(self::getFieldDefinitions()[$baseType])) {

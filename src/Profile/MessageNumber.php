@@ -11,6 +11,9 @@ declare(strict_types=1);
 
 namespace FIT\Profile;
 
+/**
+ * Global message numbers
+ */
 class MessageNumber {
     const FileId = 0;
     const Capabilities = 1;
