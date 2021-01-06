@@ -13,6 +13,7 @@ namespace FIT;
 
 use Exception;
 use FIT\Profile\Message;
+use FIT\Profile\Message\TimestampMessage;
 use FIT\Profile\MessageList;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
@@ -34,6 +35,7 @@ class Decoder
 {
     const MESSAGE_TYPE_DATA = 'data';
     const MESSAGE_TYPE_DEFINITION = 'definition';
+    const MESSAGE_TYPE_COMPRESSED_TIMESTAMP = 'compressed_timestamp';
 
     private LoggerInterface $logger;
 
@@ -84,6 +86,9 @@ class Decoder
             $localMessagType = $recordHeader['local_message_type'];
 
             switch ($recordHeader['message_type']) {
+                case self::MESSAGE_TYPE_COMPRESSED_TIMESTAMP:
+                   throw new Exception('compressed timestamps are not implemented yet');
+
                 case self::MESSAGE_TYPE_DEFINITION:
                     // definition message
                     $def =  $this->nextRecordDefinition($recordHeader['has_developer_data'], $reader);
@@ -296,7 +301,7 @@ class Decoder
             // if the msb bit is set the record is a compressed timestamp header
             return [
                 'header_type' => 'compressed timestamp',
-                'message_type' => self::MESSAGE_TYPE_DATA,
+                'message_type' => self::MESSAGE_TYPE_COMPRESSED_TIMESTAMP,
                 'local_message_type' => ($byte >> 5) & 3,  // Bits 5-6, Value 0-3
                 'time_offset' =>  $byte & 31,  // Bits 0-4, Value 0-31
                 'has_developer_data' => false
