@@ -37,7 +37,7 @@ final class ClimbProMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -45,7 +45,7 @@ final class ClimbProMessage extends Message
     }
 
     /**
-     * Gets the PositionLat
+     * Gets the position lat
      */
     public function getPositionLat(): ?int
     {
@@ -53,7 +53,7 @@ final class ClimbProMessage extends Message
     }
 
     /**
-     * Gets the PositionLong
+     * Gets the position long
      */
     public function getPositionLong(): ?int
     {
@@ -61,7 +61,7 @@ final class ClimbProMessage extends Message
     }
 
     /**
-     * Gets the ClimbProEvent
+     * Gets the climb pro event
      */
     public function getClimbProEvent(): ?int
     {
@@ -69,7 +69,7 @@ final class ClimbProMessage extends Message
     }
 
     /**
-     * Gets the ClimbNumber
+     * Gets the climb number
      */
     public function getClimbNumber(): ?int
     {
@@ -77,7 +77,7 @@ final class ClimbProMessage extends Message
     }
 
     /**
-     * Gets the ClimbCategory
+     * Gets the climb category
      */
     public function getClimbCategory(): ?int
     {
@@ -85,7 +85,7 @@ final class ClimbProMessage extends Message
     }
 
     /**
-     * Gets the CurrentDist
+     * Gets the current dist
      */
     public function getCurrentDist(): ?float
     {

@@ -41,7 +41,7 @@ final class SetMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -49,7 +49,7 @@ final class SetMessage extends Message
     }
 
     /**
-     * Gets the Duration
+     * Gets the duration
      */
     public function getDuration(): ?int
     {
@@ -57,7 +57,7 @@ final class SetMessage extends Message
     }
 
     /**
-     * Gets the Repetitions
+     * Gets the repetitions
      */
     public function getRepetitions(): ?int
     {
@@ -65,7 +65,7 @@ final class SetMessage extends Message
     }
 
     /**
-     * Gets the Weight
+     * Gets the weight
      */
     public function getWeight(): ?int
     {
@@ -73,7 +73,7 @@ final class SetMessage extends Message
     }
 
     /**
-     * Gets the SetType
+     * Gets the set type
      */
     public function getSetType(): ?int
     {
@@ -81,7 +81,7 @@ final class SetMessage extends Message
     }
 
     /**
-     * Gets the StartTime
+     * Gets the start time
      */
     public function getStartTime(): ?DateTime
     {
@@ -89,7 +89,7 @@ final class SetMessage extends Message
     }
 
     /**
-     * Gets the Category
+     * Gets the category
      */
     public function getCategory(): ?int
     {
@@ -97,7 +97,7 @@ final class SetMessage extends Message
     }
 
     /**
-     * Gets the CategorySubtype
+     * Gets the category subtype
      */
     public function getCategorySubtype(): ?int
     {
@@ -105,7 +105,7 @@ final class SetMessage extends Message
     }
 
     /**
-     * Gets the WeightDisplayUnit
+     * Gets the weight display unit
      */
     public function getWeightDisplayUnit(): ?int
     {
@@ -113,7 +113,7 @@ final class SetMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -121,7 +121,7 @@ final class SetMessage extends Message
     }
 
     /**
-     * Gets the WktStepIndex
+     * Gets the wkt step index
      */
     public function getWktStepIndex(): ?int
     {

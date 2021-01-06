@@ -37,7 +37,7 @@ final class SegmentLeaderboardEntryMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -45,7 +45,7 @@ final class SegmentLeaderboardEntryMessage extends Message
     }
 
     /**
-     * Gets the Name
+     * Gets the name
      */
     public function getName(): ?string
     {
@@ -53,7 +53,7 @@ final class SegmentLeaderboardEntryMessage extends Message
     }
 
     /**
-     * Gets the Type
+     * Gets the type
      */
     public function getType(): ?int
     {
@@ -61,7 +61,7 @@ final class SegmentLeaderboardEntryMessage extends Message
     }
 
     /**
-     * Gets the GroupPrimaryKey
+     * Gets the group primary key
      */
     public function getGroupPrimaryKey(): ?int
     {
@@ -69,7 +69,7 @@ final class SegmentLeaderboardEntryMessage extends Message
     }
 
     /**
-     * Gets the ActivityId
+     * Gets the activity id
      */
     public function getActivityId(): ?int
     {
@@ -77,7 +77,7 @@ final class SegmentLeaderboardEntryMessage extends Message
     }
 
     /**
-     * Gets the SegmentTime
+     * Gets the segment time
      */
     public function getSegmentTime(): ?int
     {
@@ -85,7 +85,7 @@ final class SegmentLeaderboardEntryMessage extends Message
     }
 
     /**
-     * Gets the ActivityIdString
+     * Gets the activity id string
      */
     public function getActivityIdString(): ?string
     {

@@ -37,7 +37,7 @@ final class TimestampCorrelationMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -45,7 +45,7 @@ final class TimestampCorrelationMessage extends Message
     }
 
     /**
-     * Gets the FractionalTimestamp
+     * Gets the fractional timestamp
      */
     public function getFractionalTimestamp(): ?int
     {
@@ -53,7 +53,7 @@ final class TimestampCorrelationMessage extends Message
     }
 
     /**
-     * Gets the SystemTimestamp
+     * Gets the system timestamp
      */
     public function getSystemTimestamp(): ?DateTime
     {
@@ -61,7 +61,7 @@ final class TimestampCorrelationMessage extends Message
     }
 
     /**
-     * Gets the FractionalSystemTimestamp
+     * Gets the fractional system timestamp
      */
     public function getFractionalSystemTimestamp(): ?int
     {
@@ -69,7 +69,7 @@ final class TimestampCorrelationMessage extends Message
     }
 
     /**
-     * Gets the LocalTimestamp
+     * Gets the local timestamp
      */
     public function getLocalTimestamp(): ?DateTime
     {
@@ -77,7 +77,7 @@ final class TimestampCorrelationMessage extends Message
     }
 
     /**
-     * Gets the TimestampMs
+     * Gets the timestamp ms
      */
     public function getTimestampMs(): ?int
     {
@@ -85,7 +85,7 @@ final class TimestampCorrelationMessage extends Message
     }
 
     /**
-     * Gets the SystemTimestampMs
+     * Gets the system timestamp ms
      */
     public function getSystemTimestampMs(): ?int
     {

@@ -34,7 +34,7 @@ final class DiveGasMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -42,7 +42,7 @@ final class DiveGasMessage extends Message
     }
 
     /**
-     * Gets the HeliumContent
+     * Gets the helium content
      */
     public function getHeliumContent(): ?int
     {
@@ -50,7 +50,7 @@ final class DiveGasMessage extends Message
     }
 
     /**
-     * Gets the OxygenContent
+     * Gets the oxygen content
      */
     public function getOxygenContent(): ?int
     {
@@ -58,7 +58,7 @@ final class DiveGasMessage extends Message
     }
 
     /**
-     * Gets the Status
+     * Gets the status
      */
     public function getStatus(): ?int
     {

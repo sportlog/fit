@@ -32,7 +32,7 @@ final class StressLevelMessage extends Message
     }
 
     /**
-     * Gets the StressLevelValue
+     * Gets the stress level value
      */
     public function getStressLevelValue(): ?int
     {
@@ -40,7 +40,7 @@ final class StressLevelMessage extends Message
     }
 
     /**
-     * Gets the StressLevelTime
+     * Gets the stress level time
      */
     public function getStressLevelTime(): ?DateTime
     {

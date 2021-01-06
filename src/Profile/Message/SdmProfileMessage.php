@@ -38,7 +38,7 @@ final class SdmProfileMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -46,7 +46,7 @@ final class SdmProfileMessage extends Message
     }
 
     /**
-     * Gets the Enabled
+     * Gets the enabled
      */
     public function getEnabled(): ?bool
     {
@@ -54,7 +54,7 @@ final class SdmProfileMessage extends Message
     }
 
     /**
-     * Gets the SdmAntId
+     * Gets the sdm ant id
      */
     public function getSdmAntId(): ?int
     {
@@ -62,7 +62,7 @@ final class SdmProfileMessage extends Message
     }
 
     /**
-     * Gets the SdmCalFactor
+     * Gets the sdm cal factor
      */
     public function getSdmCalFactor(): ?int
     {
@@ -70,7 +70,7 @@ final class SdmProfileMessage extends Message
     }
 
     /**
-     * Gets the Odometer
+     * Gets the odometer
      */
     public function getOdometer(): ?int
     {
@@ -78,7 +78,7 @@ final class SdmProfileMessage extends Message
     }
 
     /**
-     * Gets the SpeedSource
+     * Gets the speed source
      */
     public function getSpeedSource(): ?bool
     {
@@ -86,7 +86,7 @@ final class SdmProfileMessage extends Message
     }
 
     /**
-     * Gets the SdmAntIdTransType
+     * Gets the sdm ant id trans type
      */
     public function getSdmAntIdTransType(): ?int
     {
@@ -94,7 +94,7 @@ final class SdmProfileMessage extends Message
     }
 
     /**
-     * Gets the OdometerRollover
+     * Gets the odometer rollover
      */
     public function getOdometerRollover(): ?int
     {

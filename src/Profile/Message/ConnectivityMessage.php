@@ -43,7 +43,7 @@ final class ConnectivityMessage extends Message
     }
 
     /**
-     * Gets the BluetoothEnabled
+     * Gets the bluetooth enabled
      */
     public function getBluetoothEnabled(): ?bool
     {
@@ -51,7 +51,7 @@ final class ConnectivityMessage extends Message
     }
 
     /**
-     * Gets the BluetoothLeEnabled
+     * Gets the bluetooth le enabled
      */
     public function getBluetoothLeEnabled(): ?bool
     {
@@ -59,7 +59,7 @@ final class ConnectivityMessage extends Message
     }
 
     /**
-     * Gets the AntEnabled
+     * Gets the ant enabled
      */
     public function getAntEnabled(): ?bool
     {
@@ -67,7 +67,7 @@ final class ConnectivityMessage extends Message
     }
 
     /**
-     * Gets the Name
+     * Gets the name
      */
     public function getName(): ?string
     {
@@ -75,7 +75,7 @@ final class ConnectivityMessage extends Message
     }
 
     /**
-     * Gets the LiveTrackingEnabled
+     * Gets the live tracking enabled
      */
     public function getLiveTrackingEnabled(): ?bool
     {
@@ -83,7 +83,7 @@ final class ConnectivityMessage extends Message
     }
 
     /**
-     * Gets the WeatherConditionsEnabled
+     * Gets the weather conditions enabled
      */
     public function getWeatherConditionsEnabled(): ?bool
     {
@@ -91,7 +91,7 @@ final class ConnectivityMessage extends Message
     }
 
     /**
-     * Gets the WeatherAlertsEnabled
+     * Gets the weather alerts enabled
      */
     public function getWeatherAlertsEnabled(): ?bool
     {
@@ -99,7 +99,7 @@ final class ConnectivityMessage extends Message
     }
 
     /**
-     * Gets the AutoActivityUploadEnabled
+     * Gets the auto activity upload enabled
      */
     public function getAutoActivityUploadEnabled(): ?bool
     {
@@ -107,7 +107,7 @@ final class ConnectivityMessage extends Message
     }
 
     /**
-     * Gets the CourseDownloadEnabled
+     * Gets the course download enabled
      */
     public function getCourseDownloadEnabled(): ?bool
     {
@@ -115,7 +115,7 @@ final class ConnectivityMessage extends Message
     }
 
     /**
-     * Gets the WorkoutDownloadEnabled
+     * Gets the workout download enabled
      */
     public function getWorkoutDownloadEnabled(): ?bool
     {
@@ -123,7 +123,7 @@ final class ConnectivityMessage extends Message
     }
 
     /**
-     * Gets the GpsEphemerisDownloadEnabled
+     * Gets the gps ephemeris download enabled
      */
     public function getGpsEphemerisDownloadEnabled(): ?bool
     {
@@ -131,7 +131,7 @@ final class ConnectivityMessage extends Message
     }
 
     /**
-     * Gets the IncidentDetectionEnabled
+     * Gets the incident detection enabled
      */
     public function getIncidentDetectionEnabled(): ?bool
     {
@@ -139,7 +139,7 @@ final class ConnectivityMessage extends Message
     }
 
     /**
-     * Gets the GrouptrackEnabled
+     * Gets the grouptrack enabled
      */
     public function getGrouptrackEnabled(): ?bool
     {

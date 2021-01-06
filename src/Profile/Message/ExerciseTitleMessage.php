@@ -34,7 +34,7 @@ final class ExerciseTitleMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -42,7 +42,7 @@ final class ExerciseTitleMessage extends Message
     }
 
     /**
-     * Gets the ExerciseCategory
+     * Gets the exercise category
      */
     public function getExerciseCategory(): ?int
     {
@@ -50,7 +50,7 @@ final class ExerciseTitleMessage extends Message
     }
 
     /**
-     * Gets the ExerciseName
+     * Gets the exercise name
      */
     public function getExerciseName(): ?int
     {
@@ -58,7 +58,7 @@ final class ExerciseTitleMessage extends Message
     }
 
     /**
-     * Gets the WktStepName
+     * Gets the wkt step name
      */
     public function getWktStepName(): ?string
     {

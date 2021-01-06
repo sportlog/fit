@@ -40,7 +40,7 @@ final class TotalsMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -48,7 +48,7 @@ final class TotalsMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -56,7 +56,7 @@ final class TotalsMessage extends Message
     }
 
     /**
-     * Gets the TimerTime
+     * Gets the timer time
      */
     public function getTimerTime(): ?int
     {
@@ -64,7 +64,7 @@ final class TotalsMessage extends Message
     }
 
     /**
-     * Gets the Distance
+     * Gets the distance
      */
     public function getDistance(): ?int
     {
@@ -72,7 +72,7 @@ final class TotalsMessage extends Message
     }
 
     /**
-     * Gets the Calories
+     * Gets the calories
      */
     public function getCalories(): ?int
     {
@@ -80,7 +80,7 @@ final class TotalsMessage extends Message
     }
 
     /**
-     * Gets the Sport
+     * Gets the sport
      */
     public function getSport(): ?int
     {
@@ -88,7 +88,7 @@ final class TotalsMessage extends Message
     }
 
     /**
-     * Gets the ElapsedTime
+     * Gets the elapsed time
      */
     public function getElapsedTime(): ?int
     {
@@ -96,7 +96,7 @@ final class TotalsMessage extends Message
     }
 
     /**
-     * Gets the Sessions
+     * Gets the sessions
      */
     public function getSessions(): ?int
     {
@@ -104,7 +104,7 @@ final class TotalsMessage extends Message
     }
 
     /**
-     * Gets the ActiveTime
+     * Gets the active time
      */
     public function getActiveTime(): ?int
     {
@@ -112,7 +112,7 @@ final class TotalsMessage extends Message
     }
 
     /**
-     * Gets the SportIndex
+     * Gets the sport index
      */
     public function getSportIndex(): ?int
     {

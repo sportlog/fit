@@ -37,7 +37,7 @@ final class WorkoutMessage extends Message
     }
 
     /**
-     * Gets the Sport
+     * Gets the sport
      */
     public function getSport(): ?int
     {
@@ -45,7 +45,7 @@ final class WorkoutMessage extends Message
     }
 
     /**
-     * Gets the Capabilities
+     * Gets the capabilities
      */
     public function getCapabilities(): ?int
     {
@@ -53,7 +53,7 @@ final class WorkoutMessage extends Message
     }
 
     /**
-     * Gets the NumValidSteps
+     * Gets the num valid steps
      */
     public function getNumValidSteps(): ?int
     {
@@ -61,7 +61,7 @@ final class WorkoutMessage extends Message
     }
 
     /**
-     * Gets the WktName
+     * Gets the wkt name
      */
     public function getWktName(): ?string
     {
@@ -69,7 +69,7 @@ final class WorkoutMessage extends Message
     }
 
     /**
-     * Gets the SubSport
+     * Gets the sub sport
      */
     public function getSubSport(): ?int
     {
@@ -77,7 +77,7 @@ final class WorkoutMessage extends Message
     }
 
     /**
-     * Gets the PoolLength
+     * Gets the pool length
      */
     public function getPoolLength(): ?int
     {
@@ -85,7 +85,7 @@ final class WorkoutMessage extends Message
     }
 
     /**
-     * Gets the PoolLengthUnit
+     * Gets the pool length unit
      */
     public function getPoolLengthUnit(): ?int
     {

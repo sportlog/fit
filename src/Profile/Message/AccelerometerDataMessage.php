@@ -42,7 +42,7 @@ final class AccelerometerDataMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -50,7 +50,7 @@ final class AccelerometerDataMessage extends Message
     }
 
     /**
-     * Gets the TimestampMs
+     * Gets the timestamp ms
      */
     public function getTimestampMs(): ?int
     {
@@ -58,7 +58,7 @@ final class AccelerometerDataMessage extends Message
     }
 
     /**
-     * Gets the SampleTimeOffset
+     * Gets the sample time offset
      */
     public function getSampleTimeOffset(): ?int
     {
@@ -66,7 +66,7 @@ final class AccelerometerDataMessage extends Message
     }
 
     /**
-     * Gets the AccelX
+     * Gets the accel x
      */
     public function getAccelX(): ?int
     {
@@ -74,7 +74,7 @@ final class AccelerometerDataMessage extends Message
     }
 
     /**
-     * Gets the AccelY
+     * Gets the accel y
      */
     public function getAccelY(): ?int
     {
@@ -82,7 +82,7 @@ final class AccelerometerDataMessage extends Message
     }
 
     /**
-     * Gets the AccelZ
+     * Gets the accel z
      */
     public function getAccelZ(): ?int
     {
@@ -90,7 +90,7 @@ final class AccelerometerDataMessage extends Message
     }
 
     /**
-     * Gets the CalibratedAccelX
+     * Gets the calibrated accel x
      */
     public function getCalibratedAccelX(): ?float
     {
@@ -98,7 +98,7 @@ final class AccelerometerDataMessage extends Message
     }
 
     /**
-     * Gets the CalibratedAccelY
+     * Gets the calibrated accel y
      */
     public function getCalibratedAccelY(): ?float
     {
@@ -106,7 +106,7 @@ final class AccelerometerDataMessage extends Message
     }
 
     /**
-     * Gets the CalibratedAccelZ
+     * Gets the calibrated accel z
      */
     public function getCalibratedAccelZ(): ?float
     {
@@ -114,7 +114,7 @@ final class AccelerometerDataMessage extends Message
     }
 
     /**
-     * Gets the CompressedCalibratedAccelX
+     * Gets the compressed calibrated accel x
      */
     public function getCompressedCalibratedAccelX(): ?int
     {
@@ -122,7 +122,7 @@ final class AccelerometerDataMessage extends Message
     }
 
     /**
-     * Gets the CompressedCalibratedAccelY
+     * Gets the compressed calibrated accel y
      */
     public function getCompressedCalibratedAccelY(): ?int
     {
@@ -130,7 +130,7 @@ final class AccelerometerDataMessage extends Message
     }
 
     /**
-     * Gets the CompressedCalibratedAccelZ
+     * Gets the compressed calibrated accel z
      */
     public function getCompressedCalibratedAccelZ(): ?int
     {

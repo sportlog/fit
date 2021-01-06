@@ -44,7 +44,7 @@ final class FieldDescriptionMessage extends Message
     }
 
     /**
-     * Gets the DeveloperDataIndex
+     * Gets the developer data index
      */
     public function getDeveloperDataIndex(): ?int
     {
@@ -52,7 +52,7 @@ final class FieldDescriptionMessage extends Message
     }
 
     /**
-     * Gets the FieldDefinitionNumber
+     * Gets the field definition number
      */
     public function getFieldDefinitionNumber(): ?int
     {
@@ -60,7 +60,7 @@ final class FieldDescriptionMessage extends Message
     }
 
     /**
-     * Gets the FitBaseTypeId
+     * Gets the fit base type id
      */
     public function getFitBaseTypeId(): ?int
     {
@@ -68,7 +68,7 @@ final class FieldDescriptionMessage extends Message
     }
 
     /**
-     * Gets the FieldName
+     * Gets the field name
      */
     public function getFieldName(): ?string
     {
@@ -76,7 +76,7 @@ final class FieldDescriptionMessage extends Message
     }
 
     /**
-     * Gets the Array
+     * Gets the array
      */
     public function getArray(): ?int
     {
@@ -84,7 +84,7 @@ final class FieldDescriptionMessage extends Message
     }
 
     /**
-     * Gets the Components
+     * Gets the components
      */
     public function getComponents(): ?string
     {
@@ -92,7 +92,7 @@ final class FieldDescriptionMessage extends Message
     }
 
     /**
-     * Gets the Scale
+     * Gets the scale
      */
     public function getScale(): ?int
     {
@@ -100,7 +100,7 @@ final class FieldDescriptionMessage extends Message
     }
 
     /**
-     * Gets the Offset
+     * Gets the offset
      */
     public function getOffset(): ?int
     {
@@ -108,7 +108,7 @@ final class FieldDescriptionMessage extends Message
     }
 
     /**
-     * Gets the Units
+     * Gets the units
      */
     public function getUnits(): ?string
     {
@@ -116,7 +116,7 @@ final class FieldDescriptionMessage extends Message
     }
 
     /**
-     * Gets the Bits
+     * Gets the bits
      */
     public function getBits(): ?string
     {
@@ -124,7 +124,7 @@ final class FieldDescriptionMessage extends Message
     }
 
     /**
-     * Gets the Accumulate
+     * Gets the accumulate
      */
     public function getAccumulate(): ?string
     {
@@ -132,7 +132,7 @@ final class FieldDescriptionMessage extends Message
     }
 
     /**
-     * Gets the FitBaseUnitId
+     * Gets the fit base unit id
      */
     public function getFitBaseUnitId(): ?int
     {
@@ -140,7 +140,7 @@ final class FieldDescriptionMessage extends Message
     }
 
     /**
-     * Gets the NativeMesgNum
+     * Gets the native mesg num
      */
     public function getNativeMesgNum(): ?int
     {
@@ -148,7 +148,7 @@ final class FieldDescriptionMessage extends Message
     }
 
     /**
-     * Gets the NativeFieldNum
+     * Gets the native field num
      */
     public function getNativeFieldNum(): ?int
     {

@@ -38,7 +38,7 @@ final class CoursePointMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -46,7 +46,7 @@ final class CoursePointMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -54,7 +54,7 @@ final class CoursePointMessage extends Message
     }
 
     /**
-     * Gets the PositionLat
+     * Gets the position lat
      */
     public function getPositionLat(): ?int
     {
@@ -62,7 +62,7 @@ final class CoursePointMessage extends Message
     }
 
     /**
-     * Gets the PositionLong
+     * Gets the position long
      */
     public function getPositionLong(): ?int
     {
@@ -70,7 +70,7 @@ final class CoursePointMessage extends Message
     }
 
     /**
-     * Gets the Distance
+     * Gets the distance
      */
     public function getDistance(): ?int
     {
@@ -78,7 +78,7 @@ final class CoursePointMessage extends Message
     }
 
     /**
-     * Gets the Type
+     * Gets the type
      */
     public function getType(): ?int
     {
@@ -86,7 +86,7 @@ final class CoursePointMessage extends Message
     }
 
     /**
-     * Gets the Name
+     * Gets the name
      */
     public function getName(): ?string
     {
@@ -94,7 +94,7 @@ final class CoursePointMessage extends Message
     }
 
     /**
-     * Gets the Favorite
+     * Gets the favorite
      */
     public function getFavorite(): ?bool
     {

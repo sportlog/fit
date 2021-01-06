@@ -33,7 +33,7 @@ final class PowerZoneMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -41,7 +41,7 @@ final class PowerZoneMessage extends Message
     }
 
     /**
-     * Gets the HighValue
+     * Gets the high value
      */
     public function getHighValue(): ?int
     {
@@ -49,7 +49,7 @@ final class PowerZoneMessage extends Message
     }
 
     /**
-     * Gets the Name
+     * Gets the name
      */
     public function getName(): ?string
     {

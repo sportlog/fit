@@ -59,7 +59,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -67,7 +67,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the DeviceIndex
+     * Gets the device index
      */
     public function getDeviceIndex(): ?int
     {
@@ -75,7 +75,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the Calories
+     * Gets the calories
      */
     public function getCalories(): ?int
     {
@@ -83,7 +83,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the Distance
+     * Gets the distance
      */
     public function getDistance(): ?int
     {
@@ -91,7 +91,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the Cycles
+     * Gets the cycles
      */
     public function getCycles(): ?int
     {
@@ -99,7 +99,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the ActiveTime
+     * Gets the active time
      */
     public function getActiveTime(): ?int
     {
@@ -107,7 +107,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the ActivityType
+     * Gets the activity type
      */
     public function getActivityType(): ?int
     {
@@ -115,7 +115,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the ActivitySubtype
+     * Gets the activity subtype
      */
     public function getActivitySubtype(): ?int
     {
@@ -123,7 +123,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the ActivityLevel
+     * Gets the activity level
      */
     public function getActivityLevel(): ?int
     {
@@ -131,7 +131,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the Distance16
+     * Gets the distance16
      */
     public function getDistance16(): ?int
     {
@@ -139,7 +139,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the Cycles16
+     * Gets the cycles16
      */
     public function getCycles16(): ?int
     {
@@ -147,7 +147,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the ActiveTime16
+     * Gets the active time16
      */
     public function getActiveTime16(): ?int
     {
@@ -155,7 +155,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the LocalTimestamp
+     * Gets the local timestamp
      */
     public function getLocalTimestamp(): ?DateTime
     {
@@ -163,7 +163,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the Temperature
+     * Gets the temperature
      */
     public function getTemperature(): ?int
     {
@@ -171,7 +171,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the TemperatureMin
+     * Gets the temperature min
      */
     public function getTemperatureMin(): ?int
     {
@@ -179,7 +179,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the TemperatureMax
+     * Gets the temperature max
      */
     public function getTemperatureMax(): ?int
     {
@@ -187,7 +187,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the ActivityTime
+     * Gets the activity time
      */
     public function getActivityTime(): ?int
     {
@@ -195,7 +195,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the ActiveCalories
+     * Gets the active calories
      */
     public function getActiveCalories(): ?int
     {
@@ -203,15 +203,15 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the CurrentActivityTypeIntensity
+     * Gets the current activity type intensity
      */
-    public function getCurrentActivityTypeIntensity(): ?int
+    public function getCurrentActivityTypeIntensity(): mixed
     {
         return $this->getValue(24);
     }
 
     /**
-     * Gets the TimestampMin8
+     * Gets the timestamp min8
      */
     public function getTimestampMin8(): ?int
     {
@@ -219,7 +219,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the Timestamp16
+     * Gets the timestamp16
      */
     public function getTimestamp16(): ?int
     {
@@ -227,7 +227,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the HeartRate
+     * Gets the heart rate
      */
     public function getHeartRate(): ?int
     {
@@ -235,7 +235,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the Intensity
+     * Gets the intensity
      */
     public function getIntensity(): ?int
     {
@@ -243,7 +243,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the DurationMin
+     * Gets the duration min
      */
     public function getDurationMin(): ?int
     {
@@ -251,7 +251,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the Duration
+     * Gets the duration
      */
     public function getDuration(): ?int
     {
@@ -259,7 +259,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the Ascent
+     * Gets the ascent
      */
     public function getAscent(): ?int
     {
@@ -267,7 +267,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the Descent
+     * Gets the descent
      */
     public function getDescent(): ?int
     {
@@ -275,7 +275,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the ModerateActivityMinutes
+     * Gets the moderate activity minutes
      */
     public function getModerateActivityMinutes(): ?int
     {
@@ -283,7 +283,7 @@ final class MonitoringMessage extends Message
     }
 
     /**
-     * Gets the VigorousActivityMinutes
+     * Gets the vigorous activity minutes
      */
     public function getVigorousActivityMinutes(): ?int
     {

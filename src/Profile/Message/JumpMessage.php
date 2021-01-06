@@ -40,7 +40,7 @@ final class JumpMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -48,7 +48,7 @@ final class JumpMessage extends Message
     }
 
     /**
-     * Gets the Distance
+     * Gets the distance
      */
     public function getDistance(): ?float
     {
@@ -56,7 +56,7 @@ final class JumpMessage extends Message
     }
 
     /**
-     * Gets the Height
+     * Gets the height
      */
     public function getHeight(): ?float
     {
@@ -64,7 +64,7 @@ final class JumpMessage extends Message
     }
 
     /**
-     * Gets the Rotations
+     * Gets the rotations
      */
     public function getRotations(): ?int
     {
@@ -72,7 +72,7 @@ final class JumpMessage extends Message
     }
 
     /**
-     * Gets the HangTime
+     * Gets the hang time
      */
     public function getHangTime(): ?float
     {
@@ -80,7 +80,7 @@ final class JumpMessage extends Message
     }
 
     /**
-     * Gets the Score
+     * Gets the score
      */
     public function getScore(): ?float
     {
@@ -88,7 +88,7 @@ final class JumpMessage extends Message
     }
 
     /**
-     * Gets the PositionLat
+     * Gets the position lat
      */
     public function getPositionLat(): ?int
     {
@@ -96,7 +96,7 @@ final class JumpMessage extends Message
     }
 
     /**
-     * Gets the PositionLong
+     * Gets the position long
      */
     public function getPositionLong(): ?int
     {
@@ -104,7 +104,7 @@ final class JumpMessage extends Message
     }
 
     /**
-     * Gets the Speed
+     * Gets the speed
      */
     public function getSpeed(): ?int
     {
@@ -112,7 +112,7 @@ final class JumpMessage extends Message
     }
 
     /**
-     * Gets the EnhancedSpeed
+     * Gets the enhanced speed
      */
     public function getEnhancedSpeed(): ?int
     {

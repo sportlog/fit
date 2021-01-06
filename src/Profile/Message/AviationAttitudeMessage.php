@@ -42,7 +42,7 @@ final class AviationAttitudeMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -50,7 +50,7 @@ final class AviationAttitudeMessage extends Message
     }
 
     /**
-     * Gets the TimestampMs
+     * Gets the timestamp ms
      */
     public function getTimestampMs(): ?int
     {
@@ -58,7 +58,7 @@ final class AviationAttitudeMessage extends Message
     }
 
     /**
-     * Gets the SystemTime
+     * Gets the system time
      */
     public function getSystemTime(): ?int
     {
@@ -66,7 +66,7 @@ final class AviationAttitudeMessage extends Message
     }
 
     /**
-     * Gets the Pitch
+     * Gets the pitch
      */
     public function getPitch(): ?int
     {
@@ -74,7 +74,7 @@ final class AviationAttitudeMessage extends Message
     }
 
     /**
-     * Gets the Roll
+     * Gets the roll
      */
     public function getRoll(): ?int
     {
@@ -82,7 +82,7 @@ final class AviationAttitudeMessage extends Message
     }
 
     /**
-     * Gets the AccelLateral
+     * Gets the accel lateral
      */
     public function getAccelLateral(): ?int
     {
@@ -90,7 +90,7 @@ final class AviationAttitudeMessage extends Message
     }
 
     /**
-     * Gets the AccelNormal
+     * Gets the accel normal
      */
     public function getAccelNormal(): ?int
     {
@@ -98,7 +98,7 @@ final class AviationAttitudeMessage extends Message
     }
 
     /**
-     * Gets the TurnRate
+     * Gets the turn rate
      */
     public function getTurnRate(): ?int
     {
@@ -106,7 +106,7 @@ final class AviationAttitudeMessage extends Message
     }
 
     /**
-     * Gets the Stage
+     * Gets the stage
      */
     public function getStage(): ?int
     {
@@ -114,7 +114,7 @@ final class AviationAttitudeMessage extends Message
     }
 
     /**
-     * Gets the AttitudeStageComplete
+     * Gets the attitude stage complete
      */
     public function getAttitudeStageComplete(): ?int
     {
@@ -122,7 +122,7 @@ final class AviationAttitudeMessage extends Message
     }
 
     /**
-     * Gets the Track
+     * Gets the track
      */
     public function getTrack(): ?int
     {
@@ -130,7 +130,7 @@ final class AviationAttitudeMessage extends Message
     }
 
     /**
-     * Gets the Validity
+     * Gets the validity
      */
     public function getValidity(): ?int
     {

@@ -36,7 +36,7 @@ final class SegmentPointMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -44,7 +44,7 @@ final class SegmentPointMessage extends Message
     }
 
     /**
-     * Gets the PositionLat
+     * Gets the position lat
      */
     public function getPositionLat(): ?int
     {
@@ -52,7 +52,7 @@ final class SegmentPointMessage extends Message
     }
 
     /**
-     * Gets the PositionLong
+     * Gets the position long
      */
     public function getPositionLong(): ?int
     {
@@ -60,7 +60,7 @@ final class SegmentPointMessage extends Message
     }
 
     /**
-     * Gets the Distance
+     * Gets the distance
      */
     public function getDistance(): ?int
     {
@@ -68,7 +68,7 @@ final class SegmentPointMessage extends Message
     }
 
     /**
-     * Gets the Altitude
+     * Gets the altitude
      */
     public function getAltitude(): ?int
     {
@@ -76,7 +76,7 @@ final class SegmentPointMessage extends Message
     }
 
     /**
-     * Gets the LeaderTime
+     * Gets the leader time
      */
     public function getLeaderTime(): ?int
     {

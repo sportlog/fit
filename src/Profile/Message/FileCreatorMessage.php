@@ -32,7 +32,7 @@ final class FileCreatorMessage extends Message
     }
 
     /**
-     * Gets the SoftwareVersion
+     * Gets the software version
      */
     public function getSoftwareVersion(): ?int
     {
@@ -40,7 +40,7 @@ final class FileCreatorMessage extends Message
     }
 
     /**
-     * Gets the HardwareVersion
+     * Gets the hardware version
      */
     public function getHardwareVersion(): ?int
     {

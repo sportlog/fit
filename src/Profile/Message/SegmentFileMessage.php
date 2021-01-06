@@ -39,7 +39,7 @@ final class SegmentFileMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -47,7 +47,7 @@ final class SegmentFileMessage extends Message
     }
 
     /**
-     * Gets the FileUuid
+     * Gets the file uuid
      */
     public function getFileUuid(): ?string
     {
@@ -55,7 +55,7 @@ final class SegmentFileMessage extends Message
     }
 
     /**
-     * Gets the Enabled
+     * Gets the enabled
      */
     public function getEnabled(): ?bool
     {
@@ -63,7 +63,7 @@ final class SegmentFileMessage extends Message
     }
 
     /**
-     * Gets the UserProfilePrimaryKey
+     * Gets the user profile primary key
      */
     public function getUserProfilePrimaryKey(): ?int
     {
@@ -71,7 +71,7 @@ final class SegmentFileMessage extends Message
     }
 
     /**
-     * Gets the LeaderType
+     * Gets the leader type
      */
     public function getLeaderType(): ?int
     {
@@ -79,7 +79,7 @@ final class SegmentFileMessage extends Message
     }
 
     /**
-     * Gets the LeaderGroupPrimaryKey
+     * Gets the leader group primary key
      */
     public function getLeaderGroupPrimaryKey(): ?int
     {
@@ -87,7 +87,7 @@ final class SegmentFileMessage extends Message
     }
 
     /**
-     * Gets the LeaderActivityId
+     * Gets the leader activity id
      */
     public function getLeaderActivityId(): ?int
     {
@@ -95,7 +95,7 @@ final class SegmentFileMessage extends Message
     }
 
     /**
-     * Gets the LeaderActivityIdString
+     * Gets the leader activity id string
      */
     public function getLeaderActivityIdString(): ?string
     {
@@ -103,7 +103,7 @@ final class SegmentFileMessage extends Message
     }
 
     /**
-     * Gets the DefaultRaceLeader
+     * Gets the default race leader
      */
     public function getDefaultRaceLeader(): ?int
     {

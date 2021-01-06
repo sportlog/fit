@@ -48,7 +48,7 @@ final class DeviceInfoMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -56,7 +56,7 @@ final class DeviceInfoMessage extends Message
     }
 
     /**
-     * Gets the DeviceIndex
+     * Gets the device index
      */
     public function getDeviceIndex(): ?int
     {
@@ -64,7 +64,7 @@ final class DeviceInfoMessage extends Message
     }
 
     /**
-     * Gets the DeviceType
+     * Gets the device type
      */
     public function getDeviceType(): ?int
     {
@@ -72,7 +72,7 @@ final class DeviceInfoMessage extends Message
     }
 
     /**
-     * Gets the Manufacturer
+     * Gets the manufacturer
      */
     public function getManufacturer(): ?int
     {
@@ -80,7 +80,7 @@ final class DeviceInfoMessage extends Message
     }
 
     /**
-     * Gets the SerialNumber
+     * Gets the serial number
      */
     public function getSerialNumber(): ?int
     {
@@ -88,7 +88,7 @@ final class DeviceInfoMessage extends Message
     }
 
     /**
-     * Gets the Product
+     * Gets the product
      */
     public function getProduct(): ?int
     {
@@ -96,7 +96,7 @@ final class DeviceInfoMessage extends Message
     }
 
     /**
-     * Gets the SoftwareVersion
+     * Gets the software version
      */
     public function getSoftwareVersion(): ?int
     {
@@ -104,7 +104,7 @@ final class DeviceInfoMessage extends Message
     }
 
     /**
-     * Gets the HardwareVersion
+     * Gets the hardware version
      */
     public function getHardwareVersion(): ?int
     {
@@ -112,7 +112,7 @@ final class DeviceInfoMessage extends Message
     }
 
     /**
-     * Gets the CumOperatingTime
+     * Gets the cum operating time
      */
     public function getCumOperatingTime(): ?int
     {
@@ -120,7 +120,7 @@ final class DeviceInfoMessage extends Message
     }
 
     /**
-     * Gets the BatteryVoltage
+     * Gets the battery voltage
      */
     public function getBatteryVoltage(): ?int
     {
@@ -128,7 +128,7 @@ final class DeviceInfoMessage extends Message
     }
 
     /**
-     * Gets the BatteryStatus
+     * Gets the battery status
      */
     public function getBatteryStatus(): ?int
     {
@@ -136,7 +136,7 @@ final class DeviceInfoMessage extends Message
     }
 
     /**
-     * Gets the SensorPosition
+     * Gets the sensor position
      */
     public function getSensorPosition(): ?int
     {
@@ -144,7 +144,7 @@ final class DeviceInfoMessage extends Message
     }
 
     /**
-     * Gets the Descriptor
+     * Gets the descriptor
      */
     public function getDescriptor(): ?string
     {
@@ -152,7 +152,7 @@ final class DeviceInfoMessage extends Message
     }
 
     /**
-     * Gets the AntTransmissionType
+     * Gets the ant transmission type
      */
     public function getAntTransmissionType(): ?int
     {
@@ -160,7 +160,7 @@ final class DeviceInfoMessage extends Message
     }
 
     /**
-     * Gets the AntDeviceNumber
+     * Gets the ant device number
      */
     public function getAntDeviceNumber(): ?int
     {
@@ -168,7 +168,7 @@ final class DeviceInfoMessage extends Message
     }
 
     /**
-     * Gets the AntNetwork
+     * Gets the ant network
      */
     public function getAntNetwork(): ?int
     {
@@ -176,7 +176,7 @@ final class DeviceInfoMessage extends Message
     }
 
     /**
-     * Gets the SourceType
+     * Gets the source type
      */
     public function getSourceType(): ?int
     {
@@ -184,7 +184,7 @@ final class DeviceInfoMessage extends Message
     }
 
     /**
-     * Gets the ProductName
+     * Gets the product name
      */
     public function getProductName(): ?string
     {

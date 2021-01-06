@@ -54,7 +54,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the ActiveTimeZone
+     * Gets the active time zone
      */
     public function getActiveTimeZone(): ?int
     {
@@ -62,7 +62,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the UtcOffset
+     * Gets the utc offset
      */
     public function getUtcOffset(): ?int
     {
@@ -70,7 +70,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the TimeOffset
+     * Gets the time offset
      */
     public function getTimeOffset(): ?int
     {
@@ -78,7 +78,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the TimeMode
+     * Gets the time mode
      */
     public function getTimeMode(): ?int
     {
@@ -86,7 +86,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the TimeZoneOffset
+     * Gets the time zone offset
      */
     public function getTimeZoneOffset(): ?int
     {
@@ -94,7 +94,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the BacklightMode
+     * Gets the backlight mode
      */
     public function getBacklightMode(): ?int
     {
@@ -102,7 +102,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the ActivityTrackerEnabled
+     * Gets the activity tracker enabled
      */
     public function getActivityTrackerEnabled(): ?bool
     {
@@ -110,7 +110,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the ClockTime
+     * Gets the clock time
      */
     public function getClockTime(): ?DateTime
     {
@@ -118,7 +118,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the PagesEnabled
+     * Gets the pages enabled
      */
     public function getPagesEnabled(): ?int
     {
@@ -126,7 +126,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the MoveAlertEnabled
+     * Gets the move alert enabled
      */
     public function getMoveAlertEnabled(): ?bool
     {
@@ -134,7 +134,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the DateMode
+     * Gets the date mode
      */
     public function getDateMode(): ?int
     {
@@ -142,7 +142,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the DisplayOrientation
+     * Gets the display orientation
      */
     public function getDisplayOrientation(): ?int
     {
@@ -150,7 +150,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the MountingSide
+     * Gets the mounting side
      */
     public function getMountingSide(): ?int
     {
@@ -158,7 +158,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the DefaultPage
+     * Gets the default page
      */
     public function getDefaultPage(): ?int
     {
@@ -166,7 +166,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the AutosyncMinSteps
+     * Gets the autosync min steps
      */
     public function getAutosyncMinSteps(): ?int
     {
@@ -174,7 +174,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the AutosyncMinTime
+     * Gets the autosync min time
      */
     public function getAutosyncMinTime(): ?int
     {
@@ -182,7 +182,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the LactateThresholdAutodetectEnabled
+     * Gets the lactate threshold autodetect enabled
      */
     public function getLactateThresholdAutodetectEnabled(): ?bool
     {
@@ -190,7 +190,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the BleAutoUploadEnabled
+     * Gets the ble auto upload enabled
      */
     public function getBleAutoUploadEnabled(): ?bool
     {
@@ -198,7 +198,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the AutoSyncFrequency
+     * Gets the auto sync frequency
      */
     public function getAutoSyncFrequency(): ?int
     {
@@ -206,7 +206,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the AutoActivityDetect
+     * Gets the auto activity detect
      */
     public function getAutoActivityDetect(): ?int
     {
@@ -214,7 +214,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the NumberOfScreens
+     * Gets the number of screens
      */
     public function getNumberOfScreens(): ?int
     {
@@ -222,7 +222,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the SmartNotificationDisplayOrientation
+     * Gets the smart notification display orientation
      */
     public function getSmartNotificationDisplayOrientation(): ?int
     {
@@ -230,7 +230,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the TapInterface
+     * Gets the tap interface
      */
     public function getTapInterface(): ?int
     {
@@ -238,7 +238,7 @@ final class DeviceSettingsMessage extends Message
     }
 
     /**
-     * Gets the TapSensitivity
+     * Gets the tap sensitivity
      */
     public function getTapSensitivity(): ?int
     {

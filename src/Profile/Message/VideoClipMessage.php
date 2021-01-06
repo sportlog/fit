@@ -37,7 +37,7 @@ final class VideoClipMessage extends Message
     }
 
     /**
-     * Gets the ClipNumber
+     * Gets the clip number
      */
     public function getClipNumber(): ?int
     {
@@ -45,7 +45,7 @@ final class VideoClipMessage extends Message
     }
 
     /**
-     * Gets the StartTimestamp
+     * Gets the start timestamp
      */
     public function getStartTimestamp(): ?DateTime
     {
@@ -53,7 +53,7 @@ final class VideoClipMessage extends Message
     }
 
     /**
-     * Gets the StartTimestampMs
+     * Gets the start timestamp ms
      */
     public function getStartTimestampMs(): ?int
     {
@@ -61,7 +61,7 @@ final class VideoClipMessage extends Message
     }
 
     /**
-     * Gets the EndTimestamp
+     * Gets the end timestamp
      */
     public function getEndTimestamp(): ?DateTime
     {
@@ -69,7 +69,7 @@ final class VideoClipMessage extends Message
     }
 
     /**
-     * Gets the EndTimestampMs
+     * Gets the end timestamp ms
      */
     public function getEndTimestampMs(): ?int
     {
@@ -77,7 +77,7 @@ final class VideoClipMessage extends Message
     }
 
     /**
-     * Gets the ClipStart
+     * Gets the clip start
      */
     public function getClipStart(): ?int
     {
@@ -85,7 +85,7 @@ final class VideoClipMessage extends Message
     }
 
     /**
-     * Gets the ClipEnd
+     * Gets the clip end
      */
     public function getClipEnd(): ?int
     {

@@ -34,7 +34,7 @@ final class CourseMessage extends Message
     }
 
     /**
-     * Gets the Sport
+     * Gets the sport
      */
     public function getSport(): ?int
     {
@@ -42,7 +42,7 @@ final class CourseMessage extends Message
     }
 
     /**
-     * Gets the Name
+     * Gets the name
      */
     public function getName(): ?string
     {
@@ -50,7 +50,7 @@ final class CourseMessage extends Message
     }
 
     /**
-     * Gets the Capabilities
+     * Gets the capabilities
      */
     public function getCapabilities(): ?int
     {
@@ -58,7 +58,7 @@ final class CourseMessage extends Message
     }
 
     /**
-     * Gets the SubSport
+     * Gets the sub sport
      */
     public function getSubSport(): ?int
     {

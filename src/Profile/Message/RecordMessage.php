@@ -103,7 +103,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -111,7 +111,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the PositionLat
+     * Gets the position lat
      */
     public function getPositionLat(): ?int
     {
@@ -119,7 +119,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the PositionLong
+     * Gets the position long
      */
     public function getPositionLong(): ?int
     {
@@ -127,7 +127,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the Altitude
+     * Gets the altitude
      */
     public function getAltitude(): ?int
     {
@@ -135,7 +135,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the HeartRate
+     * Gets the heart rate
      */
     public function getHeartRate(): ?int
     {
@@ -143,7 +143,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the Cadence
+     * Gets the cadence
      */
     public function getCadence(): ?int
     {
@@ -151,7 +151,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the Distance
+     * Gets the distance
      */
     public function getDistance(): ?int
     {
@@ -159,7 +159,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the Speed
+     * Gets the speed
      */
     public function getSpeed(): ?int
     {
@@ -167,7 +167,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the Power
+     * Gets the power
      */
     public function getPower(): ?int
     {
@@ -175,15 +175,15 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the CompressedSpeedDistance
+     * Gets the compressed speed distance
      */
-    public function getCompressedSpeedDistance(): ?int
+    public function getCompressedSpeedDistance(): mixed
     {
         return $this->getValue(8);
     }
 
     /**
-     * Gets the Grade
+     * Gets the grade
      */
     public function getGrade(): ?int
     {
@@ -191,7 +191,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the Resistance
+     * Gets the resistance
      */
     public function getResistance(): ?int
     {
@@ -199,7 +199,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the TimeFromCourse
+     * Gets the time from course
      */
     public function getTimeFromCourse(): ?int
     {
@@ -207,7 +207,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the CycleLength
+     * Gets the cycle length
      */
     public function getCycleLength(): ?int
     {
@@ -215,7 +215,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the Temperature
+     * Gets the temperature
      */
     public function getTemperature(): ?int
     {
@@ -223,7 +223,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the Speed1s
+     * Gets the speed1s
      */
     public function getSpeed1s(): ?int
     {
@@ -231,7 +231,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the Cycles
+     * Gets the cycles
      */
     public function getCycles(): ?int
     {
@@ -239,7 +239,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the TotalCycles
+     * Gets the total cycles
      */
     public function getTotalCycles(): ?int
     {
@@ -247,7 +247,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the CompressedAccumulatedPower
+     * Gets the compressed accumulated power
      */
     public function getCompressedAccumulatedPower(): ?int
     {
@@ -255,7 +255,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the AccumulatedPower
+     * Gets the accumulated power
      */
     public function getAccumulatedPower(): ?int
     {
@@ -263,7 +263,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the LeftRightBalance
+     * Gets the left right balance
      */
     public function getLeftRightBalance(): ?int
     {
@@ -271,7 +271,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the GpsAccuracy
+     * Gets the gps accuracy
      */
     public function getGpsAccuracy(): ?int
     {
@@ -279,7 +279,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the VerticalSpeed
+     * Gets the vertical speed
      */
     public function getVerticalSpeed(): ?int
     {
@@ -287,7 +287,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the Calories
+     * Gets the calories
      */
     public function getCalories(): ?int
     {
@@ -295,7 +295,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the VerticalOscillation
+     * Gets the vertical oscillation
      */
     public function getVerticalOscillation(): ?int
     {
@@ -303,7 +303,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the StanceTimePercent
+     * Gets the stance time percent
      */
     public function getStanceTimePercent(): ?int
     {
@@ -311,7 +311,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the StanceTime
+     * Gets the stance time
      */
     public function getStanceTime(): ?int
     {
@@ -319,7 +319,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the ActivityType
+     * Gets the activity type
      */
     public function getActivityType(): ?int
     {
@@ -327,7 +327,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the LeftTorqueEffectiveness
+     * Gets the left torque effectiveness
      */
     public function getLeftTorqueEffectiveness(): ?int
     {
@@ -335,7 +335,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the RightTorqueEffectiveness
+     * Gets the right torque effectiveness
      */
     public function getRightTorqueEffectiveness(): ?int
     {
@@ -343,7 +343,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the LeftPedalSmoothness
+     * Gets the left pedal smoothness
      */
     public function getLeftPedalSmoothness(): ?int
     {
@@ -351,7 +351,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the RightPedalSmoothness
+     * Gets the right pedal smoothness
      */
     public function getRightPedalSmoothness(): ?int
     {
@@ -359,7 +359,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the CombinedPedalSmoothness
+     * Gets the combined pedal smoothness
      */
     public function getCombinedPedalSmoothness(): ?int
     {
@@ -367,7 +367,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the Time128
+     * Gets the time128
      */
     public function getTime128(): ?int
     {
@@ -375,7 +375,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the StrokeType
+     * Gets the stroke type
      */
     public function getStrokeType(): ?int
     {
@@ -383,7 +383,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the Zone
+     * Gets the zone
      */
     public function getZone(): ?int
     {
@@ -391,7 +391,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the BallSpeed
+     * Gets the ball speed
      */
     public function getBallSpeed(): ?int
     {
@@ -399,7 +399,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the Cadence256
+     * Gets the cadence256
      */
     public function getCadence256(): ?int
     {
@@ -407,7 +407,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the FractionalCadence
+     * Gets the fractional cadence
      */
     public function getFractionalCadence(): ?int
     {
@@ -415,7 +415,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the TotalHemoglobinConc
+     * Gets the total hemoglobin conc
      */
     public function getTotalHemoglobinConc(): ?int
     {
@@ -423,7 +423,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the TotalHemoglobinConcMin
+     * Gets the total hemoglobin conc min
      */
     public function getTotalHemoglobinConcMin(): ?int
     {
@@ -431,7 +431,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the TotalHemoglobinConcMax
+     * Gets the total hemoglobin conc max
      */
     public function getTotalHemoglobinConcMax(): ?int
     {
@@ -439,7 +439,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the SaturatedHemoglobinPercent
+     * Gets the saturated hemoglobin percent
      */
     public function getSaturatedHemoglobinPercent(): ?int
     {
@@ -447,7 +447,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the SaturatedHemoglobinPercentMin
+     * Gets the saturated hemoglobin percent min
      */
     public function getSaturatedHemoglobinPercentMin(): ?int
     {
@@ -455,7 +455,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the SaturatedHemoglobinPercentMax
+     * Gets the saturated hemoglobin percent max
      */
     public function getSaturatedHemoglobinPercentMax(): ?int
     {
@@ -463,7 +463,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the DeviceIndex
+     * Gets the device index
      */
     public function getDeviceIndex(): ?int
     {
@@ -471,7 +471,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the LeftPco
+     * Gets the left pco
      */
     public function getLeftPco(): ?int
     {
@@ -479,7 +479,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the RightPco
+     * Gets the right pco
      */
     public function getRightPco(): ?int
     {
@@ -487,7 +487,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the LeftPowerPhase
+     * Gets the left power phase
      */
     public function getLeftPowerPhase(): ?int
     {
@@ -495,7 +495,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the LeftPowerPhasePeak
+     * Gets the left power phase peak
      */
     public function getLeftPowerPhasePeak(): ?int
     {
@@ -503,7 +503,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the RightPowerPhase
+     * Gets the right power phase
      */
     public function getRightPowerPhase(): ?int
     {
@@ -511,7 +511,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the RightPowerPhasePeak
+     * Gets the right power phase peak
      */
     public function getRightPowerPhasePeak(): ?int
     {
@@ -519,7 +519,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the EnhancedSpeed
+     * Gets the enhanced speed
      */
     public function getEnhancedSpeed(): ?int
     {
@@ -527,7 +527,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the EnhancedAltitude
+     * Gets the enhanced altitude
      */
     public function getEnhancedAltitude(): ?int
     {
@@ -535,7 +535,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the BatterySoc
+     * Gets the battery soc
      */
     public function getBatterySoc(): ?int
     {
@@ -543,7 +543,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the MotorPower
+     * Gets the motor power
      */
     public function getMotorPower(): ?int
     {
@@ -551,7 +551,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the VerticalRatio
+     * Gets the vertical ratio
      */
     public function getVerticalRatio(): ?int
     {
@@ -559,7 +559,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the StanceTimeBalance
+     * Gets the stance time balance
      */
     public function getStanceTimeBalance(): ?int
     {
@@ -567,7 +567,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the StepLength
+     * Gets the step length
      */
     public function getStepLength(): ?int
     {
@@ -575,7 +575,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the AbsolutePressure
+     * Gets the absolute pressure
      */
     public function getAbsolutePressure(): ?int
     {
@@ -583,7 +583,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the Depth
+     * Gets the depth
      */
     public function getDepth(): ?int
     {
@@ -591,7 +591,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the NextStopDepth
+     * Gets the next stop depth
      */
     public function getNextStopDepth(): ?int
     {
@@ -599,7 +599,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the NextStopTime
+     * Gets the next stop time
      */
     public function getNextStopTime(): ?int
     {
@@ -607,7 +607,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the TimeToSurface
+     * Gets the time to surface
      */
     public function getTimeToSurface(): ?int
     {
@@ -615,7 +615,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the NdlTime
+     * Gets the ndl time
      */
     public function getNdlTime(): ?int
     {
@@ -623,7 +623,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the CnsLoad
+     * Gets the cns load
      */
     public function getCnsLoad(): ?int
     {
@@ -631,7 +631,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the N2Load
+     * Gets the n2 load
      */
     public function getN2Load(): ?int
     {
@@ -639,7 +639,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the Grit
+     * Gets the grit
      */
     public function getGrit(): ?float
     {
@@ -647,7 +647,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the Flow
+     * Gets the flow
      */
     public function getFlow(): ?float
     {
@@ -655,7 +655,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the EbikeTravelRange
+     * Gets the ebike travel range
      */
     public function getEbikeTravelRange(): ?int
     {
@@ -663,7 +663,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the EbikeBatteryLevel
+     * Gets the ebike battery level
      */
     public function getEbikeBatteryLevel(): ?int
     {
@@ -671,7 +671,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the EbikeAssistMode
+     * Gets the ebike assist mode
      */
     public function getEbikeAssistMode(): ?int
     {
@@ -679,7 +679,7 @@ final class RecordMessage extends Message
     }
 
     /**
-     * Gets the EbikeAssistLevelPercent
+     * Gets the ebike assist level percent
      */
     public function getEbikeAssistLevelPercent(): ?int
     {

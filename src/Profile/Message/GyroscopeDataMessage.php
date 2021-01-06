@@ -39,7 +39,7 @@ final class GyroscopeDataMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -47,7 +47,7 @@ final class GyroscopeDataMessage extends Message
     }
 
     /**
-     * Gets the TimestampMs
+     * Gets the timestamp ms
      */
     public function getTimestampMs(): ?int
     {
@@ -55,7 +55,7 @@ final class GyroscopeDataMessage extends Message
     }
 
     /**
-     * Gets the SampleTimeOffset
+     * Gets the sample time offset
      */
     public function getSampleTimeOffset(): ?int
     {
@@ -63,7 +63,7 @@ final class GyroscopeDataMessage extends Message
     }
 
     /**
-     * Gets the GyroX
+     * Gets the gyro x
      */
     public function getGyroX(): ?int
     {
@@ -71,7 +71,7 @@ final class GyroscopeDataMessage extends Message
     }
 
     /**
-     * Gets the GyroY
+     * Gets the gyro y
      */
     public function getGyroY(): ?int
     {
@@ -79,7 +79,7 @@ final class GyroscopeDataMessage extends Message
     }
 
     /**
-     * Gets the GyroZ
+     * Gets the gyro z
      */
     public function getGyroZ(): ?int
     {
@@ -87,7 +87,7 @@ final class GyroscopeDataMessage extends Message
     }
 
     /**
-     * Gets the CalibratedGyroX
+     * Gets the calibrated gyro x
      */
     public function getCalibratedGyroX(): ?float
     {
@@ -95,7 +95,7 @@ final class GyroscopeDataMessage extends Message
     }
 
     /**
-     * Gets the CalibratedGyroY
+     * Gets the calibrated gyro y
      */
     public function getCalibratedGyroY(): ?float
     {
@@ -103,7 +103,7 @@ final class GyroscopeDataMessage extends Message
     }
 
     /**
-     * Gets the CalibratedGyroZ
+     * Gets the calibrated gyro z
      */
     public function getCalibratedGyroZ(): ?float
     {

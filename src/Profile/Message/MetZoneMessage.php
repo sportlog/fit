@@ -34,7 +34,7 @@ final class MetZoneMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -42,7 +42,7 @@ final class MetZoneMessage extends Message
     }
 
     /**
-     * Gets the HighBpm
+     * Gets the high bpm
      */
     public function getHighBpm(): ?int
     {
@@ -50,7 +50,7 @@ final class MetZoneMessage extends Message
     }
 
     /**
-     * Gets the Calories
+     * Gets the calories
      */
     public function getCalories(): ?int
     {
@@ -58,7 +58,7 @@ final class MetZoneMessage extends Message
     }
 
     /**
-     * Gets the FatCalories
+     * Gets the fat calories
      */
     public function getFatCalories(): ?int
     {

@@ -37,7 +37,7 @@ final class ScheduleMessage extends Message
     }
 
     /**
-     * Gets the Manufacturer
+     * Gets the manufacturer
      */
     public function getManufacturer(): ?int
     {
@@ -45,7 +45,7 @@ final class ScheduleMessage extends Message
     }
 
     /**
-     * Gets the Product
+     * Gets the product
      */
     public function getProduct(): ?int
     {
@@ -53,7 +53,7 @@ final class ScheduleMessage extends Message
     }
 
     /**
-     * Gets the SerialNumber
+     * Gets the serial number
      */
     public function getSerialNumber(): ?int
     {
@@ -61,7 +61,7 @@ final class ScheduleMessage extends Message
     }
 
     /**
-     * Gets the TimeCreated
+     * Gets the time created
      */
     public function getTimeCreated(): ?DateTime
     {
@@ -69,7 +69,7 @@ final class ScheduleMessage extends Message
     }
 
     /**
-     * Gets the Completed
+     * Gets the completed
      */
     public function getCompleted(): ?bool
     {
@@ -77,7 +77,7 @@ final class ScheduleMessage extends Message
     }
 
     /**
-     * Gets the Type
+     * Gets the type
      */
     public function getType(): ?int
     {
@@ -85,7 +85,7 @@ final class ScheduleMessage extends Message
     }
 
     /**
-     * Gets the ScheduledTime
+     * Gets the scheduled time
      */
     public function getScheduledTime(): ?DateTime
     {

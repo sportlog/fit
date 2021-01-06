@@ -36,7 +36,7 @@ final class MonitoringInfoMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -44,7 +44,7 @@ final class MonitoringInfoMessage extends Message
     }
 
     /**
-     * Gets the LocalTimestamp
+     * Gets the local timestamp
      */
     public function getLocalTimestamp(): ?DateTime
     {
@@ -52,7 +52,7 @@ final class MonitoringInfoMessage extends Message
     }
 
     /**
-     * Gets the ActivityType
+     * Gets the activity type
      */
     public function getActivityType(): ?int
     {
@@ -60,7 +60,7 @@ final class MonitoringInfoMessage extends Message
     }
 
     /**
-     * Gets the CyclesToDistance
+     * Gets the cycles to distance
      */
     public function getCyclesToDistance(): ?int
     {
@@ -68,7 +68,7 @@ final class MonitoringInfoMessage extends Message
     }
 
     /**
-     * Gets the CyclesToCalories
+     * Gets the cycles to calories
      */
     public function getCyclesToCalories(): ?int
     {
@@ -76,7 +76,7 @@ final class MonitoringInfoMessage extends Message
     }
 
     /**
-     * Gets the RestingMetabolicRate
+     * Gets the resting metabolic rate
      */
     public function getRestingMetabolicRate(): ?int
     {

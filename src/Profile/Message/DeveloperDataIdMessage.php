@@ -35,23 +35,23 @@ final class DeveloperDataIdMessage extends Message
     }
 
     /**
-     * Gets the DeveloperId
+     * Gets the developer id
      */
-    public function getDeveloperId(): ?int
+    public function getDeveloperId(): mixed
     {
         return $this->getValue(0);
     }
 
     /**
-     * Gets the ApplicationId
+     * Gets the application id
      */
-    public function getApplicationId(): ?int
+    public function getApplicationId(): mixed
     {
         return $this->getValue(1);
     }
 
     /**
-     * Gets the ManufacturerId
+     * Gets the manufacturer id
      */
     public function getManufacturerId(): ?int
     {
@@ -59,7 +59,7 @@ final class DeveloperDataIdMessage extends Message
     }
 
     /**
-     * Gets the DeveloperDataIndex
+     * Gets the developer data index
      */
     public function getDeveloperDataIndex(): ?int
     {
@@ -67,7 +67,7 @@ final class DeveloperDataIdMessage extends Message
     }
 
     /**
-     * Gets the ApplicationVersion
+     * Gets the application version
      */
     public function getApplicationVersion(): ?int
     {

@@ -37,7 +37,7 @@ final class FileIdMessage extends Message
     }
 
     /**
-     * Gets the Type
+     * Gets the type
      */
     public function getType(): ?int
     {
@@ -45,7 +45,7 @@ final class FileIdMessage extends Message
     }
 
     /**
-     * Gets the Manufacturer
+     * Gets the manufacturer
      */
     public function getManufacturer(): ?int
     {
@@ -53,7 +53,7 @@ final class FileIdMessage extends Message
     }
 
     /**
-     * Gets the Product
+     * Gets the product
      */
     public function getProduct(): ?int
     {
@@ -61,7 +61,7 @@ final class FileIdMessage extends Message
     }
 
     /**
-     * Gets the SerialNumber
+     * Gets the serial number
      */
     public function getSerialNumber(): ?int
     {
@@ -69,7 +69,7 @@ final class FileIdMessage extends Message
     }
 
     /**
-     * Gets the TimeCreated
+     * Gets the time created
      */
     public function getTimeCreated(): ?DateTime
     {
@@ -77,7 +77,7 @@ final class FileIdMessage extends Message
     }
 
     /**
-     * Gets the Number
+     * Gets the number
      */
     public function getNumber(): ?int
     {
@@ -85,7 +85,7 @@ final class FileIdMessage extends Message
     }
 
     /**
-     * Gets the ProductName
+     * Gets the product name
      */
     public function getProductName(): ?string
     {

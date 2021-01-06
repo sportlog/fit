@@ -45,7 +45,7 @@ final class EventMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -53,7 +53,7 @@ final class EventMessage extends Message
     }
 
     /**
-     * Gets the Event
+     * Gets the event
      */
     public function getEvent(): ?int
     {
@@ -61,7 +61,7 @@ final class EventMessage extends Message
     }
 
     /**
-     * Gets the EventType
+     * Gets the event type
      */
     public function getEventType(): ?int
     {
@@ -69,7 +69,7 @@ final class EventMessage extends Message
     }
 
     /**
-     * Gets the Data16
+     * Gets the data16
      */
     public function getData16(): ?int
     {
@@ -77,7 +77,7 @@ final class EventMessage extends Message
     }
 
     /**
-     * Gets the Data
+     * Gets the data
      */
     public function getData(): ?int
     {
@@ -85,7 +85,7 @@ final class EventMessage extends Message
     }
 
     /**
-     * Gets the EventGroup
+     * Gets the event group
      */
     public function getEventGroup(): ?int
     {
@@ -93,7 +93,7 @@ final class EventMessage extends Message
     }
 
     /**
-     * Gets the Score
+     * Gets the score
      */
     public function getScore(): ?int
     {
@@ -101,7 +101,7 @@ final class EventMessage extends Message
     }
 
     /**
-     * Gets the OpponentScore
+     * Gets the opponent score
      */
     public function getOpponentScore(): ?int
     {
@@ -109,7 +109,7 @@ final class EventMessage extends Message
     }
 
     /**
-     * Gets the FrontGearNum
+     * Gets the front gear num
      */
     public function getFrontGearNum(): ?int
     {
@@ -117,7 +117,7 @@ final class EventMessage extends Message
     }
 
     /**
-     * Gets the FrontGear
+     * Gets the front gear
      */
     public function getFrontGear(): ?int
     {
@@ -125,7 +125,7 @@ final class EventMessage extends Message
     }
 
     /**
-     * Gets the RearGearNum
+     * Gets the rear gear num
      */
     public function getRearGearNum(): ?int
     {
@@ -133,7 +133,7 @@ final class EventMessage extends Message
     }
 
     /**
-     * Gets the RearGear
+     * Gets the rear gear
      */
     public function getRearGear(): ?int
     {
@@ -141,7 +141,7 @@ final class EventMessage extends Message
     }
 
     /**
-     * Gets the DeviceIndex
+     * Gets the device index
      */
     public function getDeviceIndex(): ?int
     {
@@ -149,7 +149,7 @@ final class EventMessage extends Message
     }
 
     /**
-     * Gets the RadarThreatLevelMax
+     * Gets the radar threat level max
      */
     public function getRadarThreatLevelMax(): ?int
     {
@@ -157,7 +157,7 @@ final class EventMessage extends Message
     }
 
     /**
-     * Gets the RadarThreatCount
+     * Gets the radar threat count
      */
     public function getRadarThreatCount(): ?int
     {

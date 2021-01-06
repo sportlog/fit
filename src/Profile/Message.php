@@ -76,14 +76,14 @@ abstract class Message implements IteratorAggregate, Stringable
      *
      * @return string
      */
-    public function getName(): string
+    public function getMessageName(): string
     {
         return $this->name;
     }
 
     public function __toString()
     {
-        return sprintf('%s (%s)', $this->getName(), $this->getMessageNumber());
+        return sprintf('%s (%s)', $this->getMessageName(), $this->getMessageNumber());
         /*$mapped = [];
 
         foreach ($this->values as $key => $fieldValue) {
@@ -149,9 +149,6 @@ abstract class Message implements IteratorAggregate, Stringable
 
     private function convertValueToFieldType(Field $field, mixed $value): mixed
     {
-        $value /= $field->getScale();
-        $value -= $field->getOffset();
-
         switch ($field->getProfileType()) {
             case ProfileType::BOOL:
                 return $value !== 0;
@@ -164,6 +161,9 @@ abstract class Message implements IteratorAggregate, Stringable
             case ProfileType::UINT32:
             case ProfileType::UINT32Z;
             case ProfileType::SINT32:
+                $value /= $field->getScale();
+                $value -= $field->getOffset();
+
                 return intval($value);
 
             case ProfileType::LOCALDATETIME:

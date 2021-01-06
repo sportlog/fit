@@ -39,7 +39,7 @@ final class GpsMetadataMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -47,7 +47,7 @@ final class GpsMetadataMessage extends Message
     }
 
     /**
-     * Gets the TimestampMs
+     * Gets the timestamp ms
      */
     public function getTimestampMs(): ?int
     {
@@ -55,7 +55,7 @@ final class GpsMetadataMessage extends Message
     }
 
     /**
-     * Gets the PositionLat
+     * Gets the position lat
      */
     public function getPositionLat(): ?int
     {
@@ -63,7 +63,7 @@ final class GpsMetadataMessage extends Message
     }
 
     /**
-     * Gets the PositionLong
+     * Gets the position long
      */
     public function getPositionLong(): ?int
     {
@@ -71,7 +71,7 @@ final class GpsMetadataMessage extends Message
     }
 
     /**
-     * Gets the EnhancedAltitude
+     * Gets the enhanced altitude
      */
     public function getEnhancedAltitude(): ?int
     {
@@ -79,7 +79,7 @@ final class GpsMetadataMessage extends Message
     }
 
     /**
-     * Gets the EnhancedSpeed
+     * Gets the enhanced speed
      */
     public function getEnhancedSpeed(): ?int
     {
@@ -87,7 +87,7 @@ final class GpsMetadataMessage extends Message
     }
 
     /**
-     * Gets the Heading
+     * Gets the heading
      */
     public function getHeading(): ?int
     {
@@ -95,7 +95,7 @@ final class GpsMetadataMessage extends Message
     }
 
     /**
-     * Gets the UtcTimestamp
+     * Gets the utc timestamp
      */
     public function getUtcTimestamp(): ?DateTime
     {
@@ -103,7 +103,7 @@ final class GpsMetadataMessage extends Message
     }
 
     /**
-     * Gets the Velocity
+     * Gets the velocity
      */
     public function getVelocity(): ?int
     {

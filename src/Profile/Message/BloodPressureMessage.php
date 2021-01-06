@@ -41,7 +41,7 @@ final class BloodPressureMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -49,7 +49,7 @@ final class BloodPressureMessage extends Message
     }
 
     /**
-     * Gets the SystolicPressure
+     * Gets the systolic pressure
      */
     public function getSystolicPressure(): ?int
     {
@@ -57,7 +57,7 @@ final class BloodPressureMessage extends Message
     }
 
     /**
-     * Gets the DiastolicPressure
+     * Gets the diastolic pressure
      */
     public function getDiastolicPressure(): ?int
     {
@@ -65,7 +65,7 @@ final class BloodPressureMessage extends Message
     }
 
     /**
-     * Gets the MeanArterialPressure
+     * Gets the mean arterial pressure
      */
     public function getMeanArterialPressure(): ?int
     {
@@ -73,7 +73,7 @@ final class BloodPressureMessage extends Message
     }
 
     /**
-     * Gets the Map3SampleMean
+     * Gets the map3 sample mean
      */
     public function getMap3SampleMean(): ?int
     {
@@ -81,7 +81,7 @@ final class BloodPressureMessage extends Message
     }
 
     /**
-     * Gets the MapMorningValues
+     * Gets the map morning values
      */
     public function getMapMorningValues(): ?int
     {
@@ -89,7 +89,7 @@ final class BloodPressureMessage extends Message
     }
 
     /**
-     * Gets the MapEveningValues
+     * Gets the map evening values
      */
     public function getMapEveningValues(): ?int
     {
@@ -97,7 +97,7 @@ final class BloodPressureMessage extends Message
     }
 
     /**
-     * Gets the HeartRate
+     * Gets the heart rate
      */
     public function getHeartRate(): ?int
     {
@@ -105,7 +105,7 @@ final class BloodPressureMessage extends Message
     }
 
     /**
-     * Gets the HeartRateType
+     * Gets the heart rate type
      */
     public function getHeartRateType(): ?int
     {
@@ -113,7 +113,7 @@ final class BloodPressureMessage extends Message
     }
 
     /**
-     * Gets the Status
+     * Gets the status
      */
     public function getStatus(): ?int
     {
@@ -121,7 +121,7 @@ final class BloodPressureMessage extends Message
     }
 
     /**
-     * Gets the UserProfileIndex
+     * Gets the user profile index
      */
     public function getUserProfileIndex(): ?int
     {

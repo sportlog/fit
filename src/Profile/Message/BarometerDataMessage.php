@@ -34,7 +34,7 @@ final class BarometerDataMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -42,7 +42,7 @@ final class BarometerDataMessage extends Message
     }
 
     /**
-     * Gets the TimestampMs
+     * Gets the timestamp ms
      */
     public function getTimestampMs(): ?int
     {
@@ -50,7 +50,7 @@ final class BarometerDataMessage extends Message
     }
 
     /**
-     * Gets the SampleTimeOffset
+     * Gets the sample time offset
      */
     public function getSampleTimeOffset(): ?int
     {
@@ -58,7 +58,7 @@ final class BarometerDataMessage extends Message
     }
 
     /**
-     * Gets the BaroPres
+     * Gets the baro pres
      */
     public function getBaroPres(): ?int
     {

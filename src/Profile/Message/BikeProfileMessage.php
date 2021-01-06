@@ -62,7 +62,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -70,7 +70,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the Name
+     * Gets the name
      */
     public function getName(): ?string
     {
@@ -78,7 +78,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the Sport
+     * Gets the sport
      */
     public function getSport(): ?int
     {
@@ -86,7 +86,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the SubSport
+     * Gets the sub sport
      */
     public function getSubSport(): ?int
     {
@@ -94,7 +94,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the Odometer
+     * Gets the odometer
      */
     public function getOdometer(): ?int
     {
@@ -102,7 +102,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the BikeSpdAntId
+     * Gets the bike spd ant id
      */
     public function getBikeSpdAntId(): ?int
     {
@@ -110,7 +110,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the BikeCadAntId
+     * Gets the bike cad ant id
      */
     public function getBikeCadAntId(): ?int
     {
@@ -118,7 +118,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the BikeSpdcadAntId
+     * Gets the bike spdcad ant id
      */
     public function getBikeSpdcadAntId(): ?int
     {
@@ -126,7 +126,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the BikePowerAntId
+     * Gets the bike power ant id
      */
     public function getBikePowerAntId(): ?int
     {
@@ -134,7 +134,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the CustomWheelsize
+     * Gets the custom wheelsize
      */
     public function getCustomWheelsize(): ?int
     {
@@ -142,7 +142,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the AutoWheelsize
+     * Gets the auto wheelsize
      */
     public function getAutoWheelsize(): ?int
     {
@@ -150,7 +150,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the BikeWeight
+     * Gets the bike weight
      */
     public function getBikeWeight(): ?int
     {
@@ -158,7 +158,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the PowerCalFactor
+     * Gets the power cal factor
      */
     public function getPowerCalFactor(): ?int
     {
@@ -166,7 +166,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the AutoWheelCal
+     * Gets the auto wheel cal
      */
     public function getAutoWheelCal(): ?bool
     {
@@ -174,7 +174,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the AutoPowerZero
+     * Gets the auto power zero
      */
     public function getAutoPowerZero(): ?bool
     {
@@ -182,7 +182,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the Id
+     * Gets the id
      */
     public function getId(): ?int
     {
@@ -190,7 +190,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the SpdEnabled
+     * Gets the spd enabled
      */
     public function getSpdEnabled(): ?bool
     {
@@ -198,7 +198,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the CadEnabled
+     * Gets the cad enabled
      */
     public function getCadEnabled(): ?bool
     {
@@ -206,7 +206,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the SpdcadEnabled
+     * Gets the spdcad enabled
      */
     public function getSpdcadEnabled(): ?bool
     {
@@ -214,7 +214,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the PowerEnabled
+     * Gets the power enabled
      */
     public function getPowerEnabled(): ?bool
     {
@@ -222,7 +222,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the CrankLength
+     * Gets the crank length
      */
     public function getCrankLength(): ?int
     {
@@ -230,7 +230,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the Enabled
+     * Gets the enabled
      */
     public function getEnabled(): ?bool
     {
@@ -238,7 +238,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the BikeSpdAntIdTransType
+     * Gets the bike spd ant id trans type
      */
     public function getBikeSpdAntIdTransType(): ?int
     {
@@ -246,7 +246,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the BikeCadAntIdTransType
+     * Gets the bike cad ant id trans type
      */
     public function getBikeCadAntIdTransType(): ?int
     {
@@ -254,7 +254,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the BikeSpdcadAntIdTransType
+     * Gets the bike spdcad ant id trans type
      */
     public function getBikeSpdcadAntIdTransType(): ?int
     {
@@ -262,7 +262,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the BikePowerAntIdTransType
+     * Gets the bike power ant id trans type
      */
     public function getBikePowerAntIdTransType(): ?int
     {
@@ -270,7 +270,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the OdometerRollover
+     * Gets the odometer rollover
      */
     public function getOdometerRollover(): ?int
     {
@@ -278,7 +278,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the FrontGearNum
+     * Gets the front gear num
      */
     public function getFrontGearNum(): ?int
     {
@@ -286,7 +286,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the FrontGear
+     * Gets the front gear
      */
     public function getFrontGear(): ?int
     {
@@ -294,7 +294,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the RearGearNum
+     * Gets the rear gear num
      */
     public function getRearGearNum(): ?int
     {
@@ -302,7 +302,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the RearGear
+     * Gets the rear gear
      */
     public function getRearGear(): ?int
     {
@@ -310,7 +310,7 @@ final class BikeProfileMessage extends Message
     }
 
     /**
-     * Gets the ShimanoDi2Enabled
+     * Gets the shimano di2 enabled
      */
     public function getShimanoDi2Enabled(): ?bool
     {

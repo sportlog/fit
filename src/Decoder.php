@@ -17,6 +17,7 @@ use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use FIT\Profile\MessageFactory;
+use FIT\Profile\Profile;
 
 class Decoder
 {
@@ -89,7 +90,7 @@ class Decoder
         
         // Assoociative array with the field definition number as key
         // and it's decoded value.
-        $message = MessageFactory::create($definition['global_message_number']);
+        $message = Profile::createMessage($definition['global_message_number']);
         foreach ($definition['field_definitions'] as $fieldDefinition) {
             $size = $fieldDefinition['size'];
             $fitBaseType = FitBaseType::fromType($fieldDefinition['base_type']);

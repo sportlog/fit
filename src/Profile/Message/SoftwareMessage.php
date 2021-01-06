@@ -33,7 +33,7 @@ final class SoftwareMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -41,7 +41,7 @@ final class SoftwareMessage extends Message
     }
 
     /**
-     * Gets the Version
+     * Gets the version
      */
     public function getVersion(): ?int
     {
@@ -49,7 +49,7 @@ final class SoftwareMessage extends Message
     }
 
     /**
-     * Gets the PartNumber
+     * Gets the part number
      */
     public function getPartNumber(): ?string
     {

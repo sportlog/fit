@@ -52,7 +52,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -60,7 +60,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the Name
+     * Gets the name
      */
     public function getName(): ?string
     {
@@ -68,7 +68,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the Model
+     * Gets the model
      */
     public function getModel(): ?int
     {
@@ -76,7 +76,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the GfLow
+     * Gets the gf low
      */
     public function getGfLow(): ?int
     {
@@ -84,7 +84,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the GfHigh
+     * Gets the gf high
      */
     public function getGfHigh(): ?int
     {
@@ -92,7 +92,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the WaterType
+     * Gets the water type
      */
     public function getWaterType(): ?int
     {
@@ -100,7 +100,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the WaterDensity
+     * Gets the water density
      */
     public function getWaterDensity(): ?float
     {
@@ -108,7 +108,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the Po2Warn
+     * Gets the po2 warn
      */
     public function getPo2Warn(): ?int
     {
@@ -116,7 +116,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the Po2Critical
+     * Gets the po2 critical
      */
     public function getPo2Critical(): ?int
     {
@@ -124,7 +124,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the Po2Deco
+     * Gets the po2 deco
      */
     public function getPo2Deco(): ?int
     {
@@ -132,7 +132,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the SafetyStopEnabled
+     * Gets the safety stop enabled
      */
     public function getSafetyStopEnabled(): ?bool
     {
@@ -140,7 +140,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the BottomDepth
+     * Gets the bottom depth
      */
     public function getBottomDepth(): ?float
     {
@@ -148,7 +148,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the BottomTime
+     * Gets the bottom time
      */
     public function getBottomTime(): ?int
     {
@@ -156,7 +156,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the ApneaCountdownEnabled
+     * Gets the apnea countdown enabled
      */
     public function getApneaCountdownEnabled(): ?bool
     {
@@ -164,7 +164,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the ApneaCountdownTime
+     * Gets the apnea countdown time
      */
     public function getApneaCountdownTime(): ?int
     {
@@ -172,7 +172,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the BacklightMode
+     * Gets the backlight mode
      */
     public function getBacklightMode(): ?int
     {
@@ -180,7 +180,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the BacklightBrightness
+     * Gets the backlight brightness
      */
     public function getBacklightBrightness(): ?int
     {
@@ -188,7 +188,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the BacklightTimeout
+     * Gets the backlight timeout
      */
     public function getBacklightTimeout(): ?int
     {
@@ -196,7 +196,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the RepeatDiveInterval
+     * Gets the repeat dive interval
      */
     public function getRepeatDiveInterval(): ?int
     {
@@ -204,7 +204,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the SafetyStopTime
+     * Gets the safety stop time
      */
     public function getSafetyStopTime(): ?int
     {
@@ -212,7 +212,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the HeartRateSourceType
+     * Gets the heart rate source type
      */
     public function getHeartRateSourceType(): ?int
     {
@@ -220,7 +220,7 @@ final class DiveSettingsMessage extends Message
     }
 
     /**
-     * Gets the HeartRateSource
+     * Gets the heart rate source
      */
     public function getHeartRateSource(): ?int
     {

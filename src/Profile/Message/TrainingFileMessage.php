@@ -36,7 +36,7 @@ final class TrainingFileMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -44,7 +44,7 @@ final class TrainingFileMessage extends Message
     }
 
     /**
-     * Gets the Type
+     * Gets the type
      */
     public function getType(): ?int
     {
@@ -52,7 +52,7 @@ final class TrainingFileMessage extends Message
     }
 
     /**
-     * Gets the Manufacturer
+     * Gets the manufacturer
      */
     public function getManufacturer(): ?int
     {
@@ -60,7 +60,7 @@ final class TrainingFileMessage extends Message
     }
 
     /**
-     * Gets the Product
+     * Gets the product
      */
     public function getProduct(): ?int
     {
@@ -68,7 +68,7 @@ final class TrainingFileMessage extends Message
     }
 
     /**
-     * Gets the SerialNumber
+     * Gets the serial number
      */
     public function getSerialNumber(): ?int
     {
@@ -76,7 +76,7 @@ final class TrainingFileMessage extends Message
     }
 
     /**
-     * Gets the TimeCreated
+     * Gets the time created
      */
     public function getTimeCreated(): ?DateTime
     {

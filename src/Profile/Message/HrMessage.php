@@ -36,7 +36,7 @@ final class HrMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -44,7 +44,7 @@ final class HrMessage extends Message
     }
 
     /**
-     * Gets the FractionalTimestamp
+     * Gets the fractional timestamp
      */
     public function getFractionalTimestamp(): ?int
     {
@@ -52,7 +52,7 @@ final class HrMessage extends Message
     }
 
     /**
-     * Gets the Time256
+     * Gets the time256
      */
     public function getTime256(): ?int
     {
@@ -60,7 +60,7 @@ final class HrMessage extends Message
     }
 
     /**
-     * Gets the FilteredBpm
+     * Gets the filtered bpm
      */
     public function getFilteredBpm(): ?int
     {
@@ -68,7 +68,7 @@ final class HrMessage extends Message
     }
 
     /**
-     * Gets the EventTimestamp
+     * Gets the event timestamp
      */
     public function getEventTimestamp(): ?int
     {
@@ -76,9 +76,9 @@ final class HrMessage extends Message
     }
 
     /**
-     * Gets the EventTimestamp12
+     * Gets the event timestamp12
      */
-    public function getEventTimestamp12(): ?int
+    public function getEventTimestamp12(): mixed
     {
         return $this->getValue(10);
     }

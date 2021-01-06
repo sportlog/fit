@@ -43,7 +43,7 @@ final class GoalMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -51,7 +51,7 @@ final class GoalMessage extends Message
     }
 
     /**
-     * Gets the Sport
+     * Gets the sport
      */
     public function getSport(): ?int
     {
@@ -59,7 +59,7 @@ final class GoalMessage extends Message
     }
 
     /**
-     * Gets the SubSport
+     * Gets the sub sport
      */
     public function getSubSport(): ?int
     {
@@ -67,7 +67,7 @@ final class GoalMessage extends Message
     }
 
     /**
-     * Gets the StartDate
+     * Gets the start date
      */
     public function getStartDate(): ?DateTime
     {
@@ -75,7 +75,7 @@ final class GoalMessage extends Message
     }
 
     /**
-     * Gets the EndDate
+     * Gets the end date
      */
     public function getEndDate(): ?DateTime
     {
@@ -83,7 +83,7 @@ final class GoalMessage extends Message
     }
 
     /**
-     * Gets the Type
+     * Gets the type
      */
     public function getType(): ?int
     {
@@ -91,7 +91,7 @@ final class GoalMessage extends Message
     }
 
     /**
-     * Gets the Value
+     * Gets the value
      */
     public function getValue(): ?int
     {
@@ -99,7 +99,7 @@ final class GoalMessage extends Message
     }
 
     /**
-     * Gets the Repeat
+     * Gets the repeat
      */
     public function getRepeat(): ?bool
     {
@@ -107,7 +107,7 @@ final class GoalMessage extends Message
     }
 
     /**
-     * Gets the TargetValue
+     * Gets the target value
      */
     public function getTargetValue(): ?int
     {
@@ -115,7 +115,7 @@ final class GoalMessage extends Message
     }
 
     /**
-     * Gets the Recurrence
+     * Gets the recurrence
      */
     public function getRecurrence(): ?int
     {
@@ -123,7 +123,7 @@ final class GoalMessage extends Message
     }
 
     /**
-     * Gets the RecurrenceValue
+     * Gets the recurrence value
      */
     public function getRecurrenceValue(): ?int
     {
@@ -131,7 +131,7 @@ final class GoalMessage extends Message
     }
 
     /**
-     * Gets the Enabled
+     * Gets the enabled
      */
     public function getEnabled(): ?bool
     {
@@ -139,7 +139,7 @@ final class GoalMessage extends Message
     }
 
     /**
-     * Gets the Source
+     * Gets the source
      */
     public function getSource(): ?int
     {

@@ -33,7 +33,7 @@ final class HrZoneMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -41,7 +41,7 @@ final class HrZoneMessage extends Message
     }
 
     /**
-     * Gets the HighBpm
+     * Gets the high bpm
      */
     public function getHighBpm(): ?int
     {
@@ -49,7 +49,7 @@ final class HrZoneMessage extends Message
     }
 
     /**
-     * Gets the Name
+     * Gets the name
      */
     public function getName(): ?string
     {

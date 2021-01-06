@@ -32,7 +32,7 @@ final class OhrSettingsMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -40,7 +40,7 @@ final class OhrSettingsMessage extends Message
     }
 
     /**
-     * Gets the Enabled
+     * Gets the enabled
      */
     public function getEnabled(): ?int
     {

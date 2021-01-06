@@ -33,7 +33,7 @@ final class WatchfaceSettingsMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -41,7 +41,7 @@ final class WatchfaceSettingsMessage extends Message
     }
 
     /**
-     * Gets the Mode
+     * Gets the mode
      */
     public function getMode(): ?int
     {
@@ -49,9 +49,9 @@ final class WatchfaceSettingsMessage extends Message
     }
 
     /**
-     * Gets the Layout
+     * Gets the layout
      */
-    public function getLayout(): ?int
+    public function getLayout(): mixed
     {
         return $this->getValue(1);
     }

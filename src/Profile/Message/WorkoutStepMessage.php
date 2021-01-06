@@ -45,7 +45,7 @@ final class WorkoutStepMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -53,7 +53,7 @@ final class WorkoutStepMessage extends Message
     }
 
     /**
-     * Gets the WktStepName
+     * Gets the wkt step name
      */
     public function getWktStepName(): ?string
     {
@@ -61,7 +61,7 @@ final class WorkoutStepMessage extends Message
     }
 
     /**
-     * Gets the DurationType
+     * Gets the duration type
      */
     public function getDurationType(): ?int
     {
@@ -69,7 +69,7 @@ final class WorkoutStepMessage extends Message
     }
 
     /**
-     * Gets the DurationValue
+     * Gets the duration value
      */
     public function getDurationValue(): ?int
     {
@@ -77,7 +77,7 @@ final class WorkoutStepMessage extends Message
     }
 
     /**
-     * Gets the TargetType
+     * Gets the target type
      */
     public function getTargetType(): ?int
     {
@@ -85,7 +85,7 @@ final class WorkoutStepMessage extends Message
     }
 
     /**
-     * Gets the TargetValue
+     * Gets the target value
      */
     public function getTargetValue(): ?int
     {
@@ -93,7 +93,7 @@ final class WorkoutStepMessage extends Message
     }
 
     /**
-     * Gets the CustomTargetValueLow
+     * Gets the custom target value low
      */
     public function getCustomTargetValueLow(): ?int
     {
@@ -101,7 +101,7 @@ final class WorkoutStepMessage extends Message
     }
 
     /**
-     * Gets the CustomTargetValueHigh
+     * Gets the custom target value high
      */
     public function getCustomTargetValueHigh(): ?int
     {
@@ -109,7 +109,7 @@ final class WorkoutStepMessage extends Message
     }
 
     /**
-     * Gets the Intensity
+     * Gets the intensity
      */
     public function getIntensity(): ?int
     {
@@ -117,7 +117,7 @@ final class WorkoutStepMessage extends Message
     }
 
     /**
-     * Gets the Notes
+     * Gets the notes
      */
     public function getNotes(): ?string
     {
@@ -125,7 +125,7 @@ final class WorkoutStepMessage extends Message
     }
 
     /**
-     * Gets the Equipment
+     * Gets the equipment
      */
     public function getEquipment(): ?int
     {
@@ -133,7 +133,7 @@ final class WorkoutStepMessage extends Message
     }
 
     /**
-     * Gets the ExerciseCategory
+     * Gets the exercise category
      */
     public function getExerciseCategory(): ?int
     {
@@ -141,7 +141,7 @@ final class WorkoutStepMessage extends Message
     }
 
     /**
-     * Gets the ExerciseName
+     * Gets the exercise name
      */
     public function getExerciseName(): ?int
     {
@@ -149,7 +149,7 @@ final class WorkoutStepMessage extends Message
     }
 
     /**
-     * Gets the ExerciseWeight
+     * Gets the exercise weight
      */
     public function getExerciseWeight(): ?int
     {
@@ -157,7 +157,7 @@ final class WorkoutStepMessage extends Message
     }
 
     /**
-     * Gets the WeightDisplayUnit
+     * Gets the weight display unit
      */
     public function getWeightDisplayUnit(): ?int
     {

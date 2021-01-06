@@ -37,7 +37,7 @@ final class DiveAlarmMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -45,7 +45,7 @@ final class DiveAlarmMessage extends Message
     }
 
     /**
-     * Gets the Depth
+     * Gets the depth
      */
     public function getDepth(): ?int
     {
@@ -53,7 +53,7 @@ final class DiveAlarmMessage extends Message
     }
 
     /**
-     * Gets the Time
+     * Gets the time
      */
     public function getTime(): ?int
     {
@@ -61,7 +61,7 @@ final class DiveAlarmMessage extends Message
     }
 
     /**
-     * Gets the Enabled
+     * Gets the enabled
      */
     public function getEnabled(): ?bool
     {
@@ -69,7 +69,7 @@ final class DiveAlarmMessage extends Message
     }
 
     /**
-     * Gets the AlarmType
+     * Gets the alarm type
      */
     public function getAlarmType(): ?int
     {
@@ -77,7 +77,7 @@ final class DiveAlarmMessage extends Message
     }
 
     /**
-     * Gets the Sound
+     * Gets the sound
      */
     public function getSound(): ?int
     {
@@ -85,7 +85,7 @@ final class DiveAlarmMessage extends Message
     }
 
     /**
-     * Gets the DiveTypes
+     * Gets the dive types
      */
     public function getDiveTypes(): ?int
     {

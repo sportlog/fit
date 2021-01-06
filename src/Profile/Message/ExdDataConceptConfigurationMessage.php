@@ -41,7 +41,7 @@ final class ExdDataConceptConfigurationMessage extends Message
     }
 
     /**
-     * Gets the ScreenIndex
+     * Gets the screen index
      */
     public function getScreenIndex(): ?int
     {
@@ -49,15 +49,15 @@ final class ExdDataConceptConfigurationMessage extends Message
     }
 
     /**
-     * Gets the ConceptField
+     * Gets the concept field
      */
-    public function getConceptField(): ?int
+    public function getConceptField(): mixed
     {
         return $this->getValue(1);
     }
 
     /**
-     * Gets the FieldId
+     * Gets the field id
      */
     public function getFieldId(): ?int
     {
@@ -65,7 +65,7 @@ final class ExdDataConceptConfigurationMessage extends Message
     }
 
     /**
-     * Gets the ConceptIndex
+     * Gets the concept index
      */
     public function getConceptIndex(): ?int
     {
@@ -73,7 +73,7 @@ final class ExdDataConceptConfigurationMessage extends Message
     }
 
     /**
-     * Gets the DataPage
+     * Gets the data page
      */
     public function getDataPage(): ?int
     {
@@ -81,7 +81,7 @@ final class ExdDataConceptConfigurationMessage extends Message
     }
 
     /**
-     * Gets the ConceptKey
+     * Gets the concept key
      */
     public function getConceptKey(): ?int
     {
@@ -89,7 +89,7 @@ final class ExdDataConceptConfigurationMessage extends Message
     }
 
     /**
-     * Gets the Scaling
+     * Gets the scaling
      */
     public function getScaling(): ?int
     {
@@ -97,7 +97,7 @@ final class ExdDataConceptConfigurationMessage extends Message
     }
 
     /**
-     * Gets the DataUnits
+     * Gets the data units
      */
     public function getDataUnits(): ?int
     {
@@ -105,7 +105,7 @@ final class ExdDataConceptConfigurationMessage extends Message
     }
 
     /**
-     * Gets the Qualifier
+     * Gets the qualifier
      */
     public function getQualifier(): ?int
     {
@@ -113,7 +113,7 @@ final class ExdDataConceptConfigurationMessage extends Message
     }
 
     /**
-     * Gets the Descriptor
+     * Gets the descriptor
      */
     public function getDescriptor(): ?int
     {
@@ -121,7 +121,7 @@ final class ExdDataConceptConfigurationMessage extends Message
     }
 
     /**
-     * Gets the IsSigned
+     * Gets the is signed
      */
     public function getIsSigned(): ?bool
     {

@@ -43,7 +43,7 @@ final class DiveSummaryMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -51,7 +51,7 @@ final class DiveSummaryMessage extends Message
     }
 
     /**
-     * Gets the ReferenceMesg
+     * Gets the reference mesg
      */
     public function getReferenceMesg(): ?int
     {
@@ -59,7 +59,7 @@ final class DiveSummaryMessage extends Message
     }
 
     /**
-     * Gets the ReferenceIndex
+     * Gets the reference index
      */
     public function getReferenceIndex(): ?int
     {
@@ -67,7 +67,7 @@ final class DiveSummaryMessage extends Message
     }
 
     /**
-     * Gets the AvgDepth
+     * Gets the avg depth
      */
     public function getAvgDepth(): ?int
     {
@@ -75,7 +75,7 @@ final class DiveSummaryMessage extends Message
     }
 
     /**
-     * Gets the MaxDepth
+     * Gets the max depth
      */
     public function getMaxDepth(): ?int
     {
@@ -83,7 +83,7 @@ final class DiveSummaryMessage extends Message
     }
 
     /**
-     * Gets the SurfaceInterval
+     * Gets the surface interval
      */
     public function getSurfaceInterval(): ?int
     {
@@ -91,7 +91,7 @@ final class DiveSummaryMessage extends Message
     }
 
     /**
-     * Gets the StartCns
+     * Gets the start cns
      */
     public function getStartCns(): ?int
     {
@@ -99,7 +99,7 @@ final class DiveSummaryMessage extends Message
     }
 
     /**
-     * Gets the EndCns
+     * Gets the end cns
      */
     public function getEndCns(): ?int
     {
@@ -107,7 +107,7 @@ final class DiveSummaryMessage extends Message
     }
 
     /**
-     * Gets the StartN2
+     * Gets the start n2
      */
     public function getStartN2(): ?int
     {
@@ -115,7 +115,7 @@ final class DiveSummaryMessage extends Message
     }
 
     /**
-     * Gets the EndN2
+     * Gets the end n2
      */
     public function getEndN2(): ?int
     {
@@ -123,7 +123,7 @@ final class DiveSummaryMessage extends Message
     }
 
     /**
-     * Gets the O2Toxicity
+     * Gets the o2 toxicity
      */
     public function getO2Toxicity(): ?int
     {
@@ -131,7 +131,7 @@ final class DiveSummaryMessage extends Message
     }
 
     /**
-     * Gets the DiveNumber
+     * Gets the dive number
      */
     public function getDiveNumber(): ?int
     {
@@ -139,7 +139,7 @@ final class DiveSummaryMessage extends Message
     }
 
     /**
-     * Gets the BottomTime
+     * Gets the bottom time
      */
     public function getBottomTime(): ?int
     {

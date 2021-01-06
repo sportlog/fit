@@ -33,7 +33,7 @@ final class VideoDescriptionMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -41,7 +41,7 @@ final class VideoDescriptionMessage extends Message
     }
 
     /**
-     * Gets the MessageCount
+     * Gets the message count
      */
     public function getMessageCount(): ?int
     {
@@ -49,7 +49,7 @@ final class VideoDescriptionMessage extends Message
     }
 
     /**
-     * Gets the Text
+     * Gets the text
      */
     public function getText(): ?string
     {

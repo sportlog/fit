@@ -17,24 +17,15 @@ use FIT\Profile\MessageNumber;
 use FIT\Profile\ProfileType;
 
 /**
- * HrvMessage message
+ * InvalidMessage message
  */
-#[Field('Time', 0, FitBaseType::UINT16, 1000.0, 0.0, 's', false, ProfileType::UINT16)]
-final class HrvMessage extends Message
+final class InvalidMessage extends Message
 {
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct('Hrv', MessageNumber::Hrv);
-    }
-
-    /**
-     * Gets the time
-     */
-    public function getTime(): ?int
-    {
-        return $this->getValue(0);
+        parent::__construct('Invalid', MessageNumber::Invalid);
     }
 }

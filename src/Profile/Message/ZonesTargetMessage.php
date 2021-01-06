@@ -35,7 +35,7 @@ final class ZonesTargetMessage extends Message
     }
 
     /**
-     * Gets the MaxHeartRate
+     * Gets the max heart rate
      */
     public function getMaxHeartRate(): ?int
     {
@@ -43,7 +43,7 @@ final class ZonesTargetMessage extends Message
     }
 
     /**
-     * Gets the ThresholdHeartRate
+     * Gets the threshold heart rate
      */
     public function getThresholdHeartRate(): ?int
     {
@@ -51,7 +51,7 @@ final class ZonesTargetMessage extends Message
     }
 
     /**
-     * Gets the FunctionalThresholdPower
+     * Gets the functional threshold power
      */
     public function getFunctionalThresholdPower(): ?int
     {
@@ -59,7 +59,7 @@ final class ZonesTargetMessage extends Message
     }
 
     /**
-     * Gets the HrCalcType
+     * Gets the hr calc type
      */
     public function getHrCalcType(): ?int
     {
@@ -67,7 +67,7 @@ final class ZonesTargetMessage extends Message
     }
 
     /**
-     * Gets the PwrCalcType
+     * Gets the pwr calc type
      */
     public function getPwrCalcType(): ?int
     {

@@ -36,7 +36,7 @@ final class WeatherAlertMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -44,7 +44,7 @@ final class WeatherAlertMessage extends Message
     }
 
     /**
-     * Gets the ReportId
+     * Gets the report id
      */
     public function getReportId(): ?string
     {
@@ -52,7 +52,7 @@ final class WeatherAlertMessage extends Message
     }
 
     /**
-     * Gets the IssueTime
+     * Gets the issue time
      */
     public function getIssueTime(): ?DateTime
     {
@@ -60,7 +60,7 @@ final class WeatherAlertMessage extends Message
     }
 
     /**
-     * Gets the ExpireTime
+     * Gets the expire time
      */
     public function getExpireTime(): ?DateTime
     {
@@ -68,7 +68,7 @@ final class WeatherAlertMessage extends Message
     }
 
     /**
-     * Gets the Severity
+     * Gets the severity
      */
     public function getSeverity(): ?int
     {
@@ -76,7 +76,7 @@ final class WeatherAlertMessage extends Message
     }
 
     /**
-     * Gets the Type
+     * Gets the type
      */
     public function getType(): ?int
     {

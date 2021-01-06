@@ -34,7 +34,7 @@ final class MemoGlobMessage extends Message
     }
 
     /**
-     * Gets the PartIndex
+     * Gets the part index
      */
     public function getPartIndex(): ?int
     {
@@ -42,15 +42,15 @@ final class MemoGlobMessage extends Message
     }
 
     /**
-     * Gets the Memo
+     * Gets the memo
      */
-    public function getMemo(): ?int
+    public function getMemo(): mixed
     {
         return $this->getValue(0);
     }
 
     /**
-     * Gets the MessageNumber
+     * Gets the message number
      */
     public function getMessageNumber(): ?int
     {
@@ -58,7 +58,7 @@ final class MemoGlobMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {

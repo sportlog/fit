@@ -32,7 +32,7 @@ final class SlaveDeviceMessage extends Message
     }
 
     /**
-     * Gets the Manufacturer
+     * Gets the manufacturer
      */
     public function getManufacturer(): ?int
     {
@@ -40,7 +40,7 @@ final class SlaveDeviceMessage extends Message
     }
 
     /**
-     * Gets the Product
+     * Gets the product
      */
     public function getProduct(): ?int
     {

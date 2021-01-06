@@ -35,7 +35,7 @@ class MessageNumber {
     const Schedule = 28;
     const WeightScale = 30;
     const Course = 31;
-    const CoursePo= 32;
+    const CoursePoint = 32;
     const Totals = 33;
     const Activity = 34;
     const Software = 35;
@@ -64,7 +64,7 @@ class MessageNumber {
     const MemoGlob = 145;
     const SegmentId = 148;
     const SegmentLeaderboardEntry = 149;
-    const SegmentPo= 150;
+    const SegmentPoint = 150;
     const SegmentFile = 151;
     const WorkoutSession = 158;
     const WatchfaceSettings = 159;

@@ -37,7 +37,7 @@ final class ThreeDSensorCalibrationMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -45,7 +45,7 @@ final class ThreeDSensorCalibrationMessage extends Message
     }
 
     /**
-     * Gets the SensorType
+     * Gets the sensor type
      */
     public function getSensorType(): ?int
     {
@@ -53,7 +53,7 @@ final class ThreeDSensorCalibrationMessage extends Message
     }
 
     /**
-     * Gets the CalibrationFactor
+     * Gets the calibration factor
      */
     public function getCalibrationFactor(): ?int
     {
@@ -61,7 +61,7 @@ final class ThreeDSensorCalibrationMessage extends Message
     }
 
     /**
-     * Gets the CalibrationDivisor
+     * Gets the calibration divisor
      */
     public function getCalibrationDivisor(): ?int
     {
@@ -69,7 +69,7 @@ final class ThreeDSensorCalibrationMessage extends Message
     }
 
     /**
-     * Gets the LevelShift
+     * Gets the level shift
      */
     public function getLevelShift(): ?int
     {
@@ -77,7 +77,7 @@ final class ThreeDSensorCalibrationMessage extends Message
     }
 
     /**
-     * Gets the OffsetCal
+     * Gets the offset cal
      */
     public function getOffsetCal(): ?int
     {
@@ -85,7 +85,7 @@ final class ThreeDSensorCalibrationMessage extends Message
     }
 
     /**
-     * Gets the OrientationMatrix
+     * Gets the orientation matrix
      */
     public function getOrientationMatrix(): ?int
     {

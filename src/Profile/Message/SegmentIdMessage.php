@@ -39,7 +39,7 @@ final class SegmentIdMessage extends Message
     }
 
     /**
-     * Gets the Name
+     * Gets the name
      */
     public function getName(): ?string
     {
@@ -47,7 +47,7 @@ final class SegmentIdMessage extends Message
     }
 
     /**
-     * Gets the Uuid
+     * Gets the uuid
      */
     public function getUuid(): ?string
     {
@@ -55,7 +55,7 @@ final class SegmentIdMessage extends Message
     }
 
     /**
-     * Gets the Sport
+     * Gets the sport
      */
     public function getSport(): ?int
     {
@@ -63,7 +63,7 @@ final class SegmentIdMessage extends Message
     }
 
     /**
-     * Gets the Enabled
+     * Gets the enabled
      */
     public function getEnabled(): ?bool
     {
@@ -71,7 +71,7 @@ final class SegmentIdMessage extends Message
     }
 
     /**
-     * Gets the UserProfilePrimaryKey
+     * Gets the user profile primary key
      */
     public function getUserProfilePrimaryKey(): ?int
     {
@@ -79,7 +79,7 @@ final class SegmentIdMessage extends Message
     }
 
     /**
-     * Gets the DeviceId
+     * Gets the device id
      */
     public function getDeviceId(): ?int
     {
@@ -87,7 +87,7 @@ final class SegmentIdMessage extends Message
     }
 
     /**
-     * Gets the DefaultRaceLeader
+     * Gets the default race leader
      */
     public function getDefaultRaceLeader(): ?int
     {
@@ -95,7 +95,7 @@ final class SegmentIdMessage extends Message
     }
 
     /**
-     * Gets the DeleteStatus
+     * Gets the delete status
      */
     public function getDeleteStatus(): ?int
     {
@@ -103,7 +103,7 @@ final class SegmentIdMessage extends Message
     }
 
     /**
-     * Gets the SelectionType
+     * Gets the selection type
      */
     public function getSelectionType(): ?int
     {

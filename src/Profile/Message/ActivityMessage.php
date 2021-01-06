@@ -38,7 +38,7 @@ final class ActivityMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -46,7 +46,7 @@ final class ActivityMessage extends Message
     }
 
     /**
-     * Gets the TotalTimerTime
+     * Gets the total timer time
      */
     public function getTotalTimerTime(): ?int
     {
@@ -54,7 +54,7 @@ final class ActivityMessage extends Message
     }
 
     /**
-     * Gets the NumSessions
+     * Gets the num sessions
      */
     public function getNumSessions(): ?int
     {
@@ -62,7 +62,7 @@ final class ActivityMessage extends Message
     }
 
     /**
-     * Gets the Type
+     * Gets the type
      */
     public function getType(): ?int
     {
@@ -70,7 +70,7 @@ final class ActivityMessage extends Message
     }
 
     /**
-     * Gets the Event
+     * Gets the event
      */
     public function getEvent(): ?int
     {
@@ -78,7 +78,7 @@ final class ActivityMessage extends Message
     }
 
     /**
-     * Gets the EventType
+     * Gets the event type
      */
     public function getEventType(): ?int
     {
@@ -86,7 +86,7 @@ final class ActivityMessage extends Message
     }
 
     /**
-     * Gets the LocalTimestamp
+     * Gets the local timestamp
      */
     public function getLocalTimestamp(): ?DateTime
     {
@@ -94,7 +94,7 @@ final class ActivityMessage extends Message
     }
 
     /**
-     * Gets the EventGroup
+     * Gets the event group
      */
     public function getEventGroup(): ?int
     {

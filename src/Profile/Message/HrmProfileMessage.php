@@ -35,7 +35,7 @@ final class HrmProfileMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -43,7 +43,7 @@ final class HrmProfileMessage extends Message
     }
 
     /**
-     * Gets the Enabled
+     * Gets the enabled
      */
     public function getEnabled(): ?bool
     {
@@ -51,7 +51,7 @@ final class HrmProfileMessage extends Message
     }
 
     /**
-     * Gets the HrmAntId
+     * Gets the hrm ant id
      */
     public function getHrmAntId(): ?int
     {
@@ -59,7 +59,7 @@ final class HrmProfileMessage extends Message
     }
 
     /**
-     * Gets the LogHrv
+     * Gets the log hrv
      */
     public function getLogHrv(): ?bool
     {
@@ -67,7 +67,7 @@ final class HrmProfileMessage extends Message
     }
 
     /**
-     * Gets the HrmAntIdTransType
+     * Gets the hrm ant id trans type
      */
     public function getHrmAntIdTransType(): ?int
     {

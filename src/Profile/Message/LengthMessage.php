@@ -48,7 +48,7 @@ final class LengthMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -56,7 +56,7 @@ final class LengthMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -64,7 +64,7 @@ final class LengthMessage extends Message
     }
 
     /**
-     * Gets the Event
+     * Gets the event
      */
     public function getEvent(): ?int
     {
@@ -72,7 +72,7 @@ final class LengthMessage extends Message
     }
 
     /**
-     * Gets the EventType
+     * Gets the event type
      */
     public function getEventType(): ?int
     {
@@ -80,7 +80,7 @@ final class LengthMessage extends Message
     }
 
     /**
-     * Gets the StartTime
+     * Gets the start time
      */
     public function getStartTime(): ?DateTime
     {
@@ -88,7 +88,7 @@ final class LengthMessage extends Message
     }
 
     /**
-     * Gets the TotalElapsedTime
+     * Gets the total elapsed time
      */
     public function getTotalElapsedTime(): ?int
     {
@@ -96,7 +96,7 @@ final class LengthMessage extends Message
     }
 
     /**
-     * Gets the TotalTimerTime
+     * Gets the total timer time
      */
     public function getTotalTimerTime(): ?int
     {
@@ -104,7 +104,7 @@ final class LengthMessage extends Message
     }
 
     /**
-     * Gets the TotalStrokes
+     * Gets the total strokes
      */
     public function getTotalStrokes(): ?int
     {
@@ -112,7 +112,7 @@ final class LengthMessage extends Message
     }
 
     /**
-     * Gets the AvgSpeed
+     * Gets the avg speed
      */
     public function getAvgSpeed(): ?int
     {
@@ -120,7 +120,7 @@ final class LengthMessage extends Message
     }
 
     /**
-     * Gets the SwimStroke
+     * Gets the swim stroke
      */
     public function getSwimStroke(): ?int
     {
@@ -128,7 +128,7 @@ final class LengthMessage extends Message
     }
 
     /**
-     * Gets the AvgSwimmingCadence
+     * Gets the avg swimming cadence
      */
     public function getAvgSwimmingCadence(): ?int
     {
@@ -136,7 +136,7 @@ final class LengthMessage extends Message
     }
 
     /**
-     * Gets the EventGroup
+     * Gets the event group
      */
     public function getEventGroup(): ?int
     {
@@ -144,7 +144,7 @@ final class LengthMessage extends Message
     }
 
     /**
-     * Gets the TotalCalories
+     * Gets the total calories
      */
     public function getTotalCalories(): ?int
     {
@@ -152,7 +152,7 @@ final class LengthMessage extends Message
     }
 
     /**
-     * Gets the LengthType
+     * Gets the length type
      */
     public function getLengthType(): ?int
     {
@@ -160,7 +160,7 @@ final class LengthMessage extends Message
     }
 
     /**
-     * Gets the PlayerScore
+     * Gets the player score
      */
     public function getPlayerScore(): ?int
     {
@@ -168,7 +168,7 @@ final class LengthMessage extends Message
     }
 
     /**
-     * Gets the OpponentScore
+     * Gets the opponent score
      */
     public function getOpponentScore(): ?int
     {
@@ -176,7 +176,7 @@ final class LengthMessage extends Message
     }
 
     /**
-     * Gets the StrokeCount
+     * Gets the stroke count
      */
     public function getStrokeCount(): ?int
     {
@@ -184,7 +184,7 @@ final class LengthMessage extends Message
     }
 
     /**
-     * Gets the ZoneCount
+     * Gets the zone count
      */
     public function getZoneCount(): ?int
     {

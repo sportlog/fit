@@ -43,7 +43,7 @@ final class WeightScaleMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -51,7 +51,7 @@ final class WeightScaleMessage extends Message
     }
 
     /**
-     * Gets the Weight
+     * Gets the weight
      */
     public function getWeight(): ?int
     {
@@ -59,7 +59,7 @@ final class WeightScaleMessage extends Message
     }
 
     /**
-     * Gets the PercentFat
+     * Gets the percent fat
      */
     public function getPercentFat(): ?int
     {
@@ -67,7 +67,7 @@ final class WeightScaleMessage extends Message
     }
 
     /**
-     * Gets the PercentHydration
+     * Gets the percent hydration
      */
     public function getPercentHydration(): ?int
     {
@@ -75,7 +75,7 @@ final class WeightScaleMessage extends Message
     }
 
     /**
-     * Gets the VisceralFatMass
+     * Gets the visceral fat mass
      */
     public function getVisceralFatMass(): ?int
     {
@@ -83,7 +83,7 @@ final class WeightScaleMessage extends Message
     }
 
     /**
-     * Gets the BoneMass
+     * Gets the bone mass
      */
     public function getBoneMass(): ?int
     {
@@ -91,7 +91,7 @@ final class WeightScaleMessage extends Message
     }
 
     /**
-     * Gets the MuscleMass
+     * Gets the muscle mass
      */
     public function getMuscleMass(): ?int
     {
@@ -99,7 +99,7 @@ final class WeightScaleMessage extends Message
     }
 
     /**
-     * Gets the BasalMet
+     * Gets the basal met
      */
     public function getBasalMet(): ?int
     {
@@ -107,7 +107,7 @@ final class WeightScaleMessage extends Message
     }
 
     /**
-     * Gets the PhysiqueRating
+     * Gets the physique rating
      */
     public function getPhysiqueRating(): ?int
     {
@@ -115,7 +115,7 @@ final class WeightScaleMessage extends Message
     }
 
     /**
-     * Gets the ActiveMet
+     * Gets the active met
      */
     public function getActiveMet(): ?int
     {
@@ -123,7 +123,7 @@ final class WeightScaleMessage extends Message
     }
 
     /**
-     * Gets the MetabolicAge
+     * Gets the metabolic age
      */
     public function getMetabolicAge(): ?int
     {
@@ -131,7 +131,7 @@ final class WeightScaleMessage extends Message
     }
 
     /**
-     * Gets the VisceralFatRating
+     * Gets the visceral fat rating
      */
     public function getVisceralFatRating(): ?int
     {
@@ -139,7 +139,7 @@ final class WeightScaleMessage extends Message
     }
 
     /**
-     * Gets the UserProfileIndex
+     * Gets the user profile index
      */
     public function getUserProfileIndex(): ?int
     {

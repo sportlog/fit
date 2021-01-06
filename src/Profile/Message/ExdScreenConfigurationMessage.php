@@ -34,7 +34,7 @@ final class ExdScreenConfigurationMessage extends Message
     }
 
     /**
-     * Gets the ScreenIndex
+     * Gets the screen index
      */
     public function getScreenIndex(): ?int
     {
@@ -42,7 +42,7 @@ final class ExdScreenConfigurationMessage extends Message
     }
 
     /**
-     * Gets the FieldCount
+     * Gets the field count
      */
     public function getFieldCount(): ?int
     {
@@ -50,7 +50,7 @@ final class ExdScreenConfigurationMessage extends Message
     }
 
     /**
-     * Gets the Layout
+     * Gets the layout
      */
     public function getLayout(): ?int
     {
@@ -58,7 +58,7 @@ final class ExdScreenConfigurationMessage extends Message
     }
 
     /**
-     * Gets the ScreenEnabled
+     * Gets the screen enabled
      */
     public function getScreenEnabled(): ?bool
     {

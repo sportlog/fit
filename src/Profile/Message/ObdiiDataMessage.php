@@ -39,7 +39,7 @@ final class ObdiiDataMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -47,7 +47,7 @@ final class ObdiiDataMessage extends Message
     }
 
     /**
-     * Gets the TimestampMs
+     * Gets the timestamp ms
      */
     public function getTimestampMs(): ?int
     {
@@ -55,7 +55,7 @@ final class ObdiiDataMessage extends Message
     }
 
     /**
-     * Gets the TimeOffset
+     * Gets the time offset
      */
     public function getTimeOffset(): ?int
     {
@@ -63,23 +63,23 @@ final class ObdiiDataMessage extends Message
     }
 
     /**
-     * Gets the Pid
+     * Gets the pid
      */
-    public function getPid(): ?int
+    public function getPid(): mixed
     {
         return $this->getValue(2);
     }
 
     /**
-     * Gets the RawData
+     * Gets the raw data
      */
-    public function getRawData(): ?int
+    public function getRawData(): mixed
     {
         return $this->getValue(3);
     }
 
     /**
-     * Gets the PidDataSize
+     * Gets the pid data size
      */
     public function getPidDataSize(): ?int
     {
@@ -87,7 +87,7 @@ final class ObdiiDataMessage extends Message
     }
 
     /**
-     * Gets the SystemTime
+     * Gets the system time
      */
     public function getSystemTime(): ?int
     {
@@ -95,7 +95,7 @@ final class ObdiiDataMessage extends Message
     }
 
     /**
-     * Gets the StartTimestamp
+     * Gets the start timestamp
      */
     public function getStartTimestamp(): ?DateTime
     {
@@ -103,7 +103,7 @@ final class ObdiiDataMessage extends Message
     }
 
     /**
-     * Gets the StartTimestampMs
+     * Gets the start timestamp ms
      */
     public function getStartTimestampMs(): ?int
     {

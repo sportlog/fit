@@ -143,7 +143,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -151,7 +151,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -159,7 +159,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the Event
+     * Gets the event
      */
     public function getEvent(): ?int
     {
@@ -167,7 +167,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the EventType
+     * Gets the event type
      */
     public function getEventType(): ?int
     {
@@ -175,7 +175,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the StartTime
+     * Gets the start time
      */
     public function getStartTime(): ?DateTime
     {
@@ -183,7 +183,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the StartPositionLat
+     * Gets the start position lat
      */
     public function getStartPositionLat(): ?int
     {
@@ -191,7 +191,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the StartPositionLong
+     * Gets the start position long
      */
     public function getStartPositionLong(): ?int
     {
@@ -199,7 +199,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the EndPositionLat
+     * Gets the end position lat
      */
     public function getEndPositionLat(): ?int
     {
@@ -207,7 +207,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the EndPositionLong
+     * Gets the end position long
      */
     public function getEndPositionLong(): ?int
     {
@@ -215,7 +215,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the TotalElapsedTime
+     * Gets the total elapsed time
      */
     public function getTotalElapsedTime(): ?int
     {
@@ -223,7 +223,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the TotalTimerTime
+     * Gets the total timer time
      */
     public function getTotalTimerTime(): ?int
     {
@@ -231,7 +231,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the TotalDistance
+     * Gets the total distance
      */
     public function getTotalDistance(): ?int
     {
@@ -239,7 +239,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the TotalCycles
+     * Gets the total cycles
      */
     public function getTotalCycles(): ?int
     {
@@ -247,7 +247,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the TotalCalories
+     * Gets the total calories
      */
     public function getTotalCalories(): ?int
     {
@@ -255,7 +255,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the TotalFatCalories
+     * Gets the total fat calories
      */
     public function getTotalFatCalories(): ?int
     {
@@ -263,7 +263,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgSpeed
+     * Gets the avg speed
      */
     public function getAvgSpeed(): ?int
     {
@@ -271,7 +271,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MaxSpeed
+     * Gets the max speed
      */
     public function getMaxSpeed(): ?int
     {
@@ -279,7 +279,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgHeartRate
+     * Gets the avg heart rate
      */
     public function getAvgHeartRate(): ?int
     {
@@ -287,7 +287,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MaxHeartRate
+     * Gets the max heart rate
      */
     public function getMaxHeartRate(): ?int
     {
@@ -295,7 +295,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgCadence
+     * Gets the avg cadence
      */
     public function getAvgCadence(): ?int
     {
@@ -303,7 +303,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MaxCadence
+     * Gets the max cadence
      */
     public function getMaxCadence(): ?int
     {
@@ -311,7 +311,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgPower
+     * Gets the avg power
      */
     public function getAvgPower(): ?int
     {
@@ -319,7 +319,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MaxPower
+     * Gets the max power
      */
     public function getMaxPower(): ?int
     {
@@ -327,7 +327,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the TotalAscent
+     * Gets the total ascent
      */
     public function getTotalAscent(): ?int
     {
@@ -335,7 +335,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the TotalDescent
+     * Gets the total descent
      */
     public function getTotalDescent(): ?int
     {
@@ -343,7 +343,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the Intensity
+     * Gets the intensity
      */
     public function getIntensity(): ?int
     {
@@ -351,7 +351,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the LapTrigger
+     * Gets the lap trigger
      */
     public function getLapTrigger(): ?int
     {
@@ -359,7 +359,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the Sport
+     * Gets the sport
      */
     public function getSport(): ?int
     {
@@ -367,7 +367,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the EventGroup
+     * Gets the event group
      */
     public function getEventGroup(): ?int
     {
@@ -375,7 +375,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the NumLengths
+     * Gets the num lengths
      */
     public function getNumLengths(): ?int
     {
@@ -383,7 +383,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the NormalizedPower
+     * Gets the normalized power
      */
     public function getNormalizedPower(): ?int
     {
@@ -391,7 +391,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the LeftRightBalance
+     * Gets the left right balance
      */
     public function getLeftRightBalance(): ?int
     {
@@ -399,7 +399,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the FirstLengthIndex
+     * Gets the first length index
      */
     public function getFirstLengthIndex(): ?int
     {
@@ -407,7 +407,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgStrokeDistance
+     * Gets the avg stroke distance
      */
     public function getAvgStrokeDistance(): ?int
     {
@@ -415,7 +415,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the SwimStroke
+     * Gets the swim stroke
      */
     public function getSwimStroke(): ?int
     {
@@ -423,7 +423,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the SubSport
+     * Gets the sub sport
      */
     public function getSubSport(): ?int
     {
@@ -431,7 +431,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the NumActiveLengths
+     * Gets the num active lengths
      */
     public function getNumActiveLengths(): ?int
     {
@@ -439,7 +439,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the TotalWork
+     * Gets the total work
      */
     public function getTotalWork(): ?int
     {
@@ -447,7 +447,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgAltitude
+     * Gets the avg altitude
      */
     public function getAvgAltitude(): ?int
     {
@@ -455,7 +455,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MaxAltitude
+     * Gets the max altitude
      */
     public function getMaxAltitude(): ?int
     {
@@ -463,7 +463,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the GpsAccuracy
+     * Gets the gps accuracy
      */
     public function getGpsAccuracy(): ?int
     {
@@ -471,7 +471,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgGrade
+     * Gets the avg grade
      */
     public function getAvgGrade(): ?int
     {
@@ -479,7 +479,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgPosGrade
+     * Gets the avg pos grade
      */
     public function getAvgPosGrade(): ?int
     {
@@ -487,7 +487,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgNegGrade
+     * Gets the avg neg grade
      */
     public function getAvgNegGrade(): ?int
     {
@@ -495,7 +495,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MaxPosGrade
+     * Gets the max pos grade
      */
     public function getMaxPosGrade(): ?int
     {
@@ -503,7 +503,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MaxNegGrade
+     * Gets the max neg grade
      */
     public function getMaxNegGrade(): ?int
     {
@@ -511,7 +511,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgTemperature
+     * Gets the avg temperature
      */
     public function getAvgTemperature(): ?int
     {
@@ -519,7 +519,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MaxTemperature
+     * Gets the max temperature
      */
     public function getMaxTemperature(): ?int
     {
@@ -527,7 +527,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the TotalMovingTime
+     * Gets the total moving time
      */
     public function getTotalMovingTime(): ?int
     {
@@ -535,7 +535,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgPosVerticalSpeed
+     * Gets the avg pos vertical speed
      */
     public function getAvgPosVerticalSpeed(): ?int
     {
@@ -543,7 +543,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgNegVerticalSpeed
+     * Gets the avg neg vertical speed
      */
     public function getAvgNegVerticalSpeed(): ?int
     {
@@ -551,7 +551,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MaxPosVerticalSpeed
+     * Gets the max pos vertical speed
      */
     public function getMaxPosVerticalSpeed(): ?int
     {
@@ -559,7 +559,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MaxNegVerticalSpeed
+     * Gets the max neg vertical speed
      */
     public function getMaxNegVerticalSpeed(): ?int
     {
@@ -567,7 +567,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the TimeInHrZone
+     * Gets the time in hr zone
      */
     public function getTimeInHrZone(): ?int
     {
@@ -575,7 +575,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the TimeInSpeedZone
+     * Gets the time in speed zone
      */
     public function getTimeInSpeedZone(): ?int
     {
@@ -583,7 +583,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the TimeInCadenceZone
+     * Gets the time in cadence zone
      */
     public function getTimeInCadenceZone(): ?int
     {
@@ -591,7 +591,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the TimeInPowerZone
+     * Gets the time in power zone
      */
     public function getTimeInPowerZone(): ?int
     {
@@ -599,7 +599,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the RepetitionNum
+     * Gets the repetition num
      */
     public function getRepetitionNum(): ?int
     {
@@ -607,7 +607,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MinAltitude
+     * Gets the min altitude
      */
     public function getMinAltitude(): ?int
     {
@@ -615,7 +615,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MinHeartRate
+     * Gets the min heart rate
      */
     public function getMinHeartRate(): ?int
     {
@@ -623,7 +623,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the WktStepIndex
+     * Gets the wkt step index
      */
     public function getWktStepIndex(): ?int
     {
@@ -631,7 +631,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the OpponentScore
+     * Gets the opponent score
      */
     public function getOpponentScore(): ?int
     {
@@ -639,7 +639,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the StrokeCount
+     * Gets the stroke count
      */
     public function getStrokeCount(): ?int
     {
@@ -647,7 +647,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the ZoneCount
+     * Gets the zone count
      */
     public function getZoneCount(): ?int
     {
@@ -655,7 +655,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgVerticalOscillation
+     * Gets the avg vertical oscillation
      */
     public function getAvgVerticalOscillation(): ?int
     {
@@ -663,7 +663,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgStanceTimePercent
+     * Gets the avg stance time percent
      */
     public function getAvgStanceTimePercent(): ?int
     {
@@ -671,7 +671,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgStanceTime
+     * Gets the avg stance time
      */
     public function getAvgStanceTime(): ?int
     {
@@ -679,7 +679,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgFractionalCadence
+     * Gets the avg fractional cadence
      */
     public function getAvgFractionalCadence(): ?int
     {
@@ -687,7 +687,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MaxFractionalCadence
+     * Gets the max fractional cadence
      */
     public function getMaxFractionalCadence(): ?int
     {
@@ -695,7 +695,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the TotalFractionalCycles
+     * Gets the total fractional cycles
      */
     public function getTotalFractionalCycles(): ?int
     {
@@ -703,7 +703,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the PlayerScore
+     * Gets the player score
      */
     public function getPlayerScore(): ?int
     {
@@ -711,7 +711,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgTotalHemoglobinConc
+     * Gets the avg total hemoglobin conc
      */
     public function getAvgTotalHemoglobinConc(): ?int
     {
@@ -719,7 +719,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MinTotalHemoglobinConc
+     * Gets the min total hemoglobin conc
      */
     public function getMinTotalHemoglobinConc(): ?int
     {
@@ -727,7 +727,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MaxTotalHemoglobinConc
+     * Gets the max total hemoglobin conc
      */
     public function getMaxTotalHemoglobinConc(): ?int
     {
@@ -735,7 +735,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgSaturatedHemoglobinPercent
+     * Gets the avg saturated hemoglobin percent
      */
     public function getAvgSaturatedHemoglobinPercent(): ?int
     {
@@ -743,7 +743,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MinSaturatedHemoglobinPercent
+     * Gets the min saturated hemoglobin percent
      */
     public function getMinSaturatedHemoglobinPercent(): ?int
     {
@@ -751,7 +751,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MaxSaturatedHemoglobinPercent
+     * Gets the max saturated hemoglobin percent
      */
     public function getMaxSaturatedHemoglobinPercent(): ?int
     {
@@ -759,7 +759,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgLeftTorqueEffectiveness
+     * Gets the avg left torque effectiveness
      */
     public function getAvgLeftTorqueEffectiveness(): ?int
     {
@@ -767,7 +767,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgRightTorqueEffectiveness
+     * Gets the avg right torque effectiveness
      */
     public function getAvgRightTorqueEffectiveness(): ?int
     {
@@ -775,7 +775,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgLeftPedalSmoothness
+     * Gets the avg left pedal smoothness
      */
     public function getAvgLeftPedalSmoothness(): ?int
     {
@@ -783,7 +783,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgRightPedalSmoothness
+     * Gets the avg right pedal smoothness
      */
     public function getAvgRightPedalSmoothness(): ?int
     {
@@ -791,7 +791,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgCombinedPedalSmoothness
+     * Gets the avg combined pedal smoothness
      */
     public function getAvgCombinedPedalSmoothness(): ?int
     {
@@ -799,7 +799,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the TimeStanding
+     * Gets the time standing
      */
     public function getTimeStanding(): ?int
     {
@@ -807,7 +807,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the StandCount
+     * Gets the stand count
      */
     public function getStandCount(): ?int
     {
@@ -815,7 +815,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgLeftPco
+     * Gets the avg left pco
      */
     public function getAvgLeftPco(): ?int
     {
@@ -823,7 +823,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgRightPco
+     * Gets the avg right pco
      */
     public function getAvgRightPco(): ?int
     {
@@ -831,7 +831,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgLeftPowerPhase
+     * Gets the avg left power phase
      */
     public function getAvgLeftPowerPhase(): ?int
     {
@@ -839,7 +839,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgLeftPowerPhasePeak
+     * Gets the avg left power phase peak
      */
     public function getAvgLeftPowerPhasePeak(): ?int
     {
@@ -847,7 +847,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgRightPowerPhase
+     * Gets the avg right power phase
      */
     public function getAvgRightPowerPhase(): ?int
     {
@@ -855,7 +855,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgRightPowerPhasePeak
+     * Gets the avg right power phase peak
      */
     public function getAvgRightPowerPhasePeak(): ?int
     {
@@ -863,7 +863,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgPowerPosition
+     * Gets the avg power position
      */
     public function getAvgPowerPosition(): ?int
     {
@@ -871,7 +871,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MaxPowerPosition
+     * Gets the max power position
      */
     public function getMaxPowerPosition(): ?int
     {
@@ -879,7 +879,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgCadencePosition
+     * Gets the avg cadence position
      */
     public function getAvgCadencePosition(): ?int
     {
@@ -887,7 +887,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MaxCadencePosition
+     * Gets the max cadence position
      */
     public function getMaxCadencePosition(): ?int
     {
@@ -895,7 +895,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the EnhancedAvgSpeed
+     * Gets the enhanced avg speed
      */
     public function getEnhancedAvgSpeed(): ?int
     {
@@ -903,7 +903,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the EnhancedMaxSpeed
+     * Gets the enhanced max speed
      */
     public function getEnhancedMaxSpeed(): ?int
     {
@@ -911,7 +911,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the EnhancedAvgAltitude
+     * Gets the enhanced avg altitude
      */
     public function getEnhancedAvgAltitude(): ?int
     {
@@ -919,7 +919,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the EnhancedMinAltitude
+     * Gets the enhanced min altitude
      */
     public function getEnhancedMinAltitude(): ?int
     {
@@ -927,7 +927,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the EnhancedMaxAltitude
+     * Gets the enhanced max altitude
      */
     public function getEnhancedMaxAltitude(): ?int
     {
@@ -935,7 +935,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgLevMotorPower
+     * Gets the avg lev motor power
      */
     public function getAvgLevMotorPower(): ?int
     {
@@ -943,7 +943,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the MaxLevMotorPower
+     * Gets the max lev motor power
      */
     public function getMaxLevMotorPower(): ?int
     {
@@ -951,7 +951,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the LevBatteryConsumption
+     * Gets the lev battery consumption
      */
     public function getLevBatteryConsumption(): ?int
     {
@@ -959,7 +959,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgVerticalRatio
+     * Gets the avg vertical ratio
      */
     public function getAvgVerticalRatio(): ?int
     {
@@ -967,7 +967,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgStanceTimeBalance
+     * Gets the avg stance time balance
      */
     public function getAvgStanceTimeBalance(): ?int
     {
@@ -975,7 +975,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgStepLength
+     * Gets the avg step length
      */
     public function getAvgStepLength(): ?int
     {
@@ -983,7 +983,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgVam
+     * Gets the avg vam
      */
     public function getAvgVam(): ?int
     {
@@ -991,7 +991,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the TotalGrit
+     * Gets the total grit
      */
     public function getTotalGrit(): ?float
     {
@@ -999,7 +999,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the TotalFlow
+     * Gets the total flow
      */
     public function getTotalFlow(): ?float
     {
@@ -1007,7 +1007,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the JumpCount
+     * Gets the jump count
      */
     public function getJumpCount(): ?int
     {
@@ -1015,7 +1015,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgGrit
+     * Gets the avg grit
      */
     public function getAvgGrit(): ?float
     {
@@ -1023,7 +1023,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the AvgFlow
+     * Gets the avg flow
      */
     public function getAvgFlow(): ?float
     {
@@ -1031,7 +1031,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the TotalFractionalAscent
+     * Gets the total fractional ascent
      */
     public function getTotalFractionalAscent(): ?int
     {
@@ -1039,7 +1039,7 @@ final class LapMessage extends Message
     }
 
     /**
-     * Gets the TotalFractionalDescent
+     * Gets the total fractional descent
      */
     public function getTotalFractionalDescent(): ?int
     {

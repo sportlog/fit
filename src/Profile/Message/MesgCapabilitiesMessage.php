@@ -35,7 +35,7 @@ final class MesgCapabilitiesMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -43,7 +43,7 @@ final class MesgCapabilitiesMessage extends Message
     }
 
     /**
-     * Gets the File
+     * Gets the file
      */
     public function getFile(): ?int
     {
@@ -51,7 +51,7 @@ final class MesgCapabilitiesMessage extends Message
     }
 
     /**
-     * Gets the MesgNum
+     * Gets the mesg num
      */
     public function getMesgNum(): ?int
     {
@@ -59,7 +59,7 @@ final class MesgCapabilitiesMessage extends Message
     }
 
     /**
-     * Gets the CountType
+     * Gets the count type
      */
     public function getCountType(): ?int
     {
@@ -67,7 +67,7 @@ final class MesgCapabilitiesMessage extends Message
     }
 
     /**
-     * Gets the Count
+     * Gets the count
      */
     public function getCount(): ?int
     {

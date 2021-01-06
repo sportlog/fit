@@ -33,7 +33,7 @@ final class VideoMessage extends Message
     }
 
     /**
-     * Gets the Url
+     * Gets the url
      */
     public function getUrl(): ?string
     {
@@ -41,7 +41,7 @@ final class VideoMessage extends Message
     }
 
     /**
-     * Gets the HostingProvider
+     * Gets the hosting provider
      */
     public function getHostingProvider(): ?string
     {
@@ -49,7 +49,7 @@ final class VideoMessage extends Message
     }
 
     /**
-     * Gets the Duration
+     * Gets the duration
      */
     public function getDuration(): ?int
     {

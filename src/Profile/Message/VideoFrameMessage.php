@@ -33,7 +33,7 @@ final class VideoFrameMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -41,7 +41,7 @@ final class VideoFrameMessage extends Message
     }
 
     /**
-     * Gets the TimestampMs
+     * Gets the timestamp ms
      */
     public function getTimestampMs(): ?int
     {
@@ -49,7 +49,7 @@ final class VideoFrameMessage extends Message
     }
 
     /**
-     * Gets the FrameNumber
+     * Gets the frame number
      */
     public function getFrameNumber(): ?int
     {

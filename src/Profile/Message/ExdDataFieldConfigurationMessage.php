@@ -36,7 +36,7 @@ final class ExdDataFieldConfigurationMessage extends Message
     }
 
     /**
-     * Gets the ScreenIndex
+     * Gets the screen index
      */
     public function getScreenIndex(): ?int
     {
@@ -44,15 +44,15 @@ final class ExdDataFieldConfigurationMessage extends Message
     }
 
     /**
-     * Gets the ConceptField
+     * Gets the concept field
      */
-    public function getConceptField(): ?int
+    public function getConceptField(): mixed
     {
         return $this->getValue(1);
     }
 
     /**
-     * Gets the FieldId
+     * Gets the field id
      */
     public function getFieldId(): ?int
     {
@@ -60,7 +60,7 @@ final class ExdDataFieldConfigurationMessage extends Message
     }
 
     /**
-     * Gets the ConceptCount
+     * Gets the concept count
      */
     public function getConceptCount(): ?int
     {
@@ -68,7 +68,7 @@ final class ExdDataFieldConfigurationMessage extends Message
     }
 
     /**
-     * Gets the DisplayType
+     * Gets the display type
      */
     public function getDisplayType(): ?int
     {
@@ -76,7 +76,7 @@ final class ExdDataFieldConfigurationMessage extends Message
     }
 
     /**
-     * Gets the Title
+     * Gets the title
      */
     public function getTitle(): ?string
     {

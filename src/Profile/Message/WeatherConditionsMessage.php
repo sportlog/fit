@@ -46,7 +46,7 @@ final class WeatherConditionsMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -54,7 +54,7 @@ final class WeatherConditionsMessage extends Message
     }
 
     /**
-     * Gets the WeatherReport
+     * Gets the weather report
      */
     public function getWeatherReport(): ?int
     {
@@ -62,7 +62,7 @@ final class WeatherConditionsMessage extends Message
     }
 
     /**
-     * Gets the Temperature
+     * Gets the temperature
      */
     public function getTemperature(): ?int
     {
@@ -70,7 +70,7 @@ final class WeatherConditionsMessage extends Message
     }
 
     /**
-     * Gets the Condition
+     * Gets the condition
      */
     public function getCondition(): ?int
     {
@@ -78,7 +78,7 @@ final class WeatherConditionsMessage extends Message
     }
 
     /**
-     * Gets the WindDirection
+     * Gets the wind direction
      */
     public function getWindDirection(): ?int
     {
@@ -86,7 +86,7 @@ final class WeatherConditionsMessage extends Message
     }
 
     /**
-     * Gets the WindSpeed
+     * Gets the wind speed
      */
     public function getWindSpeed(): ?int
     {
@@ -94,7 +94,7 @@ final class WeatherConditionsMessage extends Message
     }
 
     /**
-     * Gets the PrecipitationProbability
+     * Gets the precipitation probability
      */
     public function getPrecipitationProbability(): ?int
     {
@@ -102,7 +102,7 @@ final class WeatherConditionsMessage extends Message
     }
 
     /**
-     * Gets the TemperatureFeelsLike
+     * Gets the temperature feels like
      */
     public function getTemperatureFeelsLike(): ?int
     {
@@ -110,7 +110,7 @@ final class WeatherConditionsMessage extends Message
     }
 
     /**
-     * Gets the RelativeHumidity
+     * Gets the relative humidity
      */
     public function getRelativeHumidity(): ?int
     {
@@ -118,7 +118,7 @@ final class WeatherConditionsMessage extends Message
     }
 
     /**
-     * Gets the Location
+     * Gets the location
      */
     public function getLocation(): ?string
     {
@@ -126,7 +126,7 @@ final class WeatherConditionsMessage extends Message
     }
 
     /**
-     * Gets the ObservedAtTime
+     * Gets the observed at time
      */
     public function getObservedAtTime(): ?DateTime
     {
@@ -134,7 +134,7 @@ final class WeatherConditionsMessage extends Message
     }
 
     /**
-     * Gets the ObservedLocationLat
+     * Gets the observed location lat
      */
     public function getObservedLocationLat(): ?int
     {
@@ -142,7 +142,7 @@ final class WeatherConditionsMessage extends Message
     }
 
     /**
-     * Gets the ObservedLocationLong
+     * Gets the observed location long
      */
     public function getObservedLocationLong(): ?int
     {
@@ -150,7 +150,7 @@ final class WeatherConditionsMessage extends Message
     }
 
     /**
-     * Gets the DayOfWeek
+     * Gets the day of week
      */
     public function getDayOfWeek(): ?int
     {
@@ -158,7 +158,7 @@ final class WeatherConditionsMessage extends Message
     }
 
     /**
-     * Gets the HighTemperature
+     * Gets the high temperature
      */
     public function getHighTemperature(): ?int
     {
@@ -166,7 +166,7 @@ final class WeatherConditionsMessage extends Message
     }
 
     /**
-     * Gets the LowTemperature
+     * Gets the low temperature
      */
     public function getLowTemperature(): ?int
     {

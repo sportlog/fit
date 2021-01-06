@@ -36,7 +36,7 @@ final class AntTxMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -44,7 +44,7 @@ final class AntTxMessage extends Message
     }
 
     /**
-     * Gets the FractionalTimestamp
+     * Gets the fractional timestamp
      */
     public function getFractionalTimestamp(): ?int
     {
@@ -52,23 +52,23 @@ final class AntTxMessage extends Message
     }
 
     /**
-     * Gets the MesgId
+     * Gets the mesg id
      */
-    public function getMesgId(): ?int
+    public function getMesgId(): mixed
     {
         return $this->getValue(1);
     }
 
     /**
-     * Gets the MesgData
+     * Gets the mesg data
      */
-    public function getMesgData(): ?int
+    public function getMesgData(): mixed
     {
         return $this->getValue(2);
     }
 
     /**
-     * Gets the ChannelNumber
+     * Gets the channel number
      */
     public function getChannelNumber(): ?int
     {
@@ -76,9 +76,9 @@ final class AntTxMessage extends Message
     }
 
     /**
-     * Gets the Data
+     * Gets the data
      */
-    public function getData(): ?int
+    public function getData(): mixed
     {
         return $this->getValue(4);
     }

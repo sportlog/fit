@@ -35,7 +35,7 @@ final class CameraEventMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -43,7 +43,7 @@ final class CameraEventMessage extends Message
     }
 
     /**
-     * Gets the TimestampMs
+     * Gets the timestamp ms
      */
     public function getTimestampMs(): ?int
     {
@@ -51,7 +51,7 @@ final class CameraEventMessage extends Message
     }
 
     /**
-     * Gets the CameraEventType
+     * Gets the camera event type
      */
     public function getCameraEventType(): ?int
     {
@@ -59,7 +59,7 @@ final class CameraEventMessage extends Message
     }
 
     /**
-     * Gets the CameraFileUuid
+     * Gets the camera file uuid
      */
     public function getCameraFileUuid(): ?string
     {
@@ -67,7 +67,7 @@ final class CameraEventMessage extends Message
     }
 
     /**
-     * Gets the CameraOrientation
+     * Gets the camera orientation
      */
     public function getCameraOrientation(): ?int
     {

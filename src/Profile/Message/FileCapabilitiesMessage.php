@@ -36,7 +36,7 @@ final class FileCapabilitiesMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -44,7 +44,7 @@ final class FileCapabilitiesMessage extends Message
     }
 
     /**
-     * Gets the Type
+     * Gets the type
      */
     public function getType(): ?int
     {
@@ -52,7 +52,7 @@ final class FileCapabilitiesMessage extends Message
     }
 
     /**
-     * Gets the Flags
+     * Gets the flags
      */
     public function getFlags(): ?int
     {
@@ -60,7 +60,7 @@ final class FileCapabilitiesMessage extends Message
     }
 
     /**
-     * Gets the Directory
+     * Gets the directory
      */
     public function getDirectory(): ?string
     {
@@ -68,7 +68,7 @@ final class FileCapabilitiesMessage extends Message
     }
 
     /**
-     * Gets the MaxCount
+     * Gets the max count
      */
     public function getMaxCount(): ?int
     {
@@ -76,7 +76,7 @@ final class FileCapabilitiesMessage extends Message
     }
 
     /**
-     * Gets the MaxSize
+     * Gets the max size
      */
     public function getMaxSize(): ?int
     {

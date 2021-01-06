@@ -39,7 +39,7 @@ final class MagnetometerDataMessage extends Message
     }
 
     /**
-     * Gets the Timestamp
+     * Gets the timestamp
      */
     public function getTimestamp(): ?DateTime
     {
@@ -47,7 +47,7 @@ final class MagnetometerDataMessage extends Message
     }
 
     /**
-     * Gets the TimestampMs
+     * Gets the timestamp ms
      */
     public function getTimestampMs(): ?int
     {
@@ -55,7 +55,7 @@ final class MagnetometerDataMessage extends Message
     }
 
     /**
-     * Gets the SampleTimeOffset
+     * Gets the sample time offset
      */
     public function getSampleTimeOffset(): ?int
     {
@@ -63,7 +63,7 @@ final class MagnetometerDataMessage extends Message
     }
 
     /**
-     * Gets the MagX
+     * Gets the mag x
      */
     public function getMagX(): ?int
     {
@@ -71,7 +71,7 @@ final class MagnetometerDataMessage extends Message
     }
 
     /**
-     * Gets the MagY
+     * Gets the mag y
      */
     public function getMagY(): ?int
     {
@@ -79,7 +79,7 @@ final class MagnetometerDataMessage extends Message
     }
 
     /**
-     * Gets the MagZ
+     * Gets the mag z
      */
     public function getMagZ(): ?int
     {
@@ -87,7 +87,7 @@ final class MagnetometerDataMessage extends Message
     }
 
     /**
-     * Gets the CalibratedMagX
+     * Gets the calibrated mag x
      */
     public function getCalibratedMagX(): ?float
     {
@@ -95,7 +95,7 @@ final class MagnetometerDataMessage extends Message
     }
 
     /**
-     * Gets the CalibratedMagY
+     * Gets the calibrated mag y
      */
     public function getCalibratedMagY(): ?float
     {
@@ -103,7 +103,7 @@ final class MagnetometerDataMessage extends Message
     }
 
     /**
-     * Gets the CalibratedMagZ
+     * Gets the calibrated mag z
      */
     public function getCalibratedMagZ(): ?float
     {

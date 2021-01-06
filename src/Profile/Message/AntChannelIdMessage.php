@@ -35,7 +35,7 @@ final class AntChannelIdMessage extends Message
     }
 
     /**
-     * Gets the ChannelNumber
+     * Gets the channel number
      */
     public function getChannelNumber(): ?int
     {
@@ -43,7 +43,7 @@ final class AntChannelIdMessage extends Message
     }
 
     /**
-     * Gets the DeviceType
+     * Gets the device type
      */
     public function getDeviceType(): ?int
     {
@@ -51,7 +51,7 @@ final class AntChannelIdMessage extends Message
     }
 
     /**
-     * Gets the DeviceNumber
+     * Gets the device number
      */
     public function getDeviceNumber(): ?int
     {
@@ -59,7 +59,7 @@ final class AntChannelIdMessage extends Message
     }
 
     /**
-     * Gets the TransmissionType
+     * Gets the transmission type
      */
     public function getTransmissionType(): ?int
     {
@@ -67,7 +67,7 @@ final class AntChannelIdMessage extends Message
     }
 
     /**
-     * Gets the DeviceIndex
+     * Gets the device index
      */
     public function getDeviceIndex(): ?int
     {

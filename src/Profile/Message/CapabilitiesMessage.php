@@ -34,7 +34,7 @@ final class CapabilitiesMessage extends Message
     }
 
     /**
-     * Gets the Languages
+     * Gets the languages
      */
     public function getLanguages(): ?int
     {
@@ -42,7 +42,7 @@ final class CapabilitiesMessage extends Message
     }
 
     /**
-     * Gets the Sports
+     * Gets the sports
      */
     public function getSports(): ?int
     {
@@ -50,7 +50,7 @@ final class CapabilitiesMessage extends Message
     }
 
     /**
-     * Gets the WorkoutsSupported
+     * Gets the workouts supported
      */
     public function getWorkoutsSupported(): ?int
     {
@@ -58,7 +58,7 @@ final class CapabilitiesMessage extends Message
     }
 
     /**
-     * Gets the ConnectivitySupported
+     * Gets the connectivity supported
      */
     public function getConnectivitySupported(): ?int
     {

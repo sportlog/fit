@@ -59,7 +59,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the MessageIndex
+     * Gets the message index
      */
     public function getMessageIndex(): ?int
     {
@@ -67,7 +67,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the FriendlyName
+     * Gets the friendly name
      */
     public function getFriendlyName(): ?string
     {
@@ -75,7 +75,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the Gender
+     * Gets the gender
      */
     public function getGender(): ?int
     {
@@ -83,7 +83,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the Age
+     * Gets the age
      */
     public function getAge(): ?int
     {
@@ -91,7 +91,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the Height
+     * Gets the height
      */
     public function getHeight(): ?int
     {
@@ -99,7 +99,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the Weight
+     * Gets the weight
      */
     public function getWeight(): ?int
     {
@@ -107,7 +107,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the Language
+     * Gets the language
      */
     public function getLanguage(): ?int
     {
@@ -115,7 +115,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the ElevSetting
+     * Gets the elev setting
      */
     public function getElevSetting(): ?int
     {
@@ -123,7 +123,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the WeightSetting
+     * Gets the weight setting
      */
     public function getWeightSetting(): ?int
     {
@@ -131,7 +131,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the RestingHeartRate
+     * Gets the resting heart rate
      */
     public function getRestingHeartRate(): ?int
     {
@@ -139,7 +139,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the DefaultMaxRunningHeartRate
+     * Gets the default max running heart rate
      */
     public function getDefaultMaxRunningHeartRate(): ?int
     {
@@ -147,7 +147,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the DefaultMaxBikingHeartRate
+     * Gets the default max biking heart rate
      */
     public function getDefaultMaxBikingHeartRate(): ?int
     {
@@ -155,7 +155,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the DefaultMaxHeartRate
+     * Gets the default max heart rate
      */
     public function getDefaultMaxHeartRate(): ?int
     {
@@ -163,7 +163,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the HrSetting
+     * Gets the hr setting
      */
     public function getHrSetting(): ?int
     {
@@ -171,7 +171,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the SpeedSetting
+     * Gets the speed setting
      */
     public function getSpeedSetting(): ?int
     {
@@ -179,7 +179,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the DistSetting
+     * Gets the dist setting
      */
     public function getDistSetting(): ?int
     {
@@ -187,7 +187,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the PowerSetting
+     * Gets the power setting
      */
     public function getPowerSetting(): ?int
     {
@@ -195,7 +195,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the ActivityClass
+     * Gets the activity class
      */
     public function getActivityClass(): ?int
     {
@@ -203,7 +203,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the PositionSetting
+     * Gets the position setting
      */
     public function getPositionSetting(): ?int
     {
@@ -211,7 +211,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the TemperatureSetting
+     * Gets the temperature setting
      */
     public function getTemperatureSetting(): ?int
     {
@@ -219,7 +219,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the LocalId
+     * Gets the local id
      */
     public function getLocalId(): ?int
     {
@@ -227,15 +227,15 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the GlobalId
+     * Gets the global id
      */
-    public function getGlobalId(): ?int
+    public function getGlobalId(): mixed
     {
         return $this->getValue(23);
     }
 
     /**
-     * Gets the WakeTime
+     * Gets the wake time
      */
     public function getWakeTime(): ?int
     {
@@ -243,7 +243,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the SleepTime
+     * Gets the sleep time
      */
     public function getSleepTime(): ?int
     {
@@ -251,7 +251,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the HeightSetting
+     * Gets the height setting
      */
     public function getHeightSetting(): ?int
     {
@@ -259,7 +259,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the UserRunningStepLength
+     * Gets the user running step length
      */
     public function getUserRunningStepLength(): ?int
     {
@@ -267,7 +267,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the UserWalkingStepLength
+     * Gets the user walking step length
      */
     public function getUserWalkingStepLength(): ?int
     {
@@ -275,7 +275,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the DepthSetting
+     * Gets the depth setting
      */
     public function getDepthSetting(): ?int
     {
@@ -283,7 +283,7 @@ final class UserProfileMessage extends Message
     }
 
     /**
-     * Gets the DiveCount
+     * Gets the dive count
      */
     public function getDiveCount(): ?int
     {
