@@ -28,7 +28,7 @@ abstract class Message implements IteratorAggregate, Stringable
 {
     private static array $reflectionProperties = [];
     /**
-     * Field associated with this message
+     * Fields associated with this message.
      * 
      * @var Field[]
      */
@@ -47,9 +47,7 @@ abstract class Message implements IteratorAggregate, Stringable
      */
     public function __construct(private string $name, private int $number)
     {
-        foreach (self::getReflectionProperties(static::class) as $field) {
-            $this->addField($field);
-        }
+        $this->fields = self::getReflectionProperties(static::class);
     }
 
     private static function getReflectionProperties(string $class): array
@@ -60,18 +58,14 @@ abstract class Message implements IteratorAggregate, Stringable
 
             $fields = [];
             foreach ($attributes as $attribute) {
-                $fields[] = $attribute->newInstance();
+                $field = $attribute->newInstance();
+                $fields[$field->getNumber()] = $field;
             }
 
             self::$reflectionProperties[$class] = $fields;
         }
 
         return self::$reflectionProperties[$class];
-    }
-
-    public function addField(Field $field): void
-    {
-        $this->fields[$field->getNumber()] = $field;
     }
 
     /**
