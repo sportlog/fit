@@ -27,7 +27,6 @@ use FIT\Profile\Profile;
  * Current limitations:
  * - does not handle compress time stamp headers correctly
  * - ignores subfields
- * - does not handle accumulated fields
  * - no profile validation (allowed messages according to file type)
  * - ...and many more
  */
@@ -50,10 +49,11 @@ class Decoder
     }
 
     /**
-     * Reads the file and returns the decoded array of messages
+     * Reads the file and returns the decoded messages.
      *
      * @param string $file
      * @return MessageList
+     * @throws Exception 
      */
     public function read(string $file): MessageList
     {
@@ -67,7 +67,7 @@ class Decoder
             $reader = new IOReader($handle);
             $header = $this->getHeader($reader);
             $this->logger->info("Header: " . print_r($header, true));
-            return $this->readRecords($header, $reader);
+            return $this->readMessages($header, $reader);
         } catch (Exception $ex) {
             $this->logger->error("Error while decoding", ['exception' => $ex]);
             throw $ex;
@@ -77,11 +77,13 @@ class Decoder
         }
     }
 
-    private function readRecords(array $header, IOReader $reader): MessageList
+    private function readMessages(array $header, IOReader $reader): MessageList
     {
+        // Array to store all message definitions
         $messageTypeDefinitions = [];
         $records = new MessageList();
         while ($reader->getOffset() - $header['header_size'] < $header['data_size']) {
+            // Read the record header
             $recordHeader = $this->nextRecordHeader($reader);
             $localMessagType = $recordHeader['local_message_type'];
 
@@ -96,6 +98,7 @@ class Decoder
                     break;
 
                 case self::MESSAGE_TYPE_DATA:
+                    // data message
                     if (!isset($messageTypeDefinitions[$localMessagType])) {
                         throw new Exception("No message definition for local message type '{$localMessagType}' found.");
                     }
@@ -111,6 +114,14 @@ class Decoder
         return $records;
     }
 
+    /**
+     * Creates the message and assigns the values for all fields in the
+     * definition. Invalid values are not set 
+     *
+     * @param array $definition
+     * @param IOReader $reader
+     * @return Message
+     */
     private function nextRecordData(array $definition, IOReader $reader): Message
     {
         // Create the message for the global message number
@@ -135,6 +146,8 @@ class Decoder
             $order = $definition['byte_order'];
             $fieldValue = null;
 
+            // For String and Byte data type always read all bytes at once.
+            // All other types handle multiple values as arrays of their underlying FIT base type.
             switch ($fieldDefinition['base_type']) {
                 case FitBaseType::STRING:
                     $fieldValue = $reader->readString8($size);
@@ -170,6 +183,15 @@ class Decoder
         return $message;
     }
 
+    /**
+     * Read the value according to it's base type.
+     *
+     * @param FitBaseTypeDefinition $fitBaseType
+     * @param array $fieldDefinition
+     * @param integer $order
+     * @param IOReader $reader
+     * @return mixed Returns the read value, or null if the value is invalid.
+     */
     private function readValue(FitBaseTypeDefinition $fitBaseType, array $fieldDefinition, int $order, IOReader $reader): mixed
     {
         $bigEndian = $order === IOReader::BIG_ENDIAN_ORDER;
@@ -260,7 +282,6 @@ class Decoder
 
         if ($hasDeveloperData) {
             // Developer data is present as defined in the header
-
             // Number of Self Descriptive fields in the Data Message
             $devFieldNumber =  $reader->readInt8();
             $devFieldDefinitions = [];

@@ -75,7 +75,7 @@ class FitBaseTypeDefinition {
                 return true;
 
             default:
-                throw new Exception("Field:IsNumeric - Unexpected Fit Type" . $this->getType());
+                throw new Exception("IsNumeric - Unexpected Fit Type" . $this->getType());
         }
     }
 }

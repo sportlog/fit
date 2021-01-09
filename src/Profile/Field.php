@@ -19,7 +19,7 @@ use FIT\FitBaseTypeDefinition;
  * Describes a message field.
  */
 #[Attribute(Attribute::IS_REPEATABLE | Attribute::TARGET_CLASS)]
-class Field
+final class Field
 {
     private FitBaseTypeDefinition $typeDefinition;
 
@@ -35,39 +35,94 @@ class Field
     ) {
     }
 
+    /**
+     * The unique field number of the message.
+     *
+     * @return integer
+     */
     public function getNumber(): int
     {
         return $this->num;
     }
+
+    /**
+     * The field name.
+     *
+     * @return string
+     */
     public function getName(): string
     {
         return $this->name;
     }
+
+    /**
+     * The field type.
+     *
+     * @return integer
+     */
     public function getType(): int
     {
         return $this->type;
     }
+
+    /**
+     * The scale.
+     *
+     * @return float
+     */
     public function getScale(): float
     {
         return $this->scale;
     }
+
+    /**
+     * The offset.
+     *
+     * @return float
+     */
     public function getOffset(): float
     {
         return $this->offset;
     }
+
+    /**
+     * The units.
+     *
+     * @return string
+     */
     public function getUnits(): string
     {
         return $this->units;
     }
+
+    /**
+     * Indicates if the field is accumulated.
+     *
+     * @return boolean
+     */
     public function getAccumulated(): bool
     {
         return $this->accumulated;
     }
+
+    /**
+     * Gets the profile type.
+     * The profile type is used to determine the
+     * PHP return type of the properties in the
+     * generated message.
+     *
+     * @return string
+     */
     public function getProfileType(): string
     {
         return $this->profileType;
     }
 
+    /**
+     * Gets the field base definition.
+     *
+     * @return FitBaseTypeDefinition
+     */
     public function getTypeDefinition(): FitBaseTypeDefinition
     {
         return $this->typeDefinition ?? $this->setTypeDefinition();

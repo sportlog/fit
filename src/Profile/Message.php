@@ -14,7 +14,6 @@ namespace FIT\Profile;
 use ArrayIterator;
 use DateTime;
 use Exception;
-use FIT\FitBaseType;
 use FIT\FitBaseTypeDefinition;
 use IteratorAggregate;
 use ReflectionClass;
@@ -132,6 +131,22 @@ abstract class Message implements IteratorAggregate, Stringable
         return isset($this->fields[$fieldNumber]) ? $this->fields[$fieldNumber] : null;
     }
 
+    /**
+     * Gets an iterator.
+     *
+     * {@inheritDoc}
+     * @see IteratorAggregate::getIterator()
+     */
+    public function getIterator()
+    {
+        return new ArrayIterator($this->values);
+    }
+
+    public function __toString()
+    {
+        return sprintf('%s (%s)', $this->getMessageName(), $this->getGlobalMessageNumber());
+    }
+
     private function convertValueToFieldType(Field $field, mixed $value): mixed
     {
         if ($field->getTypeDefinition()->isNumeric()) {
@@ -156,21 +171,5 @@ abstract class Message implements IteratorAggregate, Stringable
             default:
                 return $value;
         }
-    }
-
-    /**
-     * Gets an iterator.
-     *
-     * {@inheritDoc}
-     * @see IteratorAggregate::getIterator()
-     */
-    public function getIterator()
-    {
-        return new ArrayIterator($this->values);
-    }
-
-    public function __toString()
-    {
-        return sprintf('%s (%s)', $this->getMessageName(), $this->getGlobalMessageNumber());
     }
 }
