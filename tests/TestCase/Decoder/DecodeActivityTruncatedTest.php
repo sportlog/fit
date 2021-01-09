@@ -10,6 +10,7 @@ declare (strict_types = 1);
 namespace FIT\Test\TestCase\Decoder;
 
 use FIT\Decoder;
+use FIT\FileType;
 use FIT\Profile\Message\EventMessage;
 use FIT\Profile\Message\FileIdMessage;
 use FIT\Profile\Message\RecordMessage;
@@ -26,6 +27,8 @@ final class DecodeActivityTruncatedTest extends TestCase {
         $messages = $decoder->read(FilePath::getPathTo('activity_truncated.fit'));
 
         $this->assertNotNull($messages);
+        $this->assertCount(16, $messages);
+        $this->assertEquals(FileType::Activity, $messages->getFileType());
         $this->assertCount(1, $messages->getMessages(FileIdMessage::class));
         $this->assertCount(1, $messages->getMessages(EventMessage::class));
         $this->assertCount(14, $messages->getMessages(RecordMessage::class));

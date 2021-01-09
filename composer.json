@@ -9,8 +9,7 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Johannes Aberidis",
-      "homepage": "https://sportlog.at/"
+      "name": "Johannes Aberidis"
     }
   ],
   "autoload": {
@@ -31,6 +30,7 @@
     "nette/php-generator": "^3.5"
   },
   "require": {
+    "php": ">=8.0",
     "psr/log": "^1.1"
   }
 }

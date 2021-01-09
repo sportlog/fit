@@ -47,6 +47,13 @@ class MessageList implements IteratorAggregate, Countable
         return isset($this->messages[$classId]) ? $this->messages[$classId] : [];
     }
 
+    /**
+     * Adds a new mesage. Uses the class id of the message
+     * as key.
+     *
+     * @param Message $message
+     * @return void
+     */
     public function addMessage(Message $message): void
     {
         $classId = $message::class;
@@ -57,8 +64,18 @@ class MessageList implements IteratorAggregate, Countable
         }
     }
 
+    /**
+     * Returns the total message count.
+     *
+     * @return integer
+     */
     public function count(): int {
-        return count($this->messages);
+        $cnt = 0;
+        foreach ($this->messages as $messageList) {
+            $cnt += count($messageList);
+        }
+
+        return $cnt;
     }
 
      /**
