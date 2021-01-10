@@ -42,3 +42,4 @@ if (count($recordMessages) > 0) {
    $lastRecordMessage = $recMessages[count($recMessages)-1];
    echo "Total distance (m): " . $lastRecordMessage->getDistance();
 }
+```
