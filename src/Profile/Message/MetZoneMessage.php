@@ -52,7 +52,7 @@ final class MetZoneMessage extends Message
     /**
      * Gets the calories
      */
-    public function getCalories(): int|null
+    public function getCalories(): float|null
     {
         return $this->getFieldValue(2);
     }
@@ -60,7 +60,7 @@ final class MetZoneMessage extends Message
     /**
      * Gets the fat calories
      */
-    public function getFatCalories(): int|null
+    public function getFatCalories(): float|null
     {
         return $this->getFieldValue(3);
     }

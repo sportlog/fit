@@ -43,7 +43,7 @@ final class SoftwareMessage extends Message
     /**
      * Gets the version
      */
-    public function getVersion(): int|null
+    public function getVersion(): float|null
     {
         return $this->getFieldValue(3);
     }

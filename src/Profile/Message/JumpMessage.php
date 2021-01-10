@@ -90,7 +90,7 @@ final class JumpMessage extends Message
     /**
      * Gets the position lat
      */
-    public function getPositionLat(): int|float|null
+    public function getPositionLat(): int|null
     {
         return $this->getFieldValue(5);
     }
@@ -98,7 +98,7 @@ final class JumpMessage extends Message
     /**
      * Gets the position long
      */
-    public function getPositionLong(): int|float|null
+    public function getPositionLong(): int|null
     {
         return $this->getFieldValue(6);
     }
@@ -106,7 +106,7 @@ final class JumpMessage extends Message
     /**
      * Gets the speed
      */
-    public function getSpeed(): int|null
+    public function getSpeed(): float|null
     {
         return $this->getFieldValue(7);
     }
@@ -114,7 +114,7 @@ final class JumpMessage extends Message
     /**
      * Gets the enhanced speed
      */
-    public function getEnhancedSpeed(): int|float|null
+    public function getEnhancedSpeed(): float|null
     {
         return $this->getFieldValue(8);
     }

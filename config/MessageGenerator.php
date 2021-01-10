@@ -136,7 +136,7 @@ class MessageGenerator
                 $profileType = substr($profileType, strlen("Type."));
                 $name = substr($name, 1, strlen($name) - 2);
                 $units = substr($units, 1, strlen($units) - 2);
-                $phpType = $this->getPhpTypeFromProfileType($profileType);
+                $phpType = $this->getPhpTypeFromProfileType($profileType, (float)$scale);
 
                 /** @var ClassType $class */
                 $class->addAttribute(Field::class, [
@@ -197,7 +197,7 @@ class MessageGenerator
         return $factory;
     }
 
-    private function getPhpTypeFromProfileType(string $profileType): string
+    private function getPhpTypeFromProfileType(string $profileType, float $scale): string
     {
         switch ($profileType) {
             case ProfileType::BOOL:
@@ -208,12 +208,13 @@ class MessageGenerator
             case ProfileType::UINT16:
             case ProfileType::SINT16:
             case ProfileType::UINT16Z:
-                return Type::INT;
-
             case ProfileType::UINT32:
             case ProfileType::UINT32Z;
             case ProfileType::SINT32:
-                return join("|", [Type::INT, Type::FLOAT]);
+                // The raw value will be divided through the scale.
+                // So if scale is not the default (1.0), this might
+                // result in a float.
+                return $scale === 1.0 ? Type::INT : Type::FLOAT;
 
             case ProfileType::LOCALDATETIME:
             case ProfileType::DATETIME:

@@ -78,7 +78,7 @@ final class FileCapabilitiesMessage extends Message
     /**
      * Gets the max size
      */
-    public function getMaxSize(): int|float|null
+    public function getMaxSize(): int|null
     {
         return $this->getFieldValue(4);
     }

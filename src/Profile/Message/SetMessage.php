@@ -51,7 +51,7 @@ final class SetMessage extends Message
     /**
      * Gets the duration
      */
-    public function getDuration(): int|float|null
+    public function getDuration(): float|null
     {
         return $this->getFieldValue(0);
     }
@@ -67,7 +67,7 @@ final class SetMessage extends Message
     /**
      * Gets the weight
      */
-    public function getWeight(): int|null
+    public function getWeight(): float|null
     {
         return $this->getFieldValue(4);
     }

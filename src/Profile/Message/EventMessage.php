@@ -79,7 +79,7 @@ final class EventMessage extends Message
     /**
      * Gets the data
      */
-    public function getData(): int|float|null
+    public function getData(): int|null
     {
         return $this->getFieldValue(3);
     }

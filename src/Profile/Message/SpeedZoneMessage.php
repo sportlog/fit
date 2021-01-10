@@ -43,7 +43,7 @@ final class SpeedZoneMessage extends Message
     /**
      * Gets the high value
      */
-    public function getHighValue(): int|null
+    public function getHighValue(): float|null
     {
         return $this->getFieldValue(0);
     }

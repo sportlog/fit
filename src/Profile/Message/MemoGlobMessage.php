@@ -36,7 +36,7 @@ final class MemoGlobMessage extends Message
     /**
      * Gets the part index
      */
-    public function getPartIndex(): int|float|null
+    public function getPartIndex(): int|null
     {
         return $this->getFieldValue(250);
     }

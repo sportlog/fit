@@ -69,7 +69,7 @@ final class DiveSummaryMessage extends Message
     /**
      * Gets the avg depth
      */
-    public function getAvgDepth(): int|float|null
+    public function getAvgDepth(): float|null
     {
         return $this->getFieldValue(2);
     }
@@ -77,7 +77,7 @@ final class DiveSummaryMessage extends Message
     /**
      * Gets the max depth
      */
-    public function getMaxDepth(): int|float|null
+    public function getMaxDepth(): float|null
     {
         return $this->getFieldValue(3);
     }
@@ -85,7 +85,7 @@ final class DiveSummaryMessage extends Message
     /**
      * Gets the surface interval
      */
-    public function getSurfaceInterval(): int|float|null
+    public function getSurfaceInterval(): int|null
     {
         return $this->getFieldValue(4);
     }
@@ -133,7 +133,7 @@ final class DiveSummaryMessage extends Message
     /**
      * Gets the dive number
      */
-    public function getDiveNumber(): int|float|null
+    public function getDiveNumber(): int|null
     {
         return $this->getFieldValue(10);
     }
@@ -141,7 +141,7 @@ final class DiveSummaryMessage extends Message
     /**
      * Gets the bottom time
      */
-    public function getBottomTime(): int|float|null
+    public function getBottomTime(): float|null
     {
         return $this->getFieldValue(11);
     }

@@ -47,7 +47,7 @@ final class ClimbProMessage extends Message
     /**
      * Gets the position lat
      */
-    public function getPositionLat(): int|float|null
+    public function getPositionLat(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -55,7 +55,7 @@ final class ClimbProMessage extends Message
     /**
      * Gets the position long
      */
-    public function getPositionLong(): int|float|null
+    public function getPositionLong(): int|null
     {
         return $this->getFieldValue(1);
     }

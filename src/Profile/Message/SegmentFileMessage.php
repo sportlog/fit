@@ -65,7 +65,7 @@ final class SegmentFileMessage extends Message
     /**
      * Gets the user profile primary key
      */
-    public function getUserProfilePrimaryKey(): int|float|null
+    public function getUserProfilePrimaryKey(): int|null
     {
         return $this->getFieldValue(4);
     }
@@ -81,7 +81,7 @@ final class SegmentFileMessage extends Message
     /**
      * Gets the leader group primary key
      */
-    public function getLeaderGroupPrimaryKey(): int|float|null
+    public function getLeaderGroupPrimaryKey(): int|null
     {
         return $this->getFieldValue(8);
     }
@@ -89,7 +89,7 @@ final class SegmentFileMessage extends Message
     /**
      * Gets the leader activity id
      */
-    public function getLeaderActivityId(): int|float|null
+    public function getLeaderActivityId(): int|null
     {
         return $this->getFieldValue(9);
     }

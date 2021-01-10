@@ -79,7 +79,7 @@ final class VideoClipMessage extends Message
     /**
      * Gets the clip start
      */
-    public function getClipStart(): int|float|null
+    public function getClipStart(): int|null
     {
         return $this->getFieldValue(6);
     }
@@ -87,7 +87,7 @@ final class VideoClipMessage extends Message
     /**
      * Gets the clip end
      */
-    public function getClipEnd(): int|float|null
+    public function getClipEnd(): int|null
     {
         return $this->getFieldValue(7);
     }

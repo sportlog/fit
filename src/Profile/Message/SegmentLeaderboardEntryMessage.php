@@ -63,7 +63,7 @@ final class SegmentLeaderboardEntryMessage extends Message
     /**
      * Gets the group primary key
      */
-    public function getGroupPrimaryKey(): int|float|null
+    public function getGroupPrimaryKey(): int|null
     {
         return $this->getFieldValue(2);
     }
@@ -71,7 +71,7 @@ final class SegmentLeaderboardEntryMessage extends Message
     /**
      * Gets the activity id
      */
-    public function getActivityId(): int|float|null
+    public function getActivityId(): int|null
     {
         return $this->getFieldValue(3);
     }
@@ -79,7 +79,7 @@ final class SegmentLeaderboardEntryMessage extends Message
     /**
      * Gets the segment time
      */
-    public function getSegmentTime(): int|float|null
+    public function getSegmentTime(): float|null
     {
         return $this->getFieldValue(4);
     }

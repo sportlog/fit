@@ -93,7 +93,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the height
      */
-    public function getHeight(): int|null
+    public function getHeight(): float|null
     {
         return $this->getFieldValue(3);
     }
@@ -101,7 +101,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the weight
      */
-    public function getWeight(): int|null
+    public function getWeight(): float|null
     {
         return $this->getFieldValue(4);
     }
@@ -261,7 +261,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the user running step length
      */
-    public function getUserRunningStepLength(): int|null
+    public function getUserRunningStepLength(): float|null
     {
         return $this->getFieldValue(31);
     }
@@ -269,7 +269,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the user walking step length
      */
-    public function getUserWalkingStepLength(): int|null
+    public function getUserWalkingStepLength(): float|null
     {
         return $this->getFieldValue(32);
     }
@@ -285,7 +285,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the dive count
      */
-    public function getDiveCount(): int|float|null
+    public function getDiveCount(): int|null
     {
         return $this->getFieldValue(49);
     }

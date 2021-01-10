@@ -73,7 +73,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the user profile primary key
      */
-    public function getUserProfilePrimaryKey(): int|float|null
+    public function getUserProfilePrimaryKey(): int|null
     {
         return $this->getFieldValue(4);
     }
@@ -81,7 +81,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the device id
      */
-    public function getDeviceId(): int|float|null
+    public function getDeviceId(): int|null
     {
         return $this->getFieldValue(5);
     }

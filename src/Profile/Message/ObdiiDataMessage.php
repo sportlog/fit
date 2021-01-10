@@ -89,7 +89,7 @@ final class ObdiiDataMessage extends Message
     /**
      * Gets the system time
      */
-    public function getSystemTime(): int|float|null
+    public function getSystemTime(): int|null
     {
         return $this->getFieldValue(5);
     }

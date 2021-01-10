@@ -110,7 +110,7 @@ final class DiveSettingsMessage extends Message
     /**
      * Gets the po2 warn
      */
-    public function getPo2Warn(): int|null
+    public function getPo2Warn(): float|null
     {
         return $this->getFieldValue(6);
     }
@@ -118,7 +118,7 @@ final class DiveSettingsMessage extends Message
     /**
      * Gets the po2 critical
      */
-    public function getPo2Critical(): int|null
+    public function getPo2Critical(): float|null
     {
         return $this->getFieldValue(7);
     }
@@ -126,7 +126,7 @@ final class DiveSettingsMessage extends Message
     /**
      * Gets the po2 deco
      */
-    public function getPo2Deco(): int|null
+    public function getPo2Deco(): float|null
     {
         return $this->getFieldValue(8);
     }
@@ -150,7 +150,7 @@ final class DiveSettingsMessage extends Message
     /**
      * Gets the bottom time
      */
-    public function getBottomTime(): int|float|null
+    public function getBottomTime(): int|null
     {
         return $this->getFieldValue(11);
     }
@@ -166,7 +166,7 @@ final class DiveSettingsMessage extends Message
     /**
      * Gets the apnea countdown time
      */
-    public function getApneaCountdownTime(): int|float|null
+    public function getApneaCountdownTime(): int|null
     {
         return $this->getFieldValue(13);
     }

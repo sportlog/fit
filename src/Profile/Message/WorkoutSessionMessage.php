@@ -79,7 +79,7 @@ final class WorkoutSessionMessage extends Message
     /**
      * Gets the pool length
      */
-    public function getPoolLength(): int|null
+    public function getPoolLength(): float|null
     {
         return $this->getFieldValue(4);
     }

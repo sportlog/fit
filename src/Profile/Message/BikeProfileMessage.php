@@ -96,7 +96,7 @@ final class BikeProfileMessage extends Message
     /**
      * Gets the odometer
      */
-    public function getOdometer(): int|float|null
+    public function getOdometer(): float|null
     {
         return $this->getFieldValue(3);
     }
@@ -136,7 +136,7 @@ final class BikeProfileMessage extends Message
     /**
      * Gets the custom wheelsize
      */
-    public function getCustomWheelsize(): int|null
+    public function getCustomWheelsize(): float|null
     {
         return $this->getFieldValue(8);
     }
@@ -144,7 +144,7 @@ final class BikeProfileMessage extends Message
     /**
      * Gets the auto wheelsize
      */
-    public function getAutoWheelsize(): int|null
+    public function getAutoWheelsize(): float|null
     {
         return $this->getFieldValue(9);
     }
@@ -152,7 +152,7 @@ final class BikeProfileMessage extends Message
     /**
      * Gets the bike weight
      */
-    public function getBikeWeight(): int|null
+    public function getBikeWeight(): float|null
     {
         return $this->getFieldValue(10);
     }
@@ -160,7 +160,7 @@ final class BikeProfileMessage extends Message
     /**
      * Gets the power cal factor
      */
-    public function getPowerCalFactor(): int|null
+    public function getPowerCalFactor(): float|null
     {
         return $this->getFieldValue(11);
     }
@@ -224,7 +224,7 @@ final class BikeProfileMessage extends Message
     /**
      * Gets the crank length
      */
-    public function getCrankLength(): int|null
+    public function getCrankLength(): float|null
     {
         return $this->getFieldValue(19);
     }

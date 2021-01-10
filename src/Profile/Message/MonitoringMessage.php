@@ -85,7 +85,7 @@ final class MonitoringMessage extends Message
     /**
      * Gets the distance
      */
-    public function getDistance(): int|float|null
+    public function getDistance(): float|null
     {
         return $this->getFieldValue(2);
     }
@@ -93,7 +93,7 @@ final class MonitoringMessage extends Message
     /**
      * Gets the cycles
      */
-    public function getCycles(): int|float|null
+    public function getCycles(): float|null
     {
         return $this->getFieldValue(3);
     }
@@ -101,7 +101,7 @@ final class MonitoringMessage extends Message
     /**
      * Gets the active time
      */
-    public function getActiveTime(): int|float|null
+    public function getActiveTime(): float|null
     {
         return $this->getFieldValue(4);
     }
@@ -165,7 +165,7 @@ final class MonitoringMessage extends Message
     /**
      * Gets the temperature
      */
-    public function getTemperature(): int|null
+    public function getTemperature(): float|null
     {
         return $this->getFieldValue(12);
     }
@@ -173,7 +173,7 @@ final class MonitoringMessage extends Message
     /**
      * Gets the temperature min
      */
-    public function getTemperatureMin(): int|null
+    public function getTemperatureMin(): float|null
     {
         return $this->getFieldValue(14);
     }
@@ -181,7 +181,7 @@ final class MonitoringMessage extends Message
     /**
      * Gets the temperature max
      */
-    public function getTemperatureMax(): int|null
+    public function getTemperatureMax(): float|null
     {
         return $this->getFieldValue(15);
     }
@@ -237,7 +237,7 @@ final class MonitoringMessage extends Message
     /**
      * Gets the intensity
      */
-    public function getIntensity(): int|null
+    public function getIntensity(): float|null
     {
         return $this->getFieldValue(28);
     }
@@ -253,7 +253,7 @@ final class MonitoringMessage extends Message
     /**
      * Gets the duration
      */
-    public function getDuration(): int|float|null
+    public function getDuration(): int|null
     {
         return $this->getFieldValue(30);
     }
@@ -261,7 +261,7 @@ final class MonitoringMessage extends Message
     /**
      * Gets the ascent
      */
-    public function getAscent(): int|float|null
+    public function getAscent(): float|null
     {
         return $this->getFieldValue(31);
     }
@@ -269,7 +269,7 @@ final class MonitoringMessage extends Message
     /**
      * Gets the descent
      */
-    public function getDescent(): int|float|null
+    public function getDescent(): float|null
     {
         return $this->getFieldValue(32);
     }

@@ -64,7 +64,7 @@ final class DeviceSettingsMessage extends Message
     /**
      * Gets the utc offset
      */
-    public function getUtcOffset(): int|float|null
+    public function getUtcOffset(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -72,7 +72,7 @@ final class DeviceSettingsMessage extends Message
     /**
      * Gets the time offset
      */
-    public function getTimeOffset(): int|float|null
+    public function getTimeOffset(): int|null
     {
         return $this->getFieldValue(2);
     }
@@ -88,7 +88,7 @@ final class DeviceSettingsMessage extends Message
     /**
      * Gets the time zone offset
      */
-    public function getTimeZoneOffset(): int|null
+    public function getTimeZoneOffset(): float|null
     {
         return $this->getFieldValue(5);
     }

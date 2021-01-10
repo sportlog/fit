@@ -185,7 +185,7 @@ final class LapMessage extends Message
     /**
      * Gets the start position lat
      */
-    public function getStartPositionLat(): int|float|null
+    public function getStartPositionLat(): int|null
     {
         return $this->getFieldValue(3);
     }
@@ -193,7 +193,7 @@ final class LapMessage extends Message
     /**
      * Gets the start position long
      */
-    public function getStartPositionLong(): int|float|null
+    public function getStartPositionLong(): int|null
     {
         return $this->getFieldValue(4);
     }
@@ -201,7 +201,7 @@ final class LapMessage extends Message
     /**
      * Gets the end position lat
      */
-    public function getEndPositionLat(): int|float|null
+    public function getEndPositionLat(): int|null
     {
         return $this->getFieldValue(5);
     }
@@ -209,7 +209,7 @@ final class LapMessage extends Message
     /**
      * Gets the end position long
      */
-    public function getEndPositionLong(): int|float|null
+    public function getEndPositionLong(): int|null
     {
         return $this->getFieldValue(6);
     }
@@ -217,7 +217,7 @@ final class LapMessage extends Message
     /**
      * Gets the total elapsed time
      */
-    public function getTotalElapsedTime(): int|float|null
+    public function getTotalElapsedTime(): float|null
     {
         return $this->getFieldValue(7);
     }
@@ -225,7 +225,7 @@ final class LapMessage extends Message
     /**
      * Gets the total timer time
      */
-    public function getTotalTimerTime(): int|float|null
+    public function getTotalTimerTime(): float|null
     {
         return $this->getFieldValue(8);
     }
@@ -233,7 +233,7 @@ final class LapMessage extends Message
     /**
      * Gets the total distance
      */
-    public function getTotalDistance(): int|float|null
+    public function getTotalDistance(): float|null
     {
         return $this->getFieldValue(9);
     }
@@ -241,7 +241,7 @@ final class LapMessage extends Message
     /**
      * Gets the total cycles
      */
-    public function getTotalCycles(): int|float|null
+    public function getTotalCycles(): int|null
     {
         return $this->getFieldValue(10);
     }
@@ -265,7 +265,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg speed
      */
-    public function getAvgSpeed(): int|null
+    public function getAvgSpeed(): float|null
     {
         return $this->getFieldValue(13);
     }
@@ -273,7 +273,7 @@ final class LapMessage extends Message
     /**
      * Gets the max speed
      */
-    public function getMaxSpeed(): int|null
+    public function getMaxSpeed(): float|null
     {
         return $this->getFieldValue(14);
     }
@@ -409,7 +409,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg stroke distance
      */
-    public function getAvgStrokeDistance(): int|null
+    public function getAvgStrokeDistance(): float|null
     {
         return $this->getFieldValue(37);
     }
@@ -441,7 +441,7 @@ final class LapMessage extends Message
     /**
      * Gets the total work
      */
-    public function getTotalWork(): int|float|null
+    public function getTotalWork(): int|null
     {
         return $this->getFieldValue(41);
     }
@@ -449,7 +449,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg altitude
      */
-    public function getAvgAltitude(): int|null
+    public function getAvgAltitude(): float|null
     {
         return $this->getFieldValue(42);
     }
@@ -457,7 +457,7 @@ final class LapMessage extends Message
     /**
      * Gets the max altitude
      */
-    public function getMaxAltitude(): int|null
+    public function getMaxAltitude(): float|null
     {
         return $this->getFieldValue(43);
     }
@@ -473,7 +473,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg grade
      */
-    public function getAvgGrade(): int|null
+    public function getAvgGrade(): float|null
     {
         return $this->getFieldValue(45);
     }
@@ -481,7 +481,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg pos grade
      */
-    public function getAvgPosGrade(): int|null
+    public function getAvgPosGrade(): float|null
     {
         return $this->getFieldValue(46);
     }
@@ -489,7 +489,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg neg grade
      */
-    public function getAvgNegGrade(): int|null
+    public function getAvgNegGrade(): float|null
     {
         return $this->getFieldValue(47);
     }
@@ -497,7 +497,7 @@ final class LapMessage extends Message
     /**
      * Gets the max pos grade
      */
-    public function getMaxPosGrade(): int|null
+    public function getMaxPosGrade(): float|null
     {
         return $this->getFieldValue(48);
     }
@@ -505,7 +505,7 @@ final class LapMessage extends Message
     /**
      * Gets the max neg grade
      */
-    public function getMaxNegGrade(): int|null
+    public function getMaxNegGrade(): float|null
     {
         return $this->getFieldValue(49);
     }
@@ -529,7 +529,7 @@ final class LapMessage extends Message
     /**
      * Gets the total moving time
      */
-    public function getTotalMovingTime(): int|float|null
+    public function getTotalMovingTime(): float|null
     {
         return $this->getFieldValue(52);
     }
@@ -537,7 +537,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg pos vertical speed
      */
-    public function getAvgPosVerticalSpeed(): int|null
+    public function getAvgPosVerticalSpeed(): float|null
     {
         return $this->getFieldValue(53);
     }
@@ -545,7 +545,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg neg vertical speed
      */
-    public function getAvgNegVerticalSpeed(): int|null
+    public function getAvgNegVerticalSpeed(): float|null
     {
         return $this->getFieldValue(54);
     }
@@ -553,7 +553,7 @@ final class LapMessage extends Message
     /**
      * Gets the max pos vertical speed
      */
-    public function getMaxPosVerticalSpeed(): int|null
+    public function getMaxPosVerticalSpeed(): float|null
     {
         return $this->getFieldValue(55);
     }
@@ -561,7 +561,7 @@ final class LapMessage extends Message
     /**
      * Gets the max neg vertical speed
      */
-    public function getMaxNegVerticalSpeed(): int|null
+    public function getMaxNegVerticalSpeed(): float|null
     {
         return $this->getFieldValue(56);
     }
@@ -569,7 +569,7 @@ final class LapMessage extends Message
     /**
      * Gets the time in hr zone
      */
-    public function getTimeInHrZone(): int|float|null
+    public function getTimeInHrZone(): float|null
     {
         return $this->getFieldValue(57);
     }
@@ -577,7 +577,7 @@ final class LapMessage extends Message
     /**
      * Gets the time in speed zone
      */
-    public function getTimeInSpeedZone(): int|float|null
+    public function getTimeInSpeedZone(): float|null
     {
         return $this->getFieldValue(58);
     }
@@ -585,7 +585,7 @@ final class LapMessage extends Message
     /**
      * Gets the time in cadence zone
      */
-    public function getTimeInCadenceZone(): int|float|null
+    public function getTimeInCadenceZone(): float|null
     {
         return $this->getFieldValue(59);
     }
@@ -593,7 +593,7 @@ final class LapMessage extends Message
     /**
      * Gets the time in power zone
      */
-    public function getTimeInPowerZone(): int|float|null
+    public function getTimeInPowerZone(): float|null
     {
         return $this->getFieldValue(60);
     }
@@ -609,7 +609,7 @@ final class LapMessage extends Message
     /**
      * Gets the min altitude
      */
-    public function getMinAltitude(): int|null
+    public function getMinAltitude(): float|null
     {
         return $this->getFieldValue(62);
     }
@@ -657,7 +657,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg vertical oscillation
      */
-    public function getAvgVerticalOscillation(): int|null
+    public function getAvgVerticalOscillation(): float|null
     {
         return $this->getFieldValue(77);
     }
@@ -665,7 +665,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg stance time percent
      */
-    public function getAvgStanceTimePercent(): int|null
+    public function getAvgStanceTimePercent(): float|null
     {
         return $this->getFieldValue(78);
     }
@@ -673,7 +673,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg stance time
      */
-    public function getAvgStanceTime(): int|null
+    public function getAvgStanceTime(): float|null
     {
         return $this->getFieldValue(79);
     }
@@ -681,7 +681,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg fractional cadence
      */
-    public function getAvgFractionalCadence(): int|null
+    public function getAvgFractionalCadence(): float|null
     {
         return $this->getFieldValue(80);
     }
@@ -689,7 +689,7 @@ final class LapMessage extends Message
     /**
      * Gets the max fractional cadence
      */
-    public function getMaxFractionalCadence(): int|null
+    public function getMaxFractionalCadence(): float|null
     {
         return $this->getFieldValue(81);
     }
@@ -697,7 +697,7 @@ final class LapMessage extends Message
     /**
      * Gets the total fractional cycles
      */
-    public function getTotalFractionalCycles(): int|null
+    public function getTotalFractionalCycles(): float|null
     {
         return $this->getFieldValue(82);
     }
@@ -713,7 +713,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg total hemoglobin conc
      */
-    public function getAvgTotalHemoglobinConc(): int|null
+    public function getAvgTotalHemoglobinConc(): float|null
     {
         return $this->getFieldValue(84);
     }
@@ -721,7 +721,7 @@ final class LapMessage extends Message
     /**
      * Gets the min total hemoglobin conc
      */
-    public function getMinTotalHemoglobinConc(): int|null
+    public function getMinTotalHemoglobinConc(): float|null
     {
         return $this->getFieldValue(85);
     }
@@ -729,7 +729,7 @@ final class LapMessage extends Message
     /**
      * Gets the max total hemoglobin conc
      */
-    public function getMaxTotalHemoglobinConc(): int|null
+    public function getMaxTotalHemoglobinConc(): float|null
     {
         return $this->getFieldValue(86);
     }
@@ -737,7 +737,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg saturated hemoglobin percent
      */
-    public function getAvgSaturatedHemoglobinPercent(): int|null
+    public function getAvgSaturatedHemoglobinPercent(): float|null
     {
         return $this->getFieldValue(87);
     }
@@ -745,7 +745,7 @@ final class LapMessage extends Message
     /**
      * Gets the min saturated hemoglobin percent
      */
-    public function getMinSaturatedHemoglobinPercent(): int|null
+    public function getMinSaturatedHemoglobinPercent(): float|null
     {
         return $this->getFieldValue(88);
     }
@@ -753,7 +753,7 @@ final class LapMessage extends Message
     /**
      * Gets the max saturated hemoglobin percent
      */
-    public function getMaxSaturatedHemoglobinPercent(): int|null
+    public function getMaxSaturatedHemoglobinPercent(): float|null
     {
         return $this->getFieldValue(89);
     }
@@ -761,7 +761,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg left torque effectiveness
      */
-    public function getAvgLeftTorqueEffectiveness(): int|null
+    public function getAvgLeftTorqueEffectiveness(): float|null
     {
         return $this->getFieldValue(91);
     }
@@ -769,7 +769,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg right torque effectiveness
      */
-    public function getAvgRightTorqueEffectiveness(): int|null
+    public function getAvgRightTorqueEffectiveness(): float|null
     {
         return $this->getFieldValue(92);
     }
@@ -777,7 +777,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg left pedal smoothness
      */
-    public function getAvgLeftPedalSmoothness(): int|null
+    public function getAvgLeftPedalSmoothness(): float|null
     {
         return $this->getFieldValue(93);
     }
@@ -785,7 +785,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg right pedal smoothness
      */
-    public function getAvgRightPedalSmoothness(): int|null
+    public function getAvgRightPedalSmoothness(): float|null
     {
         return $this->getFieldValue(94);
     }
@@ -793,7 +793,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg combined pedal smoothness
      */
-    public function getAvgCombinedPedalSmoothness(): int|null
+    public function getAvgCombinedPedalSmoothness(): float|null
     {
         return $this->getFieldValue(95);
     }
@@ -801,7 +801,7 @@ final class LapMessage extends Message
     /**
      * Gets the time standing
      */
-    public function getTimeStanding(): int|float|null
+    public function getTimeStanding(): float|null
     {
         return $this->getFieldValue(98);
     }
@@ -833,7 +833,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg left power phase
      */
-    public function getAvgLeftPowerPhase(): int|null
+    public function getAvgLeftPowerPhase(): float|null
     {
         return $this->getFieldValue(102);
     }
@@ -841,7 +841,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg left power phase peak
      */
-    public function getAvgLeftPowerPhasePeak(): int|null
+    public function getAvgLeftPowerPhasePeak(): float|null
     {
         return $this->getFieldValue(103);
     }
@@ -849,7 +849,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg right power phase
      */
-    public function getAvgRightPowerPhase(): int|null
+    public function getAvgRightPowerPhase(): float|null
     {
         return $this->getFieldValue(104);
     }
@@ -857,7 +857,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg right power phase peak
      */
-    public function getAvgRightPowerPhasePeak(): int|null
+    public function getAvgRightPowerPhasePeak(): float|null
     {
         return $this->getFieldValue(105);
     }
@@ -897,7 +897,7 @@ final class LapMessage extends Message
     /**
      * Gets the enhanced avg speed
      */
-    public function getEnhancedAvgSpeed(): int|float|null
+    public function getEnhancedAvgSpeed(): float|null
     {
         return $this->getFieldValue(110);
     }
@@ -905,7 +905,7 @@ final class LapMessage extends Message
     /**
      * Gets the enhanced max speed
      */
-    public function getEnhancedMaxSpeed(): int|float|null
+    public function getEnhancedMaxSpeed(): float|null
     {
         return $this->getFieldValue(111);
     }
@@ -913,7 +913,7 @@ final class LapMessage extends Message
     /**
      * Gets the enhanced avg altitude
      */
-    public function getEnhancedAvgAltitude(): int|float|null
+    public function getEnhancedAvgAltitude(): float|null
     {
         return $this->getFieldValue(112);
     }
@@ -921,7 +921,7 @@ final class LapMessage extends Message
     /**
      * Gets the enhanced min altitude
      */
-    public function getEnhancedMinAltitude(): int|float|null
+    public function getEnhancedMinAltitude(): float|null
     {
         return $this->getFieldValue(113);
     }
@@ -929,7 +929,7 @@ final class LapMessage extends Message
     /**
      * Gets the enhanced max altitude
      */
-    public function getEnhancedMaxAltitude(): int|float|null
+    public function getEnhancedMaxAltitude(): float|null
     {
         return $this->getFieldValue(114);
     }
@@ -953,7 +953,7 @@ final class LapMessage extends Message
     /**
      * Gets the lev battery consumption
      */
-    public function getLevBatteryConsumption(): int|null
+    public function getLevBatteryConsumption(): float|null
     {
         return $this->getFieldValue(117);
     }
@@ -961,7 +961,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg vertical ratio
      */
-    public function getAvgVerticalRatio(): int|null
+    public function getAvgVerticalRatio(): float|null
     {
         return $this->getFieldValue(118);
     }
@@ -969,7 +969,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg stance time balance
      */
-    public function getAvgStanceTimeBalance(): int|null
+    public function getAvgStanceTimeBalance(): float|null
     {
         return $this->getFieldValue(119);
     }
@@ -977,7 +977,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg step length
      */
-    public function getAvgStepLength(): int|null
+    public function getAvgStepLength(): float|null
     {
         return $this->getFieldValue(120);
     }
@@ -985,7 +985,7 @@ final class LapMessage extends Message
     /**
      * Gets the avg vam
      */
-    public function getAvgVam(): int|null
+    public function getAvgVam(): float|null
     {
         return $this->getFieldValue(121);
     }
@@ -1033,7 +1033,7 @@ final class LapMessage extends Message
     /**
      * Gets the total fractional ascent
      */
-    public function getTotalFractionalAscent(): int|null
+    public function getTotalFractionalAscent(): float|null
     {
         return $this->getFieldValue(156);
     }
@@ -1041,7 +1041,7 @@ final class LapMessage extends Message
     /**
      * Gets the total fractional descent
      */
-    public function getTotalFractionalDescent(): int|null
+    public function getTotalFractionalDescent(): float|null
     {
         return $this->getFieldValue(157);
     }

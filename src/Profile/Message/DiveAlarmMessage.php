@@ -47,7 +47,7 @@ final class DiveAlarmMessage extends Message
     /**
      * Gets the depth
      */
-    public function getDepth(): int|float|null
+    public function getDepth(): float|null
     {
         return $this->getFieldValue(0);
     }
@@ -55,7 +55,7 @@ final class DiveAlarmMessage extends Message
     /**
      * Gets the time
      */
-    public function getTime(): int|float|null
+    public function getTime(): int|null
     {
         return $this->getFieldValue(1);
     }

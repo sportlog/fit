@@ -58,7 +58,7 @@ final class TotalsMessage extends Message
     /**
      * Gets the timer time
      */
-    public function getTimerTime(): int|float|null
+    public function getTimerTime(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -66,7 +66,7 @@ final class TotalsMessage extends Message
     /**
      * Gets the distance
      */
-    public function getDistance(): int|float|null
+    public function getDistance(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -74,7 +74,7 @@ final class TotalsMessage extends Message
     /**
      * Gets the calories
      */
-    public function getCalories(): int|float|null
+    public function getCalories(): int|null
     {
         return $this->getFieldValue(2);
     }
@@ -90,7 +90,7 @@ final class TotalsMessage extends Message
     /**
      * Gets the elapsed time
      */
-    public function getElapsedTime(): int|float|null
+    public function getElapsedTime(): int|null
     {
         return $this->getFieldValue(4);
     }
@@ -106,7 +106,7 @@ final class TotalsMessage extends Message
     /**
      * Gets the active time
      */
-    public function getActiveTime(): int|float|null
+    public function getActiveTime(): int|null
     {
         return $this->getFieldValue(6);
     }

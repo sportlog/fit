@@ -51,7 +51,7 @@ final class VideoFrameMessage extends Message
     /**
      * Gets the frame number
      */
-    public function getFrameNumber(): int|float|null
+    public function getFrameNumber(): int|null
     {
         return $this->getFieldValue(1);
     }

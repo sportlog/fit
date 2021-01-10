@@ -48,7 +48,7 @@ final class ActivityMessage extends Message
     /**
      * Gets the total timer time
      */
-    public function getTotalTimerTime(): int|float|null
+    public function getTotalTimerTime(): float|null
     {
         return $this->getFieldValue(0);
     }

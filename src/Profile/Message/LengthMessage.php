@@ -90,7 +90,7 @@ final class LengthMessage extends Message
     /**
      * Gets the total elapsed time
      */
-    public function getTotalElapsedTime(): int|float|null
+    public function getTotalElapsedTime(): float|null
     {
         return $this->getFieldValue(3);
     }
@@ -98,7 +98,7 @@ final class LengthMessage extends Message
     /**
      * Gets the total timer time
      */
-    public function getTotalTimerTime(): int|float|null
+    public function getTotalTimerTime(): float|null
     {
         return $this->getFieldValue(4);
     }
@@ -114,7 +114,7 @@ final class LengthMessage extends Message
     /**
      * Gets the avg speed
      */
-    public function getAvgSpeed(): int|null
+    public function getAvgSpeed(): float|null
     {
         return $this->getFieldValue(6);
     }

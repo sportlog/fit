@@ -82,7 +82,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the serial number
      */
-    public function getSerialNumber(): int|float|null
+    public function getSerialNumber(): int|null
     {
         return $this->getFieldValue(3);
     }
@@ -98,7 +98,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the software version
      */
-    public function getSoftwareVersion(): int|null
+    public function getSoftwareVersion(): float|null
     {
         return $this->getFieldValue(5);
     }
@@ -114,7 +114,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the cum operating time
      */
-    public function getCumOperatingTime(): int|float|null
+    public function getCumOperatingTime(): int|null
     {
         return $this->getFieldValue(7);
     }
@@ -122,7 +122,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the battery voltage
      */
-    public function getBatteryVoltage(): int|null
+    public function getBatteryVoltage(): float|null
     {
         return $this->getFieldValue(10);
     }

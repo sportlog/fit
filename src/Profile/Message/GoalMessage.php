@@ -93,7 +93,7 @@ final class GoalMessage extends Message
     /**
      * Gets the value
      */
-    public function getValue(): int|float|null
+    public function getValue(): int|null
     {
         return $this->getFieldValue(5);
     }
@@ -109,7 +109,7 @@ final class GoalMessage extends Message
     /**
      * Gets the target value
      */
-    public function getTargetValue(): int|float|null
+    public function getTargetValue(): int|null
     {
         return $this->getFieldValue(7);
     }

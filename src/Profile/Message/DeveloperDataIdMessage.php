@@ -69,7 +69,7 @@ final class DeveloperDataIdMessage extends Message
     /**
      * Gets the application version
      */
-    public function getApplicationVersion(): int|float|null
+    public function getApplicationVersion(): int|null
     {
         return $this->getFieldValue(4);
     }

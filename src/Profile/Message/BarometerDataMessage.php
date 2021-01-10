@@ -60,7 +60,7 @@ final class BarometerDataMessage extends Message
     /**
      * Gets the baro pres
      */
-    public function getBaroPres(): int|float|null
+    public function getBaroPres(): int|null
     {
         return $this->getFieldValue(2);
     }

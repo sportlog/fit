@@ -63,7 +63,7 @@ final class FileIdMessage extends Message
     /**
      * Gets the serial number
      */
-    public function getSerialNumber(): int|float|null
+    public function getSerialNumber(): int|null
     {
         return $this->getFieldValue(3);
     }

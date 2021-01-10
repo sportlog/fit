@@ -60,7 +60,7 @@ final class AviationAttitudeMessage extends Message
     /**
      * Gets the system time
      */
-    public function getSystemTime(): int|float|null
+    public function getSystemTime(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -68,7 +68,7 @@ final class AviationAttitudeMessage extends Message
     /**
      * Gets the pitch
      */
-    public function getPitch(): int|null
+    public function getPitch(): float|null
     {
         return $this->getFieldValue(2);
     }
@@ -76,7 +76,7 @@ final class AviationAttitudeMessage extends Message
     /**
      * Gets the roll
      */
-    public function getRoll(): int|null
+    public function getRoll(): float|null
     {
         return $this->getFieldValue(3);
     }
@@ -84,7 +84,7 @@ final class AviationAttitudeMessage extends Message
     /**
      * Gets the accel lateral
      */
-    public function getAccelLateral(): int|null
+    public function getAccelLateral(): float|null
     {
         return $this->getFieldValue(4);
     }
@@ -92,7 +92,7 @@ final class AviationAttitudeMessage extends Message
     /**
      * Gets the accel normal
      */
-    public function getAccelNormal(): int|null
+    public function getAccelNormal(): float|null
     {
         return $this->getFieldValue(5);
     }
@@ -100,7 +100,7 @@ final class AviationAttitudeMessage extends Message
     /**
      * Gets the turn rate
      */
-    public function getTurnRate(): int|null
+    public function getTurnRate(): float|null
     {
         return $this->getFieldValue(6);
     }
@@ -124,7 +124,7 @@ final class AviationAttitudeMessage extends Message
     /**
      * Gets the track
      */
-    public function getTrack(): int|null
+    public function getTrack(): float|null
     {
         return $this->getFieldValue(9);
     }

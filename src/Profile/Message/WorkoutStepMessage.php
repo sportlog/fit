@@ -71,7 +71,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the duration value
      */
-    public function getDurationValue(): int|float|null
+    public function getDurationValue(): int|null
     {
         return $this->getFieldValue(2);
     }
@@ -87,7 +87,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the target value
      */
-    public function getTargetValue(): int|float|null
+    public function getTargetValue(): int|null
     {
         return $this->getFieldValue(4);
     }
@@ -95,7 +95,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the custom target value low
      */
-    public function getCustomTargetValueLow(): int|float|null
+    public function getCustomTargetValueLow(): int|null
     {
         return $this->getFieldValue(5);
     }
@@ -103,7 +103,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the custom target value high
      */
-    public function getCustomTargetValueHigh(): int|float|null
+    public function getCustomTargetValueHigh(): int|null
     {
         return $this->getFieldValue(6);
     }
@@ -151,7 +151,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the exercise weight
      */
-    public function getExerciseWeight(): int|null
+    public function getExerciseWeight(): float|null
     {
         return $this->getFieldValue(12);
     }

@@ -88,7 +88,7 @@ final class WeatherConditionsMessage extends Message
     /**
      * Gets the wind speed
      */
-    public function getWindSpeed(): int|null
+    public function getWindSpeed(): float|null
     {
         return $this->getFieldValue(4);
     }
@@ -136,7 +136,7 @@ final class WeatherConditionsMessage extends Message
     /**
      * Gets the observed location lat
      */
-    public function getObservedLocationLat(): int|float|null
+    public function getObservedLocationLat(): int|null
     {
         return $this->getFieldValue(10);
     }
@@ -144,7 +144,7 @@ final class WeatherConditionsMessage extends Message
     /**
      * Gets the observed location long
      */
-    public function getObservedLocationLong(): int|float|null
+    public function getObservedLocationLong(): int|null
     {
         return $this->getFieldValue(11);
     }

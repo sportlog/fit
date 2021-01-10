@@ -62,7 +62,7 @@ final class MonitoringInfoMessage extends Message
     /**
      * Gets the cycles to distance
      */
-    public function getCyclesToDistance(): int|null
+    public function getCyclesToDistance(): float|null
     {
         return $this->getFieldValue(3);
     }
@@ -70,7 +70,7 @@ final class MonitoringInfoMessage extends Message
     /**
      * Gets the cycles to calories
      */
-    public function getCyclesToCalories(): int|null
+    public function getCyclesToCalories(): float|null
     {
         return $this->getFieldValue(4);
     }

@@ -64,7 +64,7 @@ final class SdmProfileMessage extends Message
     /**
      * Gets the sdm cal factor
      */
-    public function getSdmCalFactor(): int|null
+    public function getSdmCalFactor(): float|null
     {
         return $this->getFieldValue(2);
     }
@@ -72,7 +72,7 @@ final class SdmProfileMessage extends Message
     /**
      * Gets the odometer
      */
-    public function getOdometer(): int|float|null
+    public function getOdometer(): float|null
     {
         return $this->getFieldValue(3);
     }

@@ -113,7 +113,7 @@ final class RecordMessage extends Message
     /**
      * Gets the position lat
      */
-    public function getPositionLat(): int|float|null
+    public function getPositionLat(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -121,7 +121,7 @@ final class RecordMessage extends Message
     /**
      * Gets the position long
      */
-    public function getPositionLong(): int|float|null
+    public function getPositionLong(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -129,7 +129,7 @@ final class RecordMessage extends Message
     /**
      * Gets the altitude
      */
-    public function getAltitude(): int|null
+    public function getAltitude(): float|null
     {
         return $this->getFieldValue(2);
     }
@@ -153,7 +153,7 @@ final class RecordMessage extends Message
     /**
      * Gets the distance
      */
-    public function getDistance(): int|float|null
+    public function getDistance(): float|null
     {
         return $this->getFieldValue(5);
     }
@@ -161,7 +161,7 @@ final class RecordMessage extends Message
     /**
      * Gets the speed
      */
-    public function getSpeed(): int|null
+    public function getSpeed(): float|null
     {
         return $this->getFieldValue(6);
     }
@@ -185,7 +185,7 @@ final class RecordMessage extends Message
     /**
      * Gets the grade
      */
-    public function getGrade(): int|null
+    public function getGrade(): float|null
     {
         return $this->getFieldValue(9);
     }
@@ -201,7 +201,7 @@ final class RecordMessage extends Message
     /**
      * Gets the time from course
      */
-    public function getTimeFromCourse(): int|float|null
+    public function getTimeFromCourse(): float|null
     {
         return $this->getFieldValue(11);
     }
@@ -209,7 +209,7 @@ final class RecordMessage extends Message
     /**
      * Gets the cycle length
      */
-    public function getCycleLength(): int|null
+    public function getCycleLength(): float|null
     {
         return $this->getFieldValue(12);
     }
@@ -225,7 +225,7 @@ final class RecordMessage extends Message
     /**
      * Gets the speed1s
      */
-    public function getSpeed1s(): int|null
+    public function getSpeed1s(): float|null
     {
         return $this->getFieldValue(17);
     }
@@ -241,7 +241,7 @@ final class RecordMessage extends Message
     /**
      * Gets the total cycles
      */
-    public function getTotalCycles(): int|float|null
+    public function getTotalCycles(): int|null
     {
         return $this->getFieldValue(19);
     }
@@ -257,7 +257,7 @@ final class RecordMessage extends Message
     /**
      * Gets the accumulated power
      */
-    public function getAccumulatedPower(): int|float|null
+    public function getAccumulatedPower(): int|null
     {
         return $this->getFieldValue(29);
     }
@@ -281,7 +281,7 @@ final class RecordMessage extends Message
     /**
      * Gets the vertical speed
      */
-    public function getVerticalSpeed(): int|null
+    public function getVerticalSpeed(): float|null
     {
         return $this->getFieldValue(32);
     }
@@ -297,7 +297,7 @@ final class RecordMessage extends Message
     /**
      * Gets the vertical oscillation
      */
-    public function getVerticalOscillation(): int|null
+    public function getVerticalOscillation(): float|null
     {
         return $this->getFieldValue(39);
     }
@@ -305,7 +305,7 @@ final class RecordMessage extends Message
     /**
      * Gets the stance time percent
      */
-    public function getStanceTimePercent(): int|null
+    public function getStanceTimePercent(): float|null
     {
         return $this->getFieldValue(40);
     }
@@ -313,7 +313,7 @@ final class RecordMessage extends Message
     /**
      * Gets the stance time
      */
-    public function getStanceTime(): int|null
+    public function getStanceTime(): float|null
     {
         return $this->getFieldValue(41);
     }
@@ -329,7 +329,7 @@ final class RecordMessage extends Message
     /**
      * Gets the left torque effectiveness
      */
-    public function getLeftTorqueEffectiveness(): int|null
+    public function getLeftTorqueEffectiveness(): float|null
     {
         return $this->getFieldValue(43);
     }
@@ -337,7 +337,7 @@ final class RecordMessage extends Message
     /**
      * Gets the right torque effectiveness
      */
-    public function getRightTorqueEffectiveness(): int|null
+    public function getRightTorqueEffectiveness(): float|null
     {
         return $this->getFieldValue(44);
     }
@@ -345,7 +345,7 @@ final class RecordMessage extends Message
     /**
      * Gets the left pedal smoothness
      */
-    public function getLeftPedalSmoothness(): int|null
+    public function getLeftPedalSmoothness(): float|null
     {
         return $this->getFieldValue(45);
     }
@@ -353,7 +353,7 @@ final class RecordMessage extends Message
     /**
      * Gets the right pedal smoothness
      */
-    public function getRightPedalSmoothness(): int|null
+    public function getRightPedalSmoothness(): float|null
     {
         return $this->getFieldValue(46);
     }
@@ -361,7 +361,7 @@ final class RecordMessage extends Message
     /**
      * Gets the combined pedal smoothness
      */
-    public function getCombinedPedalSmoothness(): int|null
+    public function getCombinedPedalSmoothness(): float|null
     {
         return $this->getFieldValue(47);
     }
@@ -369,7 +369,7 @@ final class RecordMessage extends Message
     /**
      * Gets the time128
      */
-    public function getTime128(): int|null
+    public function getTime128(): float|null
     {
         return $this->getFieldValue(48);
     }
@@ -393,7 +393,7 @@ final class RecordMessage extends Message
     /**
      * Gets the ball speed
      */
-    public function getBallSpeed(): int|null
+    public function getBallSpeed(): float|null
     {
         return $this->getFieldValue(51);
     }
@@ -401,7 +401,7 @@ final class RecordMessage extends Message
     /**
      * Gets the cadence256
      */
-    public function getCadence256(): int|null
+    public function getCadence256(): float|null
     {
         return $this->getFieldValue(52);
     }
@@ -409,7 +409,7 @@ final class RecordMessage extends Message
     /**
      * Gets the fractional cadence
      */
-    public function getFractionalCadence(): int|null
+    public function getFractionalCadence(): float|null
     {
         return $this->getFieldValue(53);
     }
@@ -417,7 +417,7 @@ final class RecordMessage extends Message
     /**
      * Gets the total hemoglobin conc
      */
-    public function getTotalHemoglobinConc(): int|null
+    public function getTotalHemoglobinConc(): float|null
     {
         return $this->getFieldValue(54);
     }
@@ -425,7 +425,7 @@ final class RecordMessage extends Message
     /**
      * Gets the total hemoglobin conc min
      */
-    public function getTotalHemoglobinConcMin(): int|null
+    public function getTotalHemoglobinConcMin(): float|null
     {
         return $this->getFieldValue(55);
     }
@@ -433,7 +433,7 @@ final class RecordMessage extends Message
     /**
      * Gets the total hemoglobin conc max
      */
-    public function getTotalHemoglobinConcMax(): int|null
+    public function getTotalHemoglobinConcMax(): float|null
     {
         return $this->getFieldValue(56);
     }
@@ -441,7 +441,7 @@ final class RecordMessage extends Message
     /**
      * Gets the saturated hemoglobin percent
      */
-    public function getSaturatedHemoglobinPercent(): int|null
+    public function getSaturatedHemoglobinPercent(): float|null
     {
         return $this->getFieldValue(57);
     }
@@ -449,7 +449,7 @@ final class RecordMessage extends Message
     /**
      * Gets the saturated hemoglobin percent min
      */
-    public function getSaturatedHemoglobinPercentMin(): int|null
+    public function getSaturatedHemoglobinPercentMin(): float|null
     {
         return $this->getFieldValue(58);
     }
@@ -457,7 +457,7 @@ final class RecordMessage extends Message
     /**
      * Gets the saturated hemoglobin percent max
      */
-    public function getSaturatedHemoglobinPercentMax(): int|null
+    public function getSaturatedHemoglobinPercentMax(): float|null
     {
         return $this->getFieldValue(59);
     }
@@ -489,7 +489,7 @@ final class RecordMessage extends Message
     /**
      * Gets the left power phase
      */
-    public function getLeftPowerPhase(): int|null
+    public function getLeftPowerPhase(): float|null
     {
         return $this->getFieldValue(69);
     }
@@ -497,7 +497,7 @@ final class RecordMessage extends Message
     /**
      * Gets the left power phase peak
      */
-    public function getLeftPowerPhasePeak(): int|null
+    public function getLeftPowerPhasePeak(): float|null
     {
         return $this->getFieldValue(70);
     }
@@ -505,7 +505,7 @@ final class RecordMessage extends Message
     /**
      * Gets the right power phase
      */
-    public function getRightPowerPhase(): int|null
+    public function getRightPowerPhase(): float|null
     {
         return $this->getFieldValue(71);
     }
@@ -513,7 +513,7 @@ final class RecordMessage extends Message
     /**
      * Gets the right power phase peak
      */
-    public function getRightPowerPhasePeak(): int|null
+    public function getRightPowerPhasePeak(): float|null
     {
         return $this->getFieldValue(72);
     }
@@ -521,7 +521,7 @@ final class RecordMessage extends Message
     /**
      * Gets the enhanced speed
      */
-    public function getEnhancedSpeed(): int|float|null
+    public function getEnhancedSpeed(): float|null
     {
         return $this->getFieldValue(73);
     }
@@ -529,7 +529,7 @@ final class RecordMessage extends Message
     /**
      * Gets the enhanced altitude
      */
-    public function getEnhancedAltitude(): int|float|null
+    public function getEnhancedAltitude(): float|null
     {
         return $this->getFieldValue(78);
     }
@@ -537,7 +537,7 @@ final class RecordMessage extends Message
     /**
      * Gets the battery soc
      */
-    public function getBatterySoc(): int|null
+    public function getBatterySoc(): float|null
     {
         return $this->getFieldValue(81);
     }
@@ -553,7 +553,7 @@ final class RecordMessage extends Message
     /**
      * Gets the vertical ratio
      */
-    public function getVerticalRatio(): int|null
+    public function getVerticalRatio(): float|null
     {
         return $this->getFieldValue(83);
     }
@@ -561,7 +561,7 @@ final class RecordMessage extends Message
     /**
      * Gets the stance time balance
      */
-    public function getStanceTimeBalance(): int|null
+    public function getStanceTimeBalance(): float|null
     {
         return $this->getFieldValue(84);
     }
@@ -569,7 +569,7 @@ final class RecordMessage extends Message
     /**
      * Gets the step length
      */
-    public function getStepLength(): int|null
+    public function getStepLength(): float|null
     {
         return $this->getFieldValue(85);
     }
@@ -577,7 +577,7 @@ final class RecordMessage extends Message
     /**
      * Gets the absolute pressure
      */
-    public function getAbsolutePressure(): int|float|null
+    public function getAbsolutePressure(): int|null
     {
         return $this->getFieldValue(91);
     }
@@ -585,7 +585,7 @@ final class RecordMessage extends Message
     /**
      * Gets the depth
      */
-    public function getDepth(): int|float|null
+    public function getDepth(): float|null
     {
         return $this->getFieldValue(92);
     }
@@ -593,7 +593,7 @@ final class RecordMessage extends Message
     /**
      * Gets the next stop depth
      */
-    public function getNextStopDepth(): int|float|null
+    public function getNextStopDepth(): float|null
     {
         return $this->getFieldValue(93);
     }
@@ -601,7 +601,7 @@ final class RecordMessage extends Message
     /**
      * Gets the next stop time
      */
-    public function getNextStopTime(): int|float|null
+    public function getNextStopTime(): int|null
     {
         return $this->getFieldValue(94);
     }
@@ -609,7 +609,7 @@ final class RecordMessage extends Message
     /**
      * Gets the time to surface
      */
-    public function getTimeToSurface(): int|float|null
+    public function getTimeToSurface(): int|null
     {
         return $this->getFieldValue(95);
     }
@@ -617,7 +617,7 @@ final class RecordMessage extends Message
     /**
      * Gets the ndl time
      */
-    public function getNdlTime(): int|float|null
+    public function getNdlTime(): int|null
     {
         return $this->getFieldValue(96);
     }

@@ -164,7 +164,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the start position lat
      */
-    public function getStartPositionLat(): int|float|null
+    public function getStartPositionLat(): int|null
     {
         return $this->getFieldValue(3);
     }
@@ -172,7 +172,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the start position long
      */
-    public function getStartPositionLong(): int|float|null
+    public function getStartPositionLong(): int|null
     {
         return $this->getFieldValue(4);
     }
@@ -180,7 +180,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the end position lat
      */
-    public function getEndPositionLat(): int|float|null
+    public function getEndPositionLat(): int|null
     {
         return $this->getFieldValue(5);
     }
@@ -188,7 +188,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the end position long
      */
-    public function getEndPositionLong(): int|float|null
+    public function getEndPositionLong(): int|null
     {
         return $this->getFieldValue(6);
     }
@@ -196,7 +196,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the total elapsed time
      */
-    public function getTotalElapsedTime(): int|float|null
+    public function getTotalElapsedTime(): float|null
     {
         return $this->getFieldValue(7);
     }
@@ -204,7 +204,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the total timer time
      */
-    public function getTotalTimerTime(): int|float|null
+    public function getTotalTimerTime(): float|null
     {
         return $this->getFieldValue(8);
     }
@@ -212,7 +212,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the total distance
      */
-    public function getTotalDistance(): int|float|null
+    public function getTotalDistance(): float|null
     {
         return $this->getFieldValue(9);
     }
@@ -220,7 +220,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the total cycles
      */
-    public function getTotalCycles(): int|float|null
+    public function getTotalCycles(): int|null
     {
         return $this->getFieldValue(10);
     }
@@ -244,7 +244,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the avg speed
      */
-    public function getAvgSpeed(): int|null
+    public function getAvgSpeed(): float|null
     {
         return $this->getFieldValue(13);
     }
@@ -252,7 +252,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the max speed
      */
-    public function getMaxSpeed(): int|null
+    public function getMaxSpeed(): float|null
     {
         return $this->getFieldValue(14);
     }
@@ -340,7 +340,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the nec lat
      */
-    public function getNecLat(): int|float|null
+    public function getNecLat(): int|null
     {
         return $this->getFieldValue(25);
     }
@@ -348,7 +348,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the nec long
      */
-    public function getNecLong(): int|float|null
+    public function getNecLong(): int|null
     {
         return $this->getFieldValue(26);
     }
@@ -356,7 +356,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the swc lat
      */
-    public function getSwcLat(): int|float|null
+    public function getSwcLat(): int|null
     {
         return $this->getFieldValue(27);
     }
@@ -364,7 +364,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the swc long
      */
-    public function getSwcLong(): int|float|null
+    public function getSwcLong(): int|null
     {
         return $this->getFieldValue(28);
     }
@@ -404,7 +404,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the total work
      */
-    public function getTotalWork(): int|float|null
+    public function getTotalWork(): int|null
     {
         return $this->getFieldValue(33);
     }
@@ -412,7 +412,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the avg altitude
      */
-    public function getAvgAltitude(): int|null
+    public function getAvgAltitude(): float|null
     {
         return $this->getFieldValue(34);
     }
@@ -420,7 +420,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the max altitude
      */
-    public function getMaxAltitude(): int|null
+    public function getMaxAltitude(): float|null
     {
         return $this->getFieldValue(35);
     }
@@ -436,7 +436,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the avg grade
      */
-    public function getAvgGrade(): int|null
+    public function getAvgGrade(): float|null
     {
         return $this->getFieldValue(37);
     }
@@ -444,7 +444,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the avg pos grade
      */
-    public function getAvgPosGrade(): int|null
+    public function getAvgPosGrade(): float|null
     {
         return $this->getFieldValue(38);
     }
@@ -452,7 +452,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the avg neg grade
      */
-    public function getAvgNegGrade(): int|null
+    public function getAvgNegGrade(): float|null
     {
         return $this->getFieldValue(39);
     }
@@ -460,7 +460,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the max pos grade
      */
-    public function getMaxPosGrade(): int|null
+    public function getMaxPosGrade(): float|null
     {
         return $this->getFieldValue(40);
     }
@@ -468,7 +468,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the max neg grade
      */
-    public function getMaxNegGrade(): int|null
+    public function getMaxNegGrade(): float|null
     {
         return $this->getFieldValue(41);
     }
@@ -492,7 +492,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the total moving time
      */
-    public function getTotalMovingTime(): int|float|null
+    public function getTotalMovingTime(): float|null
     {
         return $this->getFieldValue(44);
     }
@@ -500,7 +500,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the avg pos vertical speed
      */
-    public function getAvgPosVerticalSpeed(): int|null
+    public function getAvgPosVerticalSpeed(): float|null
     {
         return $this->getFieldValue(45);
     }
@@ -508,7 +508,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the avg neg vertical speed
      */
-    public function getAvgNegVerticalSpeed(): int|null
+    public function getAvgNegVerticalSpeed(): float|null
     {
         return $this->getFieldValue(46);
     }
@@ -516,7 +516,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the max pos vertical speed
      */
-    public function getMaxPosVerticalSpeed(): int|null
+    public function getMaxPosVerticalSpeed(): float|null
     {
         return $this->getFieldValue(47);
     }
@@ -524,7 +524,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the max neg vertical speed
      */
-    public function getMaxNegVerticalSpeed(): int|null
+    public function getMaxNegVerticalSpeed(): float|null
     {
         return $this->getFieldValue(48);
     }
@@ -532,7 +532,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the time in hr zone
      */
-    public function getTimeInHrZone(): int|float|null
+    public function getTimeInHrZone(): float|null
     {
         return $this->getFieldValue(49);
     }
@@ -540,7 +540,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the time in speed zone
      */
-    public function getTimeInSpeedZone(): int|float|null
+    public function getTimeInSpeedZone(): float|null
     {
         return $this->getFieldValue(50);
     }
@@ -548,7 +548,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the time in cadence zone
      */
-    public function getTimeInCadenceZone(): int|float|null
+    public function getTimeInCadenceZone(): float|null
     {
         return $this->getFieldValue(51);
     }
@@ -556,7 +556,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the time in power zone
      */
-    public function getTimeInPowerZone(): int|float|null
+    public function getTimeInPowerZone(): float|null
     {
         return $this->getFieldValue(52);
     }
@@ -572,7 +572,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the min altitude
      */
-    public function getMinAltitude(): int|null
+    public function getMinAltitude(): float|null
     {
         return $this->getFieldValue(54);
     }
@@ -588,7 +588,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the active time
      */
-    public function getActiveTime(): int|float|null
+    public function getActiveTime(): float|null
     {
         return $this->getFieldValue(56);
     }
@@ -612,7 +612,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the avg left torque effectiveness
      */
-    public function getAvgLeftTorqueEffectiveness(): int|null
+    public function getAvgLeftTorqueEffectiveness(): float|null
     {
         return $this->getFieldValue(59);
     }
@@ -620,7 +620,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the avg right torque effectiveness
      */
-    public function getAvgRightTorqueEffectiveness(): int|null
+    public function getAvgRightTorqueEffectiveness(): float|null
     {
         return $this->getFieldValue(60);
     }
@@ -628,7 +628,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the avg left pedal smoothness
      */
-    public function getAvgLeftPedalSmoothness(): int|null
+    public function getAvgLeftPedalSmoothness(): float|null
     {
         return $this->getFieldValue(61);
     }
@@ -636,7 +636,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the avg right pedal smoothness
      */
-    public function getAvgRightPedalSmoothness(): int|null
+    public function getAvgRightPedalSmoothness(): float|null
     {
         return $this->getFieldValue(62);
     }
@@ -644,7 +644,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the avg combined pedal smoothness
      */
-    public function getAvgCombinedPedalSmoothness(): int|null
+    public function getAvgCombinedPedalSmoothness(): float|null
     {
         return $this->getFieldValue(63);
     }
@@ -668,7 +668,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the avg fractional cadence
      */
-    public function getAvgFractionalCadence(): int|null
+    public function getAvgFractionalCadence(): float|null
     {
         return $this->getFieldValue(66);
     }
@@ -676,7 +676,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the max fractional cadence
      */
-    public function getMaxFractionalCadence(): int|null
+    public function getMaxFractionalCadence(): float|null
     {
         return $this->getFieldValue(67);
     }
@@ -684,7 +684,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the total fractional cycles
      */
-    public function getTotalFractionalCycles(): int|null
+    public function getTotalFractionalCycles(): float|null
     {
         return $this->getFieldValue(68);
     }
@@ -708,7 +708,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the time standing
      */
-    public function getTimeStanding(): int|float|null
+    public function getTimeStanding(): float|null
     {
         return $this->getFieldValue(71);
     }
@@ -740,7 +740,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the avg left power phase
      */
-    public function getAvgLeftPowerPhase(): int|null
+    public function getAvgLeftPowerPhase(): float|null
     {
         return $this->getFieldValue(75);
     }
@@ -748,7 +748,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the avg left power phase peak
      */
-    public function getAvgLeftPowerPhasePeak(): int|null
+    public function getAvgLeftPowerPhasePeak(): float|null
     {
         return $this->getFieldValue(76);
     }
@@ -756,7 +756,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the avg right power phase
      */
-    public function getAvgRightPowerPhase(): int|null
+    public function getAvgRightPowerPhase(): float|null
     {
         return $this->getFieldValue(77);
     }
@@ -764,7 +764,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the avg right power phase peak
      */
-    public function getAvgRightPowerPhasePeak(): int|null
+    public function getAvgRightPowerPhasePeak(): float|null
     {
         return $this->getFieldValue(78);
     }
@@ -844,7 +844,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the total fractional ascent
      */
-    public function getTotalFractionalAscent(): int|null
+    public function getTotalFractionalAscent(): float|null
     {
         return $this->getFieldValue(89);
     }
@@ -852,7 +852,7 @@ final class SegmentLapMessage extends Message
     /**
      * Gets the total fractional descent
      */
-    public function getTotalFractionalDescent(): int|null
+    public function getTotalFractionalDescent(): float|null
     {
         return $this->getFieldValue(90);
     }

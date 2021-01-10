@@ -51,7 +51,7 @@ final class VideoMessage extends Message
     /**
      * Gets the duration
      */
-    public function getDuration(): int|float|null
+    public function getDuration(): int|null
     {
         return $this->getFieldValue(2);
     }

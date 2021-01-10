@@ -46,7 +46,7 @@ final class HrMessage extends Message
     /**
      * Gets the fractional timestamp
      */
-    public function getFractionalTimestamp(): int|null
+    public function getFractionalTimestamp(): float|null
     {
         return $this->getFieldValue(0);
     }
@@ -54,7 +54,7 @@ final class HrMessage extends Message
     /**
      * Gets the time256
      */
-    public function getTime256(): int|null
+    public function getTime256(): float|null
     {
         return $this->getFieldValue(1);
     }
@@ -70,7 +70,7 @@ final class HrMessage extends Message
     /**
      * Gets the event timestamp
      */
-    public function getEventTimestamp(): int|float|null
+    public function getEventTimestamp(): float|null
     {
         return $this->getFieldValue(9);
     }
