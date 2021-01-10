@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace FIT\Profile\Message;
+namespace Sportlog\FIT\Profile\Message;
 
-use FIT\FitBaseType;
-use FIT\Profile\Field;
-use FIT\Profile\Message;
-use FIT\Profile\ProfileType;
+use Sportlog\FIT\FitBaseType;
+use Sportlog\FIT\Profile\Field;
+use Sportlog\FIT\Profile\Message;
+use Sportlog\FIT\Profile\ProfileType;
 
 /**
  * Timestamp message

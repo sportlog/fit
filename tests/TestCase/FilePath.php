@@ -7,7 +7,7 @@ declare (strict_types = 1);
  * @license MIT License
  */
 
-namespace FIT\Test\TestCase;
+namespace Sportlog\FIT\Test\TestCase;
 
 class FilePath {
     /**

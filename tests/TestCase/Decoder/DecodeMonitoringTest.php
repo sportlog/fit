@@ -8,16 +8,12 @@ declare(strict_types=1);
  * @license MIT License
  */
 
-namespace FIT\Test\TestCase\Decoder;
+namespace Sportlog\FIT\Test\TestCase\Decoder;
 
-use FIT\Decoder;
-use FIT\FileType;
-use FIT\Profile\Message\FileIdMessage;
-use FIT\Profile\Message\HrmProfileMessage;
-use FIT\Profile\Message\MonitoringInfoMessage;
-use FIT\Profile\Message\MonitoringMessage;
-use FIT\Profile\Message\UserProfileMessage;
-use FIT\Test\TestCase\FilePath;
+use Sportlog\FIT\Decoder;
+use Sportlog\FIT\Profile\Message\MonitoringInfoMessage;
+use Sportlog\FIT\Profile\Message\MonitoringMessage;
+use Sportlog\FIT\Test\TestCase\FilePath;
 use PHPUnit\Framework\TestCase;
 
 /**

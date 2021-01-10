@@ -7,9 +7,9 @@ declare (strict_types = 1);
  * @license MIT License
  */
 
-namespace FIT\Test\TestCase\Decoder;
+namespace Sportlog\FIT\Test\TestCase\Decoder;
 
-use FIT\FitBaseType;
+use Sportlog\FIT\FitBaseType;
 use PHPUnit\Framework\TestCase;
 
 /**

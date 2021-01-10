@@ -14,7 +14,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "FIT\\": "src/"
+      "Sportlog\\FIT\\": "src/"
     }
   },
   "autoload-dev": {
@@ -32,5 +32,9 @@
   "require": {
     "php": ">=8.0",
     "psr/log": "^1.1"
+  },
+  "scripts": {
+    "phpunit": "vendor\\bin\\phpunit --testsuite fit",
+    "phpstan": "vendor\\bin\\phpstan analyse -c phpstan.neon"
   }
 }

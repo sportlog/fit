@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -37,6 +38,22 @@ class FitBaseType
 
 	private static ?array $fieldDefinitions = null;
 
+	/**
+	 * Get the definition for the provided base type.
+	 *
+	 * @param integer $baseType
+	 * @return FitBaseTypeDefinition|null The definition of the base type, or null if no matching
+	 *                                    definition could be found.
+	 */
+	public static function fromType(int $baseType): ?FitBaseTypeDefinition
+	{
+		if (!isset(self::getFieldDefinitions()[$baseType])) {
+			return null;
+		}
+
+		return self::getFieldDefinitions()[$baseType];
+	}
+
 	private static function getFieldDefinitions(): array
 	{
 		if (is_null(self::$fieldDefinitions)) {
@@ -62,21 +79,5 @@ class FitBaseType
 		}
 
 		return self::$fieldDefinitions;
-	}
-
-	/**
-	 * Get the definition for the provided base type.
-	 *
-	 * @param integer $baseType
-	 * @return FitBaseTypeDefinition|null The definition of the base type, or null if no matching
-	 *                                    definition could be found.
-	 */
-	public static function fromType(int $baseType): ?FitBaseTypeDefinition
-	{
-		if (!isset(self::getFieldDefinitions()[$baseType])) {
-			return null;
-		}
-
-		return self::getFieldDefinitions()[$baseType];
 	}
 }
