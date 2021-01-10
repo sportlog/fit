@@ -35,11 +35,10 @@ foreach ($messageList->getMessageTypes() as $messageTyp) {
 // You can also grab specific messages and access any data you need
 $recordMessages = $messageList->getMessages(RecordMessage::class);
 if (count($recordMessages) > 0) {
-   // get the distance using the properties on the message,
-   // for example the distance
-   $recMessages = $messages->getMessages(RecordMessage::class);
    /** @var RecordMessage $lastRecordMessage */
    $lastRecordMessage = $recMessages[count($recMessages)-1];
+   // get the distance using the properties on the message,
+   // for example the distance
    echo "Total distance (m): " . $lastRecordMessage->getDistance();
 }
 ```
