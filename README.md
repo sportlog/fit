@@ -11,7 +11,7 @@ Minimum PHP version required is 8.
 
 ## How to use
 
-```
+``` php
 <?php
 
 require 'vendor/autoload.php';
