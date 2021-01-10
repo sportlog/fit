@@ -36,7 +36,7 @@ final class CapabilitiesMessage extends Message
     /**
      * Gets the languages
      */
-    public function getLanguages(): ?int
+    public function getLanguages(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -44,7 +44,7 @@ final class CapabilitiesMessage extends Message
     /**
      * Gets the sports
      */
-    public function getSports(): ?int
+    public function getSports(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -52,7 +52,7 @@ final class CapabilitiesMessage extends Message
     /**
      * Gets the workouts supported
      */
-    public function getWorkoutsSupported(): ?int
+    public function getWorkoutsSupported(): int|null
     {
         return $this->getFieldValue(21);
     }
@@ -60,7 +60,7 @@ final class CapabilitiesMessage extends Message
     /**
      * Gets the connectivity supported
      */
-    public function getConnectivitySupported(): ?int
+    public function getConnectivitySupported(): int|null
     {
         return $this->getFieldValue(23);
     }

@@ -34,7 +34,7 @@ final class OhrSettingsMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(253);
     }
@@ -42,7 +42,7 @@ final class OhrSettingsMessage extends Message
     /**
      * Gets the enabled
      */
-    public function getEnabled(): ?int
+    public function getEnabled(): int|null
     {
         return $this->getFieldValue(0);
     }

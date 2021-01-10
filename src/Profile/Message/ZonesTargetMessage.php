@@ -37,7 +37,7 @@ final class ZonesTargetMessage extends Message
     /**
      * Gets the max heart rate
      */
-    public function getMaxHeartRate(): ?int
+    public function getMaxHeartRate(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -45,7 +45,7 @@ final class ZonesTargetMessage extends Message
     /**
      * Gets the threshold heart rate
      */
-    public function getThresholdHeartRate(): ?int
+    public function getThresholdHeartRate(): int|null
     {
         return $this->getFieldValue(2);
     }
@@ -53,7 +53,7 @@ final class ZonesTargetMessage extends Message
     /**
      * Gets the functional threshold power
      */
-    public function getFunctionalThresholdPower(): ?int
+    public function getFunctionalThresholdPower(): int|null
     {
         return $this->getFieldValue(3);
     }
@@ -61,7 +61,7 @@ final class ZonesTargetMessage extends Message
     /**
      * Gets the hr calc type
      */
-    public function getHrCalcType(): ?int
+    public function getHrCalcType(): int|null
     {
         return $this->getFieldValue(5);
     }
@@ -69,7 +69,7 @@ final class ZonesTargetMessage extends Message
     /**
      * Gets the pwr calc type
      */
-    public function getPwrCalcType(): ?int
+    public function getPwrCalcType(): int|null
     {
         return $this->getFieldValue(7);
     }

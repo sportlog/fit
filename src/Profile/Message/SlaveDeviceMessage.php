@@ -34,7 +34,7 @@ final class SlaveDeviceMessage extends Message
     /**
      * Gets the manufacturer
      */
-    public function getManufacturer(): ?int
+    public function getManufacturer(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -42,7 +42,7 @@ final class SlaveDeviceMessage extends Message
     /**
      * Gets the product
      */
-    public function getProduct(): ?int
+    public function getProduct(): int|null
     {
         return $this->getFieldValue(1);
     }

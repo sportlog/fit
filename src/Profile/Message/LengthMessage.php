@@ -50,7 +50,7 @@ final class LengthMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): ?int
+    public function getMessageIndex(): int|null
     {
         return $this->getFieldValue(254);
     }
@@ -58,7 +58,7 @@ final class LengthMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(253);
     }
@@ -66,7 +66,7 @@ final class LengthMessage extends Message
     /**
      * Gets the event
      */
-    public function getEvent(): ?int
+    public function getEvent(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -74,7 +74,7 @@ final class LengthMessage extends Message
     /**
      * Gets the event type
      */
-    public function getEventType(): ?int
+    public function getEventType(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -82,7 +82,7 @@ final class LengthMessage extends Message
     /**
      * Gets the start time
      */
-    public function getStartTime(): ?DateTime
+    public function getStartTime(): DateTime|null
     {
         return $this->getFieldValue(2);
     }
@@ -90,7 +90,7 @@ final class LengthMessage extends Message
     /**
      * Gets the total elapsed time
      */
-    public function getTotalElapsedTime(): ?int
+    public function getTotalElapsedTime(): int|float|null
     {
         return $this->getFieldValue(3);
     }
@@ -98,7 +98,7 @@ final class LengthMessage extends Message
     /**
      * Gets the total timer time
      */
-    public function getTotalTimerTime(): ?int
+    public function getTotalTimerTime(): int|float|null
     {
         return $this->getFieldValue(4);
     }
@@ -106,7 +106,7 @@ final class LengthMessage extends Message
     /**
      * Gets the total strokes
      */
-    public function getTotalStrokes(): ?int
+    public function getTotalStrokes(): int|null
     {
         return $this->getFieldValue(5);
     }
@@ -114,7 +114,7 @@ final class LengthMessage extends Message
     /**
      * Gets the avg speed
      */
-    public function getAvgSpeed(): ?int
+    public function getAvgSpeed(): int|null
     {
         return $this->getFieldValue(6);
     }
@@ -122,7 +122,7 @@ final class LengthMessage extends Message
     /**
      * Gets the swim stroke
      */
-    public function getSwimStroke(): ?int
+    public function getSwimStroke(): int|null
     {
         return $this->getFieldValue(7);
     }
@@ -130,7 +130,7 @@ final class LengthMessage extends Message
     /**
      * Gets the avg swimming cadence
      */
-    public function getAvgSwimmingCadence(): ?int
+    public function getAvgSwimmingCadence(): int|null
     {
         return $this->getFieldValue(9);
     }
@@ -138,7 +138,7 @@ final class LengthMessage extends Message
     /**
      * Gets the event group
      */
-    public function getEventGroup(): ?int
+    public function getEventGroup(): int|null
     {
         return $this->getFieldValue(10);
     }
@@ -146,7 +146,7 @@ final class LengthMessage extends Message
     /**
      * Gets the total calories
      */
-    public function getTotalCalories(): ?int
+    public function getTotalCalories(): int|null
     {
         return $this->getFieldValue(11);
     }
@@ -154,7 +154,7 @@ final class LengthMessage extends Message
     /**
      * Gets the length type
      */
-    public function getLengthType(): ?int
+    public function getLengthType(): int|null
     {
         return $this->getFieldValue(12);
     }
@@ -162,7 +162,7 @@ final class LengthMessage extends Message
     /**
      * Gets the player score
      */
-    public function getPlayerScore(): ?int
+    public function getPlayerScore(): int|null
     {
         return $this->getFieldValue(18);
     }
@@ -170,7 +170,7 @@ final class LengthMessage extends Message
     /**
      * Gets the opponent score
      */
-    public function getOpponentScore(): ?int
+    public function getOpponentScore(): int|null
     {
         return $this->getFieldValue(19);
     }
@@ -178,7 +178,7 @@ final class LengthMessage extends Message
     /**
      * Gets the stroke count
      */
-    public function getStrokeCount(): ?int
+    public function getStrokeCount(): int|null
     {
         return $this->getFieldValue(20);
     }
@@ -186,7 +186,7 @@ final class LengthMessage extends Message
     /**
      * Gets the zone count
      */
-    public function getZoneCount(): ?int
+    public function getZoneCount(): int|null
     {
         return $this->getFieldValue(21);
     }

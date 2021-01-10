@@ -38,7 +38,7 @@ final class MonitoringInfoMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(253);
     }
@@ -46,7 +46,7 @@ final class MonitoringInfoMessage extends Message
     /**
      * Gets the local timestamp
      */
-    public function getLocalTimestamp(): ?DateTime
+    public function getLocalTimestamp(): DateTime|null
     {
         return $this->getFieldValue(0);
     }
@@ -54,7 +54,7 @@ final class MonitoringInfoMessage extends Message
     /**
      * Gets the activity type
      */
-    public function getActivityType(): ?int
+    public function getActivityType(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -62,7 +62,7 @@ final class MonitoringInfoMessage extends Message
     /**
      * Gets the cycles to distance
      */
-    public function getCyclesToDistance(): ?int
+    public function getCyclesToDistance(): int|null
     {
         return $this->getFieldValue(3);
     }
@@ -70,7 +70,7 @@ final class MonitoringInfoMessage extends Message
     /**
      * Gets the cycles to calories
      */
-    public function getCyclesToCalories(): ?int
+    public function getCyclesToCalories(): int|null
     {
         return $this->getFieldValue(4);
     }
@@ -78,7 +78,7 @@ final class MonitoringInfoMessage extends Message
     /**
      * Gets the resting metabolic rate
      */
-    public function getRestingMetabolicRate(): ?int
+    public function getRestingMetabolicRate(): int|null
     {
         return $this->getFieldValue(5);
     }

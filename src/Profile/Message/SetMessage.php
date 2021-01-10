@@ -43,7 +43,7 @@ final class SetMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(254);
     }
@@ -51,7 +51,7 @@ final class SetMessage extends Message
     /**
      * Gets the duration
      */
-    public function getDuration(): ?int
+    public function getDuration(): int|float|null
     {
         return $this->getFieldValue(0);
     }
@@ -59,7 +59,7 @@ final class SetMessage extends Message
     /**
      * Gets the repetitions
      */
-    public function getRepetitions(): ?int
+    public function getRepetitions(): int|null
     {
         return $this->getFieldValue(3);
     }
@@ -67,7 +67,7 @@ final class SetMessage extends Message
     /**
      * Gets the weight
      */
-    public function getWeight(): ?int
+    public function getWeight(): int|null
     {
         return $this->getFieldValue(4);
     }
@@ -75,7 +75,7 @@ final class SetMessage extends Message
     /**
      * Gets the set type
      */
-    public function getSetType(): ?int
+    public function getSetType(): int|null
     {
         return $this->getFieldValue(5);
     }
@@ -83,7 +83,7 @@ final class SetMessage extends Message
     /**
      * Gets the start time
      */
-    public function getStartTime(): ?DateTime
+    public function getStartTime(): DateTime|null
     {
         return $this->getFieldValue(6);
     }
@@ -91,7 +91,7 @@ final class SetMessage extends Message
     /**
      * Gets the category
      */
-    public function getCategory(): ?int
+    public function getCategory(): int|null
     {
         return $this->getFieldValue(7);
     }
@@ -99,7 +99,7 @@ final class SetMessage extends Message
     /**
      * Gets the category subtype
      */
-    public function getCategorySubtype(): ?int
+    public function getCategorySubtype(): int|null
     {
         return $this->getFieldValue(8);
     }
@@ -107,7 +107,7 @@ final class SetMessage extends Message
     /**
      * Gets the weight display unit
      */
-    public function getWeightDisplayUnit(): ?int
+    public function getWeightDisplayUnit(): int|null
     {
         return $this->getFieldValue(9);
     }
@@ -115,7 +115,7 @@ final class SetMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): ?int
+    public function getMessageIndex(): int|null
     {
         return $this->getFieldValue(10);
     }
@@ -123,7 +123,7 @@ final class SetMessage extends Message
     /**
      * Gets the wkt step index
      */
-    public function getWktStepIndex(): ?int
+    public function getWktStepIndex(): int|null
     {
         return $this->getFieldValue(11);
     }

@@ -38,7 +38,7 @@ final class WeatherAlertMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(253);
     }
@@ -46,7 +46,7 @@ final class WeatherAlertMessage extends Message
     /**
      * Gets the report id
      */
-    public function getReportId(): ?string
+    public function getReportId(): string|null
     {
         return $this->getFieldValue(0);
     }
@@ -54,7 +54,7 @@ final class WeatherAlertMessage extends Message
     /**
      * Gets the issue time
      */
-    public function getIssueTime(): ?DateTime
+    public function getIssueTime(): DateTime|null
     {
         return $this->getFieldValue(1);
     }
@@ -62,7 +62,7 @@ final class WeatherAlertMessage extends Message
     /**
      * Gets the expire time
      */
-    public function getExpireTime(): ?DateTime
+    public function getExpireTime(): DateTime|null
     {
         return $this->getFieldValue(2);
     }
@@ -70,7 +70,7 @@ final class WeatherAlertMessage extends Message
     /**
      * Gets the severity
      */
-    public function getSeverity(): ?int
+    public function getSeverity(): int|null
     {
         return $this->getFieldValue(3);
     }
@@ -78,7 +78,7 @@ final class WeatherAlertMessage extends Message
     /**
      * Gets the type
      */
-    public function getType(): ?int
+    public function getType(): int|null
     {
         return $this->getFieldValue(4);
     }

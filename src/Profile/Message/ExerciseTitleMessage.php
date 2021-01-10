@@ -36,7 +36,7 @@ final class ExerciseTitleMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): ?int
+    public function getMessageIndex(): int|null
     {
         return $this->getFieldValue(254);
     }
@@ -44,7 +44,7 @@ final class ExerciseTitleMessage extends Message
     /**
      * Gets the exercise category
      */
-    public function getExerciseCategory(): ?int
+    public function getExerciseCategory(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -52,7 +52,7 @@ final class ExerciseTitleMessage extends Message
     /**
      * Gets the exercise name
      */
-    public function getExerciseName(): ?int
+    public function getExerciseName(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -60,7 +60,7 @@ final class ExerciseTitleMessage extends Message
     /**
      * Gets the wkt step name
      */
-    public function getWktStepName(): ?string
+    public function getWktStepName(): string|null
     {
         return $this->getFieldValue(2);
     }

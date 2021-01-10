@@ -40,7 +40,7 @@ final class SdmProfileMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): ?int
+    public function getMessageIndex(): int|null
     {
         return $this->getFieldValue(254);
     }
@@ -48,7 +48,7 @@ final class SdmProfileMessage extends Message
     /**
      * Gets the enabled
      */
-    public function getEnabled(): ?bool
+    public function getEnabled(): bool|null
     {
         return $this->getFieldValue(0);
     }
@@ -56,7 +56,7 @@ final class SdmProfileMessage extends Message
     /**
      * Gets the sdm ant id
      */
-    public function getSdmAntId(): ?int
+    public function getSdmAntId(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -64,7 +64,7 @@ final class SdmProfileMessage extends Message
     /**
      * Gets the sdm cal factor
      */
-    public function getSdmCalFactor(): ?int
+    public function getSdmCalFactor(): int|null
     {
         return $this->getFieldValue(2);
     }
@@ -72,7 +72,7 @@ final class SdmProfileMessage extends Message
     /**
      * Gets the odometer
      */
-    public function getOdometer(): ?int
+    public function getOdometer(): int|float|null
     {
         return $this->getFieldValue(3);
     }
@@ -80,7 +80,7 @@ final class SdmProfileMessage extends Message
     /**
      * Gets the speed source
      */
-    public function getSpeedSource(): ?bool
+    public function getSpeedSource(): bool|null
     {
         return $this->getFieldValue(4);
     }
@@ -88,7 +88,7 @@ final class SdmProfileMessage extends Message
     /**
      * Gets the sdm ant id trans type
      */
-    public function getSdmAntIdTransType(): ?int
+    public function getSdmAntIdTransType(): int|null
     {
         return $this->getFieldValue(5);
     }
@@ -96,7 +96,7 @@ final class SdmProfileMessage extends Message
     /**
      * Gets the odometer rollover
      */
-    public function getOdometerRollover(): ?int
+    public function getOdometerRollover(): int|null
     {
         return $this->getFieldValue(7);
     }

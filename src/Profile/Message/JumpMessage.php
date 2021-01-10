@@ -42,7 +42,7 @@ final class JumpMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(253);
     }
@@ -50,7 +50,7 @@ final class JumpMessage extends Message
     /**
      * Gets the distance
      */
-    public function getDistance(): ?float
+    public function getDistance(): float|null
     {
         return $this->getFieldValue(0);
     }
@@ -58,7 +58,7 @@ final class JumpMessage extends Message
     /**
      * Gets the height
      */
-    public function getHeight(): ?float
+    public function getHeight(): float|null
     {
         return $this->getFieldValue(1);
     }
@@ -66,7 +66,7 @@ final class JumpMessage extends Message
     /**
      * Gets the rotations
      */
-    public function getRotations(): ?int
+    public function getRotations(): int|null
     {
         return $this->getFieldValue(2);
     }
@@ -74,7 +74,7 @@ final class JumpMessage extends Message
     /**
      * Gets the hang time
      */
-    public function getHangTime(): ?float
+    public function getHangTime(): float|null
     {
         return $this->getFieldValue(3);
     }
@@ -82,7 +82,7 @@ final class JumpMessage extends Message
     /**
      * Gets the score
      */
-    public function getScore(): ?float
+    public function getScore(): float|null
     {
         return $this->getFieldValue(4);
     }
@@ -90,7 +90,7 @@ final class JumpMessage extends Message
     /**
      * Gets the position lat
      */
-    public function getPositionLat(): ?int
+    public function getPositionLat(): int|float|null
     {
         return $this->getFieldValue(5);
     }
@@ -98,7 +98,7 @@ final class JumpMessage extends Message
     /**
      * Gets the position long
      */
-    public function getPositionLong(): ?int
+    public function getPositionLong(): int|float|null
     {
         return $this->getFieldValue(6);
     }
@@ -106,7 +106,7 @@ final class JumpMessage extends Message
     /**
      * Gets the speed
      */
-    public function getSpeed(): ?int
+    public function getSpeed(): int|null
     {
         return $this->getFieldValue(7);
     }
@@ -114,7 +114,7 @@ final class JumpMessage extends Message
     /**
      * Gets the enhanced speed
      */
-    public function getEnhancedSpeed(): ?int
+    public function getEnhancedSpeed(): int|float|null
     {
         return $this->getFieldValue(8);
     }

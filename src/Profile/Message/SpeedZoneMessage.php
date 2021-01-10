@@ -35,7 +35,7 @@ final class SpeedZoneMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): ?int
+    public function getMessageIndex(): int|null
     {
         return $this->getFieldValue(254);
     }
@@ -43,7 +43,7 @@ final class SpeedZoneMessage extends Message
     /**
      * Gets the high value
      */
-    public function getHighValue(): ?int
+    public function getHighValue(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -51,7 +51,7 @@ final class SpeedZoneMessage extends Message
     /**
      * Gets the name
      */
-    public function getName(): ?string
+    public function getName(): string|null
     {
         return $this->getFieldValue(1);
     }

@@ -41,7 +41,7 @@ final class GpsMetadataMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(253);
     }
@@ -49,7 +49,7 @@ final class GpsMetadataMessage extends Message
     /**
      * Gets the timestamp ms
      */
-    public function getTimestampMs(): ?int
+    public function getTimestampMs(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -57,7 +57,7 @@ final class GpsMetadataMessage extends Message
     /**
      * Gets the position lat
      */
-    public function getPositionLat(): ?int
+    public function getPositionLat(): int|float|null
     {
         return $this->getFieldValue(1);
     }
@@ -65,7 +65,7 @@ final class GpsMetadataMessage extends Message
     /**
      * Gets the position long
      */
-    public function getPositionLong(): ?int
+    public function getPositionLong(): int|float|null
     {
         return $this->getFieldValue(2);
     }
@@ -73,7 +73,7 @@ final class GpsMetadataMessage extends Message
     /**
      * Gets the enhanced altitude
      */
-    public function getEnhancedAltitude(): ?int
+    public function getEnhancedAltitude(): int|float|null
     {
         return $this->getFieldValue(3);
     }
@@ -81,7 +81,7 @@ final class GpsMetadataMessage extends Message
     /**
      * Gets the enhanced speed
      */
-    public function getEnhancedSpeed(): ?int
+    public function getEnhancedSpeed(): int|float|null
     {
         return $this->getFieldValue(4);
     }
@@ -89,7 +89,7 @@ final class GpsMetadataMessage extends Message
     /**
      * Gets the heading
      */
-    public function getHeading(): ?int
+    public function getHeading(): int|null
     {
         return $this->getFieldValue(5);
     }
@@ -97,7 +97,7 @@ final class GpsMetadataMessage extends Message
     /**
      * Gets the utc timestamp
      */
-    public function getUtcTimestamp(): ?DateTime
+    public function getUtcTimestamp(): DateTime|null
     {
         return $this->getFieldValue(6);
     }
@@ -105,7 +105,7 @@ final class GpsMetadataMessage extends Message
     /**
      * Gets the velocity
      */
-    public function getVelocity(): ?int
+    public function getVelocity(): int|null
     {
         return $this->getFieldValue(7);
     }

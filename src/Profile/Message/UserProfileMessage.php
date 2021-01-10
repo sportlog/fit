@@ -61,7 +61,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): ?int
+    public function getMessageIndex(): int|null
     {
         return $this->getFieldValue(254);
     }
@@ -69,7 +69,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the friendly name
      */
-    public function getFriendlyName(): ?string
+    public function getFriendlyName(): string|null
     {
         return $this->getFieldValue(0);
     }
@@ -77,7 +77,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the gender
      */
-    public function getGender(): ?int
+    public function getGender(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -85,7 +85,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the age
      */
-    public function getAge(): ?int
+    public function getAge(): int|null
     {
         return $this->getFieldValue(2);
     }
@@ -93,7 +93,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the height
      */
-    public function getHeight(): ?int
+    public function getHeight(): int|null
     {
         return $this->getFieldValue(3);
     }
@@ -101,7 +101,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the weight
      */
-    public function getWeight(): ?int
+    public function getWeight(): int|null
     {
         return $this->getFieldValue(4);
     }
@@ -109,7 +109,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the language
      */
-    public function getLanguage(): ?int
+    public function getLanguage(): int|null
     {
         return $this->getFieldValue(5);
     }
@@ -117,7 +117,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the elev setting
      */
-    public function getElevSetting(): ?int
+    public function getElevSetting(): int|null
     {
         return $this->getFieldValue(6);
     }
@@ -125,7 +125,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the weight setting
      */
-    public function getWeightSetting(): ?int
+    public function getWeightSetting(): int|null
     {
         return $this->getFieldValue(7);
     }
@@ -133,7 +133,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the resting heart rate
      */
-    public function getRestingHeartRate(): ?int
+    public function getRestingHeartRate(): int|null
     {
         return $this->getFieldValue(8);
     }
@@ -141,7 +141,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the default max running heart rate
      */
-    public function getDefaultMaxRunningHeartRate(): ?int
+    public function getDefaultMaxRunningHeartRate(): int|null
     {
         return $this->getFieldValue(9);
     }
@@ -149,7 +149,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the default max biking heart rate
      */
-    public function getDefaultMaxBikingHeartRate(): ?int
+    public function getDefaultMaxBikingHeartRate(): int|null
     {
         return $this->getFieldValue(10);
     }
@@ -157,7 +157,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the default max heart rate
      */
-    public function getDefaultMaxHeartRate(): ?int
+    public function getDefaultMaxHeartRate(): int|null
     {
         return $this->getFieldValue(11);
     }
@@ -165,7 +165,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the hr setting
      */
-    public function getHrSetting(): ?int
+    public function getHrSetting(): int|null
     {
         return $this->getFieldValue(12);
     }
@@ -173,7 +173,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the speed setting
      */
-    public function getSpeedSetting(): ?int
+    public function getSpeedSetting(): int|null
     {
         return $this->getFieldValue(13);
     }
@@ -181,7 +181,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the dist setting
      */
-    public function getDistSetting(): ?int
+    public function getDistSetting(): int|null
     {
         return $this->getFieldValue(14);
     }
@@ -189,7 +189,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the power setting
      */
-    public function getPowerSetting(): ?int
+    public function getPowerSetting(): int|null
     {
         return $this->getFieldValue(16);
     }
@@ -197,7 +197,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the activity class
      */
-    public function getActivityClass(): ?int
+    public function getActivityClass(): int|null
     {
         return $this->getFieldValue(17);
     }
@@ -205,7 +205,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the position setting
      */
-    public function getPositionSetting(): ?int
+    public function getPositionSetting(): int|null
     {
         return $this->getFieldValue(18);
     }
@@ -213,7 +213,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the temperature setting
      */
-    public function getTemperatureSetting(): ?int
+    public function getTemperatureSetting(): int|null
     {
         return $this->getFieldValue(21);
     }
@@ -221,7 +221,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the local id
      */
-    public function getLocalId(): ?int
+    public function getLocalId(): int|null
     {
         return $this->getFieldValue(22);
     }
@@ -237,7 +237,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the wake time
      */
-    public function getWakeTime(): ?int
+    public function getWakeTime(): int|null
     {
         return $this->getFieldValue(28);
     }
@@ -245,7 +245,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the sleep time
      */
-    public function getSleepTime(): ?int
+    public function getSleepTime(): int|null
     {
         return $this->getFieldValue(29);
     }
@@ -253,7 +253,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the height setting
      */
-    public function getHeightSetting(): ?int
+    public function getHeightSetting(): int|null
     {
         return $this->getFieldValue(30);
     }
@@ -261,7 +261,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the user running step length
      */
-    public function getUserRunningStepLength(): ?int
+    public function getUserRunningStepLength(): int|null
     {
         return $this->getFieldValue(31);
     }
@@ -269,7 +269,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the user walking step length
      */
-    public function getUserWalkingStepLength(): ?int
+    public function getUserWalkingStepLength(): int|null
     {
         return $this->getFieldValue(32);
     }
@@ -277,7 +277,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the depth setting
      */
-    public function getDepthSetting(): ?int
+    public function getDepthSetting(): int|null
     {
         return $this->getFieldValue(47);
     }
@@ -285,7 +285,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the dive count
      */
-    public function getDiveCount(): ?int
+    public function getDiveCount(): int|float|null
     {
         return $this->getFieldValue(49);
     }

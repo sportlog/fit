@@ -41,7 +41,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the name
      */
-    public function getName(): ?string
+    public function getName(): string|null
     {
         return $this->getFieldValue(0);
     }
@@ -49,7 +49,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the uuid
      */
-    public function getUuid(): ?string
+    public function getUuid(): string|null
     {
         return $this->getFieldValue(1);
     }
@@ -57,7 +57,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the sport
      */
-    public function getSport(): ?int
+    public function getSport(): int|null
     {
         return $this->getFieldValue(2);
     }
@@ -65,7 +65,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the enabled
      */
-    public function getEnabled(): ?bool
+    public function getEnabled(): bool|null
     {
         return $this->getFieldValue(3);
     }
@@ -73,7 +73,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the user profile primary key
      */
-    public function getUserProfilePrimaryKey(): ?int
+    public function getUserProfilePrimaryKey(): int|float|null
     {
         return $this->getFieldValue(4);
     }
@@ -81,7 +81,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the device id
      */
-    public function getDeviceId(): ?int
+    public function getDeviceId(): int|float|null
     {
         return $this->getFieldValue(5);
     }
@@ -89,7 +89,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the default race leader
      */
-    public function getDefaultRaceLeader(): ?int
+    public function getDefaultRaceLeader(): int|null
     {
         return $this->getFieldValue(6);
     }
@@ -97,7 +97,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the delete status
      */
-    public function getDeleteStatus(): ?int
+    public function getDeleteStatus(): int|null
     {
         return $this->getFieldValue(7);
     }
@@ -105,7 +105,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the selection type
      */
-    public function getSelectionType(): ?int
+    public function getSelectionType(): int|null
     {
         return $this->getFieldValue(8);
     }

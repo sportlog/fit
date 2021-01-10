@@ -38,7 +38,7 @@ final class OneDSensorCalibrationMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(253);
     }
@@ -46,7 +46,7 @@ final class OneDSensorCalibrationMessage extends Message
     /**
      * Gets the sensor type
      */
-    public function getSensorType(): ?int
+    public function getSensorType(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -54,7 +54,7 @@ final class OneDSensorCalibrationMessage extends Message
     /**
      * Gets the calibration factor
      */
-    public function getCalibrationFactor(): ?int
+    public function getCalibrationFactor(): int|float|null
     {
         return $this->getFieldValue(1);
     }
@@ -62,7 +62,7 @@ final class OneDSensorCalibrationMessage extends Message
     /**
      * Gets the calibration divisor
      */
-    public function getCalibrationDivisor(): ?int
+    public function getCalibrationDivisor(): int|float|null
     {
         return $this->getFieldValue(2);
     }
@@ -70,7 +70,7 @@ final class OneDSensorCalibrationMessage extends Message
     /**
      * Gets the level shift
      */
-    public function getLevelShift(): ?int
+    public function getLevelShift(): int|float|null
     {
         return $this->getFieldValue(3);
     }
@@ -78,7 +78,7 @@ final class OneDSensorCalibrationMessage extends Message
     /**
      * Gets the offset cal
      */
-    public function getOffsetCal(): ?int
+    public function getOffsetCal(): int|float|null
     {
         return $this->getFieldValue(4);
     }

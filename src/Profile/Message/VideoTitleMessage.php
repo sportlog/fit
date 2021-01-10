@@ -35,7 +35,7 @@ final class VideoTitleMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): ?int
+    public function getMessageIndex(): int|null
     {
         return $this->getFieldValue(254);
     }
@@ -43,7 +43,7 @@ final class VideoTitleMessage extends Message
     /**
      * Gets the message count
      */
-    public function getMessageCount(): ?int
+    public function getMessageCount(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -51,7 +51,7 @@ final class VideoTitleMessage extends Message
     /**
      * Gets the text
      */
-    public function getText(): ?string
+    public function getText(): string|null
     {
         return $this->getFieldValue(1);
     }

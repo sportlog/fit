@@ -36,7 +36,7 @@ final class DiveGasMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): ?int
+    public function getMessageIndex(): int|null
     {
         return $this->getFieldValue(254);
     }
@@ -44,7 +44,7 @@ final class DiveGasMessage extends Message
     /**
      * Gets the helium content
      */
-    public function getHeliumContent(): ?int
+    public function getHeliumContent(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -52,7 +52,7 @@ final class DiveGasMessage extends Message
     /**
      * Gets the oxygen content
      */
-    public function getOxygenContent(): ?int
+    public function getOxygenContent(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -60,7 +60,7 @@ final class DiveGasMessage extends Message
     /**
      * Gets the status
      */
-    public function getStatus(): ?int
+    public function getStatus(): int|null
     {
         return $this->getFieldValue(2);
     }

@@ -38,7 +38,7 @@ final class FileCapabilitiesMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): ?int
+    public function getMessageIndex(): int|null
     {
         return $this->getFieldValue(254);
     }
@@ -46,7 +46,7 @@ final class FileCapabilitiesMessage extends Message
     /**
      * Gets the type
      */
-    public function getType(): ?int
+    public function getType(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -54,7 +54,7 @@ final class FileCapabilitiesMessage extends Message
     /**
      * Gets the flags
      */
-    public function getFlags(): ?int
+    public function getFlags(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -62,7 +62,7 @@ final class FileCapabilitiesMessage extends Message
     /**
      * Gets the directory
      */
-    public function getDirectory(): ?string
+    public function getDirectory(): string|null
     {
         return $this->getFieldValue(2);
     }
@@ -70,7 +70,7 @@ final class FileCapabilitiesMessage extends Message
     /**
      * Gets the max count
      */
-    public function getMaxCount(): ?int
+    public function getMaxCount(): int|null
     {
         return $this->getFieldValue(3);
     }
@@ -78,7 +78,7 @@ final class FileCapabilitiesMessage extends Message
     /**
      * Gets the max size
      */
-    public function getMaxSize(): ?int
+    public function getMaxSize(): int|float|null
     {
         return $this->getFieldValue(4);
     }

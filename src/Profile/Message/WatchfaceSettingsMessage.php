@@ -35,7 +35,7 @@ final class WatchfaceSettingsMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): ?int
+    public function getMessageIndex(): int|null
     {
         return $this->getFieldValue(254);
     }
@@ -43,7 +43,7 @@ final class WatchfaceSettingsMessage extends Message
     /**
      * Gets the mode
      */
-    public function getMode(): ?int
+    public function getMode(): int|null
     {
         return $this->getFieldValue(0);
     }

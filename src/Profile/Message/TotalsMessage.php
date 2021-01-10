@@ -42,7 +42,7 @@ final class TotalsMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): ?int
+    public function getMessageIndex(): int|null
     {
         return $this->getFieldValue(254);
     }
@@ -50,7 +50,7 @@ final class TotalsMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(253);
     }
@@ -58,7 +58,7 @@ final class TotalsMessage extends Message
     /**
      * Gets the timer time
      */
-    public function getTimerTime(): ?int
+    public function getTimerTime(): int|float|null
     {
         return $this->getFieldValue(0);
     }
@@ -66,7 +66,7 @@ final class TotalsMessage extends Message
     /**
      * Gets the distance
      */
-    public function getDistance(): ?int
+    public function getDistance(): int|float|null
     {
         return $this->getFieldValue(1);
     }
@@ -74,7 +74,7 @@ final class TotalsMessage extends Message
     /**
      * Gets the calories
      */
-    public function getCalories(): ?int
+    public function getCalories(): int|float|null
     {
         return $this->getFieldValue(2);
     }
@@ -82,7 +82,7 @@ final class TotalsMessage extends Message
     /**
      * Gets the sport
      */
-    public function getSport(): ?int
+    public function getSport(): int|null
     {
         return $this->getFieldValue(3);
     }
@@ -90,7 +90,7 @@ final class TotalsMessage extends Message
     /**
      * Gets the elapsed time
      */
-    public function getElapsedTime(): ?int
+    public function getElapsedTime(): int|float|null
     {
         return $this->getFieldValue(4);
     }
@@ -98,7 +98,7 @@ final class TotalsMessage extends Message
     /**
      * Gets the sessions
      */
-    public function getSessions(): ?int
+    public function getSessions(): int|null
     {
         return $this->getFieldValue(5);
     }
@@ -106,7 +106,7 @@ final class TotalsMessage extends Message
     /**
      * Gets the active time
      */
-    public function getActiveTime(): ?int
+    public function getActiveTime(): int|float|null
     {
         return $this->getFieldValue(6);
     }
@@ -114,7 +114,7 @@ final class TotalsMessage extends Message
     /**
      * Gets the sport index
      */
-    public function getSportIndex(): ?int
+    public function getSportIndex(): int|null
     {
         return $this->getFieldValue(9);
     }

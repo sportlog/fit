@@ -38,7 +38,7 @@ final class AntTxMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(253);
     }
@@ -46,7 +46,7 @@ final class AntTxMessage extends Message
     /**
      * Gets the fractional timestamp
      */
-    public function getFractionalTimestamp(): ?int
+    public function getFractionalTimestamp(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -70,7 +70,7 @@ final class AntTxMessage extends Message
     /**
      * Gets the channel number
      */
-    public function getChannelNumber(): ?int
+    public function getChannelNumber(): int|null
     {
         return $this->getFieldValue(3);
     }

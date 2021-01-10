@@ -38,7 +38,7 @@ final class TrainingFileMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(253);
     }
@@ -46,7 +46,7 @@ final class TrainingFileMessage extends Message
     /**
      * Gets the type
      */
-    public function getType(): ?int
+    public function getType(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -54,7 +54,7 @@ final class TrainingFileMessage extends Message
     /**
      * Gets the manufacturer
      */
-    public function getManufacturer(): ?int
+    public function getManufacturer(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -62,7 +62,7 @@ final class TrainingFileMessage extends Message
     /**
      * Gets the product
      */
-    public function getProduct(): ?int
+    public function getProduct(): int|null
     {
         return $this->getFieldValue(2);
     }
@@ -70,7 +70,7 @@ final class TrainingFileMessage extends Message
     /**
      * Gets the serial number
      */
-    public function getSerialNumber(): ?int
+    public function getSerialNumber(): int|float|null
     {
         return $this->getFieldValue(3);
     }
@@ -78,7 +78,7 @@ final class TrainingFileMessage extends Message
     /**
      * Gets the time created
      */
-    public function getTimeCreated(): ?DateTime
+    public function getTimeCreated(): DateTime|null
     {
         return $this->getFieldValue(4);
     }

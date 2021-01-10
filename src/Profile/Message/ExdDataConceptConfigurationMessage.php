@@ -43,7 +43,7 @@ final class ExdDataConceptConfigurationMessage extends Message
     /**
      * Gets the screen index
      */
-    public function getScreenIndex(): ?int
+    public function getScreenIndex(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -59,7 +59,7 @@ final class ExdDataConceptConfigurationMessage extends Message
     /**
      * Gets the field id
      */
-    public function getFieldId(): ?int
+    public function getFieldId(): int|null
     {
         return $this->getFieldValue(2);
     }
@@ -67,7 +67,7 @@ final class ExdDataConceptConfigurationMessage extends Message
     /**
      * Gets the concept index
      */
-    public function getConceptIndex(): ?int
+    public function getConceptIndex(): int|null
     {
         return $this->getFieldValue(3);
     }
@@ -75,7 +75,7 @@ final class ExdDataConceptConfigurationMessage extends Message
     /**
      * Gets the data page
      */
-    public function getDataPage(): ?int
+    public function getDataPage(): int|null
     {
         return $this->getFieldValue(4);
     }
@@ -83,7 +83,7 @@ final class ExdDataConceptConfigurationMessage extends Message
     /**
      * Gets the concept key
      */
-    public function getConceptKey(): ?int
+    public function getConceptKey(): int|null
     {
         return $this->getFieldValue(5);
     }
@@ -91,7 +91,7 @@ final class ExdDataConceptConfigurationMessage extends Message
     /**
      * Gets the scaling
      */
-    public function getScaling(): ?int
+    public function getScaling(): int|null
     {
         return $this->getFieldValue(6);
     }
@@ -99,7 +99,7 @@ final class ExdDataConceptConfigurationMessage extends Message
     /**
      * Gets the data units
      */
-    public function getDataUnits(): ?int
+    public function getDataUnits(): int|null
     {
         return $this->getFieldValue(8);
     }
@@ -107,7 +107,7 @@ final class ExdDataConceptConfigurationMessage extends Message
     /**
      * Gets the qualifier
      */
-    public function getQualifier(): ?int
+    public function getQualifier(): int|null
     {
         return $this->getFieldValue(9);
     }
@@ -115,7 +115,7 @@ final class ExdDataConceptConfigurationMessage extends Message
     /**
      * Gets the descriptor
      */
-    public function getDescriptor(): ?int
+    public function getDescriptor(): int|null
     {
         return $this->getFieldValue(10);
     }
@@ -123,7 +123,7 @@ final class ExdDataConceptConfigurationMessage extends Message
     /**
      * Gets the is signed
      */
-    public function getIsSigned(): ?bool
+    public function getIsSigned(): bool|null
     {
         return $this->getFieldValue(11);
     }

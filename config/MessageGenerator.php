@@ -45,7 +45,7 @@ class MessageGenerator
             }
 
             $this->writeFile(
-                join(DIRECTORY_SEPARATOR, [ $outputPath, '..', 'Profile.php']), 
+                join(DIRECTORY_SEPARATOR, [$outputPath, '..', 'Profile.php']),
                 $printer->printFile($this->createMessageFactory(array_keys($files)))
             );
 
@@ -74,7 +74,7 @@ class MessageGenerator
         $paramName = 'globalMessageNumber';
         $method->addParameter($paramName)
             ->setType(Type::INT);
-        
+
         $method->addBody("switch (\$globalMessageNumber) {");
 
         $cnt = count($uses);
@@ -83,12 +83,11 @@ class MessageGenerator
             $file = str_replace('Message', '', $use);
             if ($cnt !== $i) {
                 $method->addBody(str_repeat(" ", 4) . "case MessageNumber::{$file}:");
-            }
-            else {
+            } else {
                 $method->addBody(str_repeat(" ", 4) . "default:");
             }
-            
-            $method->addBody(str_repeat(" ", 8) ."return new {$use}();");
+
+            $method->addBody(str_repeat(" ", 8) . "return new {$use}();");
             $i++;
         }
 
@@ -150,13 +149,9 @@ class MessageGenerator
 
                 $method = $class->addMethod("get{$name}")
                     ->setPublic()
-                    ->setReturnType($phpType)
+                    ->setReturnType($phpType !== Type::MIXED ? join("|", [$phpType, Type::NULL]) : $phpType)
                     ->addComment("Gets the {$splittedName}")
                     ->setBody('return $this->getFieldValue(?);', [(int)$num]);
-
-                if ($phpType !== Type::MIXED) {
-                    $method->setReturnNullable();
-                }
             }
 
             if (str_starts_with($line, self::MESSAGE_END) && !is_null($file)) {
@@ -168,7 +163,8 @@ class MessageGenerator
         return $files;
     }
 
-    private function createMessageClass(PhpFile $file, string $classId): ClassType {
+    private function createMessageClass(PhpFile $file, string $classId): ClassType
+    {
         $namespace = $file->addNamespace('FIT\\Profile\\Message');
         $namespace->addUse(\DateTime::class)
             ->addUse(Message::class)
@@ -176,7 +172,7 @@ class MessageGenerator
             ->addUse(FitBaseType::class)
             ->addUse(ProfileType::class)
             ->addUse(MessageNumber::class);
-        
+
         $classname = $classId . "Message";
         $class = $namespace->addClass($classname);
 
@@ -212,10 +208,12 @@ class MessageGenerator
             case ProfileType::UINT16:
             case ProfileType::SINT16:
             case ProfileType::UINT16Z:
+                return Type::INT;
+
             case ProfileType::UINT32:
             case ProfileType::UINT32Z;
             case ProfileType::SINT32:
-                return Type::INT;
+                return join("|", [Type::INT, Type::FLOAT]);
 
             case ProfileType::LOCALDATETIME:
             case ProfileType::DATETIME:

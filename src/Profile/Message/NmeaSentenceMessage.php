@@ -35,7 +35,7 @@ final class NmeaSentenceMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(253);
     }
@@ -43,7 +43,7 @@ final class NmeaSentenceMessage extends Message
     /**
      * Gets the timestamp ms
      */
-    public function getTimestampMs(): ?int
+    public function getTimestampMs(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -51,7 +51,7 @@ final class NmeaSentenceMessage extends Message
     /**
      * Gets the sentence
      */
-    public function getSentence(): ?string
+    public function getSentence(): string|null
     {
         return $this->getFieldValue(1);
     }

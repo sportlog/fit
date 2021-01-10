@@ -36,7 +36,7 @@ final class BarometerDataMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(253);
     }
@@ -44,7 +44,7 @@ final class BarometerDataMessage extends Message
     /**
      * Gets the timestamp ms
      */
-    public function getTimestampMs(): ?int
+    public function getTimestampMs(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -52,7 +52,7 @@ final class BarometerDataMessage extends Message
     /**
      * Gets the sample time offset
      */
-    public function getSampleTimeOffset(): ?int
+    public function getSampleTimeOffset(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -60,7 +60,7 @@ final class BarometerDataMessage extends Message
     /**
      * Gets the baro pres
      */
-    public function getBaroPres(): ?int
+    public function getBaroPres(): int|float|null
     {
         return $this->getFieldValue(2);
     }

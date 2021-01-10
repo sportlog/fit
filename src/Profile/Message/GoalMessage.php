@@ -45,7 +45,7 @@ final class GoalMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): ?int
+    public function getMessageIndex(): int|null
     {
         return $this->getFieldValue(254);
     }
@@ -53,7 +53,7 @@ final class GoalMessage extends Message
     /**
      * Gets the sport
      */
-    public function getSport(): ?int
+    public function getSport(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -61,7 +61,7 @@ final class GoalMessage extends Message
     /**
      * Gets the sub sport
      */
-    public function getSubSport(): ?int
+    public function getSubSport(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -69,7 +69,7 @@ final class GoalMessage extends Message
     /**
      * Gets the start date
      */
-    public function getStartDate(): ?DateTime
+    public function getStartDate(): DateTime|null
     {
         return $this->getFieldValue(2);
     }
@@ -77,7 +77,7 @@ final class GoalMessage extends Message
     /**
      * Gets the end date
      */
-    public function getEndDate(): ?DateTime
+    public function getEndDate(): DateTime|null
     {
         return $this->getFieldValue(3);
     }
@@ -85,7 +85,7 @@ final class GoalMessage extends Message
     /**
      * Gets the type
      */
-    public function getType(): ?int
+    public function getType(): int|null
     {
         return $this->getFieldValue(4);
     }
@@ -93,7 +93,7 @@ final class GoalMessage extends Message
     /**
      * Gets the value
      */
-    public function getValue(): ?int
+    public function getValue(): int|float|null
     {
         return $this->getFieldValue(5);
     }
@@ -101,7 +101,7 @@ final class GoalMessage extends Message
     /**
      * Gets the repeat
      */
-    public function getRepeat(): ?bool
+    public function getRepeat(): bool|null
     {
         return $this->getFieldValue(6);
     }
@@ -109,7 +109,7 @@ final class GoalMessage extends Message
     /**
      * Gets the target value
      */
-    public function getTargetValue(): ?int
+    public function getTargetValue(): int|float|null
     {
         return $this->getFieldValue(7);
     }
@@ -117,7 +117,7 @@ final class GoalMessage extends Message
     /**
      * Gets the recurrence
      */
-    public function getRecurrence(): ?int
+    public function getRecurrence(): int|null
     {
         return $this->getFieldValue(8);
     }
@@ -125,7 +125,7 @@ final class GoalMessage extends Message
     /**
      * Gets the recurrence value
      */
-    public function getRecurrenceValue(): ?int
+    public function getRecurrenceValue(): int|null
     {
         return $this->getFieldValue(9);
     }
@@ -133,7 +133,7 @@ final class GoalMessage extends Message
     /**
      * Gets the enabled
      */
-    public function getEnabled(): ?bool
+    public function getEnabled(): bool|null
     {
         return $this->getFieldValue(10);
     }
@@ -141,7 +141,7 @@ final class GoalMessage extends Message
     /**
      * Gets the source
      */
-    public function getSource(): ?int
+    public function getSource(): int|null
     {
         return $this->getFieldValue(11);
     }

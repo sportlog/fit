@@ -45,7 +45,7 @@ final class DiveSummaryMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(253);
     }
@@ -53,7 +53,7 @@ final class DiveSummaryMessage extends Message
     /**
      * Gets the reference mesg
      */
-    public function getReferenceMesg(): ?int
+    public function getReferenceMesg(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -61,7 +61,7 @@ final class DiveSummaryMessage extends Message
     /**
      * Gets the reference index
      */
-    public function getReferenceIndex(): ?int
+    public function getReferenceIndex(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -69,7 +69,7 @@ final class DiveSummaryMessage extends Message
     /**
      * Gets the avg depth
      */
-    public function getAvgDepth(): ?int
+    public function getAvgDepth(): int|float|null
     {
         return $this->getFieldValue(2);
     }
@@ -77,7 +77,7 @@ final class DiveSummaryMessage extends Message
     /**
      * Gets the max depth
      */
-    public function getMaxDepth(): ?int
+    public function getMaxDepth(): int|float|null
     {
         return $this->getFieldValue(3);
     }
@@ -85,7 +85,7 @@ final class DiveSummaryMessage extends Message
     /**
      * Gets the surface interval
      */
-    public function getSurfaceInterval(): ?int
+    public function getSurfaceInterval(): int|float|null
     {
         return $this->getFieldValue(4);
     }
@@ -93,7 +93,7 @@ final class DiveSummaryMessage extends Message
     /**
      * Gets the start cns
      */
-    public function getStartCns(): ?int
+    public function getStartCns(): int|null
     {
         return $this->getFieldValue(5);
     }
@@ -101,7 +101,7 @@ final class DiveSummaryMessage extends Message
     /**
      * Gets the end cns
      */
-    public function getEndCns(): ?int
+    public function getEndCns(): int|null
     {
         return $this->getFieldValue(6);
     }
@@ -109,7 +109,7 @@ final class DiveSummaryMessage extends Message
     /**
      * Gets the start n2
      */
-    public function getStartN2(): ?int
+    public function getStartN2(): int|null
     {
         return $this->getFieldValue(7);
     }
@@ -117,7 +117,7 @@ final class DiveSummaryMessage extends Message
     /**
      * Gets the end n2
      */
-    public function getEndN2(): ?int
+    public function getEndN2(): int|null
     {
         return $this->getFieldValue(8);
     }
@@ -125,7 +125,7 @@ final class DiveSummaryMessage extends Message
     /**
      * Gets the o2 toxicity
      */
-    public function getO2Toxicity(): ?int
+    public function getO2Toxicity(): int|null
     {
         return $this->getFieldValue(9);
     }
@@ -133,7 +133,7 @@ final class DiveSummaryMessage extends Message
     /**
      * Gets the dive number
      */
-    public function getDiveNumber(): ?int
+    public function getDiveNumber(): int|float|null
     {
         return $this->getFieldValue(10);
     }
@@ -141,7 +141,7 @@ final class DiveSummaryMessage extends Message
     /**
      * Gets the bottom time
      */
-    public function getBottomTime(): ?int
+    public function getBottomTime(): int|float|null
     {
         return $this->getFieldValue(11);
     }

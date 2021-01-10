@@ -35,7 +35,7 @@ final class SportMessage extends Message
     /**
      * Gets the sport
      */
-    public function getSport(): ?int
+    public function getSport(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -43,7 +43,7 @@ final class SportMessage extends Message
     /**
      * Gets the sub sport
      */
-    public function getSubSport(): ?int
+    public function getSubSport(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -51,7 +51,7 @@ final class SportMessage extends Message
     /**
      * Gets the name
      */
-    public function getName(): ?string
+    public function getName(): string|null
     {
         return $this->getFieldValue(3);
     }

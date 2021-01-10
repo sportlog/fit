@@ -39,7 +39,7 @@ final class ClimbProMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(253);
     }
@@ -47,7 +47,7 @@ final class ClimbProMessage extends Message
     /**
      * Gets the position lat
      */
-    public function getPositionLat(): ?int
+    public function getPositionLat(): int|float|null
     {
         return $this->getFieldValue(0);
     }
@@ -55,7 +55,7 @@ final class ClimbProMessage extends Message
     /**
      * Gets the position long
      */
-    public function getPositionLong(): ?int
+    public function getPositionLong(): int|float|null
     {
         return $this->getFieldValue(1);
     }
@@ -63,7 +63,7 @@ final class ClimbProMessage extends Message
     /**
      * Gets the climb pro event
      */
-    public function getClimbProEvent(): ?int
+    public function getClimbProEvent(): int|null
     {
         return $this->getFieldValue(2);
     }
@@ -71,7 +71,7 @@ final class ClimbProMessage extends Message
     /**
      * Gets the climb number
      */
-    public function getClimbNumber(): ?int
+    public function getClimbNumber(): int|null
     {
         return $this->getFieldValue(3);
     }
@@ -79,7 +79,7 @@ final class ClimbProMessage extends Message
     /**
      * Gets the climb category
      */
-    public function getClimbCategory(): ?int
+    public function getClimbCategory(): int|null
     {
         return $this->getFieldValue(4);
     }
@@ -87,7 +87,7 @@ final class ClimbProMessage extends Message
     /**
      * Gets the current dist
      */
-    public function getCurrentDist(): ?float
+    public function getCurrentDist(): float|null
     {
         return $this->getFieldValue(5);
     }

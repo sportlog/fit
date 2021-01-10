@@ -40,7 +40,7 @@ final class CoursePointMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): ?int
+    public function getMessageIndex(): int|null
     {
         return $this->getFieldValue(254);
     }
@@ -48,7 +48,7 @@ final class CoursePointMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(1);
     }
@@ -56,7 +56,7 @@ final class CoursePointMessage extends Message
     /**
      * Gets the position lat
      */
-    public function getPositionLat(): ?int
+    public function getPositionLat(): int|float|null
     {
         return $this->getFieldValue(2);
     }
@@ -64,7 +64,7 @@ final class CoursePointMessage extends Message
     /**
      * Gets the position long
      */
-    public function getPositionLong(): ?int
+    public function getPositionLong(): int|float|null
     {
         return $this->getFieldValue(3);
     }
@@ -72,7 +72,7 @@ final class CoursePointMessage extends Message
     /**
      * Gets the distance
      */
-    public function getDistance(): ?int
+    public function getDistance(): int|float|null
     {
         return $this->getFieldValue(4);
     }
@@ -80,7 +80,7 @@ final class CoursePointMessage extends Message
     /**
      * Gets the type
      */
-    public function getType(): ?int
+    public function getType(): int|null
     {
         return $this->getFieldValue(5);
     }
@@ -88,7 +88,7 @@ final class CoursePointMessage extends Message
     /**
      * Gets the name
      */
-    public function getName(): ?string
+    public function getName(): string|null
     {
         return $this->getFieldValue(6);
     }
@@ -96,7 +96,7 @@ final class CoursePointMessage extends Message
     /**
      * Gets the favorite
      */
-    public function getFavorite(): ?bool
+    public function getFavorite(): bool|null
     {
         return $this->getFieldValue(8);
     }

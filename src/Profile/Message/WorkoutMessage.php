@@ -39,7 +39,7 @@ final class WorkoutMessage extends Message
     /**
      * Gets the sport
      */
-    public function getSport(): ?int
+    public function getSport(): int|null
     {
         return $this->getFieldValue(4);
     }
@@ -47,7 +47,7 @@ final class WorkoutMessage extends Message
     /**
      * Gets the capabilities
      */
-    public function getCapabilities(): ?int
+    public function getCapabilities(): int|null
     {
         return $this->getFieldValue(5);
     }
@@ -55,7 +55,7 @@ final class WorkoutMessage extends Message
     /**
      * Gets the num valid steps
      */
-    public function getNumValidSteps(): ?int
+    public function getNumValidSteps(): int|null
     {
         return $this->getFieldValue(6);
     }
@@ -63,7 +63,7 @@ final class WorkoutMessage extends Message
     /**
      * Gets the wkt name
      */
-    public function getWktName(): ?string
+    public function getWktName(): string|null
     {
         return $this->getFieldValue(8);
     }
@@ -71,7 +71,7 @@ final class WorkoutMessage extends Message
     /**
      * Gets the sub sport
      */
-    public function getSubSport(): ?int
+    public function getSubSport(): int|null
     {
         return $this->getFieldValue(11);
     }
@@ -79,7 +79,7 @@ final class WorkoutMessage extends Message
     /**
      * Gets the pool length
      */
-    public function getPoolLength(): ?int
+    public function getPoolLength(): int|null
     {
         return $this->getFieldValue(14);
     }
@@ -87,7 +87,7 @@ final class WorkoutMessage extends Message
     /**
      * Gets the pool length unit
      */
-    public function getPoolLengthUnit(): ?int
+    public function getPoolLengthUnit(): int|null
     {
         return $this->getFieldValue(15);
     }

@@ -39,7 +39,7 @@ final class VideoClipMessage extends Message
     /**
      * Gets the clip number
      */
-    public function getClipNumber(): ?int
+    public function getClipNumber(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -47,7 +47,7 @@ final class VideoClipMessage extends Message
     /**
      * Gets the start timestamp
      */
-    public function getStartTimestamp(): ?DateTime
+    public function getStartTimestamp(): DateTime|null
     {
         return $this->getFieldValue(1);
     }
@@ -55,7 +55,7 @@ final class VideoClipMessage extends Message
     /**
      * Gets the start timestamp ms
      */
-    public function getStartTimestampMs(): ?int
+    public function getStartTimestampMs(): int|null
     {
         return $this->getFieldValue(2);
     }
@@ -63,7 +63,7 @@ final class VideoClipMessage extends Message
     /**
      * Gets the end timestamp
      */
-    public function getEndTimestamp(): ?DateTime
+    public function getEndTimestamp(): DateTime|null
     {
         return $this->getFieldValue(3);
     }
@@ -71,7 +71,7 @@ final class VideoClipMessage extends Message
     /**
      * Gets the end timestamp ms
      */
-    public function getEndTimestampMs(): ?int
+    public function getEndTimestampMs(): int|null
     {
         return $this->getFieldValue(4);
     }
@@ -79,7 +79,7 @@ final class VideoClipMessage extends Message
     /**
      * Gets the clip start
      */
-    public function getClipStart(): ?int
+    public function getClipStart(): int|float|null
     {
         return $this->getFieldValue(6);
     }
@@ -87,7 +87,7 @@ final class VideoClipMessage extends Message
     /**
      * Gets the clip end
      */
-    public function getClipEnd(): ?int
+    public function getClipEnd(): int|float|null
     {
         return $this->getFieldValue(7);
     }

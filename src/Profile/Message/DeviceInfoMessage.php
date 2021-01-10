@@ -50,7 +50,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(253);
     }
@@ -58,7 +58,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the device index
      */
-    public function getDeviceIndex(): ?int
+    public function getDeviceIndex(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -66,7 +66,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the device type
      */
-    public function getDeviceType(): ?int
+    public function getDeviceType(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -74,7 +74,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the manufacturer
      */
-    public function getManufacturer(): ?int
+    public function getManufacturer(): int|null
     {
         return $this->getFieldValue(2);
     }
@@ -82,7 +82,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the serial number
      */
-    public function getSerialNumber(): ?int
+    public function getSerialNumber(): int|float|null
     {
         return $this->getFieldValue(3);
     }
@@ -90,7 +90,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the product
      */
-    public function getProduct(): ?int
+    public function getProduct(): int|null
     {
         return $this->getFieldValue(4);
     }
@@ -98,7 +98,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the software version
      */
-    public function getSoftwareVersion(): ?int
+    public function getSoftwareVersion(): int|null
     {
         return $this->getFieldValue(5);
     }
@@ -106,7 +106,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the hardware version
      */
-    public function getHardwareVersion(): ?int
+    public function getHardwareVersion(): int|null
     {
         return $this->getFieldValue(6);
     }
@@ -114,7 +114,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the cum operating time
      */
-    public function getCumOperatingTime(): ?int
+    public function getCumOperatingTime(): int|float|null
     {
         return $this->getFieldValue(7);
     }
@@ -122,7 +122,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the battery voltage
      */
-    public function getBatteryVoltage(): ?int
+    public function getBatteryVoltage(): int|null
     {
         return $this->getFieldValue(10);
     }
@@ -130,7 +130,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the battery status
      */
-    public function getBatteryStatus(): ?int
+    public function getBatteryStatus(): int|null
     {
         return $this->getFieldValue(11);
     }
@@ -138,7 +138,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the sensor position
      */
-    public function getSensorPosition(): ?int
+    public function getSensorPosition(): int|null
     {
         return $this->getFieldValue(18);
     }
@@ -146,7 +146,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the descriptor
      */
-    public function getDescriptor(): ?string
+    public function getDescriptor(): string|null
     {
         return $this->getFieldValue(19);
     }
@@ -154,7 +154,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the ant transmission type
      */
-    public function getAntTransmissionType(): ?int
+    public function getAntTransmissionType(): int|null
     {
         return $this->getFieldValue(20);
     }
@@ -162,7 +162,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the ant device number
      */
-    public function getAntDeviceNumber(): ?int
+    public function getAntDeviceNumber(): int|null
     {
         return $this->getFieldValue(21);
     }
@@ -170,7 +170,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the ant network
      */
-    public function getAntNetwork(): ?int
+    public function getAntNetwork(): int|null
     {
         return $this->getFieldValue(22);
     }
@@ -178,7 +178,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the source type
      */
-    public function getSourceType(): ?int
+    public function getSourceType(): int|null
     {
         return $this->getFieldValue(25);
     }
@@ -186,7 +186,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the product name
      */
-    public function getProductName(): ?string
+    public function getProductName(): string|null
     {
         return $this->getFieldValue(27);
     }

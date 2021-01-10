@@ -44,7 +44,7 @@ final class AccelerometerDataMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(253);
     }
@@ -52,7 +52,7 @@ final class AccelerometerDataMessage extends Message
     /**
      * Gets the timestamp ms
      */
-    public function getTimestampMs(): ?int
+    public function getTimestampMs(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -60,7 +60,7 @@ final class AccelerometerDataMessage extends Message
     /**
      * Gets the sample time offset
      */
-    public function getSampleTimeOffset(): ?int
+    public function getSampleTimeOffset(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -68,7 +68,7 @@ final class AccelerometerDataMessage extends Message
     /**
      * Gets the accel x
      */
-    public function getAccelX(): ?int
+    public function getAccelX(): int|null
     {
         return $this->getFieldValue(2);
     }
@@ -76,7 +76,7 @@ final class AccelerometerDataMessage extends Message
     /**
      * Gets the accel y
      */
-    public function getAccelY(): ?int
+    public function getAccelY(): int|null
     {
         return $this->getFieldValue(3);
     }
@@ -84,7 +84,7 @@ final class AccelerometerDataMessage extends Message
     /**
      * Gets the accel z
      */
-    public function getAccelZ(): ?int
+    public function getAccelZ(): int|null
     {
         return $this->getFieldValue(4);
     }
@@ -92,7 +92,7 @@ final class AccelerometerDataMessage extends Message
     /**
      * Gets the calibrated accel x
      */
-    public function getCalibratedAccelX(): ?float
+    public function getCalibratedAccelX(): float|null
     {
         return $this->getFieldValue(5);
     }
@@ -100,7 +100,7 @@ final class AccelerometerDataMessage extends Message
     /**
      * Gets the calibrated accel y
      */
-    public function getCalibratedAccelY(): ?float
+    public function getCalibratedAccelY(): float|null
     {
         return $this->getFieldValue(6);
     }
@@ -108,7 +108,7 @@ final class AccelerometerDataMessage extends Message
     /**
      * Gets the calibrated accel z
      */
-    public function getCalibratedAccelZ(): ?float
+    public function getCalibratedAccelZ(): float|null
     {
         return $this->getFieldValue(7);
     }
@@ -116,7 +116,7 @@ final class AccelerometerDataMessage extends Message
     /**
      * Gets the compressed calibrated accel x
      */
-    public function getCompressedCalibratedAccelX(): ?int
+    public function getCompressedCalibratedAccelX(): int|null
     {
         return $this->getFieldValue(8);
     }
@@ -124,7 +124,7 @@ final class AccelerometerDataMessage extends Message
     /**
      * Gets the compressed calibrated accel y
      */
-    public function getCompressedCalibratedAccelY(): ?int
+    public function getCompressedCalibratedAccelY(): int|null
     {
         return $this->getFieldValue(9);
     }
@@ -132,7 +132,7 @@ final class AccelerometerDataMessage extends Message
     /**
      * Gets the compressed calibrated accel z
      */
-    public function getCompressedCalibratedAccelZ(): ?int
+    public function getCompressedCalibratedAccelZ(): int|null
     {
         return $this->getFieldValue(10);
     }

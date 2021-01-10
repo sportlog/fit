@@ -48,7 +48,7 @@ final class WeatherConditionsMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(253);
     }
@@ -56,7 +56,7 @@ final class WeatherConditionsMessage extends Message
     /**
      * Gets the weather report
      */
-    public function getWeatherReport(): ?int
+    public function getWeatherReport(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -64,7 +64,7 @@ final class WeatherConditionsMessage extends Message
     /**
      * Gets the temperature
      */
-    public function getTemperature(): ?int
+    public function getTemperature(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -72,7 +72,7 @@ final class WeatherConditionsMessage extends Message
     /**
      * Gets the condition
      */
-    public function getCondition(): ?int
+    public function getCondition(): int|null
     {
         return $this->getFieldValue(2);
     }
@@ -80,7 +80,7 @@ final class WeatherConditionsMessage extends Message
     /**
      * Gets the wind direction
      */
-    public function getWindDirection(): ?int
+    public function getWindDirection(): int|null
     {
         return $this->getFieldValue(3);
     }
@@ -88,7 +88,7 @@ final class WeatherConditionsMessage extends Message
     /**
      * Gets the wind speed
      */
-    public function getWindSpeed(): ?int
+    public function getWindSpeed(): int|null
     {
         return $this->getFieldValue(4);
     }
@@ -96,7 +96,7 @@ final class WeatherConditionsMessage extends Message
     /**
      * Gets the precipitation probability
      */
-    public function getPrecipitationProbability(): ?int
+    public function getPrecipitationProbability(): int|null
     {
         return $this->getFieldValue(5);
     }
@@ -104,7 +104,7 @@ final class WeatherConditionsMessage extends Message
     /**
      * Gets the temperature feels like
      */
-    public function getTemperatureFeelsLike(): ?int
+    public function getTemperatureFeelsLike(): int|null
     {
         return $this->getFieldValue(6);
     }
@@ -112,7 +112,7 @@ final class WeatherConditionsMessage extends Message
     /**
      * Gets the relative humidity
      */
-    public function getRelativeHumidity(): ?int
+    public function getRelativeHumidity(): int|null
     {
         return $this->getFieldValue(7);
     }
@@ -120,7 +120,7 @@ final class WeatherConditionsMessage extends Message
     /**
      * Gets the location
      */
-    public function getLocation(): ?string
+    public function getLocation(): string|null
     {
         return $this->getFieldValue(8);
     }
@@ -128,7 +128,7 @@ final class WeatherConditionsMessage extends Message
     /**
      * Gets the observed at time
      */
-    public function getObservedAtTime(): ?DateTime
+    public function getObservedAtTime(): DateTime|null
     {
         return $this->getFieldValue(9);
     }
@@ -136,7 +136,7 @@ final class WeatherConditionsMessage extends Message
     /**
      * Gets the observed location lat
      */
-    public function getObservedLocationLat(): ?int
+    public function getObservedLocationLat(): int|float|null
     {
         return $this->getFieldValue(10);
     }
@@ -144,7 +144,7 @@ final class WeatherConditionsMessage extends Message
     /**
      * Gets the observed location long
      */
-    public function getObservedLocationLong(): ?int
+    public function getObservedLocationLong(): int|float|null
     {
         return $this->getFieldValue(11);
     }
@@ -152,7 +152,7 @@ final class WeatherConditionsMessage extends Message
     /**
      * Gets the day of week
      */
-    public function getDayOfWeek(): ?int
+    public function getDayOfWeek(): int|null
     {
         return $this->getFieldValue(12);
     }
@@ -160,7 +160,7 @@ final class WeatherConditionsMessage extends Message
     /**
      * Gets the high temperature
      */
-    public function getHighTemperature(): ?int
+    public function getHighTemperature(): int|null
     {
         return $this->getFieldValue(13);
     }
@@ -168,7 +168,7 @@ final class WeatherConditionsMessage extends Message
     /**
      * Gets the low temperature
      */
-    public function getLowTemperature(): ?int
+    public function getLowTemperature(): int|null
     {
         return $this->getFieldValue(14);
     }

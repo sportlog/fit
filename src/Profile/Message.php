@@ -160,8 +160,6 @@ abstract class Message implements IteratorAggregate, Stringable
 
             case ProfileType::UINT16:
             case ProfileType::UINT16Z:
-            case ProfileType::UINT32:
-            case ProfileType::UINT32Z:
                 return intval($value);
 
             case ProfileType::LOCALDATETIME:

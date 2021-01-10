@@ -41,7 +41,7 @@ final class GyroscopeDataMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(253);
     }
@@ -49,7 +49,7 @@ final class GyroscopeDataMessage extends Message
     /**
      * Gets the timestamp ms
      */
-    public function getTimestampMs(): ?int
+    public function getTimestampMs(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -57,7 +57,7 @@ final class GyroscopeDataMessage extends Message
     /**
      * Gets the sample time offset
      */
-    public function getSampleTimeOffset(): ?int
+    public function getSampleTimeOffset(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -65,7 +65,7 @@ final class GyroscopeDataMessage extends Message
     /**
      * Gets the gyro x
      */
-    public function getGyroX(): ?int
+    public function getGyroX(): int|null
     {
         return $this->getFieldValue(2);
     }
@@ -73,7 +73,7 @@ final class GyroscopeDataMessage extends Message
     /**
      * Gets the gyro y
      */
-    public function getGyroY(): ?int
+    public function getGyroY(): int|null
     {
         return $this->getFieldValue(3);
     }
@@ -81,7 +81,7 @@ final class GyroscopeDataMessage extends Message
     /**
      * Gets the gyro z
      */
-    public function getGyroZ(): ?int
+    public function getGyroZ(): int|null
     {
         return $this->getFieldValue(4);
     }
@@ -89,7 +89,7 @@ final class GyroscopeDataMessage extends Message
     /**
      * Gets the calibrated gyro x
      */
-    public function getCalibratedGyroX(): ?float
+    public function getCalibratedGyroX(): float|null
     {
         return $this->getFieldValue(5);
     }
@@ -97,7 +97,7 @@ final class GyroscopeDataMessage extends Message
     /**
      * Gets the calibrated gyro y
      */
-    public function getCalibratedGyroY(): ?float
+    public function getCalibratedGyroY(): float|null
     {
         return $this->getFieldValue(6);
     }
@@ -105,7 +105,7 @@ final class GyroscopeDataMessage extends Message
     /**
      * Gets the calibrated gyro z
      */
-    public function getCalibratedGyroZ(): ?float
+    public function getCalibratedGyroZ(): float|null
     {
         return $this->getFieldValue(7);
     }

@@ -39,7 +39,7 @@ final class ScheduleMessage extends Message
     /**
      * Gets the manufacturer
      */
-    public function getManufacturer(): ?int
+    public function getManufacturer(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -47,7 +47,7 @@ final class ScheduleMessage extends Message
     /**
      * Gets the product
      */
-    public function getProduct(): ?int
+    public function getProduct(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -55,7 +55,7 @@ final class ScheduleMessage extends Message
     /**
      * Gets the serial number
      */
-    public function getSerialNumber(): ?int
+    public function getSerialNumber(): int|float|null
     {
         return $this->getFieldValue(2);
     }
@@ -63,7 +63,7 @@ final class ScheduleMessage extends Message
     /**
      * Gets the time created
      */
-    public function getTimeCreated(): ?DateTime
+    public function getTimeCreated(): DateTime|null
     {
         return $this->getFieldValue(3);
     }
@@ -71,7 +71,7 @@ final class ScheduleMessage extends Message
     /**
      * Gets the completed
      */
-    public function getCompleted(): ?bool
+    public function getCompleted(): bool|null
     {
         return $this->getFieldValue(4);
     }
@@ -79,7 +79,7 @@ final class ScheduleMessage extends Message
     /**
      * Gets the type
      */
-    public function getType(): ?int
+    public function getType(): int|null
     {
         return $this->getFieldValue(5);
     }
@@ -87,7 +87,7 @@ final class ScheduleMessage extends Message
     /**
      * Gets the scheduled time
      */
-    public function getScheduledTime(): ?DateTime
+    public function getScheduledTime(): DateTime|null
     {
         return $this->getFieldValue(6);
     }

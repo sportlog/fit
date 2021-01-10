@@ -41,7 +41,7 @@ final class MagnetometerDataMessage extends Message
     /**
      * Gets the timestamp
      */
-    public function getTimestamp(): ?DateTime
+    public function getTimestamp(): DateTime|null
     {
         return $this->getFieldValue(253);
     }
@@ -49,7 +49,7 @@ final class MagnetometerDataMessage extends Message
     /**
      * Gets the timestamp ms
      */
-    public function getTimestampMs(): ?int
+    public function getTimestampMs(): int|null
     {
         return $this->getFieldValue(0);
     }
@@ -57,7 +57,7 @@ final class MagnetometerDataMessage extends Message
     /**
      * Gets the sample time offset
      */
-    public function getSampleTimeOffset(): ?int
+    public function getSampleTimeOffset(): int|null
     {
         return $this->getFieldValue(1);
     }
@@ -65,7 +65,7 @@ final class MagnetometerDataMessage extends Message
     /**
      * Gets the mag x
      */
-    public function getMagX(): ?int
+    public function getMagX(): int|null
     {
         return $this->getFieldValue(2);
     }
@@ -73,7 +73,7 @@ final class MagnetometerDataMessage extends Message
     /**
      * Gets the mag y
      */
-    public function getMagY(): ?int
+    public function getMagY(): int|null
     {
         return $this->getFieldValue(3);
     }
@@ -81,7 +81,7 @@ final class MagnetometerDataMessage extends Message
     /**
      * Gets the mag z
      */
-    public function getMagZ(): ?int
+    public function getMagZ(): int|null
     {
         return $this->getFieldValue(4);
     }
@@ -89,7 +89,7 @@ final class MagnetometerDataMessage extends Message
     /**
      * Gets the calibrated mag x
      */
-    public function getCalibratedMagX(): ?float
+    public function getCalibratedMagX(): float|null
     {
         return $this->getFieldValue(5);
     }
@@ -97,7 +97,7 @@ final class MagnetometerDataMessage extends Message
     /**
      * Gets the calibrated mag y
      */
-    public function getCalibratedMagY(): ?float
+    public function getCalibratedMagY(): float|null
     {
         return $this->getFieldValue(6);
     }
@@ -105,7 +105,7 @@ final class MagnetometerDataMessage extends Message
     /**
      * Gets the calibrated mag z
      */
-    public function getCalibratedMagZ(): ?float
+    public function getCalibratedMagZ(): float|null
     {
         return $this->getFieldValue(7);
     }
