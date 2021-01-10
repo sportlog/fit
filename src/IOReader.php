@@ -1,7 +1,8 @@
 <?php
+declare(strict_types=1);
 
 /**
- * Sportlog (https://sportlog.at)
+ * FIT decoder
  *
  * The bigger part of this code is taken and modified from
  * Zend_Io_Reader, therefore this copyright notice.
@@ -20,9 +21,7 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-declare(strict_types=1);
-
-namespace FIT;
+namespace Sportlog\FIT;
 
 use Exception;
 use InvalidArgumentException;

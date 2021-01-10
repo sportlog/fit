@@ -2,7 +2,7 @@
 
 require '../vendor/autoload.php';
 
-use FIT\Generator\MessageGenerator;
+use Sportlog\FIT\Generator\MessageGenerator;
 
 try {
     $generator = new MessageGenerator();

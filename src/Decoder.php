@@ -1,24 +1,21 @@
 <?php
+declare(strict_types=1);
 
 /**
- * Sportlog (https://sportlog.at)
+ * FIT decoder
  *
- * @link https://sportlog.at
  * @license MIT License
  */
 
-declare(strict_types=1);
-
-namespace FIT;
+namespace Sportlog\FIT;
 
 use Exception;
-use FIT\Profile\Message;
-use FIT\Profile\Message\TimestampMessage;
-use FIT\Profile\MessageList;
+use Sportlog\FIT\Profile\Message;
+use Sportlog\FIT\Profile\MessageList;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
-use FIT\Profile\Profile;
+use Sportlog\FIT\Profile\Profile;
 
 /**
  * A decoder for FIT files.

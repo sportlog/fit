@@ -1,20 +1,18 @@
 <?php
+declare(strict_types=1);
 
 /**
- * Sportlog (https://sportlog.at)
+ * FIT decoder
  *
- * @link https://sportlog.at
  * @license MIT License
  */
 
-declare(strict_types=1);
+namespace Sportlog\FIT\Profile;
 
-namespace FIT\Profile;
-
-use ArrayIterator;
 use Countable;
 use FIT\Profile\Message\FileIdMessage;
 use IteratorAggregate;
+use RecursiveArrayIterator;
 use Traversable;
 
 /**
@@ -29,7 +27,8 @@ class MessageList implements IteratorAggregate, Countable
      *
      * @return integer|null
      */
-    public function getFileType(): ?int {
+    public function getFileType(): ?int
+    {
         $messages = $this->getMessages(FileIdMessage::class);
         if (count($messages) !== 1) {
             return null;
@@ -41,9 +40,20 @@ class MessageList implements IteratorAggregate, Countable
     }
 
     /**
+     * Return all available messages types.
+     *
+     * @return array
+     */
+    public function getMessageTypes(): array
+    {
+        return array_keys($this->messages);
+    }
+
+    /**
      * Gets all messages for the specified class id.
      */
-    public function getMessages(string $classId): array {
+    public function getMessages(string $classId): array
+    {
         return isset($this->messages[$classId]) ? $this->messages[$classId] : [];
     }
 
@@ -69,7 +79,8 @@ class MessageList implements IteratorAggregate, Countable
      *
      * @return integer
      */
-    public function count(): int {
+    public function count(): int
+    {
         $cnt = 0;
         foreach ($this->messages as $messageList) {
             $cnt += count($messageList);
@@ -78,7 +89,7 @@ class MessageList implements IteratorAggregate, Countable
         return $cnt;
     }
 
-     /**
+    /**
      * Gets an iterator.
      *
      * {@inheritDoc}
@@ -86,6 +97,6 @@ class MessageList implements IteratorAggregate, Countable
      */
     public function getIterator(): Traversable
     {
-        return new ArrayIterator($this->messages);
+        return new RecursiveArrayIterator($this->messages, RecursiveArrayIterator::CHILD_ARRAYS_ONLY);
     }
 }

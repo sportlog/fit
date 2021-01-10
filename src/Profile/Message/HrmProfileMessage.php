@@ -1,20 +1,24 @@
 <?php
 
 /**
+ * FIT decoder
+ *
+ * @license MIT License
+ *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
  * Profile Version = 21.40Release
  */
 
 declare(strict_types=1);
 
-namespace FIT\Profile\Message;
+namespace Sportlog\FIT\Profile\Message;
 
 use DateTime;
-use FIT\FitBaseType;
-use FIT\Profile\Field;
-use FIT\Profile\Message;
-use FIT\Profile\MessageNumber;
-use FIT\Profile\ProfileType;
+use Sportlog\FIT\FitBaseType;
+use Sportlog\FIT\Profile\Field;
+use Sportlog\FIT\Profile\Message;
+use Sportlog\FIT\Profile\MessageNumber;
+use Sportlog\FIT\Profile\ProfileType;
 
 /**
  * HrmProfileMessage message

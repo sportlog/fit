@@ -1,13 +1,20 @@
 <?php
+declare(strict_types=1);
 
-namespace FIT\Generator;
+/**
+ * FIT decoder
+ *
+ * @license MIT License
+ */
+
+namespace Sportlog\FIT\Generator;
 
 use DateTime;
-use FIT\Profile\Field;
-use FIT\Profile\Message;
-use FIT\Profile\MessageNumber;
-use FIT\Profile\ProfileType;
-use FIT\FitBaseType;
+use Sportlog\FIT\Profile\Field;
+use Sportlog\FIT\Profile\Message;
+use Sportlog\FIT\Profile\MessageNumber;
+use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\FitBaseType;
 use Nette\PhpGenerator\Literal;
 use Nette\PhpGenerator\PhpFile;
 use Nette\PhpGenerator\ClassType;
@@ -59,10 +66,10 @@ class MessageGenerator
     private function createMessageFactory(array $uses): PhpFile
     {
         $factory = $this->createFile();
-        $namespace = $factory->addNamespace('FIT\\Profile');
+        $namespace = $factory->addNamespace('Sportlog\\FIT\\Profile');
 
         foreach ($uses as $use) {
-            $namespace->addUse("FIT\\Profile\\Message\\{$use}");
+            $namespace->addUse("Sportlog\\FIT\\Profile\\Message\\{$use}");
         }
 
         $class = $namespace->addClass('Profile')
@@ -175,7 +182,7 @@ class MessageGenerator
 
     private function createMessageClass(PhpFile $file, string $classId): ClassType
     {
-        $namespace = $file->addNamespace('FIT\\Profile\\Message');
+        $namespace = $file->addNamespace('Sportlog\\FIT\\Profile\\Message');
         $namespace->addUse(\DateTime::class)
             ->addUse(Message::class)
             ->addUse(Field::class)
@@ -201,6 +208,10 @@ class MessageGenerator
         $factory = new PhpFile();
         $factory
             ->setStrictTypes() // adds declare(strict_types=1)
+            ->addComment("FIT decoder")
+            ->addComment("")
+            ->addComment("@license MIT License")
+            ->addComment("")
             ->addComment("****WARNING****  This file is auto-generated! Do NOT edit.")
             ->addComment("Profile Version = 21.40Release");
 

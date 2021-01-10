@@ -1,15 +1,13 @@
 <?php
+declare(strict_types=1);
 
 /**
- * Sportlog (https://sportlog.at)
+ * FIT decoder
  *
- * @link https://sportlog.at
  * @license MIT License
  */
 
-declare(strict_types=1);
-
-namespace FIT\Profile;
+namespace Sportlog\FIT\Profile;
 
 class ProfileType {
     const ENUM = 'Enum';

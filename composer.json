@@ -19,9 +19,9 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "FIT\\": "src/",
-      "FIT\\Test\\": "tests/",
-      "FIT\\Generator\\": "config/"
+      "Sportlog\\FIT\\": "src/",
+      "Sportlog\\FIT\\Test\\": "tests/",
+      "Sportlog\\FIT\\Generator\\": "config/"
     }
   },
   "require-dev": {

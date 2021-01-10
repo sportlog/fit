@@ -1,20 +1,18 @@
 <?php
+declare(strict_types=1);
 
 /**
- * Sportlog (https://sportlog.at)
+ * FIT decoder
  *
- * @link https://sportlog.at
  * @license MIT License
  */
 
-declare(strict_types=1);
-
-namespace FIT\Profile;
+namespace Sportlog\FIT\Profile;
 
 use ArrayIterator;
 use DateTime;
 use Exception;
-use FIT\FitBaseTypeDefinition;
+use Sportlog\FIT\FitBaseTypeDefinition;
 use IteratorAggregate;
 use ReflectionClass;
 use Stringable;

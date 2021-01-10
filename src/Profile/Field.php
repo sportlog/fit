@@ -1,19 +1,17 @@
 <?php
+declare(strict_types=1);
 
 /**
- * Sportlog (https://sportlog.at)
+ * FIT decoder
  *
- * @link https://sportlog.at
  * @license MIT License
  */
 
-declare(strict_types=1);
-
-namespace FIT\Profile;
+namespace Sportlog\FIT\Profile;
 
 use Attribute;
-use FIT\FitBaseType;
-use FIT\FitBaseTypeDefinition;
+use Sportlog\FIT\FitBaseType;
+use Sportlog\FIT\FitBaseTypeDefinition;
 
 /**
  * Describes a message field.
