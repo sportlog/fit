@@ -149,18 +149,18 @@ abstract class Message implements IteratorAggregate, Stringable
 
     private function convertValueToFieldType(Field $field, mixed $value): mixed
     {
-        if ($field->getTypeDefinition()->isNumeric()) {
+        if (
+            $field->getTypeDefinition()->isNumeric() &&
+            ($field->getScale() !== Field::DEFAULT_SCALE || $field->getOffset() !== Field::DEFAULT_OFFSET)
+        ) {
             $value /= $field->getScale();
             $value -= $field->getOffset();
         }
 
+
         switch ($field->getProfileType()) {
             case ProfileType::BOOL:
                 return $value !== 0;
-
-            case ProfileType::UINT16:
-            case ProfileType::UINT16Z:
-                return intval($value);
 
             case ProfileType::LOCALDATETIME:
             case ProfileType::DATETIME:

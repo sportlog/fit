@@ -21,6 +21,9 @@ use FIT\FitBaseTypeDefinition;
 #[Attribute(Attribute::IS_REPEATABLE | Attribute::TARGET_CLASS)]
 final class Field
 {
+    public const DEFAULT_SCALE = 1.0;
+    public const DEFAULT_OFFSET = 0.0;
+
     private FitBaseTypeDefinition $typeDefinition;
 
     public function __construct(
