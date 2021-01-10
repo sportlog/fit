@@ -43,7 +43,7 @@ final class VideoFrameMessage extends Message
     /**
      * Gets the timestamp ms
      */
-    public function getTimestampMs(): int|null
+    public function getTimestampMs(): int|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -51,7 +51,7 @@ final class VideoFrameMessage extends Message
     /**
      * Gets the frame number
      */
-    public function getFrameNumber(): int|null
+    public function getFrameNumber(): int|array|null
     {
         return $this->getFieldValue(1);
     }

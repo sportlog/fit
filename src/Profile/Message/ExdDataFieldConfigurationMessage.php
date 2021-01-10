@@ -38,7 +38,7 @@ final class ExdDataFieldConfigurationMessage extends Message
     /**
      * Gets the screen index
      */
-    public function getScreenIndex(): int|null
+    public function getScreenIndex(): int|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -54,7 +54,7 @@ final class ExdDataFieldConfigurationMessage extends Message
     /**
      * Gets the field id
      */
-    public function getFieldId(): int|null
+    public function getFieldId(): int|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -62,7 +62,7 @@ final class ExdDataFieldConfigurationMessage extends Message
     /**
      * Gets the concept count
      */
-    public function getConceptCount(): int|null
+    public function getConceptCount(): int|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -70,7 +70,7 @@ final class ExdDataFieldConfigurationMessage extends Message
     /**
      * Gets the display type
      */
-    public function getDisplayType(): int|null
+    public function getDisplayType(): int|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -78,7 +78,7 @@ final class ExdDataFieldConfigurationMessage extends Message
     /**
      * Gets the title
      */
-    public function getTitle(): string|null
+    public function getTitle(): string|array|null
     {
         return $this->getFieldValue(5);
     }

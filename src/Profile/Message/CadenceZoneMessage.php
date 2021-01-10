@@ -35,7 +35,7 @@ final class CadenceZoneMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): int|null
+    public function getMessageIndex(): int|array|null
     {
         return $this->getFieldValue(254);
     }
@@ -43,7 +43,7 @@ final class CadenceZoneMessage extends Message
     /**
      * Gets the high value
      */
-    public function getHighValue(): int|null
+    public function getHighValue(): int|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -51,7 +51,7 @@ final class CadenceZoneMessage extends Message
     /**
      * Gets the name
      */
-    public function getName(): string|null
+    public function getName(): string|array|null
     {
         return $this->getFieldValue(1);
     }

@@ -35,7 +35,7 @@ final class VideoMessage extends Message
     /**
      * Gets the url
      */
-    public function getUrl(): string|null
+    public function getUrl(): string|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -43,7 +43,7 @@ final class VideoMessage extends Message
     /**
      * Gets the hosting provider
      */
-    public function getHostingProvider(): string|null
+    public function getHostingProvider(): string|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -51,7 +51,7 @@ final class VideoMessage extends Message
     /**
      * Gets the duration
      */
-    public function getDuration(): int|null
+    public function getDuration(): int|array|null
     {
         return $this->getFieldValue(2);
     }

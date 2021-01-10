@@ -45,7 +45,7 @@ final class ConnectivityMessage extends Message
     /**
      * Gets the bluetooth enabled
      */
-    public function getBluetoothEnabled(): bool|null
+    public function getBluetoothEnabled(): bool|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -53,7 +53,7 @@ final class ConnectivityMessage extends Message
     /**
      * Gets the bluetooth le enabled
      */
-    public function getBluetoothLeEnabled(): bool|null
+    public function getBluetoothLeEnabled(): bool|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -61,7 +61,7 @@ final class ConnectivityMessage extends Message
     /**
      * Gets the ant enabled
      */
-    public function getAntEnabled(): bool|null
+    public function getAntEnabled(): bool|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -69,7 +69,7 @@ final class ConnectivityMessage extends Message
     /**
      * Gets the name
      */
-    public function getName(): string|null
+    public function getName(): string|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -77,7 +77,7 @@ final class ConnectivityMessage extends Message
     /**
      * Gets the live tracking enabled
      */
-    public function getLiveTrackingEnabled(): bool|null
+    public function getLiveTrackingEnabled(): bool|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -85,7 +85,7 @@ final class ConnectivityMessage extends Message
     /**
      * Gets the weather conditions enabled
      */
-    public function getWeatherConditionsEnabled(): bool|null
+    public function getWeatherConditionsEnabled(): bool|array|null
     {
         return $this->getFieldValue(5);
     }
@@ -93,7 +93,7 @@ final class ConnectivityMessage extends Message
     /**
      * Gets the weather alerts enabled
      */
-    public function getWeatherAlertsEnabled(): bool|null
+    public function getWeatherAlertsEnabled(): bool|array|null
     {
         return $this->getFieldValue(6);
     }
@@ -101,7 +101,7 @@ final class ConnectivityMessage extends Message
     /**
      * Gets the auto activity upload enabled
      */
-    public function getAutoActivityUploadEnabled(): bool|null
+    public function getAutoActivityUploadEnabled(): bool|array|null
     {
         return $this->getFieldValue(7);
     }
@@ -109,7 +109,7 @@ final class ConnectivityMessage extends Message
     /**
      * Gets the course download enabled
      */
-    public function getCourseDownloadEnabled(): bool|null
+    public function getCourseDownloadEnabled(): bool|array|null
     {
         return $this->getFieldValue(8);
     }
@@ -117,7 +117,7 @@ final class ConnectivityMessage extends Message
     /**
      * Gets the workout download enabled
      */
-    public function getWorkoutDownloadEnabled(): bool|null
+    public function getWorkoutDownloadEnabled(): bool|array|null
     {
         return $this->getFieldValue(9);
     }
@@ -125,7 +125,7 @@ final class ConnectivityMessage extends Message
     /**
      * Gets the gps ephemeris download enabled
      */
-    public function getGpsEphemerisDownloadEnabled(): bool|null
+    public function getGpsEphemerisDownloadEnabled(): bool|array|null
     {
         return $this->getFieldValue(10);
     }
@@ -133,7 +133,7 @@ final class ConnectivityMessage extends Message
     /**
      * Gets the incident detection enabled
      */
-    public function getIncidentDetectionEnabled(): bool|null
+    public function getIncidentDetectionEnabled(): bool|array|null
     {
         return $this->getFieldValue(11);
     }
@@ -141,7 +141,7 @@ final class ConnectivityMessage extends Message
     /**
      * Gets the grouptrack enabled
      */
-    public function getGrouptrackEnabled(): bool|null
+    public function getGrouptrackEnabled(): bool|array|null
     {
         return $this->getFieldValue(12);
     }

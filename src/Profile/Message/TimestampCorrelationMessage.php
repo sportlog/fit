@@ -47,7 +47,7 @@ final class TimestampCorrelationMessage extends Message
     /**
      * Gets the fractional timestamp
      */
-    public function getFractionalTimestamp(): float|null
+    public function getFractionalTimestamp(): float|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -63,7 +63,7 @@ final class TimestampCorrelationMessage extends Message
     /**
      * Gets the fractional system timestamp
      */
-    public function getFractionalSystemTimestamp(): float|null
+    public function getFractionalSystemTimestamp(): float|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -79,7 +79,7 @@ final class TimestampCorrelationMessage extends Message
     /**
      * Gets the timestamp ms
      */
-    public function getTimestampMs(): int|null
+    public function getTimestampMs(): int|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -87,7 +87,7 @@ final class TimestampCorrelationMessage extends Message
     /**
      * Gets the system timestamp ms
      */
-    public function getSystemTimestampMs(): int|null
+    public function getSystemTimestampMs(): int|array|null
     {
         return $this->getFieldValue(5);
     }

@@ -48,7 +48,7 @@ final class ActivityMessage extends Message
     /**
      * Gets the total timer time
      */
-    public function getTotalTimerTime(): float|null
+    public function getTotalTimerTime(): float|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -56,7 +56,7 @@ final class ActivityMessage extends Message
     /**
      * Gets the num sessions
      */
-    public function getNumSessions(): int|null
+    public function getNumSessions(): int|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -64,7 +64,7 @@ final class ActivityMessage extends Message
     /**
      * Gets the type
      */
-    public function getType(): int|null
+    public function getType(): int|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -72,7 +72,7 @@ final class ActivityMessage extends Message
     /**
      * Gets the event
      */
-    public function getEvent(): int|null
+    public function getEvent(): int|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -80,7 +80,7 @@ final class ActivityMessage extends Message
     /**
      * Gets the event type
      */
-    public function getEventType(): int|null
+    public function getEventType(): int|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -96,7 +96,7 @@ final class ActivityMessage extends Message
     /**
      * Gets the event group
      */
-    public function getEventGroup(): int|null
+    public function getEventGroup(): int|array|null
     {
         return $this->getFieldValue(6);
     }

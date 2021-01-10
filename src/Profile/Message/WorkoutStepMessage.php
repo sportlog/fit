@@ -47,7 +47,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): int|null
+    public function getMessageIndex(): int|array|null
     {
         return $this->getFieldValue(254);
     }
@@ -55,7 +55,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the wkt step name
      */
-    public function getWktStepName(): string|null
+    public function getWktStepName(): string|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -63,7 +63,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the duration type
      */
-    public function getDurationType(): int|null
+    public function getDurationType(): int|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -71,7 +71,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the duration value
      */
-    public function getDurationValue(): int|null
+    public function getDurationValue(): int|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -79,7 +79,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the target type
      */
-    public function getTargetType(): int|null
+    public function getTargetType(): int|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -87,7 +87,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the target value
      */
-    public function getTargetValue(): int|null
+    public function getTargetValue(): int|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -95,7 +95,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the custom target value low
      */
-    public function getCustomTargetValueLow(): int|null
+    public function getCustomTargetValueLow(): int|array|null
     {
         return $this->getFieldValue(5);
     }
@@ -103,7 +103,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the custom target value high
      */
-    public function getCustomTargetValueHigh(): int|null
+    public function getCustomTargetValueHigh(): int|array|null
     {
         return $this->getFieldValue(6);
     }
@@ -111,7 +111,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the intensity
      */
-    public function getIntensity(): int|null
+    public function getIntensity(): int|array|null
     {
         return $this->getFieldValue(7);
     }
@@ -119,7 +119,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the notes
      */
-    public function getNotes(): string|null
+    public function getNotes(): string|array|null
     {
         return $this->getFieldValue(8);
     }
@@ -127,7 +127,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the equipment
      */
-    public function getEquipment(): int|null
+    public function getEquipment(): int|array|null
     {
         return $this->getFieldValue(9);
     }
@@ -135,7 +135,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the exercise category
      */
-    public function getExerciseCategory(): int|null
+    public function getExerciseCategory(): int|array|null
     {
         return $this->getFieldValue(10);
     }
@@ -143,7 +143,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the exercise name
      */
-    public function getExerciseName(): int|null
+    public function getExerciseName(): int|array|null
     {
         return $this->getFieldValue(11);
     }
@@ -151,7 +151,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the exercise weight
      */
-    public function getExerciseWeight(): float|null
+    public function getExerciseWeight(): float|array|null
     {
         return $this->getFieldValue(12);
     }
@@ -159,7 +159,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the weight display unit
      */
-    public function getWeightDisplayUnit(): int|null
+    public function getWeightDisplayUnit(): int|array|null
     {
         return $this->getFieldValue(13);
     }

@@ -49,7 +49,7 @@ final class ObdiiDataMessage extends Message
     /**
      * Gets the timestamp ms
      */
-    public function getTimestampMs(): int|null
+    public function getTimestampMs(): int|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -57,7 +57,7 @@ final class ObdiiDataMessage extends Message
     /**
      * Gets the time offset
      */
-    public function getTimeOffset(): int|null
+    public function getTimeOffset(): int|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -81,7 +81,7 @@ final class ObdiiDataMessage extends Message
     /**
      * Gets the pid data size
      */
-    public function getPidDataSize(): int|null
+    public function getPidDataSize(): int|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -89,7 +89,7 @@ final class ObdiiDataMessage extends Message
     /**
      * Gets the system time
      */
-    public function getSystemTime(): int|null
+    public function getSystemTime(): int|array|null
     {
         return $this->getFieldValue(5);
     }
@@ -105,7 +105,7 @@ final class ObdiiDataMessage extends Message
     /**
      * Gets the start timestamp ms
      */
-    public function getStartTimestampMs(): int|null
+    public function getStartTimestampMs(): int|array|null
     {
         return $this->getFieldValue(7);
     }

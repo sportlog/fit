@@ -42,7 +42,7 @@ final class OhrSettingsMessage extends Message
     /**
      * Gets the enabled
      */
-    public function getEnabled(): int|null
+    public function getEnabled(): int|array|null
     {
         return $this->getFieldValue(0);
     }

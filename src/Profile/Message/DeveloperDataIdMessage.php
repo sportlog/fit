@@ -53,7 +53,7 @@ final class DeveloperDataIdMessage extends Message
     /**
      * Gets the manufacturer id
      */
-    public function getManufacturerId(): int|null
+    public function getManufacturerId(): int|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -61,7 +61,7 @@ final class DeveloperDataIdMessage extends Message
     /**
      * Gets the developer data index
      */
-    public function getDeveloperDataIndex(): int|null
+    public function getDeveloperDataIndex(): int|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -69,7 +69,7 @@ final class DeveloperDataIdMessage extends Message
     /**
      * Gets the application version
      */
-    public function getApplicationVersion(): int|null
+    public function getApplicationVersion(): int|array|null
     {
         return $this->getFieldValue(4);
     }

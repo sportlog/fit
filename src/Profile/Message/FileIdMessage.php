@@ -39,7 +39,7 @@ final class FileIdMessage extends Message
     /**
      * Gets the type
      */
-    public function getType(): int|null
+    public function getType(): int|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -47,7 +47,7 @@ final class FileIdMessage extends Message
     /**
      * Gets the manufacturer
      */
-    public function getManufacturer(): int|null
+    public function getManufacturer(): int|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -55,7 +55,7 @@ final class FileIdMessage extends Message
     /**
      * Gets the product
      */
-    public function getProduct(): int|null
+    public function getProduct(): int|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -63,7 +63,7 @@ final class FileIdMessage extends Message
     /**
      * Gets the serial number
      */
-    public function getSerialNumber(): int|null
+    public function getSerialNumber(): int|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -79,7 +79,7 @@ final class FileIdMessage extends Message
     /**
      * Gets the number
      */
-    public function getNumber(): int|null
+    public function getNumber(): int|array|null
     {
         return $this->getFieldValue(5);
     }
@@ -87,7 +87,7 @@ final class FileIdMessage extends Message
     /**
      * Gets the product name
      */
-    public function getProductName(): string|null
+    public function getProductName(): string|array|null
     {
         return $this->getFieldValue(8);
     }

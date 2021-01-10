@@ -37,7 +37,7 @@ final class MesgCapabilitiesMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): int|null
+    public function getMessageIndex(): int|array|null
     {
         return $this->getFieldValue(254);
     }
@@ -45,7 +45,7 @@ final class MesgCapabilitiesMessage extends Message
     /**
      * Gets the file
      */
-    public function getFile(): int|null
+    public function getFile(): int|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -53,7 +53,7 @@ final class MesgCapabilitiesMessage extends Message
     /**
      * Gets the mesg num
      */
-    public function getMesgNum(): int|null
+    public function getMesgNum(): int|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -61,7 +61,7 @@ final class MesgCapabilitiesMessage extends Message
     /**
      * Gets the count type
      */
-    public function getCountType(): int|null
+    public function getCountType(): int|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -69,7 +69,7 @@ final class MesgCapabilitiesMessage extends Message
     /**
      * Gets the count
      */
-    public function getCount(): int|null
+    public function getCount(): int|array|null
     {
         return $this->getFieldValue(3);
     }

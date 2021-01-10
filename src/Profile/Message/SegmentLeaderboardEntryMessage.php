@@ -39,7 +39,7 @@ final class SegmentLeaderboardEntryMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): int|null
+    public function getMessageIndex(): int|array|null
     {
         return $this->getFieldValue(254);
     }
@@ -47,7 +47,7 @@ final class SegmentLeaderboardEntryMessage extends Message
     /**
      * Gets the name
      */
-    public function getName(): string|null
+    public function getName(): string|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -55,7 +55,7 @@ final class SegmentLeaderboardEntryMessage extends Message
     /**
      * Gets the type
      */
-    public function getType(): int|null
+    public function getType(): int|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -63,7 +63,7 @@ final class SegmentLeaderboardEntryMessage extends Message
     /**
      * Gets the group primary key
      */
-    public function getGroupPrimaryKey(): int|null
+    public function getGroupPrimaryKey(): int|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -71,7 +71,7 @@ final class SegmentLeaderboardEntryMessage extends Message
     /**
      * Gets the activity id
      */
-    public function getActivityId(): int|null
+    public function getActivityId(): int|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -79,7 +79,7 @@ final class SegmentLeaderboardEntryMessage extends Message
     /**
      * Gets the segment time
      */
-    public function getSegmentTime(): float|null
+    public function getSegmentTime(): float|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -87,7 +87,7 @@ final class SegmentLeaderboardEntryMessage extends Message
     /**
      * Gets the activity id string
      */
-    public function getActivityIdString(): string|null
+    public function getActivityIdString(): string|array|null
     {
         return $this->getFieldValue(5);
     }

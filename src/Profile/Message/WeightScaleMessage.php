@@ -53,7 +53,7 @@ final class WeightScaleMessage extends Message
     /**
      * Gets the weight
      */
-    public function getWeight(): int|null
+    public function getWeight(): int|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -61,7 +61,7 @@ final class WeightScaleMessage extends Message
     /**
      * Gets the percent fat
      */
-    public function getPercentFat(): float|null
+    public function getPercentFat(): float|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -69,7 +69,7 @@ final class WeightScaleMessage extends Message
     /**
      * Gets the percent hydration
      */
-    public function getPercentHydration(): float|null
+    public function getPercentHydration(): float|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -77,7 +77,7 @@ final class WeightScaleMessage extends Message
     /**
      * Gets the visceral fat mass
      */
-    public function getVisceralFatMass(): float|null
+    public function getVisceralFatMass(): float|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -85,7 +85,7 @@ final class WeightScaleMessage extends Message
     /**
      * Gets the bone mass
      */
-    public function getBoneMass(): float|null
+    public function getBoneMass(): float|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -93,7 +93,7 @@ final class WeightScaleMessage extends Message
     /**
      * Gets the muscle mass
      */
-    public function getMuscleMass(): float|null
+    public function getMuscleMass(): float|array|null
     {
         return $this->getFieldValue(5);
     }
@@ -101,7 +101,7 @@ final class WeightScaleMessage extends Message
     /**
      * Gets the basal met
      */
-    public function getBasalMet(): float|null
+    public function getBasalMet(): float|array|null
     {
         return $this->getFieldValue(7);
     }
@@ -109,7 +109,7 @@ final class WeightScaleMessage extends Message
     /**
      * Gets the physique rating
      */
-    public function getPhysiqueRating(): int|null
+    public function getPhysiqueRating(): int|array|null
     {
         return $this->getFieldValue(8);
     }
@@ -117,7 +117,7 @@ final class WeightScaleMessage extends Message
     /**
      * Gets the active met
      */
-    public function getActiveMet(): float|null
+    public function getActiveMet(): float|array|null
     {
         return $this->getFieldValue(9);
     }
@@ -125,7 +125,7 @@ final class WeightScaleMessage extends Message
     /**
      * Gets the metabolic age
      */
-    public function getMetabolicAge(): int|null
+    public function getMetabolicAge(): int|array|null
     {
         return $this->getFieldValue(10);
     }
@@ -133,7 +133,7 @@ final class WeightScaleMessage extends Message
     /**
      * Gets the visceral fat rating
      */
-    public function getVisceralFatRating(): int|null
+    public function getVisceralFatRating(): int|array|null
     {
         return $this->getFieldValue(11);
     }
@@ -141,7 +141,7 @@ final class WeightScaleMessage extends Message
     /**
      * Gets the user profile index
      */
-    public function getUserProfileIndex(): int|null
+    public function getUserProfileIndex(): int|array|null
     {
         return $this->getFieldValue(12);
     }

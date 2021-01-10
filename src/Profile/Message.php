@@ -121,6 +121,17 @@ abstract class Message implements IteratorAggregate, Stringable
                     $baseType->getName()
                 ));
             }
+
+            if (
+                $field->getTypeDefinition()->isNumeric() &&
+                ($field->getScale() !== Field::DEFAULT_SCALE || $field->getOffset() !== Field::DEFAULT_OFFSET)
+            ) {
+                if (is_array($value)) {
+                    $value = $this->mapArray($value, fn($val) => $field->calculateValue($val));
+                } else {
+                    $value = $field->calculateValue($value);
+                }
+            }
         }
 
         $this->values[$fieldNumber] = $value;
@@ -147,23 +158,26 @@ abstract class Message implements IteratorAggregate, Stringable
         return sprintf('%s (%s)', $this->getMessageName(), $this->getGlobalMessageNumber());
     }
 
+    private function mapArray(array $values, callable $classifier): array {
+        $mapped = [];
+        foreach ($values as $value) {
+            $mapped[] = $classifier($value);
+        }
+        return $mapped;
+    }
+
     private function convertValueToFieldType(Field $field, mixed $value): mixed
     {
-        if (
-            $field->getTypeDefinition()->isNumeric() &&
-            ($field->getScale() !== Field::DEFAULT_SCALE || $field->getOffset() !== Field::DEFAULT_OFFSET)
-        ) {
-            $value /= $field->getScale();
-            $value -= $field->getOffset();
-        }
-
-
         switch ($field->getProfileType()) {
             case ProfileType::BOOL:
-                return $value !== 0;
+                return is_array($value) ? $this->mapArray($value, fn($val) => $val !== 0) : $value !== 0;
 
             case ProfileType::LOCALDATETIME:
             case ProfileType::DATETIME:
+                if (is_array($value)) {
+                    throw new Exception(sprintf('cannot have array values of type DateTime|LocalDateTime for %s::%s', static::class, $field->getName()));
+                }
+
                 $date = new DateTime();
                 $date->setTimestamp(intval($value) + 631065600);
                 return $date;

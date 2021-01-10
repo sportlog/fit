@@ -38,7 +38,7 @@ final class SegmentPointMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): int|null
+    public function getMessageIndex(): int|array|null
     {
         return $this->getFieldValue(254);
     }
@@ -46,7 +46,7 @@ final class SegmentPointMessage extends Message
     /**
      * Gets the position lat
      */
-    public function getPositionLat(): int|null
+    public function getPositionLat(): int|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -54,7 +54,7 @@ final class SegmentPointMessage extends Message
     /**
      * Gets the position long
      */
-    public function getPositionLong(): int|null
+    public function getPositionLong(): int|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -62,7 +62,7 @@ final class SegmentPointMessage extends Message
     /**
      * Gets the distance
      */
-    public function getDistance(): float|null
+    public function getDistance(): float|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -70,7 +70,7 @@ final class SegmentPointMessage extends Message
     /**
      * Gets the altitude
      */
-    public function getAltitude(): float|null
+    public function getAltitude(): float|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -78,7 +78,7 @@ final class SegmentPointMessage extends Message
     /**
      * Gets the leader time
      */
-    public function getLeaderTime(): float|null
+    public function getLeaderTime(): float|array|null
     {
         return $this->getFieldValue(5);
     }

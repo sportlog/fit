@@ -46,7 +46,7 @@ final class WeatherAlertMessage extends Message
     /**
      * Gets the report id
      */
-    public function getReportId(): string|null
+    public function getReportId(): string|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -70,7 +70,7 @@ final class WeatherAlertMessage extends Message
     /**
      * Gets the severity
      */
-    public function getSeverity(): int|null
+    public function getSeverity(): int|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -78,7 +78,7 @@ final class WeatherAlertMessage extends Message
     /**
      * Gets the type
      */
-    public function getType(): int|null
+    public function getType(): int|array|null
     {
         return $this->getFieldValue(4);
     }

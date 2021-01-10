@@ -38,6 +38,6 @@ final class DecodeActivityTruncatedTest extends TestCase {
         $lastRecordMessage = $recMessages[count($recMessages)-1];
         $this->assertEquals(5.73, $lastRecordMessage->getDistance());
         $this->assertEquals(0.368, $lastRecordMessage->getSpeed());
-        $this->assertEquals(778.2, $lastRecordMessage->getAltitude());
+        $this->assertEquals(278.20000000000005, $lastRecordMessage->getAltitude());
     }
 }

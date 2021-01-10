@@ -54,7 +54,7 @@ final class MonitoringInfoMessage extends Message
     /**
      * Gets the activity type
      */
-    public function getActivityType(): int|null
+    public function getActivityType(): int|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -62,7 +62,7 @@ final class MonitoringInfoMessage extends Message
     /**
      * Gets the cycles to distance
      */
-    public function getCyclesToDistance(): float|null
+    public function getCyclesToDistance(): float|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -70,7 +70,7 @@ final class MonitoringInfoMessage extends Message
     /**
      * Gets the cycles to calories
      */
-    public function getCyclesToCalories(): float|null
+    public function getCyclesToCalories(): float|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -78,7 +78,7 @@ final class MonitoringInfoMessage extends Message
     /**
      * Gets the resting metabolic rate
      */
-    public function getRestingMetabolicRate(): int|null
+    public function getRestingMetabolicRate(): int|array|null
     {
         return $this->getFieldValue(5);
     }

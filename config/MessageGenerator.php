@@ -2,6 +2,7 @@
 
 namespace FIT\Generator;
 
+use DateTime;
 use FIT\Profile\Field;
 use FIT\Profile\Message;
 use FIT\Profile\MessageNumber;
@@ -136,7 +137,16 @@ class MessageGenerator
                 $profileType = substr($profileType, strlen("Type."));
                 $name = substr($name, 1, strlen($name) - 2);
                 $units = substr($units, 1, strlen($units) - 2);
-                $phpType = $this->getPhpTypeFromProfileType($profileType, (float)$scale, (float)$offset);
+
+                $phpTypes = [];
+                $phpProfileType = $this->getPhpTypeFromProfileType($profileType, (float)$scale, (float)$offset);
+                $phpTypes[] = $phpProfileType;
+                if ($phpProfileType !== Type::MIXED && $phpProfileType !== DateTime::class) {
+                    $phpTypes[] = Type::ARRAY;
+                }
+                if ($phpProfileType !== Type::MIXED) {
+                    $phpTypes[] = Type::NULL;
+                }
 
                 /** @var ClassType $class */
                 $class->addAttribute(Field::class, [
@@ -149,7 +159,7 @@ class MessageGenerator
 
                 $method = $class->addMethod("get{$name}")
                     ->setPublic()
-                    ->setReturnType($phpType !== Type::MIXED ? join("|", [$phpType, Type::NULL]) : $phpType)
+                    ->setReturnType(join("|", $phpTypes))
                     ->addComment("Gets the {$splittedName}")
                     ->setBody('return $this->getFieldValue(?);', [(int)$num]);
             }
@@ -218,7 +228,7 @@ class MessageGenerator
 
             case ProfileType::LOCALDATETIME:
             case ProfileType::DATETIME:
-                return \DateTime::class;
+                return DateTime::class;
 
             case ProfileType::STRING:
                 return Type::STRING;

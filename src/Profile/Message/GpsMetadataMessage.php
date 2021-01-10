@@ -49,7 +49,7 @@ final class GpsMetadataMessage extends Message
     /**
      * Gets the timestamp ms
      */
-    public function getTimestampMs(): int|null
+    public function getTimestampMs(): int|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -57,7 +57,7 @@ final class GpsMetadataMessage extends Message
     /**
      * Gets the position lat
      */
-    public function getPositionLat(): int|null
+    public function getPositionLat(): int|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -65,7 +65,7 @@ final class GpsMetadataMessage extends Message
     /**
      * Gets the position long
      */
-    public function getPositionLong(): int|null
+    public function getPositionLong(): int|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -73,7 +73,7 @@ final class GpsMetadataMessage extends Message
     /**
      * Gets the enhanced altitude
      */
-    public function getEnhancedAltitude(): float|null
+    public function getEnhancedAltitude(): float|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -81,7 +81,7 @@ final class GpsMetadataMessage extends Message
     /**
      * Gets the enhanced speed
      */
-    public function getEnhancedSpeed(): float|null
+    public function getEnhancedSpeed(): float|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -89,7 +89,7 @@ final class GpsMetadataMessage extends Message
     /**
      * Gets the heading
      */
-    public function getHeading(): float|null
+    public function getHeading(): float|array|null
     {
         return $this->getFieldValue(5);
     }
@@ -105,7 +105,7 @@ final class GpsMetadataMessage extends Message
     /**
      * Gets the velocity
      */
-    public function getVelocity(): float|null
+    public function getVelocity(): float|array|null
     {
         return $this->getFieldValue(7);
     }

@@ -41,7 +41,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the name
      */
-    public function getName(): string|null
+    public function getName(): string|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -49,7 +49,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the uuid
      */
-    public function getUuid(): string|null
+    public function getUuid(): string|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -57,7 +57,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the sport
      */
-    public function getSport(): int|null
+    public function getSport(): int|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -65,7 +65,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the enabled
      */
-    public function getEnabled(): bool|null
+    public function getEnabled(): bool|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -73,7 +73,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the user profile primary key
      */
-    public function getUserProfilePrimaryKey(): int|null
+    public function getUserProfilePrimaryKey(): int|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -81,7 +81,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the device id
      */
-    public function getDeviceId(): int|null
+    public function getDeviceId(): int|array|null
     {
         return $this->getFieldValue(5);
     }
@@ -89,7 +89,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the default race leader
      */
-    public function getDefaultRaceLeader(): int|null
+    public function getDefaultRaceLeader(): int|array|null
     {
         return $this->getFieldValue(6);
     }
@@ -97,7 +97,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the delete status
      */
-    public function getDeleteStatus(): int|null
+    public function getDeleteStatus(): int|array|null
     {
         return $this->getFieldValue(7);
     }
@@ -105,7 +105,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the selection type
      */
-    public function getSelectionType(): int|null
+    public function getSelectionType(): int|array|null
     {
         return $this->getFieldValue(8);
     }

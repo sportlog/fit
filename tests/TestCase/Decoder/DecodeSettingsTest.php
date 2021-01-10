@@ -37,5 +37,14 @@ final class DecodeSettingsTest extends TestCase {
         /** @var HrmProfileMessage $lastRecordMessage */
         $lastHrmProfileMessage = $hrmMessages[count($hrmMessages)-1];
         $this->assertEquals(100, $lastHrmProfileMessage->getHrmAntId());
+
+        $userProfileMessages = $messages->getMessages(UserProfileMessage::class);
+        /** @var UserProfileMessage $lastUserProfileMessage */
+        $lastUserProfileMessage = $userProfileMessages[count($userProfileMessages)-1];
+        $this->assertEquals(90, $lastUserProfileMessage->getWeight());
+        $this->assertEquals(1.9, $lastUserProfileMessage->getHeight());
+        $this->assertEquals(28, $lastUserProfileMessage->getAge());
+        $this->assertEquals(1, $lastUserProfileMessage->getGender());
+        $this->assertEquals(0, $lastUserProfileMessage->getLanguage());
     }
 }

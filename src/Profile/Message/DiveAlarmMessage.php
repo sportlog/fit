@@ -39,7 +39,7 @@ final class DiveAlarmMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): int|null
+    public function getMessageIndex(): int|array|null
     {
         return $this->getFieldValue(254);
     }
@@ -47,7 +47,7 @@ final class DiveAlarmMessage extends Message
     /**
      * Gets the depth
      */
-    public function getDepth(): float|null
+    public function getDepth(): float|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -55,7 +55,7 @@ final class DiveAlarmMessage extends Message
     /**
      * Gets the time
      */
-    public function getTime(): int|null
+    public function getTime(): int|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -63,7 +63,7 @@ final class DiveAlarmMessage extends Message
     /**
      * Gets the enabled
      */
-    public function getEnabled(): bool|null
+    public function getEnabled(): bool|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -71,7 +71,7 @@ final class DiveAlarmMessage extends Message
     /**
      * Gets the alarm type
      */
-    public function getAlarmType(): int|null
+    public function getAlarmType(): int|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -79,7 +79,7 @@ final class DiveAlarmMessage extends Message
     /**
      * Gets the sound
      */
-    public function getSound(): int|null
+    public function getSound(): int|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -87,7 +87,7 @@ final class DiveAlarmMessage extends Message
     /**
      * Gets the dive types
      */
-    public function getDiveTypes(): int|null
+    public function getDiveTypes(): int|array|null
     {
         return $this->getFieldValue(5);
     }

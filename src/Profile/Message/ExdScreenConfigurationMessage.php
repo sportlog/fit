@@ -36,7 +36,7 @@ final class ExdScreenConfigurationMessage extends Message
     /**
      * Gets the screen index
      */
-    public function getScreenIndex(): int|null
+    public function getScreenIndex(): int|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -44,7 +44,7 @@ final class ExdScreenConfigurationMessage extends Message
     /**
      * Gets the field count
      */
-    public function getFieldCount(): int|null
+    public function getFieldCount(): int|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -52,7 +52,7 @@ final class ExdScreenConfigurationMessage extends Message
     /**
      * Gets the layout
      */
-    public function getLayout(): int|null
+    public function getLayout(): int|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -60,7 +60,7 @@ final class ExdScreenConfigurationMessage extends Message
     /**
      * Gets the screen enabled
      */
-    public function getScreenEnabled(): bool|null
+    public function getScreenEnabled(): bool|array|null
     {
         return $this->getFieldValue(3);
     }

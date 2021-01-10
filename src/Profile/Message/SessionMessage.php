@@ -159,7 +159,7 @@ final class SessionMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): int|null
+    public function getMessageIndex(): int|array|null
     {
         return $this->getFieldValue(254);
     }
@@ -175,7 +175,7 @@ final class SessionMessage extends Message
     /**
      * Gets the event
      */
-    public function getEvent(): int|null
+    public function getEvent(): int|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -183,7 +183,7 @@ final class SessionMessage extends Message
     /**
      * Gets the event type
      */
-    public function getEventType(): int|null
+    public function getEventType(): int|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -199,7 +199,7 @@ final class SessionMessage extends Message
     /**
      * Gets the start position lat
      */
-    public function getStartPositionLat(): int|null
+    public function getStartPositionLat(): int|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -207,7 +207,7 @@ final class SessionMessage extends Message
     /**
      * Gets the start position long
      */
-    public function getStartPositionLong(): int|null
+    public function getStartPositionLong(): int|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -215,7 +215,7 @@ final class SessionMessage extends Message
     /**
      * Gets the sport
      */
-    public function getSport(): int|null
+    public function getSport(): int|array|null
     {
         return $this->getFieldValue(5);
     }
@@ -223,7 +223,7 @@ final class SessionMessage extends Message
     /**
      * Gets the sub sport
      */
-    public function getSubSport(): int|null
+    public function getSubSport(): int|array|null
     {
         return $this->getFieldValue(6);
     }
@@ -231,7 +231,7 @@ final class SessionMessage extends Message
     /**
      * Gets the total elapsed time
      */
-    public function getTotalElapsedTime(): float|null
+    public function getTotalElapsedTime(): float|array|null
     {
         return $this->getFieldValue(7);
     }
@@ -239,7 +239,7 @@ final class SessionMessage extends Message
     /**
      * Gets the total timer time
      */
-    public function getTotalTimerTime(): float|null
+    public function getTotalTimerTime(): float|array|null
     {
         return $this->getFieldValue(8);
     }
@@ -247,7 +247,7 @@ final class SessionMessage extends Message
     /**
      * Gets the total distance
      */
-    public function getTotalDistance(): float|null
+    public function getTotalDistance(): float|array|null
     {
         return $this->getFieldValue(9);
     }
@@ -255,7 +255,7 @@ final class SessionMessage extends Message
     /**
      * Gets the total cycles
      */
-    public function getTotalCycles(): int|null
+    public function getTotalCycles(): int|array|null
     {
         return $this->getFieldValue(10);
     }
@@ -263,7 +263,7 @@ final class SessionMessage extends Message
     /**
      * Gets the total calories
      */
-    public function getTotalCalories(): int|null
+    public function getTotalCalories(): int|array|null
     {
         return $this->getFieldValue(11);
     }
@@ -271,7 +271,7 @@ final class SessionMessage extends Message
     /**
      * Gets the total fat calories
      */
-    public function getTotalFatCalories(): int|null
+    public function getTotalFatCalories(): int|array|null
     {
         return $this->getFieldValue(13);
     }
@@ -279,7 +279,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg speed
      */
-    public function getAvgSpeed(): float|null
+    public function getAvgSpeed(): float|array|null
     {
         return $this->getFieldValue(14);
     }
@@ -287,7 +287,7 @@ final class SessionMessage extends Message
     /**
      * Gets the max speed
      */
-    public function getMaxSpeed(): float|null
+    public function getMaxSpeed(): float|array|null
     {
         return $this->getFieldValue(15);
     }
@@ -295,7 +295,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg heart rate
      */
-    public function getAvgHeartRate(): int|null
+    public function getAvgHeartRate(): int|array|null
     {
         return $this->getFieldValue(16);
     }
@@ -303,7 +303,7 @@ final class SessionMessage extends Message
     /**
      * Gets the max heart rate
      */
-    public function getMaxHeartRate(): int|null
+    public function getMaxHeartRate(): int|array|null
     {
         return $this->getFieldValue(17);
     }
@@ -311,7 +311,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg cadence
      */
-    public function getAvgCadence(): int|null
+    public function getAvgCadence(): int|array|null
     {
         return $this->getFieldValue(18);
     }
@@ -319,7 +319,7 @@ final class SessionMessage extends Message
     /**
      * Gets the max cadence
      */
-    public function getMaxCadence(): int|null
+    public function getMaxCadence(): int|array|null
     {
         return $this->getFieldValue(19);
     }
@@ -327,7 +327,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg power
      */
-    public function getAvgPower(): int|null
+    public function getAvgPower(): int|array|null
     {
         return $this->getFieldValue(20);
     }
@@ -335,7 +335,7 @@ final class SessionMessage extends Message
     /**
      * Gets the max power
      */
-    public function getMaxPower(): int|null
+    public function getMaxPower(): int|array|null
     {
         return $this->getFieldValue(21);
     }
@@ -343,7 +343,7 @@ final class SessionMessage extends Message
     /**
      * Gets the total ascent
      */
-    public function getTotalAscent(): int|null
+    public function getTotalAscent(): int|array|null
     {
         return $this->getFieldValue(22);
     }
@@ -351,7 +351,7 @@ final class SessionMessage extends Message
     /**
      * Gets the total descent
      */
-    public function getTotalDescent(): int|null
+    public function getTotalDescent(): int|array|null
     {
         return $this->getFieldValue(23);
     }
@@ -359,7 +359,7 @@ final class SessionMessage extends Message
     /**
      * Gets the total training effect
      */
-    public function getTotalTrainingEffect(): float|null
+    public function getTotalTrainingEffect(): float|array|null
     {
         return $this->getFieldValue(24);
     }
@@ -367,7 +367,7 @@ final class SessionMessage extends Message
     /**
      * Gets the first lap index
      */
-    public function getFirstLapIndex(): int|null
+    public function getFirstLapIndex(): int|array|null
     {
         return $this->getFieldValue(25);
     }
@@ -375,7 +375,7 @@ final class SessionMessage extends Message
     /**
      * Gets the num laps
      */
-    public function getNumLaps(): int|null
+    public function getNumLaps(): int|array|null
     {
         return $this->getFieldValue(26);
     }
@@ -383,7 +383,7 @@ final class SessionMessage extends Message
     /**
      * Gets the event group
      */
-    public function getEventGroup(): int|null
+    public function getEventGroup(): int|array|null
     {
         return $this->getFieldValue(27);
     }
@@ -391,7 +391,7 @@ final class SessionMessage extends Message
     /**
      * Gets the trigger
      */
-    public function getTrigger(): int|null
+    public function getTrigger(): int|array|null
     {
         return $this->getFieldValue(28);
     }
@@ -399,7 +399,7 @@ final class SessionMessage extends Message
     /**
      * Gets the nec lat
      */
-    public function getNecLat(): int|null
+    public function getNecLat(): int|array|null
     {
         return $this->getFieldValue(29);
     }
@@ -407,7 +407,7 @@ final class SessionMessage extends Message
     /**
      * Gets the nec long
      */
-    public function getNecLong(): int|null
+    public function getNecLong(): int|array|null
     {
         return $this->getFieldValue(30);
     }
@@ -415,7 +415,7 @@ final class SessionMessage extends Message
     /**
      * Gets the swc lat
      */
-    public function getSwcLat(): int|null
+    public function getSwcLat(): int|array|null
     {
         return $this->getFieldValue(31);
     }
@@ -423,7 +423,7 @@ final class SessionMessage extends Message
     /**
      * Gets the swc long
      */
-    public function getSwcLong(): int|null
+    public function getSwcLong(): int|array|null
     {
         return $this->getFieldValue(32);
     }
@@ -431,7 +431,7 @@ final class SessionMessage extends Message
     /**
      * Gets the num lengths
      */
-    public function getNumLengths(): int|null
+    public function getNumLengths(): int|array|null
     {
         return $this->getFieldValue(33);
     }
@@ -439,7 +439,7 @@ final class SessionMessage extends Message
     /**
      * Gets the normalized power
      */
-    public function getNormalizedPower(): int|null
+    public function getNormalizedPower(): int|array|null
     {
         return $this->getFieldValue(34);
     }
@@ -447,7 +447,7 @@ final class SessionMessage extends Message
     /**
      * Gets the training stress score
      */
-    public function getTrainingStressScore(): float|null
+    public function getTrainingStressScore(): float|array|null
     {
         return $this->getFieldValue(35);
     }
@@ -455,7 +455,7 @@ final class SessionMessage extends Message
     /**
      * Gets the intensity factor
      */
-    public function getIntensityFactor(): float|null
+    public function getIntensityFactor(): float|array|null
     {
         return $this->getFieldValue(36);
     }
@@ -463,7 +463,7 @@ final class SessionMessage extends Message
     /**
      * Gets the left right balance
      */
-    public function getLeftRightBalance(): int|null
+    public function getLeftRightBalance(): int|array|null
     {
         return $this->getFieldValue(37);
     }
@@ -471,7 +471,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg stroke count
      */
-    public function getAvgStrokeCount(): float|null
+    public function getAvgStrokeCount(): float|array|null
     {
         return $this->getFieldValue(41);
     }
@@ -479,7 +479,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg stroke distance
      */
-    public function getAvgStrokeDistance(): float|null
+    public function getAvgStrokeDistance(): float|array|null
     {
         return $this->getFieldValue(42);
     }
@@ -487,7 +487,7 @@ final class SessionMessage extends Message
     /**
      * Gets the swim stroke
      */
-    public function getSwimStroke(): int|null
+    public function getSwimStroke(): int|array|null
     {
         return $this->getFieldValue(43);
     }
@@ -495,7 +495,7 @@ final class SessionMessage extends Message
     /**
      * Gets the pool length
      */
-    public function getPoolLength(): float|null
+    public function getPoolLength(): float|array|null
     {
         return $this->getFieldValue(44);
     }
@@ -503,7 +503,7 @@ final class SessionMessage extends Message
     /**
      * Gets the threshold power
      */
-    public function getThresholdPower(): int|null
+    public function getThresholdPower(): int|array|null
     {
         return $this->getFieldValue(45);
     }
@@ -511,7 +511,7 @@ final class SessionMessage extends Message
     /**
      * Gets the pool length unit
      */
-    public function getPoolLengthUnit(): int|null
+    public function getPoolLengthUnit(): int|array|null
     {
         return $this->getFieldValue(46);
     }
@@ -519,7 +519,7 @@ final class SessionMessage extends Message
     /**
      * Gets the num active lengths
      */
-    public function getNumActiveLengths(): int|null
+    public function getNumActiveLengths(): int|array|null
     {
         return $this->getFieldValue(47);
     }
@@ -527,7 +527,7 @@ final class SessionMessage extends Message
     /**
      * Gets the total work
      */
-    public function getTotalWork(): int|null
+    public function getTotalWork(): int|array|null
     {
         return $this->getFieldValue(48);
     }
@@ -535,7 +535,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg altitude
      */
-    public function getAvgAltitude(): float|null
+    public function getAvgAltitude(): float|array|null
     {
         return $this->getFieldValue(49);
     }
@@ -543,7 +543,7 @@ final class SessionMessage extends Message
     /**
      * Gets the max altitude
      */
-    public function getMaxAltitude(): float|null
+    public function getMaxAltitude(): float|array|null
     {
         return $this->getFieldValue(50);
     }
@@ -551,7 +551,7 @@ final class SessionMessage extends Message
     /**
      * Gets the gps accuracy
      */
-    public function getGpsAccuracy(): int|null
+    public function getGpsAccuracy(): int|array|null
     {
         return $this->getFieldValue(51);
     }
@@ -559,7 +559,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg grade
      */
-    public function getAvgGrade(): float|null
+    public function getAvgGrade(): float|array|null
     {
         return $this->getFieldValue(52);
     }
@@ -567,7 +567,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg pos grade
      */
-    public function getAvgPosGrade(): float|null
+    public function getAvgPosGrade(): float|array|null
     {
         return $this->getFieldValue(53);
     }
@@ -575,7 +575,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg neg grade
      */
-    public function getAvgNegGrade(): float|null
+    public function getAvgNegGrade(): float|array|null
     {
         return $this->getFieldValue(54);
     }
@@ -583,7 +583,7 @@ final class SessionMessage extends Message
     /**
      * Gets the max pos grade
      */
-    public function getMaxPosGrade(): float|null
+    public function getMaxPosGrade(): float|array|null
     {
         return $this->getFieldValue(55);
     }
@@ -591,7 +591,7 @@ final class SessionMessage extends Message
     /**
      * Gets the max neg grade
      */
-    public function getMaxNegGrade(): float|null
+    public function getMaxNegGrade(): float|array|null
     {
         return $this->getFieldValue(56);
     }
@@ -599,7 +599,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg temperature
      */
-    public function getAvgTemperature(): int|null
+    public function getAvgTemperature(): int|array|null
     {
         return $this->getFieldValue(57);
     }
@@ -607,7 +607,7 @@ final class SessionMessage extends Message
     /**
      * Gets the max temperature
      */
-    public function getMaxTemperature(): int|null
+    public function getMaxTemperature(): int|array|null
     {
         return $this->getFieldValue(58);
     }
@@ -615,7 +615,7 @@ final class SessionMessage extends Message
     /**
      * Gets the total moving time
      */
-    public function getTotalMovingTime(): float|null
+    public function getTotalMovingTime(): float|array|null
     {
         return $this->getFieldValue(59);
     }
@@ -623,7 +623,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg pos vertical speed
      */
-    public function getAvgPosVerticalSpeed(): float|null
+    public function getAvgPosVerticalSpeed(): float|array|null
     {
         return $this->getFieldValue(60);
     }
@@ -631,7 +631,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg neg vertical speed
      */
-    public function getAvgNegVerticalSpeed(): float|null
+    public function getAvgNegVerticalSpeed(): float|array|null
     {
         return $this->getFieldValue(61);
     }
@@ -639,7 +639,7 @@ final class SessionMessage extends Message
     /**
      * Gets the max pos vertical speed
      */
-    public function getMaxPosVerticalSpeed(): float|null
+    public function getMaxPosVerticalSpeed(): float|array|null
     {
         return $this->getFieldValue(62);
     }
@@ -647,7 +647,7 @@ final class SessionMessage extends Message
     /**
      * Gets the max neg vertical speed
      */
-    public function getMaxNegVerticalSpeed(): float|null
+    public function getMaxNegVerticalSpeed(): float|array|null
     {
         return $this->getFieldValue(63);
     }
@@ -655,7 +655,7 @@ final class SessionMessage extends Message
     /**
      * Gets the min heart rate
      */
-    public function getMinHeartRate(): int|null
+    public function getMinHeartRate(): int|array|null
     {
         return $this->getFieldValue(64);
     }
@@ -663,7 +663,7 @@ final class SessionMessage extends Message
     /**
      * Gets the time in hr zone
      */
-    public function getTimeInHrZone(): float|null
+    public function getTimeInHrZone(): float|array|null
     {
         return $this->getFieldValue(65);
     }
@@ -671,7 +671,7 @@ final class SessionMessage extends Message
     /**
      * Gets the time in speed zone
      */
-    public function getTimeInSpeedZone(): float|null
+    public function getTimeInSpeedZone(): float|array|null
     {
         return $this->getFieldValue(66);
     }
@@ -679,7 +679,7 @@ final class SessionMessage extends Message
     /**
      * Gets the time in cadence zone
      */
-    public function getTimeInCadenceZone(): float|null
+    public function getTimeInCadenceZone(): float|array|null
     {
         return $this->getFieldValue(67);
     }
@@ -687,7 +687,7 @@ final class SessionMessage extends Message
     /**
      * Gets the time in power zone
      */
-    public function getTimeInPowerZone(): float|null
+    public function getTimeInPowerZone(): float|array|null
     {
         return $this->getFieldValue(68);
     }
@@ -695,7 +695,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg lap time
      */
-    public function getAvgLapTime(): float|null
+    public function getAvgLapTime(): float|array|null
     {
         return $this->getFieldValue(69);
     }
@@ -703,7 +703,7 @@ final class SessionMessage extends Message
     /**
      * Gets the best lap index
      */
-    public function getBestLapIndex(): int|null
+    public function getBestLapIndex(): int|array|null
     {
         return $this->getFieldValue(70);
     }
@@ -711,7 +711,7 @@ final class SessionMessage extends Message
     /**
      * Gets the min altitude
      */
-    public function getMinAltitude(): float|null
+    public function getMinAltitude(): float|array|null
     {
         return $this->getFieldValue(71);
     }
@@ -719,7 +719,7 @@ final class SessionMessage extends Message
     /**
      * Gets the player score
      */
-    public function getPlayerScore(): int|null
+    public function getPlayerScore(): int|array|null
     {
         return $this->getFieldValue(82);
     }
@@ -727,7 +727,7 @@ final class SessionMessage extends Message
     /**
      * Gets the opponent score
      */
-    public function getOpponentScore(): int|null
+    public function getOpponentScore(): int|array|null
     {
         return $this->getFieldValue(83);
     }
@@ -735,7 +735,7 @@ final class SessionMessage extends Message
     /**
      * Gets the opponent name
      */
-    public function getOpponentName(): string|null
+    public function getOpponentName(): string|array|null
     {
         return $this->getFieldValue(84);
     }
@@ -743,7 +743,7 @@ final class SessionMessage extends Message
     /**
      * Gets the stroke count
      */
-    public function getStrokeCount(): int|null
+    public function getStrokeCount(): int|array|null
     {
         return $this->getFieldValue(85);
     }
@@ -751,7 +751,7 @@ final class SessionMessage extends Message
     /**
      * Gets the zone count
      */
-    public function getZoneCount(): int|null
+    public function getZoneCount(): int|array|null
     {
         return $this->getFieldValue(86);
     }
@@ -759,7 +759,7 @@ final class SessionMessage extends Message
     /**
      * Gets the max ball speed
      */
-    public function getMaxBallSpeed(): float|null
+    public function getMaxBallSpeed(): float|array|null
     {
         return $this->getFieldValue(87);
     }
@@ -767,7 +767,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg ball speed
      */
-    public function getAvgBallSpeed(): float|null
+    public function getAvgBallSpeed(): float|array|null
     {
         return $this->getFieldValue(88);
     }
@@ -775,7 +775,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg vertical oscillation
      */
-    public function getAvgVerticalOscillation(): float|null
+    public function getAvgVerticalOscillation(): float|array|null
     {
         return $this->getFieldValue(89);
     }
@@ -783,7 +783,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg stance time percent
      */
-    public function getAvgStanceTimePercent(): float|null
+    public function getAvgStanceTimePercent(): float|array|null
     {
         return $this->getFieldValue(90);
     }
@@ -791,7 +791,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg stance time
      */
-    public function getAvgStanceTime(): float|null
+    public function getAvgStanceTime(): float|array|null
     {
         return $this->getFieldValue(91);
     }
@@ -799,7 +799,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg fractional cadence
      */
-    public function getAvgFractionalCadence(): float|null
+    public function getAvgFractionalCadence(): float|array|null
     {
         return $this->getFieldValue(92);
     }
@@ -807,7 +807,7 @@ final class SessionMessage extends Message
     /**
      * Gets the max fractional cadence
      */
-    public function getMaxFractionalCadence(): float|null
+    public function getMaxFractionalCadence(): float|array|null
     {
         return $this->getFieldValue(93);
     }
@@ -815,7 +815,7 @@ final class SessionMessage extends Message
     /**
      * Gets the total fractional cycles
      */
-    public function getTotalFractionalCycles(): float|null
+    public function getTotalFractionalCycles(): float|array|null
     {
         return $this->getFieldValue(94);
     }
@@ -823,7 +823,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg total hemoglobin conc
      */
-    public function getAvgTotalHemoglobinConc(): float|null
+    public function getAvgTotalHemoglobinConc(): float|array|null
     {
         return $this->getFieldValue(95);
     }
@@ -831,7 +831,7 @@ final class SessionMessage extends Message
     /**
      * Gets the min total hemoglobin conc
      */
-    public function getMinTotalHemoglobinConc(): float|null
+    public function getMinTotalHemoglobinConc(): float|array|null
     {
         return $this->getFieldValue(96);
     }
@@ -839,7 +839,7 @@ final class SessionMessage extends Message
     /**
      * Gets the max total hemoglobin conc
      */
-    public function getMaxTotalHemoglobinConc(): float|null
+    public function getMaxTotalHemoglobinConc(): float|array|null
     {
         return $this->getFieldValue(97);
     }
@@ -847,7 +847,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg saturated hemoglobin percent
      */
-    public function getAvgSaturatedHemoglobinPercent(): float|null
+    public function getAvgSaturatedHemoglobinPercent(): float|array|null
     {
         return $this->getFieldValue(98);
     }
@@ -855,7 +855,7 @@ final class SessionMessage extends Message
     /**
      * Gets the min saturated hemoglobin percent
      */
-    public function getMinSaturatedHemoglobinPercent(): float|null
+    public function getMinSaturatedHemoglobinPercent(): float|array|null
     {
         return $this->getFieldValue(99);
     }
@@ -863,7 +863,7 @@ final class SessionMessage extends Message
     /**
      * Gets the max saturated hemoglobin percent
      */
-    public function getMaxSaturatedHemoglobinPercent(): float|null
+    public function getMaxSaturatedHemoglobinPercent(): float|array|null
     {
         return $this->getFieldValue(100);
     }
@@ -871,7 +871,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg left torque effectiveness
      */
-    public function getAvgLeftTorqueEffectiveness(): float|null
+    public function getAvgLeftTorqueEffectiveness(): float|array|null
     {
         return $this->getFieldValue(101);
     }
@@ -879,7 +879,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg right torque effectiveness
      */
-    public function getAvgRightTorqueEffectiveness(): float|null
+    public function getAvgRightTorqueEffectiveness(): float|array|null
     {
         return $this->getFieldValue(102);
     }
@@ -887,7 +887,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg left pedal smoothness
      */
-    public function getAvgLeftPedalSmoothness(): float|null
+    public function getAvgLeftPedalSmoothness(): float|array|null
     {
         return $this->getFieldValue(103);
     }
@@ -895,7 +895,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg right pedal smoothness
      */
-    public function getAvgRightPedalSmoothness(): float|null
+    public function getAvgRightPedalSmoothness(): float|array|null
     {
         return $this->getFieldValue(104);
     }
@@ -903,7 +903,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg combined pedal smoothness
      */
-    public function getAvgCombinedPedalSmoothness(): float|null
+    public function getAvgCombinedPedalSmoothness(): float|array|null
     {
         return $this->getFieldValue(105);
     }
@@ -911,7 +911,7 @@ final class SessionMessage extends Message
     /**
      * Gets the sport index
      */
-    public function getSportIndex(): int|null
+    public function getSportIndex(): int|array|null
     {
         return $this->getFieldValue(111);
     }
@@ -919,7 +919,7 @@ final class SessionMessage extends Message
     /**
      * Gets the time standing
      */
-    public function getTimeStanding(): float|null
+    public function getTimeStanding(): float|array|null
     {
         return $this->getFieldValue(112);
     }
@@ -927,7 +927,7 @@ final class SessionMessage extends Message
     /**
      * Gets the stand count
      */
-    public function getStandCount(): int|null
+    public function getStandCount(): int|array|null
     {
         return $this->getFieldValue(113);
     }
@@ -935,7 +935,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg left pco
      */
-    public function getAvgLeftPco(): int|null
+    public function getAvgLeftPco(): int|array|null
     {
         return $this->getFieldValue(114);
     }
@@ -943,7 +943,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg right pco
      */
-    public function getAvgRightPco(): int|null
+    public function getAvgRightPco(): int|array|null
     {
         return $this->getFieldValue(115);
     }
@@ -951,7 +951,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg left power phase
      */
-    public function getAvgLeftPowerPhase(): float|null
+    public function getAvgLeftPowerPhase(): float|array|null
     {
         return $this->getFieldValue(116);
     }
@@ -959,7 +959,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg left power phase peak
      */
-    public function getAvgLeftPowerPhasePeak(): float|null
+    public function getAvgLeftPowerPhasePeak(): float|array|null
     {
         return $this->getFieldValue(117);
     }
@@ -967,7 +967,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg right power phase
      */
-    public function getAvgRightPowerPhase(): float|null
+    public function getAvgRightPowerPhase(): float|array|null
     {
         return $this->getFieldValue(118);
     }
@@ -975,7 +975,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg right power phase peak
      */
-    public function getAvgRightPowerPhasePeak(): float|null
+    public function getAvgRightPowerPhasePeak(): float|array|null
     {
         return $this->getFieldValue(119);
     }
@@ -983,7 +983,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg power position
      */
-    public function getAvgPowerPosition(): int|null
+    public function getAvgPowerPosition(): int|array|null
     {
         return $this->getFieldValue(120);
     }
@@ -991,7 +991,7 @@ final class SessionMessage extends Message
     /**
      * Gets the max power position
      */
-    public function getMaxPowerPosition(): int|null
+    public function getMaxPowerPosition(): int|array|null
     {
         return $this->getFieldValue(121);
     }
@@ -999,7 +999,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg cadence position
      */
-    public function getAvgCadencePosition(): int|null
+    public function getAvgCadencePosition(): int|array|null
     {
         return $this->getFieldValue(122);
     }
@@ -1007,7 +1007,7 @@ final class SessionMessage extends Message
     /**
      * Gets the max cadence position
      */
-    public function getMaxCadencePosition(): int|null
+    public function getMaxCadencePosition(): int|array|null
     {
         return $this->getFieldValue(123);
     }
@@ -1015,7 +1015,7 @@ final class SessionMessage extends Message
     /**
      * Gets the enhanced avg speed
      */
-    public function getEnhancedAvgSpeed(): float|null
+    public function getEnhancedAvgSpeed(): float|array|null
     {
         return $this->getFieldValue(124);
     }
@@ -1023,7 +1023,7 @@ final class SessionMessage extends Message
     /**
      * Gets the enhanced max speed
      */
-    public function getEnhancedMaxSpeed(): float|null
+    public function getEnhancedMaxSpeed(): float|array|null
     {
         return $this->getFieldValue(125);
     }
@@ -1031,7 +1031,7 @@ final class SessionMessage extends Message
     /**
      * Gets the enhanced avg altitude
      */
-    public function getEnhancedAvgAltitude(): float|null
+    public function getEnhancedAvgAltitude(): float|array|null
     {
         return $this->getFieldValue(126);
     }
@@ -1039,7 +1039,7 @@ final class SessionMessage extends Message
     /**
      * Gets the enhanced min altitude
      */
-    public function getEnhancedMinAltitude(): float|null
+    public function getEnhancedMinAltitude(): float|array|null
     {
         return $this->getFieldValue(127);
     }
@@ -1047,7 +1047,7 @@ final class SessionMessage extends Message
     /**
      * Gets the enhanced max altitude
      */
-    public function getEnhancedMaxAltitude(): float|null
+    public function getEnhancedMaxAltitude(): float|array|null
     {
         return $this->getFieldValue(128);
     }
@@ -1055,7 +1055,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg lev motor power
      */
-    public function getAvgLevMotorPower(): int|null
+    public function getAvgLevMotorPower(): int|array|null
     {
         return $this->getFieldValue(129);
     }
@@ -1063,7 +1063,7 @@ final class SessionMessage extends Message
     /**
      * Gets the max lev motor power
      */
-    public function getMaxLevMotorPower(): int|null
+    public function getMaxLevMotorPower(): int|array|null
     {
         return $this->getFieldValue(130);
     }
@@ -1071,7 +1071,7 @@ final class SessionMessage extends Message
     /**
      * Gets the lev battery consumption
      */
-    public function getLevBatteryConsumption(): float|null
+    public function getLevBatteryConsumption(): float|array|null
     {
         return $this->getFieldValue(131);
     }
@@ -1079,7 +1079,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg vertical ratio
      */
-    public function getAvgVerticalRatio(): float|null
+    public function getAvgVerticalRatio(): float|array|null
     {
         return $this->getFieldValue(132);
     }
@@ -1087,7 +1087,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg stance time balance
      */
-    public function getAvgStanceTimeBalance(): float|null
+    public function getAvgStanceTimeBalance(): float|array|null
     {
         return $this->getFieldValue(133);
     }
@@ -1095,7 +1095,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg step length
      */
-    public function getAvgStepLength(): float|null
+    public function getAvgStepLength(): float|array|null
     {
         return $this->getFieldValue(134);
     }
@@ -1103,7 +1103,7 @@ final class SessionMessage extends Message
     /**
      * Gets the total anaerobic training effect
      */
-    public function getTotalAnaerobicTrainingEffect(): float|null
+    public function getTotalAnaerobicTrainingEffect(): float|array|null
     {
         return $this->getFieldValue(137);
     }
@@ -1111,7 +1111,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg vam
      */
-    public function getAvgVam(): float|null
+    public function getAvgVam(): float|array|null
     {
         return $this->getFieldValue(139);
     }
@@ -1119,7 +1119,7 @@ final class SessionMessage extends Message
     /**
      * Gets the total grit
      */
-    public function getTotalGrit(): float|null
+    public function getTotalGrit(): float|array|null
     {
         return $this->getFieldValue(181);
     }
@@ -1127,7 +1127,7 @@ final class SessionMessage extends Message
     /**
      * Gets the total flow
      */
-    public function getTotalFlow(): float|null
+    public function getTotalFlow(): float|array|null
     {
         return $this->getFieldValue(182);
     }
@@ -1135,7 +1135,7 @@ final class SessionMessage extends Message
     /**
      * Gets the jump count
      */
-    public function getJumpCount(): int|null
+    public function getJumpCount(): int|array|null
     {
         return $this->getFieldValue(183);
     }
@@ -1143,7 +1143,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg grit
      */
-    public function getAvgGrit(): float|null
+    public function getAvgGrit(): float|array|null
     {
         return $this->getFieldValue(186);
     }
@@ -1151,7 +1151,7 @@ final class SessionMessage extends Message
     /**
      * Gets the avg flow
      */
-    public function getAvgFlow(): float|null
+    public function getAvgFlow(): float|array|null
     {
         return $this->getFieldValue(187);
     }
@@ -1159,7 +1159,7 @@ final class SessionMessage extends Message
     /**
      * Gets the total fractional ascent
      */
-    public function getTotalFractionalAscent(): float|null
+    public function getTotalFractionalAscent(): float|array|null
     {
         return $this->getFieldValue(199);
     }
@@ -1167,7 +1167,7 @@ final class SessionMessage extends Message
     /**
      * Gets the total fractional descent
      */
-    public function getTotalFractionalDescent(): float|null
+    public function getTotalFractionalDescent(): float|array|null
     {
         return $this->getFieldValue(200);
     }

@@ -43,7 +43,7 @@ final class NmeaSentenceMessage extends Message
     /**
      * Gets the timestamp ms
      */
-    public function getTimestampMs(): int|null
+    public function getTimestampMs(): int|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -51,7 +51,7 @@ final class NmeaSentenceMessage extends Message
     /**
      * Gets the sentence
      */
-    public function getSentence(): string|null
+    public function getSentence(): string|array|null
     {
         return $this->getFieldValue(1);
     }

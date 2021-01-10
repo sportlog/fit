@@ -40,7 +40,7 @@ final class SdmProfileMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): int|null
+    public function getMessageIndex(): int|array|null
     {
         return $this->getFieldValue(254);
     }
@@ -48,7 +48,7 @@ final class SdmProfileMessage extends Message
     /**
      * Gets the enabled
      */
-    public function getEnabled(): bool|null
+    public function getEnabled(): bool|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -56,7 +56,7 @@ final class SdmProfileMessage extends Message
     /**
      * Gets the sdm ant id
      */
-    public function getSdmAntId(): int|null
+    public function getSdmAntId(): int|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -64,7 +64,7 @@ final class SdmProfileMessage extends Message
     /**
      * Gets the sdm cal factor
      */
-    public function getSdmCalFactor(): float|null
+    public function getSdmCalFactor(): float|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -72,7 +72,7 @@ final class SdmProfileMessage extends Message
     /**
      * Gets the odometer
      */
-    public function getOdometer(): float|null
+    public function getOdometer(): float|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -80,7 +80,7 @@ final class SdmProfileMessage extends Message
     /**
      * Gets the speed source
      */
-    public function getSpeedSource(): bool|null
+    public function getSpeedSource(): bool|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -88,7 +88,7 @@ final class SdmProfileMessage extends Message
     /**
      * Gets the sdm ant id trans type
      */
-    public function getSdmAntIdTransType(): int|null
+    public function getSdmAntIdTransType(): int|array|null
     {
         return $this->getFieldValue(5);
     }
@@ -96,7 +96,7 @@ final class SdmProfileMessage extends Message
     /**
      * Gets the odometer rollover
      */
-    public function getOdometerRollover(): int|null
+    public function getOdometerRollover(): int|array|null
     {
         return $this->getFieldValue(7);
     }

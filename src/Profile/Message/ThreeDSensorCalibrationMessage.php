@@ -47,7 +47,7 @@ final class ThreeDSensorCalibrationMessage extends Message
     /**
      * Gets the sensor type
      */
-    public function getSensorType(): int|null
+    public function getSensorType(): int|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -55,7 +55,7 @@ final class ThreeDSensorCalibrationMessage extends Message
     /**
      * Gets the calibration factor
      */
-    public function getCalibrationFactor(): int|null
+    public function getCalibrationFactor(): int|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -63,7 +63,7 @@ final class ThreeDSensorCalibrationMessage extends Message
     /**
      * Gets the calibration divisor
      */
-    public function getCalibrationDivisor(): int|null
+    public function getCalibrationDivisor(): int|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -71,7 +71,7 @@ final class ThreeDSensorCalibrationMessage extends Message
     /**
      * Gets the level shift
      */
-    public function getLevelShift(): int|null
+    public function getLevelShift(): int|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -79,7 +79,7 @@ final class ThreeDSensorCalibrationMessage extends Message
     /**
      * Gets the offset cal
      */
-    public function getOffsetCal(): int|null
+    public function getOffsetCal(): int|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -87,7 +87,7 @@ final class ThreeDSensorCalibrationMessage extends Message
     /**
      * Gets the orientation matrix
      */
-    public function getOrientationMatrix(): float|null
+    public function getOrientationMatrix(): float|array|null
     {
         return $this->getFieldValue(5);
     }

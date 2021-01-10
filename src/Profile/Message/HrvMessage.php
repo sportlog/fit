@@ -33,7 +33,7 @@ final class HrvMessage extends Message
     /**
      * Gets the time
      */
-    public function getTime(): float|null
+    public function getTime(): float|array|null
     {
         return $this->getFieldValue(0);
     }

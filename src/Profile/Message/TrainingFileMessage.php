@@ -46,7 +46,7 @@ final class TrainingFileMessage extends Message
     /**
      * Gets the type
      */
-    public function getType(): int|null
+    public function getType(): int|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -54,7 +54,7 @@ final class TrainingFileMessage extends Message
     /**
      * Gets the manufacturer
      */
-    public function getManufacturer(): int|null
+    public function getManufacturer(): int|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -62,7 +62,7 @@ final class TrainingFileMessage extends Message
     /**
      * Gets the product
      */
-    public function getProduct(): int|null
+    public function getProduct(): int|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -70,7 +70,7 @@ final class TrainingFileMessage extends Message
     /**
      * Gets the serial number
      */
-    public function getSerialNumber(): int|null
+    public function getSerialNumber(): int|array|null
     {
         return $this->getFieldValue(3);
     }

@@ -46,7 +46,7 @@ final class AntRxMessage extends Message
     /**
      * Gets the fractional timestamp
      */
-    public function getFractionalTimestamp(): float|null
+    public function getFractionalTimestamp(): float|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -70,7 +70,7 @@ final class AntRxMessage extends Message
     /**
      * Gets the channel number
      */
-    public function getChannelNumber(): int|null
+    public function getChannelNumber(): int|array|null
     {
         return $this->getFieldValue(3);
     }

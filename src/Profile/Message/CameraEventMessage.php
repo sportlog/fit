@@ -45,7 +45,7 @@ final class CameraEventMessage extends Message
     /**
      * Gets the timestamp ms
      */
-    public function getTimestampMs(): int|null
+    public function getTimestampMs(): int|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -53,7 +53,7 @@ final class CameraEventMessage extends Message
     /**
      * Gets the camera event type
      */
-    public function getCameraEventType(): int|null
+    public function getCameraEventType(): int|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -61,7 +61,7 @@ final class CameraEventMessage extends Message
     /**
      * Gets the camera file uuid
      */
-    public function getCameraFileUuid(): string|null
+    public function getCameraFileUuid(): string|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -69,7 +69,7 @@ final class CameraEventMessage extends Message
     /**
      * Gets the camera orientation
      */
-    public function getCameraOrientation(): int|null
+    public function getCameraOrientation(): int|array|null
     {
         return $this->getFieldValue(3);
     }

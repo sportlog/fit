@@ -41,7 +41,7 @@ final class SegmentFileMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): int|null
+    public function getMessageIndex(): int|array|null
     {
         return $this->getFieldValue(254);
     }
@@ -49,7 +49,7 @@ final class SegmentFileMessage extends Message
     /**
      * Gets the file uuid
      */
-    public function getFileUuid(): string|null
+    public function getFileUuid(): string|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -57,7 +57,7 @@ final class SegmentFileMessage extends Message
     /**
      * Gets the enabled
      */
-    public function getEnabled(): bool|null
+    public function getEnabled(): bool|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -65,7 +65,7 @@ final class SegmentFileMessage extends Message
     /**
      * Gets the user profile primary key
      */
-    public function getUserProfilePrimaryKey(): int|null
+    public function getUserProfilePrimaryKey(): int|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -73,7 +73,7 @@ final class SegmentFileMessage extends Message
     /**
      * Gets the leader type
      */
-    public function getLeaderType(): int|null
+    public function getLeaderType(): int|array|null
     {
         return $this->getFieldValue(7);
     }
@@ -81,7 +81,7 @@ final class SegmentFileMessage extends Message
     /**
      * Gets the leader group primary key
      */
-    public function getLeaderGroupPrimaryKey(): int|null
+    public function getLeaderGroupPrimaryKey(): int|array|null
     {
         return $this->getFieldValue(8);
     }
@@ -89,7 +89,7 @@ final class SegmentFileMessage extends Message
     /**
      * Gets the leader activity id
      */
-    public function getLeaderActivityId(): int|null
+    public function getLeaderActivityId(): int|array|null
     {
         return $this->getFieldValue(9);
     }
@@ -97,7 +97,7 @@ final class SegmentFileMessage extends Message
     /**
      * Gets the leader activity id string
      */
-    public function getLeaderActivityIdString(): string|null
+    public function getLeaderActivityIdString(): string|array|null
     {
         return $this->getFieldValue(10);
     }
@@ -105,7 +105,7 @@ final class SegmentFileMessage extends Message
     /**
      * Gets the default race leader
      */
-    public function getDefaultRaceLeader(): int|null
+    public function getDefaultRaceLeader(): int|array|null
     {
         return $this->getFieldValue(11);
     }

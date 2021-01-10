@@ -35,7 +35,7 @@ final class SoftwareMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): int|null
+    public function getMessageIndex(): int|array|null
     {
         return $this->getFieldValue(254);
     }
@@ -43,7 +43,7 @@ final class SoftwareMessage extends Message
     /**
      * Gets the version
      */
-    public function getVersion(): float|null
+    public function getVersion(): float|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -51,7 +51,7 @@ final class SoftwareMessage extends Message
     /**
      * Gets the part number
      */
-    public function getPartNumber(): string|null
+    public function getPartNumber(): string|array|null
     {
         return $this->getFieldValue(5);
     }

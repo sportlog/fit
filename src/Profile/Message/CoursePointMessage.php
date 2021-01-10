@@ -40,7 +40,7 @@ final class CoursePointMessage extends Message
     /**
      * Gets the message index
      */
-    public function getMessageIndex(): int|null
+    public function getMessageIndex(): int|array|null
     {
         return $this->getFieldValue(254);
     }
@@ -56,7 +56,7 @@ final class CoursePointMessage extends Message
     /**
      * Gets the position lat
      */
-    public function getPositionLat(): int|null
+    public function getPositionLat(): int|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -64,7 +64,7 @@ final class CoursePointMessage extends Message
     /**
      * Gets the position long
      */
-    public function getPositionLong(): int|null
+    public function getPositionLong(): int|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -72,7 +72,7 @@ final class CoursePointMessage extends Message
     /**
      * Gets the distance
      */
-    public function getDistance(): float|null
+    public function getDistance(): float|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -80,7 +80,7 @@ final class CoursePointMessage extends Message
     /**
      * Gets the type
      */
-    public function getType(): int|null
+    public function getType(): int|array|null
     {
         return $this->getFieldValue(5);
     }
@@ -88,7 +88,7 @@ final class CoursePointMessage extends Message
     /**
      * Gets the name
      */
-    public function getName(): string|null
+    public function getName(): string|array|null
     {
         return $this->getFieldValue(6);
     }
@@ -96,7 +96,7 @@ final class CoursePointMessage extends Message
     /**
      * Gets the favorite
      */
-    public function getFavorite(): bool|null
+    public function getFavorite(): bool|array|null
     {
         return $this->getFieldValue(8);
     }

@@ -52,7 +52,7 @@ final class AviationAttitudeMessage extends Message
     /**
      * Gets the timestamp ms
      */
-    public function getTimestampMs(): int|null
+    public function getTimestampMs(): int|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -60,7 +60,7 @@ final class AviationAttitudeMessage extends Message
     /**
      * Gets the system time
      */
-    public function getSystemTime(): int|null
+    public function getSystemTime(): int|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -68,7 +68,7 @@ final class AviationAttitudeMessage extends Message
     /**
      * Gets the pitch
      */
-    public function getPitch(): float|null
+    public function getPitch(): float|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -76,7 +76,7 @@ final class AviationAttitudeMessage extends Message
     /**
      * Gets the roll
      */
-    public function getRoll(): float|null
+    public function getRoll(): float|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -84,7 +84,7 @@ final class AviationAttitudeMessage extends Message
     /**
      * Gets the accel lateral
      */
-    public function getAccelLateral(): float|null
+    public function getAccelLateral(): float|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -92,7 +92,7 @@ final class AviationAttitudeMessage extends Message
     /**
      * Gets the accel normal
      */
-    public function getAccelNormal(): float|null
+    public function getAccelNormal(): float|array|null
     {
         return $this->getFieldValue(5);
     }
@@ -100,7 +100,7 @@ final class AviationAttitudeMessage extends Message
     /**
      * Gets the turn rate
      */
-    public function getTurnRate(): float|null
+    public function getTurnRate(): float|array|null
     {
         return $this->getFieldValue(6);
     }
@@ -108,7 +108,7 @@ final class AviationAttitudeMessage extends Message
     /**
      * Gets the stage
      */
-    public function getStage(): int|null
+    public function getStage(): int|array|null
     {
         return $this->getFieldValue(7);
     }
@@ -116,7 +116,7 @@ final class AviationAttitudeMessage extends Message
     /**
      * Gets the attitude stage complete
      */
-    public function getAttitudeStageComplete(): int|null
+    public function getAttitudeStageComplete(): int|array|null
     {
         return $this->getFieldValue(8);
     }
@@ -124,7 +124,7 @@ final class AviationAttitudeMessage extends Message
     /**
      * Gets the track
      */
-    public function getTrack(): float|null
+    public function getTrack(): float|array|null
     {
         return $this->getFieldValue(9);
     }
@@ -132,7 +132,7 @@ final class AviationAttitudeMessage extends Message
     /**
      * Gets the validity
      */
-    public function getValidity(): int|null
+    public function getValidity(): int|array|null
     {
         return $this->getFieldValue(10);
     }

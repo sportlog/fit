@@ -49,7 +49,7 @@ final class GyroscopeDataMessage extends Message
     /**
      * Gets the timestamp ms
      */
-    public function getTimestampMs(): int|null
+    public function getTimestampMs(): int|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -57,7 +57,7 @@ final class GyroscopeDataMessage extends Message
     /**
      * Gets the sample time offset
      */
-    public function getSampleTimeOffset(): int|null
+    public function getSampleTimeOffset(): int|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -65,7 +65,7 @@ final class GyroscopeDataMessage extends Message
     /**
      * Gets the gyro x
      */
-    public function getGyroX(): int|null
+    public function getGyroX(): int|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -73,7 +73,7 @@ final class GyroscopeDataMessage extends Message
     /**
      * Gets the gyro y
      */
-    public function getGyroY(): int|null
+    public function getGyroY(): int|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -81,7 +81,7 @@ final class GyroscopeDataMessage extends Message
     /**
      * Gets the gyro z
      */
-    public function getGyroZ(): int|null
+    public function getGyroZ(): int|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -89,7 +89,7 @@ final class GyroscopeDataMessage extends Message
     /**
      * Gets the calibrated gyro x
      */
-    public function getCalibratedGyroX(): float|null
+    public function getCalibratedGyroX(): float|array|null
     {
         return $this->getFieldValue(5);
     }
@@ -97,7 +97,7 @@ final class GyroscopeDataMessage extends Message
     /**
      * Gets the calibrated gyro y
      */
-    public function getCalibratedGyroY(): float|null
+    public function getCalibratedGyroY(): float|array|null
     {
         return $this->getFieldValue(6);
     }
@@ -105,7 +105,7 @@ final class GyroscopeDataMessage extends Message
     /**
      * Gets the calibrated gyro z
      */
-    public function getCalibratedGyroZ(): float|null
+    public function getCalibratedGyroZ(): float|array|null
     {
         return $this->getFieldValue(7);
     }

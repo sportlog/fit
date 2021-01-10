@@ -122,6 +122,18 @@ final class Field
     }
 
     /**
+     * Calculate value using scale and offset.
+     * This method does not check if calculation is required. Calculation
+     * is required only for numeric types (see FitBaseTypeDefinition->isNumeric())
+     * and when scale and offset are not the default values.
+     * Keep in mind that this changes any values from type int to float.
+     */
+    public function calculateValue(int|float $value): float
+    {
+        return ($value / $this->getScale()) - $this->getOffset();
+    }
+
+    /**
      * Gets the field base definition.
      *
      * @return FitBaseTypeDefinition

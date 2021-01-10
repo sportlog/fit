@@ -34,7 +34,7 @@ final class StressLevelMessage extends Message
     /**
      * Gets the stress level value
      */
-    public function getStressLevelValue(): int|null
+    public function getStressLevelValue(): int|array|null
     {
         return $this->getFieldValue(0);
     }

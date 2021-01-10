@@ -46,7 +46,7 @@ final class FieldDescriptionMessage extends Message
     /**
      * Gets the developer data index
      */
-    public function getDeveloperDataIndex(): int|null
+    public function getDeveloperDataIndex(): int|array|null
     {
         return $this->getFieldValue(0);
     }
@@ -54,7 +54,7 @@ final class FieldDescriptionMessage extends Message
     /**
      * Gets the field definition number
      */
-    public function getFieldDefinitionNumber(): int|null
+    public function getFieldDefinitionNumber(): int|array|null
     {
         return $this->getFieldValue(1);
     }
@@ -62,7 +62,7 @@ final class FieldDescriptionMessage extends Message
     /**
      * Gets the fit base type id
      */
-    public function getFitBaseTypeId(): int|null
+    public function getFitBaseTypeId(): int|array|null
     {
         return $this->getFieldValue(2);
     }
@@ -70,7 +70,7 @@ final class FieldDescriptionMessage extends Message
     /**
      * Gets the field name
      */
-    public function getFieldName(): string|null
+    public function getFieldName(): string|array|null
     {
         return $this->getFieldValue(3);
     }
@@ -78,7 +78,7 @@ final class FieldDescriptionMessage extends Message
     /**
      * Gets the array
      */
-    public function getArray(): int|null
+    public function getArray(): int|array|null
     {
         return $this->getFieldValue(4);
     }
@@ -86,7 +86,7 @@ final class FieldDescriptionMessage extends Message
     /**
      * Gets the components
      */
-    public function getComponents(): string|null
+    public function getComponents(): string|array|null
     {
         return $this->getFieldValue(5);
     }
@@ -94,7 +94,7 @@ final class FieldDescriptionMessage extends Message
     /**
      * Gets the scale
      */
-    public function getScale(): int|null
+    public function getScale(): int|array|null
     {
         return $this->getFieldValue(6);
     }
@@ -102,7 +102,7 @@ final class FieldDescriptionMessage extends Message
     /**
      * Gets the offset
      */
-    public function getOffset(): int|null
+    public function getOffset(): int|array|null
     {
         return $this->getFieldValue(7);
     }
@@ -110,7 +110,7 @@ final class FieldDescriptionMessage extends Message
     /**
      * Gets the units
      */
-    public function getUnits(): string|null
+    public function getUnits(): string|array|null
     {
         return $this->getFieldValue(8);
     }
@@ -118,7 +118,7 @@ final class FieldDescriptionMessage extends Message
     /**
      * Gets the bits
      */
-    public function getBits(): string|null
+    public function getBits(): string|array|null
     {
         return $this->getFieldValue(9);
     }
@@ -126,7 +126,7 @@ final class FieldDescriptionMessage extends Message
     /**
      * Gets the accumulate
      */
-    public function getAccumulate(): string|null
+    public function getAccumulate(): string|array|null
     {
         return $this->getFieldValue(10);
     }
@@ -134,7 +134,7 @@ final class FieldDescriptionMessage extends Message
     /**
      * Gets the fit base unit id
      */
-    public function getFitBaseUnitId(): int|null
+    public function getFitBaseUnitId(): int|array|null
     {
         return $this->getFieldValue(13);
     }
@@ -142,7 +142,7 @@ final class FieldDescriptionMessage extends Message
     /**
      * Gets the native mesg num
      */
-    public function getNativeMesgNum(): int|null
+    public function getNativeMesgNum(): int|array|null
     {
         return $this->getFieldValue(14);
     }
@@ -150,7 +150,7 @@ final class FieldDescriptionMessage extends Message
     /**
      * Gets the native field num
      */
-    public function getNativeFieldNum(): int|null
+    public function getNativeFieldNum(): int|array|null
     {
         return $this->getFieldValue(15);
     }
