@@ -21,7 +21,13 @@ use FIT\FitBaseTypeDefinition;
 #[Attribute(Attribute::IS_REPEATABLE | Attribute::TARGET_CLASS)]
 final class Field
 {
+    /**
+     * Default scale
+     */
     public const DEFAULT_SCALE = 1.0;
+    /**
+     * Default offset
+     */
     public const DEFAULT_OFFSET = 0.0;
 
     private FitBaseTypeDefinition $typeDefinition;
@@ -125,7 +131,7 @@ final class Field
      * Calculate value using scale and offset.
      * This method does not check if calculation is required. Calculation
      * is required only for numeric types (see FitBaseTypeDefinition->isNumeric())
-     * and when scale and offset are not the default values.
+     * and when scale and offset are not set to their default values.
      * Keep in mind that this changes any values from type int to float.
      */
     public function calculateValue(int|float $value): float

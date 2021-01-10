@@ -108,6 +108,9 @@ abstract class Message implements IteratorAggregate, Stringable
      */
     public function setFieldValue(int $fieldNumber, mixed $value, FitBaseTypeDefinition $fitBaseType): void
     {
+        // Get the field.
+        // If there is no such field the FIT file provides data not specified in the FIT SDK.
+        // Store the data anyway even if it's unknown how to interprete it and therefore useless.
         $field = $this->getField($fieldNumber);
         if ($field !== null) {
             $baseType = $field->getTypeDefinition();
@@ -126,6 +129,8 @@ abstract class Message implements IteratorAggregate, Stringable
                 $field->getTypeDefinition()->isNumeric() &&
                 ($field->getScale() !== Field::DEFAULT_SCALE || $field->getOffset() !== Field::DEFAULT_OFFSET)
             ) {
+                // If scale and/or offset are set, calculate the value.
+                // This changes any values of type int to float.
                 if (is_array($value)) {
                     $value = $this->mapArray($value, fn($val) => $field->calculateValue($val));
                 } else {
@@ -137,6 +142,13 @@ abstract class Message implements IteratorAggregate, Stringable
         $this->values[$fieldNumber] = $value;
     }
 
+    /**
+     * Gets the underlying field. Or null if there is no such
+     * field defined.
+     *
+     * @param integer $fieldNumber
+     * @return Field|null
+     */
     public function getField(int $fieldNumber): ?Field
     {
         return isset($this->fields[$fieldNumber]) ? $this->fields[$fieldNumber] : null;
@@ -153,6 +165,11 @@ abstract class Message implements IteratorAggregate, Stringable
         return new ArrayIterator($this->values);
     }
 
+    /**
+     * Return message name and global message number.
+     *
+     * @return string
+     */
     public function __toString()
     {
         return sprintf('%s (%s)', $this->getMessageName(), $this->getGlobalMessageNumber());
@@ -178,6 +195,8 @@ abstract class Message implements IteratorAggregate, Stringable
                     throw new Exception(sprintf('cannot have array values of type DateTime|LocalDateTime for %s::%s', static::class, $field->getName()));
                 }
 
+                // PHP DateTime is calculated from start of UNIX epoche (01.01.1970),
+                // while FIT Timestamp starts with 01.01.1989.
                 $date = new DateTime();
                 $date->setTimestamp(intval($value) + 631065600);
                 return $date;
