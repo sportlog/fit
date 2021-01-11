@@ -14,7 +14,6 @@ use Exception;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\MessageList;
 use InvalidArgumentException;
-use Psr\Log\LoggerInterface;
 use Sportlog\FIT\Profile\Profile;
 
 /**
