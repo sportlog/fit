@@ -1,9 +1,11 @@
 <?php
+
 declare(strict_types=1);
 
 /**
  * FIT decoder
  *
+ * @author Johannes Aberidis
  * @license MIT License
  */
 
@@ -20,6 +22,11 @@ use Traversable;
  */
 class MessageList implements IteratorAggregate, Countable
 {
+    /**
+     * Two dimensional array which keeps the messages
+     * grouped by their class id. So the key is the class id
+     * and the value is an array of messages of that type.
+     */
     private array $messages = [];
 
     /**
@@ -81,12 +88,7 @@ class MessageList implements IteratorAggregate, Countable
      */
     public function count(): int
     {
-        $cnt = 0;
-        foreach ($this->messages as $messageList) {
-            $cnt += count($messageList);
-        }
-
-        return $cnt;
+        return count($this->messages, COUNT_RECURSIVE) - count($this->messages);
     }
 
     /**

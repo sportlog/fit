@@ -28,7 +28,7 @@ final class DecodeActivityTruncatedTest extends TestCase {
 
         $this->assertNotNull($messages);
         $this->assertCount(16, $messages);
-        // $this->assertEquals(FileType::Activity, $messages->getFileType());
+        //$this->assertEquals(FileType::Activity, $messages->getFileType());
         $this->assertCount(1, $messages->getMessages(FileIdMessage::class));
         $this->assertCount(1, $messages->getMessages(EventMessage::class));
         $this->assertCount(14, $messages->getMessages(RecordMessage::class));

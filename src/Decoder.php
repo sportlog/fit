@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -14,7 +15,6 @@ use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\MessageList;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
-use Psr\Log\NullLogger;
 use Sportlog\FIT\Profile\Profile;
 
 /**
@@ -25,25 +25,12 @@ use Sportlog\FIT\Profile\Profile;
  * - does not handle compress time stamp headers correctly
  * - ignores subfields
  * - no profile validation (allowed messages according to file type)
- * - ...and many more
  */
 class Decoder
 {
     const MESSAGE_TYPE_DATA = 'data';
     const MESSAGE_TYPE_DEFINITION = 'definition';
     const MESSAGE_TYPE_COMPRESSED_TIMESTAMP = 'compressed_timestamp';
-
-    private LoggerInterface $logger;
-
-    /**
-     * Creates a new deocder instance.
-     *
-     * @param LoggerInterface|null $logger
-     */
-    public function __construct(?LoggerInterface $logger = null)
-    {
-        $this->logger = $logger ?? new NullLogger();
-    }
 
     /**
      * Reads the file and returns the decoded messages.
@@ -58,24 +45,18 @@ class Decoder
         if ($handle === false) {
             throw new InvalidArgumentException("Unable to open file '{$file}'. Did you provide the correct path?");
         }
-        $this->logger->info("************ START decoding of file '{$file}'");
-
+        
         try {
-            $reader = new IOReader($handle);
-            $header = $this->getHeader($reader);
-            $this->logger->info("Header: " . print_r($header, true));
-            return $this->readMessages($header, $reader);
-        } catch (Exception $ex) {
-            $this->logger->error("Error while decoding", ['exception' => $ex]);
-            throw $ex;
+            return $this->readMessages(new IOReader($handle));
         } finally {
             fclose($handle);
-            $this->logger->info("************ END decode");
         }
     }
 
-    private function readMessages(array $header, IOReader $reader): MessageList
+    private function readMessages(IOReader $reader): MessageList
     {
+        $header = $this->getHeader($reader);
+
         // Array to store all message definitions
         $messageTypeDefinitions = [];
         $records = new MessageList();
@@ -86,7 +67,7 @@ class Decoder
 
             switch ($recordHeader['message_type']) {
                 case self::MESSAGE_TYPE_COMPRESSED_TIMESTAMP:
-                   throw new Exception('compressed timestamps are not implemented yet');
+                    throw new Exception('compressed timestamps are not implemented yet');
 
                 case self::MESSAGE_TYPE_DEFINITION:
                     // definition message
@@ -100,7 +81,6 @@ class Decoder
                         throw new Exception("No message definition for local message type '{$localMessagType}' found.");
                     }
 
-                    $this->logger->info("Data for '{$localMessagType}'");
                     $records->addMessage($this->nextRecordData($messageTypeDefinitions[$localMessagType], $reader));
                     break;
 
