@@ -1,5 +1,5 @@
 {
-  "name": "fit/fit",
+  "name": "sportlog/fit",
   "description": "A decoder for FIT files",
   "type": "library",
   "keywords": [
@@ -30,8 +30,7 @@
     "nette/php-generator": "^3.5"
   },
   "require": {
-    "php": ">=8.0",
-    "psr/log": "^1.1"
+    "php": ">=8.0"
   },
   "scripts": {
     "phpunit": "vendor\\bin\\phpunit --testsuite fit",
