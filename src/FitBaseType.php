@@ -47,16 +47,13 @@ class FitBaseType
 	 */
 	public static function fromType(int $baseType): ?FitBaseTypeDefinition
 	{
-		if (!isset(self::getFieldDefinitions()[$baseType])) {
-			return null;
-		}
-
-		return self::getFieldDefinitions()[$baseType];
+		$arr = self::getFieldDefinitions();
+		return isset($arr[$baseType]) ? $arr[$baseType] : null;
 	}
 
 	private static function getFieldDefinitions(): array
 	{
-		if (is_null(self::$fieldDefinitions)) {
+		if (self::$fieldDefinitions === null) {
 			self::$fieldDefinitions = [
 				self::ENUM => new FitBaseTypeDefinition(self::ENUM, false, "enum", 1, 0xFF),
 				self::SINT8 => new FitBaseTypeDefinition(self::SINT8, false, "sint8", 1, 0x7F),

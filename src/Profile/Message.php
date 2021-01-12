@@ -124,7 +124,7 @@ abstract class Message implements IteratorAggregate, Stringable
             }
 
             if (
-                $field->getTypeDefinition()->isNumeric() &&
+                $baseType->isNumeric() &&
                 ($field->getScale() !== Field::DEFAULT_SCALE || $field->getOffset() !== Field::DEFAULT_OFFSET)
             ) {
                 // If scale and/or offset are set, calculate the value.
