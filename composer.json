@@ -33,7 +33,7 @@
     "php": ">=8.0"
   },
   "scripts": {
-    "phpunit": "vendor\\bin\\phpunit --testsuite fit",
+    "test": "vendor\\bin\\phpunit --testsuite fit",
     "phpstan": "vendor\\bin\\phpstan analyse -c phpstan.neon"
   }
 }

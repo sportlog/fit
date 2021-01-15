@@ -30,6 +30,7 @@ class Decoder
     const MESSAGE_TYPE_DATA = 'data';
     const MESSAGE_TYPE_DEFINITION = 'definition';
     const MESSAGE_TYPE_COMPRESSED_TIMESTAMP = 'compressed_timestamp';
+    const HEADER_SIZE_WITH_CRC = 14;
 
     /**
      * Reads the file and returns the decoded messages.
@@ -44,7 +45,7 @@ class Decoder
         if ($handle === false) {
             throw new InvalidArgumentException("Unable to open file '{$file}'. Did you provide the correct path?");
         }
-        
+
         try {
             return $this->readMessages(new IOReader($handle));
         } finally {
@@ -54,12 +55,15 @@ class Decoder
 
     private function readMessages(IOReader $reader): MessageList
     {
-        $header = $this->getHeader($reader);
+        $header = Header::fromStream($reader);
+        if (!$header->isValid()) {
+            throw new FitException('File has no valid FIT header');
+        }
 
         // Array to store all message definitions
         $messageTypeDefinitions = [];
         $records = new MessageList();
-        while ($reader->getOffset() - $header['header_size'] < $header['data_size']) {
+        while ($reader->getOffset() - $header->getHeaderSize() < $header->getDataSize()) {
             // Read the record header
             $recordHeader = $this->nextRecordHeader($reader);
             $localMessagType = $recordHeader['local_message_type'];
@@ -77,14 +81,14 @@ class Decoder
                 case self::MESSAGE_TYPE_DATA:
                     // data message
                     if (!isset($messageTypeDefinitions[$localMessagType])) {
-                        throw new Exception("No message definition for local message type '{$localMessagType}' found.");
+                        throw new FitException("No message definition for local message type '{$localMessagType}' found.");
                     }
 
                     $records->addMessage($this->nextRecordData($messageTypeDefinitions[$localMessagType], $reader));
                     break;
 
                 default:
-                    throw new Exception('invalid message type in record header: ' . $recordHeader['message_type']);
+                    throw new FitException('invalid message type in record header: ' . $recordHeader['message_type']);
             }
         }
         return $records;
@@ -116,7 +120,7 @@ class Decoder
             // elements represented as an array.
             $fitBaseTypeSize = $fitBaseType->getBytes();
             if (($size % $fitBaseTypeSize) !== 0) {
-                throw new Exception('size must be a multiple of fit-base-type size');
+                throw new FitException('size must be a multiple of fit-base-type size');
             }
 
             $order = $definition['byte_order'];
@@ -312,24 +316,5 @@ class Decoder
                 'has_developer_data' => (($byte >> 5) & 1) === 1
             ];
         }
-    }
-
-    private function getHeader(IOReader $reader): array
-    {
-        $headerSize = $reader->readUInt8();
-
-        $header = [
-            'header_size' => $headerSize,
-            'protocol_version' => $reader->readUInt8(),
-            'profile_version' => $reader->readUInt16(),
-            'data_size' => $reader->readUInt32LE(),
-            'data_type' => $reader->readString8(4)
-        ];
-
-        if ($headerSize > 12) {
-            $header['crc'] = $reader->readUInt16LE();
-        }
-
-        return $header;
     }
 }

@@ -15,6 +15,7 @@ use Exception;
 use Sportlog\FIT\FitBaseTypeDefinition;
 use IteratorAggregate;
 use ReflectionClass;
+use Sportlog\FIT\FitException;
 use Stringable;
 
 /**
@@ -113,7 +114,7 @@ abstract class Message implements IteratorAggregate, Stringable
         if ($field !== null) {
             $baseType = $field->getTypeDefinition();
             if ($baseType !== $fitBaseType) {
-                throw new Exception(sprintf(
+                throw new FitException(sprintf(
                     'mismatch between base type in FIT message and base type declared in meta data of property "%s::%s".
                     Base type from FIT file is "%s", base type from property meta is "%s"',
                     self::class,
