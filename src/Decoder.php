@@ -59,7 +59,7 @@ class Decoder
      */
     public function read(string $file): MessageList
     {
-        $handle = fopen($file, 'rb');
+        $handle = @fopen($file, 'rb');
         if ($handle === false) {
             throw new InvalidArgumentException("Unable to open file '{$file}'. Did you provide the correct path?");
         }
@@ -86,7 +86,7 @@ class Decoder
 
         // Array to store all message definitions
         $messageTypeDefinitions = [];
-        $records = new MessageList();
+        $messages = new MessageList();
         while ($reader->getOffset() - $header->getHeaderSize() < $header->getDataSize()) {
             // Read the record header
             $recordHeader = $this->nextRecordHeader($reader);
@@ -109,14 +109,14 @@ class Decoder
                         throw new FitException("No message definition for local message type '{$localMessagType}' found.");
                     }
 
-                    $records->addMessage($this->nextRecordData($messageTypeDefinitions[$localMessagType], $reader, $records));
+                    $messages->addMessage($this->nextRecordData($messageTypeDefinitions[$localMessagType], $reader, $messages));
                     break;
 
                 default:
                     throw new FitException('invalid message type in record header: ' . $recordHeader['message_type']);
             }
         }
-        return $records;
+        return $messages;
     }
 
     /**
@@ -372,19 +372,19 @@ class Decoder
     /**
      * Gets the developer field definition
      *
-     * @param MessageList $records
+     * @param MessageList $messages
      * @param integer $developerDataIndex
      * @param integer $fieldDefinitionNumber
      * @return FieldDescriptionMessage
      * @throws FitException
      */
-    private function getDeveloperFieldDescription(int $developerDataIndex, int $fieldDefinitionNumber, MessageList $records): FieldDescriptionMessage
+    private function getDeveloperFieldDescription(int $developerDataIndex, int $fieldDefinitionNumber, MessageList $messages): FieldDescriptionMessage
     {
-        $dataIdMessages = $records->getMessages(DeveloperDataIdMessage::class);
+        $dataIdMessages = $messages->getMessages(DeveloperDataIdMessage::class);
         foreach ($dataIdMessages as $message) {
             /** @var DeveloperDataIdMessage $message */
             if ($message->getDeveloperDataIndex() === $developerDataIndex) {
-                $fieldDescMessages = $records->getMessages(FieldDescriptionMessage::class);
+                $fieldDescMessages = $messages->getMessages(FieldDescriptionMessage::class);
                 foreach ($fieldDescMessages as $fieldDescMessage) {
                     /** @var FieldDescriptionMessage $fieldDescMessage */
                     if (
@@ -401,9 +401,9 @@ class Decoder
         throw new FitException("no developer data id message found for index '{$developerDataIndex}'");
     }
 
-    private function createDeveloperField(int $developerDataIndex, int $fieldDefinitionNumber, MessageList $records, Message $message): Field
+    private function createDeveloperField(int $developerDataIndex, int $fieldDefinitionNumber, MessageList $messages, Message $message): Field
     {
-        $descMessage = $this->getDeveloperFieldDescription($developerDataIndex, $fieldDefinitionNumber, $records);
+        $descMessage = $this->getDeveloperFieldDescription($developerDataIndex, $fieldDefinitionNumber, $messages);
         if ($descMessage->getNativeFieldNum() !== null) {
             $field = $message->getField($descMessage->getNativeFieldNum());
             if ($field === null) {
