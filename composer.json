@@ -30,7 +30,8 @@
     "nette/php-generator": "^3.5"
   },
   "require": {
-    "php": ">=8.0"
+    "php": ">=8.0",
+    "psr/log": "^1.1"
   },
   "scripts": {
     "test": "vendor\\bin\\phpunit --testsuite fit",

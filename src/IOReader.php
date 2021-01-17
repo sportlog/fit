@@ -111,7 +111,7 @@ class IOReader
      * @throws Exception if <var>length</var> attribute is negative or
      *  if an I/O error occurs
      */
-    public function read($length): string
+    public function read(int $length): string
     {
         if ($length < 0) {
             throw new Exception('Length cannot be negative');

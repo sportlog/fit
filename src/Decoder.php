@@ -14,7 +14,12 @@ use Exception;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\MessageList;
 use InvalidArgumentException;
+use Psr\Log\LoggerInterface;
+use Sportlog\FIT\Profile\Field;
+use Sportlog\FIT\Profile\Message\DeveloperDataIdMessage;
+use Sportlog\FIT\Profile\Message\FieldDescriptionMessage;
 use Sportlog\FIT\Profile\Profile;
+use Sportlog\FIT\Profile\ProfileType;
 
 /**
  * A decoder for FIT files.
@@ -33,6 +38,19 @@ class Decoder
     const HEADER_SIZE_WITH_CRC = 14;
 
     /**
+     * Ctor
+     * It is intentionally to make the logger nullable (and not to use
+     * NullLogger by default) to save time by not generating the log
+     * messages at all.
+     * 
+     * @param LoggerInterface $logger The logger to write to, or null
+     * if logging is disabled.
+     */
+    public function __construct(private ?LoggerInterface $logger = null)
+    {
+    }
+
+    /**
      * Reads the file and returns the decoded messages.
      *
      * @param string $file
@@ -48,6 +66,12 @@ class Decoder
 
         try {
             return $this->readMessages(new IOReader($handle));
+        } catch (FitException $fex) {
+            $this->logger?->error('Invalid FIT file', ['exception' => $fex]);
+            throw $fex;
+        } catch (Exception $ex) {
+            $this->logger?->error('Technical error while decoding', ['exception' => $ex]);
+            throw $ex;
         } finally {
             fclose($handle);
         }
@@ -67,6 +91,7 @@ class Decoder
             // Read the record header
             $recordHeader = $this->nextRecordHeader($reader);
             $localMessagType = $recordHeader['local_message_type'];
+            $this->logger?->info(sprintf('%s: %s', $recordHeader['message_type'], $localMessagType));
 
             switch ($recordHeader['message_type']) {
                 case self::MESSAGE_TYPE_COMPRESSED_TIMESTAMP:
@@ -84,7 +109,7 @@ class Decoder
                         throw new FitException("No message definition for local message type '{$localMessagType}' found.");
                     }
 
-                    $records->addMessage($this->nextRecordData($messageTypeDefinitions[$localMessagType], $reader));
+                    $records->addMessage($this->nextRecordData($messageTypeDefinitions[$localMessagType], $reader, $records));
                     break;
 
                 default:
@@ -102,81 +127,106 @@ class Decoder
      * @param IOReader $reader
      * @return Message
      */
-    private function nextRecordData(array $definition, IOReader $reader): Message
+    private function nextRecordData(array $definition, IOReader $reader, MessageList $messages): Message
     {
         // Create the message for the global message number
         $message = Profile::createMessage($definition['global_message_number']);
+        $order = $definition['byte_order'];
         foreach ($definition['field_definitions'] as $fieldDefinition) {
-            $size = $fieldDefinition['size'];
-            $fitBaseType = FitBaseType::fromType($fieldDefinition['base_type']);
-            if (is_null($fitBaseType)) {
-                // No valid base type; just read the data to advance the file pointer
-                $reader->read($size);
-                continue;
-            }
-
-            // The size indicates the size of the defined field in bytes. The size may be a 
-            // multiple of the underlying FIT Base Type size indicating the field contains multiple 
-            // elements represented as an array.
-            $fitBaseTypeSize = $fitBaseType->getBytes();
-            if (($size % $fitBaseTypeSize) !== 0) {
-                throw new FitException('size must be a multiple of fit-base-type size');
-            }
-
-            $order = $definition['byte_order'];
-            $fieldValue = null;
-
-            // For String and Byte data type always read all bytes at once.
-            // All other types handle multiple values as arrays of their underlying FIT base type.
-            switch ($fieldDefinition['base_type']) {
-                case FitBaseType::STRING:
-                    $fieldValue = $reader->readString8($size);
-                    break;
-
-                case FitBaseType::BYTE:
-                    $fieldValue = $reader->read($size);
-                    break;
-
-                default:
-                    $numElements = $size / $fitBaseType->getBytes();
-                    if ($numElements === 1) {
-                        $fieldValue = $this->readValue($fitBaseType, $fieldDefinition, $order, $reader);
-                    } else {
-                        for ($i = 0; $i < $numElements; $i++) {
-                            $tmpValue = $this->readValue($fitBaseType, $fieldDefinition, $order, $reader);
-                            if ($tmpValue !== null) {
-                                if ($fieldValue === null) {
-                                    $fieldValue = [];
-                                }
-                                $fieldValue[] = $tmpValue;
-                            }
-                        }
-                    }
-                    break;
-            }
-
-            if ($fieldValue !== null) {
-                $message->setFieldValue($fieldDefinition['field_definition_number'], $fieldValue, $fitBaseType);
-            }
+            $this->assignMessageValue(
+                $fieldDefinition['field_definition_number'],
+                $fieldDefinition['base_type'],
+                $fieldDefinition['size'],
+                $order,
+                $message,
+                $reader
+            );
         }
 
+        foreach ($definition['developer_field_definitions'] as $devFieldDefinition) {
+            $field = $this->createDeveloperField($devFieldDefinition['data_index'], $devFieldDefinition['field_definition_number'], $messages, $message);
+            $message->addField($field);
+            $this->assignMessageValue(
+                $field->getNumber(),
+                $field->getType(),
+                $devFieldDefinition['size'],
+                $order,
+                $message,
+                $reader
+            );
+        }
+
+        $this->logger?->debug($message->__toString());
         return $message;
+    }
+
+    private function assignMessageValue(int $fieldNumber, int $baseType, int $size, int $order, Message $message, IOReader $reader): void
+    {
+        $fitBaseType = FitBaseType::fromType($baseType);
+        if ($fitBaseType === null) {
+            // No valid base type; just read the data to advance the file pointer
+            $reader->read($size);
+            return;
+        }
+
+        // The size indicates the size of the defined field in bytes. The size may be a 
+        // multiple of the underlying FIT Base Type size indicating the field contains multiple 
+        // elements represented as an array.
+        $fitBaseTypeSize = $fitBaseType->getBytes();
+        if (($size % $fitBaseTypeSize) !== 0) {
+            throw new FitException('size must be a multiple of fit-base-type size');
+        }
+
+        $fieldValue = null;
+
+        // For String and Byte data type always read all bytes at once.
+        // All other types handle multiple values as arrays of their underlying FIT base type.
+        switch ($baseType) {
+            case FitBaseType::STRING:
+                $fieldValue = $reader->readString8($size);
+                break;
+
+            case FitBaseType::BYTE:
+                $fieldValue = $reader->read($size);
+                break;
+
+            default:
+                $numElements = $size / $fitBaseType->getBytes();
+                if ($numElements === 1) {
+                    $fieldValue = $this->readValue($fitBaseType, $baseType, $order, $reader);
+                } else {
+                    for ($i = 0; $i < $numElements; $i++) {
+                        $tmpValue = $this->readValue($fitBaseType, $baseType, $order, $reader);
+                        if ($tmpValue !== null) {
+                            if ($fieldValue === null) {
+                                $fieldValue = [];
+                            }
+                            $fieldValue[] = $tmpValue;
+                        }
+                    }
+                }
+                break;
+        }
+
+        if ($fieldValue !== null) {
+            $message->setFieldValue($fieldNumber, $fieldValue, $fitBaseType);
+        }
     }
 
     /**
      * Read the value according to it's base type.
      *
      * @param FitBaseTypeDefinition $fitBaseType
-     * @param array $fieldDefinition
+     * @param int $baseType
      * @param integer $order
      * @param IOReader $reader
      * @return mixed Returns the read value, or null if the value is invalid.
      */
-    private function readValue(FitBaseTypeDefinition $fitBaseType, array $fieldDefinition, int $order, IOReader $reader): mixed
+    private function readValue(FitBaseTypeDefinition $fitBaseType, int $baseType, int $order, IOReader $reader): mixed
     {
         $bigEndian = $order === IOReader::BIG_ENDIAN_ORDER;
         $value = null;
-        switch ($fieldDefinition['base_type']) {
+        switch ($baseType) {
             case FitBaseType::SINT8:
                 $value = $reader->readInt8();
                 break;
@@ -224,7 +274,7 @@ class Decoder
                 throw new Exception("Base types 'String|Byte' must be handled separately");
 
             default:
-                throw new Exception(sprintf('unknown fit base type "%s".', $fieldDefinition['base_type']));
+                throw new Exception(sprintf('unknown fit base type "%s".', $baseType));
         }
 
         return !$fitBaseType->isInvalid($value) ? $value : null;
@@ -260,12 +310,12 @@ class Decoder
             ];
         }
 
+        $devFieldDefinitions = [];
         if ($hasDeveloperData) {
             // Developer data is present as defined in the header
             // Number of Self Descriptive fields in the Data Message
-            $devFieldNumber =  $reader->readInt8();
-            $devFieldDefinitions = [];
-            for ($i = 0; $i < $devFieldNumber; $i++) {
+            $devFieldsCount =  $reader->readInt8();
+            for ($i = 0; $i < $devFieldsCount; $i++) {
                 $devFieldNumber = $reader->readUInt8();
                 $devFieldSize = $reader->readUInt8();
                 $devDataIndex = $reader->readUInt8();
@@ -282,7 +332,8 @@ class Decoder
             'byte_order' => $endianness,
             'global_message_number' => $globalMsgNumber,
             'number_of_fields' => $numberOfFields,
-            'field_definitions' => $fieldDefinitions
+            'field_definitions' => $fieldDefinitions,
+            'developer_field_definitions' => $devFieldDefinitions
         ];
     }
 
@@ -315,6 +366,81 @@ class Decoder
                 'local_message_type' => $byte & 15,    // Bits 0-3, Value 0-15,
                 'has_developer_data' => (($byte >> 5) & 1) === 1
             ];
+        }
+    }
+
+    /**
+     * Gets the developer field definition
+     *
+     * @param MessageList $records
+     * @param integer $developerDataIndex
+     * @param integer $fieldDefinitionNumber
+     * @return FieldDescriptionMessage
+     * @throws FitException
+     */
+    private function getDeveloperFieldDescription(int $developerDataIndex, int $fieldDefinitionNumber, MessageList $records): FieldDescriptionMessage
+    {
+        $dataIdMessages = $records->getMessages(DeveloperDataIdMessage::class);
+        foreach ($dataIdMessages as $message) {
+            /** @var DeveloperDataIdMessage $message */
+            if ($message->getDeveloperDataIndex() === $developerDataIndex) {
+                $fieldDescMessages = $records->getMessages(FieldDescriptionMessage::class);
+                foreach ($fieldDescMessages as $fieldDescMessage) {
+                    /** @var FieldDescriptionMessage $fieldDescMessage */
+                    if (
+                        $fieldDescMessage->getDeveloperDataIndex() === $developerDataIndex &&
+                        $fieldDescMessage->getFieldDefinitionNumber() === $fieldDefinitionNumber
+                    ) {
+                        return $fieldDescMessage;
+                    }
+                }
+                throw new FitException("no field description message found for field definition number '{$fieldDefinitionNumber}'");
+            }
+        }
+
+        throw new FitException("no developer data id message found for index '{$developerDataIndex}'");
+    }
+
+    private function createDeveloperField(int $developerDataIndex, int $fieldDefinitionNumber, MessageList $records, Message $message): Field
+    {
+        $descMessage = $this->getDeveloperFieldDescription($developerDataIndex, $fieldDefinitionNumber, $records);
+        if ($descMessage->getNativeFieldNum() !== null) {
+            $field = $message->getField($descMessage->getNativeFieldNum());
+            if ($field === null) {
+                throw new FitException(sprintf('invalid native field number %s', $descMessage->getNativeFieldNum()));
+            }
+            if ($field->getType() !== $descMessage->getFitBaseTypeId()) {
+                throw new FitException(sprintf(
+                    'mismatch between base type in dev field (%s) and base type of native field (%s)',
+                    $descMessage->getFitBaseTypeId(),
+                    $field->getType()
+                ));
+            }
+            // Developer Fields that override native FIT fields shall preserve the units defined for that field in 
+            // the Profile.xlsx document. Scaling and offset defined in Profile.xlsx for the native data fields shall
+            // not be applied to the developer data field. Instead, the developer data field shall be logged with full 
+            // precision and resolution using the appropriate base data type.
+            return new Field(
+                $descMessage->getFieldName() ?? throw new FitException('dev field description is missing'),
+                $descMessage->getNativeFieldNum(), // equivalent to $field->getNumber()
+                $field->getType(),
+                Field::DEFAULT_SCALE,
+                Field::DEFAULT_OFFSET,
+                $field->getUnits(),
+                $field->getAccumulated(),
+                $field->getProfileType()
+            );
+        } else {
+            return new Field(
+                $descMessage->getFieldName() ?? throw new FitException('dev field description is missing'),
+                crc32($descMessage->getFieldName()),
+                $descMessage->getFitBaseTypeId() ?? throw new FitException('dev field base type is missing'),
+                $descMessage->getScale() ?? Field::DEFAULT_SCALE,
+                $descMessage->getOffset() ?? Field::DEFAULT_OFFSET,
+                $descMessage->getUnits() ?? '',
+                false,
+                ProfileType::BYTE
+            );
         }
     }
 }

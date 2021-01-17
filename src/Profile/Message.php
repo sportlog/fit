@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -90,14 +91,14 @@ abstract class Message implements IteratorAggregate, Stringable
     /**
      * Gets a field value.
      */
-    public function getFieldValue(int $fieldNumber): mixed
+    public function getFieldValue(int|string $fieldNumber): mixed
     {
-        $value = isset($this->values[$fieldNumber]) ? $this->values[$fieldNumber] : null;
+        $field = $this->getField($fieldNumber);
+        $value = isset($this->values[$field->getNumber()]) ? $this->values[$field->getNumber()] : null;
         if ($value === null) {
             return null;
         }
 
-        $field = $this->getField($fieldNumber);
         return ($field !== null) ? $this->convertValueToFieldType($field, $value) : $value;
     }
 
@@ -113,11 +114,11 @@ abstract class Message implements IteratorAggregate, Stringable
         $field = $this->getField($fieldNumber);
         if ($field !== null) {
             $baseType = $field->getTypeDefinition();
-            if ($baseType !== $fitBaseType) {
+            if ($baseType->getType() !== $fitBaseType->getType()) {
                 throw new FitException(sprintf(
                     'mismatch between base type in FIT message and base type declared in meta data of property "%s::%s".
                     Base type from FIT file is "%s", base type from property meta is "%s"',
-                    self::class,
+                    static::class,
                     $field->getName(),
                     $fitBaseType->getName(),
                     $baseType->getName()
@@ -131,7 +132,7 @@ abstract class Message implements IteratorAggregate, Stringable
                 // If scale and/or offset are set, calculate the value.
                 // This changes any values of type int to float.
                 if (is_array($value)) {
-                    $value = $this->mapArray($value, fn($val) => $field->calculateValue($val));
+                    $value = $this->mapArray($value, fn ($val) => $field->calculateValue($val));
                 } else {
                     $value = $field->calculateValue($value);
                 }
@@ -142,15 +143,44 @@ abstract class Message implements IteratorAggregate, Stringable
     }
 
     /**
+     * Adds a new field or redefines an existing field if
+     * a field with this number already exists.
+     *
+     * @param Field $field
+     * @return void
+     */
+    public function addField(Field $field): void
+    {
+        // When redefining an existing field (developer field),
+        // remove the value from the native field. It may be
+        // that an invalid value is supplied.
+        if (isset($this->values[$field->getNumber()]) && isset($this->fields[$field->getNumber()])) {
+            unset($this->values[$field->getNumber()]);
+        }
+
+        $this->fields[$field->getNumber()] = $field;
+    }
+
+    /**
      * Gets the underlying field. Or null if there is no such
      * field defined.
      *
-     * @param integer $fieldNumber
+     * @param integer|string $fieldId Either the field number or the field name
      * @return Field|null
      */
-    public function getField(int $fieldNumber): ?Field
+    public function getField(int|string $fieldId): ?Field
     {
-        return isset($this->fields[$fieldNumber]) ? $this->fields[$fieldNumber] : null;
+        if (is_int($fieldId)) {
+            return isset($this->fields[$fieldId]) ? $this->fields[$fieldId] : null;
+        }
+        else {
+            foreach ($this->fields as $field) {
+                if ($field->getName() === $fieldId) {
+                    return $this->getField($field->getNumber());
+                }
+            }
+            return null;
+        }
     }
 
     /**
@@ -165,16 +195,27 @@ abstract class Message implements IteratorAggregate, Stringable
     }
 
     /**
-     * Return message name and global message number.
+     * Return a string representation of all values and units,
+     * including the message type at the beginning.
+     * Example: RecordMessage,Distance,12564.45,m,HeartRate,145,bpm,.....
      *
      * @return string
      */
     public function __toString()
     {
-        return sprintf('%s (%s)', $this->getMessageName(), $this->getGlobalMessageNumber());
+        $result = [basename(static::class)];
+        foreach ($this->values as $key => $value) {
+            $field = $this->getField($key);
+            $result[] = $field?->getName() ?? $key;
+            $result[] = is_array($value) ? join("|", $value) : $value;
+            $result[] = $field?->getUnits() ?? '';
+        }
+
+        return join(",", $result);
     }
 
-    private function mapArray(array $values, callable $classifier): array {
+    private function mapArray(array $values, callable $classifier): array
+    {
         $mapped = [];
         foreach ($values as $value) {
             $mapped[] = $classifier($value);
@@ -186,7 +227,7 @@ abstract class Message implements IteratorAggregate, Stringable
     {
         switch ($field->getProfileType()) {
             case ProfileType::BOOL:
-                return is_array($value) ? $this->mapArray($value, fn($val) => $val !== 0) : $value !== 0;
+                return is_array($value) ? $this->mapArray($value, fn ($val) => $val !== 0) : $value !== 0;
 
             case ProfileType::LOCALDATETIME:
             case ProfileType::DATETIME:
