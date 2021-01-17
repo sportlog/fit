@@ -64,7 +64,8 @@ final class Header
      *
      * @return integer
      */
-    public function getHeaderSize(): int {
+    public function getHeaderSize(): int
+    {
         return $this->headerSize;
     }
 
@@ -73,7 +74,8 @@ final class Header
      *
      * @return integer
      */
-    public function getDataSize(): int {
+    public function getDataSize(): int
+    {
         return $this->dataSize;
     }
 
@@ -82,7 +84,8 @@ final class Header
      *
      * @return integer
      */
-    public function getCrc(): int {
+    public function getCrc(): int
+    {
         return $this->crc;
     }
 
