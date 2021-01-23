@@ -104,7 +104,13 @@ abstract class Message implements IteratorAggregate, Stringable
 
     /**
      * Sets a field value.
-     * @throws Exception Base type in field meta data is not identical to the base type from FIT file definition
+     * 
+     * @param int $fieldNumber Number of the field to set.
+     * @param mixed $value The field value. The value is stored even if the field number does
+     * not belong to a native field.
+     * @param $fitBaseType The underlying base type of the value. Must match with the base type
+     * of the native field.
+     * @throws Exception Base type of native field is not identical to the base type from FIT file definition
      */
     public function setFieldValue(int $fieldNumber, mixed $value, FitBaseTypeDefinition $fitBaseType): void
     {
@@ -113,20 +119,19 @@ abstract class Message implements IteratorAggregate, Stringable
         // Store the data anyway even if it's unknown how to interprete it and therefore useless.
         $field = $this->getField($fieldNumber);
         if ($field !== null) {
-            $baseType = $field->getTypeDefinition();
-            if ($baseType->getType() !== $fitBaseType->getType()) {
+            if ($field->getType() !== $fitBaseType->getType()) {
                 throw new FitException(sprintf(
                     'mismatch between base type in FIT message and base type declared in meta data of property "%s::%s".
                     Base type from FIT file is "%s", base type from property meta is "%s"',
                     static::class,
                     $field->getName(),
                     $fitBaseType->getName(),
-                    $baseType->getName()
+                    $field->getType()
                 ));
             }
 
             if (
-                $baseType->isNumeric() &&
+                $field->isNumeric() &&
                 ($field->getScale() !== Field::DEFAULT_SCALE || $field->getOffset() !== Field::DEFAULT_OFFSET)
             ) {
                 // If scale and/or offset are set, calculate the value.
@@ -172,8 +177,7 @@ abstract class Message implements IteratorAggregate, Stringable
     {
         if (is_int($fieldId)) {
             return isset($this->fields[$fieldId]) ? $this->fields[$fieldId] : null;
-        }
-        else {
+        } else {
             foreach ($this->fields as $field) {
                 if ($field->getName() === $fieldId) {
                     return $this->getField($field->getNumber());

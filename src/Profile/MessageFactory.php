@@ -106,7 +106,7 @@ use Sportlog\FIT\Profile\Message\ZonesTargetMessage;
 /**
  * Factory for creating a new message instance
  */
-class Profile
+class MessageFactory
 {
     /**
      * Creates the message instance for the global message number

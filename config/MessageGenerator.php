@@ -52,9 +52,10 @@ class MessageGenerator
                 $this->writeFile($path, $printer->printFile($content));
             }
 
+            $msgFactory = 'MessageFactory';
             $this->writeFile(
-                join(DIRECTORY_SEPARATOR, [$outputPath, '..', 'Profile.php']),
-                $printer->printFile($this->createMessageFactory(array_keys($files)))
+                join(DIRECTORY_SEPARATOR, [$outputPath, '..', "{$msgFactory}.php"]),
+                $printer->printFile($this->createMessageFactory($msgFactory, array_keys($files)))
             );
 
             return count($files);
@@ -63,7 +64,7 @@ class MessageGenerator
         }
     }
 
-    private function createMessageFactory(array $uses): PhpFile
+    private function createMessageFactory(string $name, array $uses): PhpFile
     {
         $factory = $this->createFile();
         $namespace = $factory->addNamespace('Sportlog\\FIT\\Profile');
@@ -72,7 +73,7 @@ class MessageGenerator
             $namespace->addUse("Sportlog\\FIT\\Profile\\Message\\{$use}");
         }
 
-        $class = $namespace->addClass('Profile')
+        $class = $namespace->addClass($name)
             ->addComment("Factory for creating a new message instance");
         $method = $class->addMethod('createMessage')
             ->addComment("Creates the message instance for the global message number")

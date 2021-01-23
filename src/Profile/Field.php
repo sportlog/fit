@@ -10,8 +10,8 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile;
 
 use Attribute;
+use Exception;
 use Sportlog\FIT\FitBaseType;
-use Sportlog\FIT\FitBaseTypeDefinition;
 
 /**
  * Describes a message field.
@@ -27,8 +27,6 @@ final class Field
      * Default offset
      */
     public const DEFAULT_OFFSET = 0.0;
-
-    private FitBaseTypeDefinition $typeDefinition;
 
     public function __construct(
         private string $name,
@@ -136,20 +134,40 @@ final class Field
     {
         return ($value / $this->getScale()) - $this->getOffset();
     }
-
+    
     /**
-     * Gets the field base definition.
+     * Indicates if the base type is numeric.
+     * Scale/offset shall not be calculated for
+     * non-numeric fields.
      *
-     * @return FitBaseTypeDefinition
+     * @return boolean
      */
-    public function getTypeDefinition(): FitBaseTypeDefinition
+    public function isNumeric(): bool
     {
-        return $this->typeDefinition ?? $this->setTypeDefinition();
-    }
+        switch ($this->getType()) {
+            case FitBaseType::ENUM:
+            case FitBaseType::STRING:
+                return false;
 
-    private function setTypeDefinition(): FitBaseTypeDefinition
-    {
-        $this->typeDefinition = FitBaseType::fromType($this->getType());
-        return $this->typeDefinition;
+            case FitBaseType::SINT8:
+            case FitBaseType::UINT8:
+            case FitBaseType::UINT8Z:
+            case FitBaseType::SINT16:
+            case FitBaseType::UINT16:
+            case FitBaseType::UINT16Z:
+            case FitBaseType::SINT32:
+            case FitBaseType::UINT32:
+            case FitBaseType::UINT32Z:
+            case FitBaseType::FLOAT32:
+            case FitBaseType::SINT64:
+            case FitBaseType::UINT64:
+            case FitBaseType::UINT64Z:
+            case FitBaseType::FLOAT64:
+            case FitBaseType::BYTE:
+                return true;
+
+            default:
+                throw new Exception("IsNumeric - Unexpected Fit Type" . $this->getType());
+        }
     }
 }

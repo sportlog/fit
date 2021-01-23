@@ -18,7 +18,7 @@ use Psr\Log\LoggerInterface;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message\DeveloperDataIdMessage;
 use Sportlog\FIT\Profile\Message\FieldDescriptionMessage;
-use Sportlog\FIT\Profile\Profile;
+use Sportlog\FIT\Profile\MessageFactory;
 use Sportlog\FIT\Profile\ProfileType;
 
 /**
@@ -130,7 +130,7 @@ class Decoder
     private function nextRecordData(array $definition, IOReader $reader, MessageList $messages): Message
     {
         // Create the message for the global message number
-        $message = Profile::createMessage($definition['global_message_number']);
+        $message = MessageFactory::createMessage($definition['global_message_number']);
         $order = $definition['byte_order'];
         foreach ($definition['field_definitions'] as $fieldDefinition) {
             $this->assignMessageValue(
@@ -156,7 +156,6 @@ class Decoder
             );
         }
 
-        $this->logger?->debug($message->__toString());
         return $message;
     }
 
