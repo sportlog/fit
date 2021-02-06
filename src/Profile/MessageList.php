@@ -36,7 +36,7 @@ class MessageList implements IteratorAggregate, Countable
      */
     public function getFileType(): ?int
     {
-        $messages = $this->getMessages(FileIdMessage::class);
+        $messages = $this->getMessages(MessageNumber::FileId);
         if (count($messages) !== 1) {
             return null;
         }
@@ -57,11 +57,11 @@ class MessageList implements IteratorAggregate, Countable
     }
 
     /**
-     * Gets all messages for the specified class id.
+     * Gets all messages for the specified message number.
      */
-    public function getMessages(string $classId): array
+    public function getMessages(int $messageNumber): array
     {
-        return isset($this->messages[$classId]) ? $this->messages[$classId] : [];
+        return isset($this->messages[$messageNumber]) ? $this->messages[$messageNumber] : [];
     }
 
     /**
@@ -73,11 +73,11 @@ class MessageList implements IteratorAggregate, Countable
      */
     public function addMessage(Message $message): void
     {
-        $classId = $message::class;
-        if (isset($this->messages[$classId])) {
-            $this->messages[$classId][] = $message;
+        $messageNumber = $message->getGlobalMessageNumber();
+        if (isset($this->messages[$messageNumber])) {
+            $this->messages[$messageNumber][] = $message;
         } else {
-            $this->messages[$classId] = [$message];
+            $this->messages[$messageNumber] = [$message];
         }
     }
 

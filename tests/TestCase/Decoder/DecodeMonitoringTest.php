@@ -15,6 +15,7 @@ use Sportlog\FIT\Profile\Message\MonitoringInfoMessage;
 use Sportlog\FIT\Profile\Message\MonitoringMessage;
 use Sportlog\FIT\Test\TestCase\FilePath;
 use PHPUnit\Framework\TestCase;
+use Sportlog\FIT\Profile\MessageNumber;
 
 /**
  * Decodes the file 'MonitoringFile.fit'
@@ -29,10 +30,10 @@ final class DecodeMonitoringTest extends TestCase
 
         $this->assertNotNull($messages);
 
-        $monitoringMessages = $messages->getMessages(MonitoringMessage::class);
+        $monitoringMessages = $messages->getMessages(MessageNumber::Monitoring);
         $this->assertCount(337, $monitoringMessages);
 
-        $monitoringInfoMessages = $messages->getMessages(MonitoringInfoMessage::class);
+        $monitoringInfoMessages = $messages->getMessages(MessageNumber::MonitoringInfo);
         /** @var MonitoringInfoMessage $lastMonitoringInfoMessage */
         $lastMonitoringInfoMessage = $monitoringInfoMessages[count($monitoringInfoMessages) - 1];
         $this->assertEquals(2042, $lastMonitoringInfoMessage->getRestingMetabolicRate());

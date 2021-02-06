@@ -16,6 +16,7 @@ use Sportlog\FIT\Profile\Message\FileIdMessage;
 use Sportlog\FIT\Profile\Message\RecordMessage;
 use Sportlog\FIT\Test\TestCase\FilePath;
 use PHPUnit\Framework\TestCase;
+use Sportlog\FIT\Profile\MessageNumber;
 
 /**
  * Decodes the file 'activity_truncated.fit'
@@ -29,11 +30,11 @@ final class DecodeActivityTruncatedTest extends TestCase {
         $this->assertNotNull($messages);
         $this->assertCount(16, $messages);
         //$this->assertEquals(FileType::Activity, $messages->getFileType());
-        $this->assertCount(1, $messages->getMessages(FileIdMessage::class));
-        $this->assertCount(1, $messages->getMessages(EventMessage::class));
-        $this->assertCount(14, $messages->getMessages(RecordMessage::class));
+        $this->assertCount(1, $messages->getMessages(MessageNumber::FileId));
+        $this->assertCount(1, $messages->getMessages(MessageNumber::Event));
+        $this->assertCount(14, $messages->getMessages(MessageNumber::Record));
 
-        $recMessages = $messages->getMessages(RecordMessage::class);
+        $recMessages = $messages->getMessages(MessageNumber::Record);
         /** @var RecordMessage $lastRecordMessage */
         $lastRecordMessage = $recMessages[count($recMessages)-1];
         $this->assertEquals(5.73, $lastRecordMessage->getDistance());

@@ -19,6 +19,7 @@ use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message\DeveloperDataIdMessage;
 use Sportlog\FIT\Profile\Message\FieldDescriptionMessage;
 use Sportlog\FIT\Profile\MessageFactory;
+use Sportlog\FIT\Profile\MessageNumber;
 use Sportlog\FIT\Profile\ProfileType;
 
 /**
@@ -131,13 +132,14 @@ class Decoder
     {
         // Create the message for the global message number
         $message = MessageFactory::createMessage($definition['global_message_number']);
-        $order = $definition['byte_order'];
+        $bigEndian = $definition['byte_order'] === IOReader::BIG_ENDIAN_ORDER;
+
         foreach ($definition['field_definitions'] as $fieldDefinition) {
             $this->assignMessageValue(
                 $fieldDefinition['field_definition_number'],
                 $fieldDefinition['base_type'],
                 $fieldDefinition['size'],
-                $order,
+                $bigEndian,
                 $message,
                 $reader
             );
@@ -150,7 +152,7 @@ class Decoder
                 $field->getNumber(),
                 $field->getType(),
                 $devFieldDefinition['size'],
-                $order,
+                $bigEndian,
                 $message,
                 $reader
             );
@@ -159,7 +161,7 @@ class Decoder
         return $message;
     }
 
-    private function assignMessageValue(int $fieldNumber, int $baseType, int $size, int $order, Message $message, IOReader $reader): void
+    private function assignMessageValue(int $fieldNumber, int $baseType, int $size, bool $bigEndian, Message $message, IOReader $reader): void
     {
         $fitBaseType = FitBaseType::fromType($baseType);
         if ($fitBaseType === null) {
@@ -192,10 +194,10 @@ class Decoder
             default:
                 $numElements = $size / $fitBaseType->getBytes();
                 if ($numElements === 1) {
-                    $fieldValue = $this->readValue($fitBaseType, $baseType, $order, $reader);
+                    $fieldValue = $this->readValue($fitBaseType, $baseType, $bigEndian, $reader);
                 } else {
                     for ($i = 0; $i < $numElements; $i++) {
-                        $tmpValue = $this->readValue($fitBaseType, $baseType, $order, $reader);
+                        $tmpValue = $this->readValue($fitBaseType, $baseType, $bigEndian, $reader);
                         if ($tmpValue !== null) {
                             if ($fieldValue === null) {
                                 $fieldValue = [];
@@ -217,13 +219,12 @@ class Decoder
      *
      * @param FitBaseTypeDefinition $fitBaseType
      * @param int $baseType
-     * @param integer $order
+     * @param bool $bigEndian Indicates if architecture is Big Endian. Little Endian otherwise.
      * @param IOReader $reader
      * @return mixed Returns the read value, or null if the value is invalid.
      */
-    private function readValue(FitBaseTypeDefinition $fitBaseType, int $baseType, int $order, IOReader $reader): mixed
+    private function readValue(FitBaseTypeDefinition $fitBaseType, int $baseType, bool $bigEndian, IOReader $reader): mixed
     {
-        $bigEndian = $order === IOReader::BIG_ENDIAN_ORDER;
         $value = null;
         switch ($baseType) {
             case FitBaseType::SINT8:
@@ -237,21 +238,21 @@ class Decoder
                 break;
 
             case FitBaseType::SINT16:
-                $value = $reader->readInt16($order);
+                $value = $bigEndian ? $reader->readInt16BE() : $reader->readInt16LE();
                 break;
 
             case FitBaseType::UINT16:
             case FitBaseType::UINT16Z:
-                $value = $reader->readUInt16($order);
+                $value = $bigEndian ? $reader->readUInt16BE() : $reader->readUInt16LE();
                 break;
 
             case FitBaseType::SINT32:
-                $value = $reader->readInt32($order);
+                $value = $bigEndian ? $reader->readInt32BE() : $reader->readInt32LE();
                 break;
 
             case FitBaseType::UINT32:
             case FitBaseType::UINT32Z:
-                $value = $reader->readUInt32($order);
+                $value = $bigEndian ? $reader->readUInt32BE() : $reader->readUInt32LE();
                 break;
 
             case FitBaseType::FLOAT32:
@@ -285,7 +286,7 @@ class Decoder
         // Architecture Type
         // 0: Definition and Data Messages are Little Endian
         // 1: Definition and Data Message are Big Endian
-        $endianness = $reader->readUInt8() ? IOReader::BIG_ENDIAN_ORDER : IOReader::LITTLE_ENDIAN_ORDER;
+        $endianness = $reader->readUInt8() === 1 ? IOReader::BIG_ENDIAN_ORDER : IOReader::LITTLE_ENDIAN_ORDER;
         // 0:65535 – Unique to each message; Endianness of this 2 Byte value is defined in the Architecture byte
         $globalMsgNumber = $reader->readUInt16($endianness);
         // Number of fields in the Data Message
@@ -379,11 +380,11 @@ class Decoder
      */
     private function getDeveloperFieldDescription(int $developerDataIndex, int $fieldDefinitionNumber, MessageList $messages): FieldDescriptionMessage
     {
-        $dataIdMessages = $messages->getMessages(DeveloperDataIdMessage::class);
+        $dataIdMessages = $messages->getMessages(MessageNumber::DeveloperDataId);
         foreach ($dataIdMessages as $message) {
             /** @var DeveloperDataIdMessage $message */
             if ($message->getDeveloperDataIndex() === $developerDataIndex) {
-                $fieldDescMessages = $messages->getMessages(FieldDescriptionMessage::class);
+                $fieldDescMessages = $messages->getMessages(MessageNumber::FieldDescription);
                 foreach ($fieldDescMessages as $fieldDescMessage) {
                     /** @var FieldDescriptionMessage $fieldDescMessage */
                     if (

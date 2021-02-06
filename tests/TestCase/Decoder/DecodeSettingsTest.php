@@ -10,12 +10,11 @@ declare (strict_types = 1);
 namespace Sportlog\FIT\Test\TestCase\Decoder;
 
 use Sportlog\FIT\Decoder;
-use Sportlog\FIT\FileType;
-use Sportlog\FIT\Profile\Message\FileIdMessage;
 use Sportlog\FIT\Profile\Message\HrmProfileMessage;
 use Sportlog\FIT\Profile\Message\UserProfileMessage;
 use Sportlog\FIT\Test\TestCase\FilePath;
 use PHPUnit\Framework\TestCase;
+use Sportlog\FIT\Profile\MessageNumber;
 
 /**
  * Decodes the file 'Settings.fit'
@@ -28,17 +27,17 @@ final class DecodeSettingsTest extends TestCase {
 
         $this->assertNotNull($messages);
         $this->assertCount(3, $messages);
-        $this->assertCount(1, $messages->getMessages(FileIdMessage::class));
+        $this->assertCount(1, $messages->getMessages(MessageNumber::FileId));
         // $this->assertEquals(FileType::Settings, $messages->getFileType());
-        $this->assertCount(1, $messages->getMessages(UserProfileMessage::class));
-        $this->assertCount(1, $messages->getMessages(HrmProfileMessage::class));
+        $this->assertCount(1, $messages->getMessages(MessageNumber::UserProfile));
+        $this->assertCount(1, $messages->getMessages(MessageNumber::HrmProfile));
 
-        $hrmMessages = $messages->getMessages(HrmProfileMessage::class);
+        $hrmMessages = $messages->getMessages(MessageNumber::HrmProfile);
         /** @var HrmProfileMessage $lastRecordMessage */
         $lastHrmProfileMessage = $hrmMessages[count($hrmMessages)-1];
         $this->assertEquals(100, $lastHrmProfileMessage->getHrmAntId());
 
-        $userProfileMessages = $messages->getMessages(UserProfileMessage::class);
+        $userProfileMessages = $messages->getMessages(MessageNumber::UserProfile);
         /** @var UserProfileMessage $lastUserProfileMessage */
         $lastUserProfileMessage = $userProfileMessages[count($userProfileMessages)-1];
         $this->assertEquals(90, $lastUserProfileMessage->getWeight());

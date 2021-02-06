@@ -108,7 +108,7 @@ abstract class Message implements IteratorAggregate, Stringable
      * @param int $fieldNumber Number of the field to set.
      * @param mixed $value The field value. The value is stored even if the field number does
      * not belong to a native field.
-     * @param $fitBaseType The underlying base type of the value. Must match with the base type
+     * @param FitBaseTypeDefinition $fitBaseType The underlying base type of the value. Must match with the base type
      * of the native field.
      * @throws Exception Base type of native field is not identical to the base type from FIT file definition
      */
