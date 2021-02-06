@@ -29,11 +29,11 @@ $messageList = $decoder->read('yourfile.fit');
 
 echo "File type: " . $messageList->getFileType();
 
-// You can either traverse all messages, in this case grouped by type.
-// You also simply iterate over the $messageList
-foreach ($messageList->getMessageTypes() as $messageTyp) {
-   $messages = $messageList->getMessages($messageTyp);
-   echo sprintf('%s: %s', $messageType, count($messages));
+// You can iterate over the $messageList, or like in this example,
+// iterate over the messages grouped by theier message numbers.
+foreach ($messageList->getMessageNumbers() as $messageNumber) {
+   $messages = $messageList->getMessages($messageNumber);
+   echo sprintf('%s: %s', $messageNumber, count($messages));
 }
 
 // You can also grab specific messages and access any data you need
@@ -41,8 +41,7 @@ $recordMessages = $messageList->getMessages(MessageNumber::Record);
 if (count($recordMessages) > 0) {
    /** @var RecordMessage $lastRecordMessage */
    $lastRecordMessage = $recMessages[count($recMessages)-1];
-   // get the distance using the properties on the message,
-   // for example the distance
+   // get any native fields from the message; for example the distance
    echo "Total distance (m): " . $lastRecordMessage->getDistance();
 }
 ```

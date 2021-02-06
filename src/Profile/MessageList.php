@@ -31,6 +31,7 @@ class MessageList implements IteratorAggregate, Countable
 
     /**
      * Gets the file type taken from the FileIdMessage.
+     * Every valid FIT file must have exactly one FileIdMessage.
      *
      * @return integer|null
      */
@@ -47,11 +48,11 @@ class MessageList implements IteratorAggregate, Countable
     }
 
     /**
-     * Return all available messages types.
+     * Return all available messages numbers.
      *
      * @return array
      */
-    public function getMessageTypes(): array
+    public function getMessageNumbers(): array
     {
         return array_keys($this->messages);
     }
