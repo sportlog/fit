@@ -34,7 +34,7 @@
     "psr/log": "^1.1"
   },
   "scripts": {
-    "test": "vendor\\bin\\phpunit --testsuite fit",
-    "phpstan": "vendor\\bin\\phpstan analyse -c phpstan.neon"
+    "test": "vendor/bin/phpunit --testsuite fit",
+    "phpstan": "vendor/bin/phpstan analyse -c phpstan.neon"
   }
 }

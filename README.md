@@ -1,5 +1,8 @@
 # FIT
 A PHP (>= PHP 8) decoder for FIT files created by Garmin devices.
+The result is a list of all messages decoded from the file. Each message
+is an instance of its underlying message class, so you can easily access
+any (native) fields using intellisense.
 
 ## Install via Composer
 You can install sportlog/FIT using Composer.
@@ -18,6 +21,7 @@ require 'vendor/autoload.php';
 
 use Sportlog\FIT\Decoder;
 use Sportlog\FIT\Profile\Message\RecordMessage;
+use Sportlog\FIT\Profile\MessageNumber;
 
 $decoder = new Decoder();
 // Decoding the FIT file returns a set of messages
@@ -33,7 +37,7 @@ foreach ($messageList->getMessageTypes() as $messageTyp) {
 }
 
 // You can also grab specific messages and access any data you need
-$recordMessages = $messageList->getMessages(RecordMessage::class);
+$recordMessages = $messageList->getMessages(MessageNumber::Record);
 if (count($recordMessages) > 0) {
    /** @var RecordMessage $lastRecordMessage */
    $lastRecordMessage = $recMessages[count($recMessages)-1];
