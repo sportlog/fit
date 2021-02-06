@@ -46,3 +46,8 @@ if (count($recordMessages) > 0) {
    echo "Total distance (m): " . $lastRecordMessage->getDistance();
 }
 ```
+
+## Limitations
+Currently not supported
+* Compressed time stamps
+* Components
