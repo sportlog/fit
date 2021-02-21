@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * FIT decoder
+ *
+ * @license MIT License
+ *
+ * ****WARNING****  This file is auto-generated! Do NOT edit.
+ * Profile Version = 21.40Release
+ */
+
+declare(strict_types=1);
+
+namespace Sportlog\FIT\Profile\Types;
+
+/**
+ * CurlExerciseName constants
+ */
+final class CurlExerciseName
+{
+    const ALTERNATING_DUMBBELL_BICEPS_CURL = '0';
+    const ALTERNATING_DUMBBELL_BICEPS_CURL_ON_SWISS_BALL = '1';
+    const ALTERNATING_INCLINE_DUMBBELL_BICEPS_CURL = '2';
+    const BARBELL_BICEPS_CURL = '3';
+    const BARBELL_REVERSE_WRIST_CURL = '4';
+    const BARBELL_WRIST_CURL = '5';
+    const BEHIND_THE_BACK_BARBELL_REVERSE_WRIST_CURL = '6';
+    const BEHIND_THE_BACK_ONE_ARM_CABLE_CURL = '7';
+    const CABLE_BICEPS_CURL = '8';
+    const CABLE_HAMMER_CURL = '9';
+    const CHEATING_BARBELL_BICEPS_CURL = '10';
+    const CLOSE_GRIP_EZ_BAR_BICEPS_CURL = '11';
+    const CROSS_BODY_DUMBBELL_HAMMER_CURL = '12';
+    const DEAD_HANG_BICEPS_CURL = '13';
+    const DECLINE_HAMMER_CURL = '14';
+    const DUMBBELL_BICEPS_CURL_WITH_STATIC_HOLD = '15';
+    const DUMBBELL_HAMMER_CURL = '16';
+    const DUMBBELL_REVERSE_WRIST_CURL = '17';
+    const DUMBBELL_WRIST_CURL = '18';
+    const EZ_BAR_PREACHER_CURL = '19';
+    const FORWARD_BEND_BICEPS_CURL = '20';
+    const HAMMER_CURL_TO_PRESS = '21';
+    const INCLINE_DUMBBELL_BICEPS_CURL = '22';
+    const INCLINE_OFFSET_THUMB_DUMBBELL_CURL = '23';
+    const KETTLEBELL_BICEPS_CURL = '24';
+    const LYING_CONCENTRATION_CABLE_CURL = '25';
+    const ONE_ARM_PREACHER_CURL = '26';
+    const PLATE_PINCH_CURL = '27';
+    const PREACHER_CURL_WITH_CABLE = '28';
+    const REVERSE_EZ_BAR_CURL = '29';
+    const REVERSE_GRIP_WRIST_CURL = '30';
+    const REVERSE_GRIP_BARBELL_BICEPS_CURL = '31';
+    const SEATED_ALTERNATING_DUMBBELL_BICEPS_CURL = '32';
+    const SEATED_DUMBBELL_BICEPS_CURL = '33';
+    const SEATED_REVERSE_DUMBBELL_CURL = '34';
+    const SPLIT_STANCE_OFFSET_PINKY_DUMBBELL_CURL = '35';
+    const STANDING_ALTERNATING_DUMBBELL_CURLS = '36';
+    const STANDING_DUMBBELL_BICEPS_CURL = '37';
+    const STANDING_EZ_BAR_BICEPS_CURL = '38';
+    const STATIC_CURL = '39';
+    const SWISS_BALL_DUMBBELL_OVERHEAD_TRICEPS_EXTENSION = '40';
+    const SWISS_BALL_EZ_BAR_PREACHER_CURL = '41';
+    const TWISTING_STANDING_DUMBBELL_BICEPS_CURL = '42';
+    const WIDE_GRIP_EZ_BAR_BICEPS_CURL = '43';
+}

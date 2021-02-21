@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * FIT decoder
+ *
+ * @license MIT License
+ *
+ * ****WARNING****  This file is auto-generated! Do NOT edit.
+ * Profile Version = 21.40Release
+ */
+
+declare(strict_types=1);
+
+namespace Sportlog\FIT\Profile\Types;
+
+/**
+ * DisplayOrientation constants
+ */
+final class DisplayOrientation
+{
+    const AUTO = '0';
+    const PORTRAIT = '1';
+    const LANDSCAPE = '2';
+    const PORTRAIT_FLIPPED = '3';
+    const LANDSCAPE_FLIPPED = '4';
+}

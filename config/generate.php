@@ -6,10 +6,17 @@ use Sportlog\FIT\Generator\MessageGenerator;
 
 try {
     $generator = new MessageGenerator();
-    $cnt = $generator->generateAndWriteFiles('Profile.cs', '..\\src\\Profile\\Message');
+    $cnt = $generator->writeMessages(
+        'Profile.cs',
+        join(DIRECTORY_SEPARATOR, ['..', 'src', 'Profile'])
+    );
     echo "{$cnt} Files (Messages) generated";
-}
-catch (Exception $ex) {
+
+    $cnt = $generator->writeTypes(
+        'Profile.csv',
+        join(DIRECTORY_SEPARATOR, ['..', 'src', 'Profile'])
+    );
+
+} catch (Exception $ex) {
     echo "Error generating messages {$ex}";
 }
-

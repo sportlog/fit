@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -10,6 +11,7 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Generator;
 
 use DateTime;
+use Exception;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\MessageNumber;
@@ -33,7 +35,87 @@ class MessageGenerator
     const FIELD_START = "newMesg.SetField(new Field(";
     const MESSAGE_END = "return newMesg";
 
-    public function generateAndWriteFiles(string $fileInput, string $outputPath = ''): int
+    public function writeTypes(string $fileInput, string $outputPath): void
+    {
+        $handle = fopen($fileInput, "r");
+
+        try {
+            $printer = new PsrPrinter();
+            $files = $this->getTypes($handle);
+            foreach ($files as $filename => $file) {
+                $path = join(DIRECTORY_SEPARATOR, [$outputPath, 'Types', "{$filename}.php"]);
+                $this->writeFile($path, $printer->printFile($file));
+            }
+        } finally {
+            fclose($handle);
+        }
+    }
+
+    private function getTypes(mixed $handle): array
+    {
+        $files = [];
+
+        $first = true;
+        $currentType = null;
+        $currentTypeValues = [];
+        while (($line = fgets($handle)) !== false) {
+            if ($first) {
+                $first = false;
+                continue;
+            }
+
+            if (str_starts_with($line, ",")) {
+                if ($currentType === null) {
+                    throw new Exception('type missing');
+                }
+
+                $def = explode(",", $line);
+
+                $currentTypeValues[$def[2]] = $def[3];
+            } else {
+                if ($currentType !== null) {
+                    $files[$currentType] = $this->createType($currentType, $currentTypeValues);
+                    $currentType = null;
+                }
+
+                $currentTypeValues = [];
+                $def = explode(",", $line);
+                $typeParts = explode("_", $def[0]);
+                $currentType = "";
+                foreach ($typeParts as $typePart) {
+                    $currentType .= ucfirst($typePart);
+                }
+            }
+        }
+
+        if ($currentType !== null) {
+            $files[$currentType] = $this->createType($currentType, $currentTypeValues);
+            $currentType = null;
+        }
+
+        return $files;
+    }
+
+    private function createType(string $classname, array $values): PhpFile
+    {
+        $file = $this->createFile();
+        $namespace = $file->addNamespace('Sportlog\\FIT\\Profile\\Types');
+        $class = $namespace->addClass($classname);
+
+        $class->setFinal(true)
+            ->addComment("{$classname} constants");
+
+        foreach ($values as $key => $value) {
+            // Some constants start with a digit, which is not allowed;
+            // So prefix those with an underscore
+            $constName = strtoupper(is_numeric(substr($key, 0, 1)) ? "_{$key}" : $key);
+            $class->addConstant($constName, $value);
+        }
+
+        return $file;
+    }
+
+    public function writeMessages(string $fileInput, string $outputPath): int
     {
         $handle = fopen($fileInput, "r");
         try {
@@ -47,14 +129,13 @@ class MessageGenerator
 
             $printer = new PsrPrinter();
             foreach ($files as $filename => $content) {
-                $filenameFinal = "{$filename}.php";
-                $path = $outputPath !== '' ? join(DIRECTORY_SEPARATOR, [$outputPath, $filenameFinal]) : $filenameFinal;
+                $path = join(DIRECTORY_SEPARATOR, [$outputPath, 'Message', "{$filename}.php"]);
                 $this->writeFile($path, $printer->printFile($content));
             }
 
             $msgFactory = 'MessageFactory';
             $this->writeFile(
-                join(DIRECTORY_SEPARATOR, [$outputPath, '..', "{$msgFactory}.php"]),
+                join(DIRECTORY_SEPARATOR, [$outputPath, "{$msgFactory}.php"]),
                 $printer->printFile($this->createMessageFactory($msgFactory, array_keys($files)))
             );
 
@@ -145,9 +226,10 @@ class MessageGenerator
                 $profileType = substr($profileType, strlen("Type."));
                 $name = substr($name, 1, strlen($name) - 2);
                 $units = substr($units, 1, strlen($units) - 2);
+                $scale = (float)$scale;
 
                 $phpTypes = [];
-                $phpProfileType = $this->getPhpTypeFromProfileType($profileType, (float)$scale, (float)$offset);
+                $phpProfileType = $this->getPhpTypeFromProfileType($profileType, $scale, (float)$offset);
                 $phpTypes[] = $phpProfileType;
                 if ($phpProfileType !== Type::MIXED && $phpProfileType !== DateTime::class) {
                     $phpTypes[] = Type::ARRAY;
@@ -159,7 +241,7 @@ class MessageGenerator
                 /** @var ClassType $class */
                 $class->addAttribute(Field::class, [
                     $name, (int)$num,
-                    new Literal("FitBaseType::" . $fitBaseTypeConstants[(int)$type]), (float)$scale, (float)$offset, $units,
+                    new Literal("FitBaseType::" . $fitBaseTypeConstants[(int)$type]), $scale, (float)$offset, $units,
                     $accumulated === 'true', new Literal("ProfileType::" . strtoupper($profileType))
                 ]);
 
@@ -266,7 +348,7 @@ class MessageGenerator
         if ($exists) {
             unlink($filename);
         }
-        $handle = fopen($filename, 'a') or die("coult not create file '{$filename}'");
+        $handle = fopen($filename, 'a') or die("could not create file '{$filename}'");
 
         if (!$exists) {
             // Now UTF-8 - Add byte order mark

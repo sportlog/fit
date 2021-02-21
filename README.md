@@ -20,7 +20,7 @@ Minimum PHP version required is 8.
 require 'vendor/autoload.php';
 
 use Sportlog\FIT\Decoder;
-use Sportlog\FIT\Profile\Message\RecordMessage;
+use Sportlog\FIT\Profile\Message\SessionMessage;
 use Sportlog\FIT\Profile\MessageNumber;
 
 $decoder = new Decoder();
@@ -29,21 +29,23 @@ $messageList = $decoder->read('yourfile.fit');
 
 echo "File type: " . $messageList->getFileType();
 
-// You can iterate over the $messageList, or like in this example,
-// iterate over the messages grouped by theier message numbers.
+// You can iterate over the message list, or like in this example,
+// iterate over the messages grouped by their message numbers.
 foreach ($messageList->getMessageNumbers() as $messageNumber) {
    $messages = $messageList->getMessages($messageNumber);
    echo sprintf('%s: %s', $messageNumber, count($messages));
 }
 
-// You can also grab specific messages and access any data you need
-$recordMessages = $messageList->getMessages(MessageNumber::Record);
-if (count($recordMessages) > 0) {
-   /** @var RecordMessage $lastRecordMessage */
-   $lastRecordMessage = $recMessages[count($recMessages)-1];
-   // get any native fields from the message; for example the distance
-   echo "Total distance (m): " . $lastRecordMessage->getDistance();
-}
+// You can also grab specific messages
+$sessionMessages = $messageList->getMessages(SessionMessage::Record);
+
+// There should be one session message (add check!)
+/** @var SessionMessage $sessionMessage */
+$sessionMessage = $messageList[0];
+// get any native fields from the message; use intellisense
+echo "Total time (m): " . $lastRecordMessage->getTotalElapsedTime();
+echo "Total distance (m): " . $lastRecordMessage->getTotalDistance();
+echo "Total ascent (m): " . $lastRecordMessage->getTotalAscent();
 ```
 
 ## Limitations
