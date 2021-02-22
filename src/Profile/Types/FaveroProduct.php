@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class FaveroProduct
 {
-    const ASSIOMA_UNO = '10';
-    const ASSIOMA_DUO = '12';
+    const ASSIOMA_UNO = 10;
+    const ASSIOMA_DUO = 12;
 }

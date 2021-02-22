@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class Tone
 {
-    const OFF = '0';
-    const TONE = '1';
-    const VIBRATE = '2';
-    const TONE_AND_VIBRATE = '3';
+    const OFF = 0;
+    const TONE = 1;
+    const VIBRATE = 2;
+    const TONE_AND_VIBRATE = 3;
 }

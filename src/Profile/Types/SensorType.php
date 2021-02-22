@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SensorType
 {
-    const ACCELEROMETER = '0';
-    const GYROSCOPE = '1';
-    const COMPASS = '2';
-    const BAROMETER = '3';
+    const ACCELEROMETER = 0;
+    const GYROSCOPE = 1;
+    const COMPASS = 2;
+    const BAROMETER = 3;
 }

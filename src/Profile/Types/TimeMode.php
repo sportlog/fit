@@ -18,10 +18,10 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class TimeMode
 {
-    const HOUR12 = '0';
-    const HOUR24 = '1';
-    const MILITARY = '2';
-    const HOUR_12_WITH_SECONDS = '3';
-    const HOUR_24_WITH_SECONDS = '4';
-    const UTC = '5';
+    const HOUR12 = 0;
+    const HOUR24 = 1;
+    const MILITARY = 2;
+    const HOUR_12_WITH_SECONDS = 3;
+    const HOUR_24_WITH_SECONDS = 4;
+    const UTC = 5;
 }

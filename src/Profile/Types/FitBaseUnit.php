@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class FitBaseUnit
 {
-    const OTHER = '0';
-    const KILOGRAM = '1';
-    const POUND = '2';
+    const OTHER = 0;
+    const KILOGRAM = 1;
+    const POUND = 2;
 }

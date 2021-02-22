@@ -18,12 +18,12 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class LanguageBits2
 {
-    const SLOVENIAN = '0x01';
-    const SWEDISH = '0x02';
-    const RUSSIAN = '0x04';
-    const TURKISH = '0x08';
-    const LATVIAN = '0x10';
-    const UKRAINIAN = '0x20';
-    const ARABIC = '0x40';
-    const FARSI = '0x80';
+    const SLOVENIAN = 1;
+    const SWEDISH = 2;
+    const RUSSIAN = 4;
+    const TURKISH = 8;
+    const LATVIAN = 16;
+    const UKRAINIAN = 32;
+    const ARABIC = 64;
+    const FARSI = 128;
 }

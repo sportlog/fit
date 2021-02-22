@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class Gender
 {
-    const FEMALE = '0';
-    const MALE = '1';
+    const FEMALE = 0;
+    const MALE = 1;
 }

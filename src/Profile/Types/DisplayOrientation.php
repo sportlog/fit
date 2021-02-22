@@ -18,9 +18,9 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class DisplayOrientation
 {
-    const AUTO = '0';
-    const PORTRAIT = '1';
-    const LANDSCAPE = '2';
-    const PORTRAIT_FLIPPED = '3';
-    const LANDSCAPE_FLIPPED = '4';
+    const AUTO = 0;
+    const PORTRAIT = 1;
+    const LANDSCAPE = 2;
+    const PORTRAIT_FLIPPED = 3;
+    const LANDSCAPE_FLIPPED = 4;
 }

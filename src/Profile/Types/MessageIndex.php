@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class MessageIndex
 {
-    const SELECTED = '0x8000';
-    const RESERVED = '0x7000';
-    const MASK = '0x0FFF';
+    const SELECTED = 32768;
+    const RESERVED = 28672;
+    const MASK = 4095;
 }

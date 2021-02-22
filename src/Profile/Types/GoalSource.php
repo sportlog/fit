@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class GoalSource
 {
-    const AUTO = '0';
-    const COMMUNITY = '1';
-    const USER = '2';
+    const AUTO = 0;
+    const COMMUNITY = 1;
+    const USER = 2;
 }

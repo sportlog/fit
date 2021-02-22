@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class AttitudeStage
 {
-    const FAILED = '0';
-    const ALIGNING = '1';
-    const DEGRADED = '2';
-    const VALID = '3';
+    const FAILED = 0;
+    const ALIGNING = 1;
+    const DEGRADED = 2;
+    const VALID = 3;
 }

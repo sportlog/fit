@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class WaterType
 {
-    const FRESH = '0';
-    const SALT = '1';
-    const EN13319 = '2';
-    const CUSTOM = '3';
+    const FRESH = 0;
+    const SALT = 1;
+    const EN13319 = 2;
+    const CUSTOM = 3;
 }

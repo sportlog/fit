@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class WeatherReport
 {
-    const CURRENT = '0';
-    const FORECAST = '1';
-    const HOURLY_FORECAST = '1';
-    const DAILY_FORECAST = '2';
+    const CURRENT = 0;
+    const FORECAST = 1;
+    const HOURLY_FORECAST = 1;
+    const DAILY_FORECAST = 2;
 }

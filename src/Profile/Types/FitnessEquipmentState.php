@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class FitnessEquipmentState
 {
-    const READY = '0';
-    const IN_USE = '1';
-    const PAUSED = '2';
-    const UNKNOWN = '3';
+    const READY = 0;
+    const IN_USE = 1;
+    const PAUSED = 2;
+    const UNKNOWN = 3;
 }

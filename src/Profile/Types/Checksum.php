@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class Checksum
 {
-    const CLEAR = '0';
-    const OK = '1';
+    const CLEAR = 0;
+    const OK = 1;
 }

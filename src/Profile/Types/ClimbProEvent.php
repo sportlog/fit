@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class ClimbProEvent
 {
-    const APPROACH = '0';
-    const START = '1';
-    const COMPLETE = '2';
+    const APPROACH = 0;
+    const START = 1;
+    const COMPLETE = 2;
 }

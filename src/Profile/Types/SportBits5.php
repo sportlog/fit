@@ -18,12 +18,12 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SportBits5
 {
-    const WATER_SKIING = '0x01';
-    const KAYAKING = '0x02';
-    const RAFTING = '0x04';
-    const WINDSURFING = '0x08';
-    const KITESURFING = '0x10';
-    const TACTICAL = '0x20';
-    const JUMPMASTER = '0x40';
-    const BOXING = '0x80';
+    const WATER_SKIING = 1;
+    const KAYAKING = 2;
+    const RAFTING = 4;
+    const WINDSURFING = 8;
+    const KITESURFING = 16;
+    const TACTICAL = 32;
+    const JUMPMASTER = 64;
+    const BOXING = 128;
 }

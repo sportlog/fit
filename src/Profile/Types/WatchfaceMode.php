@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class WatchfaceMode
 {
-    const DIGITAL = '0';
-    const ANALOG = '1';
-    const CONNECT_IQ = '2';
-    const DISABLED = '3';
+    const DIGITAL = 0;
+    const ANALOG = 1;
+    const CONNECT_IQ = 2;
+    const DISABLED = 3;
 }

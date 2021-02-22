@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class ActivityClass
 {
-    const LEVEL = '0x7F';
-    const LEVEL_MAX = '100';
-    const ATHLETE = '0x80';
+    const LEVEL = 127;
+    const LEVEL_MAX = 100;
+    const ATHLETE = 128;
 }

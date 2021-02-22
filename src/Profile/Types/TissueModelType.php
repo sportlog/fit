@@ -18,5 +18,5 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class TissueModelType
 {
-    const ZHL_16C = '0';
+    const ZHL_16C = 0;
 }

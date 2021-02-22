@@ -18,11 +18,11 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class Goal
 {
-    const TIME = '0';
-    const DISTANCE = '1';
-    const CALORIES = '2';
-    const FREQUENCY = '3';
-    const STEPS = '4';
-    const ASCENT = '5';
-    const ACTIVE_MINUTES = '6';
+    const TIME = 0;
+    const DISTANCE = 1;
+    const CALORIES = 2;
+    const FREQUENCY = 3;
+    const STEPS = 4;
+    const ASCENT = 5;
+    const ACTIVE_MINUTES = 6;
 }

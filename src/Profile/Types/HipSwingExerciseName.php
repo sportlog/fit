@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class HipSwingExerciseName
 {
-    const SINGLE_ARM_KETTLEBELL_SWING = '0';
-    const SINGLE_ARM_DUMBBELL_SWING = '1';
-    const STEP_OUT_SWING = '2';
+    const SINGLE_ARM_KETTLEBELL_SWING = 0;
+    const SINGLE_ARM_DUMBBELL_SWING = 1;
+    const STEP_OUT_SWING = 2;
 }

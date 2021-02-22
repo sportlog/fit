@@ -18,12 +18,12 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SportBits4
 {
-    const SAILING = '0x01';
-    const ICE_SKATING = '0x02';
-    const SKY_DIVING = '0x04';
-    const SNOWSHOEING = '0x08';
-    const SNOWMOBILING = '0x10';
-    const STAND_UP_PADDLEBOARDING = '0x20';
-    const SURFING = '0x40';
-    const WAKEBOARDING = '0x80';
+    const SAILING = 1;
+    const ICE_SKATING = 2;
+    const SKY_DIVING = 4;
+    const SNOWSHOEING = 8;
+    const SNOWMOBILING = 16;
+    const STAND_UP_PADDLEBOARDING = 32;
+    const SURFING = 64;
+    const WAKEBOARDING = 128;
 }

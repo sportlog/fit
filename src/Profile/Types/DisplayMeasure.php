@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class DisplayMeasure
 {
-    const METRIC = '0';
-    const STATUTE = '1';
-    const NAUTICAL = '2';
+    const METRIC = 0;
+    const STATUTE = 1;
+    const NAUTICAL = 2;
 }

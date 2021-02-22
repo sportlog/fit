@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class BikeLightNetworkConfigType
 {
-    const AUTO = '0';
-    const INDIVIDUAL = '4';
-    const HIGH_VISIBILITY = '5';
-    const TRAIL = '6';
+    const AUTO = 0;
+    const INDIVIDUAL = 4;
+    const HIGH_VISIBILITY = 5;
+    const TRAIL = 6;
 }

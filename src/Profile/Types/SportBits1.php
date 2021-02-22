@@ -18,12 +18,12 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SportBits1
 {
-    const TENNIS = '0x01';
-    const AMERICAN_FOOTBALL = '0x02';
-    const TRAINING = '0x04';
-    const WALKING = '0x08';
-    const CROSS_COUNTRY_SKIING = '0x10';
-    const ALPINE_SKIING = '0x20';
-    const SNOWBOARDING = '0x40';
-    const ROWING = '0x80';
+    const TENNIS = 1;
+    const AMERICAN_FOOTBALL = 2;
+    const TRAINING = 4;
+    const WALKING = 8;
+    const CROSS_COUNTRY_SKIING = 16;
+    const ALPINE_SKIING = 32;
+    const SNOWBOARDING = 64;
+    const ROWING = 128;
 }

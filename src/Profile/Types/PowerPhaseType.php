@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class PowerPhaseType
 {
-    const POWER_PHASE_START_ANGLE = '0';
-    const POWER_PHASE_END_ANGLE = '1';
-    const POWER_PHASE_ARC_LENGTH = '2';
-    const POWER_PHASE_CENTER = '3';
+    const POWER_PHASE_START_ANGLE = 0;
+    const POWER_PHASE_END_ANGLE = 1;
+    const POWER_PHASE_ARC_LENGTH = 2;
+    const POWER_PHASE_CENTER = 3;
 }

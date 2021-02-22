@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class Activity
 {
-    const MANUAL = '0';
-    const AUTO_MULTI_SPORT = '1';
+    const MANUAL = 0;
+    const AUTO_MULTI_SPORT = 1;
 }

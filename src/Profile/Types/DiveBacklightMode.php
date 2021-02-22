@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class DiveBacklightMode
 {
-    const AT_DEPTH = '0';
-    const ALWAYS_ON = '1';
+    const AT_DEPTH = 0;
+    const ALWAYS_ON = 1;
 }

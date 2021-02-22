@@ -18,5 +18,5 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class WorkoutPower
 {
-    const WATTS_OFFSET = '1000';
+    const WATTS_OFFSET = 1000;
 }

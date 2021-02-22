@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class RunExerciseName
 {
-    const RUN = '0';
-    const WALK = '1';
-    const JOG = '2';
-    const SPRINT = '3';
+    const RUN = 0;
+    const WALK = 1;
+    const JOG = 2;
+    const SPRINT = 3;
 }

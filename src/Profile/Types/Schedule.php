@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class Schedule
 {
-    const WORKOUT = '0';
-    const COURSE = '1';
+    const WORKOUT = 0;
+    const COURSE = 1;
 }

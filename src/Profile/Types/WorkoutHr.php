@@ -18,5 +18,5 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class WorkoutHr
 {
-    const BPM_OFFSET = '100';
+    const BPM_OFFSET = 100;
 }

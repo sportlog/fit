@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class CameraOrientationType
 {
-    const CAMERA_ORIENTATION_0 = '0';
-    const CAMERA_ORIENTATION_90 = '1';
-    const CAMERA_ORIENTATION_180 = '2';
-    const CAMERA_ORIENTATION_270 = '3';
+    const CAMERA_ORIENTATION_0 = 0;
+    const CAMERA_ORIENTATION_90 = 1;
+    const CAMERA_ORIENTATION_180 = 2;
+    const CAMERA_ORIENTATION_270 = 3;
 }

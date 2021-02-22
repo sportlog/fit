@@ -18,13 +18,13 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SportEvent
 {
-    const UNCATEGORIZED = '0';
-    const GEOCACHING = '1';
-    const FITNESS = '2';
-    const RECREATION = '3';
-    const RACE = '4';
-    const SPECIAL_EVENT = '5';
-    const TRAINING = '6';
-    const TRANSPORTATION = '7';
-    const TOURING = '8';
+    const UNCATEGORIZED = 0;
+    const GEOCACHING = 1;
+    const FITNESS = 2;
+    const RECREATION = 3;
+    const RACE = 4;
+    const SPECIAL_EVENT = 5;
+    const TRAINING = 6;
+    const TRANSPORTATION = 7;
+    const TOURING = 8;
 }

@@ -18,5 +18,5 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class BacklightTimeout
 {
-    const INFINITE = '0';
+    const INFINITE = 0;
 }

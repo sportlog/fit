@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class MesgCount
 {
-    const NUM_PER_FILE = '0';
-    const MAX_PER_FILE = '1';
-    const MAX_PER_FILE_TYPE = '2';
+    const NUM_PER_FILE = 0;
+    const MAX_PER_FILE = 1;
+    const MAX_PER_FILE_TYPE = 2;
 }

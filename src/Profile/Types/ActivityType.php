@@ -18,13 +18,13 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class ActivityType
 {
-    const GENERIC = '0';
-    const RUNNING = '1';
-    const CYCLING = '2';
-    const TRANSITION = '3';
-    const FITNESS_EQUIPMENT = '4';
-    const SWIMMING = '5';
-    const WALKING = '6';
-    const SEDENTARY = '8';
-    const ALL = '254';
+    const GENERIC = 0;
+    const RUNNING = 1;
+    const CYCLING = 2;
+    const TRANSITION = 3;
+    const FITNESS_EQUIPMENT = 4;
+    const SWIMMING = 5;
+    const WALKING = 6;
+    const SEDENTARY = 8;
+    const ALL = 254;
 }

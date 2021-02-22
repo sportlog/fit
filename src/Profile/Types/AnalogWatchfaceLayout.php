@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class AnalogWatchfaceLayout
 {
-    const MINIMAL = '0';
-    const TRADITIONAL = '1';
-    const MODERN = '2';
+    const MINIMAL = 0;
+    const TRADITIONAL = 1;
+    const MODERN = 2;
 }

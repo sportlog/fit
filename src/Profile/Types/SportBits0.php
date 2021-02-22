@@ -18,12 +18,12 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SportBits0
 {
-    const GENERIC = '0x01';
-    const RUNNING = '0x02';
-    const CYCLING = '0x04';
-    const TRANSITION = '0x08';
-    const FITNESS_EQUIPMENT = '0x10';
-    const SWIMMING = '0x20';
-    const BASKETBALL = '0x40';
-    const SOCCER = '0x80';
+    const GENERIC = 1;
+    const RUNNING = 2;
+    const CYCLING = 4;
+    const TRANSITION = 8;
+    const FITNESS_EQUIPMENT = 16;
+    const SWIMMING = 32;
+    const BASKETBALL = 64;
+    const SOCCER = 128;
 }

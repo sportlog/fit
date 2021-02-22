@@ -109,7 +109,7 @@ class MessageGenerator
             // Some constants start with a digit, which is not allowed;
             // So prefix those with an underscore
             $constName = strtoupper(is_numeric(substr($key, 0, 1)) ? "_{$key}" : $key);
-            $class->addConstant($constName, $value);
+            $class->addConstant($constName, str_starts_with($value, '0x') ? hexdec($value) : intval($value));
         }
 
         return $file;

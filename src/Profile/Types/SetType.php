@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SetType
 {
-    const REST = '0';
-    const ACTIVE = '1';
+    const REST = 0;
+    const ACTIVE = 1;
 }

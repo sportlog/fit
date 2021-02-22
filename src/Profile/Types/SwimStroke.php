@@ -18,11 +18,11 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SwimStroke
 {
-    const FREESTYLE = '0';
-    const BACKSTROKE = '1';
-    const BREASTSTROKE = '2';
-    const BUTTERFLY = '3';
-    const DRILL = '4';
-    const MIXED = '5';
-    const IM = '6';
+    const FREESTYLE = 0;
+    const BACKSTROKE = 1;
+    const BREASTSTROKE = 2;
+    const BUTTERFLY = 3;
+    const DRILL = 4;
+    const MIXED = 5;
+    const IM = 6;
 }

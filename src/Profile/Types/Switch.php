@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class Switch
 {
-    const OFF = '0';
-    const ON = '1';
-    const AUTO = '2';
+    const OFF = 0;
+    const ON = 1;
+    const AUTO = 2;
 }

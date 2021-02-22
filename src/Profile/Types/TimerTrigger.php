@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class TimerTrigger
 {
-    const MANUAL = '0';
-    const AUTO = '1';
-    const FITNESS_EQUIPMENT = '2';
+    const MANUAL = 0;
+    const AUTO = 1;
+    const FITNESS_EQUIPMENT = 2;
 }

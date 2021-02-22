@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class HrZoneCalc
 {
-    const CUSTOM = '0';
-    const PERCENT_MAX_HR = '1';
-    const PERCENT_HRR = '2';
+    const CUSTOM = 0;
+    const PERCENT_MAX_HR = 1;
+    const PERCENT_HRR = 2;
 }

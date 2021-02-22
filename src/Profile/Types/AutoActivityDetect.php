@@ -18,11 +18,11 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class AutoActivityDetect
 {
-    const NONE = '0x00000000';
-    const RUNNING = '0x00000001';
-    const CYCLING = '0x00000002';
-    const SWIMMING = '0x00000004';
-    const WALKING = '0x00000008';
-    const ELLIPTICAL = '0x00000020';
-    const SEDENTARY = '0x00000400';
+    const NONE = 0;
+    const RUNNING = 1;
+    const CYCLING = 2;
+    const SWIMMING = 4;
+    const WALKING = 8;
+    const ELLIPTICAL = 32;
+    const SEDENTARY = 1024;
 }

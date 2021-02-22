@@ -18,12 +18,12 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SportBits2
 {
-    const MOUNTAINEERING = '0x01';
-    const HIKING = '0x02';
-    const MULTISPORT = '0x04';
-    const PADDLING = '0x08';
-    const FLYING = '0x10';
-    const E_BIKING = '0x20';
-    const MOTORCYCLING = '0x40';
-    const BOATING = '0x80';
+    const MOUNTAINEERING = 1;
+    const HIKING = 2;
+    const MULTISPORT = 4;
+    const PADDLING = 8;
+    const FLYING = 16;
+    const E_BIKING = 32;
+    const MOTORCYCLING = 64;
+    const BOATING = 128;
 }

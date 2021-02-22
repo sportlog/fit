@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class FileFlags
 {
-    const READ = '0x02';
-    const WRITE = '0x04';
-    const ERASE = '0x08';
+    const READ = 2;
+    const WRITE = 4;
+    const ERASE = 8;
 }

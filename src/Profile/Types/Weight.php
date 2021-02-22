@@ -18,5 +18,5 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class Weight
 {
-    const CALCULATING = '0xFFFE';
+    const CALCULATING = 65534;
 }

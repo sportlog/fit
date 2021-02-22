@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class Autoscroll
 {
-    const NONE = '0';
-    const SLOW = '1';
-    const MEDIUM = '2';
-    const FAST = '3';
+    const NONE = 0;
+    const SLOW = 1;
+    const MEDIUM = 2;
+    const FAST = 3;
 }

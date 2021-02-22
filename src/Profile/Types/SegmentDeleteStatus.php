@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SegmentDeleteStatus
 {
-    const DO_NOT_DELETE = '0';
-    const DELETE_ONE = '1';
-    const DELETE_ALL = '2';
+    const DO_NOT_DELETE = 0;
+    const DELETE_ONE = 1;
+    const DELETE_ALL = 2;
 }

@@ -18,13 +18,13 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class LapTrigger
 {
-    const MANUAL = '0';
-    const TIME = '1';
-    const DISTANCE = '2';
-    const POSITION_START = '3';
-    const POSITION_LAP = '4';
-    const POSITION_WAYPOINT = '5';
-    const POSITION_MARKED = '6';
-    const SESSION_END = '7';
-    const FITNESS_EQUIPMENT = '8';
+    const MANUAL = 0;
+    const TIME = 1;
+    const DISTANCE = 2;
+    const POSITION_START = 3;
+    const POSITION_LAP = 4;
+    const POSITION_WAYPOINT = 5;
+    const POSITION_MARKED = 6;
+    const SESSION_END = 7;
+    const FITNESS_EQUIPMENT = 8;
 }

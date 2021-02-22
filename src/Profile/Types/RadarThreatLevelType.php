@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class RadarThreatLevelType
 {
-    const THREAT_UNKNOWN = '0';
-    const THREAT_NONE = '1';
-    const THREAT_APPROACHING = '2';
-    const THREAT_APPROACHING_FAST = '3';
+    const THREAT_UNKNOWN = 0;
+    const THREAT_NONE = 1;
+    const THREAT_APPROACHING = 2;
+    const THREAT_APPROACHING_FAST = 3;
 }

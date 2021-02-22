@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class DisplayPower
 {
-    const WATTS = '0';
-    const PERCENT_FTP = '1';
+    const WATTS = 0;
+    const PERCENT_FTP = 1;
 }

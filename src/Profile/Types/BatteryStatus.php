@@ -18,11 +18,11 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class BatteryStatus
 {
-    const NEW = '1';
-    const GOOD = '2';
-    const OK = '3';
-    const LOW = '4';
-    const CRITICAL = '5';
-    const CHARGING = '6';
-    const UNKNOWN = '7';
+    const NEW = 1;
+    const GOOD = 2;
+    const OK = 3;
+    const LOW = 4;
+    const CRITICAL = 5;
+    const CHARGING = 6;
+    const UNKNOWN = 7;
 }

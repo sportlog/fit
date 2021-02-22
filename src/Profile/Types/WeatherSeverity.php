@@ -18,9 +18,9 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class WeatherSeverity
 {
-    const UNKNOWN = '0';
-    const WARNING = '1';
-    const WATCH = '2';
-    const ADVISORY = '3';
-    const STATEMENT = '4';
+    const UNKNOWN = 0;
+    const WARNING = 1;
+    const WATCH = 2;
+    const ADVISORY = 3;
+    const STATEMENT = 4;
 }

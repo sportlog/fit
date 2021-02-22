@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class DateMode
 {
-    const DAY_MONTH = '0';
-    const MONTH_DAY = '1';
+    const DAY_MONTH = 0;
+    const MONTH_DAY = 1;
 }

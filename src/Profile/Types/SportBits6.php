@@ -18,5 +18,5 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SportBits6
 {
-    const FLOOR_CLIMBING = '0x01';
+    const FLOOR_CLIMBING = 1;
 }

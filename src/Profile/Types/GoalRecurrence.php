@@ -18,10 +18,10 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class GoalRecurrence
 {
-    const OFF = '0';
-    const DAILY = '1';
-    const WEEKLY = '2';
-    const MONTHLY = '3';
-    const YEARLY = '4';
-    const CUSTOM = '5';
+    const OFF = 0;
+    const DAILY = 1;
+    const WEEKLY = 2;
+    const MONTHLY = 3;
+    const YEARLY = 4;
+    const CUSTOM = 5;
 }

@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class DiveGasStatus
 {
-    const DISABLED = '0';
-    const ENABLED = '1';
-    const BACKUP_ONLY = '2';
+    const DISABLED = 0;
+    const ENABLED = 1;
+    const BACKUP_ONLY = 2;
 }

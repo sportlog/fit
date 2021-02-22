@@ -18,10 +18,10 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class UserLocalId
 {
-    const LOCAL_MIN = '0x0000';
-    const LOCAL_MAX = '0x000F';
-    const STATIONARY_MIN = '0x0010';
-    const STATIONARY_MAX = '0x00FF';
-    const PORTABLE_MIN = '0x0100';
-    const PORTABLE_MAX = '0xFFFE';
+    const LOCAL_MIN = 0;
+    const LOCAL_MAX = 15;
+    const STATIONARY_MIN = 16;
+    const STATIONARY_MAX = 255;
+    const PORTABLE_MIN = 256;
+    const PORTABLE_MAX = 65534;
 }

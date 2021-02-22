@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class AntNetwork
 {
-    const PUBLIC = '0';
-    const ANTPLUS = '1';
-    const ANTFS = '2';
-    const PRIVATE = '3';
+    const PUBLIC = 0;
+    const ANTPLUS = 1;
+    const ANTFS = 2;
+    const PRIVATE = 3;
 }

@@ -18,9 +18,9 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class AutoSyncFrequency
 {
-    const NEVER = '0';
-    const OCCASIONALLY = '1';
-    const FREQUENT = '2';
-    const ONCE_A_DAY = '3';
-    const REMOTE = '4';
+    const NEVER = 0;
+    const OCCASIONALLY = 1;
+    const FREQUENT = 2;
+    const ONCE_A_DAY = 3;
+    const REMOTE = 4;
 }

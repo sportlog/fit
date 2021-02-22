@@ -18,15 +18,15 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class CourseCapabilities
 {
-    const PROCESSED = '0x00000001';
-    const VALID = '0x00000002';
-    const TIME = '0x00000004';
-    const DISTANCE = '0x00000008';
-    const POSITION = '0x00000010';
-    const HEART_RATE = '0x00000020';
-    const POWER = '0x00000040';
-    const CADENCE = '0x00000080';
-    const TRAINING = '0x00000100';
-    const NAVIGATION = '0x00000200';
-    const BIKEWAY = '0x00000400';
+    const PROCESSED = 1;
+    const VALID = 2;
+    const TIME = 4;
+    const DISTANCE = 8;
+    const POSITION = 16;
+    const HEART_RATE = 32;
+    const POWER = 64;
+    const CADENCE = 128;
+    const TRAINING = 256;
+    const NAVIGATION = 512;
+    const BIKEWAY = 1024;
 }

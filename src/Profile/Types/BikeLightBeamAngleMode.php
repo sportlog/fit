@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class BikeLightBeamAngleMode
 {
-    const MANUAL = '0';
-    const AUTO = '1';
+    const MANUAL = 0;
+    const AUTO = 1;
 }

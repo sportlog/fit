@@ -18,12 +18,12 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SportBits3
 {
-    const DRIVING = '0x01';
-    const GOLF = '0x02';
-    const HANG_GLIDING = '0x04';
-    const HORSEBACK_RIDING = '0x08';
-    const HUNTING = '0x10';
-    const FISHING = '0x20';
-    const INLINE_SKATING = '0x40';
-    const ROCK_CLIMBING = '0x80';
+    const DRIVING = 1;
+    const GOLF = 2;
+    const HANG_GLIDING = 4;
+    const HORSEBACK_RIDING = 8;
+    const HUNTING = 16;
+    const FISHING = 32;
+    const INLINE_SKATING = 64;
+    const ROCK_CLIMBING = 128;
 }

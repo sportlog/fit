@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SegmentLapStatus
 {
-    const END = '0';
-    const FAIL = '1';
+    const END = 0;
+    const FAIL = 1;
 }

@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class LeftRightBalance100
 {
-    const MASK = '0x3FFF';
-    const RIGHT = '0x8000';
+    const MASK = 16383;
+    const RIGHT = 32768;
 }

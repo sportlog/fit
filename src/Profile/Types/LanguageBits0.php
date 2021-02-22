@@ -18,12 +18,12 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class LanguageBits0
 {
-    const ENGLISH = '0x01';
-    const FRENCH = '0x02';
-    const ITALIAN = '0x04';
-    const GERMAN = '0x08';
-    const SPANISH = '0x10';
-    const CROATIAN = '0x20';
-    const CZECH = '0x40';
-    const DANISH = '0x80';
+    const ENGLISH = 1;
+    const FRENCH = 2;
+    const ITALIAN = 4;
+    const GERMAN = 8;
+    const SPANISH = 16;
+    const CROATIAN = 32;
+    const CZECH = 64;
+    const DANISH = 128;
 }

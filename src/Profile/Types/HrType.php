@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class HrType
 {
-    const NORMAL = '0';
-    const IRREGULAR = '1';
+    const NORMAL = 0;
+    const IRREGULAR = 1;
 }

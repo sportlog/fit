@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SegmentSelectionType
 {
-    const STARRED = '0';
-    const SUGGESTED = '1';
+    const STARRED = 0;
+    const SUGGESTED = 1;
 }

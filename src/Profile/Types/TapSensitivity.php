@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class TapSensitivity
 {
-    const HIGH = '0';
-    const MEDIUM = '1';
-    const LOW = '2';
+    const HIGH = 0;
+    const MEDIUM = 1;
+    const LOW = 2;
 }

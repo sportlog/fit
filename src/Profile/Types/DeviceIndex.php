@@ -18,5 +18,5 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class DeviceIndex
 {
-    const CREATOR = '0';
+    const CREATOR = 0;
 }

@@ -18,9 +18,9 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class CarryExerciseName
 {
-    const BAR_HOLDS = '0';
-    const FARMERS_WALK = '1';
-    const FARMERS_WALK_ON_TOES = '2';
-    const HEX_DUMBBELL_HOLD = '3';
-    const OVERHEAD_CARRY = '4';
+    const BAR_HOLDS = 0;
+    const FARMERS_WALK = 1;
+    const FARMERS_WALK_ON_TOES = 2;
+    const HEX_DUMBBELL_HOLD = 3;
+    const OVERHEAD_CARRY = 4;
 }

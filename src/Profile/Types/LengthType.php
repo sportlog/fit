@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class LengthType
 {
-    const IDLE = '0';
-    const ACTIVE = '1';
+    const IDLE = 0;
+    const ACTIVE = 1;
 }

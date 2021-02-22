@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class DisplayHeart
 {
-    const BPM = '0';
-    const MAX = '1';
-    const RESERVE = '2';
+    const BPM = 0;
+    const MAX = 1;
+    const RESERVE = 2;
 }

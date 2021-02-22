@@ -18,10 +18,10 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class LanguageBits4
 {
-    const BRAZILIAN_PORTUGUESE = '0x01';
-    const INDONESIAN = '0x02';
-    const MALAYSIAN = '0x04';
-    const VIETNAMESE = '0x08';
-    const BURMESE = '0x10';
-    const MONGOLIAN = '0x20';
+    const BRAZILIAN_PORTUGUESE = 1;
+    const INDONESIAN = 2;
+    const MALAYSIAN = 4;
+    const VIETNAMESE = 8;
+    const BURMESE = 16;
+    const MONGOLIAN = 32;
 }

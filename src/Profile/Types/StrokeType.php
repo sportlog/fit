@@ -18,10 +18,10 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class StrokeType
 {
-    const NO_EVENT = '0';
-    const OTHER = '1';
-    const SERVE = '2';
-    const FOREHAND = '3';
-    const BACKHAND = '4';
-    const SMASH = '5';
+    const NO_EVENT = 0;
+    const OTHER = 1;
+    const SERVE = 2;
+    const FOREHAND = 3;
+    const BACKHAND = 4;
+    const SMASH = 5;
 }

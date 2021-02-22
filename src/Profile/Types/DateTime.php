@@ -18,5 +18,5 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class DateTime
 {
-    const MIN = '0x10000000';
+    const MIN = 268435456;
 }
