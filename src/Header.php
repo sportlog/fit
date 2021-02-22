@@ -31,7 +31,7 @@ final class Header
         private int $crc
     ) {
         if ($headerSize !== self::HEADER_SIZE_WITH_CRC && $headerSize !== self::HEADER_SIZE_WITHOUT_CRC) {
-            throw new InvalidArgumentException('Invalid header size');
+            throw new FitException('Invalid header size');
         }
     }
 
