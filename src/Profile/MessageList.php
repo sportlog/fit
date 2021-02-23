@@ -15,6 +15,7 @@ use Countable;
 use Sportlog\FIT\Profile\Messages\FileIdMessage;
 use IteratorAggregate;
 use RecursiveArrayIterator;
+use Sportlog\FIT\Profile\Types\MesgNum;
 use Traversable;
 
 /**
@@ -37,7 +38,7 @@ class MessageList implements IteratorAggregate, Countable
      */
     public function getFileType(): ?int
     {
-        $messages = $this->getMessages(MessageNumber::FileId);
+        $messages = $this->getMessages(MesgNum::FILE_ID);
         if (count($messages) !== 1) {
             return null;
         }
