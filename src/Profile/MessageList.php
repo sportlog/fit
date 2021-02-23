@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile;
 
 use Countable;
-use Sportlog\FIT\Profile\Message\FileIdMessage;
+use Sportlog\FIT\Profile\Messages\FileIdMessage;
 use IteratorAggregate;
 use RecursiveArrayIterator;
 use Traversable;

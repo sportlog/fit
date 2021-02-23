@@ -14,7 +14,6 @@ use DateTime;
 use Exception;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
-use Sportlog\FIT\Profile\MessageNumber;
 use Sportlog\FIT\Profile\ProfileType;
 use Sportlog\FIT\FitBaseType;
 use Nette\PhpGenerator\Literal;
@@ -23,17 +22,23 @@ use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\PsrPrinter;
 use Nette\PhpGenerator\Type;
 use ReflectionClass;
+use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
- * A quick & dirty generator for all messages defined
- * in the C# source file 'Profile.cs' of the
- * offical FIT SDK.
+ * A quick & dirty, hacky, ugly generator for all messages defined
+ * in the C# source file 'Profile.cs' of the offical FIT SDK.
+ * All types are generated from a CSV export of the profile.xls
+ * of the offical FIT SDK.
  */
 class MessageGenerator
 {
     const MESSAGE_START = "Mesg newMesg = new Mesg(";
     const FIELD_START = "newMesg.SetField(new Field(";
     const MESSAGE_END = "return newMesg";
+    const INVALID_MESSAGE = 'Invalid';
+    // Some types are reserved PHP keywords and cannot
+    // act as classname.
+    const RENAMED_TYPES = ['Switch' => 'FitSwitch'];
 
     public function writeTypes(string $fileInput, string $outputPath): void
     {
@@ -74,6 +79,10 @@ class MessageGenerator
                 $currentTypeValues[$def[2]] = $def[3];
             } else {
                 if ($currentType !== null) {
+                    if (isset(self::RENAMED_TYPES[$currentType])) {
+                        $currentType = self::RENAMED_TYPES[$currentType];   // get alternate name for PHP keywords
+                    }
+
                     $files[$currentType] = $this->createType($currentType, $currentTypeValues);
                     $currentType = null;
                 }
@@ -89,6 +98,10 @@ class MessageGenerator
         }
 
         if ($currentType !== null) {
+            if (isset(self::RENAMED_TYPES[$currentType])) {
+                $currentType = self::RENAMED_TYPES[$currentType];   // get alternate name for PHP keywords
+            }
+
             $files[$currentType] = $this->createType($currentType, $currentTypeValues);
             $currentType = null;
         }
@@ -124,12 +137,12 @@ class MessageGenerator
 
             // Manually add invalid messge
             $invalidFile = $this->createFile();
-            $invalidClass = $this->createMessageClass($invalidFile, "Invalid");
+            $invalidClass = $this->createMessageClass($invalidFile, self::INVALID_MESSAGE);
             $files[$invalidClass->getName()] = $invalidFile;
 
             $printer = new PsrPrinter();
             foreach ($files as $filename => $content) {
-                $path = join(DIRECTORY_SEPARATOR, [$outputPath, 'Message', "{$filename}.php"]);
+                $path = join(DIRECTORY_SEPARATOR, [$outputPath, 'Messages', "{$filename}.php"]);
                 $this->writeFile($path, $printer->printFile($content));
             }
 
@@ -145,14 +158,22 @@ class MessageGenerator
         }
     }
 
+    private function underscorize(string $str): string
+    {
+        $arr = explode(" ", trim(preg_replace("([A-Z])", " $0", $str)));
+        return join("_", $arr);
+    }
+
     private function createMessageFactory(string $name, array $uses): PhpFile
     {
         $factory = $this->createFile();
         $namespace = $factory->addNamespace('Sportlog\\FIT\\Profile');
 
         foreach ($uses as $use) {
-            $namespace->addUse("Sportlog\\FIT\\Profile\\Message\\{$use}");
+            $namespace->addUse("Sportlog\\FIT\\Profile\\Messages\\{$use}");
         }
+
+        $namespace->addUse("Sportlog\\FIT\\Profile\\Types\\MesgNum");
 
         $class = $namespace->addClass($name)
             ->addComment("Factory for creating a new message instance");
@@ -171,8 +192,9 @@ class MessageGenerator
         $i = 1;
         foreach ($uses as $use) {
             $file = str_replace('Message', '', $use);
+            $underscorize = strtoupper($this->underscorize($file));
             if ($cnt !== $i) {
-                $method->addBody(str_repeat(" ", 4) . "case MessageNumber::{$file}:");
+                $method->addBody(str_repeat(" ", 4) . "case MesgNum::{$underscorize}:");
             } else {
                 $method->addBody(str_repeat(" ", 4) . "default:");
             }
@@ -265,13 +287,13 @@ class MessageGenerator
 
     private function createMessageClass(PhpFile $file, string $classId): ClassType
     {
-        $namespace = $file->addNamespace('Sportlog\\FIT\\Profile\\Message');
+        $namespace = $file->addNamespace('Sportlog\\FIT\\Profile\\Messages');
         $namespace->addUse(\DateTime::class)
             ->addUse(Message::class)
             ->addUse(Field::class)
             ->addUse(FitBaseType::class)
             ->addUse(ProfileType::class)
-            ->addUse(MessageNumber::class);
+            ->addUse(MesgNum::class);
 
         $classname = $classId . "Message";
         $class = $namespace->addClass($classname);
@@ -281,7 +303,10 @@ class MessageGenerator
             ->setExtends(Message::class)
             ->addMethod('__construct')
             ->addComment("Creates a new message instance")
-            ->setBody('parent::__construct(?, ?);', [$classId, new Literal("MessageNumber::{$classId}")]);
+            ->setBody('parent::__construct(?, ?);', [
+                $classId,
+                $classId === self::INVALID_MESSAGE ? -1 : new Literal(sprintf('MesgNum::%s', strtoupper($this->underscorize($classId))))
+            ]);
 
         return $class;
     }

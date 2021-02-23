@@ -13,95 +13,96 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile;
 
-use Sportlog\FIT\Profile\Message\AccelerometerDataMessage;
-use Sportlog\FIT\Profile\Message\ActivityMessage;
-use Sportlog\FIT\Profile\Message\AntChannelIdMessage;
-use Sportlog\FIT\Profile\Message\AntRxMessage;
-use Sportlog\FIT\Profile\Message\AntTxMessage;
-use Sportlog\FIT\Profile\Message\AviationAttitudeMessage;
-use Sportlog\FIT\Profile\Message\BarometerDataMessage;
-use Sportlog\FIT\Profile\Message\BikeProfileMessage;
-use Sportlog\FIT\Profile\Message\BloodPressureMessage;
-use Sportlog\FIT\Profile\Message\CadenceZoneMessage;
-use Sportlog\FIT\Profile\Message\CameraEventMessage;
-use Sportlog\FIT\Profile\Message\CapabilitiesMessage;
-use Sportlog\FIT\Profile\Message\ClimbProMessage;
-use Sportlog\FIT\Profile\Message\ConnectivityMessage;
-use Sportlog\FIT\Profile\Message\CourseMessage;
-use Sportlog\FIT\Profile\Message\CoursePointMessage;
-use Sportlog\FIT\Profile\Message\DeveloperDataIdMessage;
-use Sportlog\FIT\Profile\Message\DeviceInfoMessage;
-use Sportlog\FIT\Profile\Message\DeviceSettingsMessage;
-use Sportlog\FIT\Profile\Message\DiveAlarmMessage;
-use Sportlog\FIT\Profile\Message\DiveGasMessage;
-use Sportlog\FIT\Profile\Message\DiveSettingsMessage;
-use Sportlog\FIT\Profile\Message\DiveSummaryMessage;
-use Sportlog\FIT\Profile\Message\EventMessage;
-use Sportlog\FIT\Profile\Message\ExdDataConceptConfigurationMessage;
-use Sportlog\FIT\Profile\Message\ExdDataFieldConfigurationMessage;
-use Sportlog\FIT\Profile\Message\ExdScreenConfigurationMessage;
-use Sportlog\FIT\Profile\Message\ExerciseTitleMessage;
-use Sportlog\FIT\Profile\Message\FieldCapabilitiesMessage;
-use Sportlog\FIT\Profile\Message\FieldDescriptionMessage;
-use Sportlog\FIT\Profile\Message\FileCapabilitiesMessage;
-use Sportlog\FIT\Profile\Message\FileCreatorMessage;
-use Sportlog\FIT\Profile\Message\FileIdMessage;
-use Sportlog\FIT\Profile\Message\GoalMessage;
-use Sportlog\FIT\Profile\Message\GpsMetadataMessage;
-use Sportlog\FIT\Profile\Message\GyroscopeDataMessage;
-use Sportlog\FIT\Profile\Message\HrMessage;
-use Sportlog\FIT\Profile\Message\HrZoneMessage;
-use Sportlog\FIT\Profile\Message\HrmProfileMessage;
-use Sportlog\FIT\Profile\Message\HrvMessage;
-use Sportlog\FIT\Profile\Message\InvalidMessage;
-use Sportlog\FIT\Profile\Message\JumpMessage;
-use Sportlog\FIT\Profile\Message\LapMessage;
-use Sportlog\FIT\Profile\Message\LengthMessage;
-use Sportlog\FIT\Profile\Message\MagnetometerDataMessage;
-use Sportlog\FIT\Profile\Message\MemoGlobMessage;
-use Sportlog\FIT\Profile\Message\MesgCapabilitiesMessage;
-use Sportlog\FIT\Profile\Message\MetZoneMessage;
-use Sportlog\FIT\Profile\Message\MonitoringInfoMessage;
-use Sportlog\FIT\Profile\Message\MonitoringMessage;
-use Sportlog\FIT\Profile\Message\NmeaSentenceMessage;
-use Sportlog\FIT\Profile\Message\ObdiiDataMessage;
-use Sportlog\FIT\Profile\Message\OhrSettingsMessage;
-use Sportlog\FIT\Profile\Message\OneDSensorCalibrationMessage;
-use Sportlog\FIT\Profile\Message\PadMessage;
-use Sportlog\FIT\Profile\Message\PowerZoneMessage;
-use Sportlog\FIT\Profile\Message\RecordMessage;
-use Sportlog\FIT\Profile\Message\ScheduleMessage;
-use Sportlog\FIT\Profile\Message\SdmProfileMessage;
-use Sportlog\FIT\Profile\Message\SegmentFileMessage;
-use Sportlog\FIT\Profile\Message\SegmentIdMessage;
-use Sportlog\FIT\Profile\Message\SegmentLapMessage;
-use Sportlog\FIT\Profile\Message\SegmentLeaderboardEntryMessage;
-use Sportlog\FIT\Profile\Message\SegmentPointMessage;
-use Sportlog\FIT\Profile\Message\SessionMessage;
-use Sportlog\FIT\Profile\Message\SetMessage;
-use Sportlog\FIT\Profile\Message\SlaveDeviceMessage;
-use Sportlog\FIT\Profile\Message\SoftwareMessage;
-use Sportlog\FIT\Profile\Message\SpeedZoneMessage;
-use Sportlog\FIT\Profile\Message\SportMessage;
-use Sportlog\FIT\Profile\Message\StressLevelMessage;
-use Sportlog\FIT\Profile\Message\ThreeDSensorCalibrationMessage;
-use Sportlog\FIT\Profile\Message\TimestampCorrelationMessage;
-use Sportlog\FIT\Profile\Message\TotalsMessage;
-use Sportlog\FIT\Profile\Message\TrainingFileMessage;
-use Sportlog\FIT\Profile\Message\UserProfileMessage;
-use Sportlog\FIT\Profile\Message\VideoClipMessage;
-use Sportlog\FIT\Profile\Message\VideoDescriptionMessage;
-use Sportlog\FIT\Profile\Message\VideoFrameMessage;
-use Sportlog\FIT\Profile\Message\VideoMessage;
-use Sportlog\FIT\Profile\Message\VideoTitleMessage;
-use Sportlog\FIT\Profile\Message\WatchfaceSettingsMessage;
-use Sportlog\FIT\Profile\Message\WeatherAlertMessage;
-use Sportlog\FIT\Profile\Message\WeatherConditionsMessage;
-use Sportlog\FIT\Profile\Message\WeightScaleMessage;
-use Sportlog\FIT\Profile\Message\WorkoutMessage;
-use Sportlog\FIT\Profile\Message\WorkoutSessionMessage;
-use Sportlog\FIT\Profile\Message\WorkoutStepMessage;
-use Sportlog\FIT\Profile\Message\ZonesTargetMessage;
+use Sportlog\FIT\Profile\Messages\AccelerometerDataMessage;
+use Sportlog\FIT\Profile\Messages\ActivityMessage;
+use Sportlog\FIT\Profile\Messages\AntChannelIdMessage;
+use Sportlog\FIT\Profile\Messages\AntRxMessage;
+use Sportlog\FIT\Profile\Messages\AntTxMessage;
+use Sportlog\FIT\Profile\Messages\AviationAttitudeMessage;
+use Sportlog\FIT\Profile\Messages\BarometerDataMessage;
+use Sportlog\FIT\Profile\Messages\BikeProfileMessage;
+use Sportlog\FIT\Profile\Messages\BloodPressureMessage;
+use Sportlog\FIT\Profile\Messages\CadenceZoneMessage;
+use Sportlog\FIT\Profile\Messages\CameraEventMessage;
+use Sportlog\FIT\Profile\Messages\CapabilitiesMessage;
+use Sportlog\FIT\Profile\Messages\ClimbProMessage;
+use Sportlog\FIT\Profile\Messages\ConnectivityMessage;
+use Sportlog\FIT\Profile\Messages\CourseMessage;
+use Sportlog\FIT\Profile\Messages\CoursePointMessage;
+use Sportlog\FIT\Profile\Messages\DeveloperDataIdMessage;
+use Sportlog\FIT\Profile\Messages\DeviceInfoMessage;
+use Sportlog\FIT\Profile\Messages\DeviceSettingsMessage;
+use Sportlog\FIT\Profile\Messages\DiveAlarmMessage;
+use Sportlog\FIT\Profile\Messages\DiveGasMessage;
+use Sportlog\FIT\Profile\Messages\DiveSettingsMessage;
+use Sportlog\FIT\Profile\Messages\DiveSummaryMessage;
+use Sportlog\FIT\Profile\Messages\EventMessage;
+use Sportlog\FIT\Profile\Messages\ExdDataConceptConfigurationMessage;
+use Sportlog\FIT\Profile\Messages\ExdDataFieldConfigurationMessage;
+use Sportlog\FIT\Profile\Messages\ExdScreenConfigurationMessage;
+use Sportlog\FIT\Profile\Messages\ExerciseTitleMessage;
+use Sportlog\FIT\Profile\Messages\FieldCapabilitiesMessage;
+use Sportlog\FIT\Profile\Messages\FieldDescriptionMessage;
+use Sportlog\FIT\Profile\Messages\FileCapabilitiesMessage;
+use Sportlog\FIT\Profile\Messages\FileCreatorMessage;
+use Sportlog\FIT\Profile\Messages\FileIdMessage;
+use Sportlog\FIT\Profile\Messages\GoalMessage;
+use Sportlog\FIT\Profile\Messages\GpsMetadataMessage;
+use Sportlog\FIT\Profile\Messages\GyroscopeDataMessage;
+use Sportlog\FIT\Profile\Messages\HrMessage;
+use Sportlog\FIT\Profile\Messages\HrZoneMessage;
+use Sportlog\FIT\Profile\Messages\HrmProfileMessage;
+use Sportlog\FIT\Profile\Messages\HrvMessage;
+use Sportlog\FIT\Profile\Messages\InvalidMessage;
+use Sportlog\FIT\Profile\Messages\JumpMessage;
+use Sportlog\FIT\Profile\Messages\LapMessage;
+use Sportlog\FIT\Profile\Messages\LengthMessage;
+use Sportlog\FIT\Profile\Messages\MagnetometerDataMessage;
+use Sportlog\FIT\Profile\Messages\MemoGlobMessage;
+use Sportlog\FIT\Profile\Messages\MesgCapabilitiesMessage;
+use Sportlog\FIT\Profile\Messages\MetZoneMessage;
+use Sportlog\FIT\Profile\Messages\MonitoringInfoMessage;
+use Sportlog\FIT\Profile\Messages\MonitoringMessage;
+use Sportlog\FIT\Profile\Messages\NmeaSentenceMessage;
+use Sportlog\FIT\Profile\Messages\ObdiiDataMessage;
+use Sportlog\FIT\Profile\Messages\OhrSettingsMessage;
+use Sportlog\FIT\Profile\Messages\OneDSensorCalibrationMessage;
+use Sportlog\FIT\Profile\Messages\PadMessage;
+use Sportlog\FIT\Profile\Messages\PowerZoneMessage;
+use Sportlog\FIT\Profile\Messages\RecordMessage;
+use Sportlog\FIT\Profile\Messages\ScheduleMessage;
+use Sportlog\FIT\Profile\Messages\SdmProfileMessage;
+use Sportlog\FIT\Profile\Messages\SegmentFileMessage;
+use Sportlog\FIT\Profile\Messages\SegmentIdMessage;
+use Sportlog\FIT\Profile\Messages\SegmentLapMessage;
+use Sportlog\FIT\Profile\Messages\SegmentLeaderboardEntryMessage;
+use Sportlog\FIT\Profile\Messages\SegmentPointMessage;
+use Sportlog\FIT\Profile\Messages\SessionMessage;
+use Sportlog\FIT\Profile\Messages\SetMessage;
+use Sportlog\FIT\Profile\Messages\SlaveDeviceMessage;
+use Sportlog\FIT\Profile\Messages\SoftwareMessage;
+use Sportlog\FIT\Profile\Messages\SpeedZoneMessage;
+use Sportlog\FIT\Profile\Messages\SportMessage;
+use Sportlog\FIT\Profile\Messages\StressLevelMessage;
+use Sportlog\FIT\Profile\Messages\ThreeDSensorCalibrationMessage;
+use Sportlog\FIT\Profile\Messages\TimestampCorrelationMessage;
+use Sportlog\FIT\Profile\Messages\TotalsMessage;
+use Sportlog\FIT\Profile\Messages\TrainingFileMessage;
+use Sportlog\FIT\Profile\Messages\UserProfileMessage;
+use Sportlog\FIT\Profile\Messages\VideoClipMessage;
+use Sportlog\FIT\Profile\Messages\VideoDescriptionMessage;
+use Sportlog\FIT\Profile\Messages\VideoFrameMessage;
+use Sportlog\FIT\Profile\Messages\VideoMessage;
+use Sportlog\FIT\Profile\Messages\VideoTitleMessage;
+use Sportlog\FIT\Profile\Messages\WatchfaceSettingsMessage;
+use Sportlog\FIT\Profile\Messages\WeatherAlertMessage;
+use Sportlog\FIT\Profile\Messages\WeatherConditionsMessage;
+use Sportlog\FIT\Profile\Messages\WeightScaleMessage;
+use Sportlog\FIT\Profile\Messages\WorkoutMessage;
+use Sportlog\FIT\Profile\Messages\WorkoutSessionMessage;
+use Sportlog\FIT\Profile\Messages\WorkoutStepMessage;
+use Sportlog\FIT\Profile\Messages\ZonesTargetMessage;
+use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * Factory for creating a new message instance
@@ -114,181 +115,181 @@ class MessageFactory
     public static function createMessage(int $globalMessageNumber): Message
     {
         switch ($globalMessageNumber) {
-            case MessageNumber::FileId:
+            case MesgNum::FILE_ID:
                 return new FileIdMessage();
-            case MessageNumber::FileCreator:
+            case MesgNum::FILE_CREATOR:
                 return new FileCreatorMessage();
-            case MessageNumber::TimestampCorrelation:
+            case MesgNum::TIMESTAMP_CORRELATION:
                 return new TimestampCorrelationMessage();
-            case MessageNumber::Software:
+            case MesgNum::SOFTWARE:
                 return new SoftwareMessage();
-            case MessageNumber::SlaveDevice:
+            case MesgNum::SLAVE_DEVICE:
                 return new SlaveDeviceMessage();
-            case MessageNumber::Capabilities:
+            case MesgNum::CAPABILITIES:
                 return new CapabilitiesMessage();
-            case MessageNumber::FileCapabilities:
+            case MesgNum::FILE_CAPABILITIES:
                 return new FileCapabilitiesMessage();
-            case MessageNumber::MesgCapabilities:
+            case MesgNum::MESG_CAPABILITIES:
                 return new MesgCapabilitiesMessage();
-            case MessageNumber::FieldCapabilities:
+            case MesgNum::FIELD_CAPABILITIES:
                 return new FieldCapabilitiesMessage();
-            case MessageNumber::DeviceSettings:
+            case MesgNum::DEVICE_SETTINGS:
                 return new DeviceSettingsMessage();
-            case MessageNumber::UserProfile:
+            case MesgNum::USER_PROFILE:
                 return new UserProfileMessage();
-            case MessageNumber::HrmProfile:
+            case MesgNum::HRM_PROFILE:
                 return new HrmProfileMessage();
-            case MessageNumber::SdmProfile:
+            case MesgNum::SDM_PROFILE:
                 return new SdmProfileMessage();
-            case MessageNumber::BikeProfile:
+            case MesgNum::BIKE_PROFILE:
                 return new BikeProfileMessage();
-            case MessageNumber::Connectivity:
+            case MesgNum::CONNECTIVITY:
                 return new ConnectivityMessage();
-            case MessageNumber::WatchfaceSettings:
+            case MesgNum::WATCHFACE_SETTINGS:
                 return new WatchfaceSettingsMessage();
-            case MessageNumber::OhrSettings:
+            case MesgNum::OHR_SETTINGS:
                 return new OhrSettingsMessage();
-            case MessageNumber::ZonesTarget:
+            case MesgNum::ZONES_TARGET:
                 return new ZonesTargetMessage();
-            case MessageNumber::Sport:
+            case MesgNum::SPORT:
                 return new SportMessage();
-            case MessageNumber::HrZone:
+            case MesgNum::HR_ZONE:
                 return new HrZoneMessage();
-            case MessageNumber::SpeedZone:
+            case MesgNum::SPEED_ZONE:
                 return new SpeedZoneMessage();
-            case MessageNumber::CadenceZone:
+            case MesgNum::CADENCE_ZONE:
                 return new CadenceZoneMessage();
-            case MessageNumber::PowerZone:
+            case MesgNum::POWER_ZONE:
                 return new PowerZoneMessage();
-            case MessageNumber::MetZone:
+            case MesgNum::MET_ZONE:
                 return new MetZoneMessage();
-            case MessageNumber::DiveSettings:
+            case MesgNum::DIVE_SETTINGS:
                 return new DiveSettingsMessage();
-            case MessageNumber::DiveAlarm:
+            case MesgNum::DIVE_ALARM:
                 return new DiveAlarmMessage();
-            case MessageNumber::DiveGas:
+            case MesgNum::DIVE_GAS:
                 return new DiveGasMessage();
-            case MessageNumber::Goal:
+            case MesgNum::GOAL:
                 return new GoalMessage();
-            case MessageNumber::Activity:
+            case MesgNum::ACTIVITY:
                 return new ActivityMessage();
-            case MessageNumber::Session:
+            case MesgNum::SESSION:
                 return new SessionMessage();
-            case MessageNumber::Lap:
+            case MesgNum::LAP:
                 return new LapMessage();
-            case MessageNumber::Length:
+            case MesgNum::LENGTH:
                 return new LengthMessage();
-            case MessageNumber::Record:
+            case MesgNum::RECORD:
                 return new RecordMessage();
-            case MessageNumber::Event:
+            case MesgNum::EVENT:
                 return new EventMessage();
-            case MessageNumber::DeviceInfo:
+            case MesgNum::DEVICE_INFO:
                 return new DeviceInfoMessage();
-            case MessageNumber::TrainingFile:
+            case MesgNum::TRAINING_FILE:
                 return new TrainingFileMessage();
-            case MessageNumber::Hrv:
+            case MesgNum::HRV:
                 return new HrvMessage();
-            case MessageNumber::WeatherConditions:
+            case MesgNum::WEATHER_CONDITIONS:
                 return new WeatherConditionsMessage();
-            case MessageNumber::WeatherAlert:
+            case MesgNum::WEATHER_ALERT:
                 return new WeatherAlertMessage();
-            case MessageNumber::GpsMetadata:
+            case MesgNum::GPS_METADATA:
                 return new GpsMetadataMessage();
-            case MessageNumber::CameraEvent:
+            case MesgNum::CAMERA_EVENT:
                 return new CameraEventMessage();
-            case MessageNumber::GyroscopeData:
+            case MesgNum::GYROSCOPE_DATA:
                 return new GyroscopeDataMessage();
-            case MessageNumber::AccelerometerData:
+            case MesgNum::ACCELEROMETER_DATA:
                 return new AccelerometerDataMessage();
-            case MessageNumber::MagnetometerData:
+            case MesgNum::MAGNETOMETER_DATA:
                 return new MagnetometerDataMessage();
-            case MessageNumber::BarometerData:
+            case MesgNum::BAROMETER_DATA:
                 return new BarometerDataMessage();
-            case MessageNumber::ThreeDSensorCalibration:
+            case MesgNum::THREE_D_SENSOR_CALIBRATION:
                 return new ThreeDSensorCalibrationMessage();
-            case MessageNumber::OneDSensorCalibration:
+            case MesgNum::ONE_D_SENSOR_CALIBRATION:
                 return new OneDSensorCalibrationMessage();
-            case MessageNumber::VideoFrame:
+            case MesgNum::VIDEO_FRAME:
                 return new VideoFrameMessage();
-            case MessageNumber::ObdiiData:
+            case MesgNum::OBDII_DATA:
                 return new ObdiiDataMessage();
-            case MessageNumber::NmeaSentence:
+            case MesgNum::NMEA_SENTENCE:
                 return new NmeaSentenceMessage();
-            case MessageNumber::AviationAttitude:
+            case MesgNum::AVIATION_ATTITUDE:
                 return new AviationAttitudeMessage();
-            case MessageNumber::Video:
+            case MesgNum::VIDEO:
                 return new VideoMessage();
-            case MessageNumber::VideoTitle:
+            case MesgNum::VIDEO_TITLE:
                 return new VideoTitleMessage();
-            case MessageNumber::VideoDescription:
+            case MesgNum::VIDEO_DESCRIPTION:
                 return new VideoDescriptionMessage();
-            case MessageNumber::VideoClip:
+            case MesgNum::VIDEO_CLIP:
                 return new VideoClipMessage();
-            case MessageNumber::Set:
+            case MesgNum::SET:
                 return new SetMessage();
-            case MessageNumber::Jump:
+            case MesgNum::JUMP:
                 return new JumpMessage();
-            case MessageNumber::Course:
+            case MesgNum::COURSE:
                 return new CourseMessage();
-            case MessageNumber::CoursePoint:
+            case MesgNum::COURSE_POINT:
                 return new CoursePointMessage();
-            case MessageNumber::SegmentId:
+            case MesgNum::SEGMENT_ID:
                 return new SegmentIdMessage();
-            case MessageNumber::SegmentLeaderboardEntry:
+            case MesgNum::SEGMENT_LEADERBOARD_ENTRY:
                 return new SegmentLeaderboardEntryMessage();
-            case MessageNumber::SegmentPoint:
+            case MesgNum::SEGMENT_POINT:
                 return new SegmentPointMessage();
-            case MessageNumber::SegmentLap:
+            case MesgNum::SEGMENT_LAP:
                 return new SegmentLapMessage();
-            case MessageNumber::SegmentFile:
+            case MesgNum::SEGMENT_FILE:
                 return new SegmentFileMessage();
-            case MessageNumber::Workout:
+            case MesgNum::WORKOUT:
                 return new WorkoutMessage();
-            case MessageNumber::WorkoutSession:
+            case MesgNum::WORKOUT_SESSION:
                 return new WorkoutSessionMessage();
-            case MessageNumber::WorkoutStep:
+            case MesgNum::WORKOUT_STEP:
                 return new WorkoutStepMessage();
-            case MessageNumber::ExerciseTitle:
+            case MesgNum::EXERCISE_TITLE:
                 return new ExerciseTitleMessage();
-            case MessageNumber::Schedule:
+            case MesgNum::SCHEDULE:
                 return new ScheduleMessage();
-            case MessageNumber::Totals:
+            case MesgNum::TOTALS:
                 return new TotalsMessage();
-            case MessageNumber::WeightScale:
+            case MesgNum::WEIGHT_SCALE:
                 return new WeightScaleMessage();
-            case MessageNumber::BloodPressure:
+            case MesgNum::BLOOD_PRESSURE:
                 return new BloodPressureMessage();
-            case MessageNumber::MonitoringInfo:
+            case MesgNum::MONITORING_INFO:
                 return new MonitoringInfoMessage();
-            case MessageNumber::Monitoring:
+            case MesgNum::MONITORING:
                 return new MonitoringMessage();
-            case MessageNumber::Hr:
+            case MesgNum::HR:
                 return new HrMessage();
-            case MessageNumber::StressLevel:
+            case MesgNum::STRESS_LEVEL:
                 return new StressLevelMessage();
-            case MessageNumber::MemoGlob:
+            case MesgNum::MEMO_GLOB:
                 return new MemoGlobMessage();
-            case MessageNumber::AntChannelId:
+            case MesgNum::ANT_CHANNEL_ID:
                 return new AntChannelIdMessage();
-            case MessageNumber::AntRx:
+            case MesgNum::ANT_RX:
                 return new AntRxMessage();
-            case MessageNumber::AntTx:
+            case MesgNum::ANT_TX:
                 return new AntTxMessage();
-            case MessageNumber::ExdScreenConfiguration:
+            case MesgNum::EXD_SCREEN_CONFIGURATION:
                 return new ExdScreenConfigurationMessage();
-            case MessageNumber::ExdDataFieldConfiguration:
+            case MesgNum::EXD_DATA_FIELD_CONFIGURATION:
                 return new ExdDataFieldConfigurationMessage();
-            case MessageNumber::ExdDataConceptConfiguration:
+            case MesgNum::EXD_DATA_CONCEPT_CONFIGURATION:
                 return new ExdDataConceptConfigurationMessage();
-            case MessageNumber::FieldDescription:
+            case MesgNum::FIELD_DESCRIPTION:
                 return new FieldDescriptionMessage();
-            case MessageNumber::DeveloperDataId:
+            case MesgNum::DEVELOPER_DATA_ID:
                 return new DeveloperDataIdMessage();
-            case MessageNumber::DiveSummary:
+            case MesgNum::DIVE_SUMMARY:
                 return new DiveSummaryMessage();
-            case MessageNumber::ClimbPro:
+            case MesgNum::CLIMB_PRO:
                 return new ClimbProMessage();
-            case MessageNumber::Pad:
+            case MesgNum::PAD:
                 return new PadMessage();
             default:
                 return new InvalidMessage();

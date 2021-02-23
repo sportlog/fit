@@ -20,8 +20,8 @@ Minimum PHP version required is 8.
 require 'vendor/autoload.php';
 
 use Sportlog\FIT\Decoder;
-use Sportlog\FIT\Profile\Message\SessionMessage;
-use Sportlog\FIT\Profile\MessageNumber;
+use Sportlog\FIT\Profile\Messages\SessionMessage;
+use Sportlog\FIT\Profile\Types\MesgNum;
 
 $decoder = new Decoder();
 // Decoding the FIT file returns a set of messages
@@ -37,7 +37,7 @@ foreach ($messageList->getMessageNumbers() as $messageNumber) {
 }
 
 // You can also grab specific messages
-$sessionMessages = $messageList->getMessages(SessionMessage::Record);
+$sessionMessages = $messageList->getMessages(MesgNum::SESSION);
 
 // There should be one session message (add check!)
 /** @var SessionMessage $sessionMessage */

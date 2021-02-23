@@ -16,11 +16,11 @@ use Sportlog\FIT\Profile\MessageList;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Sportlog\FIT\Profile\Field;
-use Sportlog\FIT\Profile\Message\DeveloperDataIdMessage;
-use Sportlog\FIT\Profile\Message\FieldDescriptionMessage;
+use Sportlog\FIT\Profile\Messages\DeveloperDataIdMessage;
+use Sportlog\FIT\Profile\Messages\FieldDescriptionMessage;
 use Sportlog\FIT\Profile\MessageFactory;
-use Sportlog\FIT\Profile\MessageNumber;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * A decoder for FIT files.
@@ -380,11 +380,11 @@ class Decoder
      */
     private function getDeveloperFieldDescription(int $developerDataIndex, int $fieldDefinitionNumber, MessageList $messages): FieldDescriptionMessage
     {
-        $dataIdMessages = $messages->getMessages(MessageNumber::DeveloperDataId);
+        $dataIdMessages = $messages->getMessages(MesgNum::DEVELOPER_DATA_ID);
         foreach ($dataIdMessages as $message) {
             /** @var DeveloperDataIdMessage $message */
             if ($message->getDeveloperDataIndex() === $developerDataIndex) {
-                $fieldDescMessages = $messages->getMessages(MessageNumber::FieldDescription);
+                $fieldDescMessages = $messages->getMessages(MesgNum::FIELD_DESCRIPTION);
                 foreach ($fieldDescMessages as $fieldDescMessage) {
                     /** @var FieldDescriptionMessage $fieldDescMessage */
                     if (
