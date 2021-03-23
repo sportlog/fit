@@ -15,6 +15,7 @@ use Countable;
 use Sportlog\FIT\Profile\Messages\FileIdMessage;
 use IteratorAggregate;
 use RecursiveArrayIterator;
+use Sportlog\FIT\GPXWriter;
 use Sportlog\FIT\Profile\Types\MesgNum;
 use Traversable;
 
@@ -102,5 +103,15 @@ class MessageList implements IteratorAggregate, Countable
     public function getIterator(): Traversable
     {
         return new RecursiveArrayIterator($this->messages, RecursiveArrayIterator::CHILD_ARRAYS_ONLY);
+    }
+
+    /**
+     * Writes the messages as GPX file.
+     *
+     * @param string $file
+     * @return void
+     */
+    public function saveAsGPX(string $file): void {
+        GPXWriter::write($file, $this);
     }
 }
