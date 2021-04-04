@@ -94,6 +94,10 @@ abstract class Message implements IteratorAggregate, Stringable
     public function getFieldValue(int|string $fieldNumber): mixed
     {
         $field = $this->getField($fieldNumber);
+        if ($field === null) {
+            return null;
+        }
+
         $value = isset($this->values[$field->getNumber()]) ? $this->values[$field->getNumber()] : null;
         if ($value === null) {
             return null;

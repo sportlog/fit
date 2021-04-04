@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT;
 
+use DateTime;
 use Exception;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\MessageList;
@@ -37,6 +38,7 @@ class Decoder
     const MESSAGE_TYPE_DEFINITION = 'definition';
     const MESSAGE_TYPE_COMPRESSED_TIMESTAMP = 'compressed_timestamp';
     const HEADER_SIZE_WITH_CRC = 14;
+    const COMPRESSED_TIME_MASK = 0x1F;
 
     /**
      * Ctor
@@ -85,32 +87,44 @@ class Decoder
             throw new FitException('File has no valid FIT header');
         }
 
+        $timestamp = 0;
+        $lastTimeOffset = 0;
+
         // Array to store all message definitions
         $messageTypeDefinitions = [];
         $messages = new MessageList();
         while ($reader->getOffset() - $header->getHeaderSize() < $header->getDataSize()) {
             // Read the record header
             $recordHeader = $this->nextRecordHeader($reader);
-            $localMessagType = $recordHeader['local_message_type'];
-            $this->logger?->info(sprintf('%s: %s', $recordHeader['message_type'], $localMessagType));
+            $localMessageType = $recordHeader['local_message_type'];
+            $this->logger?->info(sprintf('%s: %s', $recordHeader['message_type'], $localMessageType));
 
             switch ($recordHeader['message_type']) {
                 case self::MESSAGE_TYPE_COMPRESSED_TIMESTAMP:
-                    throw new Exception('compressed timestamps are not implemented yet');
+                    $timestamp = ($recordHeader['time_offset'] - $lastTimeOffset) & self::COMPRESSED_TIME_MASK;
+                    $lastTimeOffset = $recordHeader['time_offset'];
+                    break;
 
                 case self::MESSAGE_TYPE_DEFINITION:
                     // definition message
                     $def =  $this->nextRecordDefinition($recordHeader['has_developer_data'], $reader);
-                    $messageTypeDefinitions[$localMessagType] = $def;
+                    $messageTypeDefinitions[$localMessageType] = $def;
                     break;
 
                 case self::MESSAGE_TYPE_DATA:
                     // data message
-                    if (!isset($messageTypeDefinitions[$localMessagType])) {
-                        throw new FitException("No message definition for local message type '{$localMessagType}' found.");
+                    if (!isset($messageTypeDefinitions[$localMessageType])) {
+                        throw new FitException("No message definition for local message type '{$localMessageType}' found.");
                     }
 
-                    $messages->addMessage($this->nextRecordData($messageTypeDefinitions[$localMessagType], $reader, $messages));
+                    $message = $this->nextRecordData($messageTypeDefinitions[$localMessageType], $reader, $messages);
+                    $messageTimestamp = $message->getFieldValue('Timestamp');
+                    if ($messageTimestamp !== null) {
+                        /** @var DateTime $timestamp */
+                        $timestamp = $messageTimestamp;
+                        $lastTimeOffset = $timestamp->getTimestamp() & self::COMPRESSED_TIME_MASK;
+                    }
+                    $messages->addMessage($message);
                     break;
 
                 default:
