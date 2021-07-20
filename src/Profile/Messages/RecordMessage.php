@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.40Release
+ * Profile Version = 21.54Release
  */
 
 declare(strict_types=1);
@@ -71,10 +71,46 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('DeviceIndex', 62, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::DEVICEINDEX)]
 #[Field('LeftPco', 67, FitBaseType::SINT8, 1.0, 0.0, 'mm', false, ProfileType::SINT8)]
 #[Field('RightPco', 68, FitBaseType::SINT8, 1.0, 0.0, 'mm', false, ProfileType::SINT8)]
-#[Field('LeftPowerPhase', 69, FitBaseType::UINT8, 7111111.0, 0.0, 'degrees', false, ProfileType::UINT8)]
-#[Field('LeftPowerPhasePeak', 70, FitBaseType::UINT8, 7111111.0, 0.0, 'degrees', false, ProfileType::UINT8)]
-#[Field('RightPowerPhase', 71, FitBaseType::UINT8, 7111111.0, 0.0, 'degrees', false, ProfileType::UINT8)]
-#[Field('RightPowerPhasePeak', 72, FitBaseType::UINT8, 7111111.0, 0.0, 'degrees', false, ProfileType::UINT8)]
+#[Field(
+	'LeftPowerPhase',
+	69,
+	FitBaseType::UINT8,
+	0.71111109999999999597974920106935314834117889404296875,
+	0.0,
+	'degrees',
+	false,
+	ProfileType::UINT8
+)]
+#[Field(
+	'LeftPowerPhasePeak',
+	70,
+	FitBaseType::UINT8,
+	0.71111109999999999597974920106935314834117889404296875,
+	0.0,
+	'degrees',
+	false,
+	ProfileType::UINT8
+)]
+#[Field(
+	'RightPowerPhase',
+	71,
+	FitBaseType::UINT8,
+	0.71111109999999999597974920106935314834117889404296875,
+	0.0,
+	'degrees',
+	false,
+	ProfileType::UINT8
+)]
+#[Field(
+	'RightPowerPhasePeak',
+	72,
+	FitBaseType::UINT8,
+	0.71111109999999999597974920106935314834117889404296875,
+	0.0,
+	'degrees',
+	false,
+	ProfileType::UINT8
+)]
 #[Field('EnhancedSpeed', 73, FitBaseType::UINT32, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
 #[Field('EnhancedAltitude', 78, FitBaseType::UINT32, 5.0, 500.0, 'm', false, ProfileType::UINT32)]
 #[Field('BatterySoc', 81, FitBaseType::UINT8, 2.0, 0.0, 'percent', false, ProfileType::UINT8)]
@@ -96,6 +132,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('EbikeBatteryLevel', 118, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
 #[Field('EbikeAssistMode', 119, FitBaseType::UINT8, 1.0, 0.0, 'depends on sensor', false, ProfileType::UINT8)]
 #[Field('EbikeAssistLevelPercent', 120, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
+#[Field('CoreTemperature', 139, FitBaseType::UINT16, 100.0, 0.0, 'C', false, ProfileType::UINT16)]
 final class RecordMessage extends Message
 {
     /**
@@ -688,5 +725,13 @@ final class RecordMessage extends Message
     public function getEbikeAssistLevelPercent(): int|array|null
     {
         return $this->getFieldValue(120);
+    }
+
+    /**
+     * Gets the core temperature
+     */
+    public function getCoreTemperature(): float|array|null
+    {
+        return $this->getFieldValue(139);
     }
 }

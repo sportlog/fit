@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.40Release
+ * Profile Version = 21.54Release
  */
 
 declare(strict_types=1);
@@ -172,6 +172,7 @@ final class GarminProduct
     const VIVO_SMART_GPS_HR_ASIA = 2362;
     const VIVO_MOVE = 2368;
     const VARIA_TAILLIGHT = 2379;
+    const FR235_ASIA = 2396;
     const FR235_JAPAN = 2397;
     const VARIA_VISION = 2398;
     const VIVO_FIT3 = 2406;
@@ -223,6 +224,7 @@ final class GarminProduct
     const FORETREX_601_701 = 2769;
     const VIVO_MOVE_HR = 2772;
     const EDGE_1030 = 2713;
+    const VECTOR_3 = 2787;
     const FENIX5_ASIA = 2796;
     const FENIX5S_ASIA = 2797;
     const FENIX5X_ASIA = 2798;
@@ -233,6 +235,7 @@ final class GarminProduct
     const VIVO_SPORT_APAC = 2832;
     const FR935_ASIA = 2833;
     const DESCENT = 2859;
+    const VIVO_FIT4 = 2878;
     const FR645 = 2886;
     const FR645M = 2888;
     const FR30 = 2891;
@@ -279,12 +282,14 @@ final class GarminProduct
     const MARQ_EXPEDITION = 3250;
     const MARQ_ATHLETE = 3251;
     const DESCENT_MK2 = 3258;
+    const GPSMAP66I = 3284;
     const FENIX6S_SPORT = 3287;
     const FENIX6S = 3288;
     const FENIX6_SPORT = 3289;
     const FENIX6 = 3290;
     const FENIX6X = 3291;
     const HRM_DUAL = 3299;
+    const HRM_PRO = 3300;
     const VIVO_MOVE3_PREMIUM = 3308;
     const APPROACH_S40 = 3314;
     const FR245M_ASIA = 3321;
@@ -306,28 +311,50 @@ final class GarminProduct
     const MARQ_ATHLETE_ASIA = 3451;
     const FR45_ASIA = 3469;
     const VIVOACTIVE3_DAIMLER = 3473;
+    const LEGACY_REY = 3498;
+    const LEGACY_DARTH_VADER = 3499;
+    const LEGACY_CAPTAIN_MARVEL = 3500;
+    const LEGACY_FIRST_AVENGER = 3501;
     const FENIX6S_SPORT_ASIA = 3512;
     const FENIX6S_ASIA = 3513;
     const FENIX6_SPORT_ASIA = 3514;
     const FENIX6_ASIA = 3515;
     const FENIX6X_ASIA = 3516;
+    const LEGACY_CAPTAIN_MARVEL_ASIA = 3535;
+    const LEGACY_FIRST_AVENGER_ASIA = 3536;
+    const LEGACY_REY_ASIA = 3537;
+    const LEGACY_DARTH_VADER_ASIA = 3538;
     const EDGE_130_PLUS = 3558;
     const EDGE_1030_PLUS = 3570;
+    const RALLY_200 = 3578;
     const FR745 = 3589;
     const VENUSQ = 3600;
+    const LILY = 3615;
     const MARQ_ADVENTURER = 3624;
+    const ENDURO = 3638;
     const MARQ_ADVENTURER_ASIA = 3648;
     const SWIM2_APAC = 3639;
     const DESCENT_MK2_ASIA = 3702;
+    const VENU2 = 3703;
+    const VENU2S = 3704;
     const VENU_DAIMLER_ASIA = 3737;
     const MARQ_GOLFER = 3739;
     const VENU_DAIMLER = 3740;
     const FR745_ASIA = 3794;
+    const LILY_ASIA = 3809;
     const EDGE_1030_PLUS_ASIA = 3812;
     const EDGE_130_PLUS_ASIA = 3813;
+    const APPROACH_S12 = 3823;
+    const ENDURO_ASIA = 3872;
     const VENUSQ_ASIA = 3837;
     const MARQ_GOLFER_ASIA = 3850;
-    const VENU2PLUS = 3851;
+    const APPROACH_G12 = 3927;
+    const APPROACH_S42 = 3934;
+    const VENU2S_ASIA = 3949;
+    const VENU2_ASIA = 3950;
+    const APPROACH_S12_ASIA = 3986;
+    const APPROACH_G12_ASIA = 4001;
+    const APPROACH_S42_ASIA = 4002;
     const SDM4 = 10007;
     const EDGE_REMOTE = 10014;
     const TACX_TRAINING_APP_WIN = 20533;

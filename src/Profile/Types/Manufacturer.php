@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.40Release
+ * Profile Version = 21.54Release
  */
 
 declare(strict_types=1);
@@ -58,6 +58,7 @@ final class Manufacturer
     const OSYNCE = 38;
     const HOLUX = 39;
     const CONCEPT2 = 40;
+    const SHIMANO = 41;
     const ONE_GIANT_LEAP = 42;
     const ACE_SENSOR = 43;
     const BRIM_BROTHERS = 44;
@@ -149,6 +150,7 @@ final class Manufacturer
     const CYCPLUS = 132;
     const GRAVAA_BYTE = 133;
     const SIGEYI = 134;
+    const COOSPO = 135;
     const DEVELOPMENT = 255;
     const HEALTHANDLIFE = 257;
     const LEZYNE = 258;
@@ -204,5 +206,6 @@ final class Manufacturer
     const MONARK_EXERCISE = 308;
     const FORM = 309;
     const DECATHLON = 310;
+    const SYNCROS = 311;
     const ACTIGRAPHCORP = 5759;
 }

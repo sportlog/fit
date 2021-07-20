@@ -32,6 +32,10 @@ use Sportlog\FIT\Profile\Types\MesgNum;
  */
 class MessageGenerator
 {
+    /**
+     * FIT-SDK Version
+     */
+    const FIT_SDK_VERSION = '21.54';
     const MESSAGE_START = "Mesg newMesg = new Mesg(";
     const FIELD_START = "newMesg.SetField(new Field(";
     const MESSAGE_END = "return newMesg";
@@ -40,6 +44,13 @@ class MessageGenerator
     // act as classname.
     const RENAMED_TYPES = ['Switch' => 'FitSwitch'];
 
+    /**
+     * Creates the Profile-Types (/profile/types)
+     *
+     * @param string $fileInput
+     * @param string $outputPath
+     * @return void
+     */
     public function writeTypes(string $fileInput, string $outputPath): void
     {
         $handle = fopen($fileInput, "r");
@@ -321,7 +332,7 @@ class MessageGenerator
             ->addComment("@license MIT License")
             ->addComment("")
             ->addComment("****WARNING****  This file is auto-generated! Do NOT edit.")
-            ->addComment("Profile Version = 21.40Release");
+            ->addComment(sprintf('Profile Version = %sRelease', self::FIT_SDK_VERSION));
 
         return $factory;
     }

@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.40Release
+ * Profile Version = 21.54Release
  */
 
 declare(strict_types=1);
@@ -122,10 +122,46 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('StandCount', 113, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('AvgLeftPco', 114, FitBaseType::SINT8, 1.0, 0.0, 'mm', false, ProfileType::SINT8)]
 #[Field('AvgRightPco', 115, FitBaseType::SINT8, 1.0, 0.0, 'mm', false, ProfileType::SINT8)]
-#[Field('AvgLeftPowerPhase', 116, FitBaseType::UINT8, 7111111.0, 0.0, 'degrees', false, ProfileType::UINT8)]
-#[Field('AvgLeftPowerPhasePeak', 117, FitBaseType::UINT8, 7111111.0, 0.0, 'degrees', false, ProfileType::UINT8)]
-#[Field('AvgRightPowerPhase', 118, FitBaseType::UINT8, 7111111.0, 0.0, 'degrees', false, ProfileType::UINT8)]
-#[Field('AvgRightPowerPhasePeak', 119, FitBaseType::UINT8, 7111111.0, 0.0, 'degrees', false, ProfileType::UINT8)]
+#[Field(
+	'AvgLeftPowerPhase',
+	116,
+	FitBaseType::UINT8,
+	0.71111109999999999597974920106935314834117889404296875,
+	0.0,
+	'degrees',
+	false,
+	ProfileType::UINT8
+)]
+#[Field(
+	'AvgLeftPowerPhasePeak',
+	117,
+	FitBaseType::UINT8,
+	0.71111109999999999597974920106935314834117889404296875,
+	0.0,
+	'degrees',
+	false,
+	ProfileType::UINT8
+)]
+#[Field(
+	'AvgRightPowerPhase',
+	118,
+	FitBaseType::UINT8,
+	0.71111109999999999597974920106935314834117889404296875,
+	0.0,
+	'degrees',
+	false,
+	ProfileType::UINT8
+)]
+#[Field(
+	'AvgRightPowerPhasePeak',
+	119,
+	FitBaseType::UINT8,
+	0.71111109999999999597974920106935314834117889404296875,
+	0.0,
+	'degrees',
+	false,
+	ProfileType::UINT8
+)]
 #[Field('AvgPowerPosition', 120, FitBaseType::UINT16, 1.0, 0.0, 'watts', false, ProfileType::UINT16)]
 #[Field('MaxPowerPosition', 121, FitBaseType::UINT16, 1.0, 0.0, 'watts', false, ProfileType::UINT16)]
 #[Field('AvgCadencePosition', 122, FitBaseType::UINT8, 1.0, 0.0, 'rpm', false, ProfileType::UINT8)]
@@ -150,6 +186,9 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('AvgFlow', 187, FitBaseType::FLOAT32, 1.0, 0.0, 'Flow', false, ProfileType::FLOAT32)]
 #[Field('TotalFractionalAscent', 199, FitBaseType::UINT8, 100.0, 0.0, 'm', false, ProfileType::UINT8)]
 #[Field('TotalFractionalDescent', 200, FitBaseType::UINT8, 100.0, 0.0, 'm', false, ProfileType::UINT8)]
+#[Field('AvgCoreTemperature', 208, FitBaseType::UINT16, 100.0, 0.0, 'C', false, ProfileType::UINT16)]
+#[Field('MinCoreTemperature', 209, FitBaseType::UINT16, 100.0, 0.0, 'C', false, ProfileType::UINT16)]
+#[Field('MaxCoreTemperature', 210, FitBaseType::UINT16, 100.0, 0.0, 'C', false, ProfileType::UINT16)]
 final class SessionMessage extends Message
 {
     /**
@@ -1174,5 +1213,29 @@ final class SessionMessage extends Message
     public function getTotalFractionalDescent(): float|array|null
     {
         return $this->getFieldValue(200);
+    }
+
+    /**
+     * Gets the avg core temperature
+     */
+    public function getAvgCoreTemperature(): float|array|null
+    {
+        return $this->getFieldValue(208);
+    }
+
+    /**
+     * Gets the min core temperature
+     */
+    public function getMinCoreTemperature(): float|array|null
+    {
+        return $this->getFieldValue(209);
+    }
+
+    /**
+     * Gets the max core temperature
+     */
+    public function getMaxCoreTemperature(): float|array|null
+    {
+        return $this->getFieldValue(210);
     }
 }
