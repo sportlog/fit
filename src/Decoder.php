@@ -36,7 +36,6 @@ class Decoder
     const MESSAGE_TYPE_DATA = 'data';
     const MESSAGE_TYPE_DEFINITION = 'definition';
     const MESSAGE_TYPE_COMPRESSED_TIMESTAMP = 'compressed_timestamp';
-    const HEADER_SIZE_WITH_CRC = 14;
 
     /**
      * Ctor
@@ -225,57 +224,19 @@ class Decoder
      */
     private function readValue(FitBaseTypeDefinition $fitBaseType, int $baseType, bool $bigEndian, IOReader $reader): mixed
     {
-        $value = null;
-        switch ($baseType) {
-            case FitBaseType::SINT8:
-                $value = $reader->readInt8();
-                break;
-
-            case FitBaseType::ENUM:
-            case FitBaseType::UINT8:
-            case FitBaseType::UINT8Z:
-                $value = $reader->readUInt8();
-                break;
-
-            case FitBaseType::SINT16:
-                $value = $bigEndian ? $reader->readInt16BE() : $reader->readInt16LE();
-                break;
-
-            case FitBaseType::UINT16:
-            case FitBaseType::UINT16Z:
-                $value = $bigEndian ? $reader->readUInt16BE() : $reader->readUInt16LE();
-                break;
-
-            case FitBaseType::SINT32:
-                $value = $bigEndian ? $reader->readInt32BE() : $reader->readInt32LE();
-                break;
-
-            case FitBaseType::UINT32:
-            case FitBaseType::UINT32Z:
-                $value = $bigEndian ? $reader->readUInt32BE() : $reader->readUInt32LE();
-                break;
-
-            case FitBaseType::FLOAT32:
-                $value = $bigEndian ? $reader->readFloatBE() : $reader->readFloatLE();
-                break;
-
-            case FitBaseType::SINT64:
-                $value = $bigEndian ? $reader->readInt64BE() : $reader->readInt64LE();
-                break;
-
-            case FitBaseType::UINT64:
-            case FitBaseType::UINT64Z:
-            case FitBaseType::FLOAT64:
-                $value = $bigEndian ? $reader->readDoubleBE() : $reader->readDoubleLE();
-                break;
-
-            case FitBaseType::STRING:
-            case FitBaseType::BYTE:
-                throw new Exception("Base types 'String|Byte' must be handled separately");
-
-            default:
-                throw new Exception(sprintf('unknown fit base type "%s".', $baseType));
-        }
+        $value = match ($baseType) {
+            FitBaseType::SINT8 => $reader->readInt8(),
+            FitBaseType::ENUM, FitBaseType::UINT8, FitBaseType::UINT8Z => $reader->readUInt8(),
+            FitBaseType::SINT16 => $bigEndian ? $reader->readInt16BE() : $reader->readInt16LE(),
+            FitBaseType::UINT16, FitBaseType::UINT16Z => $bigEndian ? $reader->readUInt16BE() : $reader->readUInt16LE(),
+            FitBaseType::SINT32 => $bigEndian ? $reader->readInt32BE() : $reader->readInt32LE(),
+            FitBaseType::UINT32, FitBaseType::UINT32Z => $bigEndian ? $reader->readUInt32BE() : $reader->readUInt32LE(),
+            FitBaseType::FLOAT32 => $bigEndian ? $reader->readFloatBE() : $reader->readFloatLE(),
+            FitBaseType::SINT64 => $bigEndian ? $reader->readInt64BE() : $reader->readInt64LE(),
+            FitBaseType::UINT64, FitBaseType::UINT64Z, FitBaseType::FLOAT64 => $bigEndian ? $reader->readDoubleBE() : $reader->readDoubleLE(),
+            FitBaseType::STRING, FitBaseType::BYTE => throw new Exception("Base types 'String|Byte' must be handled separately"),
+            default => throw new Exception(sprintf('unknown fit base type "%s".', $baseType))
+        };
 
         return !$fitBaseType->isInvalid($value) ? $value : null;
     }

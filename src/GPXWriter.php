@@ -48,7 +48,7 @@ class GPXWriter {
         $writer->writeAttribute('xmlns:ns3', 'http://www.garmin.com/xmlschemas/TrackPointExtension/v1');
         $writer->writeAttribute('xmlns', 'http://www.topografix.com/GPX/1/1');
         $writer->startElement('metadata');
-        $writer->writeElement('time', gmdate('Y-m-d\TH:i:s\Z', $session->getStartTime()->getTimestamp()));
+        $writer->writeElement('time', gmdate('Y-m-d\TH:i:s\Z', $session->getStartTime()?->getTimestamp()));
         $writer->endElement(); // metadata
 
         $writer->startElement('trk');

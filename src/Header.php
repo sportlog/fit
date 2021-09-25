@@ -11,7 +11,6 @@ declare(strict_types=1);
 namespace Sportlog\FIT;
 
 use Exception;
-use InvalidArgumentException;
 
 /**
  * The FIT header

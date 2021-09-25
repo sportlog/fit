@@ -94,12 +94,16 @@ abstract class Message implements IteratorAggregate, Stringable
     public function getFieldValue(int|string $fieldNumber): mixed
     {
         $field = $this->getField($fieldNumber);
+        if ($field === null) {
+            throw new Exception("invalid field number {$fieldNumber}");
+        }
+
         $value = isset($this->values[$field->getNumber()]) ? $this->values[$field->getNumber()] : null;
         if ($value === null) {
             return null;
         }
 
-        return ($field !== null) ? $this->convertValueToFieldType($field, $value) : $value;
+        return $this->convertValueToFieldType($field, $value);
     }
 
     /**
@@ -208,14 +212,14 @@ abstract class Message implements IteratorAggregate, Stringable
     public function __toString()
     {
         $result = [basename(static::class)];
-        foreach ($this->values as $key => $value) {
-            $field = $this->getField($key);
-            $result[] = $field?->getName() ?? $key;
-            $result[] = is_array($value) ? join("|", $value) : $value;
+        foreach ($this->values as $fieldNumber => $value) {
+            $field = $this->getField($fieldNumber);
+            $result[] = $field?->getName() ?? $fieldNumber;
+            $result[] = is_array($value) ? join('|', $value) : $value;
             $result[] = $field?->getUnits() ?? '';
         }
 
-        return join(",", $result);
+        return join(',', $result);
     }
 
     private function mapArray(array $values, callable $classifier): array
