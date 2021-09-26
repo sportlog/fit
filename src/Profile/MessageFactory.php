@@ -114,185 +114,96 @@ class MessageFactory
      */
     public static function createMessage(int $globalMessageNumber): Message
     {
-        switch ($globalMessageNumber) {
-            case MesgNum::FILE_ID:
-                return new FileIdMessage();
-            case MesgNum::FILE_CREATOR:
-                return new FileCreatorMessage();
-            case MesgNum::TIMESTAMP_CORRELATION:
-                return new TimestampCorrelationMessage();
-            case MesgNum::SOFTWARE:
-                return new SoftwareMessage();
-            case MesgNum::SLAVE_DEVICE:
-                return new SlaveDeviceMessage();
-            case MesgNum::CAPABILITIES:
-                return new CapabilitiesMessage();
-            case MesgNum::FILE_CAPABILITIES:
-                return new FileCapabilitiesMessage();
-            case MesgNum::MESG_CAPABILITIES:
-                return new MesgCapabilitiesMessage();
-            case MesgNum::FIELD_CAPABILITIES:
-                return new FieldCapabilitiesMessage();
-            case MesgNum::DEVICE_SETTINGS:
-                return new DeviceSettingsMessage();
-            case MesgNum::USER_PROFILE:
-                return new UserProfileMessage();
-            case MesgNum::HRM_PROFILE:
-                return new HrmProfileMessage();
-            case MesgNum::SDM_PROFILE:
-                return new SdmProfileMessage();
-            case MesgNum::BIKE_PROFILE:
-                return new BikeProfileMessage();
-            case MesgNum::CONNECTIVITY:
-                return new ConnectivityMessage();
-            case MesgNum::WATCHFACE_SETTINGS:
-                return new WatchfaceSettingsMessage();
-            case MesgNum::OHR_SETTINGS:
-                return new OhrSettingsMessage();
-            case MesgNum::ZONES_TARGET:
-                return new ZonesTargetMessage();
-            case MesgNum::SPORT:
-                return new SportMessage();
-            case MesgNum::HR_ZONE:
-                return new HrZoneMessage();
-            case MesgNum::SPEED_ZONE:
-                return new SpeedZoneMessage();
-            case MesgNum::CADENCE_ZONE:
-                return new CadenceZoneMessage();
-            case MesgNum::POWER_ZONE:
-                return new PowerZoneMessage();
-            case MesgNum::MET_ZONE:
-                return new MetZoneMessage();
-            case MesgNum::DIVE_SETTINGS:
-                return new DiveSettingsMessage();
-            case MesgNum::DIVE_ALARM:
-                return new DiveAlarmMessage();
-            case MesgNum::DIVE_GAS:
-                return new DiveGasMessage();
-            case MesgNum::GOAL:
-                return new GoalMessage();
-            case MesgNum::ACTIVITY:
-                return new ActivityMessage();
-            case MesgNum::SESSION:
-                return new SessionMessage();
-            case MesgNum::LAP:
-                return new LapMessage();
-            case MesgNum::LENGTH:
-                return new LengthMessage();
-            case MesgNum::RECORD:
-                return new RecordMessage();
-            case MesgNum::EVENT:
-                return new EventMessage();
-            case MesgNum::DEVICE_INFO:
-                return new DeviceInfoMessage();
-            case MesgNum::TRAINING_FILE:
-                return new TrainingFileMessage();
-            case MesgNum::HRV:
-                return new HrvMessage();
-            case MesgNum::WEATHER_CONDITIONS:
-                return new WeatherConditionsMessage();
-            case MesgNum::WEATHER_ALERT:
-                return new WeatherAlertMessage();
-            case MesgNum::GPS_METADATA:
-                return new GpsMetadataMessage();
-            case MesgNum::CAMERA_EVENT:
-                return new CameraEventMessage();
-            case MesgNum::GYROSCOPE_DATA:
-                return new GyroscopeDataMessage();
-            case MesgNum::ACCELEROMETER_DATA:
-                return new AccelerometerDataMessage();
-            case MesgNum::MAGNETOMETER_DATA:
-                return new MagnetometerDataMessage();
-            case MesgNum::BAROMETER_DATA:
-                return new BarometerDataMessage();
-            case MesgNum::THREE_D_SENSOR_CALIBRATION:
-                return new ThreeDSensorCalibrationMessage();
-            case MesgNum::ONE_D_SENSOR_CALIBRATION:
-                return new OneDSensorCalibrationMessage();
-            case MesgNum::VIDEO_FRAME:
-                return new VideoFrameMessage();
-            case MesgNum::OBDII_DATA:
-                return new ObdiiDataMessage();
-            case MesgNum::NMEA_SENTENCE:
-                return new NmeaSentenceMessage();
-            case MesgNum::AVIATION_ATTITUDE:
-                return new AviationAttitudeMessage();
-            case MesgNum::VIDEO:
-                return new VideoMessage();
-            case MesgNum::VIDEO_TITLE:
-                return new VideoTitleMessage();
-            case MesgNum::VIDEO_DESCRIPTION:
-                return new VideoDescriptionMessage();
-            case MesgNum::VIDEO_CLIP:
-                return new VideoClipMessage();
-            case MesgNum::SET:
-                return new SetMessage();
-            case MesgNum::JUMP:
-                return new JumpMessage();
-            case MesgNum::COURSE:
-                return new CourseMessage();
-            case MesgNum::COURSE_POINT:
-                return new CoursePointMessage();
-            case MesgNum::SEGMENT_ID:
-                return new SegmentIdMessage();
-            case MesgNum::SEGMENT_LEADERBOARD_ENTRY:
-                return new SegmentLeaderboardEntryMessage();
-            case MesgNum::SEGMENT_POINT:
-                return new SegmentPointMessage();
-            case MesgNum::SEGMENT_LAP:
-                return new SegmentLapMessage();
-            case MesgNum::SEGMENT_FILE:
-                return new SegmentFileMessage();
-            case MesgNum::WORKOUT:
-                return new WorkoutMessage();
-            case MesgNum::WORKOUT_SESSION:
-                return new WorkoutSessionMessage();
-            case MesgNum::WORKOUT_STEP:
-                return new WorkoutStepMessage();
-            case MesgNum::EXERCISE_TITLE:
-                return new ExerciseTitleMessage();
-            case MesgNum::SCHEDULE:
-                return new ScheduleMessage();
-            case MesgNum::TOTALS:
-                return new TotalsMessage();
-            case MesgNum::WEIGHT_SCALE:
-                return new WeightScaleMessage();
-            case MesgNum::BLOOD_PRESSURE:
-                return new BloodPressureMessage();
-            case MesgNum::MONITORING_INFO:
-                return new MonitoringInfoMessage();
-            case MesgNum::MONITORING:
-                return new MonitoringMessage();
-            case MesgNum::HR:
-                return new HrMessage();
-            case MesgNum::STRESS_LEVEL:
-                return new StressLevelMessage();
-            case MesgNum::MEMO_GLOB:
-                return new MemoGlobMessage();
-            case MesgNum::ANT_CHANNEL_ID:
-                return new AntChannelIdMessage();
-            case MesgNum::ANT_RX:
-                return new AntRxMessage();
-            case MesgNum::ANT_TX:
-                return new AntTxMessage();
-            case MesgNum::EXD_SCREEN_CONFIGURATION:
-                return new ExdScreenConfigurationMessage();
-            case MesgNum::EXD_DATA_FIELD_CONFIGURATION:
-                return new ExdDataFieldConfigurationMessage();
-            case MesgNum::EXD_DATA_CONCEPT_CONFIGURATION:
-                return new ExdDataConceptConfigurationMessage();
-            case MesgNum::FIELD_DESCRIPTION:
-                return new FieldDescriptionMessage();
-            case MesgNum::DEVELOPER_DATA_ID:
-                return new DeveloperDataIdMessage();
-            case MesgNum::DIVE_SUMMARY:
-                return new DiveSummaryMessage();
-            case MesgNum::CLIMB_PRO:
-                return new ClimbProMessage();
-            case MesgNum::PAD:
-                return new PadMessage();
-            default:
-                return new InvalidMessage();
-        }
+        return match ($globalMessageNumber) {
+            MesgNum::FILE_ID => new FileIdMessage(),
+            MesgNum::FILE_CREATOR => new FileCreatorMessage(),
+            MesgNum::TIMESTAMP_CORRELATION => new TimestampCorrelationMessage(),
+            MesgNum::SOFTWARE => new SoftwareMessage(),
+            MesgNum::SLAVE_DEVICE => new SlaveDeviceMessage(),
+            MesgNum::CAPABILITIES => new CapabilitiesMessage(),
+            MesgNum::FILE_CAPABILITIES => new FileCapabilitiesMessage(),
+            MesgNum::MESG_CAPABILITIES => new MesgCapabilitiesMessage(),
+            MesgNum::FIELD_CAPABILITIES => new FieldCapabilitiesMessage(),
+            MesgNum::DEVICE_SETTINGS => new DeviceSettingsMessage(),
+            MesgNum::USER_PROFILE => new UserProfileMessage(),
+            MesgNum::HRM_PROFILE => new HrmProfileMessage(),
+            MesgNum::SDM_PROFILE => new SdmProfileMessage(),
+            MesgNum::BIKE_PROFILE => new BikeProfileMessage(),
+            MesgNum::CONNECTIVITY => new ConnectivityMessage(),
+            MesgNum::WATCHFACE_SETTINGS => new WatchfaceSettingsMessage(),
+            MesgNum::OHR_SETTINGS => new OhrSettingsMessage(),
+            MesgNum::ZONES_TARGET => new ZonesTargetMessage(),
+            MesgNum::SPORT => new SportMessage(),
+            MesgNum::HR_ZONE => new HrZoneMessage(),
+            MesgNum::SPEED_ZONE => new SpeedZoneMessage(),
+            MesgNum::CADENCE_ZONE => new CadenceZoneMessage(),
+            MesgNum::POWER_ZONE => new PowerZoneMessage(),
+            MesgNum::MET_ZONE => new MetZoneMessage(),
+            MesgNum::DIVE_SETTINGS => new DiveSettingsMessage(),
+            MesgNum::DIVE_ALARM => new DiveAlarmMessage(),
+            MesgNum::DIVE_GAS => new DiveGasMessage(),
+            MesgNum::GOAL => new GoalMessage(),
+            MesgNum::ACTIVITY => new ActivityMessage(),
+            MesgNum::SESSION => new SessionMessage(),
+            MesgNum::LAP => new LapMessage(),
+            MesgNum::LENGTH => new LengthMessage(),
+            MesgNum::RECORD => new RecordMessage(),
+            MesgNum::EVENT => new EventMessage(),
+            MesgNum::DEVICE_INFO => new DeviceInfoMessage(),
+            MesgNum::TRAINING_FILE => new TrainingFileMessage(),
+            MesgNum::HRV => new HrvMessage(),
+            MesgNum::WEATHER_CONDITIONS => new WeatherConditionsMessage(),
+            MesgNum::WEATHER_ALERT => new WeatherAlertMessage(),
+            MesgNum::GPS_METADATA => new GpsMetadataMessage(),
+            MesgNum::CAMERA_EVENT => new CameraEventMessage(),
+            MesgNum::GYROSCOPE_DATA => new GyroscopeDataMessage(),
+            MesgNum::ACCELEROMETER_DATA => new AccelerometerDataMessage(),
+            MesgNum::MAGNETOMETER_DATA => new MagnetometerDataMessage(),
+            MesgNum::BAROMETER_DATA => new BarometerDataMessage(),
+            MesgNum::THREE_D_SENSOR_CALIBRATION => new ThreeDSensorCalibrationMessage(),
+            MesgNum::ONE_D_SENSOR_CALIBRATION => new OneDSensorCalibrationMessage(),
+            MesgNum::VIDEO_FRAME => new VideoFrameMessage(),
+            MesgNum::OBDII_DATA => new ObdiiDataMessage(),
+            MesgNum::NMEA_SENTENCE => new NmeaSentenceMessage(),
+            MesgNum::AVIATION_ATTITUDE => new AviationAttitudeMessage(),
+            MesgNum::VIDEO => new VideoMessage(),
+            MesgNum::VIDEO_TITLE => new VideoTitleMessage(),
+            MesgNum::VIDEO_DESCRIPTION => new VideoDescriptionMessage(),
+            MesgNum::VIDEO_CLIP => new VideoClipMessage(),
+            MesgNum::SET => new SetMessage(),
+            MesgNum::JUMP => new JumpMessage(),
+            MesgNum::COURSE => new CourseMessage(),
+            MesgNum::COURSE_POINT => new CoursePointMessage(),
+            MesgNum::SEGMENT_ID => new SegmentIdMessage(),
+            MesgNum::SEGMENT_LEADERBOARD_ENTRY => new SegmentLeaderboardEntryMessage(),
+            MesgNum::SEGMENT_POINT => new SegmentPointMessage(),
+            MesgNum::SEGMENT_LAP => new SegmentLapMessage(),
+            MesgNum::SEGMENT_FILE => new SegmentFileMessage(),
+            MesgNum::WORKOUT => new WorkoutMessage(),
+            MesgNum::WORKOUT_SESSION => new WorkoutSessionMessage(),
+            MesgNum::WORKOUT_STEP => new WorkoutStepMessage(),
+            MesgNum::EXERCISE_TITLE => new ExerciseTitleMessage(),
+            MesgNum::SCHEDULE => new ScheduleMessage(),
+            MesgNum::TOTALS => new TotalsMessage(),
+            MesgNum::WEIGHT_SCALE => new WeightScaleMessage(),
+            MesgNum::BLOOD_PRESSURE => new BloodPressureMessage(),
+            MesgNum::MONITORING_INFO => new MonitoringInfoMessage(),
+            MesgNum::MONITORING => new MonitoringMessage(),
+            MesgNum::HR => new HrMessage(),
+            MesgNum::STRESS_LEVEL => new StressLevelMessage(),
+            MesgNum::MEMO_GLOB => new MemoGlobMessage(),
+            MesgNum::ANT_CHANNEL_ID => new AntChannelIdMessage(),
+            MesgNum::ANT_RX => new AntRxMessage(),
+            MesgNum::ANT_TX => new AntTxMessage(),
+            MesgNum::EXD_SCREEN_CONFIGURATION => new ExdScreenConfigurationMessage(),
+            MesgNum::EXD_DATA_FIELD_CONFIGURATION => new ExdDataFieldConfigurationMessage(),
+            MesgNum::EXD_DATA_CONCEPT_CONFIGURATION => new ExdDataConceptConfigurationMessage(),
+            MesgNum::FIELD_DESCRIPTION => new FieldDescriptionMessage(),
+            MesgNum::DEVELOPER_DATA_ID => new DeveloperDataIdMessage(),
+            MesgNum::DIVE_SUMMARY => new DiveSummaryMessage(),
+            MesgNum::CLIMB_PRO => new ClimbProMessage(),
+            MesgNum::PAD => new PadMessage(),
+            default => new InvalidMessage()
+        };
     }
 }

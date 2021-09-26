@@ -197,24 +197,23 @@ class MessageGenerator
         $method->addParameter($paramName)
             ->setType(Type::INT);
 
-        $method->addBody("switch (\$globalMessageNumber) {");
+        $method->addBody("return match (\$globalMessageNumber) {");
 
         $cnt = count($uses);
         $i = 1;
         foreach ($uses as $use) {
             $file = str_replace('Message', '', $use);
-            $underscorize = strtoupper($this->underscorize($file));
+            $messageRef = str_repeat(" ", 8) . "new {$use}()";
             if ($cnt !== $i) {
-                $method->addBody(str_repeat(" ", 4) . "case MesgNum::{$underscorize}:");
+                $underscorize = strtoupper($this->underscorize($file));
+                $method->addBody(str_repeat(" ", 4) . "MesgNum::{$underscorize} => new {$use}(),");
             } else {
-                $method->addBody(str_repeat(" ", 4) . "default:");
+                $method->addBody(str_repeat(" ", 4) . "default => new {$use}()");
             }
-
-            $method->addBody(str_repeat(" ", 8) . "return new {$use}();");
             $i++;
         }
 
-        $method->addBody("}");
+        $method->addBody("};");
 
         return $factory;
     }
