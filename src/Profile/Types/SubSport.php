@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.54Release
+ * Profile Version = 21.60Release
  */
 
 declare(strict_types=1);
@@ -78,5 +78,6 @@ final class SubSport
     const APNEA_HUNTING = 57;
     const VIRTUAL_ACTIVITY = 58;
     const OBSTACLE = 59;
+    const SAIL_RACE = 65;
     const ALL = 254;
 }

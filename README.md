@@ -2,7 +2,7 @@
 A PHP (>= PHP 8) decoder for FIT files created by Garmin devices.
 The result is a list of all messages decoded from the file. Each message
 is an instance of its underlying message class, so you can easily access
-any (native) fields using intellisense.
+any (native) fields using intellisense. (FIT SDK 21.60)
 
 ## Install via Composer
 You can install sportlog/FIT using Composer.

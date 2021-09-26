@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.54Release
+ * Profile Version = 21.60Release
  */
 
 declare(strict_types=1);
@@ -324,6 +324,7 @@ final class GarminProduct
     const LEGACY_FIRST_AVENGER_ASIA = 3536;
     const LEGACY_REY_ASIA = 3537;
     const LEGACY_DARTH_VADER_ASIA = 3538;
+    const DESCENT_MK2S = 3542;
     const EDGE_130_PLUS = 3558;
     const EDGE_1030_PLUS = 3570;
     const RALLY_200 = 3578;
@@ -349,6 +350,7 @@ final class GarminProduct
     const VENUSQ_ASIA = 3837;
     const MARQ_GOLFER_ASIA = 3850;
     const APPROACH_G12 = 3927;
+    const DESCENT_MK2S_ASIA = 3930;
     const APPROACH_S42 = 3934;
     const VENU2S_ASIA = 3949;
     const VENU2_ASIA = 3950;

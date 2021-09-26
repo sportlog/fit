@@ -552,6 +552,7 @@ sub_sport,enum,,,
 ,,apnea_hunting,57,Diving
 ,,virtual_activity,58,
 ,,obstacle,59,"Used for events where participants run, crawl through mud, climb over walls, etc."
+,,sail_race,65,Sailing
 ,,all,254,
 sport_event,enum,,,
 ,,uncategorized,0,
@@ -1290,6 +1291,7 @@ garmin_product,uint16,,,
 ,,legacy_first_avenger_asia,3536,
 ,,legacy_rey_asia,3537,
 ,,legacy_darth_vader_asia,3538,
+,,descent_mk2s,3542,
 ,,edge_130_plus,3558,
 ,,edge_1030_plus,3570,
 ,,rally_200,3578,Rally 100/200 Power Meter Series
@@ -1315,6 +1317,7 @@ garmin_product,uint16,,,
 ,,venusq_asia,3837,
 ,,marq_golfer_asia,3850,
 ,,approach_g12, 3927,
+,,descent_mk2s_asia,3930,
 ,,approach_s42,3934,
 ,,venu2s_asia,3949,
 ,,venu2_asia,3950,
