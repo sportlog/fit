@@ -119,8 +119,8 @@ abstract class Message implements IteratorAggregate, Stringable
     public function setFieldValue(int $fieldNumber, mixed $value, FitBaseTypeDefinition $fitBaseType): void
     {
         // Get the field.
-        // If there is no such field the FIT file provides data not specified in the FIT SDK.
-        // Store the data anyway even if it's unknown how to interprete it and therefore useless.
+        // If the field does not exists, the FIT file provides data not specified in the FIT SDK.
+        // Store the data anyway even if it's unknown how to interprete it.
         $field = $this->getField($fieldNumber);
         if ($field !== null) {
             if ($field->getType() !== $fitBaseType->getType()) {
@@ -144,7 +144,7 @@ abstract class Message implements IteratorAggregate, Stringable
                 }
             }
         }
-
+      
         $this->values[$fieldNumber] = $value;
     }
 
@@ -206,7 +206,7 @@ abstract class Message implements IteratorAggregate, Stringable
      *
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         $result = [basename(static::class)];
         foreach ($this->values as $fieldNumber => $value) {

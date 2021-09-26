@@ -68,7 +68,7 @@ class MessageList implements IteratorAggregate, Countable
     }
 
     /**
-     * Adds a new mesage. Uses the class id of the message
+     * Adds a new message. Uses the class id of the message
      * as key.
      *
      * @param Message $message
