@@ -134,10 +134,7 @@ abstract class Message implements IteratorAggregate, Stringable
                 ));
             }
 
-            if (
-                $field->isNumeric() &&
-                ($field->getScale() !== Field::DEFAULT_SCALE || $field->getOffset() !== Field::DEFAULT_OFFSET)
-            ) {
+            if ($field->requiresCalculation) {
                 // If scale and/or offset are set, calculate the value.
                 // This changes any values of type int to float.
                 if (is_array($value)) {

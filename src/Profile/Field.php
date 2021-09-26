@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -27,6 +28,10 @@ final class Field
      * Default offset
      */
     public const DEFAULT_OFFSET = 0.0;
+    /**
+     * Indicates if a value for this field needs to be calcualated.
+     */
+    public bool $requiresCalculation;
 
     public function __construct(
         private string $name,
@@ -38,6 +43,7 @@ final class Field
         private bool $accumulated,
         private string $profileType
     ) {
+        $this->requiresCalculation = $this->isNumeric() && ($this->getScale() !== self::DEFAULT_SCALE || $this->getOffset() !== self::DEFAULT_OFFSET);
     }
 
     /**
@@ -134,7 +140,7 @@ final class Field
     {
         return ($value / $this->getScale()) - $this->getOffset();
     }
-    
+
     /**
      * Indicates if the base type is numeric.
      * Scale/offset shall not be calculated for
@@ -144,30 +150,12 @@ final class Field
      */
     public function isNumeric(): bool
     {
-        switch ($this->getType()) {
-            case FitBaseType::ENUM:
-            case FitBaseType::STRING:
-                return false;
-
-            case FitBaseType::SINT8:
-            case FitBaseType::UINT8:
-            case FitBaseType::UINT8Z:
-            case FitBaseType::SINT16:
-            case FitBaseType::UINT16:
-            case FitBaseType::UINT16Z:
-            case FitBaseType::SINT32:
-            case FitBaseType::UINT32:
-            case FitBaseType::UINT32Z:
-            case FitBaseType::FLOAT32:
-            case FitBaseType::SINT64:
-            case FitBaseType::UINT64:
-            case FitBaseType::UINT64Z:
-            case FitBaseType::FLOAT64:
-            case FitBaseType::BYTE:
-                return true;
-
-            default:
-                throw new Exception("IsNumeric - Unexpected Fit Type" . $this->getType());
-        }
+        return match ($this->getType()) {
+            FitBaseType::ENUM, FitBaseType::STRING => false,
+            FitBaseType::SINT8, FitBaseType::UINT8, FitBaseType::UINT8Z, FitBaseType::SINT16, FitBaseType::UINT16,
+            FitBaseType::UINT16Z, FitBaseType::SINT32, FitBaseType::UINT32, FitBaseType::UINT32Z, FitBaseType::FLOAT32,
+            FitBaseType::SINT64, FitBaseType::UINT64, FitBaseType::UINT64Z, FitBaseType::FLOAT64, FitBaseType::BYTE => true,
+            default => throw new Exception("IsNumeric - Unexpected Fit Type" . $this->getType())
+        };
     }
 }
