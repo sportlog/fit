@@ -13,8 +13,10 @@ namespace Sportlog\FIT\Profile;
 use ArrayIterator;
 use DateTime;
 use Exception;
+use Iterator;
 use Sportlog\FIT\FitBaseTypeDefinition;
 use IteratorAggregate;
+use JsonSerializable;
 use ReflectionClass;
 use Sportlog\FIT\FitException;
 use Stringable;
@@ -23,7 +25,7 @@ use Stringable;
  * Base class for all FIT messages.
  * Defines the FIT fields contained within each FIT message.
  */
-abstract class Message implements IteratorAggregate, Stringable
+abstract class Message implements IteratorAggregate, Stringable, JsonSerializable
 {
     private static array $reflectionProperties = [];
     /**
@@ -194,9 +196,25 @@ abstract class Message implements IteratorAggregate, Stringable
      * {@inheritDoc}
      * @see IteratorAggregate::getIterator()
      */
-    public function getIterator()
+    public function getIterator(): Iterator
     {
         return new ArrayIterator($this->values);
+    }
+
+    /**
+     * JSON representation of all native field values.
+     */
+    public function jsonSerialize(): mixed
+    {
+        $result = [];
+        foreach ($this->values as $fieldId => $value) {
+            $field = $this->getField($fieldId);
+            if ($field === null) {
+                continue;   // data for unknwokn (non-native) $field
+            }
+
+            $result[$field->getName()] = $value;
+        }
     }
 
     /**
