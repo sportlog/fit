@@ -11,15 +11,10 @@ declare(strict_types=1);
 namespace Sportlog\FIT;
 
 use Exception;
-use Sportlog\FIT\Profile\Message;
-use Sportlog\FIT\Profile\MessageList;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
-use Sportlog\FIT\Profile\Field;
-use Sportlog\FIT\Profile\Messages\DeveloperDataIdMessage;
-use Sportlog\FIT\Profile\Messages\FieldDescriptionMessage;
-use Sportlog\FIT\Profile\MessageFactory;
-use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\{Message, MessageList, Field, MessageFactory, ProfileType};
+use Sportlog\FIT\Profile\Messages\{DeveloperDataIdMessage, FieldDescriptionMessage};
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
