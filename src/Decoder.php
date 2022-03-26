@@ -48,17 +48,20 @@ class Decoder
     /**
      * Reads the file and returns the decoded messages.
      *
-     * @param string $file
+     * @param string|resource $file
      * @return MessageList
      * @throws Exception 
      */
-    public function read(string $file): MessageList
+    public function read(mixed $fileOrStream): MessageList
     {
-        $handle = @fopen($file, 'rb');
-        if ($handle === false) {
-            throw new InvalidArgumentException("Unable to open file '{$file}'. Did you provide the correct path?");
-        }
-
+        $handle = $fileOrStream;
+        if (is_string($fileOrStream)) {
+            $handle = @fopen($fileOrStream, 'rb');
+            if ($handle === false) {
+                throw new InvalidArgumentException("Unable to open file '{$fileOrStream}'. Did you provide the correct path?");
+            }
+        } 
+        
         try {
             return $this->readMessages(new IOReader($handle));
         } catch (FitException $fex) {
