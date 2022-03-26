@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.60Release
+ * Profile Version = 21.78Release
  */
 
 declare(strict_types=1);
@@ -18,11 +18,11 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class Goal
 {
-    const TIME = 0;
-    const DISTANCE = 1;
-    const CALORIES = 2;
-    const FREQUENCY = 3;
-    const STEPS = 4;
-    const ASCENT = 5;
-    const ACTIVE_MINUTES = 6;
+    public const TIME = 0;
+    public const DISTANCE = 1;
+    public const CALORIES = 2;
+    public const FREQUENCY = 3;
+    public const STEPS = 4;
+    public const ASCENT = 5;
+    public const ACTIVE_MINUTES = 6;
 }

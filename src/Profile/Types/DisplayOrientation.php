@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.60Release
+ * Profile Version = 21.78Release
  */
 
 declare(strict_types=1);
@@ -18,9 +18,9 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class DisplayOrientation
 {
-    const AUTO = 0;
-    const PORTRAIT = 1;
-    const LANDSCAPE = 2;
-    const PORTRAIT_FLIPPED = 3;
-    const LANDSCAPE_FLIPPED = 4;
+    public const AUTO = 0;
+    public const PORTRAIT = 1;
+    public const LANDSCAPE = 2;
+    public const PORTRAIT_FLIPPED = 3;
+    public const LANDSCAPE_FLIPPED = 4;
 }

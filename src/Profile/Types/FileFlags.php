@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.60Release
+ * Profile Version = 21.78Release
  */
 
 declare(strict_types=1);
@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class FileFlags
 {
-    const READ = 2;
-    const WRITE = 4;
-    const ERASE = 8;
+    public const READ = 2;
+    public const WRITE = 4;
+    public const ERASE = 8;
 }

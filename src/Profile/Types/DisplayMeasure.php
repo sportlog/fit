@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.60Release
+ * Profile Version = 21.78Release
  */
 
 declare(strict_types=1);
@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class DisplayMeasure
 {
-    const METRIC = 0;
-    const STATUTE = 1;
-    const NAUTICAL = 2;
+    public const METRIC = 0;
+    public const STATUTE = 1;
+    public const NAUTICAL = 2;
 }

@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.60Release
+ * Profile Version = 21.78Release
  */
 
 declare(strict_types=1);
@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class MessageIndex
 {
-    const SELECTED = 32768;
-    const RESERVED = 28672;
-    const MASK = 4095;
+    public const SELECTED = 32768;
+    public const RESERVED = 28672;
+    public const MASK = 4095;
 }

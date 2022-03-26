@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.60Release
+ * Profile Version = 21.78Release
  */
 
 declare(strict_types=1);
@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SetType
 {
-    const REST = 0;
-    const ACTIVE = 1;
+    public const REST = 0;
+    public const ACTIVE = 1;
 }

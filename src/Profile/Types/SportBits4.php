@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.60Release
+ * Profile Version = 21.78Release
  */
 
 declare(strict_types=1);
@@ -18,12 +18,12 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SportBits4
 {
-    const SAILING = 1;
-    const ICE_SKATING = 2;
-    const SKY_DIVING = 4;
-    const SNOWSHOEING = 8;
-    const SNOWMOBILING = 16;
-    const STAND_UP_PADDLEBOARDING = 32;
-    const SURFING = 64;
-    const WAKEBOARDING = 128;
+    public const SAILING = 1;
+    public const ICE_SKATING = 2;
+    public const SKY_DIVING = 4;
+    public const SNOWSHOEING = 8;
+    public const SNOWMOBILING = 16;
+    public const STAND_UP_PADDLEBOARDING = 32;
+    public const SURFING = 64;
+    public const WAKEBOARDING = 128;
 }

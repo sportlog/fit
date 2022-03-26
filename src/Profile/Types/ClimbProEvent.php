@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.60Release
+ * Profile Version = 21.78Release
  */
 
 declare(strict_types=1);
@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class ClimbProEvent
 {
-    const APPROACH = 0;
-    const START = 1;
-    const COMPLETE = 2;
+    public const APPROACH = 0;
+    public const START = 1;
+    public const COMPLETE = 2;
 }

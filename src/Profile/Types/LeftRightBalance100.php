@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.60Release
+ * Profile Version = 21.78Release
  */
 
 declare(strict_types=1);
@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class LeftRightBalance100
 {
-    const MASK = 16383;
-    const RIGHT = 32768;
+    public const MASK = 16383;
+    public const RIGHT = 32768;
 }

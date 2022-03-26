@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.60Release
+ * Profile Version = 21.78Release
  */
 
 declare(strict_types=1);
@@ -18,11 +18,11 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class BatteryStatus
 {
-    const NEW = 1;
-    const GOOD = 2;
-    const OK = 3;
-    const LOW = 4;
-    const CRITICAL = 5;
-    const CHARGING = 6;
-    const UNKNOWN = 7;
+    public const NEW = 1;
+    public const GOOD = 2;
+    public const OK = 3;
+    public const LOW = 4;
+    public const CRITICAL = 5;
+    public const CHARGING = 6;
+    public const UNKNOWN = 7;
 }

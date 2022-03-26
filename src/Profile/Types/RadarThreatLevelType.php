@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.60Release
+ * Profile Version = 21.78Release
  */
 
 declare(strict_types=1);
@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class RadarThreatLevelType
 {
-    const THREAT_UNKNOWN = 0;
-    const THREAT_NONE = 1;
-    const THREAT_APPROACHING = 2;
-    const THREAT_APPROACHING_FAST = 3;
+    public const THREAT_UNKNOWN = 0;
+    public const THREAT_NONE = 1;
+    public const THREAT_APPROACHING = 2;
+    public const THREAT_APPROACHING_FAST = 3;
 }

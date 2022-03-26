@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.60Release
+ * Profile Version = 21.78Release
  */
 
 declare(strict_types=1);
@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class Autoscroll
 {
-    const NONE = 0;
-    const SLOW = 1;
-    const MEDIUM = 2;
-    const FAST = 3;
+    public const NONE = 0;
+    public const SLOW = 1;
+    public const MEDIUM = 2;
+    public const FAST = 3;
 }

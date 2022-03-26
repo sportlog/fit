@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.60Release
+ * Profile Version = 21.78Release
  */
 
 declare(strict_types=1);
@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class CommTimeoutType
 {
-    const WILDCARD_PAIRING_TIMEOUT = 0;
-    const PAIRING_TIMEOUT = 1;
-    const CONNECTION_LOST = 2;
-    const CONNECTION_TIMEOUT = 3;
+    public const WILDCARD_PAIRING_TIMEOUT = 0;
+    public const PAIRING_TIMEOUT = 1;
+    public const CONNECTION_LOST = 2;
+    public const CONNECTION_TIMEOUT = 3;
 }

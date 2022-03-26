@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.60Release
+ * Profile Version = 21.78Release
  */
 
 declare(strict_types=1);
@@ -18,15 +18,15 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class CourseCapabilities
 {
-    const PROCESSED = 1;
-    const VALID = 2;
-    const TIME = 4;
-    const DISTANCE = 8;
-    const POSITION = 16;
-    const HEART_RATE = 32;
-    const POWER = 64;
-    const CADENCE = 128;
-    const TRAINING = 256;
-    const NAVIGATION = 512;
-    const BIKEWAY = 1024;
+    public const PROCESSED = 1;
+    public const VALID = 2;
+    public const TIME = 4;
+    public const DISTANCE = 8;
+    public const POSITION = 16;
+    public const HEART_RATE = 32;
+    public const POWER = 64;
+    public const CADENCE = 128;
+    public const TRAINING = 256;
+    public const NAVIGATION = 512;
+    public const BIKEWAY = 1024;
 }

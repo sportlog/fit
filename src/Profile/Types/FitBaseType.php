@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.60Release
+ * Profile Version = 21.78Release
  */
 
 declare(strict_types=1);
@@ -18,21 +18,21 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class FitBaseType
 {
-    const ENUM = 0;
-    const SINT8 = 1;
-    const UINT8 = 2;
-    const SINT16 = 131;
-    const UINT16 = 132;
-    const SINT32 = 133;
-    const UINT32 = 134;
-    const STRING = 7;
-    const FLOAT32 = 136;
-    const FLOAT64 = 137;
-    const UINT8Z = 10;
-    const UINT16Z = 139;
-    const UINT32Z = 140;
-    const BYTE = 13;
-    const SINT64 = 142;
-    const UINT64 = 143;
-    const UINT64Z = 144;
+    public const ENUM = 0;
+    public const SINT8 = 1;
+    public const UINT8 = 2;
+    public const SINT16 = 131;
+    public const UINT16 = 132;
+    public const SINT32 = 133;
+    public const UINT32 = 134;
+    public const STRING = 7;
+    public const FLOAT32 = 136;
+    public const FLOAT64 = 137;
+    public const UINT8Z = 10;
+    public const UINT16Z = 139;
+    public const UINT32Z = 140;
+    public const BYTE = 13;
+    public const SINT64 = 142;
+    public const UINT64 = 143;
+    public const UINT64Z = 144;
 }

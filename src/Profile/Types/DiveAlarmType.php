@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.60Release
+ * Profile Version = 21.78Release
  */
 
 declare(strict_types=1);
@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class DiveAlarmType
 {
-    const DEPTH = 0;
-    const TIME = 1;
+    public const DEPTH = 0;
+    public const TIME = 1;
 }

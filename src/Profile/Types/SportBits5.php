@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.60Release
+ * Profile Version = 21.78Release
  */
 
 declare(strict_types=1);
@@ -18,12 +18,12 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SportBits5
 {
-    const WATER_SKIING = 1;
-    const KAYAKING = 2;
-    const RAFTING = 4;
-    const WINDSURFING = 8;
-    const KITESURFING = 16;
-    const TACTICAL = 32;
-    const JUMPMASTER = 64;
-    const BOXING = 128;
+    public const WATER_SKIING = 1;
+    public const KAYAKING = 2;
+    public const RAFTING = 4;
+    public const WINDSURFING = 8;
+    public const KITESURFING = 16;
+    public const TACTICAL = 32;
+    public const JUMPMASTER = 64;
+    public const BOXING = 128;
 }

@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.60Release
+ * Profile Version = 21.78Release
  */
 
 declare(strict_types=1);
@@ -18,24 +18,24 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class File
 {
-    const DEVICE = 1;
-    const SETTINGS = 2;
-    const SPORT = 3;
-    const ACTIVITY = 4;
-    const WORKOUT = 5;
-    const COURSE = 6;
-    const SCHEDULES = 7;
-    const WEIGHT = 9;
-    const TOTALS = 10;
-    const GOALS = 11;
-    const BLOOD_PRESSURE = 14;
-    const MONITORING_A = 15;
-    const ACTIVITY_SUMMARY = 20;
-    const MONITORING_DAILY = 28;
-    const MONITORING_B = 32;
-    const SEGMENT = 34;
-    const SEGMENT_LIST = 35;
-    const EXD_CONFIGURATION = 40;
-    const MFG_RANGE_MIN = 247;
-    const MFG_RANGE_MAX = 254;
+    public const DEVICE = 1;
+    public const SETTINGS = 2;
+    public const SPORT = 3;
+    public const ACTIVITY = 4;
+    public const WORKOUT = 5;
+    public const COURSE = 6;
+    public const SCHEDULES = 7;
+    public const WEIGHT = 9;
+    public const TOTALS = 10;
+    public const GOALS = 11;
+    public const BLOOD_PRESSURE = 14;
+    public const MONITORING_A = 15;
+    public const ACTIVITY_SUMMARY = 20;
+    public const MONITORING_DAILY = 28;
+    public const MONITORING_B = 32;
+    public const SEGMENT = 34;
+    public const SEGMENT_LIST = 35;
+    public const EXD_CONFIGURATION = 40;
+    public const MFG_RANGE_MIN = 247;
+    public const MFG_RANGE_MAX = 254;
 }

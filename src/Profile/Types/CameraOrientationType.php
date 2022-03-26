@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.60Release
+ * Profile Version = 21.78Release
  */
 
 declare(strict_types=1);
@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class CameraOrientationType
 {
-    const CAMERA_ORIENTATION_0 = 0;
-    const CAMERA_ORIENTATION_90 = 1;
-    const CAMERA_ORIENTATION_180 = 2;
-    const CAMERA_ORIENTATION_270 = 3;
+    public const CAMERA_ORIENTATION_0 = 0;
+    public const CAMERA_ORIENTATION_90 = 1;
+    public const CAMERA_ORIENTATION_180 = 2;
+    public const CAMERA_ORIENTATION_270 = 3;
 }
