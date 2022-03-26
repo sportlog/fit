@@ -50,12 +50,12 @@ class IOReader
      * Constructs the Zend_Io_Reader class with given open file descriptor.
      *
      * @param resource $fd The file descriptor.
-     * @throws Exception if given file descriptor is not valid
+     * @throws InvalidArgumentException if given file descriptor is not valid
      */
     public function __construct($fd)
     {
         if (!is_resource($fd) || !in_array(get_resource_type($fd), array('stream'))) {
-            throw new Exception('Invalid resource type (only resources of type stream are supported)');
+            throw new InvalidArgumentException('Invalid resource type (only resources of type stream are supported)');
         }
 
         $this->_fd = $fd;
