@@ -15,8 +15,8 @@ file,enum,,,
 ,,activity_summary,20,"Read/erase, multiple files. Directory=Activities"
 ,,monitoring_daily,28,
 ,,monitoring_b,32,Read only. Directory=Monitoring. File number=identifier
-,,segment,34,Read/write/erase. Multiple Files.  Directory=Segments
-,,segment_list,35,Read/write/erase. Single File.  Directory=Segments
+,,segment,34,Read/write/erase. Multiple Files. Directory=Segments
+,,segment_list,35,Read/write/erase. Single File. Directory=Segments
 ,,exd_configuration,40,Read/write/erase. Single File. Directory=Settings
 ,,mfg_range_min,0xF7,0xF7 - 0xFE reserved for manufacturer specific file types
 ,,mfg_range_max,0xFE,0xF7 - 0xFE reserved for manufacturer specific file types
@@ -114,7 +114,7 @@ mesg_num,uint16,,,
 ,,mfg_range_max,0xFFFE,0xFF00 - 0xFFFE reserved for manufacturer specific messages
 checksum,uint8,,,
 ,,clear,0,Allows clear of checksum for flash memory where can only write 1 to 0 without erasing sector.
-,,ok,1,Set to mark checksum as valid if computes to invalid values 0 or 0xFF.  Checksum can also be set to ok to save encoding computation time.
+,,ok,1,Set to mark checksum as valid if computes to invalid values 0 or 0xFF. Checksum can also be set to ok to save encoding computation time.
 file_flags,uint8z,,,
 ,,read,0x02,
 ,,write,0x04,
@@ -136,7 +136,6 @@ device_index,uint8,,,
 gender,enum,,,
 ,,female,0,
 ,,male,1,
-,,unspecified,2,
 language,enum,,,
 ,,english,0,
 ,,french,1,
@@ -625,9 +624,9 @@ date_mode,enum,,,
 backlight_timeout,uint8,,,Timeout in seconds.
 ,,infinite,0,Backlight stays on forever.
 event,enum,,,
-,,timer,0,Group 0.  Start / stop_all
+,,timer,0,Group 0. Start / stop_all
 ,,workout,3,start / stop
-,,workout_step,4,Start at beginning of workout.  Stop at end of each step.
+,,workout_step,4,Start at beginning of workout. Stop at end of each step.
 ,,power_down,5,stop_all group 0
 ,,power_up,6,stop_all group 0
 ,,off_course,7,start / stop group 0
@@ -635,21 +634,21 @@ event,enum,,,
 ,,lap,9,Stop at end of each lap.
 ,,course_point,10,marker
 ,,battery,11,marker
-,,virtual_partner_pace,12,"Group 1. Start at beginning of activity if VP enabled, when VP pace is changed during activity or VP enabled mid activity.  stop_disable when VP disabled."
-,,hr_high_alert,13,Group 0.  Start / stop when in alert condition.
-,,hr_low_alert,14,Group 0.  Start / stop when in alert condition.
-,,speed_high_alert,15,Group 0.  Start / stop when in alert condition.
-,,speed_low_alert,16,Group 0.  Start / stop when in alert condition.
-,,cad_high_alert,17,Group 0.  Start / stop when in alert condition.
-,,cad_low_alert,18,Group 0.  Start / stop when in alert condition.
-,,power_high_alert,19,Group 0.  Start / stop when in alert condition.
-,,power_low_alert,20,Group 0.  Start / stop when in alert condition.
+,,virtual_partner_pace,12,"Group 1. Start at beginning of activity if VP enabled, when VP pace is changed during activity or VP enabled mid activity. stop_disable when VP disabled."
+,,hr_high_alert,13,Group 0. Start / stop when in alert condition.
+,,hr_low_alert,14,Group 0. Start / stop when in alert condition.
+,,speed_high_alert,15,Group 0. Start / stop when in alert condition.
+,,speed_low_alert,16,Group 0. Start / stop when in alert condition.
+,,cad_high_alert,17,Group 0. Start / stop when in alert condition.
+,,cad_low_alert,18,Group 0. Start / stop when in alert condition.
+,,power_high_alert,19,Group 0. Start / stop when in alert condition.
+,,power_low_alert,20,Group 0. Start / stop when in alert condition.
 ,,recovery_hr,21,marker
 ,,battery_low,22,marker
-,,time_duration_alert,23,Group 1.  Start if enabled mid activity (not required at start of activity). Stop when duration is reached.  stop_disable if disabled.
-,,distance_duration_alert,24,Group 1.  Start if enabled mid activity (not required at start of activity). Stop when duration is reached.  stop_disable if disabled.
-,,calorie_duration_alert,25,Group 1.  Start if enabled mid activity (not required at start of activity). Stop when duration is reached.  stop_disable if disabled.
-,,activity,26,Group 1..  Stop at end of activity.
+,,time_duration_alert,23,Group 1. Start if enabled mid activity (not required at start of activity). Stop when duration is reached. stop_disable if disabled.
+,,distance_duration_alert,24,Group 1. Start if enabled mid activity (not required at start of activity). Stop when duration is reached. stop_disable if disabled.
+,,calorie_duration_alert,25,Group 1. Start if enabled mid activity (not required at start of activity). Stop when duration is reached. stop_disable if disabled.
+,,activity,26,Group 1.. Stop at end of activity.
 ,,fitness_equipment,27,marker
 ,,length,28,Stop at end of each length.
 ,,user_marker,32,marker
@@ -658,8 +657,8 @@ event,enum,,,
 ,,front_gear_change,42,marker
 ,,rear_gear_change,43,marker
 ,,rider_position_change,44,marker
-,,elev_high_alert,45,Group 0.  Start / stop when in alert condition.
-,,elev_low_alert,46,Group 0.  Start / stop when in alert condition.
+,,elev_high_alert,45,Group 0. Start / stop when in alert condition.
+,,elev_low_alert,46,Group 0. Start / stop when in alert condition.
 ,,comm_timeout,47,marker
 ,,radar_threat_alert,75,start/stop/marker
 event_type,enum,,,
@@ -799,9 +798,36 @@ course_point,enum,,,
 ,,u_turn,23,
 ,,segment_start,24,
 ,,segment_end,25,
+,,campsite,27,
+,,aid_station,28,
+,,rest_area,29,
+,,general_distance,30,Used with UpAhead
+,,service,31,
+,,energy_gel,32,
+,,sports_drink,33,
+,,mile_marker,34,
+,,checkpoint,35,
+,,shelter,36,
+,,meeting_spot,37,
+,,overlook,38,
+,,toilet,39,
+,,shower,40,
+,,gear,41,
+,,sharp_curve,42,
+,,steep_incline,43,
+,,tunnel,44,
+,,bridge,45,
+,,obstacle,46,
+,,crossing,47,
+,,store,48,
+,,transition,49,
+,,navaid,50,
+,,transport,51,
+,,alert,52,
+,,info,53,
 manufacturer,uint16,,,
 ,,garmin,1,
-,,garmin_fr405_antfs,2,Do not use.  Used by FR405 for ANTFS man id.
+,,garmin_fr405_antfs,2,Do not use. Used by FR405 for ANTFS man id.
 ,,zephyr,3,
 ,,dayton,4,
 ,,idt,5,
@@ -939,6 +965,9 @@ manufacturer,uint16,,,
 ,,kinetic_sports,139,
 ,,decathlon_byte,140,
 ,,tq_systems,141,
+,,tag_heuer,142,
+,,keiser_fitness,143,
+,,zwift_byte,144,
 ,,development,255,
 ,,healthandlife,257,
 ,,lezyne,258,
@@ -1001,6 +1030,8 @@ manufacturer,uint16,,,
 ,,RGT_cycling,315,
 ,,vasa,316,
 ,,race_republic,317,
+,,fazua,318,
+,,oreka_training,319,
 ,,actigraphcorp,5759,
 garmin_product,uint16,,,
 ,,hrm1,1,
@@ -1355,14 +1386,22 @@ garmin_product,uint16,,,
 ,,venu2_asia,3950,
 ,,fr945_lte_asia,3978,
 ,,approach_S12_asia,3986,
+,,fr255_music,3990,
+,,fr255_small_music,3991,
+,,fr255,3992,
+,,fr255_small,3993,
 ,,approach_g12_asia, 4001,
 ,,approach_s42_asia,4002,
 ,,descent_g1,4005,
 ,,venu2_plus_asia,4017,
+,,fr955,4024,
 ,,fr55_asia,4033,
+,,vivosmart_5,4063,
 ,,instinct_2_asia,4071,
 ,,d2_air_x10,4125,
+,,hrm_pro_plus,4130,
 ,,descent_g1_asia,4132,
+,,edge_explore2,4169,
 ,,tacx_neo_smart,4265,"Neo Smart, Tacx"
 ,,tacx_neo2_smart,4266,"Neo 2 Smart, Tacx"
 ,,tacx_neo2_t_smart,4267,"Neo 2T Smart, Tacx"
@@ -1371,10 +1410,11 @@ garmin_product,uint16,,,
 ,,tacx_flow_smart,4270,"Flow Smart, Tacx"
 ,,tacx_vortex_smart,4271,"Vortex Smart, Tacx"
 ,,tacx_bushido_smart,4272,"Bushido Smart, Tacx"
-,,tacx_genius_smart,4273,"Genius Smart, Tacx "
+,,tacx_genius_smart,4273,"Genius Smart, Tacx"
 ,,tacx_flux_flux_s_smart,4274,"Flux/Flux S Smart, Tacx"
 ,,tacx_flux2_smart,4275,"Flux 2 Smart, Tacx"
 ,,tacx_magnum,4276,"Magnum, Tacx"
+,,tactix7,4135,
 ,,sdm4,10007,SDM4 footpod
 ,,edge_remote,10014,
 ,,tacx_training_app_win,20533,
@@ -1424,7 +1464,7 @@ workout_capabilities,uint32z,,,
 ,,fitness_equipment,0x00000004,
 ,,firstbeat,0x00000008,
 ,,new_leaf,0x00000010,
-,,tcx,0x00000020,For backwards compatibility.  Watch should add missing id fields then clear flag.
+,,tcx,0x00000020,For backwards compatibility. Watch should add missing id fields then clear flag.
 ,,speed,0x00000080,Speed source required for workout step.
 ,,heart_rate,0x00000100,Heart rate source required for workout step.
 ,,distance,0x00000200,Distance source required for workout step.
@@ -3484,8 +3524,8 @@ dive_gas_status,enum,,,
 ,,enabled,1,
 ,,backup_only,2,
 dive_alarm_type,enum,,,
-,,depth,0,
-,,time,1,
+,,depth,0,Alarm when a certain depth is crossed
+,,time,1,Alarm when a certain time has transpired
 dive_backlight_mode,enum,,,
 ,,at_depth,0,
 ,,always_on,1,

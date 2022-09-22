@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.78Release
+ * Profile Version = 21.89Release
  */
 
 declare(strict_types=1);
@@ -122,10 +122,46 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('StandCount', 113, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('AvgLeftPco', 114, FitBaseType::SINT8, 1.0, 0.0, 'mm', false, ProfileType::SINT8)]
 #[Field('AvgRightPco', 115, FitBaseType::SINT8, 1.0, 0.0, 'mm', false, ProfileType::SINT8)]
-#[Field('AvgLeftPowerPhase', 116, FitBaseType::UINT8, 0.7111111, 0.0, 'degrees', false, ProfileType::UINT8)]
-#[Field('AvgLeftPowerPhasePeak', 117, FitBaseType::UINT8, 0.7111111, 0.0, 'degrees', false, ProfileType::UINT8)]
-#[Field('AvgRightPowerPhase', 118, FitBaseType::UINT8, 0.7111111, 0.0, 'degrees', false, ProfileType::UINT8)]
-#[Field('AvgRightPowerPhasePeak', 119, FitBaseType::UINT8, 0.7111111, 0.0, 'degrees', false, ProfileType::UINT8)]
+#[Field(
+    'AvgLeftPowerPhase',
+    116,
+    FitBaseType::UINT8,
+    0.71111109999999999597974920106935314834117889404296875,
+    0.0,
+    'degrees',
+    false,
+    ProfileType::UINT8
+)]
+#[Field(
+    'AvgLeftPowerPhasePeak',
+    117,
+    FitBaseType::UINT8,
+    0.71111109999999999597974920106935314834117889404296875,
+    0.0,
+    'degrees',
+    false,
+    ProfileType::UINT8
+)]
+#[Field(
+    'AvgRightPowerPhase',
+    118,
+    FitBaseType::UINT8,
+    0.71111109999999999597974920106935314834117889404296875,
+    0.0,
+    'degrees',
+    false,
+    ProfileType::UINT8
+)]
+#[Field(
+    'AvgRightPowerPhasePeak',
+    119,
+    FitBaseType::UINT8,
+    0.71111109999999999597974920106935314834117889404296875,
+    0.0,
+    'degrees',
+    false,
+    ProfileType::UINT8
+)]
 #[Field('AvgPowerPosition', 120, FitBaseType::UINT16, 1.0, 0.0, 'watts', false, ProfileType::UINT16)]
 #[Field('MaxPowerPosition', 121, FitBaseType::UINT16, 1.0, 0.0, 'watts', false, ProfileType::UINT16)]
 #[Field('AvgCadencePosition', 122, FitBaseType::UINT8, 1.0, 0.0, 'rpm', false, ProfileType::UINT8)]
@@ -143,6 +179,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('AvgStepLength', 134, FitBaseType::UINT16, 10.0, 0.0, 'mm', false, ProfileType::UINT16)]
 #[Field('TotalAnaerobicTrainingEffect', 137, FitBaseType::UINT8, 10.0, 0.0, '', false, ProfileType::UINT8)]
 #[Field('AvgVam', 139, FitBaseType::UINT16, 1000.0, 0.0, 'm/s', false, ProfileType::UINT16)]
+#[Field('TrainingLoadPeak', 168, FitBaseType::SINT32, 65536.0, 0.0, '', false, ProfileType::SINT32)]
 #[Field('TotalGrit', 181, FitBaseType::FLOAT32, 1.0, 0.0, 'kGrit', false, ProfileType::FLOAT32)]
 #[Field('TotalFlow', 182, FitBaseType::FLOAT32, 1.0, 0.0, 'Flow', false, ProfileType::FLOAT32)]
 #[Field('JumpCount', 183, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
@@ -1121,6 +1158,14 @@ final class SessionMessage extends Message
     public function getAvgVam(): float|array|null
     {
         return $this->getFieldValue(139);
+    }
+
+    /**
+     * Gets the training load peak
+     */
+    public function getTrainingLoadPeak(): float|array|null
+    {
+        return $this->getFieldValue(168);
     }
 
     /**

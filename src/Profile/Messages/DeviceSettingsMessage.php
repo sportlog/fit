@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.78Release
+ * Profile Version = 21.89Release
  */
 
 declare(strict_types=1);
@@ -46,7 +46,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('NumberOfScreens', 94, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
 #[Field('SmartNotificationDisplayOrientation', 95, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYORIENTATION)]
 #[Field('TapInterface', 134, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SWITCH)]
-#[Field('TapSensitivity', 174, FitBaseType::ENUM, 1.0, 1.0, '', false, ProfileType::TAPSENSITIVITY)]
+#[Field('TapSensitivity', 174, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::TAPSENSITIVITY)]
 final class DeviceSettingsMessage extends Message
 {
     /**

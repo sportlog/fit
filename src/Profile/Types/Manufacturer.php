@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.78Release
+ * Profile Version = 21.89Release
  */
 
 declare(strict_types=1);
@@ -157,6 +157,9 @@ final class Manufacturer
     public const KINETIC_SPORTS = 139;
     public const DECATHLON_BYTE = 140;
     public const TQ_SYSTEMS = 141;
+    public const TAG_HEUER = 142;
+    public const KEISER_FITNESS = 143;
+    public const ZWIFT_BYTE = 144;
     public const DEVELOPMENT = 255;
     public const HEALTHANDLIFE = 257;
     public const LEZYNE = 258;
@@ -219,5 +222,7 @@ final class Manufacturer
     public const RGT_CYCLING = 315;
     public const VASA = 316;
     public const RACE_REPUBLIC = 317;
+    public const FAZUA = 318;
+    public const OREKA_TRAINING = 319;
     public const ACTIGRAPHCORP = 5759;
 }

@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.78Release
+ * Profile Version = 21.89Release
  */
 
 declare(strict_types=1);
@@ -41,6 +41,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('AntNetwork', 22, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ANTNETWORK)]
 #[Field('SourceType', 25, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SOURCETYPE)]
 #[Field('ProductName', 27, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('BatteryLevel', 32, FitBaseType::UINT8, 1.0, 0.0, '%', false, ProfileType::UINT8)]
 final class DeviceInfoMessage extends Message
 {
     /**
@@ -193,5 +194,13 @@ final class DeviceInfoMessage extends Message
     public function getProductName(): string|array|null
     {
         return $this->getFieldValue(27);
+    }
+
+    /**
+     * Gets the battery level
+     */
+    public function getBatteryLevel(): int|array|null
+    {
+        return $this->getFieldValue(32);
     }
 }

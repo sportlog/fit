@@ -12,17 +12,10 @@ namespace Sportlog\FIT\Generator;
 
 use DateTime;
 use Exception;
-use Sportlog\FIT\Profile\Field;
-use Sportlog\FIT\Profile\Message;
-use Sportlog\FIT\Profile\ProfileType;
-use Sportlog\FIT\FitBaseType;
-use Nette\PhpGenerator\Literal;
-use Nette\PhpGenerator\PhpFile;
-use Nette\PhpGenerator\ClassType;
-use Nette\PhpGenerator\PsrPrinter;
-use Nette\PhpGenerator\Type;
+use Nette\PhpGenerator\{ClassType, Literal, PhpFile, PsrPrinter, Type};
 use ReflectionClass;
-use Sportlog\FIT\Profile\Types\MesgNum;
+use Sportlog\FIT\FitBaseType;
+use Sportlog\FIT\Profile\{Types\MesgNum, Field, Message, ProfileType};
 
 /**
  * A quick & dirty, hacky, ugly generator for all messages defined
@@ -35,7 +28,7 @@ class MessageGenerator
     /**
      * FIT-SDK Version
      */
-    const FIT_SDK_VERSION = '21.78';
+    const FIT_SDK_VERSION = '21.89';
     const MESSAGE_START = "Mesg newMesg = new Mesg(";
     const FIELD_START = "newMesg.SetField(new Field(";
     const MESSAGE_END = "return newMesg";

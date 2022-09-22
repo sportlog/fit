@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.78Release
+ * Profile Version = 21.89Release
  */
 
 declare(strict_types=1);
@@ -20,5 +20,4 @@ final class Gender
 {
     public const FEMALE = 0;
     public const MALE = 1;
-    public const UNSPECIFIED = 2;
 }

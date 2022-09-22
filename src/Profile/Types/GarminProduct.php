@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.78Release
+ * Profile Version = 21.89Release
  */
 
 declare(strict_types=1);
@@ -370,14 +370,22 @@ final class GarminProduct
     public const VENU2_ASIA = 3950;
     public const FR945_LTE_ASIA = 3978;
     public const APPROACH_S12_ASIA = 3986;
+    public const FR255_MUSIC = 3990;
+    public const FR255_SMALL_MUSIC = 3991;
+    public const FR255 = 3992;
+    public const FR255_SMALL = 3993;
     public const APPROACH_G12_ASIA = 4001;
     public const APPROACH_S42_ASIA = 4002;
     public const DESCENT_G1 = 4005;
     public const VENU2_PLUS_ASIA = 4017;
+    public const FR955 = 4024;
     public const FR55_ASIA = 4033;
+    public const VIVOSMART_5 = 4063;
     public const INSTINCT_2_ASIA = 4071;
     public const D2_AIR_X10 = 4125;
+    public const HRM_PRO_PLUS = 4130;
     public const DESCENT_G1_ASIA = 4132;
+    public const EDGE_EXPLORE2 = 4169;
     public const TACX_NEO_SMART = 4265;
     public const TACX_NEO2_SMART = 4266;
     public const TACX_NEO2_T_SMART = 4267;
@@ -390,6 +398,7 @@ final class GarminProduct
     public const TACX_FLUX_FLUX_S_SMART = 4274;
     public const TACX_FLUX2_SMART = 4275;
     public const TACX_MAGNUM = 4276;
+    public const TACTIX7 = 4135;
     public const SDM4 = 10007;
     public const EDGE_REMOTE = 10014;
     public const TACX_TRAINING_APP_WIN = 20533;

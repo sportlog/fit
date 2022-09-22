@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.78Release
+ * Profile Version = 21.89Release
  */
 
 declare(strict_types=1);
@@ -30,6 +30,7 @@ use Sportlog\FIT\Profile\Messages\ConnectivityMessage;
 use Sportlog\FIT\Profile\Messages\CourseMessage;
 use Sportlog\FIT\Profile\Messages\CoursePointMessage;
 use Sportlog\FIT\Profile\Messages\DeveloperDataIdMessage;
+use Sportlog\FIT\Profile\Messages\DeviceAuxBatteryInfoMessage;
 use Sportlog\FIT\Profile\Messages\DeviceInfoMessage;
 use Sportlog\FIT\Profile\Messages\DeviceSettingsMessage;
 use Sportlog\FIT\Profile\Messages\DiveAlarmMessage;
@@ -150,8 +151,8 @@ class MessageFactory
             MesgNum::RECORD => new RecordMessage(),
             MesgNum::EVENT => new EventMessage(),
             MesgNum::DEVICE_INFO => new DeviceInfoMessage(),
+            MesgNum::DEVICE_AUX_BATTERY_INFO => new DeviceAuxBatteryInfoMessage(),
             MesgNum::TRAINING_FILE => new TrainingFileMessage(),
-            MesgNum::HRV => new HrvMessage(),
             MesgNum::WEATHER_CONDITIONS => new WeatherConditionsMessage(),
             MesgNum::WEATHER_ALERT => new WeatherAlertMessage(),
             MesgNum::GPS_METADATA => new GpsMetadataMessage(),
@@ -172,6 +173,9 @@ class MessageFactory
             MesgNum::VIDEO_CLIP => new VideoClipMessage(),
             MesgNum::SET => new SetMessage(),
             MesgNum::JUMP => new JumpMessage(),
+            MesgNum::CLIMB_PRO => new ClimbProMessage(),
+            MesgNum::FIELD_DESCRIPTION => new FieldDescriptionMessage(),
+            MesgNum::DEVELOPER_DATA_ID => new DeveloperDataIdMessage(),
             MesgNum::COURSE => new CourseMessage(),
             MesgNum::COURSE_POINT => new CoursePointMessage(),
             MesgNum::SEGMENT_ID => new SegmentIdMessage(),
@@ -198,10 +202,8 @@ class MessageFactory
             MesgNum::EXD_SCREEN_CONFIGURATION => new ExdScreenConfigurationMessage(),
             MesgNum::EXD_DATA_FIELD_CONFIGURATION => new ExdDataFieldConfigurationMessage(),
             MesgNum::EXD_DATA_CONCEPT_CONFIGURATION => new ExdDataConceptConfigurationMessage(),
-            MesgNum::FIELD_DESCRIPTION => new FieldDescriptionMessage(),
-            MesgNum::DEVELOPER_DATA_ID => new DeveloperDataIdMessage(),
             MesgNum::DIVE_SUMMARY => new DiveSummaryMessage(),
-            MesgNum::CLIMB_PRO => new ClimbProMessage(),
+            MesgNum::HRV => new HrvMessage(),
             MesgNum::PAD => new PadMessage(),
             default => new InvalidMessage()
         };

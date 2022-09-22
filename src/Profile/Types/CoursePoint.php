@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.78Release
+ * Profile Version = 21.89Release
  */
 
 declare(strict_types=1);
@@ -44,4 +44,31 @@ final class CoursePoint
     public const U_TURN = 23;
     public const SEGMENT_START = 24;
     public const SEGMENT_END = 25;
+    public const CAMPSITE = 27;
+    public const AID_STATION = 28;
+    public const REST_AREA = 29;
+    public const GENERAL_DISTANCE = 30;
+    public const SERVICE = 31;
+    public const ENERGY_GEL = 32;
+    public const SPORTS_DRINK = 33;
+    public const MILE_MARKER = 34;
+    public const CHECKPOINT = 35;
+    public const SHELTER = 36;
+    public const MEETING_SPOT = 37;
+    public const OVERLOOK = 38;
+    public const TOILET = 39;
+    public const SHOWER = 40;
+    public const GEAR = 41;
+    public const SHARP_CURVE = 42;
+    public const STEEP_INCLINE = 43;
+    public const TUNNEL = 44;
+    public const BRIDGE = 45;
+    public const OBSTACLE = 46;
+    public const CROSSING = 47;
+    public const STORE = 48;
+    public const TRANSITION = 49;
+    public const NAVAID = 50;
+    public const TRANSPORT = 51;
+    public const ALERT = 52;
+    public const INFO = 53;
 }

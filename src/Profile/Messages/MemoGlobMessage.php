@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.78Release
+ * Profile Version = 21.89Release
  */
 
 declare(strict_types=1);
@@ -25,8 +25,10 @@ use Sportlog\FIT\Profile\Types\MesgNum;
  */
 #[Field('PartIndex', 250, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
 #[Field('Memo', 0, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-#[Field('MessageNumber', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('MessageIndex', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('MesgNum', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESGNUM)]
+#[Field('ParentIndex', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('FieldNum', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('Data', 4, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
 final class MemoGlobMessage extends Message
 {
     /**
@@ -54,18 +56,34 @@ final class MemoGlobMessage extends Message
     }
 
     /**
-     * Gets the message number
+     * Gets the mesg num
      */
-    public function getMessageNumber(): int|array|null
+    public function getMesgNum(): int|array|null
     {
         return $this->getFieldValue(1);
     }
 
     /**
-     * Gets the message index
+     * Gets the parent index
      */
-    public function getMessageIndex(): int|array|null
+    public function getParentIndex(): int|array|null
     {
         return $this->getFieldValue(2);
+    }
+
+    /**
+     * Gets the field num
+     */
+    public function getFieldNum(): int|array|null
+    {
+        return $this->getFieldValue(3);
+    }
+
+    /**
+     * Gets the data
+     */
+    public function getData(): int|array|null
+    {
+        return $this->getFieldValue(4);
     }
 }

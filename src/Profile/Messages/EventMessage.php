@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.78Release
+ * Profile Version = 21.89Release
  */
 
 declare(strict_types=1);
@@ -38,6 +38,8 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('DeviceIndex', 13, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::DEVICEINDEX)]
 #[Field('RadarThreatLevelMax', 21, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::RADARTHREATLEVELTYPE)]
 #[Field('RadarThreatCount', 22, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('RadarThreatAvgApproachSpeed', 23, FitBaseType::UINT8, 10.0, 0.0, 'm/s', false, ProfileType::UINT8)]
+#[Field('RadarThreatMaxApproachSpeed', 24, FitBaseType::UINT8, 10.0, 0.0, 'm/s', false, ProfileType::UINT8)]
 final class EventMessage extends Message
 {
     /**
@@ -166,5 +168,21 @@ final class EventMessage extends Message
     public function getRadarThreatCount(): int|array|null
     {
         return $this->getFieldValue(22);
+    }
+
+    /**
+     * Gets the radar threat avg approach speed
+     */
+    public function getRadarThreatAvgApproachSpeed(): float|array|null
+    {
+        return $this->getFieldValue(23);
+    }
+
+    /**
+     * Gets the radar threat max approach speed
+     */
+    public function getRadarThreatMaxApproachSpeed(): float|array|null
+    {
+        return $this->getFieldValue(24);
     }
 }

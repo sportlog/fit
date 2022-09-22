@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.78Release
+ * Profile Version = 21.89Release
  */
 
 declare(strict_types=1);
@@ -38,6 +38,10 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('ExerciseName', 11, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('ExerciseWeight', 12, FitBaseType::UINT16, 100.0, 0.0, 'kg', false, ProfileType::UINT16)]
 #[Field('WeightDisplayUnit', 13, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::FITBASEUNIT)]
+#[Field('SecondaryTargetType', 19, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WKTSTEPTARGET)]
+#[Field('SecondaryTargetValue', 20, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('SecondaryCustomTargetValueLow', 21, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('SecondaryCustomTargetValueHigh', 22, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
 final class WorkoutStepMessage extends Message
 {
     /**
@@ -166,5 +170,37 @@ final class WorkoutStepMessage extends Message
     public function getWeightDisplayUnit(): int|array|null
     {
         return $this->getFieldValue(13);
+    }
+
+    /**
+     * Gets the secondary target type
+     */
+    public function getSecondaryTargetType(): int|array|null
+    {
+        return $this->getFieldValue(19);
+    }
+
+    /**
+     * Gets the secondary target value
+     */
+    public function getSecondaryTargetValue(): int|array|null
+    {
+        return $this->getFieldValue(20);
+    }
+
+    /**
+     * Gets the secondary custom target value low
+     */
+    public function getSecondaryCustomTargetValueLow(): int|array|null
+    {
+        return $this->getFieldValue(21);
+    }
+
+    /**
+     * Gets the secondary custom target value high
+     */
+    public function getSecondaryCustomTargetValueHigh(): int|array|null
+    {
+        return $this->getFieldValue(22);
     }
 }
