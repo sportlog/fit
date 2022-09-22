@@ -13,9 +13,7 @@ namespace Sportlog\FIT;
 use Exception;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
-use Sportlog\FIT\Profile\{Message, MessageList, Field, MessageFactory, ProfileType};
-use Sportlog\FIT\Profile\Messages\{DeveloperDataIdMessage, FieldDescriptionMessage};
-use Sportlog\FIT\Profile\Types\MesgNum;
+use Sportlog\FIT\Profile\{Messages\DeveloperDataIdMessage, Messages\FieldDescriptionMessage, Types\MesgNum, Field, Message, MessageFactory, MessageList, ProfileType};
 
 /**
  * A decoder for FIT files.
@@ -46,9 +44,9 @@ class Decoder
     }
 
     /**
-     * Reads the file and returns the decoded messages.
+     * Reads the file/stream and returns the decoded messages.
      *
-     * @param string|resource $file
+     * @param string|resource $fileOrStream
      * @return MessageList
      * @throws Exception 
      */
@@ -160,7 +158,7 @@ class Decoder
 
     private function assignMessageValue(int $fieldNumber, int $baseType, int $size, bool $bigEndian, Message $message, IOReader $reader): void
     {
-        $fitBaseType = FitBaseType::fromType($baseType);
+        $fitBaseType = FitBaseTypeDefinition::fromType($baseType);
         if ($fitBaseType === null) {
             // No valid base type; just read the data to advance the file pointer
             $reader->read($size);

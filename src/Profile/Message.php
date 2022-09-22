@@ -14,11 +14,10 @@ use ArrayIterator;
 use DateTime;
 use Exception;
 use Iterator;
-use Sportlog\FIT\FitBaseTypeDefinition;
 use IteratorAggregate;
 use JsonSerializable;
 use ReflectionClass;
-use Sportlog\FIT\FitException;
+use Sportlog\FIT\{FitBaseTypeDefinition, FitException};
 use Stringable;
 
 /**
@@ -215,6 +214,7 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
 
             $result[$field->getName()] = $value;
         }
+        return $result;
     }
 
     /**
