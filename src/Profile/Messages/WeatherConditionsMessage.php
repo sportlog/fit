@@ -124,7 +124,7 @@ final class WeatherConditionsMessage extends Message
     /**
      * Gets the location
      */
-    public function getLocation(): string|array|null
+    public function getLocation(): string|null
     {
         return $this->getFieldValue(8);
     }

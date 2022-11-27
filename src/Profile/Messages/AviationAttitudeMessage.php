@@ -26,41 +26,14 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
 #[Field('TimestampMs', 0, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
 #[Field('SystemTime', 1, FitBaseType::UINT32, 1.0, 0.0, 'ms', false, ProfileType::UINT32)]
-#[Field(
-    'Pitch',
-    2,
-    FitBaseType::SINT16,
-    10430.379999999999199644662439823150634765625,
-    0.0,
-    'radians',
-    false,
-    ProfileType::SINT16
-)]
-#[Field(
-    'Roll',
-    3,
-    FitBaseType::SINT16,
-    10430.379999999999199644662439823150634765625,
-    0.0,
-    'radians',
-    false,
-    ProfileType::SINT16
-)]
+#[Field('Pitch', 2, FitBaseType::SINT16, 10430.38, 0.0, 'radians', false, ProfileType::SINT16)]
+#[Field('Roll', 3, FitBaseType::SINT16, 10430.38, 0.0, 'radians', false, ProfileType::SINT16)]
 #[Field('AccelLateral', 4, FitBaseType::SINT16, 100.0, 0.0, 'm/s^2', false, ProfileType::SINT16)]
 #[Field('AccelNormal', 5, FitBaseType::SINT16, 100.0, 0.0, 'm/s^2', false, ProfileType::SINT16)]
 #[Field('TurnRate', 6, FitBaseType::SINT16, 1024.0, 0.0, 'radians/second', false, ProfileType::SINT16)]
 #[Field('Stage', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ATTITUDESTAGE)]
 #[Field('AttitudeStageComplete', 8, FitBaseType::UINT8, 1.0, 0.0, '%', false, ProfileType::UINT8)]
-#[Field(
-    'Track',
-    9,
-    FitBaseType::UINT16,
-    10430.379999999999199644662439823150634765625,
-    0.0,
-    'radians',
-    false,
-    ProfileType::UINT16
-)]
+#[Field('Track', 9, FitBaseType::UINT16, 10430.38, 0.0, 'radians', false, ProfileType::UINT16)]
 #[Field('Validity', 10, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::ATTITUDEVALIDITY)]
 final class AviationAttitudeMessage extends Message
 {

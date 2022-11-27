@@ -55,7 +55,7 @@ final class NmeaSentenceMessage extends Message
     /**
      * Gets the sentence
      */
-    public function getSentence(): string|array|null
+    public function getSentence(): string|null
     {
         return $this->getFieldValue(1);
     }

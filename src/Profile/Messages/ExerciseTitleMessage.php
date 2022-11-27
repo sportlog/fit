@@ -64,7 +64,7 @@ final class ExerciseTitleMessage extends Message
     /**
      * Gets the wkt step name
      */
-    public function getWktStepName(): string|array|null
+    public function getWktStepName(): string|null
     {
         return $this->getFieldValue(2);
     }

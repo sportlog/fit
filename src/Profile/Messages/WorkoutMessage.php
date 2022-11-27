@@ -67,7 +67,7 @@ final class WorkoutMessage extends Message
     /**
      * Gets the wkt name
      */
-    public function getWktName(): string|array|null
+    public function getWktName(): string|null
     {
         return $this->getFieldValue(8);
     }

@@ -53,7 +53,7 @@ final class SegmentFileMessage extends Message
     /**
      * Gets the file uuid
      */
-    public function getFileUuid(): string|array|null
+    public function getFileUuid(): string|null
     {
         return $this->getFieldValue(1);
     }
@@ -101,7 +101,7 @@ final class SegmentFileMessage extends Message
     /**
      * Gets the leader activity id string
      */
-    public function getLeaderActivityIdString(): string|array|null
+    public function getLeaderActivityIdString(): string|null
     {
         return $this->getFieldValue(10);
     }

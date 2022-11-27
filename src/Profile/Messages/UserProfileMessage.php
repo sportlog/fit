@@ -73,7 +73,7 @@ final class UserProfileMessage extends Message
     /**
      * Gets the friendly name
      */
-    public function getFriendlyName(): string|array|null
+    public function getFriendlyName(): string|null
     {
         return $this->getFieldValue(0);
     }

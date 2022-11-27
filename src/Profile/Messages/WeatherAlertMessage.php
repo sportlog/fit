@@ -50,7 +50,7 @@ final class WeatherAlertMessage extends Message
     /**
      * Gets the report id
      */
-    public function getReportId(): string|array|null
+    public function getReportId(): string|null
     {
         return $this->getFieldValue(0);
     }

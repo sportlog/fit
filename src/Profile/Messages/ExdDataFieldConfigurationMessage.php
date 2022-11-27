@@ -82,7 +82,7 @@ final class ExdDataFieldConfigurationMessage extends Message
     /**
      * Gets the title
      */
-    public function getTitle(): string|array|null
+    public function getTitle(): string|null
     {
         return $this->getFieldValue(5);
     }

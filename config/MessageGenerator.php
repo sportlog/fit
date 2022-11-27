@@ -256,7 +256,7 @@ class MessageGenerator
                 $phpTypes = [];
                 $phpProfileType = $this->getPhpTypeFromProfileType($profileType, $scale, (float)$offset);
                 $phpTypes[] = $phpProfileType;
-                if ($phpProfileType !== Type::MIXED && $phpProfileType !== DateTime::class) {
+                if ($phpProfileType !== Type::MIXED && $phpProfileType !== DateTime::class && $phpProfileType !== Type::STRING) {
                     $phpTypes[] = Type::ARRAY;
                 }
                 if ($phpProfileType !== Type::MIXED) {

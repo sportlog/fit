@@ -66,7 +66,7 @@ final class FileCapabilitiesMessage extends Message
     /**
      * Gets the directory
      */
-    public function getDirectory(): string|array|null
+    public function getDirectory(): string|null
     {
         return $this->getFieldValue(2);
     }

@@ -51,7 +51,7 @@ final class SegmentLeaderboardEntryMessage extends Message
     /**
      * Gets the name
      */
-    public function getName(): string|array|null
+    public function getName(): string|null
     {
         return $this->getFieldValue(0);
     }
@@ -91,7 +91,7 @@ final class SegmentLeaderboardEntryMessage extends Message
     /**
      * Gets the activity id string
      */
-    public function getActivityIdString(): string|array|null
+    public function getActivityIdString(): string|null
     {
         return $this->getFieldValue(5);
     }

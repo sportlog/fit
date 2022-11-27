@@ -63,7 +63,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the wkt step name
      */
-    public function getWktStepName(): string|array|null
+    public function getWktStepName(): string|null
     {
         return $this->getFieldValue(0);
     }
@@ -127,7 +127,7 @@ final class WorkoutStepMessage extends Message
     /**
      * Gets the notes
      */
-    public function getNotes(): string|array|null
+    public function getNotes(): string|null
     {
         return $this->getFieldValue(8);
     }

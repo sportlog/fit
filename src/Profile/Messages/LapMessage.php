@@ -109,46 +109,10 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('StandCount', 99, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('AvgLeftPco', 100, FitBaseType::SINT8, 1.0, 0.0, 'mm', false, ProfileType::SINT8)]
 #[Field('AvgRightPco', 101, FitBaseType::SINT8, 1.0, 0.0, 'mm', false, ProfileType::SINT8)]
-#[Field(
-    'AvgLeftPowerPhase',
-    102,
-    FitBaseType::UINT8,
-    0.71111109999999999597974920106935314834117889404296875,
-    0.0,
-    'degrees',
-    false,
-    ProfileType::UINT8
-)]
-#[Field(
-    'AvgLeftPowerPhasePeak',
-    103,
-    FitBaseType::UINT8,
-    0.71111109999999999597974920106935314834117889404296875,
-    0.0,
-    'degrees',
-    false,
-    ProfileType::UINT8
-)]
-#[Field(
-    'AvgRightPowerPhase',
-    104,
-    FitBaseType::UINT8,
-    0.71111109999999999597974920106935314834117889404296875,
-    0.0,
-    'degrees',
-    false,
-    ProfileType::UINT8
-)]
-#[Field(
-    'AvgRightPowerPhasePeak',
-    105,
-    FitBaseType::UINT8,
-    0.71111109999999999597974920106935314834117889404296875,
-    0.0,
-    'degrees',
-    false,
-    ProfileType::UINT8
-)]
+#[Field('AvgLeftPowerPhase', 102, FitBaseType::UINT8, 0.7111111, 0.0, 'degrees', false, ProfileType::UINT8)]
+#[Field('AvgLeftPowerPhasePeak', 103, FitBaseType::UINT8, 0.7111111, 0.0, 'degrees', false, ProfileType::UINT8)]
+#[Field('AvgRightPowerPhase', 104, FitBaseType::UINT8, 0.7111111, 0.0, 'degrees', false, ProfileType::UINT8)]
+#[Field('AvgRightPowerPhasePeak', 105, FitBaseType::UINT8, 0.7111111, 0.0, 'degrees', false, ProfileType::UINT8)]
 #[Field('AvgPowerPosition', 106, FitBaseType::UINT16, 1.0, 0.0, 'watts', false, ProfileType::UINT16)]
 #[Field('MaxPowerPosition', 107, FitBaseType::UINT16, 1.0, 0.0, 'watts', false, ProfileType::UINT16)]
 #[Field('AvgCadencePosition', 108, FitBaseType::UINT8, 1.0, 0.0, 'rpm', false, ProfileType::UINT8)]

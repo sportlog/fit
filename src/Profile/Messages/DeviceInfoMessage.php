@@ -151,7 +151,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the descriptor
      */
-    public function getDescriptor(): string|array|null
+    public function getDescriptor(): string|null
     {
         return $this->getFieldValue(19);
     }
@@ -191,7 +191,7 @@ final class DeviceInfoMessage extends Message
     /**
      * Gets the product name
      */
-    public function getProductName(): string|array|null
+    public function getProductName(): string|null
     {
         return $this->getFieldValue(27);
     }

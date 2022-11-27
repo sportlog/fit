@@ -91,7 +91,7 @@ final class FileIdMessage extends Message
     /**
      * Gets the product name
      */
-    public function getProductName(): string|array|null
+    public function getProductName(): string|null
     {
         return $this->getFieldValue(8);
     }

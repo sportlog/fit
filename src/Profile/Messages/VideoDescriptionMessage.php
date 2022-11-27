@@ -55,7 +55,7 @@ final class VideoDescriptionMessage extends Message
     /**
      * Gets the text
      */
-    public function getText(): string|array|null
+    public function getText(): string|null
     {
         return $this->getFieldValue(1);
     }

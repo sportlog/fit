@@ -45,7 +45,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the name
      */
-    public function getName(): string|array|null
+    public function getName(): string|null
     {
         return $this->getFieldValue(0);
     }
@@ -53,7 +53,7 @@ final class SegmentIdMessage extends Message
     /**
      * Gets the uuid
      */
-    public function getUuid(): string|array|null
+    public function getUuid(): string|null
     {
         return $this->getFieldValue(1);
     }

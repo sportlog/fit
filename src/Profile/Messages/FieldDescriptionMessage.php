@@ -74,7 +74,7 @@ final class FieldDescriptionMessage extends Message
     /**
      * Gets the field name
      */
-    public function getFieldName(): string|array|null
+    public function getFieldName(): string|null
     {
         return $this->getFieldValue(3);
     }
@@ -90,7 +90,7 @@ final class FieldDescriptionMessage extends Message
     /**
      * Gets the components
      */
-    public function getComponents(): string|array|null
+    public function getComponents(): string|null
     {
         return $this->getFieldValue(5);
     }
@@ -114,7 +114,7 @@ final class FieldDescriptionMessage extends Message
     /**
      * Gets the units
      */
-    public function getUnits(): string|array|null
+    public function getUnits(): string|null
     {
         return $this->getFieldValue(8);
     }
@@ -122,7 +122,7 @@ final class FieldDescriptionMessage extends Message
     /**
      * Gets the bits
      */
-    public function getBits(): string|array|null
+    public function getBits(): string|null
     {
         return $this->getFieldValue(9);
     }
@@ -130,7 +130,7 @@ final class FieldDescriptionMessage extends Message
     /**
      * Gets the accumulate
      */
-    public function getAccumulate(): string|array|null
+    public function getAccumulate(): string|null
     {
         return $this->getFieldValue(10);
     }

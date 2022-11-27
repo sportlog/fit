@@ -65,7 +65,7 @@ final class CameraEventMessage extends Message
     /**
      * Gets the camera file uuid
      */
-    public function getCameraFileUuid(): string|array|null
+    public function getCameraFileUuid(): string|null
     {
         return $this->getFieldValue(2);
     }

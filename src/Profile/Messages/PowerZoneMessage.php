@@ -55,7 +55,7 @@ final class PowerZoneMessage extends Message
     /**
      * Gets the name
      */
-    public function getName(): string|array|null
+    public function getName(): string|null
     {
         return $this->getFieldValue(2);
     }

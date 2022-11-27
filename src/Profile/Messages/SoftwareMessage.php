@@ -55,7 +55,7 @@ final class SoftwareMessage extends Message
     /**
      * Gets the part number
      */
-    public function getPartNumber(): string|array|null
+    public function getPartNumber(): string|null
     {
         return $this->getFieldValue(5);
     }
