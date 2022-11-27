@@ -224,5 +224,7 @@ final class Manufacturer
     public const RACE_REPUBLIC = 317;
     public const FAZUA = 318;
     public const OREKA_TRAINING = 319;
+    public const ISEC = 320;
+    public const LULULEMON_STUDIO = 321;
     public const ACTIGRAPHCORP = 5759;
 }

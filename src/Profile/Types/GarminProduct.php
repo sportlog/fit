@@ -225,6 +225,7 @@ final class GarminProduct
     public const FORETREX_601_701 = 2769;
     public const VIVO_MOVE_HR = 2772;
     public const EDGE_1030 = 2713;
+    public const FR35_SEA = 2727;
     public const VECTOR_3 = 2787;
     public const FENIX5_ASIA = 2796;
     public const FENIX5S_ASIA = 2797;
@@ -351,6 +352,7 @@ final class GarminProduct
     public const APPROACH_S12 = 3823;
     public const ENDURO_ASIA = 3872;
     public const VENUSQ_ASIA = 3837;
+    public const EDGE_1040 = 3843;
     public const MARQ_GOLFER_ASIA = 3850;
     public const VENU2_PLUS = 3851;
     public const FR55 = 3869;
@@ -369,6 +371,7 @@ final class GarminProduct
     public const VENU2S_ASIA = 3949;
     public const VENU2_ASIA = 3950;
     public const FR945_LTE_ASIA = 3978;
+    public const VIVO_MOVE_SPORT = 3982;
     public const APPROACH_S12_ASIA = 3986;
     public const FR255_MUSIC = 3990;
     public const FR255_SMALL_MUSIC = 3991;
@@ -382,9 +385,12 @@ final class GarminProduct
     public const FR55_ASIA = 4033;
     public const VIVOSMART_5 = 4063;
     public const INSTINCT_2_ASIA = 4071;
+    public const VENUSQ2 = 4115;
+    public const VENUSQ2MUSIC = 4116;
     public const D2_AIR_X10 = 4125;
     public const HRM_PRO_PLUS = 4130;
     public const DESCENT_G1_ASIA = 4132;
+    public const TACTIX7 = 4135;
     public const EDGE_EXPLORE2 = 4169;
     public const TACX_NEO_SMART = 4265;
     public const TACX_NEO2_SMART = 4266;
@@ -398,7 +404,8 @@ final class GarminProduct
     public const TACX_FLUX_FLUX_S_SMART = 4274;
     public const TACX_FLUX2_SMART = 4275;
     public const TACX_MAGNUM = 4276;
-    public const TACTIX7 = 4135;
+    public const EDGE_1040_ASIA = 4305;
+    public const ENDURO2 = 4341;
     public const SDM4 = 10007;
     public const EDGE_REMOTE = 10014;
     public const TACX_TRAINING_APP_WIN = 20533;
