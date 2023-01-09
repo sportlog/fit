@@ -139,7 +139,7 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
                 // If scale and/or offset are set, calculate the value.
                 // This changes any values of type int to float.
                 if (is_array($value)) {
-                    $value = $this->mapArray($value, fn ($val) => $field->calculateValue($val));
+                    $value = array_map(fn ($val) => $field->calculateValue($val), $value);
                 } else {
                     $value = $field->calculateValue($value);
                 }
@@ -237,20 +237,11 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
         return join(',', $result);
     }
 
-    private function mapArray(array $values, callable $classifier): array
-    {
-        $mapped = [];
-        foreach ($values as $value) {
-            $mapped[] = $classifier($value);
-        }
-        return $mapped;
-    }
-
     private function convertValueToFieldType(Field $field, mixed $value): mixed
     {
         switch ($field->getProfileType()) {
             case ProfileType::BOOL:
-                return is_array($value) ? $this->mapArray($value, fn ($val) => $val !== 0) : $value !== 0;
+                return is_array($value) ? array_map(fn ($val) => $val !== 0, $value) : $value !== 0;
 
             case ProfileType::LOCALDATETIME:
             case ProfileType::DATETIME:
