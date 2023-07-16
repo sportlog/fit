@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.89Release
+ * Profile Version = 21.115Release
  */
 
 declare(strict_types=1);
@@ -36,6 +36,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('MetabolicAge', 10, FitBaseType::UINT8, 1.0, 0.0, 'years', false, ProfileType::UINT8)]
 #[Field('VisceralFatRating', 11, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
 #[Field('UserProfileIndex', 12, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('Bmi', 13, FitBaseType::UINT16, 10.0, 0.0, 'kg/m^2', false, ProfileType::UINT16)]
 final class WeightScaleMessage extends Message
 {
     /**
@@ -148,5 +149,13 @@ final class WeightScaleMessage extends Message
     public function getUserProfileIndex(): int|array|null
     {
         return $this->getFieldValue(12);
+    }
+
+    /**
+     * Gets the bmi
+     */
+    public function getBmi(): float|array|null
+    {
+        return $this->getFieldValue(13);
     }
 }

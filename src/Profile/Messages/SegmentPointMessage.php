@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.89Release
+ * Profile Version = 21.115Release
  */
 
 declare(strict_types=1);
@@ -29,6 +29,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('Distance', 3, FitBaseType::UINT32, 100.0, 0.0, 'm', false, ProfileType::UINT32)]
 #[Field('Altitude', 4, FitBaseType::UINT16, 5.0, 500.0, 'm', false, ProfileType::UINT16)]
 #[Field('LeaderTime', 5, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
+#[Field('EnhancedAltitude', 6, FitBaseType::UINT32, 5.0, 500.0, 'm', false, ProfileType::UINT32)]
 final class SegmentPointMessage extends Message
 {
     /**
@@ -85,5 +86,13 @@ final class SegmentPointMessage extends Message
     public function getLeaderTime(): float|array|null
     {
         return $this->getFieldValue(5);
+    }
+
+    /**
+     * Gets the enhanced altitude
+     */
+    public function getEnhancedAltitude(): float|array|null
+    {
+        return $this->getFieldValue(6);
     }
 }

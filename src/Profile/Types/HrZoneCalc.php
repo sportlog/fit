@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.89Release
+ * Profile Version = 21.115Release
  */
 
 declare(strict_types=1);
@@ -21,4 +21,5 @@ final class HrZoneCalc
     public const CUSTOM = 0;
     public const PERCENT_MAX_HR = 1;
     public const PERCENT_HRR = 2;
+    public const PERCENT_LTHR = 3;
 }

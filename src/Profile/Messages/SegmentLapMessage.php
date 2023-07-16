@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.89Release
+ * Profile Version = 21.115Release
  */
 
 declare(strict_types=1);
@@ -115,6 +115,9 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('AvgFlow', 87, FitBaseType::FLOAT32, 1.0, 0.0, 'Flow', false, ProfileType::FLOAT32)]
 #[Field('TotalFractionalAscent', 89, FitBaseType::UINT8, 100.0, 0.0, 'm', false, ProfileType::UINT8)]
 #[Field('TotalFractionalDescent', 90, FitBaseType::UINT8, 100.0, 0.0, 'm', false, ProfileType::UINT8)]
+#[Field('EnhancedAvgAltitude', 91, FitBaseType::UINT32, 5.0, 500.0, 'm', false, ProfileType::UINT32)]
+#[Field('EnhancedMaxAltitude', 92, FitBaseType::UINT32, 5.0, 500.0, 'm', false, ProfileType::UINT32)]
+#[Field('EnhancedMinAltitude', 93, FitBaseType::UINT32, 5.0, 500.0, 'm', false, ProfileType::UINT32)]
 final class SegmentLapMessage extends Message
 {
     /**
@@ -859,5 +862,29 @@ final class SegmentLapMessage extends Message
     public function getTotalFractionalDescent(): float|array|null
     {
         return $this->getFieldValue(90);
+    }
+
+    /**
+     * Gets the enhanced avg altitude
+     */
+    public function getEnhancedAvgAltitude(): float|array|null
+    {
+        return $this->getFieldValue(91);
+    }
+
+    /**
+     * Gets the enhanced max altitude
+     */
+    public function getEnhancedMaxAltitude(): float|array|null
+    {
+        return $this->getFieldValue(92);
+    }
+
+    /**
+     * Gets the enhanced min altitude
+     */
+    public function getEnhancedMinAltitude(): float|array|null
+    {
+        return $this->getFieldValue(93);
     }
 }

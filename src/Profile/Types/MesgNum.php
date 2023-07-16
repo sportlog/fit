@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.89Release
+ * Profile Version = 21.115Release
  */
 
 declare(strict_types=1);
@@ -97,16 +97,30 @@ final class MesgNum
     public const MAGNETOMETER_DATA = 208;
     public const BAROMETER_DATA = 209;
     public const ONE_D_SENSOR_CALIBRATION = 210;
+    public const MONITORING_HR_DATA = 211;
+    public const TIME_IN_ZONE = 216;
     public const SET = 225;
     public const STRESS_LEVEL = 227;
+    public const MAX_MET_DATA = 229;
     public const DIVE_SETTINGS = 258;
     public const DIVE_GAS = 259;
     public const DIVE_ALARM = 262;
     public const EXERCISE_TITLE = 264;
     public const DIVE_SUMMARY = 268;
+    public const SPO2_DATA = 269;
+    public const SLEEP_LEVEL = 275;
     public const JUMP = 285;
+    public const BEAT_INTERVALS = 290;
+    public const RESPIRATION_RATE = 297;
+    public const SPLIT = 312;
     public const CLIMB_PRO = 317;
+    public const TANK_UPDATE = 319;
+    public const TANK_SUMMARY = 323;
+    public const SLEEP_ASSESSMENT = 346;
+    public const HRV_STATUS_SUMMARY = 370;
+    public const HRV_VALUE = 371;
     public const DEVICE_AUX_BATTERY_INFO = 375;
+    public const DIVE_APNEA_ALARM = 393;
     public const MFG_RANGE_MIN = 65280;
     public const MFG_RANGE_MAX = 65534;
 }

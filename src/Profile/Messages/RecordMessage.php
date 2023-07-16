@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.89Release
+ * Profile Version = 21.115Release
  */
 
 declare(strict_types=1);
@@ -82,6 +82,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('VerticalRatio', 83, FitBaseType::UINT16, 100.0, 0.0, 'percent', false, ProfileType::UINT16)]
 #[Field('StanceTimeBalance', 84, FitBaseType::UINT16, 100.0, 0.0, 'percent', false, ProfileType::UINT16)]
 #[Field('StepLength', 85, FitBaseType::UINT16, 10.0, 0.0, 'mm', false, ProfileType::UINT16)]
+#[Field('CycleLength16', 87, FitBaseType::UINT16, 100.0, 0.0, 'm', false, ProfileType::UINT16)]
 #[Field('AbsolutePressure', 91, FitBaseType::UINT32, 1.0, 0.0, 'Pa', false, ProfileType::UINT32)]
 #[Field('Depth', 92, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32)]
 #[Field('NextStopDepth', 93, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32)]
@@ -90,12 +91,21 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('NdlTime', 96, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::UINT32)]
 #[Field('CnsLoad', 97, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
 #[Field('N2Load', 98, FitBaseType::UINT16, 1.0, 0.0, 'percent', false, ProfileType::UINT16)]
+#[Field('RespirationRate', 99, FitBaseType::UINT8, 1.0, 0.0, 's', false, ProfileType::UINT8)]
+#[Field('EnhancedRespirationRate', 108, FitBaseType::UINT16, 100.0, 0.0, 'Breaths/min', false, ProfileType::UINT16)]
 #[Field('Grit', 114, FitBaseType::FLOAT32, 1.0, 0.0, '', false, ProfileType::FLOAT32)]
 #[Field('Flow', 115, FitBaseType::FLOAT32, 1.0, 0.0, '', false, ProfileType::FLOAT32)]
+#[Field('CurrentStress', 116, FitBaseType::UINT16, 100.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('EbikeTravelRange', 117, FitBaseType::UINT16, 1.0, 0.0, 'km', false, ProfileType::UINT16)]
 #[Field('EbikeBatteryLevel', 118, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
 #[Field('EbikeAssistMode', 119, FitBaseType::UINT8, 1.0, 0.0, 'depends on sensor', false, ProfileType::UINT8)]
 #[Field('EbikeAssistLevelPercent', 120, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
+#[Field('AirTimeRemaining', 123, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::UINT32)]
+#[Field('PressureSac', 124, FitBaseType::UINT16, 100.0, 0.0, 'bar/min', false, ProfileType::UINT16)]
+#[Field('VolumeSac', 125, FitBaseType::UINT16, 100.0, 0.0, 'L/min', false, ProfileType::UINT16)]
+#[Field('Rmv', 126, FitBaseType::UINT16, 100.0, 0.0, 'L/min', false, ProfileType::UINT16)]
+#[Field('AscentRate', 127, FitBaseType::SINT32, 1000.0, 0.0, 'm/s', false, ProfileType::SINT32)]
+#[Field('Po2', 129, FitBaseType::UINT8, 100.0, 0.0, 'percent', false, ProfileType::UINT8)]
 #[Field('CoreTemperature', 139, FitBaseType::UINT16, 100.0, 0.0, 'C', false, ProfileType::UINT16)]
 final class RecordMessage extends Message
 {
@@ -580,6 +590,14 @@ final class RecordMessage extends Message
     }
 
     /**
+     * Gets the cycle length16
+     */
+    public function getCycleLength16(): float|array|null
+    {
+        return $this->getFieldValue(87);
+    }
+
+    /**
      * Gets the absolute pressure
      */
     public function getAbsolutePressure(): int|array|null
@@ -644,6 +662,22 @@ final class RecordMessage extends Message
     }
 
     /**
+     * Gets the respiration rate
+     */
+    public function getRespirationRate(): int|array|null
+    {
+        return $this->getFieldValue(99);
+    }
+
+    /**
+     * Gets the enhanced respiration rate
+     */
+    public function getEnhancedRespirationRate(): float|array|null
+    {
+        return $this->getFieldValue(108);
+    }
+
+    /**
      * Gets the grit
      */
     public function getGrit(): float|array|null
@@ -657,6 +691,14 @@ final class RecordMessage extends Message
     public function getFlow(): float|array|null
     {
         return $this->getFieldValue(115);
+    }
+
+    /**
+     * Gets the current stress
+     */
+    public function getCurrentStress(): float|array|null
+    {
+        return $this->getFieldValue(116);
     }
 
     /**
@@ -689,6 +731,54 @@ final class RecordMessage extends Message
     public function getEbikeAssistLevelPercent(): int|array|null
     {
         return $this->getFieldValue(120);
+    }
+
+    /**
+     * Gets the air time remaining
+     */
+    public function getAirTimeRemaining(): int|array|null
+    {
+        return $this->getFieldValue(123);
+    }
+
+    /**
+     * Gets the pressure sac
+     */
+    public function getPressureSac(): float|array|null
+    {
+        return $this->getFieldValue(124);
+    }
+
+    /**
+     * Gets the volume sac
+     */
+    public function getVolumeSac(): float|array|null
+    {
+        return $this->getFieldValue(125);
+    }
+
+    /**
+     * Gets the rmv
+     */
+    public function getRmv(): float|array|null
+    {
+        return $this->getFieldValue(126);
+    }
+
+    /**
+     * Gets the ascent rate
+     */
+    public function getAscentRate(): float|array|null
+    {
+        return $this->getFieldValue(127);
+    }
+
+    /**
+     * Gets the po2
+     */
+    public function getPo2(): float|array|null
+    {
+        return $this->getFieldValue(129);
     }
 
     /**

@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.89Release
+ * Profile Version = 21.115Release
  */
 
 declare(strict_types=1);
@@ -36,6 +36,11 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('O2Toxicity', 9, FitBaseType::UINT16, 1.0, 0.0, 'OTUs', false, ProfileType::UINT16)]
 #[Field('DiveNumber', 10, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
 #[Field('BottomTime', 11, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
+#[Field('AvgPressureSac', 12, FitBaseType::UINT16, 100.0, 0.0, 'bar/min', false, ProfileType::UINT16)]
+#[Field('AvgVolumeSac', 13, FitBaseType::UINT16, 100.0, 0.0, 'L/min', false, ProfileType::UINT16)]
+#[Field('AvgRmv', 14, FitBaseType::UINT16, 100.0, 0.0, 'L/min', false, ProfileType::UINT16)]
+#[Field('DescentTime', 15, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
+#[Field('AscentTime', 16, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
 #[Field('AvgAscentRate', 17, FitBaseType::SINT32, 1000.0, 0.0, 'm/s', false, ProfileType::SINT32)]
 #[Field('AvgDescentRate', 22, FitBaseType::UINT32, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
 #[Field('MaxAscentRate', 23, FitBaseType::UINT32, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
@@ -153,6 +158,46 @@ final class DiveSummaryMessage extends Message
     public function getBottomTime(): float|array|null
     {
         return $this->getFieldValue(11);
+    }
+
+    /**
+     * Gets the avg pressure sac
+     */
+    public function getAvgPressureSac(): float|array|null
+    {
+        return $this->getFieldValue(12);
+    }
+
+    /**
+     * Gets the avg volume sac
+     */
+    public function getAvgVolumeSac(): float|array|null
+    {
+        return $this->getFieldValue(13);
+    }
+
+    /**
+     * Gets the avg rmv
+     */
+    public function getAvgRmv(): float|array|null
+    {
+        return $this->getFieldValue(14);
+    }
+
+    /**
+     * Gets the descent time
+     */
+    public function getDescentTime(): float|array|null
+    {
+        return $this->getFieldValue(15);
+    }
+
+    /**
+     * Gets the ascent time
+     */
+    public function getAscentTime(): float|array|null
+    {
+        return $this->getFieldValue(16);
     }
 
     /**

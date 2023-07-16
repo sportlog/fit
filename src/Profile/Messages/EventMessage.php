@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.89Release
+ * Profile Version = 21.115Release
  */
 
 declare(strict_types=1);
@@ -36,6 +36,8 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('RearGearNum', 11, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
 #[Field('RearGear', 12, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
 #[Field('DeviceIndex', 13, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::DEVICEINDEX)]
+#[Field('ActivityType', 14, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ACTIVITYTYPE)]
+#[Field('StartTimestamp', 15, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
 #[Field('RadarThreatLevelMax', 21, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::RADARTHREATLEVELTYPE)]
 #[Field('RadarThreatCount', 22, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
 #[Field('RadarThreatAvgApproachSpeed', 23, FitBaseType::UINT8, 10.0, 0.0, 'm/s', false, ProfileType::UINT8)]
@@ -152,6 +154,22 @@ final class EventMessage extends Message
     public function getDeviceIndex(): int|array|null
     {
         return $this->getFieldValue(13);
+    }
+
+    /**
+     * Gets the activity type
+     */
+    public function getActivityType(): int|array|null
+    {
+        return $this->getFieldValue(14);
+    }
+
+    /**
+     * Gets the start timestamp
+     */
+    public function getStartTimestamp(): DateTime|null
+    {
+        return $this->getFieldValue(15);
     }
 
     /**

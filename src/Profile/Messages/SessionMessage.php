@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.89Release
+ * Profile Version = 21.115Release
  */
 
 declare(strict_types=1);
@@ -62,6 +62,8 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('TrainingStressScore', 35, FitBaseType::UINT16, 10.0, 0.0, 'tss', false, ProfileType::UINT16)]
 #[Field('IntensityFactor', 36, FitBaseType::UINT16, 1000.0, 0.0, 'if', false, ProfileType::UINT16)]
 #[Field('LeftRightBalance', 37, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::LEFTRIGHTBALANCE100)]
+#[Field('EndPositionLat', 38, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32)]
+#[Field('EndPositionLong', 39, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32)]
 #[Field('AvgStrokeCount', 41, FitBaseType::UINT32, 10.0, 0.0, 'strokes/lap', false, ProfileType::UINT32)]
 #[Field('AvgStrokeDistance', 42, FitBaseType::UINT16, 100.0, 0.0, 'm', false, ProfileType::UINT16)]
 #[Field('SwimStroke', 43, FitBaseType::ENUM, 1.0, 0.0, 'swim_stroke', false, ProfileType::SWIMSTROKE)]
@@ -117,6 +119,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('AvgLeftPedalSmoothness', 103, FitBaseType::UINT8, 2.0, 0.0, 'percent', false, ProfileType::UINT8)]
 #[Field('AvgRightPedalSmoothness', 104, FitBaseType::UINT8, 2.0, 0.0, 'percent', false, ProfileType::UINT8)]
 #[Field('AvgCombinedPedalSmoothness', 105, FitBaseType::UINT8, 2.0, 0.0, 'percent', false, ProfileType::UINT8)]
+#[Field('SportProfileName', 110, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
 #[Field('SportIndex', 111, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
 #[Field('TimeStanding', 112, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
 #[Field('StandCount', 113, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
@@ -143,12 +146,32 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('AvgStepLength', 134, FitBaseType::UINT16, 10.0, 0.0, 'mm', false, ProfileType::UINT16)]
 #[Field('TotalAnaerobicTrainingEffect', 137, FitBaseType::UINT8, 10.0, 0.0, '', false, ProfileType::UINT8)]
 #[Field('AvgVam', 139, FitBaseType::UINT16, 1000.0, 0.0, 'm/s', false, ProfileType::UINT16)]
+#[Field('AvgDepth', 140, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32)]
+#[Field('MaxDepth', 141, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32)]
+#[Field('SurfaceInterval', 142, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::UINT32)]
+#[Field('StartCns', 143, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
+#[Field('EndCns', 144, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
+#[Field('StartN2', 145, FitBaseType::UINT16, 1.0, 0.0, 'percent', false, ProfileType::UINT16)]
+#[Field('EndN2', 146, FitBaseType::UINT16, 1.0, 0.0, 'percent', false, ProfileType::UINT16)]
+#[Field('AvgRespirationRate', 147, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('MaxRespirationRate', 148, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('MinRespirationRate', 149, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('MinTemperature', 150, FitBaseType::SINT8, 1.0, 0.0, 'C', false, ProfileType::SINT8)]
+#[Field('O2Toxicity', 155, FitBaseType::UINT16, 1.0, 0.0, 'OTUs', false, ProfileType::UINT16)]
+#[Field('DiveNumber', 156, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
 #[Field('TrainingLoadPeak', 168, FitBaseType::SINT32, 65536.0, 0.0, '', false, ProfileType::SINT32)]
+#[Field('EnhancedAvgRespirationRate', 169, FitBaseType::UINT16, 100.0, 0.0, 'Breaths/min', false, ProfileType::UINT16)]
+#[Field('EnhancedMaxRespirationRate', 170, FitBaseType::UINT16, 100.0, 0.0, 'Breaths/min', false, ProfileType::UINT16)]
+#[Field('EnhancedMinRespirationRate', 180, FitBaseType::UINT16, 100.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('TotalGrit', 181, FitBaseType::FLOAT32, 1.0, 0.0, 'kGrit', false, ProfileType::FLOAT32)]
 #[Field('TotalFlow', 182, FitBaseType::FLOAT32, 1.0, 0.0, 'Flow', false, ProfileType::FLOAT32)]
 #[Field('JumpCount', 183, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('AvgGrit', 186, FitBaseType::FLOAT32, 1.0, 0.0, 'kGrit', false, ProfileType::FLOAT32)]
 #[Field('AvgFlow', 187, FitBaseType::FLOAT32, 1.0, 0.0, 'Flow', false, ProfileType::FLOAT32)]
+#[Field('AvgSpo2', 194, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
+#[Field('AvgStress', 195, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
+#[Field('SdrrHrv', 197, FitBaseType::UINT8, 1.0, 0.0, 'mS', false, ProfileType::UINT8)]
+#[Field('RmssdHrv', 198, FitBaseType::UINT8, 1.0, 0.0, 'mS', false, ProfileType::UINT8)]
 #[Field('TotalFractionalAscent', 199, FitBaseType::UINT8, 100.0, 0.0, 'm', false, ProfileType::UINT8)]
 #[Field('TotalFractionalDescent', 200, FitBaseType::UINT8, 100.0, 0.0, 'm', false, ProfileType::UINT8)]
 #[Field('AvgCoreTemperature', 208, FitBaseType::UINT16, 100.0, 0.0, 'C', false, ProfileType::UINT16)]
@@ -474,6 +497,22 @@ final class SessionMessage extends Message
     public function getLeftRightBalance(): int|array|null
     {
         return $this->getFieldValue(37);
+    }
+
+    /**
+     * Gets the end position lat
+     */
+    public function getEndPositionLat(): int|array|null
+    {
+        return $this->getFieldValue(38);
+    }
+
+    /**
+     * Gets the end position long
+     */
+    public function getEndPositionLong(): int|array|null
+    {
+        return $this->getFieldValue(39);
     }
 
     /**
@@ -917,6 +956,14 @@ final class SessionMessage extends Message
     }
 
     /**
+     * Gets the sport profile name
+     */
+    public function getSportProfileName(): string|null
+    {
+        return $this->getFieldValue(110);
+    }
+
+    /**
      * Gets the sport index
      */
     public function getSportIndex(): int|array|null
@@ -1125,11 +1172,139 @@ final class SessionMessage extends Message
     }
 
     /**
+     * Gets the avg depth
+     */
+    public function getAvgDepth(): float|array|null
+    {
+        return $this->getFieldValue(140);
+    }
+
+    /**
+     * Gets the max depth
+     */
+    public function getMaxDepth(): float|array|null
+    {
+        return $this->getFieldValue(141);
+    }
+
+    /**
+     * Gets the surface interval
+     */
+    public function getSurfaceInterval(): int|array|null
+    {
+        return $this->getFieldValue(142);
+    }
+
+    /**
+     * Gets the start cns
+     */
+    public function getStartCns(): int|array|null
+    {
+        return $this->getFieldValue(143);
+    }
+
+    /**
+     * Gets the end cns
+     */
+    public function getEndCns(): int|array|null
+    {
+        return $this->getFieldValue(144);
+    }
+
+    /**
+     * Gets the start n2
+     */
+    public function getStartN2(): int|array|null
+    {
+        return $this->getFieldValue(145);
+    }
+
+    /**
+     * Gets the end n2
+     */
+    public function getEndN2(): int|array|null
+    {
+        return $this->getFieldValue(146);
+    }
+
+    /**
+     * Gets the avg respiration rate
+     */
+    public function getAvgRespirationRate(): int|array|null
+    {
+        return $this->getFieldValue(147);
+    }
+
+    /**
+     * Gets the max respiration rate
+     */
+    public function getMaxRespirationRate(): int|array|null
+    {
+        return $this->getFieldValue(148);
+    }
+
+    /**
+     * Gets the min respiration rate
+     */
+    public function getMinRespirationRate(): int|array|null
+    {
+        return $this->getFieldValue(149);
+    }
+
+    /**
+     * Gets the min temperature
+     */
+    public function getMinTemperature(): int|array|null
+    {
+        return $this->getFieldValue(150);
+    }
+
+    /**
+     * Gets the o2 toxicity
+     */
+    public function getO2Toxicity(): int|array|null
+    {
+        return $this->getFieldValue(155);
+    }
+
+    /**
+     * Gets the dive number
+     */
+    public function getDiveNumber(): int|array|null
+    {
+        return $this->getFieldValue(156);
+    }
+
+    /**
      * Gets the training load peak
      */
     public function getTrainingLoadPeak(): float|array|null
     {
         return $this->getFieldValue(168);
+    }
+
+    /**
+     * Gets the enhanced avg respiration rate
+     */
+    public function getEnhancedAvgRespirationRate(): float|array|null
+    {
+        return $this->getFieldValue(169);
+    }
+
+    /**
+     * Gets the enhanced max respiration rate
+     */
+    public function getEnhancedMaxRespirationRate(): float|array|null
+    {
+        return $this->getFieldValue(170);
+    }
+
+    /**
+     * Gets the enhanced min respiration rate
+     */
+    public function getEnhancedMinRespirationRate(): float|array|null
+    {
+        return $this->getFieldValue(180);
     }
 
     /**
@@ -1170,6 +1345,38 @@ final class SessionMessage extends Message
     public function getAvgFlow(): float|array|null
     {
         return $this->getFieldValue(187);
+    }
+
+    /**
+     * Gets the avg spo2
+     */
+    public function getAvgSpo2(): int|array|null
+    {
+        return $this->getFieldValue(194);
+    }
+
+    /**
+     * Gets the avg stress
+     */
+    public function getAvgStress(): int|array|null
+    {
+        return $this->getFieldValue(195);
+    }
+
+    /**
+     * Gets the sdrr hrv
+     */
+    public function getSdrrHrv(): int|array|null
+    {
+        return $this->getFieldValue(197);
+    }
+
+    /**
+     * Gets the rmssd hrv
+     */
+    public function getRmssdHrv(): int|array|null
+    {
+        return $this->getFieldValue(198);
     }
 
     /**

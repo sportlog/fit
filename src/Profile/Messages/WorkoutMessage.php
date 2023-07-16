@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.89Release
+ * Profile Version = 21.115Release
  */
 
 declare(strict_types=1);
@@ -23,6 +23,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * WorkoutMessage message
  */
+#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
 #[Field('Sport', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SPORT)]
 #[Field('Capabilities', 5, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::WORKOUTCAPABILITIES)]
 #[Field('NumValidSteps', 6, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
@@ -38,6 +39,14 @@ final class WorkoutMessage extends Message
     public function __construct()
     {
         parent::__construct('Workout', MesgNum::WORKOUT);
+    }
+
+    /**
+     * Gets the message index
+     */
+    public function getMessageIndex(): int|array|null
+    {
+        return $this->getFieldValue(254);
     }
 
     /**

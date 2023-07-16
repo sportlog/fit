@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.89Release
+ * Profile Version = 21.115Release
  */
 
 declare(strict_types=1);
@@ -68,5 +68,9 @@ final class Sport
     public const BOXING = 47;
     public const FLOOR_CLIMBING = 48;
     public const DIVING = 53;
+    public const HIIT = 62;
+    public const RACKET = 64;
+    public const WATER_TUBING = 76;
+    public const WAKESURFING = 77;
     public const ALL = 254;
 }

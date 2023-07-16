@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.89Release
+ * Profile Version = 21.115Release
  */
 
 declare(strict_types=1);
@@ -194,6 +194,7 @@ final class GarminProduct
     public const FENIX3_HR_KOR = 2477;
     public const NAUTIX = 2496;
     public const VIVO_ACTIVE_HR_APAC = 2497;
+    public const FR35 = 2503;
     public const OREGON7XX_WW = 2512;
     public const EDGE_820 = 2530;
     public const EDGE_EXPLORE_820 = 2531;
@@ -268,6 +269,7 @@ final class GarminProduct
     public const FENIX5S_PLUS_APAC = 3134;
     public const FENIX5X_PLUS_APAC = 3135;
     public const EDGE_520_PLUS_APAC = 3142;
+    public const DESCENT_T1 = 3143;
     public const FR235L_ASIA = 3144;
     public const FR245_ASIA = 3145;
     public const VIVO_ACTIVE3M_APAC = 3163;
@@ -355,6 +357,7 @@ final class GarminProduct
     public const EDGE_1040 = 3843;
     public const MARQ_GOLFER_ASIA = 3850;
     public const VENU2_PLUS = 3851;
+    public const GNSS = 3865;
     public const FR55 = 3869;
     public const INSTINCT_2 = 3888;
     public const FENIX7S = 3905;
@@ -372,6 +375,7 @@ final class GarminProduct
     public const VENU2_ASIA = 3950;
     public const FR945_LTE_ASIA = 3978;
     public const VIVO_MOVE_SPORT = 3982;
+    public const VIVOMOVE_TREND = 3983;
     public const APPROACH_S12_ASIA = 3986;
     public const FR255_MUSIC = 3990;
     public const FR255_SMALL_MUSIC = 3991;
@@ -383,15 +387,23 @@ final class GarminProduct
     public const VENU2_PLUS_ASIA = 4017;
     public const FR955 = 4024;
     public const FR55_ASIA = 4033;
+    public const EDGE_540 = 4061;
+    public const EDGE_840 = 4062;
     public const VIVOSMART_5 = 4063;
     public const INSTINCT_2_ASIA = 4071;
+    public const MARQ_GEN2 = 4105;
     public const VENUSQ2 = 4115;
     public const VENUSQ2MUSIC = 4116;
+    public const MARQ_GEN2_AVIATOR = 4124;
     public const D2_AIR_X10 = 4125;
     public const HRM_PRO_PLUS = 4130;
     public const DESCENT_G1_ASIA = 4132;
     public const TACTIX7 = 4135;
+    public const INSTINCT_CROSSOVER = 4155;
     public const EDGE_EXPLORE2 = 4169;
+    public const APPROACH_S70 = 4233;
+    public const FR265_LARGE = 4257;
+    public const FR265_SMALL = 4258;
     public const TACX_NEO_SMART = 4265;
     public const TACX_NEO2_SMART = 4266;
     public const TACX_NEO2_T_SMART = 4267;
@@ -405,7 +417,14 @@ final class GarminProduct
     public const TACX_FLUX2_SMART = 4275;
     public const TACX_MAGNUM = 4276;
     public const EDGE_1040_ASIA = 4305;
+    public const EPIX_GEN2_PRO_42 = 4312;
+    public const EPIX_GEN2_PRO_47 = 4313;
+    public const EPIX_GEN2_PRO_51 = 4314;
+    public const FR965 = 4315;
     public const ENDURO2 = 4341;
+    public const FENIX7_PRO_SOLAR = 4375;
+    public const INSTINCT_2X = 4394;
+    public const DESCENT_T2 = 4442;
     public const SDM4 = 10007;
     public const EDGE_REMOTE = 10014;
     public const TACX_TRAINING_APP_WIN = 20533;

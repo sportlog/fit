@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.89Release
+ * Profile Version = 21.115Release
  */
 
 declare(strict_types=1);
@@ -30,6 +30,12 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('AlarmType', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DIVEALARMTYPE)]
 #[Field('Sound', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::TONE)]
 #[Field('DiveTypes', 5, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SUBSPORT)]
+#[Field('Id', 6, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('PopupEnabled', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
+#[Field('TriggerOnDescent', 8, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
+#[Field('TriggerOnAscent', 9, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
+#[Field('Repeating', 10, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
+#[Field('Speed', 11, FitBaseType::SINT32, 1000.0, 0.0, 'mps', false, ProfileType::SINT32)]
 final class DiveAlarmMessage extends Message
 {
     /**
@@ -94,5 +100,53 @@ final class DiveAlarmMessage extends Message
     public function getDiveTypes(): int|array|null
     {
         return $this->getFieldValue(5);
+    }
+
+    /**
+     * Gets the id
+     */
+    public function getId(): int|array|null
+    {
+        return $this->getFieldValue(6);
+    }
+
+    /**
+     * Gets the popup enabled
+     */
+    public function getPopupEnabled(): bool|array|null
+    {
+        return $this->getFieldValue(7);
+    }
+
+    /**
+     * Gets the trigger on descent
+     */
+    public function getTriggerOnDescent(): bool|array|null
+    {
+        return $this->getFieldValue(8);
+    }
+
+    /**
+     * Gets the trigger on ascent
+     */
+    public function getTriggerOnAscent(): bool|array|null
+    {
+        return $this->getFieldValue(9);
+    }
+
+    /**
+     * Gets the repeating
+     */
+    public function getRepeating(): bool|array|null
+    {
+        return $this->getFieldValue(10);
+    }
+
+    /**
+     * Gets the speed
+     */
+    public function getSpeed(): float|array|null
+    {
+        return $this->getFieldValue(11);
     }
 }

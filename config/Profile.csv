@@ -100,16 +100,30 @@ mesg_num,uint16,,,
 ,,magnetometer_data,208,
 ,,barometer_data,209,
 ,,one_d_sensor_calibration,210,
+,,monitoring_hr_data,211,
+,,time_in_zone,216,
 ,,set,225,
 ,,stress_level,227,
+,,max_met_data,229,
 ,,dive_settings,258,
 ,,dive_gas,259,
 ,,dive_alarm,262,
 ,,exercise_title,264,
 ,,dive_summary,268,
+,,spo2_data,269,
+,,sleep_level,275,
 ,,jump,285,
+,,beat_intervals,290,
+,,respiration_rate,297,
+,,split,312,
 ,,climb_pro,317,
+,,tank_update,319,
+,,tank_summary,323,
+,,sleep_assessment,346,
+,,hrv_status_summary,370,
+,,hrv_value,371,
 ,,device_aux_battery_info,375,
+,,dive_apnea_alarm,393,
 ,,mfg_range_min,0xFF00,0xFF00 - 0xFFFE reserved for manufacturer specific messages
 ,,mfg_range_max,0xFFFE,0xFF00 - 0xFFFE reserved for manufacturer specific messages
 checksum,uint8,,,
@@ -435,6 +449,10 @@ sport,enum,,,
 ,,boxing,47,
 ,,floor_climbing,48,
 ,,diving,53,
+,,hiit,62,
+,,racket,64,
+,,water_tubing,76,
+,,wakesurfing,77,
 ,,all,254,All is for goals only to include all sports.
 sport_bits_0,uint8z,,,Bit field corresponding to sport enum type (1 << sport).
 ,,generic,0x01,
@@ -558,6 +576,22 @@ sub_sport,enum,,,
 ,,ultra,67,Ultramarathon
 ,,indoor_climbing,68,Climbing
 ,,bouldering,69,Climbing
+,,hiit,70,High Intensity Interval Training
+,,amrap,73,HIIT
+,,emom,74,HIIT
+,,tabata,75,HIIT
+,,pickleball,84,Racket
+,,padel,85,Racket
+,,fly_canopy,110,Flying
+,,fly_paraglide,111,Flying
+,,fly_paramotor,112,Flying
+,,fly_pressurized,113,Flying
+,,fly_navigate,114,Flying
+,,fly_timer,115,Flying
+,,fly_altimeter,116,Flying
+,,fly_wx,117,Flying
+,,fly_vfr,118,Flying
+,,fly_ifr,119,Flying
 ,,all,254,
 sport_event,enum,,,
 ,,uncategorized,0,
@@ -660,7 +694,16 @@ event,enum,,,
 ,,elev_high_alert,45,Group 0. Start / stop when in alert condition.
 ,,elev_low_alert,46,Group 0. Start / stop when in alert condition.
 ,,comm_timeout,47,marker
+,,auto_activity_detect,54,marker
+,,dive_alert,56,marker
+,,dive_gas_switched,57,marker
+,,tank_pressure_reserve,71,marker
+,,tank_pressure_critical,72,marker
+,,tank_lost,73,marker
 ,,radar_threat_alert,75,start/stop/marker
+,,tank_battery_low,76,marker
+,,tank_pod_connected,81,marker - tank pod has connected
+,,tank_pod_disconnected,82,marker - tank pod has lost connection
 event_type,enum,,,
 ,,start,0,
 ,,stop,1,
@@ -699,6 +742,7 @@ hr_zone_calc,enum,,,
 ,,custom,0,
 ,,percent_max_hr,1,
 ,,percent_hrr,2,
+,,percent_lthr,3,
 pwr_zone_calc,enum,,,
 ,,custom,0,
 ,,percent_ftp,1,
@@ -968,6 +1012,10 @@ manufacturer,uint16,,,
 ,,tag_heuer,142,
 ,,keiser_fitness,143,
 ,,zwift_byte,144,
+,,porsche_ep,145,
+,,blackbird,146,
+,,meilan_byte,147,
+,,ezon,148,
 ,,development,255,
 ,,healthandlife,257,
 ,,lezyne,258,
@@ -1032,8 +1080,11 @@ manufacturer,uint16,,,
 ,,race_republic,317,
 ,,fazua,318,
 ,,oreka_training,319,
-,,isec,320,Lishun Electric & Communication
+,,lsec,320,Lishun Electric & Communication
 ,,lululemon_studio,321,
+,,shanyue,322,
+,,spinning_mda,323,
+,,hilldating,324,
 ,,actigraphcorp,5759,
 garmin_product,uint16,,,
 ,,hrm1,1,
@@ -1212,6 +1263,7 @@ garmin_product,uint16,,,
 ,,fenix3_hr_kor,2477,
 ,,nautix,2496,
 ,,vivo_active_hr_apac,2497,
+,,fr35,2503,
 ,,oregon7xx_ww,2512,
 ,,edge_820,2530,
 ,,edge_explore_820,2531,
@@ -1286,6 +1338,7 @@ garmin_product,uint16,,,
 ,,fenix5s_plus_apac,3134,
 ,,fenix5x_plus_apac,3135,
 ,,edge_520_plus_apac,3142,
+,,descent_t1,3143,
 ,,fr235l_asia,3144,
 ,,fr245_asia,3145,
 ,,vivo_active3m_apac,3163,
@@ -1373,6 +1426,7 @@ garmin_product,uint16,,,
 ,,edge_1040,3843,
 ,,marq_golfer_asia,3850,
 ,,venu2_plus,3851,
+,,gnss,3865,
 ,,fr55,3869,
 ,,instinct_2,3888,
 ,,fenix7s,3905,
@@ -1390,6 +1444,7 @@ garmin_product,uint16,,,
 ,,venu2_asia,3950,
 ,,fr945_lte_asia,3978,
 ,,vivo_move_sport,3982,
+,,vivomove_trend,3983,
 ,,approach_S12_asia,3986,
 ,,fr255_music,3990,
 ,,fr255_small_music,3991,
@@ -1401,15 +1456,23 @@ garmin_product,uint16,,,
 ,,venu2_plus_asia,4017,
 ,,fr955,4024,
 ,,fr55_asia,4033,
+,,edge_540,4061,
+,,edge_840,4062,
 ,,vivosmart_5,4063,
 ,,instinct_2_asia,4071,
+,,marq_gen2,4105,"Adventurer, Athlete, Captain, Golfer"
 ,,venusq2,4115,
 ,,venusq2music,4116,
+,,marq_gen2_aviator,4124,
 ,,d2_air_x10,4125,
 ,,hrm_pro_plus,4130,
 ,,descent_g1_asia,4132,
 ,,tactix7,4135,
+,,instinct_crossover,4155,
 ,,edge_explore2,4169,
+,,approach_s70,4233,
+,,fr265_large,4257,
+,,fr265_small,4258,
 ,,tacx_neo_smart,4265,"Neo Smart, Tacx"
 ,,tacx_neo2_smart,4266,"Neo 2 Smart, Tacx"
 ,,tacx_neo2_t_smart,4267,"Neo 2T Smart, Tacx"
@@ -1423,7 +1486,14 @@ garmin_product,uint16,,,
 ,,tacx_flux2_smart,4275,"Flux 2 Smart, Tacx"
 ,,tacx_magnum,4276,"Magnum, Tacx"
 ,,edge_1040_asia,4305,
+,,epix_gen2_pro_42,4312,
+,,epix_gen2_pro_47,4313,
+,,epix_gen2_pro_51,4314,
+,,fr965,4315,
 ,,enduro2,4341,
+,,fenix7_pro_solar,4375,
+,,instinct_2x,4394,
+,,descent_t2,4442,
 ,,sdm4,10007,SDM4 footpod
 ,,edge_remote,10014,
 ,,tacx_training_app_win,20533,
@@ -1505,6 +1575,7 @@ course_capabilities,uint32z,,,
 ,,training,0x00000100,
 ,,navigation,0x00000200,
 ,,bikeway,0x00000400,
+,,aviation,0x00001000,Denote course files to be used as flight plans
 weight,uint16,,,
 ,,calculating,0xFFFE,
 workout_hr,uint32,,,0 - 100 indicates% of max hr; >100 indicates bpm (255 max) plus 100
@@ -1819,6 +1890,28 @@ source_type,enum,,,
 ,,wifi,4,External device connected with Wifi
 ,,local,5,Onboard device
 local_device_type,uint8,,,
+,,gps,0,Onboard gps receiver
+,,glonass,1,Onboard glonass receiver
+,,gps_glonass,2,Onboard gps glonass receiver
+,,accelerometer,3,Onboard sensor
+,,barometer,4,Onboard sensor
+,,temperature,5,Onboard sensor
+,,whr,10,Onboard wrist HR sensor
+,,sensor_hub,12,Onboard software package
+ble_device_type,uint8,,,
+,,connected_gps,0,GPS that is provided over a proprietary bluetooth service
+,,heart_rate,1,
+,,bike_power,2,
+,,bike_speed_cadence,3,
+,,bike_speed,4,
+,,bike_cadence,5,
+,,footpod,6,
+,,bike_trainer,7,Indoor-Bike FTMS protocol
+ant_channel_id,uint32z,,,
+,,ant_extended_device_number_upper_nibble,0xF0000000,
+,,ant_transmission_type_lower_nibble,0x0F000000,
+,,ant_device_type,0x00FF0000,
+,,ant_device_number,0x0000FFFF,
 display_orientation,enum,,,
 ,,auto,0,automatic if the device supports it
 ,,portrait,1,
@@ -2214,6 +2307,9 @@ fit_base_unit,uint16,,,
 set_type,uint8,,,
 ,,rest,0,
 ,,active,1,
+max_met_category,enum,,,
+,,generic,0,
+,,cycling,1,
 exercise_category,uint16,,,
 ,,bench_press,0,
 ,,calf_raise,1,
@@ -3532,19 +3628,103 @@ dive_gas_status,enum,,,
 ,,disabled,0,
 ,,enabled,1,
 ,,backup_only,2,
+dive_alert,enum,,,
+,,ndl_reached,0,
+,,gas_switch_prompted,1,
+,,near_surface,2,
+,,approaching_ndl,3,
+,,po2_warn,4,
+,,po2_crit_high,5,
+,,po2_crit_low,6,
+,,time_alert,7,
+,,depth_alert,8,
+,,deco_ceiling_broken,9,
+,,deco_complete,10,
+,,safety_stop_broken,11,
+,,safety_stop_complete,12,
+,,cns_warning,13,
+,,cns_critical,14,
+,,otu_warning,15,
+,,otu_critical,16,
+,,ascent_critical,17,
+,,alert_dismissed_by_key,18,
+,,alert_dismissed_by_timeout,19,
+,,battery_low,20,
+,,battery_critical,21,
+,,safety_stop_started,22,
+,,approaching_first_deco_stop,23,
+,,setpoint_switch_auto_low,24,
+,,setpoint_switch_auto_high,25,
+,,setpoint_switch_manual_low,26,
+,,setpoint_switch_manual_high,27,
+,,auto_setpoint_switch_ignored,28,
+,,switched_to_open_circuit,29,
+,,switched_to_closed_circuit,30,
+,,tank_battery_low,32,
+,,po2_ccr_dil_low,33,ccr diluent has low po2
+,,deco_stop_cleared,34,a deco stop has been cleared
+,,apnea_neutral_buoyancy,35,Target Depth Apnea Alarm triggered
+,,apnea_target_depth,36,Neutral Buoyance Apnea Alarm triggered
+,,apnea_surface,37,Surface Apnea Alarm triggered
+,,apnea_high_speed,38,High Speed Apnea Alarm triggered
+,,apnea_low_speed,39,Low Speed Apnea Alarm triggered
 dive_alarm_type,enum,,,
 ,,depth,0,Alarm when a certain depth is crossed
 ,,time,1,Alarm when a certain time has transpired
+,,speed,2,Alarm when a certain ascent or descent rate is exceeded
 dive_backlight_mode,enum,,,
 ,,at_depth,0,
 ,,always_on,1,
+sleep_level,enum,,,
+,,unmeasurable,0,
+,,awake,1,
+,,light,2,
+,,deep,3,
+,,rem,4,
+spo2_measurement_type,enum,,,
+,,off_wrist,0,
+,,spot_check,1,
+,,continuous_check,2,
+,,periodic,3,
+ccr_setpoint_switch_mode,enum,,,
+,,manual,0,User switches setpoints manually
+,,automatic,1,Switch automatically based on depth
+dive_gas_mode,enum,,,
+,,open_circuit,0,
+,,closed_circuit_diluent,1,
 favero_product,uint16,,,
 ,,assioma_uno,10,
 ,,assioma_duo,12,
+split_type,enum,,,
+,,ascent_split,1,
+,,descent_split,2,
+,,interval_active,3,
+,,interval_rest,4,
+,,interval_warmup,5,
+,,interval_cooldown,6,
+,,interval_recovery,7,
+,,interval_other,8,
+,,climb_active,9,
+,,climb_rest,10,
+,,surf_active,11,
+,,run_active,12,
+,,run_rest,13,
+,,workout_round,14,
+,,rwd_run,17,run/walk detection running
+,,rwd_walk,18,run/walk detection walking
+,,windsurf_active,21,
+,,rwd_stand,22,run/walk detection standing
+,,transition,23,Marks the time going from ascent_split to descent_split/used in backcountry ski
+,,ski_lift_split,28,
+,,ski_run_split,29,
 climb_pro_event,enum,,,
 ,,approach,0,
 ,,start,1,
 ,,complete,2,
+gas_consumption_rate_type,enum,,,
+,,pressure_sac,0,Pressure-based Surface Air Consumption
+,,volume_sac,1,Volumetric Surface Air Consumption
+,,rmv,2,Respiratory Minute Volume
 tap_sensitivity,enum,,,
 ,,high,0,
 ,,medium,1,
@@ -3554,3 +3734,19 @@ radar_threat_level_type,enum,,,
 ,,threat_none,1,
 ,,threat_approaching,2,
 ,,threat_approaching_fast,3,
+max_met_speed_source,enum,,,
+,,onboard_gps,0,
+,,connected_gps,1,
+,,cadence,2,
+max_met_heart_rate_source,enum,,,
+,,whr,0,Wrist Heart Rate Monitor
+,,hrm,1,Chest Strap Heart Rate Monitor
+hrv_status,enum,,,
+,,none,0,
+,,poor,1,
+,,low,2,
+,,unbalanced,3,
+,,balanced,4,
+no_fly_time_mode,enum,,,
+,,standard,0,Standard Diver Alert Network no-fly guidance
+,,flat_24_hours,1,Flat 24 hour no-fly guidance

@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.89Release
+ * Profile Version = 21.115Release
  */
 
 declare(strict_types=1);
@@ -129,6 +129,13 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('AvgStanceTimeBalance', 119, FitBaseType::UINT16, 100.0, 0.0, 'percent', false, ProfileType::UINT16)]
 #[Field('AvgStepLength', 120, FitBaseType::UINT16, 10.0, 0.0, 'mm', false, ProfileType::UINT16)]
 #[Field('AvgVam', 121, FitBaseType::UINT16, 1000.0, 0.0, 'm/s', false, ProfileType::UINT16)]
+#[Field('AvgDepth', 122, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32)]
+#[Field('MaxDepth', 123, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32)]
+#[Field('MinTemperature', 124, FitBaseType::SINT8, 1.0, 0.0, 'C', false, ProfileType::SINT8)]
+#[Field('EnhancedAvgRespirationRate', 136, FitBaseType::UINT16, 100.0, 0.0, 'Breaths/min', false, ProfileType::UINT16)]
+#[Field('EnhancedMaxRespirationRate', 137, FitBaseType::UINT16, 100.0, 0.0, 'Breaths/min', false, ProfileType::UINT16)]
+#[Field('AvgRespirationRate', 147, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('MaxRespirationRate', 148, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
 #[Field('TotalGrit', 149, FitBaseType::FLOAT32, 1.0, 0.0, 'kGrit', false, ProfileType::FLOAT32)]
 #[Field('TotalFlow', 150, FitBaseType::FLOAT32, 1.0, 0.0, 'Flow', false, ProfileType::FLOAT32)]
 #[Field('JumpCount', 151, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
@@ -995,6 +1002,62 @@ final class LapMessage extends Message
     public function getAvgVam(): float|array|null
     {
         return $this->getFieldValue(121);
+    }
+
+    /**
+     * Gets the avg depth
+     */
+    public function getAvgDepth(): float|array|null
+    {
+        return $this->getFieldValue(122);
+    }
+
+    /**
+     * Gets the max depth
+     */
+    public function getMaxDepth(): float|array|null
+    {
+        return $this->getFieldValue(123);
+    }
+
+    /**
+     * Gets the min temperature
+     */
+    public function getMinTemperature(): int|array|null
+    {
+        return $this->getFieldValue(124);
+    }
+
+    /**
+     * Gets the enhanced avg respiration rate
+     */
+    public function getEnhancedAvgRespirationRate(): float|array|null
+    {
+        return $this->getFieldValue(136);
+    }
+
+    /**
+     * Gets the enhanced max respiration rate
+     */
+    public function getEnhancedMaxRespirationRate(): float|array|null
+    {
+        return $this->getFieldValue(137);
+    }
+
+    /**
+     * Gets the avg respiration rate
+     */
+    public function getAvgRespirationRate(): int|array|null
+    {
+        return $this->getFieldValue(147);
+    }
+
+    /**
+     * Gets the max respiration rate
+     */
+    public function getMaxRespirationRate(): int|array|null
+    {
+        return $this->getFieldValue(148);
     }
 
     /**

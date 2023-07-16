@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.89Release
+ * Profile Version = 21.115Release
  */
 
 declare(strict_types=1);
@@ -29,4 +29,5 @@ final class CourseCapabilities
     public const TRAINING = 256;
     public const NAVIGATION = 512;
     public const BIKEWAY = 1024;
+    public const AVIATION = 4096;
 }

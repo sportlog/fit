@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.89Release
+ * Profile Version = 21.115Release
  */
 
 declare(strict_types=1);
@@ -27,6 +27,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('HeliumContent', 0, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
 #[Field('OxygenContent', 1, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
 #[Field('Status', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DIVEGASSTATUS)]
+#[Field('Mode', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DIVEGASMODE)]
 final class DiveGasMessage extends Message
 {
     /**
@@ -67,5 +68,13 @@ final class DiveGasMessage extends Message
     public function getStatus(): int|array|null
     {
         return $this->getFieldValue(2);
+    }
+
+    /**
+     * Gets the mode
+     */
+    public function getMode(): int|array|null
+    {
+        return $this->getFieldValue(3);
     }
 }

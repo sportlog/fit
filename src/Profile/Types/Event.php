@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.89Release
+ * Profile Version = 21.115Release
  */
 
 declare(strict_types=1);
@@ -54,5 +54,14 @@ final class Event
     public const ELEV_HIGH_ALERT = 45;
     public const ELEV_LOW_ALERT = 46;
     public const COMM_TIMEOUT = 47;
+    public const AUTO_ACTIVITY_DETECT = 54;
+    public const DIVE_ALERT = 56;
+    public const DIVE_GAS_SWITCHED = 57;
+    public const TANK_PRESSURE_RESERVE = 71;
+    public const TANK_PRESSURE_CRITICAL = 72;
+    public const TANK_LOST = 73;
     public const RADAR_THREAT_ALERT = 75;
+    public const TANK_BATTERY_LOW = 76;
+    public const TANK_POD_CONNECTED = 81;
+    public const TANK_POD_DISCONNECTED = 82;
 }

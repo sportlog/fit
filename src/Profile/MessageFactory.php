@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.89Release
+ * Profile Version = 21.115Release
  */
 
 declare(strict_types=1);
@@ -20,6 +20,7 @@ use Sportlog\FIT\Profile\Messages\AntRxMessage;
 use Sportlog\FIT\Profile\Messages\AntTxMessage;
 use Sportlog\FIT\Profile\Messages\AviationAttitudeMessage;
 use Sportlog\FIT\Profile\Messages\BarometerDataMessage;
+use Sportlog\FIT\Profile\Messages\BeatIntervalsMessage;
 use Sportlog\FIT\Profile\Messages\BikeProfileMessage;
 use Sportlog\FIT\Profile\Messages\BloodPressureMessage;
 use Sportlog\FIT\Profile\Messages\CadenceZoneMessage;
@@ -34,6 +35,7 @@ use Sportlog\FIT\Profile\Messages\DeviceAuxBatteryInfoMessage;
 use Sportlog\FIT\Profile\Messages\DeviceInfoMessage;
 use Sportlog\FIT\Profile\Messages\DeviceSettingsMessage;
 use Sportlog\FIT\Profile\Messages\DiveAlarmMessage;
+use Sportlog\FIT\Profile\Messages\DiveApneaAlarmMessage;
 use Sportlog\FIT\Profile\Messages\DiveGasMessage;
 use Sportlog\FIT\Profile\Messages\DiveSettingsMessage;
 use Sportlog\FIT\Profile\Messages\DiveSummaryMessage;
@@ -54,14 +56,18 @@ use Sportlog\FIT\Profile\Messages\HrMessage;
 use Sportlog\FIT\Profile\Messages\HrZoneMessage;
 use Sportlog\FIT\Profile\Messages\HrmProfileMessage;
 use Sportlog\FIT\Profile\Messages\HrvMessage;
+use Sportlog\FIT\Profile\Messages\HrvStatusSummaryMessage;
+use Sportlog\FIT\Profile\Messages\HrvValueMessage;
 use Sportlog\FIT\Profile\Messages\InvalidMessage;
 use Sportlog\FIT\Profile\Messages\JumpMessage;
 use Sportlog\FIT\Profile\Messages\LapMessage;
 use Sportlog\FIT\Profile\Messages\LengthMessage;
 use Sportlog\FIT\Profile\Messages\MagnetometerDataMessage;
+use Sportlog\FIT\Profile\Messages\MaxMetDataMessage;
 use Sportlog\FIT\Profile\Messages\MemoGlobMessage;
 use Sportlog\FIT\Profile\Messages\MesgCapabilitiesMessage;
 use Sportlog\FIT\Profile\Messages\MetZoneMessage;
+use Sportlog\FIT\Profile\Messages\MonitoringHrDataMessage;
 use Sportlog\FIT\Profile\Messages\MonitoringInfoMessage;
 use Sportlog\FIT\Profile\Messages\MonitoringMessage;
 use Sportlog\FIT\Profile\Messages\NmeaSentenceMessage;
@@ -71,6 +77,7 @@ use Sportlog\FIT\Profile\Messages\OneDSensorCalibrationMessage;
 use Sportlog\FIT\Profile\Messages\PadMessage;
 use Sportlog\FIT\Profile\Messages\PowerZoneMessage;
 use Sportlog\FIT\Profile\Messages\RecordMessage;
+use Sportlog\FIT\Profile\Messages\RespirationRateMessage;
 use Sportlog\FIT\Profile\Messages\ScheduleMessage;
 use Sportlog\FIT\Profile\Messages\SdmProfileMessage;
 use Sportlog\FIT\Profile\Messages\SegmentFileMessage;
@@ -81,11 +88,18 @@ use Sportlog\FIT\Profile\Messages\SegmentPointMessage;
 use Sportlog\FIT\Profile\Messages\SessionMessage;
 use Sportlog\FIT\Profile\Messages\SetMessage;
 use Sportlog\FIT\Profile\Messages\SlaveDeviceMessage;
+use Sportlog\FIT\Profile\Messages\SleepAssessmentMessage;
+use Sportlog\FIT\Profile\Messages\SleepLevelMessage;
 use Sportlog\FIT\Profile\Messages\SoftwareMessage;
 use Sportlog\FIT\Profile\Messages\SpeedZoneMessage;
+use Sportlog\FIT\Profile\Messages\SplitMessage;
+use Sportlog\FIT\Profile\Messages\Spo2DataMessage;
 use Sportlog\FIT\Profile\Messages\SportMessage;
 use Sportlog\FIT\Profile\Messages\StressLevelMessage;
+use Sportlog\FIT\Profile\Messages\TankSummaryMessage;
+use Sportlog\FIT\Profile\Messages\TankUpdateMessage;
 use Sportlog\FIT\Profile\Messages\ThreeDSensorCalibrationMessage;
+use Sportlog\FIT\Profile\Messages\TimeInZoneMessage;
 use Sportlog\FIT\Profile\Messages\TimestampCorrelationMessage;
 use Sportlog\FIT\Profile\Messages\TotalsMessage;
 use Sportlog\FIT\Profile\Messages\TrainingFileMessage;
@@ -133,6 +147,7 @@ class MessageFactory
             MesgNum::CONNECTIVITY => new ConnectivityMessage(),
             MesgNum::WATCHFACE_SETTINGS => new WatchfaceSettingsMessage(),
             MesgNum::OHR_SETTINGS => new OhrSettingsMessage(),
+            MesgNum::TIME_IN_ZONE => new TimeInZoneMessage(),
             MesgNum::ZONES_TARGET => new ZonesTargetMessage(),
             MesgNum::SPORT => new SportMessage(),
             MesgNum::HR_ZONE => new HrZoneMessage(),
@@ -142,6 +157,7 @@ class MessageFactory
             MesgNum::MET_ZONE => new MetZoneMessage(),
             MesgNum::DIVE_SETTINGS => new DiveSettingsMessage(),
             MesgNum::DIVE_ALARM => new DiveAlarmMessage(),
+            MesgNum::DIVE_APNEA_ALARM => new DiveApneaAlarmMessage(),
             MesgNum::DIVE_GAS => new DiveGasMessage(),
             MesgNum::GOAL => new GoalMessage(),
             MesgNum::ACTIVITY => new ActivityMessage(),
@@ -173,6 +189,7 @@ class MessageFactory
             MesgNum::VIDEO_CLIP => new VideoClipMessage(),
             MesgNum::SET => new SetMessage(),
             MesgNum::JUMP => new JumpMessage(),
+            MesgNum::SPLIT => new SplitMessage(),
             MesgNum::CLIMB_PRO => new ClimbProMessage(),
             MesgNum::FIELD_DESCRIPTION => new FieldDescriptionMessage(),
             MesgNum::DEVELOPER_DATA_ID => new DeveloperDataIdMessage(),
@@ -193,9 +210,13 @@ class MessageFactory
             MesgNum::BLOOD_PRESSURE => new BloodPressureMessage(),
             MesgNum::MONITORING_INFO => new MonitoringInfoMessage(),
             MesgNum::MONITORING => new MonitoringMessage(),
+            MesgNum::MONITORING_HR_DATA => new MonitoringHrDataMessage(),
+            MesgNum::SPO2_DATA => new Spo2DataMessage(),
             MesgNum::HR => new HrMessage(),
             MesgNum::STRESS_LEVEL => new StressLevelMessage(),
+            MesgNum::MAX_MET_DATA => new MaxMetDataMessage(),
             MesgNum::MEMO_GLOB => new MemoGlobMessage(),
+            MesgNum::SLEEP_LEVEL => new SleepLevelMessage(),
             MesgNum::ANT_CHANNEL_ID => new AntChannelIdMessage(),
             MesgNum::ANT_RX => new AntRxMessage(),
             MesgNum::ANT_TX => new AntTxMessage(),
@@ -204,6 +225,13 @@ class MessageFactory
             MesgNum::EXD_DATA_CONCEPT_CONFIGURATION => new ExdDataConceptConfigurationMessage(),
             MesgNum::DIVE_SUMMARY => new DiveSummaryMessage(),
             MesgNum::HRV => new HrvMessage(),
+            MesgNum::BEAT_INTERVALS => new BeatIntervalsMessage(),
+            MesgNum::HRV_STATUS_SUMMARY => new HrvStatusSummaryMessage(),
+            MesgNum::HRV_VALUE => new HrvValueMessage(),
+            MesgNum::RESPIRATION_RATE => new RespirationRateMessage(),
+            MesgNum::TANK_UPDATE => new TankUpdateMessage(),
+            MesgNum::TANK_SUMMARY => new TankSummaryMessage(),
+            MesgNum::SLEEP_ASSESSMENT => new SleepAssessmentMessage(),
             MesgNum::PAD => new PadMessage(),
             default => new InvalidMessage()
         };

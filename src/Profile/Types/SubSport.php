@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.89Release
+ * Profile Version = 21.115Release
  */
 
 declare(strict_types=1);
@@ -83,5 +83,21 @@ final class SubSport
     public const ULTRA = 67;
     public const INDOOR_CLIMBING = 68;
     public const BOULDERING = 69;
+    public const HIIT = 70;
+    public const AMRAP = 73;
+    public const EMOM = 74;
+    public const TABATA = 75;
+    public const PICKLEBALL = 84;
+    public const PADEL = 85;
+    public const FLY_CANOPY = 110;
+    public const FLY_PARAGLIDE = 111;
+    public const FLY_PARAMOTOR = 112;
+    public const FLY_PRESSURIZED = 113;
+    public const FLY_NAVIGATE = 114;
+    public const FLY_TIMER = 115;
+    public const FLY_ALTIMETER = 116;
+    public const FLY_WX = 117;
+    public const FLY_VFR = 118;
+    public const FLY_IFR = 119;
     public const ALL = 254;
 }

@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.89Release
+ * Profile Version = 21.115Release
  */
 
 declare(strict_types=1);
@@ -41,6 +41,10 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('OpponentScore', 19, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('StrokeCount', 20, FitBaseType::UINT16, 1.0, 0.0, 'counts', false, ProfileType::UINT16)]
 #[Field('ZoneCount', 21, FitBaseType::UINT16, 1.0, 0.0, 'counts', false, ProfileType::UINT16)]
+#[Field('EnhancedAvgRespirationRate', 22, FitBaseType::UINT16, 100.0, 0.0, 'Breaths/min', false, ProfileType::UINT16)]
+#[Field('EnhancedMaxRespirationRate', 23, FitBaseType::UINT16, 100.0, 0.0, 'Breaths/min', false, ProfileType::UINT16)]
+#[Field('AvgRespirationRate', 24, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('MaxRespirationRate', 25, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
 final class LengthMessage extends Message
 {
     /**
@@ -193,5 +197,37 @@ final class LengthMessage extends Message
     public function getZoneCount(): int|array|null
     {
         return $this->getFieldValue(21);
+    }
+
+    /**
+     * Gets the enhanced avg respiration rate
+     */
+    public function getEnhancedAvgRespirationRate(): float|array|null
+    {
+        return $this->getFieldValue(22);
+    }
+
+    /**
+     * Gets the enhanced max respiration rate
+     */
+    public function getEnhancedMaxRespirationRate(): float|array|null
+    {
+        return $this->getFieldValue(23);
+    }
+
+    /**
+     * Gets the avg respiration rate
+     */
+    public function getAvgRespirationRate(): int|array|null
+    {
+        return $this->getFieldValue(24);
+    }
+
+    /**
+     * Gets the max respiration rate
+     */
+    public function getMaxRespirationRate(): int|array|null
+    {
+        return $this->getFieldValue(25);
     }
 }
