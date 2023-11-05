@@ -89,6 +89,26 @@ final class Header
     }
 
     /**
+     * Gets the profile version.
+     *
+     * @return integer
+     */
+    public function getProfileVersion(): int
+    {
+        return $this->profileVersion;
+    }
+
+    /**
+     * Gets the protocol version.
+     *
+     * @return integer
+     */
+    public function getProtocolVersion(): int
+    {
+        return $this->protocolVersion;
+    }
+
+    /**
      * Determines whether the header is valid.
      *
      * @return boolean

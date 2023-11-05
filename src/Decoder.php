@@ -58,8 +58,8 @@ class Decoder
             if ($handle === false) {
                 throw new InvalidArgumentException("Unable to open file '{$fileOrStream}'. Did you provide the correct path?");
             }
-        } 
-        
+        }
+
         try {
             return $this->readMessages(new IOReader($handle));
         } catch (FitException $fex) {
@@ -231,7 +231,7 @@ class Decoder
             FitBaseType::SINT64 => $bigEndian ? $reader->readInt64BE() : $reader->readInt64LE(),
             FitBaseType::UINT64, FitBaseType::UINT64Z, FitBaseType::FLOAT64 => $bigEndian ? $reader->readDoubleBE() : $reader->readDoubleLE(),
             FitBaseType::STRING, FitBaseType::BYTE => throw new Exception("Base types 'String|Byte' must be handled separately"),
-            default => throw new Exception(sprintf('unknown fit base type "%s".', $baseType))
+            default => throw new FitException(sprintf('unknown fit base type "%s".', $baseType))
         };
 
         return !$fitBaseType->isInvalid($value) ? $value : null;
