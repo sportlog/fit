@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -9,7 +10,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile;
 
-class ProfileType {
+class ProfileType
+{
     const ENUM = 'Enum';
     const SINT8 = 'Sint8';
     const UINT8 = 'Uint8';
@@ -192,5 +194,17 @@ class ProfileType {
     const CLIMBPROEVENT = 'ClimbProEvent';
     const TAPSENSITIVITY = 'TapSensitivity';
     const RADARTHREATLEVELTYPE = 'RadarThreatLevelType';
+    const MAXMETSPEEDSOURCE = 'MaxMetSpeedSource';
+    const MAXMETHEARTRATESOURCE = 'MaxMetHeartRateSource';
+    const HRVSTATUS = 'HrvStatus';
+    const NOFLYTIMEMODE = 'NoFlyTimeMode';
+    const ANTCHANNELID = 'AntChannelId';
+    const SPO2MEASUREMENTTYPE = 'Spo2MeasurementType';
+    const SPLITTYPE = 'SplitType';
+    const GASCONSUMPTIONRATETYPE = 'GasConsumptionRateType';
+    const MAXMETCATEGORY = 'MaxMetCategory';
     const NUMTYPES = 'NumTypes';
+    const SLEEPLEVEL = 'SleepLevel';
+    const CCRSETPOINTSWITCHMODE = 'CcrSetpointSwitchMode';
+    const DIVEGASMODE = 'DiveGasMode';
 }
