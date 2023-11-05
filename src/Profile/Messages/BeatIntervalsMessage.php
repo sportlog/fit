@@ -23,9 +23,9 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * BeatIntervalsMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('TimestampMs', 0, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
-#[Field('Time', 1, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DateTime)]
+#[Field('TimestampMs', 0, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::Uint16)]
+#[Field('Time', 1, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::Uint16)]
 final class BeatIntervalsMessage extends Message
 {
     /**
@@ -33,7 +33,7 @@ final class BeatIntervalsMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('BeatIntervals', MesgNum::BEAT_INTERVALS);
+        parent::__construct('BeatIntervals', MesgNum::BeatIntervals->value);
     }
 
     /**

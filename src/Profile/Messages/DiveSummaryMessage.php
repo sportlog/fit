@@ -23,29 +23,29 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * DiveSummaryMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('ReferenceMesg', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESGNUM)]
-#[Field('ReferenceIndex', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('AvgDepth', 2, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32)]
-#[Field('MaxDepth', 3, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32)]
-#[Field('SurfaceInterval', 4, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::UINT32)]
-#[Field('StartCns', 5, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
-#[Field('EndCns', 6, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
-#[Field('StartN2', 7, FitBaseType::UINT16, 1.0, 0.0, 'percent', false, ProfileType::UINT16)]
-#[Field('EndN2', 8, FitBaseType::UINT16, 1.0, 0.0, 'percent', false, ProfileType::UINT16)]
-#[Field('O2Toxicity', 9, FitBaseType::UINT16, 1.0, 0.0, 'OTUs', false, ProfileType::UINT16)]
-#[Field('DiveNumber', 10, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('BottomTime', 11, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
-#[Field('AvgPressureSac', 12, FitBaseType::UINT16, 100.0, 0.0, 'bar/min', false, ProfileType::UINT16)]
-#[Field('AvgVolumeSac', 13, FitBaseType::UINT16, 100.0, 0.0, 'L/min', false, ProfileType::UINT16)]
-#[Field('AvgRmv', 14, FitBaseType::UINT16, 100.0, 0.0, 'L/min', false, ProfileType::UINT16)]
-#[Field('DescentTime', 15, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
-#[Field('AscentTime', 16, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
-#[Field('AvgAscentRate', 17, FitBaseType::SINT32, 1000.0, 0.0, 'm/s', false, ProfileType::SINT32)]
-#[Field('AvgDescentRate', 22, FitBaseType::UINT32, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
-#[Field('MaxAscentRate', 23, FitBaseType::UINT32, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
-#[Field('MaxDescentRate', 24, FitBaseType::UINT32, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
-#[Field('HangTime', 25, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DateTime)]
+#[Field('ReferenceMesg', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MesgNum)]
+#[Field('ReferenceIndex', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MessageIndex)]
+#[Field('AvgDepth', 2, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::Uint32)]
+#[Field('MaxDepth', 3, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::Uint32)]
+#[Field('SurfaceInterval', 4, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::Uint32)]
+#[Field('StartCns', 5, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::Uint8)]
+#[Field('EndCns', 6, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::Uint8)]
+#[Field('StartN2', 7, FitBaseType::UINT16, 1.0, 0.0, 'percent', false, ProfileType::Uint16)]
+#[Field('EndN2', 8, FitBaseType::UINT16, 1.0, 0.0, 'percent', false, ProfileType::Uint16)]
+#[Field('O2Toxicity', 9, FitBaseType::UINT16, 1.0, 0.0, 'OTUs', false, ProfileType::Uint16)]
+#[Field('DiveNumber', 10, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::Uint32)]
+#[Field('BottomTime', 11, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::Uint32)]
+#[Field('AvgPressureSac', 12, FitBaseType::UINT16, 100.0, 0.0, 'bar/min', false, ProfileType::Uint16)]
+#[Field('AvgVolumeSac', 13, FitBaseType::UINT16, 100.0, 0.0, 'L/min', false, ProfileType::Uint16)]
+#[Field('AvgRmv', 14, FitBaseType::UINT16, 100.0, 0.0, 'L/min', false, ProfileType::Uint16)]
+#[Field('DescentTime', 15, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::Uint32)]
+#[Field('AscentTime', 16, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::Uint32)]
+#[Field('AvgAscentRate', 17, FitBaseType::SINT32, 1000.0, 0.0, 'm/s', false, ProfileType::Sint32)]
+#[Field('AvgDescentRate', 22, FitBaseType::UINT32, 1000.0, 0.0, 'm/s', false, ProfileType::Uint32)]
+#[Field('MaxAscentRate', 23, FitBaseType::UINT32, 1000.0, 0.0, 'm/s', false, ProfileType::Uint32)]
+#[Field('MaxDescentRate', 24, FitBaseType::UINT32, 1000.0, 0.0, 'm/s', false, ProfileType::Uint32)]
+#[Field('HangTime', 25, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::Uint32)]
 final class DiveSummaryMessage extends Message
 {
     /**
@@ -53,7 +53,7 @@ final class DiveSummaryMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('DiveSummary', MesgNum::DIVE_SUMMARY);
+        parent::__construct('DiveSummary', MesgNum::DiveSummary->value);
     }
 
     /**

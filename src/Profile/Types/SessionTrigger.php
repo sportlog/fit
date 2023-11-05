@@ -13,13 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * SessionTrigger constants
- */
-final class SessionTrigger
+enum SessionTrigger: int
 {
-    public const ACTIVITY_END = 0;
-    public const MANUAL = 1;
-    public const AUTO_MULTI_SPORT = 2;
-    public const FITNESS_EQUIPMENT = 3;
+    case ActivityEnd = 0;
+    case Manual = 1;
+    case AutoMultiSport = 2;
+    case FitnessEquipment = 3;
 }

@@ -13,12 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * MesgCount constants
- */
-final class MesgCount
+enum MesgCount: int
 {
-    public const NUM_PER_FILE = 0;
-    public const MAX_PER_FILE = 1;
-    public const MAX_PER_FILE_TYPE = 2;
+    case NumPerFile = 0;
+    case MaxPerFile = 1;
+    case MaxPerFileType = 2;
 }

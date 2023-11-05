@@ -13,51 +13,48 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * DisplayPosition constants
- */
-final class DisplayPosition
+enum DisplayPosition: int
 {
-    public const DEGREE = 0;
-    public const DEGREE_MINUTE = 1;
-    public const DEGREE_MINUTE_SECOND = 2;
-    public const AUSTRIAN_GRID = 3;
-    public const BRITISH_GRID = 4;
-    public const DUTCH_GRID = 5;
-    public const HUNGARIAN_GRID = 6;
-    public const FINNISH_GRID = 7;
-    public const GERMAN_GRID = 8;
-    public const ICELANDIC_GRID = 9;
-    public const INDONESIAN_EQUATORIAL = 10;
-    public const INDONESIAN_IRIAN = 11;
-    public const INDONESIAN_SOUTHERN = 12;
-    public const INDIA_ZONE_0 = 13;
-    public const INDIA_ZONE_IA = 14;
-    public const INDIA_ZONE_IB = 15;
-    public const INDIA_ZONE_IIA = 16;
-    public const INDIA_ZONE_IIB = 17;
-    public const INDIA_ZONE_IIIA = 18;
-    public const INDIA_ZONE_IIIB = 19;
-    public const INDIA_ZONE_IVA = 20;
-    public const INDIA_ZONE_IVB = 21;
-    public const IRISH_TRANSVERSE = 22;
-    public const IRISH_GRID = 23;
-    public const LORAN = 24;
-    public const MAIDENHEAD_GRID = 25;
-    public const MGRS_GRID = 26;
-    public const NEW_ZEALAND_GRID = 27;
-    public const NEW_ZEALAND_TRANSVERSE = 28;
-    public const QATAR_GRID = 29;
-    public const MODIFIED_SWEDISH_GRID = 30;
-    public const SWEDISH_GRID = 31;
-    public const SOUTH_AFRICAN_GRID = 32;
-    public const SWISS_GRID = 33;
-    public const TAIWAN_GRID = 34;
-    public const UNITED_STATES_GRID = 35;
-    public const UTM_UPS_GRID = 36;
-    public const WEST_MALAYAN = 37;
-    public const BORNEO_RSO = 38;
-    public const ESTONIAN_GRID = 39;
-    public const LATVIAN_GRID = 40;
-    public const SWEDISH_REF_99_GRID = 41;
+    case Degree = 0;
+    case DegreeMinute = 1;
+    case DegreeMinuteSecond = 2;
+    case AustrianGrid = 3;
+    case BritishGrid = 4;
+    case DutchGrid = 5;
+    case HungarianGrid = 6;
+    case FinnishGrid = 7;
+    case GermanGrid = 8;
+    case IcelandicGrid = 9;
+    case IndonesianEquatorial = 10;
+    case IndonesianIrian = 11;
+    case IndonesianSouthern = 12;
+    case IndiaZone0 = 13;
+    case IndiaZoneIA = 14;
+    case IndiaZoneIB = 15;
+    case IndiaZoneIIA = 16;
+    case IndiaZoneIIB = 17;
+    case IndiaZoneIIIA = 18;
+    case IndiaZoneIIIB = 19;
+    case IndiaZoneIVA = 20;
+    case IndiaZoneIVB = 21;
+    case IrishTransverse = 22;
+    case IrishGrid = 23;
+    case Loran = 24;
+    case MaidenheadGrid = 25;
+    case MgrsGrid = 26;
+    case NewZealandGrid = 27;
+    case NewZealandTransverse = 28;
+    case QatarGrid = 29;
+    case ModifiedSwedishGrid = 30;
+    case SwedishGrid = 31;
+    case SouthAfricanGrid = 32;
+    case SwissGrid = 33;
+    case TaiwanGrid = 34;
+    case UnitedStatesGrid = 35;
+    case UtmUpsGrid = 36;
+    case WestMalayan = 37;
+    case BorneoRso = 38;
+    case EstonianGrid = 39;
+    case LatvianGrid = 40;
+    case SwedishRef99Grid = 41;
 }

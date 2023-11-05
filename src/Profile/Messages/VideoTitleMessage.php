@@ -23,9 +23,9 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * VideoTitleMessage message
  */
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('MessageCount', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('Text', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MessageIndex)]
+#[Field('MessageCount', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::Uint16)]
+#[Field('Text', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::String)]
 final class VideoTitleMessage extends Message
 {
     /**
@@ -33,7 +33,7 @@ final class VideoTitleMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('VideoTitle', MesgNum::VIDEO_TITLE);
+        parent::__construct('VideoTitle', MesgNum::VideoTitle->value);
     }
 
     /**

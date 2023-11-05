@@ -23,10 +23,10 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * ExerciseTitleMessage message
  */
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('ExerciseCategory', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::EXERCISECATEGORY)]
-#[Field('ExerciseName', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('WktStepName', 2, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MessageIndex)]
+#[Field('ExerciseCategory', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::ExerciseCategory)]
+#[Field('ExerciseName', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::Uint16)]
+#[Field('WktStepName', 2, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::String)]
 final class ExerciseTitleMessage extends Message
 {
     /**
@@ -34,7 +34,7 @@ final class ExerciseTitleMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('ExerciseTitle', MesgNum::EXERCISE_TITLE);
+        parent::__construct('ExerciseTitle', MesgNum::ExerciseTitle->value);
     }
 
     /**

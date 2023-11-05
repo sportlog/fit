@@ -23,9 +23,9 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * VideoFrameMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('TimestampMs', 0, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
-#[Field('FrameNumber', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DateTime)]
+#[Field('TimestampMs', 0, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::Uint16)]
+#[Field('FrameNumber', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::Uint32)]
 final class VideoFrameMessage extends Message
 {
     /**
@@ -33,7 +33,7 @@ final class VideoFrameMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('VideoFrame', MesgNum::VIDEO_FRAME);
+        parent::__construct('VideoFrame', MesgNum::VideoFrame->value);
     }
 
     /**

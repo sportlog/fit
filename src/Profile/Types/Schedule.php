@@ -13,11 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * Schedule constants
- */
-final class Schedule
+enum Schedule: int
 {
-    public const WORKOUT = 0;
-    public const COURSE = 1;
+    case Workout = 0;
+    case Course = 1;
 }

@@ -13,15 +13,12 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * LanguageBits4 constants
- */
-final class LanguageBits4
+enum LanguageBits4: int
 {
-    public const BRAZILIAN_PORTUGUESE = 1;
-    public const INDONESIAN = 2;
-    public const MALAYSIAN = 4;
-    public const VIETNAMESE = 8;
-    public const BURMESE = 16;
-    public const MONGOLIAN = 32;
+    case BrazilianPortuguese = 1;
+    case Indonesian = 2;
+    case Malaysian = 4;
+    case Vietnamese = 8;
+    case Burmese = 16;
+    case Mongolian = 32;
 }

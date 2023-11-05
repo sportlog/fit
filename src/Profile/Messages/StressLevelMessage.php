@@ -23,8 +23,8 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * StressLevelMessage message
  */
-#[Field('StressLevelValue', 0, FitBaseType::SINT16, 1.0, 0.0, '', false, ProfileType::SINT16)]
-#[Field('StressLevelTime', 1, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
+#[Field('StressLevelValue', 0, FitBaseType::SINT16, 1.0, 0.0, '', false, ProfileType::Sint16)]
+#[Field('StressLevelTime', 1, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DateTime)]
 final class StressLevelMessage extends Message
 {
     /**
@@ -32,7 +32,7 @@ final class StressLevelMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('StressLevel', MesgNum::STRESS_LEVEL);
+        parent::__construct('StressLevel', MesgNum::StressLevel->value);
     }
 
     /**

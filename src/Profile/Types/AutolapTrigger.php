@@ -13,16 +13,13 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * AutolapTrigger constants
- */
-final class AutolapTrigger
+enum AutolapTrigger: int
 {
-    public const TIME = 0;
-    public const DISTANCE = 1;
-    public const POSITION_START = 2;
-    public const POSITION_LAP = 3;
-    public const POSITION_WAYPOINT = 4;
-    public const POSITION_MARKED = 5;
-    public const OFF = 6;
+    case Time = 0;
+    case Distance = 1;
+    case PositionStart = 2;
+    case PositionLap = 3;
+    case PositionWaypoint = 4;
+    case PositionMarked = 5;
+    case Off = 6;
 }

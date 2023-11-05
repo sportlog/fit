@@ -23,25 +23,25 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * EventMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('Event', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::EVENT)]
-#[Field('EventType', 1, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::EVENTTYPE)]
-#[Field('Data16', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('Data', 3, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('EventGroup', 4, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('Score', 7, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('OpponentScore', 8, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('FrontGearNum', 9, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-#[Field('FrontGear', 10, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-#[Field('RearGearNum', 11, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-#[Field('RearGear', 12, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-#[Field('DeviceIndex', 13, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::DEVICEINDEX)]
-#[Field('ActivityType', 14, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ACTIVITYTYPE)]
-#[Field('StartTimestamp', 15, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('RadarThreatLevelMax', 21, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::RADARTHREATLEVELTYPE)]
-#[Field('RadarThreatCount', 22, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('RadarThreatAvgApproachSpeed', 23, FitBaseType::UINT8, 10.0, 0.0, 'm/s', false, ProfileType::UINT8)]
-#[Field('RadarThreatMaxApproachSpeed', 24, FitBaseType::UINT8, 10.0, 0.0, 'm/s', false, ProfileType::UINT8)]
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DateTime)]
+#[Field('Event', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::Event)]
+#[Field('EventType', 1, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::EventType)]
+#[Field('Data16', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::Uint16)]
+#[Field('Data', 3, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::Uint32)]
+#[Field('EventGroup', 4, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('Score', 7, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::Uint16)]
+#[Field('OpponentScore', 8, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::Uint16)]
+#[Field('FrontGearNum', 9, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::Uint8z)]
+#[Field('FrontGear', 10, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::Uint8z)]
+#[Field('RearGearNum', 11, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::Uint8z)]
+#[Field('RearGear', 12, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::Uint8z)]
+#[Field('DeviceIndex', 13, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::DeviceIndex)]
+#[Field('ActivityType', 14, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ActivityType)]
+#[Field('StartTimestamp', 15, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DateTime)]
+#[Field('RadarThreatLevelMax', 21, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::RadarThreatLevelType)]
+#[Field('RadarThreatCount', 22, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('RadarThreatAvgApproachSpeed', 23, FitBaseType::UINT8, 10.0, 0.0, 'm/s', false, ProfileType::Uint8)]
+#[Field('RadarThreatMaxApproachSpeed', 24, FitBaseType::UINT8, 10.0, 0.0, 'm/s', false, ProfileType::Uint8)]
 final class EventMessage extends Message
 {
     /**
@@ -49,7 +49,7 @@ final class EventMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Event', MesgNum::EVENT);
+        parent::__construct('Event', MesgNum::Event->value);
     }
 
     /**

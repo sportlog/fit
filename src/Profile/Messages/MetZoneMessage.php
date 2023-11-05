@@ -23,10 +23,10 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * MetZoneMessage message
  */
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('HighBpm', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('Calories', 2, FitBaseType::UINT16, 10.0, 0.0, 'kcal / min', false, ProfileType::UINT16)]
-#[Field('FatCalories', 3, FitBaseType::UINT8, 10.0, 0.0, 'kcal / min', false, ProfileType::UINT8)]
+#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MessageIndex)]
+#[Field('HighBpm', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('Calories', 2, FitBaseType::UINT16, 10.0, 0.0, 'kcal / min', false, ProfileType::Uint16)]
+#[Field('FatCalories', 3, FitBaseType::UINT8, 10.0, 0.0, 'kcal / min', false, ProfileType::Uint8)]
 final class MetZoneMessage extends Message
 {
     /**
@@ -34,7 +34,7 @@ final class MetZoneMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('MetZone', MesgNum::MET_ZONE);
+        parent::__construct('MetZone', MesgNum::MetZone->value);
     }
 
     /**

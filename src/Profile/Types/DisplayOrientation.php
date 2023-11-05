@@ -13,14 +13,11 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * DisplayOrientation constants
- */
-final class DisplayOrientation
+enum DisplayOrientation: int
 {
-    public const AUTO = 0;
-    public const PORTRAIT = 1;
-    public const LANDSCAPE = 2;
-    public const PORTRAIT_FLIPPED = 3;
-    public const LANDSCAPE_FLIPPED = 4;
+    case Auto = 0;
+    case Portrait = 1;
+    case Landscape = 2;
+    case PortraitFlipped = 3;
+    case LandscapeFlipped = 4;
 }

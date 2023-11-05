@@ -23,11 +23,11 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * DeviceAuxBatteryInfoMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('DeviceIndex', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::DEVICEINDEX)]
-#[Field('BatteryVoltage', 1, FitBaseType::UINT16, 256.0, 0.0, 'V', false, ProfileType::UINT16)]
-#[Field('BatteryStatus', 2, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::BATTERYSTATUS)]
-#[Field('BatteryIdentifier', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DateTime)]
+#[Field('DeviceIndex', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::DeviceIndex)]
+#[Field('BatteryVoltage', 1, FitBaseType::UINT16, 256.0, 0.0, 'V', false, ProfileType::Uint16)]
+#[Field('BatteryStatus', 2, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::BatteryStatus)]
+#[Field('BatteryIdentifier', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
 final class DeviceAuxBatteryInfoMessage extends Message
 {
     /**
@@ -35,7 +35,7 @@ final class DeviceAuxBatteryInfoMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('DeviceAuxBatteryInfo', MesgNum::DEVICE_AUX_BATTERY_INFO);
+        parent::__construct('DeviceAuxBatteryInfo', MesgNum::DeviceAuxBatteryInfo->value);
     }
 
     /**

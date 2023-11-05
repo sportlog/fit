@@ -13,12 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * DiveGasStatus constants
- */
-final class DiveGasStatus
+enum DiveGasStatus: int
 {
-    public const DISABLED = 0;
-    public const ENABLED = 1;
-    public const BACKUP_ONLY = 2;
+    case Disabled = 0;
+    case Enabled = 1;
+    case BackupOnly = 2;
 }

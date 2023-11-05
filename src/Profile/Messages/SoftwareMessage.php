@@ -23,9 +23,9 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * SoftwareMessage message
  */
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('Version', 3, FitBaseType::UINT16, 100.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('PartNumber', 5, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MessageIndex)]
+#[Field('Version', 3, FitBaseType::UINT16, 100.0, 0.0, '', false, ProfileType::Uint16)]
+#[Field('PartNumber', 5, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::String)]
 final class SoftwareMessage extends Message
 {
     /**
@@ -33,7 +33,7 @@ final class SoftwareMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Software', MesgNum::SOFTWARE);
+        parent::__construct('Software', MesgNum::Software->value);
     }
 
     /**

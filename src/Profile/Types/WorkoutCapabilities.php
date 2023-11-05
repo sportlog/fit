@@ -13,23 +13,20 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * WorkoutCapabilities constants
- */
-final class WorkoutCapabilities
+enum WorkoutCapabilities: int
 {
-    public const INTERVAL = 1;
-    public const CUSTOM = 2;
-    public const FITNESS_EQUIPMENT = 4;
-    public const FIRSTBEAT = 8;
-    public const NEW_LEAF = 16;
-    public const TCX = 32;
-    public const SPEED = 128;
-    public const HEART_RATE = 256;
-    public const DISTANCE = 512;
-    public const CADENCE = 1024;
-    public const POWER = 2048;
-    public const GRADE = 4096;
-    public const RESISTANCE = 8192;
-    public const PROTECTED = 16384;
+    case Interval = 1;
+    case Custom = 2;
+    case FitnessEquipment = 4;
+    case Firstbeat = 8;
+    case NewLeaf = 16;
+    case Tcx = 32;
+    case Speed = 128;
+    case HeartRate = 256;
+    case Distance = 512;
+    case Cadence = 1024;
+    case Power = 2048;
+    case Grade = 4096;
+    case Resistance = 8192;
+    case Protected = 16384;
 }

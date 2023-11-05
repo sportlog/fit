@@ -23,12 +23,12 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * MemoGlobMessage message
  */
-#[Field('PartIndex', 250, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('Memo', 0, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-#[Field('MesgNum', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESGNUM)]
-#[Field('ParentIndex', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('FieldNum', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('Data', 4, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
+#[Field('PartIndex', 250, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::Uint32)]
+#[Field('Memo', 0, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::Byte)]
+#[Field('MesgNum', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MesgNum)]
+#[Field('ParentIndex', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MessageIndex)]
+#[Field('FieldNum', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('Data', 4, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::Uint8z)]
 final class MemoGlobMessage extends Message
 {
     /**
@@ -36,7 +36,7 @@ final class MemoGlobMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('MemoGlob', MesgNum::MEMO_GLOB);
+        parent::__construct('MemoGlob', MesgNum::MemoGlob->value);
     }
 
     /**

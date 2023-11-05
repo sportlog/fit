@@ -23,9 +23,9 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * MonitoringHrDataMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('RestingHeartRate', 0, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
-#[Field('CurrentDayRestingHeartRate', 1, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DateTime)]
+#[Field('RestingHeartRate', 0, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::Uint8)]
+#[Field('CurrentDayRestingHeartRate', 1, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::Uint8)]
 final class MonitoringHrDataMessage extends Message
 {
     /**
@@ -33,7 +33,7 @@ final class MonitoringHrDataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('MonitoringHrData', MesgNum::MONITORING_HR_DATA);
+        parent::__construct('MonitoringHrData', MesgNum::MonitoringHrData->value);
     }
 
     /**

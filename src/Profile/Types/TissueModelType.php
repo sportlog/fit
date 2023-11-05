@@ -13,10 +13,7 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * TissueModelType constants
- */
-final class TissueModelType
+enum TissueModelType: int
 {
-    public const ZHL_16C = 0;
+    case Zhl16c = 0;
 }

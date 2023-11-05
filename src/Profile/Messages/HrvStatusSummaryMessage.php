@@ -23,14 +23,14 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * HrvStatusSummaryMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('WeeklyAverage', 0, FitBaseType::UINT16, 128.0, 0.0, 'ms', false, ProfileType::UINT16)]
-#[Field('LastNightAverage', 1, FitBaseType::UINT16, 128.0, 0.0, 'ms', false, ProfileType::UINT16)]
-#[Field('LastNight5MinHigh', 2, FitBaseType::UINT16, 128.0, 0.0, 'ms', false, ProfileType::UINT16)]
-#[Field('BaselineLowUpper', 3, FitBaseType::UINT16, 128.0, 0.0, 'ms', false, ProfileType::UINT16)]
-#[Field('BaselineBalancedLower', 4, FitBaseType::UINT16, 128.0, 0.0, 'ms', false, ProfileType::UINT16)]
-#[Field('BaselineBalancedUpper', 5, FitBaseType::UINT16, 128.0, 0.0, 'ms', false, ProfileType::UINT16)]
-#[Field('Status', 6, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::HRVSTATUS)]
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DateTime)]
+#[Field('WeeklyAverage', 0, FitBaseType::UINT16, 128.0, 0.0, 'ms', false, ProfileType::Uint16)]
+#[Field('LastNightAverage', 1, FitBaseType::UINT16, 128.0, 0.0, 'ms', false, ProfileType::Uint16)]
+#[Field('LastNight5MinHigh', 2, FitBaseType::UINT16, 128.0, 0.0, 'ms', false, ProfileType::Uint16)]
+#[Field('BaselineLowUpper', 3, FitBaseType::UINT16, 128.0, 0.0, 'ms', false, ProfileType::Uint16)]
+#[Field('BaselineBalancedLower', 4, FitBaseType::UINT16, 128.0, 0.0, 'ms', false, ProfileType::Uint16)]
+#[Field('BaselineBalancedUpper', 5, FitBaseType::UINT16, 128.0, 0.0, 'ms', false, ProfileType::Uint16)]
+#[Field('Status', 6, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::HrvStatus)]
 final class HrvStatusSummaryMessage extends Message
 {
     /**
@@ -38,7 +38,7 @@ final class HrvStatusSummaryMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('HrvStatusSummary', MesgNum::HRV_STATUS_SUMMARY);
+        parent::__construct('HrvStatusSummary', MesgNum::HrvStatusSummary->value);
     }
 
     /**

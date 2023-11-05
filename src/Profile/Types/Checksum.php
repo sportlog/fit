@@ -13,11 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * Checksum constants
- */
-final class Checksum
+enum Checksum: int
 {
-    public const CLEAR = 0;
-    public const OK = 1;
+    case Clear = 0;
+    case Ok = 1;
 }

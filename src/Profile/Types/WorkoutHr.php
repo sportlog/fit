@@ -13,10 +13,7 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * WorkoutHr constants
- */
-final class WorkoutHr
+enum WorkoutHr: int
 {
-    public const BPM_OFFSET = 100;
+    case BpmOffset = 100;
 }

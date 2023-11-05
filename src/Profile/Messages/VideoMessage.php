@@ -23,9 +23,9 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * VideoMessage message
  */
-#[Field('Url', 0, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('HostingProvider', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('Duration', 2, FitBaseType::UINT32, 1.0, 0.0, 'ms', false, ProfileType::UINT32)]
+#[Field('Url', 0, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::String)]
+#[Field('HostingProvider', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::String)]
+#[Field('Duration', 2, FitBaseType::UINT32, 1.0, 0.0, 'ms', false, ProfileType::Uint32)]
 final class VideoMessage extends Message
 {
     /**
@@ -33,7 +33,7 @@ final class VideoMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Video', MesgNum::VIDEO);
+        parent::__construct('Video', MesgNum::Video->value);
     }
 
     /**

@@ -13,30 +13,27 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * SplitType constants
- */
-final class SplitType
+enum SplitType: int
 {
-    public const ASCENT_SPLIT = 1;
-    public const DESCENT_SPLIT = 2;
-    public const INTERVAL_ACTIVE = 3;
-    public const INTERVAL_REST = 4;
-    public const INTERVAL_WARMUP = 5;
-    public const INTERVAL_COOLDOWN = 6;
-    public const INTERVAL_RECOVERY = 7;
-    public const INTERVAL_OTHER = 8;
-    public const CLIMB_ACTIVE = 9;
-    public const CLIMB_REST = 10;
-    public const SURF_ACTIVE = 11;
-    public const RUN_ACTIVE = 12;
-    public const RUN_REST = 13;
-    public const WORKOUT_ROUND = 14;
-    public const RWD_RUN = 17;
-    public const RWD_WALK = 18;
-    public const WINDSURF_ACTIVE = 21;
-    public const RWD_STAND = 22;
-    public const TRANSITION = 23;
-    public const SKI_LIFT_SPLIT = 28;
-    public const SKI_RUN_SPLIT = 29;
+    case AscentSplit = 1;
+    case DescentSplit = 2;
+    case IntervalActive = 3;
+    case IntervalRest = 4;
+    case IntervalWarmup = 5;
+    case IntervalCooldown = 6;
+    case IntervalRecovery = 7;
+    case IntervalOther = 8;
+    case ClimbActive = 9;
+    case ClimbRest = 10;
+    case SurfActive = 11;
+    case RunActive = 12;
+    case RunRest = 13;
+    case WorkoutRound = 14;
+    case RwdRun = 17;
+    case RwdWalk = 18;
+    case WindsurfActive = 21;
+    case RwdStand = 22;
+    case Transition = 23;
+    case SkiLiftSplit = 28;
+    case SkiRunSplit = 29;
 }

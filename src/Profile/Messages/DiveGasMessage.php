@@ -23,11 +23,11 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * DiveGasMessage message
  */
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('HeliumContent', 0, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
-#[Field('OxygenContent', 1, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
-#[Field('Status', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DIVEGASSTATUS)]
-#[Field('Mode', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DIVEGASMODE)]
+#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MessageIndex)]
+#[Field('HeliumContent', 0, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::Uint8)]
+#[Field('OxygenContent', 1, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::Uint8)]
+#[Field('Status', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DiveGasStatus)]
+#[Field('Mode', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DiveGasMode)]
 final class DiveGasMessage extends Message
 {
     /**
@@ -35,7 +35,7 @@ final class DiveGasMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('DiveGas', MesgNum::DIVE_GAS);
+        parent::__construct('DiveGas', MesgNum::DiveGas->value);
     }
 
     /**

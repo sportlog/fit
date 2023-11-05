@@ -13,11 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * LengthType constants
- */
-final class LengthType
+enum LengthType: int
 {
-    public const IDLE = 0;
-    public const ACTIVE = 1;
+    case Idle = 0;
+    case Active = 1;
 }

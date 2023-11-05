@@ -23,15 +23,15 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * ObdiiDataMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('TimestampMs', 0, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
-#[Field('TimeOffset', 1, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
-#[Field('Pid', 2, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-#[Field('RawData', 3, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-#[Field('PidDataSize', 4, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('SystemTime', 5, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('StartTimestamp', 6, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('StartTimestampMs', 7, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DateTime)]
+#[Field('TimestampMs', 0, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::Uint16)]
+#[Field('TimeOffset', 1, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::Uint16)]
+#[Field('Pid', 2, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::Byte)]
+#[Field('RawData', 3, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::Byte)]
+#[Field('PidDataSize', 4, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('SystemTime', 5, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::Uint32)]
+#[Field('StartTimestamp', 6, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DateTime)]
+#[Field('StartTimestampMs', 7, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::Uint16)]
 final class ObdiiDataMessage extends Message
 {
     /**
@@ -39,7 +39,7 @@ final class ObdiiDataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('ObdiiData', MesgNum::OBDII_DATA);
+        parent::__construct('ObdiiData', MesgNum::ObdiiData->value);
     }
 
     /**

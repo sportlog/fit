@@ -13,13 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * SensorType constants
- */
-final class SensorType
+enum SensorType: int
 {
-    public const ACCELEROMETER = 0;
-    public const GYROSCOPE = 1;
-    public const COMPASS = 2;
-    public const BAROMETER = 3;
+    case Accelerometer = 0;
+    case Gyroscope = 1;
+    case Compass = 2;
+    case Barometer = 3;
 }

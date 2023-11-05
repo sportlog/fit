@@ -23,11 +23,11 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * DeveloperDataIdMessage message
  */
-#[Field('DeveloperId', 0, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-#[Field('ApplicationId', 1, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-#[Field('ManufacturerId', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MANUFACTURER)]
-#[Field('DeveloperDataIndex', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('ApplicationVersion', 4, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('DeveloperId', 0, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::Byte)]
+#[Field('ApplicationId', 1, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::Byte)]
+#[Field('ManufacturerId', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::Manufacturer)]
+#[Field('DeveloperDataIndex', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('ApplicationVersion', 4, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::Uint32)]
 final class DeveloperDataIdMessage extends Message
 {
     /**
@@ -35,7 +35,7 @@ final class DeveloperDataIdMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('DeveloperDataId', MesgNum::DEVELOPER_DATA_ID);
+        parent::__construct('DeveloperDataId', MesgNum::DeveloperDataId->value);
     }
 
     /**

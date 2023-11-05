@@ -23,10 +23,10 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * Spo2DataMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('ReadingSpo2', 0, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
-#[Field('ReadingConfidence', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('Mode', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SPO2MEASUREMENTTYPE)]
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DateTime)]
+#[Field('ReadingSpo2', 0, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::Uint8)]
+#[Field('ReadingConfidence', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('Mode', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::Spo2MeasurementType)]
 final class Spo2DataMessage extends Message
 {
     /**
@@ -34,7 +34,7 @@ final class Spo2DataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Spo2Data', MesgNum::SPO2_DATA);
+        parent::__construct('Spo2Data', MesgNum::Spo2Data->value);
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php
-declare (strict_types = 1);
+
+declare(strict_types=1);
 
 /**
  * Sportlog (https://sportlog.at)
@@ -17,14 +18,17 @@ use Sportlog\FIT\Profile\ProfileType;
 /**
  * FieldTest
  */
-final class FieldTest extends TestCase {
-    public function testIfUint32TypeIsNumeric(): void {
-        $field = new Field('my_field', 1, FitBaseType::SINT16, 1.0, 0.0, '', true, ProfileType::SINT16);
+final class FieldTest extends TestCase
+{
+    public function testIfUint32TypeIsNumeric(): void
+    {
+        $field = new Field('my_field', 1, FitBaseType::SINT16, 1.0, 0.0, '', true, ProfileType::Sint16);
         $this->assertTrue($field->isNumeric());
     }
 
-    public function testIfStringTypeIsNonNumeric(): void {
-        $field = new Field('my_field', 1, FitBaseType::STRING, 1.0, 0.0, '', true, ProfileType::STRING);
+    public function testIfStringTypeIsNonNumeric(): void
+    {
+        $field = new Field('my_field', 1, FitBaseType::STRING, 1.0, 0.0, '', true, ProfileType::String);
         $this->assertFalse($field->isNumeric());
     }
 }

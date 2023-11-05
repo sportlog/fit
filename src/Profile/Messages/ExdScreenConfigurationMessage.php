@@ -23,10 +23,10 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * ExdScreenConfigurationMessage message
  */
-#[Field('ScreenIndex', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('FieldCount', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('Layout', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::EXDLAYOUT)]
-#[Field('ScreenEnabled', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
+#[Field('ScreenIndex', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('FieldCount', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('Layout', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ExdLayout)]
+#[Field('ScreenEnabled', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::Bool)]
 final class ExdScreenConfigurationMessage extends Message
 {
     /**
@@ -34,7 +34,7 @@ final class ExdScreenConfigurationMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('ExdScreenConfiguration', MesgNum::EXD_SCREEN_CONFIGURATION);
+        parent::__construct('ExdScreenConfiguration', MesgNum::ExdScreenConfiguration->value);
     }
 
     /**

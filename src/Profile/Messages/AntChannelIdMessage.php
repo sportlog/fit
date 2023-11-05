@@ -23,11 +23,11 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * AntChannelIdMessage message
  */
-#[Field('ChannelNumber', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('DeviceType', 1, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-#[Field('DeviceNumber', 2, FitBaseType::UINT16Z, 1.0, 0.0, '', false, ProfileType::UINT16Z)]
-#[Field('TransmissionType', 3, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-#[Field('DeviceIndex', 4, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::DEVICEINDEX)]
+#[Field('ChannelNumber', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('DeviceType', 1, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::Uint8z)]
+#[Field('DeviceNumber', 2, FitBaseType::UINT16Z, 1.0, 0.0, '', false, ProfileType::Uint16z)]
+#[Field('TransmissionType', 3, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::Uint8z)]
+#[Field('DeviceIndex', 4, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::DeviceIndex)]
 final class AntChannelIdMessage extends Message
 {
     /**
@@ -35,7 +35,7 @@ final class AntChannelIdMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('AntChannelId', MesgNum::ANT_CHANNEL_ID);
+        parent::__construct('AntChannelId', MesgNum::AntChannelId->value);
     }
 
     /**

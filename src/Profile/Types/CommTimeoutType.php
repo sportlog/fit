@@ -13,13 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * CommTimeoutType constants
- */
-final class CommTimeoutType
+enum CommTimeoutType: int
 {
-    public const WILDCARD_PAIRING_TIMEOUT = 0;
-    public const PAIRING_TIMEOUT = 1;
-    public const CONNECTION_LOST = 2;
-    public const CONNECTION_TIMEOUT = 3;
+    case WildcardPairingTimeout = 0;
+    case PairingTimeout = 1;
+    case ConnectionLost = 2;
+    case ConnectionTimeout = 3;
 }

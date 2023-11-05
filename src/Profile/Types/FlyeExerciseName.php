@@ -13,19 +13,16 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * FlyeExerciseName constants
- */
-final class FlyeExerciseName
+enum FlyeExerciseName: int
 {
-    public const CABLE_CROSSOVER = 0;
-    public const DECLINE_DUMBBELL_FLYE = 1;
-    public const DUMBBELL_FLYE = 2;
-    public const INCLINE_DUMBBELL_FLYE = 3;
-    public const KETTLEBELL_FLYE = 4;
-    public const KNEELING_REAR_FLYE = 5;
-    public const SINGLE_ARM_STANDING_CABLE_REVERSE_FLYE = 6;
-    public const SWISS_BALL_DUMBBELL_FLYE = 7;
-    public const ARM_ROTATIONS = 8;
-    public const HUG_A_TREE = 9;
+    case CableCrossover = 0;
+    case DeclineDumbbellFlye = 1;
+    case DumbbellFlye = 2;
+    case InclineDumbbellFlye = 3;
+    case KettlebellFlye = 4;
+    case KneelingRearFlye = 5;
+    case SingleArmStandingCableReverseFlye = 6;
+    case SwissBallDumbbellFlye = 7;
+    case ArmRotations = 8;
+    case HugATree = 9;
 }

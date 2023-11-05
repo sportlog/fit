@@ -23,9 +23,9 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * HrZoneMessage message
  */
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('HighBpm', 1, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
-#[Field('Name', 2, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MessageIndex)]
+#[Field('HighBpm', 1, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::Uint8)]
+#[Field('Name', 2, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::String)]
 final class HrZoneMessage extends Message
 {
     /**
@@ -33,7 +33,7 @@ final class HrZoneMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('HrZone', MesgNum::HR_ZONE);
+        parent::__construct('HrZone', MesgNum::HrZone->value);
     }
 
     /**

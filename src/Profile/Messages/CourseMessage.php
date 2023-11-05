@@ -23,10 +23,10 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * CourseMessage message
  */
-#[Field('Sport', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SPORT)]
-#[Field('Name', 5, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('Capabilities', 6, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::COURSECAPABILITIES)]
-#[Field('SubSport', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SUBSPORT)]
+#[Field('Sport', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::Sport)]
+#[Field('Name', 5, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::String)]
+#[Field('Capabilities', 6, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::CourseCapabilities)]
+#[Field('SubSport', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SubSport)]
 final class CourseMessage extends Message
 {
     /**
@@ -34,7 +34,7 @@ final class CourseMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Course', MesgNum::COURSE);
+        parent::__construct('Course', MesgNum::Course->value);
     }
 
     /**

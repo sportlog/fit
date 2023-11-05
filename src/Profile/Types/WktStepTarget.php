@@ -13,23 +13,20 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * WktStepTarget constants
- */
-final class WktStepTarget
+enum WktStepTarget: int
 {
-    public const SPEED = 0;
-    public const HEART_RATE = 1;
-    public const OPEN = 2;
-    public const CADENCE = 3;
-    public const POWER = 4;
-    public const GRADE = 5;
-    public const RESISTANCE = 6;
-    public const POWER_3S = 7;
-    public const POWER_10S = 8;
-    public const POWER_30S = 9;
-    public const POWER_LAP = 10;
-    public const SWIM_STROKE = 11;
-    public const SPEED_LAP = 12;
-    public const HEART_RATE_LAP = 13;
+    case Speed = 0;
+    case HeartRate = 1;
+    case Open = 2;
+    case Cadence = 3;
+    case Power = 4;
+    case Grade = 5;
+    case Resistance = 6;
+    case Power3s = 7;
+    case Power10s = 8;
+    case Power30s = 9;
+    case PowerLap = 10;
+    case SwimStroke = 11;
+    case SpeedLap = 12;
+    case HeartRateLap = 13;
 }

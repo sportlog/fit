@@ -13,18 +13,15 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * ExdLayout constants
- */
-final class ExdLayout
+enum ExdLayout: int
 {
-    public const FULL_SCREEN = 0;
-    public const HALF_VERTICAL = 1;
-    public const HALF_HORIZONTAL = 2;
-    public const HALF_VERTICAL_RIGHT_SPLIT = 3;
-    public const HALF_HORIZONTAL_BOTTOM_SPLIT = 4;
-    public const FULL_QUARTER_SPLIT = 5;
-    public const HALF_VERTICAL_LEFT_SPLIT = 6;
-    public const HALF_HORIZONTAL_TOP_SPLIT = 7;
-    public const DYNAMIC = 8;
+    case FullScreen = 0;
+    case HalfVertical = 1;
+    case HalfHorizontal = 2;
+    case HalfVerticalRightSplit = 3;
+    case HalfHorizontalBottomSplit = 4;
+    case FullQuarterSplit = 5;
+    case HalfVerticalLeftSplit = 6;
+    case HalfHorizontalTopSplit = 7;
+    case Dynamic = 8;
 }

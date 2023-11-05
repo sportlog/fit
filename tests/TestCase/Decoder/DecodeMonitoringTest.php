@@ -12,10 +12,8 @@ namespace Sportlog\FIT\Test\TestCase\Decoder;
 
 use Sportlog\FIT\Decoder;
 use Sportlog\FIT\Profile\Message\MonitoringInfoMessage;
-use Sportlog\FIT\Profile\Message\MonitoringMessage;
 use Sportlog\FIT\Test\TestCase\FilePath;
 use PHPUnit\Framework\TestCase;
-use Sportlog\FIT\Profile\MessageNumber;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
@@ -31,10 +29,10 @@ final class DecodeMonitoringTest extends TestCase
 
         $this->assertNotNull($messages);
 
-        $monitoringMessages = $messages->getMessages(MesgNum::MONITORING);
+        $monitoringMessages = $messages->getMessages(MesgNum::Monitoring);
         $this->assertCount(337, $monitoringMessages);
 
-        $monitoringInfoMessages = $messages->getMessages(MesgNum::MONITORING_INFO);
+        $monitoringInfoMessages = $messages->getMessages(MesgNum::MonitoringInfo);
         /** @var MonitoringInfoMessage $lastMonitoringInfoMessage */
         $lastMonitoringInfoMessage = $monitoringInfoMessages[count($monitoringInfoMessages) - 1];
         $this->assertEquals(2042, $lastMonitoringInfoMessage->getRestingMetabolicRate());

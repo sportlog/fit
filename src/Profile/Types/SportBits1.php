@@ -13,17 +13,14 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * SportBits1 constants
- */
-final class SportBits1
+enum SportBits1: int
 {
-    public const TENNIS = 1;
-    public const AMERICAN_FOOTBALL = 2;
-    public const TRAINING = 4;
-    public const WALKING = 8;
-    public const CROSS_COUNTRY_SKIING = 16;
-    public const ALPINE_SKIING = 32;
-    public const SNOWBOARDING = 64;
-    public const ROWING = 128;
+    case Tennis = 1;
+    case AmericanFootball = 2;
+    case Training = 4;
+    case Walking = 8;
+    case CrossCountrySkiing = 16;
+    case AlpineSkiing = 32;
+    case Snowboarding = 64;
+    case Rowing = 128;
 }

@@ -23,8 +23,8 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * SlaveDeviceMessage message
  */
-#[Field('Manufacturer', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MANUFACTURER)]
-#[Field('Product', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('Manufacturer', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::Manufacturer)]
+#[Field('Product', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::Uint16)]
 final class SlaveDeviceMessage extends Message
 {
     /**
@@ -32,7 +32,7 @@ final class SlaveDeviceMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('SlaveDevice', MesgNum::SLAVE_DEVICE);
+        parent::__construct('SlaveDevice', MesgNum::SlaveDevice->value);
     }
 
     /**

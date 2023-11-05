@@ -13,10 +13,7 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * Weight constants
- */
-final class Weight
+enum Weight: int
 {
-    public const CALCULATING = 65534;
+    case Calculating = 65534;
 }

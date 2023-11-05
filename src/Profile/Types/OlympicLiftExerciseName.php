@@ -13,30 +13,27 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * OlympicLiftExerciseName constants
- */
-final class OlympicLiftExerciseName
+enum OlympicLiftExerciseName: int
 {
-    public const BARBELL_HANG_POWER_CLEAN = 0;
-    public const BARBELL_HANG_SQUAT_CLEAN = 1;
-    public const BARBELL_POWER_CLEAN = 2;
-    public const BARBELL_POWER_SNATCH = 3;
-    public const BARBELL_SQUAT_CLEAN = 4;
-    public const CLEAN_AND_JERK = 5;
-    public const BARBELL_HANG_POWER_SNATCH = 6;
-    public const BARBELL_HANG_PULL = 7;
-    public const BARBELL_HIGH_PULL = 8;
-    public const BARBELL_SNATCH = 9;
-    public const BARBELL_SPLIT_JERK = 10;
-    public const CLEAN = 11;
-    public const DUMBBELL_CLEAN = 12;
-    public const DUMBBELL_HANG_PULL = 13;
-    public const ONE_HAND_DUMBBELL_SPLIT_SNATCH = 14;
-    public const PUSH_JERK = 15;
-    public const SINGLE_ARM_DUMBBELL_SNATCH = 16;
-    public const SINGLE_ARM_HANG_SNATCH = 17;
-    public const SINGLE_ARM_KETTLEBELL_SNATCH = 18;
-    public const SPLIT_JERK = 19;
-    public const SQUAT_CLEAN_AND_JERK = 20;
+    case BarbellHangPowerClean = 0;
+    case BarbellHangSquatClean = 1;
+    case BarbellPowerClean = 2;
+    case BarbellPowerSnatch = 3;
+    case BarbellSquatClean = 4;
+    case CleanAndJerk = 5;
+    case BarbellHangPowerSnatch = 6;
+    case BarbellHangPull = 7;
+    case BarbellHighPull = 8;
+    case BarbellSnatch = 9;
+    case BarbellSplitJerk = 10;
+    case Clean = 11;
+    case DumbbellClean = 12;
+    case DumbbellHangPull = 13;
+    case OneHandDumbbellSplitSnatch = 14;
+    case PushJerk = 15;
+    case SingleArmDumbbellSnatch = 16;
+    case SingleArmHangSnatch = 17;
+    case SingleArmKettlebellSnatch = 18;
+    case SplitJerk = 19;
+    case SquatCleanAndJerk = 20;
 }

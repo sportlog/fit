@@ -23,12 +23,12 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * FileCapabilitiesMessage message
  */
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('Type', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::FILE)]
-#[Field('Flags', 1, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::FILEFLAGS)]
-#[Field('Directory', 2, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('MaxCount', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('MaxSize', 4, FitBaseType::UINT32, 1.0, 0.0, 'bytes', false, ProfileType::UINT32)]
+#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MessageIndex)]
+#[Field('Type', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::File)]
+#[Field('Flags', 1, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::FileFlags)]
+#[Field('Directory', 2, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::String)]
+#[Field('MaxCount', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::Uint16)]
+#[Field('MaxSize', 4, FitBaseType::UINT32, 1.0, 0.0, 'bytes', false, ProfileType::Uint32)]
 final class FileCapabilitiesMessage extends Message
 {
     /**
@@ -36,7 +36,7 @@ final class FileCapabilitiesMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('FileCapabilities', MesgNum::FILE_CAPABILITIES);
+        parent::__construct('FileCapabilities', MesgNum::FileCapabilities->value);
     }
 
     /**

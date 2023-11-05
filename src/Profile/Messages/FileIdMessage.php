@@ -23,13 +23,13 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * FileIdMessage message
  */
-#[Field('Type', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::FILE)]
-#[Field('Manufacturer', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MANUFACTURER)]
-#[Field('Product', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('SerialNumber', 3, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::UINT32Z)]
-#[Field('TimeCreated', 4, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('Number', 5, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('ProductName', 8, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('Type', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::File)]
+#[Field('Manufacturer', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::Manufacturer)]
+#[Field('Product', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::Uint16)]
+#[Field('SerialNumber', 3, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::Uint32z)]
+#[Field('TimeCreated', 4, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DateTime)]
+#[Field('Number', 5, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::Uint16)]
+#[Field('ProductName', 8, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::String)]
 final class FileIdMessage extends Message
 {
     /**
@@ -37,7 +37,7 @@ final class FileIdMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('FileId', MesgNum::FILE_ID);
+        parent::__construct('FileId', MesgNum::FileId->value);
     }
 
     /**

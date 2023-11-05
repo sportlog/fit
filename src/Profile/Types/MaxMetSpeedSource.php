@@ -13,12 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * MaxMetSpeedSource constants
- */
-final class MaxMetSpeedSource
+enum MaxMetSpeedSource: int
 {
-    public const ONBOARD_GPS = 0;
-    public const CONNECTED_GPS = 1;
-    public const CADENCE = 2;
+    case OnboardGps = 0;
+    case ConnectedGps = 1;
+    case Cadence = 2;
 }

@@ -75,11 +75,9 @@ class MessageGenerator
 
             $file = $this->createFile();
             $namespace = $file->addNamespace('Sportlog\\FIT\\Profile');
-            //$profileType = $namespace->addEnum('ProfileType');
-            $profileType = $namespace->addClass('ProfileType');
+            $profileType = $namespace->addEnum('ProfileType');
             foreach ($profileTypes as $value) {
-                // $profileType->addCase(str_replace(',', '', $value), $value);
-                $profileType->addConstant(strtoupper(str_replace(',', '', $value)), $value);
+                $profileType->addCase(str_replace(',', '', $value), $value);
             }
             $printer = new PsrPrinter();
             $this->writeFile(join(DIRECTORY_SEPARATOR, [$outputPath, "ProfileType.php"]), $printer->printFile($file));
@@ -170,19 +168,23 @@ class MessageGenerator
     {
         $file = $this->createFile();
         $namespace = $file->addNamespace('Sportlog\\FIT\\Profile\\Types');
-        $class = $namespace->addClass($classname);
-
-        $class->setFinal(true)
-            ->addComment("{$classname} constants");
-
+        $class = $namespace->addEnum($classname);
         foreach ($values as $key => $value) {
             // Some constants start with a digit, which is not allowed;
             // So prefix those with an underscore
-            $constName = strtoupper(is_numeric(substr($key, 0, 1)) ? "_{$key}" : $key);
-            $class->addConstant($constName, str_starts_with($value, '0x') ? hexdec($value) : intval($value));
+            $constName = $this->snakeToCamel($key);
+            if (is_numeric(substr($constName, 0, 1))) {
+                $constName = "_" . $constName;
+            }
+            $class->addCase($constName, str_starts_with($value, '0x') ? hexdec($value) : intval($value));
         }
 
         return $file;
+    }
+
+    private function snakeToCamel(string $input): string
+    {
+        return ucfirst(str_replace(' ', '', ucwords(str_replace('_', ' ', $input))));
     }
 
     public function writeMessages(string $fileInput, string $outputPath): int
@@ -215,12 +217,6 @@ class MessageGenerator
         }
     }
 
-    private function underscorize(string $str): string
-    {
-        $arr = explode(" ", trim(preg_replace("([A-Z])", " $0", $str)));
-        return join("_", $arr);
-    }
-
     private function createMessageFactory(string $name, array $uses): PhpFile
     {
         $factory = $this->createFile();
@@ -250,8 +246,8 @@ class MessageGenerator
         foreach ($uses as $use) {
             $file = str_replace('Message', '', $use);
             if ($cnt !== $i) {
-                $underscorize = strtoupper($this->underscorize($file));
-                $method->addBody(str_repeat(" ", 4) . "MesgNum::{$underscorize} => new {$use}(),");
+                // $underscorize = strtoupper($this->underscorize($file));
+                $method->addBody(str_repeat(" ", 4) . "MesgNum::{$file}->value => new {$use}(),");
             } else {
                 $method->addBody(str_repeat(" ", 4) . "default => new {$use}()");
             }
@@ -319,7 +315,7 @@ class MessageGenerator
                 $class->addAttribute(Field::class, [
                     $name, (int)$num,
                     new Literal("FitBaseType::" . $fitBaseTypeConstants[(int)$type]), $scale, (float)$offset, $units,
-                    $accumulated === 'true', new Literal("ProfileType::" . strtoupper($profileType))
+                    $accumulated === 'true', new Literal("ProfileType::{$profileType}")
                 ]);
 
                 $splittedName = trim(strtolower(join(" ", preg_split('/(?=[A-Z])/', $name))));
@@ -360,7 +356,7 @@ class MessageGenerator
             ->addComment("Creates a new message instance")
             ->setBody('parent::__construct(?, ?);', [
                 $classId,
-                $classId === self::INVALID_MESSAGE ? -1 : new Literal(sprintf('MesgNum::%s', strtoupper($this->underscorize($classId))))
+                $classId === self::INVALID_MESSAGE ? -1 : new Literal(sprintf('MesgNum::%s->value', $classId))
             ]);
 
         return $class;
@@ -383,38 +379,40 @@ class MessageGenerator
 
     private function getPhpTypeFromProfileType(string $profileType, float $scale, float $offset): string
     {
-        switch ($profileType) {
-            case ProfileType::BOOL:
+        $mappedProfileType = ProfileType::tryFrom($profileType);
+
+        switch ($mappedProfileType) {
+            case ProfileType::Bool:
                 return Type::Bool;
 
-            case ProfileType::UINT8:
-            case ProfileType::SINT8:
-            case ProfileType::UINT16:
-            case ProfileType::SINT16:
-            case ProfileType::UINT16Z:
-            case ProfileType::UINT32:
-            case ProfileType::UINT32Z;
-            case ProfileType::SINT32:
+            case ProfileType::Uint8:
+            case ProfileType::Sint8:
+            case ProfileType::Uint16:
+            case ProfileType::Sint16:
+            case ProfileType::Uint16z:
+            case ProfileType::Uint32:
+            case ProfileType::Uint32z;
+            case ProfileType::Sint32:
                 // The raw value will be divided through the scale.
                 // So if scale is not the default (1.0), this might
                 // result in a float.
                 return $scale === 1.0 && $offset === 0.0 ? Type::Int : Type::Float;
 
-            case ProfileType::LOCALDATETIME:
-            case ProfileType::DATETIME:
+            case ProfileType::LocalDateTime:
+            case ProfileType::DateTime:
                 return DateTime::class;
 
-            case ProfileType::STRING:
+            case ProfileType::String:
                 return Type::String;
 
-            case ProfileType::SINT64:
-            case ProfileType::FLOAT32:
-            case ProfileType::FLOAT64:
-            case ProfileType::UINT64:
-            case ProfileType::UINT64Z:
+            case ProfileType::Sint64:
+            case ProfileType::Float32:
+            case ProfileType::Float64:
+            case ProfileType::Uint64:
+            case ProfileType::Uint64z:
                 return Type::Float;
 
-            case ProfileType::BYTE:
+            case ProfileType::Byte:
                 return Type::Mixed;
 
             default:

@@ -23,9 +23,9 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * CadenceZoneMessage message
  */
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('HighValue', 0, FitBaseType::UINT8, 1.0, 0.0, 'rpm', false, ProfileType::UINT8)]
-#[Field('Name', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MessageIndex)]
+#[Field('HighValue', 0, FitBaseType::UINT8, 1.0, 0.0, 'rpm', false, ProfileType::Uint8)]
+#[Field('Name', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::String)]
 final class CadenceZoneMessage extends Message
 {
     /**
@@ -33,7 +33,7 @@ final class CadenceZoneMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('CadenceZone', MesgNum::CADENCE_ZONE);
+        parent::__construct('CadenceZone', MesgNum::CadenceZone->value);
     }
 
     /**

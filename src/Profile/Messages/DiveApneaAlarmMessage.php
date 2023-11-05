@@ -23,19 +23,19 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * DiveApneaAlarmMessage message
  */
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('Depth', 0, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32)]
-#[Field('Time', 1, FitBaseType::SINT32, 1.0, 0.0, 's', false, ProfileType::SINT32)]
-#[Field('Enabled', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-#[Field('AlarmType', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DIVEALARMTYPE)]
-#[Field('Sound', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::TONE)]
-#[Field('DiveTypes', 5, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SUBSPORT)]
-#[Field('Id', 6, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('PopupEnabled', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-#[Field('TriggerOnDescent', 8, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-#[Field('TriggerOnAscent', 9, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-#[Field('Repeating', 10, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-#[Field('Speed', 11, FitBaseType::SINT32, 1000.0, 0.0, 'mps', false, ProfileType::SINT32)]
+#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MessageIndex)]
+#[Field('Depth', 0, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::Uint32)]
+#[Field('Time', 1, FitBaseType::SINT32, 1.0, 0.0, 's', false, ProfileType::Sint32)]
+#[Field('Enabled', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::Bool)]
+#[Field('AlarmType', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DiveAlarmType)]
+#[Field('Sound', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::Tone)]
+#[Field('DiveTypes', 5, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SubSport)]
+#[Field('Id', 6, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::Uint32)]
+#[Field('PopupEnabled', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::Bool)]
+#[Field('TriggerOnDescent', 8, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::Bool)]
+#[Field('TriggerOnAscent', 9, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::Bool)]
+#[Field('Repeating', 10, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::Bool)]
+#[Field('Speed', 11, FitBaseType::SINT32, 1000.0, 0.0, 'mps', false, ProfileType::Sint32)]
 final class DiveApneaAlarmMessage extends Message
 {
     /**
@@ -43,7 +43,7 @@ final class DiveApneaAlarmMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('DiveApneaAlarm', MesgNum::DIVE_APNEA_ALARM);
+        parent::__construct('DiveApneaAlarm', MesgNum::DiveApneaAlarm->value);
     }
 
     /**

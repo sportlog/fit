@@ -13,20 +13,17 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * ExdDisplayType constants
- */
-final class ExdDisplayType
+enum ExdDisplayType: int
 {
-    public const NUMERICAL = 0;
-    public const SIMPLE = 1;
-    public const GRAPH = 2;
-    public const BAR = 3;
-    public const CIRCLE_GRAPH = 4;
-    public const VIRTUAL_PARTNER = 5;
-    public const BALANCE = 6;
-    public const STRING_LIST = 7;
-    public const STRING = 8;
-    public const SIMPLE_DYNAMIC_ICON = 9;
-    public const GAUGE = 10;
+    case Numerical = 0;
+    case Simple = 1;
+    case Graph = 2;
+    case Bar = 3;
+    case CircleGraph = 4;
+    case VirtualPartner = 5;
+    case Balance = 6;
+    case StringList = 7;
+    case String = 8;
+    case SimpleDynamicIcon = 9;
+    case Gauge = 10;
 }

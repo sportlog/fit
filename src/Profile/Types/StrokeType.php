@@ -13,15 +13,12 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * StrokeType constants
- */
-final class StrokeType
+enum StrokeType: int
 {
-    public const NO_EVENT = 0;
-    public const OTHER = 1;
-    public const SERVE = 2;
-    public const FOREHAND = 3;
-    public const BACKHAND = 4;
-    public const SMASH = 5;
+    case NoEvent = 0;
+    case Other = 1;
+    case Serve = 2;
+    case Forehand = 3;
+    case Backhand = 4;
+    case Smash = 5;
 }

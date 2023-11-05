@@ -13,12 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * GasConsumptionRateType constants
- */
-final class GasConsumptionRateType
+enum GasConsumptionRateType: int
 {
-    public const PRESSURE_SAC = 0;
-    public const VOLUME_SAC = 1;
-    public const RMV = 2;
+    case PressureSac = 0;
+    case VolumeSac = 1;
+    case Rmv = 2;
 }

@@ -13,11 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * BikeLightBeamAngleMode constants
- */
-final class BikeLightBeamAngleMode
+enum BikeLightBeamAngleMode: int
 {
-    public const MANUAL = 0;
-    public const AUTO = 1;
+    case Manual = 0;
+    case Auto = 1;
 }

@@ -13,19 +13,16 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * EventType constants
- */
-final class EventType
+enum EventType: int
 {
-    public const START = 0;
-    public const STOP = 1;
-    public const CONSECUTIVE_DEPRECIATED = 2;
-    public const MARKER = 3;
-    public const STOP_ALL = 4;
-    public const BEGIN_DEPRECIATED = 5;
-    public const END_DEPRECIATED = 6;
-    public const END_ALL_DEPRECIATED = 7;
-    public const STOP_DISABLE = 8;
-    public const STOP_DISABLE_ALL = 9;
+    case Start = 0;
+    case Stop = 1;
+    case ConsecutiveDepreciated = 2;
+    case Marker = 3;
+    case StopAll = 4;
+    case BeginDepreciated = 5;
+    case EndDepreciated = 6;
+    case EndAllDepreciated = 7;
+    case StopDisable = 8;
+    case StopDisableAll = 9;
 }

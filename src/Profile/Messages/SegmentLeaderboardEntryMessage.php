@@ -23,13 +23,13 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * SegmentLeaderboardEntryMessage message
  */
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('Name', 0, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('Type', 1, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SEGMENTLEADERBOARDTYPE)]
-#[Field('GroupPrimaryKey', 2, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('ActivityId', 3, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('SegmentTime', 4, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
-#[Field('ActivityIdString', 5, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MessageIndex)]
+#[Field('Name', 0, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::String)]
+#[Field('Type', 1, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SegmentLeaderboardType)]
+#[Field('GroupPrimaryKey', 2, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::Uint32)]
+#[Field('ActivityId', 3, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::Uint32)]
+#[Field('SegmentTime', 4, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::Uint32)]
+#[Field('ActivityIdString', 5, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::String)]
 final class SegmentLeaderboardEntryMessage extends Message
 {
     /**
@@ -37,7 +37,7 @@ final class SegmentLeaderboardEntryMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('SegmentLeaderboardEntry', MesgNum::SEGMENT_LEADERBOARD_ENTRY);
+        parent::__construct('SegmentLeaderboardEntry', MesgNum::SegmentLeaderboardEntry->value);
     }
 
     /**

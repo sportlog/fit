@@ -13,11 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * HrType constants
- */
-final class HrType
+enum HrType: int
 {
-    public const NORMAL = 0;
-    public const IRREGULAR = 1;
+    case Normal = 0;
+    case Irregular = 1;
 }

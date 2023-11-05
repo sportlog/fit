@@ -13,11 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * Side constants
- */
-final class Side
+enum Side: int
 {
-    public const RIGHT = 0;
-    public const LEFT = 1;
+    case Right = 0;
+    case Left = 1;
 }

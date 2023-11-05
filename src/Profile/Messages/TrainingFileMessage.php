@@ -23,12 +23,12 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * TrainingFileMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('Type', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::FILE)]
-#[Field('Manufacturer', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MANUFACTURER)]
-#[Field('Product', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('SerialNumber', 3, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::UINT32Z)]
-#[Field('TimeCreated', 4, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DateTime)]
+#[Field('Type', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::File)]
+#[Field('Manufacturer', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::Manufacturer)]
+#[Field('Product', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::Uint16)]
+#[Field('SerialNumber', 3, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::Uint32z)]
+#[Field('TimeCreated', 4, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DateTime)]
 final class TrainingFileMessage extends Message
 {
     /**
@@ -36,7 +36,7 @@ final class TrainingFileMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('TrainingFile', MesgNum::TRAINING_FILE);
+        parent::__construct('TrainingFile', MesgNum::TrainingFile->value);
     }
 
     /**

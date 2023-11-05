@@ -13,11 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * PwrZoneCalc constants
- */
-final class PwrZoneCalc
+enum PwrZoneCalc: int
 {
-    public const CUSTOM = 0;
-    public const PERCENT_FTP = 1;
+    case Custom = 0;
+    case PercentFtp = 1;
 }

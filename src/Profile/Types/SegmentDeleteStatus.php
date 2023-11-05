@@ -13,12 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * SegmentDeleteStatus constants
- */
-final class SegmentDeleteStatus
+enum SegmentDeleteStatus: int
 {
-    public const DO_NOT_DELETE = 0;
-    public const DELETE_ONE = 1;
-    public const DELETE_ALL = 2;
+    case DoNotDelete = 0;
+    case DeleteOne = 1;
+    case DeleteAll = 2;
 }

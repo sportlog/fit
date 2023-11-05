@@ -13,12 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * GoalSource constants
- */
-final class GoalSource
+enum GoalSource: int
 {
-    public const AUTO = 0;
-    public const COMMUNITY = 1;
-    public const USER = 2;
+    case Auto = 0;
+    case Community = 1;
+    case User = 2;
 }

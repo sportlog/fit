@@ -16,12 +16,14 @@ use Sportlog\FIT\Profile\MessageNumber;
 use Sportlog\FIT\Profile\Messages\RecordMessage;
 use Sportlog\FIT\Profile\Messages\SessionMessage;
 use Sportlog\FIT\Profile\Messages\SportMessage;
+use Sportlog\FIT\Profile\Types\MesgNum;
 use XMLWriter;
 
 /**
  * Creates a GPX file from the FIT messages
  */
-class GPXWriter {
+class GPXWriter
+{
     /**
      * Creates a GPX file from the FIT messages
      *
@@ -29,15 +31,16 @@ class GPXWriter {
      * @param MessageList $messages
      * @return void
      */
-    public static function write(string $file, MessageList $messages): void {
+    public static function write(string $file, MessageList $messages): void
+    {
         /** @var SessionMessage $session */
-        $session = self::getFirstMessage($messages, MessageNumber::Session);
+        $session = self::getFirstMessage($messages, MesgNum::Session);
         /** @var SportMessage $sport */
-        $sport = self::getFirstMessage($messages, MessageNumber::Sport);
+        $sport = self::getFirstMessage($messages, MesgNum::Sport);
 
         $writer = new XMLWriter();
         $writer->openURI($file);
-        $writer->setIndent(true);   
+        $writer->setIndent(true);
         $writer->startDocument('1.0', 'utf-8');
         $writer->startElement('gpx');
         $writer->writeAttribute('creator', 'sportlog/fit');
@@ -59,7 +62,7 @@ class GPXWriter {
 
         $semiCirclesToDegrees = (180 / pow(2, 31));
 
-        foreach ($messages->getMessages(MessageNumber::Record) as $record) {
+        foreach ($messages->getMessages(MesgNum::Record) as $record) {
             if ($record->getPositionLat() === null || $record->getPositionLong() === null) {
                 continue;   // ignore records with missing position values
             }
@@ -75,10 +78,10 @@ class GPXWriter {
             $writer->writeElement('ns3:hr', strval($record->getHeartRate()));
             $writer->endElement(); // ns3:TrackPointExtension
             $writer->endElement(); // extensions
-            
+
             $writer->endElement(); // trkpt
         }
-        
+
         $writer->endElement(); // trkseg
 
         $writer->endElement(); // trk
@@ -87,10 +90,11 @@ class GPXWriter {
         $writer->flush();
     }
 
-    private static function getFirstMessage(MessageList $messages, int $msgNumber): mixed {
+    private static function getFirstMessage(MessageList $messages, MesgNum $msgNumber): mixed
+    {
         $items = $messages->getMessages($msgNumber);
         if (count($items) !== 1) {
-            throw new Exception("expected exactly one message of type {$msgNumber}");
+            throw new Exception("expected exactly one message of type {$msgNumber->value}");
         }
         return $items[0];
     }

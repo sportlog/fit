@@ -23,8 +23,8 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * HrvValueMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('Value', 0, FitBaseType::UINT16, 128.0, 0.0, 'ms', false, ProfileType::UINT16)]
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DateTime)]
+#[Field('Value', 0, FitBaseType::UINT16, 128.0, 0.0, 'ms', false, ProfileType::Uint16)]
 final class HrvValueMessage extends Message
 {
     /**
@@ -32,7 +32,7 @@ final class HrvValueMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('HrvValue', MesgNum::HRV_VALUE);
+        parent::__construct('HrvValue', MesgNum::HrvValue->value);
     }
 
     /**

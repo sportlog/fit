@@ -13,13 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * AntNetwork constants
- */
-final class AntNetwork
+enum AntNetwork: int
 {
-    public const PUBLIC = 0;
-    public const ANTPLUS = 1;
-    public const ANTFS = 2;
-    public const PRIVATE = 3;
+    case Public = 0;
+    case Antplus = 1;
+    case Antfs = 2;
+    case Private = 3;
 }

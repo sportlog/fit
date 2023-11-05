@@ -13,16 +13,13 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * BatteryStatus constants
- */
-final class BatteryStatus
+enum BatteryStatus: int
 {
-    public const NEW = 1;
-    public const GOOD = 2;
-    public const OK = 3;
-    public const LOW = 4;
-    public const CRITICAL = 5;
-    public const CHARGING = 6;
-    public const UNKNOWN = 7;
+    case New = 1;
+    case Good = 2;
+    case Ok = 3;
+    case Low = 4;
+    case Critical = 5;
+    case Charging = 6;
+    case Unknown = 7;
 }

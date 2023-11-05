@@ -13,48 +13,45 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * Language constants
- */
-final class Language
+enum Language: int
 {
-    public const ENGLISH = 0;
-    public const FRENCH = 1;
-    public const ITALIAN = 2;
-    public const GERMAN = 3;
-    public const SPANISH = 4;
-    public const CROATIAN = 5;
-    public const CZECH = 6;
-    public const DANISH = 7;
-    public const DUTCH = 8;
-    public const FINNISH = 9;
-    public const GREEK = 10;
-    public const HUNGARIAN = 11;
-    public const NORWEGIAN = 12;
-    public const POLISH = 13;
-    public const PORTUGUESE = 14;
-    public const SLOVAKIAN = 15;
-    public const SLOVENIAN = 16;
-    public const SWEDISH = 17;
-    public const RUSSIAN = 18;
-    public const TURKISH = 19;
-    public const LATVIAN = 20;
-    public const UKRAINIAN = 21;
-    public const ARABIC = 22;
-    public const FARSI = 23;
-    public const BULGARIAN = 24;
-    public const ROMANIAN = 25;
-    public const CHINESE = 26;
-    public const JAPANESE = 27;
-    public const KOREAN = 28;
-    public const TAIWANESE = 29;
-    public const THAI = 30;
-    public const HEBREW = 31;
-    public const BRAZILIAN_PORTUGUESE = 32;
-    public const INDONESIAN = 33;
-    public const MALAYSIAN = 34;
-    public const VIETNAMESE = 35;
-    public const BURMESE = 36;
-    public const MONGOLIAN = 37;
-    public const CUSTOM = 254;
+    case English = 0;
+    case French = 1;
+    case Italian = 2;
+    case German = 3;
+    case Spanish = 4;
+    case Croatian = 5;
+    case Czech = 6;
+    case Danish = 7;
+    case Dutch = 8;
+    case Finnish = 9;
+    case Greek = 10;
+    case Hungarian = 11;
+    case Norwegian = 12;
+    case Polish = 13;
+    case Portuguese = 14;
+    case Slovakian = 15;
+    case Slovenian = 16;
+    case Swedish = 17;
+    case Russian = 18;
+    case Turkish = 19;
+    case Latvian = 20;
+    case Ukrainian = 21;
+    case Arabic = 22;
+    case Farsi = 23;
+    case Bulgarian = 24;
+    case Romanian = 25;
+    case Chinese = 26;
+    case Japanese = 27;
+    case Korean = 28;
+    case Taiwanese = 29;
+    case Thai = 30;
+    case Hebrew = 31;
+    case BrazilianPortuguese = 32;
+    case Indonesian = 33;
+    case Malaysian = 34;
+    case Vietnamese = 35;
+    case Burmese = 36;
+    case Mongolian = 37;
+    case Custom = 254;
 }

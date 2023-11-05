@@ -13,17 +13,14 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * SportBits4 constants
- */
-final class SportBits4
+enum SportBits4: int
 {
-    public const SAILING = 1;
-    public const ICE_SKATING = 2;
-    public const SKY_DIVING = 4;
-    public const SNOWSHOEING = 8;
-    public const SNOWMOBILING = 16;
-    public const STAND_UP_PADDLEBOARDING = 32;
-    public const SURFING = 64;
-    public const WAKEBOARDING = 128;
+    case Sailing = 1;
+    case IceSkating = 2;
+    case SkyDiving = 4;
+    case Snowshoeing = 8;
+    case Snowmobiling = 16;
+    case StandUpPaddleboarding = 32;
+    case Surfing = 64;
+    case Wakeboarding = 128;
 }

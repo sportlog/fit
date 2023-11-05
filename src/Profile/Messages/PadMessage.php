@@ -30,6 +30,6 @@ final class PadMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Pad', MesgNum::PAD);
+        parent::__construct('Pad', MesgNum::Pad->value);
     }
 }

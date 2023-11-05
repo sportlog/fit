@@ -13,43 +13,40 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * ExerciseCategory constants
- */
-final class ExerciseCategory
+enum ExerciseCategory: int
 {
-    public const BENCH_PRESS = 0;
-    public const CALF_RAISE = 1;
-    public const CARDIO = 2;
-    public const CARRY = 3;
-    public const CHOP = 4;
-    public const CORE = 5;
-    public const CRUNCH = 6;
-    public const CURL = 7;
-    public const DEADLIFT = 8;
-    public const FLYE = 9;
-    public const HIP_RAISE = 10;
-    public const HIP_STABILITY = 11;
-    public const HIP_SWING = 12;
-    public const HYPEREXTENSION = 13;
-    public const LATERAL_RAISE = 14;
-    public const LEG_CURL = 15;
-    public const LEG_RAISE = 16;
-    public const LUNGE = 17;
-    public const OLYMPIC_LIFT = 18;
-    public const PLANK = 19;
-    public const PLYO = 20;
-    public const PULL_UP = 21;
-    public const PUSH_UP = 22;
-    public const ROW = 23;
-    public const SHOULDER_PRESS = 24;
-    public const SHOULDER_STABILITY = 25;
-    public const SHRUG = 26;
-    public const SIT_UP = 27;
-    public const SQUAT = 28;
-    public const TOTAL_BODY = 29;
-    public const TRICEPS_EXTENSION = 30;
-    public const WARM_UP = 31;
-    public const RUN = 32;
-    public const UNKNOWN = 65534;
+    case BenchPress = 0;
+    case CalfRaise = 1;
+    case Cardio = 2;
+    case Carry = 3;
+    case Chop = 4;
+    case Core = 5;
+    case Crunch = 6;
+    case Curl = 7;
+    case Deadlift = 8;
+    case Flye = 9;
+    case HipRaise = 10;
+    case HipStability = 11;
+    case HipSwing = 12;
+    case Hyperextension = 13;
+    case LateralRaise = 14;
+    case LegCurl = 15;
+    case LegRaise = 16;
+    case Lunge = 17;
+    case OlympicLift = 18;
+    case Plank = 19;
+    case Plyo = 20;
+    case PullUp = 21;
+    case PushUp = 22;
+    case Row = 23;
+    case ShoulderPress = 24;
+    case ShoulderStability = 25;
+    case Shrug = 26;
+    case SitUp = 27;
+    case Squat = 28;
+    case TotalBody = 29;
+    case TricepsExtension = 30;
+    case WarmUp = 31;
+    case Run = 32;
+    case Unknown = 65534;
 }

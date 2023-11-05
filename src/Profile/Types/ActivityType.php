@@ -13,18 +13,15 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * ActivityType constants
- */
-final class ActivityType
+enum ActivityType: int
 {
-    public const GENERIC = 0;
-    public const RUNNING = 1;
-    public const CYCLING = 2;
-    public const TRANSITION = 3;
-    public const FITNESS_EQUIPMENT = 4;
-    public const SWIMMING = 5;
-    public const WALKING = 6;
-    public const SEDENTARY = 8;
-    public const ALL = 254;
+    case Generic = 0;
+    case Running = 1;
+    case Cycling = 2;
+    case Transition = 3;
+    case FitnessEquipment = 4;
+    case Swimming = 5;
+    case Walking = 6;
+    case Sedentary = 8;
+    case All = 254;
 }

@@ -13,12 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * DiveAlarmType constants
- */
-final class DiveAlarmType
+enum DiveAlarmType: int
 {
-    public const DEPTH = 0;
-    public const TIME = 1;
-    public const SPEED = 2;
+    case Depth = 0;
+    case Time = 1;
+    case Speed = 2;
 }

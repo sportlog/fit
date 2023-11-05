@@ -18,6 +18,7 @@ use IteratorAggregate;
 use JsonSerializable;
 use ReflectionClass;
 use Sportlog\FIT\{FitBaseTypeDefinition, FitException};
+use Sportlog\FIT\Profile\Types\MesgNum;
 use Stringable;
 
 /**
@@ -72,7 +73,7 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
      * Gets the message number, which must correspond
      * to one value defined in MessageInterface
      *
-     * @return integer
+     * @return int
      */
     public function getGlobalMessageNumber(): int
     {
@@ -145,7 +146,7 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
                 }
             }
         }
-      
+
         $this->values[$fieldNumber] = $value;
     }
 
@@ -240,11 +241,11 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
     private function convertValueToFieldType(Field $field, mixed $value): mixed
     {
         switch ($field->getProfileType()) {
-            case ProfileType::BOOL:
+            case ProfileType::Bool:
                 return is_array($value) ? array_map(fn ($val) => $val !== 0, $value) : $value !== 0;
 
-            case ProfileType::LOCALDATETIME:
-            case ProfileType::DATETIME:
+            case ProfileType::LocalDateTime:
+            case ProfileType::DateTime:
                 if (is_array($value)) {
                     throw new Exception(sprintf('cannot have array values of type DateTime|LocalDateTime for %s::%s', static::class, $field->getName()));
                 }

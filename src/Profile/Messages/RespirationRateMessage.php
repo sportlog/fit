@@ -23,8 +23,8 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * RespirationRateMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('RespirationRate', 0, FitBaseType::SINT16, 100.0, 0.0, 'breaths/min', false, ProfileType::SINT16)]
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DateTime)]
+#[Field('RespirationRate', 0, FitBaseType::SINT16, 100.0, 0.0, 'breaths/min', false, ProfileType::Sint16)]
 final class RespirationRateMessage extends Message
 {
     /**
@@ -32,7 +32,7 @@ final class RespirationRateMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('RespirationRate', MesgNum::RESPIRATION_RATE);
+        parent::__construct('RespirationRate', MesgNum::RespirationRate->value);
     }
 
     /**

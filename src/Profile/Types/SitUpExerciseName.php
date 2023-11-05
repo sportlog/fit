@@ -13,47 +13,44 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * SitUpExerciseName constants
- */
-final class SitUpExerciseName
+enum SitUpExerciseName: int
 {
-    public const ALTERNATING_SIT_UP = 0;
-    public const WEIGHTED_ALTERNATING_SIT_UP = 1;
-    public const BENT_KNEE_V_UP = 2;
-    public const WEIGHTED_BENT_KNEE_V_UP = 3;
-    public const BUTTERFLY_SIT_UP = 4;
-    public const WEIGHTED_BUTTERFLY_SITUP = 5;
-    public const CROSS_PUNCH_ROLL_UP = 6;
-    public const WEIGHTED_CROSS_PUNCH_ROLL_UP = 7;
-    public const CROSSED_ARMS_SIT_UP = 8;
-    public const WEIGHTED_CROSSED_ARMS_SIT_UP = 9;
-    public const GET_UP_SIT_UP = 10;
-    public const WEIGHTED_GET_UP_SIT_UP = 11;
-    public const HOVERING_SIT_UP = 12;
-    public const WEIGHTED_HOVERING_SIT_UP = 13;
-    public const KETTLEBELL_SIT_UP = 14;
-    public const MEDICINE_BALL_ALTERNATING_V_UP = 15;
-    public const MEDICINE_BALL_SIT_UP = 16;
-    public const MEDICINE_BALL_V_UP = 17;
-    public const MODIFIED_SIT_UP = 18;
-    public const NEGATIVE_SIT_UP = 19;
-    public const ONE_ARM_FULL_SIT_UP = 20;
-    public const RECLINING_CIRCLE = 21;
-    public const WEIGHTED_RECLINING_CIRCLE = 22;
-    public const REVERSE_CURL_UP = 23;
-    public const WEIGHTED_REVERSE_CURL_UP = 24;
-    public const SINGLE_LEG_SWISS_BALL_JACKKNIFE = 25;
-    public const WEIGHTED_SINGLE_LEG_SWISS_BALL_JACKKNIFE = 26;
-    public const THE_TEASER = 27;
-    public const THE_TEASER_WEIGHTED = 28;
-    public const THREE_PART_ROLL_DOWN = 29;
-    public const WEIGHTED_THREE_PART_ROLL_DOWN = 30;
-    public const V_UP = 31;
-    public const WEIGHTED_V_UP = 32;
-    public const WEIGHTED_RUSSIAN_TWIST_ON_SWISS_BALL = 33;
-    public const WEIGHTED_SIT_UP = 34;
-    public const X_ABS = 35;
-    public const WEIGHTED_X_ABS = 36;
-    public const SIT_UP = 37;
+    case AlternatingSitUp = 0;
+    case WeightedAlternatingSitUp = 1;
+    case BentKneeVUp = 2;
+    case WeightedBentKneeVUp = 3;
+    case ButterflySitUp = 4;
+    case WeightedButterflySitup = 5;
+    case CrossPunchRollUp = 6;
+    case WeightedCrossPunchRollUp = 7;
+    case CrossedArmsSitUp = 8;
+    case WeightedCrossedArmsSitUp = 9;
+    case GetUpSitUp = 10;
+    case WeightedGetUpSitUp = 11;
+    case HoveringSitUp = 12;
+    case WeightedHoveringSitUp = 13;
+    case KettlebellSitUp = 14;
+    case MedicineBallAlternatingVUp = 15;
+    case MedicineBallSitUp = 16;
+    case MedicineBallVUp = 17;
+    case ModifiedSitUp = 18;
+    case NegativeSitUp = 19;
+    case OneArmFullSitUp = 20;
+    case RecliningCircle = 21;
+    case WeightedRecliningCircle = 22;
+    case ReverseCurlUp = 23;
+    case WeightedReverseCurlUp = 24;
+    case SingleLegSwissBallJackknife = 25;
+    case WeightedSingleLegSwissBallJackknife = 26;
+    case TheTeaser = 27;
+    case TheTeaserWeighted = 28;
+    case ThreePartRollDown = 29;
+    case WeightedThreePartRollDown = 30;
+    case VUp = 31;
+    case WeightedVUp = 32;
+    case WeightedRussianTwistOnSwissBall = 33;
+    case WeightedSitUp = 34;
+    case XAbs = 35;
+    case WeightedXAbs = 36;
+    case SitUp = 37;
 }

@@ -23,12 +23,12 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * AntRxMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('FractionalTimestamp', 0, FitBaseType::UINT16, 32768.0, 0.0, 's', false, ProfileType::UINT16)]
-#[Field('MesgId', 1, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-#[Field('MesgData', 2, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-#[Field('ChannelNumber', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('Data', 4, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DateTime)]
+#[Field('FractionalTimestamp', 0, FitBaseType::UINT16, 32768.0, 0.0, 's', false, ProfileType::Uint16)]
+#[Field('MesgId', 1, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::Byte)]
+#[Field('MesgData', 2, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::Byte)]
+#[Field('ChannelNumber', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('Data', 4, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::Byte)]
 final class AntRxMessage extends Message
 {
     /**
@@ -36,7 +36,7 @@ final class AntRxMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('AntRx', MesgNum::ANT_RX);
+        parent::__construct('AntRx', MesgNum::AntRx->value);
     }
 
     /**

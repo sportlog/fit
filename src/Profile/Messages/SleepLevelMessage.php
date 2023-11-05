@@ -23,8 +23,8 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * SleepLevelMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('SleepLevel', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SLEEPLEVEL)]
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DateTime)]
+#[Field('SleepLevel', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SleepLevel)]
 final class SleepLevelMessage extends Message
 {
     /**
@@ -32,7 +32,7 @@ final class SleepLevelMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('SleepLevel', MesgNum::SLEEP_LEVEL);
+        parent::__construct('SleepLevel', MesgNum::SleepLevel->value);
     }
 
     /**

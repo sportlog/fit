@@ -13,16 +13,13 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * SwimStroke constants
- */
-final class SwimStroke
+enum SwimStroke: int
 {
-    public const FREESTYLE = 0;
-    public const BACKSTROKE = 1;
-    public const BREASTSTROKE = 2;
-    public const BUTTERFLY = 3;
-    public const DRILL = 4;
-    public const MIXED = 5;
-    public const IM = 6;
+    case Freestyle = 0;
+    case Backstroke = 1;
+    case Breaststroke = 2;
+    case Butterfly = 3;
+    case Drill = 4;
+    case Mixed = 5;
+    case Im = 6;
 }

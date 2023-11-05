@@ -13,12 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * TapSensitivity constants
- */
-final class TapSensitivity
+enum TapSensitivity: int
 {
-    public const HIGH = 0;
-    public const MEDIUM = 1;
-    public const LOW = 2;
+    case High = 0;
+    case Medium = 1;
+    case Low = 2;
 }

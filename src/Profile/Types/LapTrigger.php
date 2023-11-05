@@ -13,18 +13,15 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * LapTrigger constants
- */
-final class LapTrigger
+enum LapTrigger: int
 {
-    public const MANUAL = 0;
-    public const TIME = 1;
-    public const DISTANCE = 2;
-    public const POSITION_START = 3;
-    public const POSITION_LAP = 4;
-    public const POSITION_WAYPOINT = 5;
-    public const POSITION_MARKED = 6;
-    public const SESSION_END = 7;
-    public const FITNESS_EQUIPMENT = 8;
+    case Manual = 0;
+    case Time = 1;
+    case Distance = 2;
+    case PositionStart = 3;
+    case PositionLap = 4;
+    case PositionWaypoint = 5;
+    case PositionMarked = 6;
+    case SessionEnd = 7;
+    case FitnessEquipment = 8;
 }

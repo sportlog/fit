@@ -23,8 +23,8 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * OhrSettingsMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('Enabled', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SWITCH)]
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DateTime)]
+#[Field('Enabled', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::Switch)]
 final class OhrSettingsMessage extends Message
 {
     /**
@@ -32,7 +32,7 @@ final class OhrSettingsMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('OhrSettings', MesgNum::OHR_SETTINGS);
+        parent::__construct('OhrSettings', MesgNum::OhrSettings->value);
     }
 
     /**

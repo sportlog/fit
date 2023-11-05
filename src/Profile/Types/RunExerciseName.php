@@ -13,13 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * RunExerciseName constants
- */
-final class RunExerciseName
+enum RunExerciseName: int
 {
-    public const RUN = 0;
-    public const WALK = 1;
-    public const JOG = 2;
-    public const SPRINT = 3;
+    case Run = 0;
+    case Walk = 1;
+    case Jog = 2;
+    case Sprint = 3;
 }

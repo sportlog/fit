@@ -13,11 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * MaxMetHeartRateSource constants
- */
-final class MaxMetHeartRateSource
+enum MaxMetHeartRateSource: int
 {
-    public const WHR = 0;
-    public const HRM = 1;
+    case Whr = 0;
+    case Hrm = 1;
 }

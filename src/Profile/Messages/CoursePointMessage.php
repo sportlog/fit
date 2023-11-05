@@ -23,14 +23,14 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * CoursePointMessage message
  */
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('Timestamp', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('PositionLat', 2, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32)]
-#[Field('PositionLong', 3, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32)]
-#[Field('Distance', 4, FitBaseType::UINT32, 100.0, 0.0, 'm', false, ProfileType::UINT32)]
-#[Field('Type', 5, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::COURSEPOINT)]
-#[Field('Name', 6, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('Favorite', 8, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
+#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MessageIndex)]
+#[Field('Timestamp', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DateTime)]
+#[Field('PositionLat', 2, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::Sint32)]
+#[Field('PositionLong', 3, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::Sint32)]
+#[Field('Distance', 4, FitBaseType::UINT32, 100.0, 0.0, 'm', false, ProfileType::Uint32)]
+#[Field('Type', 5, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::CoursePoint)]
+#[Field('Name', 6, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::String)]
+#[Field('Favorite', 8, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::Bool)]
 final class CoursePointMessage extends Message
 {
     /**
@@ -38,7 +38,7 @@ final class CoursePointMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('CoursePoint', MesgNum::COURSE_POINT);
+        parent::__construct('CoursePoint', MesgNum::CoursePoint->value);
     }
 
     /**

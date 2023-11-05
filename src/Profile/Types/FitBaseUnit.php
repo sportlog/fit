@@ -13,12 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * FitBaseUnit constants
- */
-final class FitBaseUnit
+enum FitBaseUnit: int
 {
-    public const OTHER = 0;
-    public const KILOGRAM = 1;
-    public const POUND = 2;
+    case Other = 0;
+    case Kilogram = 1;
+    case Pound = 2;
 }

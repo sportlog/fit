@@ -13,16 +13,13 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * Goal constants
- */
-final class Goal
+enum Goal: int
 {
-    public const TIME = 0;
-    public const DISTANCE = 1;
-    public const CALORIES = 2;
-    public const FREQUENCY = 3;
-    public const STEPS = 4;
-    public const ASCENT = 5;
-    public const ACTIVE_MINUTES = 6;
+    case Time = 0;
+    case Distance = 1;
+    case Calories = 2;
+    case Frequency = 3;
+    case Steps = 4;
+    case Ascent = 5;
+    case ActiveMinutes = 6;
 }

@@ -13,17 +13,14 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * BleDeviceType constants
- */
-final class BleDeviceType
+enum BleDeviceType: int
 {
-    public const CONNECTED_GPS = 0;
-    public const HEART_RATE = 1;
-    public const BIKE_POWER = 2;
-    public const BIKE_SPEED_CADENCE = 3;
-    public const BIKE_SPEED = 4;
-    public const BIKE_CADENCE = 5;
-    public const FOOTPOD = 6;
-    public const BIKE_TRAINER = 7;
+    case ConnectedGps = 0;
+    case HeartRate = 1;
+    case BikePower = 2;
+    case BikeSpeedCadence = 3;
+    case BikeSpeed = 4;
+    case BikeCadence = 5;
+    case Footpod = 6;
+    case BikeTrainer = 7;
 }

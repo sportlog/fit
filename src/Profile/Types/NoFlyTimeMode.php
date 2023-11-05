@@ -13,11 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * NoFlyTimeMode constants
- */
-final class NoFlyTimeMode
+enum NoFlyTimeMode: int
 {
-    public const STANDARD = 0;
-    public const FLAT_24_HOURS = 1;
+    case Standard = 0;
+    case Flat24Hours = 1;
 }

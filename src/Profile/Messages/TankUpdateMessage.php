@@ -23,9 +23,9 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * TankUpdateMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('Sensor', 0, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::ANTCHANNELID)]
-#[Field('Pressure', 1, FitBaseType::UINT16, 100.0, 0.0, 'bar', false, ProfileType::UINT16)]
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DateTime)]
+#[Field('Sensor', 0, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::AntChannelId)]
+#[Field('Pressure', 1, FitBaseType::UINT16, 100.0, 0.0, 'bar', false, ProfileType::Uint16)]
 final class TankUpdateMessage extends Message
 {
     /**
@@ -33,7 +33,7 @@ final class TankUpdateMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('TankUpdate', MesgNum::TANK_UPDATE);
+        parent::__construct('TankUpdate', MesgNum::TankUpdate->value);
     }
 
     /**

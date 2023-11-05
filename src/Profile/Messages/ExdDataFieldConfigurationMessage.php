@@ -23,12 +23,12 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * ExdDataFieldConfigurationMessage message
  */
-#[Field('ScreenIndex', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('ConceptField', 1, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-#[Field('FieldId', 2, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('ConceptCount', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('DisplayType', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::EXDDISPLAYTYPE)]
-#[Field('Title', 5, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('ScreenIndex', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('ConceptField', 1, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::Byte)]
+#[Field('FieldId', 2, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('ConceptCount', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('DisplayType', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ExdDisplayType)]
+#[Field('Title', 5, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::String)]
 final class ExdDataFieldConfigurationMessage extends Message
 {
     /**
@@ -36,7 +36,7 @@ final class ExdDataFieldConfigurationMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('ExdDataFieldConfiguration', MesgNum::EXD_DATA_FIELD_CONFIGURATION);
+        parent::__construct('ExdDataFieldConfiguration', MesgNum::ExdDataFieldConfiguration->value);
     }
 
     /**

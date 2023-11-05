@@ -13,29 +13,26 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * ActivitySubtype constants
- */
-final class ActivitySubtype
+enum ActivitySubtype: int
 {
-    public const GENERIC = 0;
-    public const TREADMILL = 1;
-    public const STREET = 2;
-    public const TRAIL = 3;
-    public const TRACK = 4;
-    public const SPIN = 5;
-    public const INDOOR_CYCLING = 6;
-    public const ROAD = 7;
-    public const MOUNTAIN = 8;
-    public const DOWNHILL = 9;
-    public const RECUMBENT = 10;
-    public const CYCLOCROSS = 11;
-    public const HAND_CYCLING = 12;
-    public const TRACK_CYCLING = 13;
-    public const INDOOR_ROWING = 14;
-    public const ELLIPTICAL = 15;
-    public const STAIR_CLIMBING = 16;
-    public const LAP_SWIMMING = 17;
-    public const OPEN_WATER = 18;
-    public const ALL = 254;
+    case Generic = 0;
+    case Treadmill = 1;
+    case Street = 2;
+    case Trail = 3;
+    case Track = 4;
+    case Spin = 5;
+    case IndoorCycling = 6;
+    case Road = 7;
+    case Mountain = 8;
+    case Downhill = 9;
+    case Recumbent = 10;
+    case Cyclocross = 11;
+    case HandCycling = 12;
+    case TrackCycling = 13;
+    case IndoorRowing = 14;
+    case Elliptical = 15;
+    case StairClimbing = 16;
+    case LapSwimming = 17;
+    case OpenWater = 18;
+    case All = 254;
 }

@@ -23,8 +23,8 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * FileCreatorMessage message
  */
-#[Field('SoftwareVersion', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('HardwareVersion', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('SoftwareVersion', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::Uint16)]
+#[Field('HardwareVersion', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
 final class FileCreatorMessage extends Message
 {
     /**
@@ -32,7 +32,7 @@ final class FileCreatorMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('FileCreator', MesgNum::FILE_CREATOR);
+        parent::__construct('FileCreator', MesgNum::FileCreator->value);
     }
 
     /**

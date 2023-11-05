@@ -23,12 +23,12 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * WeatherAlertMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('ReportId', 0, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('IssueTime', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('ExpireTime', 2, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('Severity', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WEATHERSEVERITY)]
-#[Field('Type', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WEATHERSEVERETYPE)]
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DateTime)]
+#[Field('ReportId', 0, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::String)]
+#[Field('IssueTime', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DateTime)]
+#[Field('ExpireTime', 2, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DateTime)]
+#[Field('Severity', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WeatherSeverity)]
+#[Field('Type', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WeatherSevereType)]
 final class WeatherAlertMessage extends Message
 {
     /**
@@ -36,7 +36,7 @@ final class WeatherAlertMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('WeatherAlert', MesgNum::WEATHER_ALERT);
+        parent::__construct('WeatherAlert', MesgNum::WeatherAlert->value);
     }
 
     /**

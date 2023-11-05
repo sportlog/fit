@@ -13,10 +13,7 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * SportBits6 constants
- */
-final class SportBits6
+enum SportBits6: int
 {
-    public const FLOOR_CLIMBING = 1;
+    case FloorClimbing = 1;
 }

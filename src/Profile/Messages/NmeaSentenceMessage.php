@@ -23,9 +23,9 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * NmeaSentenceMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('TimestampMs', 0, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
-#[Field('Sentence', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DateTime)]
+#[Field('TimestampMs', 0, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::Uint16)]
+#[Field('Sentence', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::String)]
 final class NmeaSentenceMessage extends Message
 {
     /**
@@ -33,7 +33,7 @@ final class NmeaSentenceMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('NmeaSentence', MesgNum::NMEA_SENTENCE);
+        parent::__construct('NmeaSentence', MesgNum::NmeaSentence->value);
     }
 
     /**

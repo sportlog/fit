@@ -13,14 +13,11 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * HrvStatus constants
- */
-final class HrvStatus
+enum HrvStatus: int
 {
-    public const NONE = 0;
-    public const POOR = 1;
-    public const LOW = 2;
-    public const UNBALANCED = 3;
-    public const BALANCED = 4;
+    case None = 0;
+    case Poor = 1;
+    case Low = 2;
+    case Unbalanced = 3;
+    case Balanced = 4;
 }

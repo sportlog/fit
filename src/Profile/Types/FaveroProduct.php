@@ -13,11 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * FaveroProduct constants
- */
-final class FaveroProduct
+enum FaveroProduct: int
 {
-    public const ASSIOMA_UNO = 10;
-    public const ASSIOMA_DUO = 12;
+    case AssiomaUno = 10;
+    case AssiomaDuo = 12;
 }

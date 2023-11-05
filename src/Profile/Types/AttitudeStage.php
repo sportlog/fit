@@ -13,13 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * AttitudeStage constants
- */
-final class AttitudeStage
+enum AttitudeStage: int
 {
-    public const FAILED = 0;
-    public const ALIGNING = 1;
-    public const DEGRADED = 2;
-    public const VALID = 3;
+    case Failed = 0;
+    case Aligning = 1;
+    case Degraded = 2;
+    case Valid = 3;
 }

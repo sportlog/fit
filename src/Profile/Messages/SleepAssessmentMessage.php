@@ -23,20 +23,20 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * SleepAssessmentMessage message
  */
-#[Field('CombinedAwakeScore', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('AwakeTimeScore', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('AwakeningsCountScore', 2, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('DeepSleepScore', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('SleepDurationScore', 4, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('LightSleepScore', 5, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('OverallSleepScore', 6, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('SleepQualityScore', 7, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('SleepRecoveryScore', 8, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('RemSleepScore', 9, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('SleepRestlessnessScore', 10, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('AwakeningsCount', 11, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('InterruptionsScore', 14, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('AverageStressDuringSleep', 15, FitBaseType::UINT16, 100.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('CombinedAwakeScore', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('AwakeTimeScore', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('AwakeningsCountScore', 2, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('DeepSleepScore', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('SleepDurationScore', 4, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('LightSleepScore', 5, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('OverallSleepScore', 6, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('SleepQualityScore', 7, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('SleepRecoveryScore', 8, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('RemSleepScore', 9, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('SleepRestlessnessScore', 10, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('AwakeningsCount', 11, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('InterruptionsScore', 14, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('AverageStressDuringSleep', 15, FitBaseType::UINT16, 100.0, 0.0, '', false, ProfileType::Uint16)]
 final class SleepAssessmentMessage extends Message
 {
     /**
@@ -44,7 +44,7 @@ final class SleepAssessmentMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('SleepAssessment', MesgNum::SLEEP_ASSESSMENT);
+        parent::__construct('SleepAssessment', MesgNum::SleepAssessment->value);
     }
 
     /**

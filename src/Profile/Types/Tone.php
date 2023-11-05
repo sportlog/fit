@@ -13,13 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * Tone constants
- */
-final class Tone
+enum Tone: int
 {
-    public const OFF = 0;
-    public const TONE = 1;
-    public const VIBRATE = 2;
-    public const TONE_AND_VIBRATE = 3;
+    case Off = 0;
+    case Tone = 1;
+    case Vibrate = 2;
+    case ToneAndVibrate = 3;
 }

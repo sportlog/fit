@@ -23,11 +23,11 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 /**
  * FieldCapabilitiesMessage message
  */
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('File', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::FILE)]
-#[Field('MesgNum', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESGNUM)]
-#[Field('FieldNum', 2, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('Count', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MessageIndex)]
+#[Field('File', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::File)]
+#[Field('MesgNum', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MesgNum)]
+#[Field('FieldNum', 2, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::Uint8)]
+#[Field('Count', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::Uint16)]
 final class FieldCapabilitiesMessage extends Message
 {
     /**
@@ -35,7 +35,7 @@ final class FieldCapabilitiesMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('FieldCapabilities', MesgNum::FIELD_CAPABILITIES);
+        parent::__construct('FieldCapabilities', MesgNum::FieldCapabilities->value);
     }
 
     /**

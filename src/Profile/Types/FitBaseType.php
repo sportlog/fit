@@ -13,26 +13,23 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * FitBaseType constants
- */
-final class FitBaseType
+enum FitBaseType: int
 {
-    public const ENUM = 0;
-    public const SINT8 = 1;
-    public const UINT8 = 2;
-    public const SINT16 = 131;
-    public const UINT16 = 132;
-    public const SINT32 = 133;
-    public const UINT32 = 134;
-    public const STRING = 7;
-    public const FLOAT32 = 136;
-    public const FLOAT64 = 137;
-    public const UINT8Z = 10;
-    public const UINT16Z = 139;
-    public const UINT32Z = 140;
-    public const BYTE = 13;
-    public const SINT64 = 142;
-    public const UINT64 = 143;
-    public const UINT64Z = 144;
+    case Enum = 0;
+    case Sint8 = 1;
+    case Uint8 = 2;
+    case Sint16 = 131;
+    case Uint16 = 132;
+    case Sint32 = 133;
+    case Uint32 = 134;
+    case String = 7;
+    case Float32 = 136;
+    case Float64 = 137;
+    case Uint8z = 10;
+    case Uint16z = 139;
+    case Uint32z = 140;
+    case Byte = 13;
+    case Sint64 = 142;
+    case Uint64 = 143;
+    case Uint64z = 144;
 }

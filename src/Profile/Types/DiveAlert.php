@@ -13,48 +13,45 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * DiveAlert constants
- */
-final class DiveAlert
+enum DiveAlert: int
 {
-    public const NDL_REACHED = 0;
-    public const GAS_SWITCH_PROMPTED = 1;
-    public const NEAR_SURFACE = 2;
-    public const APPROACHING_NDL = 3;
-    public const PO2_WARN = 4;
-    public const PO2_CRIT_HIGH = 5;
-    public const PO2_CRIT_LOW = 6;
-    public const TIME_ALERT = 7;
-    public const DEPTH_ALERT = 8;
-    public const DECO_CEILING_BROKEN = 9;
-    public const DECO_COMPLETE = 10;
-    public const SAFETY_STOP_BROKEN = 11;
-    public const SAFETY_STOP_COMPLETE = 12;
-    public const CNS_WARNING = 13;
-    public const CNS_CRITICAL = 14;
-    public const OTU_WARNING = 15;
-    public const OTU_CRITICAL = 16;
-    public const ASCENT_CRITICAL = 17;
-    public const ALERT_DISMISSED_BY_KEY = 18;
-    public const ALERT_DISMISSED_BY_TIMEOUT = 19;
-    public const BATTERY_LOW = 20;
-    public const BATTERY_CRITICAL = 21;
-    public const SAFETY_STOP_STARTED = 22;
-    public const APPROACHING_FIRST_DECO_STOP = 23;
-    public const SETPOINT_SWITCH_AUTO_LOW = 24;
-    public const SETPOINT_SWITCH_AUTO_HIGH = 25;
-    public const SETPOINT_SWITCH_MANUAL_LOW = 26;
-    public const SETPOINT_SWITCH_MANUAL_HIGH = 27;
-    public const AUTO_SETPOINT_SWITCH_IGNORED = 28;
-    public const SWITCHED_TO_OPEN_CIRCUIT = 29;
-    public const SWITCHED_TO_CLOSED_CIRCUIT = 30;
-    public const TANK_BATTERY_LOW = 32;
-    public const PO2_CCR_DIL_LOW = 33;
-    public const DECO_STOP_CLEARED = 34;
-    public const APNEA_NEUTRAL_BUOYANCY = 35;
-    public const APNEA_TARGET_DEPTH = 36;
-    public const APNEA_SURFACE = 37;
-    public const APNEA_HIGH_SPEED = 38;
-    public const APNEA_LOW_SPEED = 39;
+    case NdlReached = 0;
+    case GasSwitchPrompted = 1;
+    case NearSurface = 2;
+    case ApproachingNdl = 3;
+    case Po2Warn = 4;
+    case Po2CritHigh = 5;
+    case Po2CritLow = 6;
+    case TimeAlert = 7;
+    case DepthAlert = 8;
+    case DecoCeilingBroken = 9;
+    case DecoComplete = 10;
+    case SafetyStopBroken = 11;
+    case SafetyStopComplete = 12;
+    case CnsWarning = 13;
+    case CnsCritical = 14;
+    case OtuWarning = 15;
+    case OtuCritical = 16;
+    case AscentCritical = 17;
+    case AlertDismissedByKey = 18;
+    case AlertDismissedByTimeout = 19;
+    case BatteryLow = 20;
+    case BatteryCritical = 21;
+    case SafetyStopStarted = 22;
+    case ApproachingFirstDecoStop = 23;
+    case SetpointSwitchAutoLow = 24;
+    case SetpointSwitchAutoHigh = 25;
+    case SetpointSwitchManualLow = 26;
+    case SetpointSwitchManualHigh = 27;
+    case AutoSetpointSwitchIgnored = 28;
+    case SwitchedToOpenCircuit = 29;
+    case SwitchedToClosedCircuit = 30;
+    case TankBatteryLow = 32;
+    case Po2CcrDilLow = 33;
+    case DecoStopCleared = 34;
+    case ApneaNeutralBuoyancy = 35;
+    case ApneaTargetDepth = 36;
+    case ApneaSurface = 37;
+    case ApneaHighSpeed = 38;
+    case ApneaLowSpeed = 39;
 }
