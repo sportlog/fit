@@ -33,9 +33,60 @@ class MessageGenerator
     const FIELD_START = "newMesg.SetField(new Field(";
     const MESSAGE_END = "return newMesg";
     const INVALID_MESSAGE = 'Invalid';
+
+    const PROFILETYPE_START = 'public enum Type';
+    const PROFILETYPE_END = '}';
+
     // Some types are reserved PHP keywords and cannot
     // act as classname.
     const RENAMED_TYPES = ['Switch' => 'FitSwitch'];
+
+    /**
+     * Create profile types by parsing the CS-File.
+     */
+    public function writeProfileTypes(string $fileInput, string $outputPath): void
+    {
+        $handle = fopen($fileInput, "r");
+
+        try {
+            /** @var array|null $profileTypes */
+            $profileTypes = null;
+
+            while (($line = fgets($handle)) !== false) {
+                $trimmed = trim($line);
+                if (!is_null($profileTypes)) {
+                    if ($trimmed === '' || str_starts_with($trimmed, "{")) {
+                        continue;
+                    } else if (str_starts_with($trimmed, self::PROFILETYPE_END)) {
+                        break;
+                    } else {
+                        $profileTypes[] = str_replace(',', '', $trimmed);
+                    }
+                }
+
+                if (str_starts_with($trimmed, self::PROFILETYPE_START)) {
+                    $profileTypes = [];
+                }
+            }
+
+            if (is_null($profileTypes) || count($profileTypes) === 0) {
+                throw new Exception('no profile types found');
+            }
+
+            $file = $this->createFile();
+            $namespace = $file->addNamespace('Sportlog\\FIT\\Profile');
+            //$profileType = $namespace->addEnum('ProfileType');
+            $profileType = $namespace->addClass('ProfileType');
+            foreach ($profileTypes as $value) {
+                // $profileType->addCase(str_replace(',', '', $value), $value);
+                $profileType->addConstant(strtoupper(str_replace(',', '', $value)), $value);
+            }
+            $printer = new PsrPrinter();
+            $this->writeFile(join(DIRECTORY_SEPARATOR, [$outputPath, "ProfileType.php"]), $printer->printFile($file));
+        } finally {
+            fclose($handle);
+        }
+    }
 
     /**
      * Creates the Profile-Types (/profile/types)
@@ -44,7 +95,7 @@ class MessageGenerator
      * @param string $outputPath
      * @return void
      */
-    public function writeTypes(string $fileInput, string $outputPath): void
+    public function writeTypes(string $fileInput, string $outputPath): int
     {
         $handle = fopen($fileInput, "r");
 
@@ -55,6 +106,8 @@ class MessageGenerator
                 $path = join(DIRECTORY_SEPARATOR, [$outputPath, 'Types', "{$filename}.php"]);
                 $this->writeFile($path, $printer->printFile($file));
             }
+
+            return count($files);
         } finally {
             fclose($handle);
         }
@@ -188,7 +241,7 @@ class MessageGenerator
 
         $paramName = 'globalMessageNumber';
         $method->addParameter($paramName)
-            ->setType(Type::INT);
+            ->setType(Type::Int);
 
         $method->addBody("return match (\$globalMessageNumber) {");
 
@@ -196,7 +249,6 @@ class MessageGenerator
         $i = 1;
         foreach ($uses as $use) {
             $file = str_replace('Message', '', $use);
-            $messageRef = str_repeat(" ", 8) . "new {$use}()";
             if ($cnt !== $i) {
                 $underscorize = strtoupper($this->underscorize($file));
                 $method->addBody(str_repeat(" ", 4) . "MesgNum::{$underscorize} => new {$use}(),");
@@ -256,11 +308,11 @@ class MessageGenerator
                 $phpTypes = [];
                 $phpProfileType = $this->getPhpTypeFromProfileType($profileType, $scale, (float)$offset);
                 $phpTypes[] = $phpProfileType;
-                if ($phpProfileType !== Type::MIXED && $phpProfileType !== DateTime::class && $phpProfileType !== Type::STRING) {
-                    $phpTypes[] = Type::ARRAY;
+                if ($phpProfileType !== Type::Mixed && $phpProfileType !== DateTime::class && $phpProfileType !== Type::String) {
+                    $phpTypes[] = Type::Array;
                 }
-                if ($phpProfileType !== Type::MIXED) {
-                    $phpTypes[] = Type::NULL;
+                if ($phpProfileType !== Type::Mixed) {
+                    $phpTypes[] = Type::Null;
                 }
 
                 /** @var ClassType $class */
@@ -333,7 +385,7 @@ class MessageGenerator
     {
         switch ($profileType) {
             case ProfileType::BOOL:
-                return Type::BOOL;
+                return Type::Bool;
 
             case ProfileType::UINT8:
             case ProfileType::SINT8:
@@ -346,27 +398,27 @@ class MessageGenerator
                 // The raw value will be divided through the scale.
                 // So if scale is not the default (1.0), this might
                 // result in a float.
-                return $scale === 1.0 && $offset === 0.0 ? Type::INT : Type::FLOAT;
+                return $scale === 1.0 && $offset === 0.0 ? Type::Int : Type::Float;
 
             case ProfileType::LOCALDATETIME:
             case ProfileType::DATETIME:
                 return DateTime::class;
 
             case ProfileType::STRING:
-                return Type::STRING;
+                return Type::String;
 
             case ProfileType::SINT64:
             case ProfileType::FLOAT32:
             case ProfileType::FLOAT64:
             case ProfileType::UINT64:
             case ProfileType::UINT64Z:
-                return Type::FLOAT;
+                return Type::Float;
 
             case ProfileType::BYTE:
-                return Type::MIXED;
+                return Type::Mixed;
 
             default:
-                return Type::INT;
+                return Type::Int;
         }
     }
 
