@@ -124,14 +124,12 @@ class MessageGenerator
                 continue;
             }
 
+            // Sample-line: ,,forecast,1,Deprecated use hourly_forecast instead
             if (str_starts_with($line, ",")) {
                 if ($currentType === null) {
                     throw new Exception('type missing');
                 }
-
-                $def = explode(",", $line);
-
-                $currentTypeValues[$def[2]] = $def[3];
+                $currentTypeValues[] = TypeValue::parse($line);
             } else {
                 if ($currentType !== null) {
                     if (isset(self::RENAMED_TYPES[$currentType])) {
@@ -168,15 +166,21 @@ class MessageGenerator
     {
         $file = $this->createFile();
         $namespace = $file->addNamespace('Sportlog\\FIT\\Profile\\Types');
-        $class = $namespace->addEnum($classname);
-        foreach ($values as $key => $value) {
+        $class = $namespace->addClass($classname);
+        /** @var TypeValue[] $values */
+        foreach ($values as $value) {
             // Some constants start with a digit, which is not allowed;
             // So prefix those with an underscore
-            $constName = $this->snakeToCamel($key);
+            $constName = $this->snakeToCamel($value->name);
             if (is_numeric(substr($constName, 0, 1))) {
                 $constName = "_" . $constName;
             }
-            $class->addCase($constName, str_starts_with($value, '0x') ? hexdec($value) : intval($value));
+            $enumCase = $class->addConstant($constName, str_starts_with($value->value, '0x') ? hexdec($value->value) : intval($value->value));
+            if ($value->isDeprecated()) {
+                $enumCase->addComment("@deprecated " . $value->comment);
+            } else if (!empty($value->comment)) {
+                $enumCase->addComment($value->comment);
+            }
         }
 
         return $file;
@@ -247,7 +251,7 @@ class MessageGenerator
             $file = str_replace('Message', '', $use);
             if ($cnt !== $i) {
                 // $underscorize = strtoupper($this->underscorize($file));
-                $method->addBody(str_repeat(" ", 4) . "MesgNum::{$file}->value => new {$use}(),");
+                $method->addBody(str_repeat(" ", 4) . "MesgNum::{$file} => new {$use}(),");
             } else {
                 $method->addBody(str_repeat(" ", 4) . "default => new {$use}()");
             }
@@ -356,7 +360,7 @@ class MessageGenerator
             ->addComment("Creates a new message instance")
             ->setBody('parent::__construct(?, ?);', [
                 $classId,
-                $classId === self::INVALID_MESSAGE ? -1 : new Literal(sprintf('MesgNum::%s->value', $classId))
+                $classId === self::INVALID_MESSAGE ? -1 : new Literal(sprintf('MesgNum::%s', $classId))
             ]);
 
         return $class;

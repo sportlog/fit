@@ -37,7 +37,7 @@ final class VideoClipMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('VideoClip', MesgNum::VideoClip->value);
+        parent::__construct('VideoClip', MesgNum::VideoClip);
     }
 
     /**

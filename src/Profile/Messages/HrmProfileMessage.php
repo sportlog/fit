@@ -35,7 +35,7 @@ final class HrmProfileMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('HrmProfile', MesgNum::HrmProfile->value);
+        parent::__construct('HrmProfile', MesgNum::HrmProfile);
     }
 
     /**

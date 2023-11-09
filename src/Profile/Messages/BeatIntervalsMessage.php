@@ -33,7 +33,7 @@ final class BeatIntervalsMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('BeatIntervals', MesgNum::BeatIntervals->value);
+        parent::__construct('BeatIntervals', MesgNum::BeatIntervals);
     }
 
     /**

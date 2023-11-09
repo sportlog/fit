@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum TimerTrigger: int
+class TimerTrigger
 {
-    case Manual = 0;
-    case Auto = 1;
-    case FitnessEquipment = 2;
+    public const Manual = 0;
+    public const Auto = 1;
+    public const FitnessEquipment = 2;
 }

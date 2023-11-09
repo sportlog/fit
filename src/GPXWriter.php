@@ -90,11 +90,11 @@ class GPXWriter
         $writer->flush();
     }
 
-    private static function getFirstMessage(MessageList $messages, MesgNum $msgNumber): mixed
+    private static function getFirstMessage(MessageList $messages, int $msgNumber): mixed
     {
         $items = $messages->getMessages($msgNumber);
         if (count($items) !== 1) {
-            throw new Exception("expected exactly one message of type {$msgNumber->value}");
+            throw new Exception("expected exactly one message of type {$msgNumber}");
         }
         return $items[0];
     }

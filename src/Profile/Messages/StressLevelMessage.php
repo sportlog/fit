@@ -32,7 +32,7 @@ final class StressLevelMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('StressLevel', MesgNum::StressLevel->value);
+        parent::__construct('StressLevel', MesgNum::StressLevel);
     }
 
     /**

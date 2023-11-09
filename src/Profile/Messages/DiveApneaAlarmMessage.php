@@ -43,7 +43,7 @@ final class DiveApneaAlarmMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('DiveApneaAlarm', MesgNum::DiveApneaAlarm->value);
+        parent::__construct('DiveApneaAlarm', MesgNum::DiveApneaAlarm);
     }
 
     /**

@@ -38,7 +38,7 @@ final class CoursePointMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('CoursePoint', MesgNum::CoursePoint->value);
+        parent::__construct('CoursePoint', MesgNum::CoursePoint);
     }
 
     /**

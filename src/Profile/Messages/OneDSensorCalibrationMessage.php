@@ -36,7 +36,7 @@ final class OneDSensorCalibrationMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('OneDSensorCalibration', MesgNum::OneDSensorCalibration->value);
+        parent::__construct('OneDSensorCalibration', MesgNum::OneDSensorCalibration);
     }
 
     /**

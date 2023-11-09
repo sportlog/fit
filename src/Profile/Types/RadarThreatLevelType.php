@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum RadarThreatLevelType: int
+class RadarThreatLevelType
 {
-    case ThreatUnknown = 0;
-    case ThreatNone = 1;
-    case ThreatApproaching = 2;
-    case ThreatApproachingFast = 3;
+    public const ThreatUnknown = 0;
+    public const ThreatNone = 1;
+    public const ThreatApproaching = 2;
+    public const ThreatApproachingFast = 3;
 }

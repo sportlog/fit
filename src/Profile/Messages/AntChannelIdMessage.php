@@ -35,7 +35,7 @@ final class AntChannelIdMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('AntChannelId', MesgNum::AntChannelId->value);
+        parent::__construct('AntChannelId', MesgNum::AntChannelId);
     }
 
     /**

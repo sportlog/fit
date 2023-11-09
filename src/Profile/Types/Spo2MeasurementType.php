@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum Spo2MeasurementType: int
+class Spo2MeasurementType
 {
-    case OffWrist = 0;
-    case SpotCheck = 1;
-    case ContinuousCheck = 2;
-    case Periodic = 3;
+    public const OffWrist = 0;
+    public const SpotCheck = 1;
+    public const ContinuousCheck = 2;
+    public const Periodic = 3;
 }

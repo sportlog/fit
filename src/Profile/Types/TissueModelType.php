@@ -13,7 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum TissueModelType: int
+class TissueModelType
 {
-    case Zhl16c = 0;
+    /** "Buhlmann's decompression algorithm */
+    public const Zhl16c = 0;
 }

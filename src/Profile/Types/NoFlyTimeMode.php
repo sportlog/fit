@@ -13,8 +13,15 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum NoFlyTimeMode: int
+class NoFlyTimeMode
 {
-    case Standard = 0;
-    case Flat24Hours = 1;
+    /**
+     * Standard Diver Alert Network no-fly guidance
+     */
+    public const Standard = 0;
+
+    /**
+     * Flat 24 hour no-fly guidance
+     */
+    public const Flat24Hours = 1;
 }

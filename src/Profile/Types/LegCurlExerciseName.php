@@ -13,18 +13,18 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum LegCurlExerciseName: int
+class LegCurlExerciseName
 {
-    case LegCurl = 0;
-    case WeightedLegCurl = 1;
-    case GoodMorning = 2;
-    case SeatedBarbellGoodMorning = 3;
-    case SingleLegBarbellGoodMorning = 4;
-    case SingleLegSlidingLegCurl = 5;
-    case SlidingLegCurl = 6;
-    case SplitBarbellGoodMorning = 7;
-    case SplitStanceExtension = 8;
-    case StaggeredStanceGoodMorning = 9;
-    case SwissBallHipRaiseAndLegCurl = 10;
-    case ZercherGoodMorning = 11;
+    public const LegCurl = 0;
+    public const WeightedLegCurl = 1;
+    public const GoodMorning = 2;
+    public const SeatedBarbellGoodMorning = 3;
+    public const SingleLegBarbellGoodMorning = 4;
+    public const SingleLegSlidingLegCurl = 5;
+    public const SlidingLegCurl = 6;
+    public const SplitBarbellGoodMorning = 7;
+    public const SplitStanceExtension = 8;
+    public const StaggeredStanceGoodMorning = 9;
+    public const SwissBallHipRaiseAndLegCurl = 10;
+    public const ZercherGoodMorning = 11;
 }

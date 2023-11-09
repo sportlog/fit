@@ -35,7 +35,7 @@ final class DeviceAuxBatteryInfoMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('DeviceAuxBatteryInfo', MesgNum::DeviceAuxBatteryInfo->value);
+        parent::__construct('DeviceAuxBatteryInfo', MesgNum::DeviceAuxBatteryInfo);
     }
 
     /**

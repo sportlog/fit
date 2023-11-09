@@ -13,8 +13,15 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum LengthType: int
+class LengthType
 {
-    case Idle = 0;
-    case Active = 1;
+    /**
+     * Rest period. Length with no strokes
+     */
+    public const Idle = 0;
+
+    /**
+     * Length with strokes.
+     */
+    public const Active = 1;
 }

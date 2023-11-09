@@ -153,7 +153,7 @@ final class LapMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Lap', MesgNum::Lap->value);
+        parent::__construct('Lap', MesgNum::Lap);
     }
 
     /**

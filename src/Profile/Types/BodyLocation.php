@@ -13,46 +13,62 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum BodyLocation: int
+class BodyLocation
 {
-    case LeftLeg = 0;
-    case LeftCalf = 1;
-    case LeftShin = 2;
-    case LeftHamstring = 3;
-    case LeftQuad = 4;
-    case LeftGlute = 5;
-    case RightLeg = 6;
-    case RightCalf = 7;
-    case RightShin = 8;
-    case RightHamstring = 9;
-    case RightQuad = 10;
-    case RightGlute = 11;
-    case TorsoBack = 12;
-    case LeftLowerBack = 13;
-    case LeftUpperBack = 14;
-    case RightLowerBack = 15;
-    case RightUpperBack = 16;
-    case TorsoFront = 17;
-    case LeftAbdomen = 18;
-    case LeftChest = 19;
-    case RightAbdomen = 20;
-    case RightChest = 21;
-    case LeftArm = 22;
-    case LeftShoulder = 23;
-    case LeftBicep = 24;
-    case LeftTricep = 25;
-    case LeftBrachioradialis = 26;
-    case LeftForearmExtensors = 27;
-    case RightArm = 28;
-    case RightShoulder = 29;
-    case RightBicep = 30;
-    case RightTricep = 31;
-    case RightBrachioradialis = 32;
-    case RightForearmExtensors = 33;
-    case Neck = 34;
-    case Throat = 35;
-    case WaistMidBack = 36;
-    case WaistFront = 37;
-    case WaistLeft = 38;
-    case WaistRight = 39;
+    public const LeftLeg = 0;
+    public const LeftCalf = 1;
+    public const LeftShin = 2;
+    public const LeftHamstring = 3;
+    public const LeftQuad = 4;
+    public const LeftGlute = 5;
+    public const RightLeg = 6;
+    public const RightCalf = 7;
+    public const RightShin = 8;
+    public const RightHamstring = 9;
+    public const RightQuad = 10;
+    public const RightGlute = 11;
+    public const TorsoBack = 12;
+    public const LeftLowerBack = 13;
+    public const LeftUpperBack = 14;
+    public const RightLowerBack = 15;
+    public const RightUpperBack = 16;
+    public const TorsoFront = 17;
+    public const LeftAbdomen = 18;
+    public const LeftChest = 19;
+    public const RightAbdomen = 20;
+    public const RightChest = 21;
+    public const LeftArm = 22;
+    public const LeftShoulder = 23;
+    public const LeftBicep = 24;
+    public const LeftTricep = 25;
+
+    /**
+     * Left anterior forearm
+     */
+    public const LeftBrachioradialis = 26;
+
+    /**
+     * Left posterior forearm
+     */
+    public const LeftForearmExtensors = 27;
+    public const RightArm = 28;
+    public const RightShoulder = 29;
+    public const RightBicep = 30;
+    public const RightTricep = 31;
+
+    /**
+     * Right anterior forearm
+     */
+    public const RightBrachioradialis = 32;
+
+    /**
+     * Right posterior forearm
+     */
+    public const RightForearmExtensors = 33;
+    public const Neck = 34;
+    public const Throat = 35;
+    public const WaistMidBack = 36;
+    public const WaistFront = 37;
+    public const WaistLeft = 38;
+    public const WaistRight = 39;
 }

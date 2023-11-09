@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum DisplayHeart: int
+class DisplayHeart
 {
-    case Bpm = 0;
-    case Max = 1;
-    case Reserve = 2;
+    public const Bpm = 0;
+    public const Max = 1;
+    public const Reserve = 2;
 }

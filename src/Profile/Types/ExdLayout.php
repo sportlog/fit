@@ -13,15 +13,19 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum ExdLayout: int
+class ExdLayout
 {
-    case FullScreen = 0;
-    case HalfVertical = 1;
-    case HalfHorizontal = 2;
-    case HalfVerticalRightSplit = 3;
-    case HalfHorizontalBottomSplit = 4;
-    case FullQuarterSplit = 5;
-    case HalfVerticalLeftSplit = 6;
-    case HalfHorizontalTopSplit = 7;
-    case Dynamic = 8;
+    public const FullScreen = 0;
+    public const HalfVertical = 1;
+    public const HalfHorizontal = 2;
+    public const HalfVerticalRightSplit = 3;
+    public const HalfHorizontalBottomSplit = 4;
+    public const FullQuarterSplit = 5;
+    public const HalfVerticalLeftSplit = 6;
+    public const HalfHorizontalTopSplit = 7;
+
+    /**
+     * The EXD may display the configured concepts in any layout it sees fit.
+     */
+    public const Dynamic = 8;
 }

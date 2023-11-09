@@ -33,7 +33,7 @@ final class PowerZoneMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('PowerZone', MesgNum::PowerZone->value);
+        parent::__construct('PowerZone', MesgNum::PowerZone);
     }
 
     /**

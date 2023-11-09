@@ -34,7 +34,7 @@ final class Spo2DataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Spo2Data', MesgNum::Spo2Data->value);
+        parent::__construct('Spo2Data', MesgNum::Spo2Data);
     }
 
     /**

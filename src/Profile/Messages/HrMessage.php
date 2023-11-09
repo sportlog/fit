@@ -36,7 +36,7 @@ final class HrMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Hr', MesgNum::Hr->value);
+        parent::__construct('Hr', MesgNum::Hr);
     }
 
     /**

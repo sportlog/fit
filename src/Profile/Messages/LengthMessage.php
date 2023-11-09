@@ -52,7 +52,7 @@ final class LengthMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Length', MesgNum::Length->value);
+        parent::__construct('Length', MesgNum::Length);
     }
 
     /**

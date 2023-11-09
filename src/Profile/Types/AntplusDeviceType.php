@@ -13,31 +13,31 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum AntplusDeviceType: int
+class AntplusDeviceType
 {
-    case Antfs = 1;
-    case BikePower = 11;
-    case EnvironmentSensorLegacy = 12;
-    case MultiSportSpeedDistance = 15;
-    case Control = 16;
-    case FitnessEquipment = 17;
-    case BloodPressure = 18;
-    case GeocacheNode = 19;
-    case LightElectricVehicle = 20;
-    case EnvSensor = 25;
-    case Racquet = 26;
-    case ControlHub = 27;
-    case MuscleOxygen = 31;
-    case Shifting = 34;
-    case BikeLightMain = 35;
-    case BikeLightShared = 36;
-    case Exd = 38;
-    case BikeRadar = 40;
-    case BikeAero = 46;
-    case WeightScale = 119;
-    case HeartRate = 120;
-    case BikeSpeedCadence = 121;
-    case BikeCadence = 122;
-    case BikeSpeed = 123;
-    case StrideSpeedDistance = 124;
+    public const Antfs = 1;
+    public const BikePower = 11;
+    public const EnvironmentSensorLegacy = 12;
+    public const MultiSportSpeedDistance = 15;
+    public const Control = 16;
+    public const FitnessEquipment = 17;
+    public const BloodPressure = 18;
+    public const GeocacheNode = 19;
+    public const LightElectricVehicle = 20;
+    public const EnvSensor = 25;
+    public const Racquet = 26;
+    public const ControlHub = 27;
+    public const MuscleOxygen = 31;
+    public const Shifting = 34;
+    public const BikeLightMain = 35;
+    public const BikeLightShared = 36;
+    public const Exd = 38;
+    public const BikeRadar = 40;
+    public const BikeAero = 46;
+    public const WeightScale = 119;
+    public const HeartRate = 120;
+    public const BikeSpeedCadence = 121;
+    public const BikeCadence = 122;
+    public const BikeSpeed = 123;
+    public const StrideSpeedDistance = 124;
 }

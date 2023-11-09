@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum HipSwingExerciseName: int
+class HipSwingExerciseName
 {
-    case SingleArmKettlebellSwing = 0;
-    case SingleArmDumbbellSwing = 1;
-    case StepOutSwing = 2;
+    public const SingleArmKettlebellSwing = 0;
+    public const SingleArmDumbbellSwing = 1;
+    public const StepOutSwing = 2;
 }

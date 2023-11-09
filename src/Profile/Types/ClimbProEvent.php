@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum ClimbProEvent: int
+class ClimbProEvent
 {
-    case Approach = 0;
-    case Start = 1;
-    case Complete = 2;
+    public const Approach = 0;
+    public const Start = 1;
+    public const Complete = 2;
 }

@@ -40,7 +40,7 @@ final class TotalsMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Totals', MesgNum::Totals->value);
+        parent::__construct('Totals', MesgNum::Totals);
     }
 
     /**

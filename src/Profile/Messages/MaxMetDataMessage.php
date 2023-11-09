@@ -38,7 +38,7 @@ final class MaxMetDataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('MaxMetData', MesgNum::MaxMetData->value);
+        parent::__construct('MaxMetData', MesgNum::MaxMetData);
     }
 
     /**

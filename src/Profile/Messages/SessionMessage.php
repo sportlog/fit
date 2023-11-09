@@ -184,7 +184,7 @@ final class SessionMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Session', MesgNum::Session->value);
+        parent::__construct('Session', MesgNum::Session);
     }
 
     /**

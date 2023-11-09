@@ -36,7 +36,7 @@ final class MemoGlobMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('MemoGlob', MesgNum::MemoGlob->value);
+        parent::__construct('MemoGlob', MesgNum::MemoGlob);
     }
 
     /**

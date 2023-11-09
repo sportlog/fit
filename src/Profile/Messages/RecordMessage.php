@@ -114,7 +114,7 @@ final class RecordMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Record', MesgNum::Record->value);
+        parent::__construct('Record', MesgNum::Record);
     }
 
     /**

@@ -35,7 +35,7 @@ final class FieldCapabilitiesMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('FieldCapabilities', MesgNum::FieldCapabilities->value);
+        parent::__construct('FieldCapabilities', MesgNum::FieldCapabilities);
     }
 
     /**

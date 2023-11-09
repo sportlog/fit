@@ -13,45 +13,73 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum DiveAlert: int
+class DiveAlert
 {
-    case NdlReached = 0;
-    case GasSwitchPrompted = 1;
-    case NearSurface = 2;
-    case ApproachingNdl = 3;
-    case Po2Warn = 4;
-    case Po2CritHigh = 5;
-    case Po2CritLow = 6;
-    case TimeAlert = 7;
-    case DepthAlert = 8;
-    case DecoCeilingBroken = 9;
-    case DecoComplete = 10;
-    case SafetyStopBroken = 11;
-    case SafetyStopComplete = 12;
-    case CnsWarning = 13;
-    case CnsCritical = 14;
-    case OtuWarning = 15;
-    case OtuCritical = 16;
-    case AscentCritical = 17;
-    case AlertDismissedByKey = 18;
-    case AlertDismissedByTimeout = 19;
-    case BatteryLow = 20;
-    case BatteryCritical = 21;
-    case SafetyStopStarted = 22;
-    case ApproachingFirstDecoStop = 23;
-    case SetpointSwitchAutoLow = 24;
-    case SetpointSwitchAutoHigh = 25;
-    case SetpointSwitchManualLow = 26;
-    case SetpointSwitchManualHigh = 27;
-    case AutoSetpointSwitchIgnored = 28;
-    case SwitchedToOpenCircuit = 29;
-    case SwitchedToClosedCircuit = 30;
-    case TankBatteryLow = 32;
-    case Po2CcrDilLow = 33;
-    case DecoStopCleared = 34;
-    case ApneaNeutralBuoyancy = 35;
-    case ApneaTargetDepth = 36;
-    case ApneaSurface = 37;
-    case ApneaHighSpeed = 38;
-    case ApneaLowSpeed = 39;
+    public const NdlReached = 0;
+    public const GasSwitchPrompted = 1;
+    public const NearSurface = 2;
+    public const ApproachingNdl = 3;
+    public const Po2Warn = 4;
+    public const Po2CritHigh = 5;
+    public const Po2CritLow = 6;
+    public const TimeAlert = 7;
+    public const DepthAlert = 8;
+    public const DecoCeilingBroken = 9;
+    public const DecoComplete = 10;
+    public const SafetyStopBroken = 11;
+    public const SafetyStopComplete = 12;
+    public const CnsWarning = 13;
+    public const CnsCritical = 14;
+    public const OtuWarning = 15;
+    public const OtuCritical = 16;
+    public const AscentCritical = 17;
+    public const AlertDismissedByKey = 18;
+    public const AlertDismissedByTimeout = 19;
+    public const BatteryLow = 20;
+    public const BatteryCritical = 21;
+    public const SafetyStopStarted = 22;
+    public const ApproachingFirstDecoStop = 23;
+    public const SetpointSwitchAutoLow = 24;
+    public const SetpointSwitchAutoHigh = 25;
+    public const SetpointSwitchManualLow = 26;
+    public const SetpointSwitchManualHigh = 27;
+    public const AutoSetpointSwitchIgnored = 28;
+    public const SwitchedToOpenCircuit = 29;
+    public const SwitchedToClosedCircuit = 30;
+    public const TankBatteryLow = 32;
+
+    /**
+     * ccr diluent has low po2
+     */
+    public const Po2CcrDilLow = 33;
+
+    /**
+     * a deco stop has been cleared
+     */
+    public const DecoStopCleared = 34;
+
+    /**
+     * Target Depth Apnea Alarm triggered
+     */
+    public const ApneaNeutralBuoyancy = 35;
+
+    /**
+     * Neutral Buoyance Apnea Alarm triggered
+     */
+    public const ApneaTargetDepth = 36;
+
+    /**
+     * Surface Apnea Alarm triggered
+     */
+    public const ApneaSurface = 37;
+
+    /**
+     * High Speed Apnea Alarm triggered
+     */
+    public const ApneaHighSpeed = 38;
+
+    /**
+     * Low Speed Apnea Alarm triggered
+     */
+    public const ApneaLowSpeed = 39;
 }

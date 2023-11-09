@@ -13,12 +13,20 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum TimeMode: int
+class TimeMode
 {
-    case Hour12 = 0;
-    case Hour24 = 1;
-    case Military = 2;
-    case Hour12WithSeconds = 3;
-    case Hour24WithSeconds = 4;
-    case Utc = 5;
+    public const Hour12 = 0;
+
+    /**
+     * Does not use a leading zero and has a colon
+     */
+    public const Hour24 = 1;
+
+    /**
+     * Uses a leading zero and does not have a colon
+     */
+    public const Military = 2;
+    public const Hour12WithSeconds = 3;
+    public const Hour24WithSeconds = 4;
+    public const Utc = 5;
 }

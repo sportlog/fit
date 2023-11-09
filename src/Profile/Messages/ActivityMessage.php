@@ -38,7 +38,7 @@ final class ActivityMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Activity', MesgNum::Activity->value);
+        parent::__construct('Activity', MesgNum::Activity);
     }
 
     /**

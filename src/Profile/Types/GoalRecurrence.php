@@ -13,12 +13,12 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum GoalRecurrence: int
+class GoalRecurrence
 {
-    case Off = 0;
-    case Daily = 1;
-    case Weekly = 2;
-    case Monthly = 3;
-    case Yearly = 4;
-    case Custom = 5;
+    public const Off = 0;
+    public const Daily = 1;
+    public const Weekly = 2;
+    public const Monthly = 3;
+    public const Yearly = 4;
+    public const Custom = 5;
 }

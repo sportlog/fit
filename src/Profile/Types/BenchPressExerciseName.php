@@ -13,33 +13,33 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum BenchPressExerciseName: int
+class BenchPressExerciseName
 {
-    case AlternatingDumbbellChestPressOnSwissBall = 0;
-    case BarbellBenchPress = 1;
-    case BarbellBoardBenchPress = 2;
-    case BarbellFloorPress = 3;
-    case CloseGripBarbellBenchPress = 4;
-    case DeclineDumbbellBenchPress = 5;
-    case DumbbellBenchPress = 6;
-    case DumbbellFloorPress = 7;
-    case InclineBarbellBenchPress = 8;
-    case InclineDumbbellBenchPress = 9;
-    case InclineSmithMachineBenchPress = 10;
-    case IsometricBarbellBenchPress = 11;
-    case KettlebellChestPress = 12;
-    case NeutralGripDumbbellBenchPress = 13;
-    case NeutralGripDumbbellInclineBenchPress = 14;
-    case OneArmFloorPress = 15;
-    case WeightedOneArmFloorPress = 16;
-    case PartialLockout = 17;
-    case ReverseGripBarbellBenchPress = 18;
-    case ReverseGripInclineBenchPress = 19;
-    case SingleArmCableChestPress = 20;
-    case SingleArmDumbbellBenchPress = 21;
-    case SmithMachineBenchPress = 22;
-    case SwissBallDumbbellChestPress = 23;
-    case TripleStopBarbellBenchPress = 24;
-    case WideGripBarbellBenchPress = 25;
-    case AlternatingDumbbellChestPress = 26;
+    public const AlternatingDumbbellChestPressOnSwissBall = 0;
+    public const BarbellBenchPress = 1;
+    public const BarbellBoardBenchPress = 2;
+    public const BarbellFloorPress = 3;
+    public const CloseGripBarbellBenchPress = 4;
+    public const DeclineDumbbellBenchPress = 5;
+    public const DumbbellBenchPress = 6;
+    public const DumbbellFloorPress = 7;
+    public const InclineBarbellBenchPress = 8;
+    public const InclineDumbbellBenchPress = 9;
+    public const InclineSmithMachineBenchPress = 10;
+    public const IsometricBarbellBenchPress = 11;
+    public const KettlebellChestPress = 12;
+    public const NeutralGripDumbbellBenchPress = 13;
+    public const NeutralGripDumbbellInclineBenchPress = 14;
+    public const OneArmFloorPress = 15;
+    public const WeightedOneArmFloorPress = 16;
+    public const PartialLockout = 17;
+    public const ReverseGripBarbellBenchPress = 18;
+    public const ReverseGripInclineBenchPress = 19;
+    public const SingleArmCableChestPress = 20;
+    public const SingleArmDumbbellBenchPress = 21;
+    public const SmithMachineBenchPress = 22;
+    public const SwissBallDumbbellChestPress = 23;
+    public const TripleStopBarbellBenchPress = 24;
+    public const WideGripBarbellBenchPress = 25;
+    public const AlternatingDumbbellChestPress = 26;
 }

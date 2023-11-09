@@ -13,11 +13,11 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum CarryExerciseName: int
+class CarryExerciseName
 {
-    case BarHolds = 0;
-    case FarmersWalk = 1;
-    case FarmersWalkOnToes = 2;
-    case HexDumbbellHold = 3;
-    case OverheadCarry = 4;
+    public const BarHolds = 0;
+    public const FarmersWalk = 1;
+    public const FarmersWalkOnToes = 2;
+    public const HexDumbbellHold = 3;
+    public const OverheadCarry = 4;
 }

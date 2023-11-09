@@ -33,7 +33,7 @@ final class MonitoringHrDataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('MonitoringHrData', MesgNum::MonitoringHrData->value);
+        parent::__construct('MonitoringHrData', MesgNum::MonitoringHrData);
     }
 
     /**

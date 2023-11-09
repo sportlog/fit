@@ -13,17 +13,17 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum SegmentLeaderboardType: int
+class SegmentLeaderboardType
 {
-    case Overall = 0;
-    case PersonalBest = 1;
-    case Connections = 2;
-    case Group = 3;
-    case Challenger = 4;
-    case Kom = 5;
-    case Qom = 6;
-    case Pr = 7;
-    case Goal = 8;
-    case Rival = 9;
-    case ClubLeader = 10;
+    public const Overall = 0;
+    public const PersonalBest = 1;
+    public const Connections = 2;
+    public const Group = 3;
+    public const Challenger = 4;
+    public const Kom = 5;
+    public const Qom = 6;
+    public const Pr = 7;
+    public const Goal = 8;
+    public const Rival = 9;
+    public const ClubLeader = 10;
 }

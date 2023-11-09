@@ -13,9 +13,20 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum GasConsumptionRateType: int
+class GasConsumptionRateType
 {
-    case PressureSac = 0;
-    case VolumeSac = 1;
-    case Rmv = 2;
+    /**
+     * Pressure-based Surface Air Consumption
+     */
+    public const PressureSac = 0;
+
+    /**
+     * Volumetric Surface Air Consumption
+     */
+    public const VolumeSac = 1;
+
+    /**
+     * Respiratory Minute Volume
+     */
+    public const Rmv = 2;
 }

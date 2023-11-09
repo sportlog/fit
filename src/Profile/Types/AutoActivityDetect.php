@@ -13,13 +13,13 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum AutoActivityDetect: int
+class AutoActivityDetect
 {
-    case None = 0;
-    case Running = 1;
-    case Cycling = 2;
-    case Swimming = 4;
-    case Walking = 8;
-    case Elliptical = 32;
-    case Sedentary = 1024;
+    public const None = 0;
+    public const Running = 1;
+    public const Cycling = 2;
+    public const Swimming = 4;
+    public const Walking = 8;
+    public const Elliptical = 32;
+    public const Sedentary = 1024;
 }

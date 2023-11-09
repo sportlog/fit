@@ -13,14 +13,21 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum BleDeviceType: int
+class BleDeviceType
 {
-    case ConnectedGps = 0;
-    case HeartRate = 1;
-    case BikePower = 2;
-    case BikeSpeedCadence = 3;
-    case BikeSpeed = 4;
-    case BikeCadence = 5;
-    case Footpod = 6;
-    case BikeTrainer = 7;
+    /**
+     * GPS that is provided over a proprietary bluetooth service
+     */
+    public const ConnectedGps = 0;
+    public const HeartRate = 1;
+    public const BikePower = 2;
+    public const BikeSpeedCadence = 3;
+    public const BikeSpeed = 4;
+    public const BikeCadence = 5;
+    public const Footpod = 6;
+
+    /**
+     * Indoor-Bike FTMS protocol
+     */
+    public const BikeTrainer = 7;
 }

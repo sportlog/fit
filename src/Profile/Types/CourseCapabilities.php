@@ -13,18 +13,22 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum CourseCapabilities: int
+class CourseCapabilities
 {
-    case Processed = 1;
-    case Valid = 2;
-    case Time = 4;
-    case Distance = 8;
-    case Position = 16;
-    case HeartRate = 32;
-    case Power = 64;
-    case Cadence = 128;
-    case Training = 256;
-    case Navigation = 512;
-    case Bikeway = 1024;
-    case Aviation = 4096;
+    public const Processed = 1;
+    public const Valid = 2;
+    public const Time = 4;
+    public const Distance = 8;
+    public const Position = 16;
+    public const HeartRate = 32;
+    public const Power = 64;
+    public const Cadence = 128;
+    public const Training = 256;
+    public const Navigation = 512;
+    public const Bikeway = 1024;
+
+    /**
+     * Denote course files to be used as flight plans
+     */
+    public const Aviation = 4096;
 }

@@ -13,26 +13,79 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum File: int
+class File
 {
-    case Device = 1;
-    case Settings = 2;
-    case Sport = 3;
-    case Activity = 4;
-    case Workout = 5;
-    case Course = 6;
-    case Schedules = 7;
-    case Weight = 9;
-    case Totals = 10;
-    case Goals = 11;
-    case BloodPressure = 14;
-    case MonitoringA = 15;
-    case ActivitySummary = 20;
-    case MonitoringDaily = 28;
-    case MonitoringB = 32;
-    case Segment = 34;
-    case SegmentList = 35;
-    case ExdConfiguration = 40;
-    case MfgRangeMin = 247;
-    case MfgRangeMax = 254;
+    /** "Read only */
+    public const Device = 1;
+
+    /** "Read/write */
+    public const Settings = 2;
+
+    /** "Read/write */
+    public const Sport = 3;
+
+    /** "Read/erase */
+    public const Activity = 4;
+
+    /** "Read/write/erase */
+    public const Workout = 5;
+
+    /** "Read/write/erase */
+    public const Course = 6;
+
+    /** "Read/write */
+    public const Schedules = 7;
+
+    /** "Read only */
+    public const Weight = 9;
+
+    /** "Read only */
+    public const Totals = 10;
+
+    /** "Read/write */
+    public const Goals = 11;
+
+    /**
+     * Read only. Directory=Blood Pressure
+     */
+    public const BloodPressure = 14;
+
+    /**
+     * Read only. Directory=Monitoring. File number=sub type.
+     */
+    public const MonitoringA = 15;
+
+    /** "Read/erase */
+    public const ActivitySummary = 20;
+    public const MonitoringDaily = 28;
+
+    /**
+     * Read only. Directory=Monitoring. File number=identifier
+     */
+    public const MonitoringB = 32;
+
+    /**
+     * Read/write/erase. Multiple Files. Directory=Segments
+     */
+    public const Segment = 34;
+
+    /**
+     * Read/write/erase. Single File. Directory=Segments
+     */
+    public const SegmentList = 35;
+
+    /**
+     * Read/write/erase. Single File. Directory=Settings
+     */
+    public const ExdConfiguration = 40;
+
+    /**
+     * 0xF7 - 0xFE reserved for manufacturer specific file types
+     */
+    public const MfgRangeMin = 247;
+
+    /**
+     * 0xF7 - 0xFE reserved for manufacturer specific file types
+     */
+    public const MfgRangeMax = 254;
 }

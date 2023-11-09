@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum Activity: int
+class Activity
 {
-    case Manual = 0;
-    case AutoMultiSport = 1;
+    public const Manual = 0;
+    public const AutoMultiSport = 1;
 }

@@ -36,7 +36,7 @@ final class ExdDataFieldConfigurationMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('ExdDataFieldConfiguration', MesgNum::ExdDataFieldConfiguration->value);
+        parent::__construct('ExdDataFieldConfiguration', MesgNum::ExdDataFieldConfiguration);
     }
 
     /**

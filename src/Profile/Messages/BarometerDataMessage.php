@@ -34,7 +34,7 @@ final class BarometerDataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('BarometerData', MesgNum::BarometerData->value);
+        parent::__construct('BarometerData', MesgNum::BarometerData);
     }
 
     /**

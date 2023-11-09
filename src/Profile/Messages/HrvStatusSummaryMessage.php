@@ -38,7 +38,7 @@ final class HrvStatusSummaryMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('HrvStatusSummary', MesgNum::HrvStatusSummary->value);
+        parent::__construct('HrvStatusSummary', MesgNum::HrvStatusSummary);
     }
 
     /**

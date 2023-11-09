@@ -13,7 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum BacklightTimeout: int
+class BacklightTimeout
 {
-    case Infinite = 0;
+    /**
+     * Backlight stays on forever.
+     */
+    public const Infinite = 0;
 }

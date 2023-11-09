@@ -38,7 +38,7 @@ final class SdmProfileMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('SdmProfile', MesgNum::SdmProfile->value);
+        parent::__construct('SdmProfile', MesgNum::SdmProfile);
     }
 
     /**

@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum PwrZoneCalc: int
+class PwrZoneCalc
 {
-    case Custom = 0;
-    case PercentFtp = 1;
+    public const Custom = 0;
+    public const PercentFtp = 1;
 }

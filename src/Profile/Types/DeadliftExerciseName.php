@@ -13,25 +13,25 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum DeadliftExerciseName: int
+class DeadliftExerciseName
 {
-    case BarbellDeadlift = 0;
-    case BarbellStraightLegDeadlift = 1;
-    case DumbbellDeadlift = 2;
-    case DumbbellSingleLegDeadliftToRow = 3;
-    case DumbbellStraightLegDeadlift = 4;
-    case KettlebellFloorToShelf = 5;
-    case OneArmOneLegDeadlift = 6;
-    case RackPull = 7;
-    case RotationalDumbbellStraightLegDeadlift = 8;
-    case SingleArmDeadlift = 9;
-    case SingleLegBarbellDeadlift = 10;
-    case SingleLegBarbellStraightLegDeadlift = 11;
-    case SingleLegDeadliftWithBarbell = 12;
-    case SingleLegRdlCircuit = 13;
-    case SingleLegRomanianDeadliftWithDumbbell = 14;
-    case SumoDeadlift = 15;
-    case SumoDeadliftHighPull = 16;
-    case TrapBarDeadlift = 17;
-    case WideGripBarbellDeadlift = 18;
+    public const BarbellDeadlift = 0;
+    public const BarbellStraightLegDeadlift = 1;
+    public const DumbbellDeadlift = 2;
+    public const DumbbellSingleLegDeadliftToRow = 3;
+    public const DumbbellStraightLegDeadlift = 4;
+    public const KettlebellFloorToShelf = 5;
+    public const OneArmOneLegDeadlift = 6;
+    public const RackPull = 7;
+    public const RotationalDumbbellStraightLegDeadlift = 8;
+    public const SingleArmDeadlift = 9;
+    public const SingleLegBarbellDeadlift = 10;
+    public const SingleLegBarbellStraightLegDeadlift = 11;
+    public const SingleLegDeadliftWithBarbell = 12;
+    public const SingleLegRdlCircuit = 13;
+    public const SingleLegRomanianDeadliftWithDumbbell = 14;
+    public const SumoDeadlift = 15;
+    public const SumoDeadliftHighPull = 16;
+    public const TrapBarDeadlift = 17;
+    public const WideGripBarbellDeadlift = 18;
 }

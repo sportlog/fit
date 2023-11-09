@@ -40,7 +40,7 @@ final class JumpMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Jump', MesgNum::Jump->value);
+        parent::__construct('Jump', MesgNum::Jump);
     }
 
     /**

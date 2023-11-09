@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum DigitalWatchfaceLayout: int
+class DigitalWatchfaceLayout
 {
-    case Traditional = 0;
-    case Modern = 1;
-    case Bold = 2;
+    public const Traditional = 0;
+    public const Modern = 1;
+    public const Bold = 2;
 }

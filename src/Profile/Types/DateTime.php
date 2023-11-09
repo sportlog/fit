@@ -13,7 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum DateTime: int
+class DateTime
 {
-    case Min = 268435456;
+    /**
+     * if date_time is < 0x10000000 then it is system time (seconds from device power on)
+     */
+    public const Min = 268435456;
 }

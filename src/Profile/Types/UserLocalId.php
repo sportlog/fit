@@ -13,12 +13,12 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum UserLocalId: int
+class UserLocalId
 {
-    case LocalMin = 0;
-    case LocalMax = 15;
-    case StationaryMin = 16;
-    case StationaryMax = 255;
-    case PortableMin = 256;
-    case PortableMax = 65534;
+    public const LocalMin = 0;
+    public const LocalMax = 15;
+    public const StationaryMin = 16;
+    public const StationaryMax = 255;
+    public const PortableMin = 256;
+    public const PortableMax = 65534;
 }

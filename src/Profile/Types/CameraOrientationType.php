@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum CameraOrientationType: int
+class CameraOrientationType
 {
-    case CameraOrientation0 = 0;
-    case CameraOrientation90 = 1;
-    case CameraOrientation180 = 2;
-    case CameraOrientation270 = 3;
+    public const CameraOrientation0 = 0;
+    public const CameraOrientation90 = 1;
+    public const CameraOrientation180 = 2;
+    public const CameraOrientation270 = 3;
 }

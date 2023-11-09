@@ -13,12 +13,35 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum SourceType: int
+class SourceType
 {
-    case Ant = 0;
-    case Antplus = 1;
-    case Bluetooth = 2;
-    case BluetoothLowEnergy = 3;
-    case Wifi = 4;
-    case Local = 5;
+    /**
+     * External device connected with ANT
+     */
+    public const Ant = 0;
+
+    /**
+     * External device connected with ANT+
+     */
+    public const Antplus = 1;
+
+    /**
+     * External device connected with BT
+     */
+    public const Bluetooth = 2;
+
+    /**
+     * External device connected with BLE
+     */
+    public const BluetoothLowEnergy = 3;
+
+    /**
+     * External device connected with Wifi
+     */
+    public const Wifi = 4;
+
+    /**
+     * Onboard device
+     */
+    public const Local = 5;
 }

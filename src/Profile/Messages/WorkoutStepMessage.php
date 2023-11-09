@@ -49,7 +49,7 @@ final class WorkoutStepMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('WorkoutStep', MesgNum::WorkoutStep->value);
+        parent::__construct('WorkoutStep', MesgNum::WorkoutStep);
     }
 
     /**

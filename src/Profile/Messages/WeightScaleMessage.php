@@ -44,7 +44,7 @@ final class WeightScaleMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('WeightScale', MesgNum::WeightScale->value);
+        parent::__construct('WeightScale', MesgNum::WeightScale);
     }
 
     /**

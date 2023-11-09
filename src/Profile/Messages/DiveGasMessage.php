@@ -35,7 +35,7 @@ final class DiveGasMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('DiveGas', MesgNum::DiveGas->value);
+        parent::__construct('DiveGas', MesgNum::DiveGas);
     }
 
     /**

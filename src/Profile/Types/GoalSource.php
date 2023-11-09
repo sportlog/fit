@@ -13,9 +13,20 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum GoalSource: int
+class GoalSource
 {
-    case Auto = 0;
-    case Community = 1;
-    case User = 2;
+    /**
+     * Device generated
+     */
+    public const Auto = 0;
+
+    /**
+     * Social network sourced goal
+     */
+    public const Community = 1;
+
+    /**
+     * Manually generated
+     */
+    public const User = 2;
 }

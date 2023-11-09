@@ -36,7 +36,7 @@ final class FileCapabilitiesMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('FileCapabilities', MesgNum::FileCapabilities->value);
+        parent::__construct('FileCapabilities', MesgNum::FileCapabilities);
     }
 
     /**

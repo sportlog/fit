@@ -13,11 +13,11 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum AutoSyncFrequency: int
+class AutoSyncFrequency
 {
-    case Never = 0;
-    case Occasionally = 1;
-    case Frequent = 2;
-    case OnceADay = 3;
-    case Remote = 4;
+    public const Never = 0;
+    public const Occasionally = 1;
+    public const Frequent = 2;
+    public const OnceADay = 3;
+    public const Remote = 4;
 }

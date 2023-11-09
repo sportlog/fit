@@ -13,11 +13,11 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum SleepLevel: int
+class SleepLevel
 {
-    case Unmeasurable = 0;
-    case Awake = 1;
-    case Light = 2;
-    case Deep = 3;
-    case Rem = 4;
+    public const Unmeasurable = 0;
+    public const Awake = 1;
+    public const Light = 2;
+    public const Deep = 3;
+    public const Rem = 4;
 }

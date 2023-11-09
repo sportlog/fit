@@ -42,7 +42,7 @@ final class AccelerometerDataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('AccelerometerData', MesgNum::AccelerometerData->value);
+        parent::__construct('AccelerometerData', MesgNum::AccelerometerData);
     }
 
     /**

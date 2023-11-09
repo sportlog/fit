@@ -33,7 +33,7 @@ final class VideoMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Video', MesgNum::Video->value);
+        parent::__construct('Video', MesgNum::Video);
     }
 
     /**

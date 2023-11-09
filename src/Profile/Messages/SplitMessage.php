@@ -35,7 +35,7 @@ final class SplitMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Split', MesgNum::Split->value);
+        parent::__construct('Split', MesgNum::Split);
     }
 
     /**

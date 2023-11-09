@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum BikeLightNetworkConfigType: int
+class BikeLightNetworkConfigType
 {
-    case Auto = 0;
-    case Individual = 4;
-    case HighVisibility = 5;
-    case Trail = 6;
+    public const Auto = 0;
+    public const Individual = 4;
+    public const HighVisibility = 5;
+    public const Trail = 6;
 }

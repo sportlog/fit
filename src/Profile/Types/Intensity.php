@@ -13,13 +13,13 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum Intensity: int
+class Intensity
 {
-    case Active = 0;
-    case Rest = 1;
-    case Warmup = 2;
-    case Cooldown = 3;
-    case Recovery = 4;
-    case Interval = 5;
-    case Other = 6;
+    public const Active = 0;
+    public const Rest = 1;
+    public const Warmup = 2;
+    public const Cooldown = 3;
+    public const Recovery = 4;
+    public const Interval = 5;
+    public const Other = 6;
 }

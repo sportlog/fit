@@ -13,37 +13,41 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum WarmUpExerciseName: int
+class WarmUpExerciseName
 {
-    case QuadrupedRocking = 0;
-    case NeckTilts = 1;
-    case AnkleCircles = 2;
-    case AnkleDorsiflexionWithBand = 3;
-    case AnkleInternalRotation = 4;
-    case ArmCircles = 5;
-    case BentOverReachToSky = 6;
-    case CatCamel = 7;
-    case ElbowToFootLunge = 8;
-    case ForwardAndBackwardLegSwings = 9;
-    case Groiners = 10;
-    case InvertedHamstringStretch = 11;
-    case LateralDuckUnder = 12;
-    case NeckRotations = 13;
-    case OppositeArmAndLegBalance = 14;
-    case ReachRollAndLift = 15;
-    case Scorpion = 16;
-    case ShoulderCircles = 17;
-    case SideToSideLegSwings = 18;
-    case SleeperStretch = 19;
-    case SlideOut = 20;
-    case SwissBallHipCrossover = 21;
-    case SwissBallReachRollAndLift = 22;
-    case SwissBallWindshieldWipers = 23;
-    case ThoracicRotation = 24;
-    case WalkingHighKicks = 25;
-    case WalkingHighKnees = 26;
-    case WalkingKneeHugs = 27;
-    case WalkingLegCradles = 28;
-    case Walkout = 29;
-    case WalkoutFromPushUpPosition = 30;
+    public const QuadrupedRocking = 0;
+    public const NeckTilts = 1;
+    public const AnkleCircles = 2;
+    public const AnkleDorsiflexionWithBand = 3;
+    public const AnkleInternalRotation = 4;
+    public const ArmCircles = 5;
+    public const BentOverReachToSky = 6;
+    public const CatCamel = 7;
+    public const ElbowToFootLunge = 8;
+    public const ForwardAndBackwardLegSwings = 9;
+    public const Groiners = 10;
+    public const InvertedHamstringStretch = 11;
+    public const LateralDuckUnder = 12;
+    public const NeckRotations = 13;
+    public const OppositeArmAndLegBalance = 14;
+    public const ReachRollAndLift = 15;
+
+    /**
+     * @deprecated Deprecated do not use
+     */
+    public const Scorpion = 16;
+    public const ShoulderCircles = 17;
+    public const SideToSideLegSwings = 18;
+    public const SleeperStretch = 19;
+    public const SlideOut = 20;
+    public const SwissBallHipCrossover = 21;
+    public const SwissBallReachRollAndLift = 22;
+    public const SwissBallWindshieldWipers = 23;
+    public const ThoracicRotation = 24;
+    public const WalkingHighKicks = 25;
+    public const WalkingHighKnees = 26;
+    public const WalkingKneeHugs = 27;
+    public const WalkingLegCradles = 28;
+    public const Walkout = 29;
+    public const WalkoutFromPushUpPosition = 30;
 }

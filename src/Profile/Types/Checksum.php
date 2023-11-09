@@ -13,8 +13,15 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum Checksum: int
+class Checksum
 {
-    case Clear = 0;
-    case Ok = 1;
+    /**
+     * Allows clear of checksum for flash memory where can only write 1 to 0 without erasing sector.
+     */
+    public const Clear = 0;
+
+    /**
+     * Set to mark checksum as valid if computes to invalid values 0 or 0xFF. Checksum can also be set to ok to save encoding computation time.
+     */
+    public const Ok = 1;
 }

@@ -36,7 +36,7 @@ final class AntRxMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('AntRx', MesgNum::AntRx->value);
+        parent::__construct('AntRx', MesgNum::AntRx);
     }
 
     /**

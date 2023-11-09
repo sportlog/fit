@@ -13,19 +13,19 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum TotalBodyExerciseName: int
+class TotalBodyExerciseName
 {
-    case Burpee = 0;
-    case WeightedBurpee = 1;
-    case BurpeeBoxJump = 2;
-    case WeightedBurpeeBoxJump = 3;
-    case HighPullBurpee = 4;
-    case ManMakers = 5;
-    case OneArmBurpee = 6;
-    case SquatThrusts = 7;
-    case WeightedSquatThrusts = 8;
-    case SquatPlankPushUp = 9;
-    case WeightedSquatPlankPushUp = 10;
-    case StandingTRotationBalance = 11;
-    case WeightedStandingTRotationBalance = 12;
+    public const Burpee = 0;
+    public const WeightedBurpee = 1;
+    public const BurpeeBoxJump = 2;
+    public const WeightedBurpeeBoxJump = 3;
+    public const HighPullBurpee = 4;
+    public const ManMakers = 5;
+    public const OneArmBurpee = 6;
+    public const SquatThrusts = 7;
+    public const WeightedSquatThrusts = 8;
+    public const SquatPlankPushUp = 9;
+    public const WeightedSquatPlankPushUp = 10;
+    public const StandingTRotationBalance = 11;
+    public const WeightedStandingTRotationBalance = 12;
 }

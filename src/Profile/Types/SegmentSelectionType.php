@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum SegmentSelectionType: int
+class SegmentSelectionType
 {
-    case Starred = 0;
-    case Suggested = 1;
+    public const Starred = 0;
+    public const Suggested = 1;
 }

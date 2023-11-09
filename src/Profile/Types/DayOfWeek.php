@@ -13,13 +13,13 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum DayOfWeek: int
+class DayOfWeek
 {
-    case Sunday = 0;
-    case Monday = 1;
-    case Tuesday = 2;
-    case Wednesday = 3;
-    case Thursday = 4;
-    case Friday = 5;
-    case Saturday = 6;
+    public const Sunday = 0;
+    public const Monday = 1;
+    public const Tuesday = 2;
+    public const Wednesday = 3;
+    public const Thursday = 4;
+    public const Friday = 5;
+    public const Saturday = 6;
 }

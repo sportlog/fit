@@ -33,7 +33,7 @@ final class TankUpdateMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('TankUpdate', MesgNum::TankUpdate->value);
+        parent::__construct('TankUpdate', MesgNum::TankUpdate);
     }
 
     /**

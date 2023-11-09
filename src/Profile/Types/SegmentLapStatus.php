@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum SegmentLapStatus: int
+class SegmentLapStatus
 {
-    case End = 0;
-    case Fail = 1;
+    public const End = 0;
+    public const Fail = 1;
 }

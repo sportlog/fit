@@ -32,7 +32,7 @@ final class FileCreatorMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('FileCreator', MesgNum::FileCreator->value);
+        parent::__construct('FileCreator', MesgNum::FileCreator);
     }
 
     /**

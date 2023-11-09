@@ -13,27 +13,27 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum CalfRaiseExerciseName: int
+class CalfRaiseExerciseName
 {
-    case _3WayCalfRaise = 0;
-    case _3WayWeightedCalfRaise = 1;
-    case _3WaySingleLegCalfRaise = 2;
-    case _3WayWeightedSingleLegCalfRaise = 3;
-    case DonkeyCalfRaise = 4;
-    case WeightedDonkeyCalfRaise = 5;
-    case SeatedCalfRaise = 6;
-    case WeightedSeatedCalfRaise = 7;
-    case SeatedDumbbellToeRaise = 8;
-    case SingleLegBentKneeCalfRaise = 9;
-    case WeightedSingleLegBentKneeCalfRaise = 10;
-    case SingleLegDeclinePushUp = 11;
-    case SingleLegDonkeyCalfRaise = 12;
-    case WeightedSingleLegDonkeyCalfRaise = 13;
-    case SingleLegHipRaiseWithKneeHold = 14;
-    case SingleLegStandingCalfRaise = 15;
-    case SingleLegStandingDumbbellCalfRaise = 16;
-    case StandingBarbellCalfRaise = 17;
-    case StandingCalfRaise = 18;
-    case WeightedStandingCalfRaise = 19;
-    case StandingDumbbellCalfRaise = 20;
+    public const _3WayCalfRaise = 0;
+    public const _3WayWeightedCalfRaise = 1;
+    public const _3WaySingleLegCalfRaise = 2;
+    public const _3WayWeightedSingleLegCalfRaise = 3;
+    public const DonkeyCalfRaise = 4;
+    public const WeightedDonkeyCalfRaise = 5;
+    public const SeatedCalfRaise = 6;
+    public const WeightedSeatedCalfRaise = 7;
+    public const SeatedDumbbellToeRaise = 8;
+    public const SingleLegBentKneeCalfRaise = 9;
+    public const WeightedSingleLegBentKneeCalfRaise = 10;
+    public const SingleLegDeclinePushUp = 11;
+    public const SingleLegDonkeyCalfRaise = 12;
+    public const WeightedSingleLegDonkeyCalfRaise = 13;
+    public const SingleLegHipRaiseWithKneeHold = 14;
+    public const SingleLegStandingCalfRaise = 15;
+    public const SingleLegStandingDumbbellCalfRaise = 16;
+    public const StandingBarbellCalfRaise = 17;
+    public const StandingCalfRaise = 18;
+    public const WeightedStandingCalfRaise = 19;
+    public const StandingDumbbellCalfRaise = 20;
 }

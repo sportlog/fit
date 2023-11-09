@@ -62,12 +62,8 @@ class MessageList implements IteratorAggregate, Countable
     /**
      * Gets all messages for the specified message number.
      */
-    public function getMessages(MesgNum|int $messageNumber): array
+    public function getMessages(int $messageNumber): array
     {
-        if ($messageNumber instanceof MesgNum) {
-            $messageNumber = $messageNumber->value;
-        }
-
         return isset($this->messages[$messageNumber]) ? $this->messages[$messageNumber] : [];
     }
 

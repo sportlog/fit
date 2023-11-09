@@ -33,7 +33,7 @@ final class WatchfaceSettingsMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('WatchfaceSettings', MesgNum::WatchfaceSettings->value);
+        parent::__construct('WatchfaceSettings', MesgNum::WatchfaceSettings);
     }
 
     /**

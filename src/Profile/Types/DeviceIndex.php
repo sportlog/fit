@@ -13,7 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum DeviceIndex: int
+class DeviceIndex
 {
-    case Creator = 0;
+    /**
+     * Creator of the file is always device index 0.
+     */
+    public const Creator = 0;
 }

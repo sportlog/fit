@@ -13,12 +13,16 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum StrokeType: int
+class StrokeType
 {
-    case NoEvent = 0;
-    case Other = 1;
-    case Serve = 2;
-    case Forehand = 3;
-    case Backhand = 4;
-    case Smash = 5;
+    public const NoEvent = 0;
+
+    /**
+     * stroke was detected but cannot be identified
+     */
+    public const Other = 1;
+    public const Serve = 2;
+    public const Forehand = 3;
+    public const Backhand = 4;
+    public const Smash = 5;
 }

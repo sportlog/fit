@@ -13,13 +13,13 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum Goal: int
+class Goal
 {
-    case Time = 0;
-    case Distance = 1;
-    case Calories = 2;
-    case Frequency = 3;
-    case Steps = 4;
-    case Ascent = 5;
-    case ActiveMinutes = 6;
+    public const Time = 0;
+    public const Distance = 1;
+    public const Calories = 2;
+    public const Frequency = 3;
+    public const Steps = 4;
+    public const Ascent = 5;
+    public const ActiveMinutes = 6;
 }

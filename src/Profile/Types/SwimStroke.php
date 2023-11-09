@@ -13,13 +13,15 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum SwimStroke: int
+class SwimStroke
 {
-    case Freestyle = 0;
-    case Backstroke = 1;
-    case Breaststroke = 2;
-    case Butterfly = 3;
-    case Drill = 4;
-    case Mixed = 5;
-    case Im = 6;
+    public const Freestyle = 0;
+    public const Backstroke = 1;
+    public const Breaststroke = 2;
+    public const Butterfly = 3;
+    public const Drill = 4;
+    public const Mixed = 5;
+
+    /** "IM is a mixed interval containing the same number of lengths for each of: Butterfly */
+    public const Im = 6;
 }

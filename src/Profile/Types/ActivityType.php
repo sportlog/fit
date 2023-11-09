@@ -13,15 +13,23 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum ActivityType: int
+class ActivityType
 {
-    case Generic = 0;
-    case Running = 1;
-    case Cycling = 2;
-    case Transition = 3;
-    case FitnessEquipment = 4;
-    case Swimming = 5;
-    case Walking = 6;
-    case Sedentary = 8;
-    case All = 254;
+    public const Generic = 0;
+    public const Running = 1;
+    public const Cycling = 2;
+
+    /**
+     * Mulitsport transition
+     */
+    public const Transition = 3;
+    public const FitnessEquipment = 4;
+    public const Swimming = 5;
+    public const Walking = 6;
+    public const Sedentary = 8;
+
+    /**
+     * All is for goals only to include all sports.
+     */
+    public const All = 254;
 }

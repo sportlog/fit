@@ -13,19 +13,19 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum AttitudeValidity: int
+class AttitudeValidity
 {
-    case TrackAngleHeadingValid = 1;
-    case PitchValid = 2;
-    case RollValid = 4;
-    case LateralBodyAccelValid = 8;
-    case NormalBodyAccelValid = 16;
-    case TurnRateValid = 32;
-    case HwFail = 64;
-    case MagInvalid = 128;
-    case NoGps = 256;
-    case GpsInvalid = 512;
-    case SolutionCoasting = 1024;
-    case TrueTrackAngle = 2048;
-    case MagneticHeading = 4096;
+    public const TrackAngleHeadingValid = 1;
+    public const PitchValid = 2;
+    public const RollValid = 4;
+    public const LateralBodyAccelValid = 8;
+    public const NormalBodyAccelValid = 16;
+    public const TurnRateValid = 32;
+    public const HwFail = 64;
+    public const MagInvalid = 128;
+    public const NoGps = 256;
+    public const GpsInvalid = 512;
+    public const SolutionCoasting = 1024;
+    public const TrueTrackAngle = 2048;
+    public const MagneticHeading = 4096;
 }

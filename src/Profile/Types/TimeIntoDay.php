@@ -13,6 +13,6 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum TimeIntoDay
+class TimeIntoDay
 {
 }

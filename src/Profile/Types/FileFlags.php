@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum FileFlags: int
+class FileFlags
 {
-    case Read = 2;
-    case Write = 4;
-    case Erase = 8;
+    public const Read = 2;
+    public const Write = 4;
+    public const Erase = 8;
 }

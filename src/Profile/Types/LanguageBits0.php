@@ -13,14 +13,14 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum LanguageBits0: int
+class LanguageBits0
 {
-    case English = 1;
-    case French = 2;
-    case Italian = 4;
-    case German = 8;
-    case Spanish = 16;
-    case Croatian = 32;
-    case Czech = 64;
-    case Danish = 128;
+    public const English = 1;
+    public const French = 2;
+    public const Italian = 4;
+    public const German = 8;
+    public const Spanish = 16;
+    public const Croatian = 32;
+    public const Czech = 64;
+    public const Danish = 128;
 }

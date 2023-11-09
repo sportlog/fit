@@ -33,7 +33,7 @@ final class HrZoneMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('HrZone', MesgNum::HrZone->value);
+        parent::__construct('HrZone', MesgNum::HrZone);
     }
 
     /**

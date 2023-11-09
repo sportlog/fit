@@ -34,7 +34,7 @@ final class MetZoneMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('MetZone', MesgNum::MetZone->value);
+        parent::__construct('MetZone', MesgNum::MetZone);
     }
 
     /**

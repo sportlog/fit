@@ -13,29 +13,29 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum ChopExerciseName: int
+class ChopExerciseName
 {
-    case CablePullThrough = 0;
-    case CableRotationalLift = 1;
-    case CableWoodchop = 2;
-    case CrossChopToKnee = 3;
-    case WeightedCrossChopToKnee = 4;
-    case DumbbellChop = 5;
-    case HalfKneelingRotation = 6;
-    case WeightedHalfKneelingRotation = 7;
-    case HalfKneelingRotationalChop = 8;
-    case HalfKneelingRotationalReverseChop = 9;
-    case HalfKneelingStabilityChop = 10;
-    case HalfKneelingStabilityReverseChop = 11;
-    case KneelingRotationalChop = 12;
-    case KneelingRotationalReverseChop = 13;
-    case KneelingStabilityChop = 14;
-    case KneelingWoodchopper = 15;
-    case MedicineBallWoodChops = 16;
-    case PowerSquatChops = 17;
-    case WeightedPowerSquatChops = 18;
-    case StandingRotationalChop = 19;
-    case StandingSplitRotationalChop = 20;
-    case StandingSplitRotationalReverseChop = 21;
-    case StandingStabilityReverseChop = 22;
+    public const CablePullThrough = 0;
+    public const CableRotationalLift = 1;
+    public const CableWoodchop = 2;
+    public const CrossChopToKnee = 3;
+    public const WeightedCrossChopToKnee = 4;
+    public const DumbbellChop = 5;
+    public const HalfKneelingRotation = 6;
+    public const WeightedHalfKneelingRotation = 7;
+    public const HalfKneelingRotationalChop = 8;
+    public const HalfKneelingRotationalReverseChop = 9;
+    public const HalfKneelingStabilityChop = 10;
+    public const HalfKneelingStabilityReverseChop = 11;
+    public const KneelingRotationalChop = 12;
+    public const KneelingRotationalReverseChop = 13;
+    public const KneelingStabilityChop = 14;
+    public const KneelingWoodchopper = 15;
+    public const MedicineBallWoodChops = 16;
+    public const PowerSquatChops = 17;
+    public const WeightedPowerSquatChops = 18;
+    public const StandingRotationalChop = 19;
+    public const StandingSplitRotationalChop = 20;
+    public const StandingSplitRotationalReverseChop = 21;
+    public const StandingStabilityReverseChop = 22;
 }

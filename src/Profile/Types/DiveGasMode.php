@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum DiveGasMode: int
+class DiveGasMode
 {
-    case OpenCircuit = 0;
-    case ClosedCircuitDiluent = 1;
+    public const OpenCircuit = 0;
+    public const ClosedCircuitDiluent = 1;
 }

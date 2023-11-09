@@ -13,10 +13,25 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum CommTimeoutType: int
+class CommTimeoutType
 {
-    case WildcardPairingTimeout = 0;
-    case PairingTimeout = 1;
-    case ConnectionLost = 2;
-    case ConnectionTimeout = 3;
+    /**
+     * Timeout pairing to any device
+     */
+    public const WildcardPairingTimeout = 0;
+
+    /**
+     * Timeout pairing to previously paired device
+     */
+    public const PairingTimeout = 1;
+
+    /**
+     * Temporary loss of communications
+     */
+    public const ConnectionLost = 2;
+
+    /**
+     * Connection closed due to extended bad communications
+     */
+    public const ConnectionTimeout = 3;
 }

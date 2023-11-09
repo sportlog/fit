@@ -37,7 +37,7 @@ final class TimestampCorrelationMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('TimestampCorrelation', MesgNum::TimestampCorrelation->value);
+        parent::__construct('TimestampCorrelation', MesgNum::TimestampCorrelation);
     }
 
     /**

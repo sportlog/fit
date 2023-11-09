@@ -13,8 +13,15 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum CcrSetpointSwitchMode: int
+class CcrSetpointSwitchMode
 {
-    case Manual = 0;
-    case Automatic = 1;
+    /**
+     * User switches setpoints manually
+     */
+    public const Manual = 0;
+
+    /**
+     * Switch automatically based on depth
+     */
+    public const Automatic = 1;
 }

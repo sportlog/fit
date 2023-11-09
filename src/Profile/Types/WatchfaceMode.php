@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum WatchfaceMode: int
+class WatchfaceMode
 {
-    case Digital = 0;
-    case Analog = 1;
-    case ConnectIq = 2;
-    case Disabled = 3;
+    public const Digital = 0;
+    public const Analog = 1;
+    public const ConnectIq = 2;
+    public const Disabled = 3;
 }

@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum RiderPositionType: int
+class RiderPositionType
 {
-    case Seated = 0;
-    case Standing = 1;
-    case TransitionToSeated = 2;
-    case TransitionToStanding = 3;
+    public const Seated = 0;
+    public const Standing = 1;
+    public const TransitionToSeated = 2;
+    public const TransitionToStanding = 3;
 }

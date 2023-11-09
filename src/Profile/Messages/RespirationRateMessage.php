@@ -32,7 +32,7 @@ final class RespirationRateMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('RespirationRate', MesgNum::RespirationRate->value);
+        parent::__construct('RespirationRate', MesgNum::RespirationRate);
     }
 
     /**

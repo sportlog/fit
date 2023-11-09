@@ -35,7 +35,7 @@ final class DeveloperDataIdMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('DeveloperDataId', MesgNum::DeveloperDataId->value);
+        parent::__construct('DeveloperDataId', MesgNum::DeveloperDataId);
     }
 
     /**

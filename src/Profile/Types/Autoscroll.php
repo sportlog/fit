@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum Autoscroll: int
+class Autoscroll
 {
-    case None = 0;
-    case Slow = 1;
-    case Medium = 2;
-    case Fast = 3;
+    public const None = 0;
+    public const Slow = 1;
+    public const Medium = 2;
+    public const Fast = 3;
 }

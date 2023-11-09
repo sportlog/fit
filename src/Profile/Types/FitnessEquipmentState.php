@@ -13,10 +13,14 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum FitnessEquipmentState: int
+class FitnessEquipmentState
 {
-    case Ready = 0;
-    case InUse = 1;
-    case Paused = 2;
-    case Unknown = 3;
+    public const Ready = 0;
+    public const InUse = 1;
+    public const Paused = 2;
+
+    /**
+     * lost connection to fitness equipment
+     */
+    public const Unknown = 3;
 }

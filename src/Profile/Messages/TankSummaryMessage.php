@@ -35,7 +35,7 @@ final class TankSummaryMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('TankSummary', MesgNum::TankSummary->value);
+        parent::__construct('TankSummary', MesgNum::TankSummary);
     }
 
     /**

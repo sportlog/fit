@@ -42,7 +42,7 @@ final class AviationAttitudeMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('AviationAttitude', MesgNum::AviationAttitude->value);
+        parent::__construct('AviationAttitude', MesgNum::AviationAttitude);
     }
 
     /**

@@ -13,11 +13,11 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum BpStatus: int
+class BpStatus
 {
-    case NoError = 0;
-    case ErrorIncompleteData = 1;
-    case ErrorNoMeasurement = 2;
-    case ErrorDataOutOfRange = 3;
-    case ErrorIrregularHeartRate = 4;
+    public const NoError = 0;
+    public const ErrorIncompleteData = 1;
+    public const ErrorNoMeasurement = 2;
+    public const ErrorDataOutOfRange = 3;
+    public const ErrorIrregularHeartRate = 4;
 }

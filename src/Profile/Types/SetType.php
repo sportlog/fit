@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum SetType: int
+class SetType
 {
-    case Rest = 0;
-    case Active = 1;
+    public const Rest = 0;
+    public const Active = 1;
 }

@@ -41,7 +41,7 @@ final class SetMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Set', MesgNum::Set->value);
+        parent::__construct('Set', MesgNum::Set);
     }
 
     /**

@@ -13,10 +13,14 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum WeatherReport: int
+class WeatherReport
 {
-    case Current = 0;
-    case Forecast = 1;
-    case HourlyForecast = 1;
-    case DailyForecast = 2;
+    public const Current = 0;
+
+    /**
+     * @deprecated Deprecated use hourly_forecast instead
+     */
+    public const Forecast = 1;
+    public const HourlyForecast = 1;
+    public const DailyForecast = 2;
 }

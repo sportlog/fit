@@ -13,9 +13,20 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum DiveAlarmType: int
+class DiveAlarmType
 {
-    case Depth = 0;
-    case Time = 1;
-    case Speed = 2;
+    /**
+     * Alarm when a certain depth is crossed
+     */
+    public const Depth = 0;
+
+    /**
+     * Alarm when a certain time has transpired
+     */
+    public const Time = 1;
+
+    /**
+     * Alarm when a certain ascent or descent rate is exceeded
+     */
+    public const Speed = 2;
 }

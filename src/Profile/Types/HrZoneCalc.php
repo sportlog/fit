@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum HrZoneCalc: int
+class HrZoneCalc
 {
-    case Custom = 0;
-    case PercentMaxHr = 1;
-    case PercentHrr = 2;
-    case PercentLthr = 3;
+    public const Custom = 0;
+    public const PercentMaxHr = 1;
+    public const PercentHrr = 2;
+    public const PercentLthr = 3;
 }

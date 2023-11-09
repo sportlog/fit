@@ -13,26 +13,98 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum ActivitySubtype: int
+class ActivitySubtype
 {
-    case Generic = 0;
-    case Treadmill = 1;
-    case Street = 2;
-    case Trail = 3;
-    case Track = 4;
-    case Spin = 5;
-    case IndoorCycling = 6;
-    case Road = 7;
-    case Mountain = 8;
-    case Downhill = 9;
-    case Recumbent = 10;
-    case Cyclocross = 11;
-    case HandCycling = 12;
-    case TrackCycling = 13;
-    case IndoorRowing = 14;
-    case Elliptical = 15;
-    case StairClimbing = 16;
-    case LapSwimming = 17;
-    case OpenWater = 18;
-    case All = 254;
+    public const Generic = 0;
+
+    /**
+     * Run
+     */
+    public const Treadmill = 1;
+
+    /**
+     * Run
+     */
+    public const Street = 2;
+
+    /**
+     * Run
+     */
+    public const Trail = 3;
+
+    /**
+     * Run
+     */
+    public const Track = 4;
+
+    /**
+     * Cycling
+     */
+    public const Spin = 5;
+
+    /**
+     * Cycling
+     */
+    public const IndoorCycling = 6;
+
+    /**
+     * Cycling
+     */
+    public const Road = 7;
+
+    /**
+     * Cycling
+     */
+    public const Mountain = 8;
+
+    /**
+     * Cycling
+     */
+    public const Downhill = 9;
+
+    /**
+     * Cycling
+     */
+    public const Recumbent = 10;
+
+    /**
+     * Cycling
+     */
+    public const Cyclocross = 11;
+
+    /**
+     * Cycling
+     */
+    public const HandCycling = 12;
+
+    /**
+     * Cycling
+     */
+    public const TrackCycling = 13;
+
+    /**
+     * Fitness Equipment
+     */
+    public const IndoorRowing = 14;
+
+    /**
+     * Fitness Equipment
+     */
+    public const Elliptical = 15;
+
+    /**
+     * Fitness Equipment
+     */
+    public const StairClimbing = 16;
+
+    /**
+     * Swimming
+     */
+    public const LapSwimming = 17;
+
+    /**
+     * Swimming
+     */
+    public const OpenWater = 18;
+    public const All = 254;
 }

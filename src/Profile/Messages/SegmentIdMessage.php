@@ -39,7 +39,7 @@ final class SegmentIdMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('SegmentId', MesgNum::SegmentId->value);
+        parent::__construct('SegmentId', MesgNum::SegmentId);
     }
 
     /**

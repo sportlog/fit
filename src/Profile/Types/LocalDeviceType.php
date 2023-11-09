@@ -13,14 +13,45 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum LocalDeviceType: int
+class LocalDeviceType
 {
-    case Gps = 0;
-    case Glonass = 1;
-    case GpsGlonass = 2;
-    case Accelerometer = 3;
-    case Barometer = 4;
-    case Temperature = 5;
-    case Whr = 10;
-    case SensorHub = 12;
+    /**
+     * Onboard gps receiver
+     */
+    public const Gps = 0;
+
+    /**
+     * Onboard glonass receiver
+     */
+    public const Glonass = 1;
+
+    /**
+     * Onboard gps glonass receiver
+     */
+    public const GpsGlonass = 2;
+
+    /**
+     * Onboard sensor
+     */
+    public const Accelerometer = 3;
+
+    /**
+     * Onboard sensor
+     */
+    public const Barometer = 4;
+
+    /**
+     * Onboard sensor
+     */
+    public const Temperature = 5;
+
+    /**
+     * Onboard wrist HR sensor
+     */
+    public const Whr = 10;
+
+    /**
+     * Onboard software package
+     */
+    public const SensorHub = 12;
 }

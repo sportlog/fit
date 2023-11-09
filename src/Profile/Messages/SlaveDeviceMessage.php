@@ -32,7 +32,7 @@ final class SlaveDeviceMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('SlaveDevice', MesgNum::SlaveDevice->value);
+        parent::__construct('SlaveDevice', MesgNum::SlaveDevice);
     }
 
     /**

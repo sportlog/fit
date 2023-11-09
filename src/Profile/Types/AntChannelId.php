@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum AntChannelId: int
+class AntChannelId
 {
-    case AntExtendedDeviceNumberUpperNibble = 4026531840;
-    case AntTransmissionTypeLowerNibble = 251658240;
-    case AntDeviceType = 16711680;
-    case AntDeviceNumber = 65535;
+    public const AntExtendedDeviceNumberUpperNibble = 4026531840;
+    public const AntTransmissionTypeLowerNibble = 251658240;
+    public const AntDeviceType = 16711680;
+    public const AntDeviceNumber = 65535;
 }

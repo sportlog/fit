@@ -53,7 +53,7 @@ final class DiveSummaryMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('DiveSummary', MesgNum::DiveSummary->value);
+        parent::__construct('DiveSummary', MesgNum::DiveSummary);
     }
 
     /**

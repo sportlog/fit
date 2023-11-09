@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum DateMode: int
+class DateMode
 {
-    case DayMonth = 0;
-    case MonthDay = 1;
+    public const DayMonth = 0;
+    public const MonthDay = 1;
 }

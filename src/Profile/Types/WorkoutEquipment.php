@@ -13,12 +13,12 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum WorkoutEquipment: int
+class WorkoutEquipment
 {
-    case None = 0;
-    case SwimFins = 1;
-    case SwimKickboard = 2;
-    case SwimPaddles = 3;
-    case SwimPullBuoy = 4;
-    case SwimSnorkel = 5;
+    public const None = 0;
+    public const SwimFins = 1;
+    public const SwimKickboard = 2;
+    public const SwimPaddles = 3;
+    public const SwimPullBuoy = 4;
+    public const SwimSnorkel = 5;
 }

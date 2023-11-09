@@ -13,8 +13,13 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum LeftRightBalance: int
+class LeftRightBalance
 {
-    case Mask = 127;
-    case Right = 128;
+    /**
+     * % contribution
+     */
+    public const Mask = 127;
+
+    /** "data corresponds to right if set */
+    public const Right = 128;
 }

@@ -35,7 +35,7 @@ final class CameraEventMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('CameraEvent', MesgNum::CameraEvent->value);
+        parent::__construct('CameraEvent', MesgNum::CameraEvent);
     }
 
     /**

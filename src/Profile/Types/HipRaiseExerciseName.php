@@ -13,56 +13,64 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum HipRaiseExerciseName: int
+class HipRaiseExerciseName
 {
-    case BarbellHipThrustOnFloor = 0;
-    case BarbellHipThrustWithBench = 1;
-    case BentKneeSwissBallReverseHipRaise = 2;
-    case WeightedBentKneeSwissBallReverseHipRaise = 3;
-    case BridgeWithLegExtension = 4;
-    case WeightedBridgeWithLegExtension = 5;
-    case ClamBridge = 6;
-    case FrontKickTabletop = 7;
-    case WeightedFrontKickTabletop = 8;
-    case HipExtensionAndCross = 9;
-    case WeightedHipExtensionAndCross = 10;
-    case HipRaise = 11;
-    case WeightedHipRaise = 12;
-    case HipRaiseWithFeetOnSwissBall = 13;
-    case WeightedHipRaiseWithFeetOnSwissBall = 14;
-    case HipRaiseWithHeadOnBosuBall = 15;
-    case WeightedHipRaiseWithHeadOnBosuBall = 16;
-    case HipRaiseWithHeadOnSwissBall = 17;
-    case WeightedHipRaiseWithHeadOnSwissBall = 18;
-    case HipRaiseWithKneeSqueeze = 19;
-    case WeightedHipRaiseWithKneeSqueeze = 20;
-    case InclineRearLegExtension = 21;
-    case WeightedInclineRearLegExtension = 22;
-    case KettlebellSwing = 23;
-    case MarchingHipRaise = 24;
-    case WeightedMarchingHipRaise = 25;
-    case MarchingHipRaiseWithFeetOnASwissBall = 26;
-    case WeightedMarchingHipRaiseWithFeetOnASwissBall = 27;
-    case ReverseHipRaise = 28;
-    case WeightedReverseHipRaise = 29;
-    case SingleLegHipRaise = 30;
-    case WeightedSingleLegHipRaise = 31;
-    case SingleLegHipRaiseWithFootOnBench = 32;
-    case WeightedSingleLegHipRaiseWithFootOnBench = 33;
-    case SingleLegHipRaiseWithFootOnBosuBall = 34;
-    case WeightedSingleLegHipRaiseWithFootOnBosuBall = 35;
-    case SingleLegHipRaiseWithFootOnFoamRoller = 36;
-    case WeightedSingleLegHipRaiseWithFootOnFoamRoller = 37;
-    case SingleLegHipRaiseWithFootOnMedicineBall = 38;
-    case WeightedSingleLegHipRaiseWithFootOnMedicineBall = 39;
-    case SingleLegHipRaiseWithHeadOnBosuBall = 40;
-    case WeightedSingleLegHipRaiseWithHeadOnBosuBall = 41;
-    case WeightedClamBridge = 42;
-    case SingleLegSwissBallHipRaiseAndLegCurl = 43;
-    case Clams = 44;
-    case InnerThighCircles = 45;
-    case InnerThighSideLift = 46;
-    case LegCircles = 47;
-    case LegLift = 48;
-    case LegLiftInExternalRotation = 49;
+    public const BarbellHipThrustOnFloor = 0;
+    public const BarbellHipThrustWithBench = 1;
+    public const BentKneeSwissBallReverseHipRaise = 2;
+    public const WeightedBentKneeSwissBallReverseHipRaise = 3;
+    public const BridgeWithLegExtension = 4;
+    public const WeightedBridgeWithLegExtension = 5;
+    public const ClamBridge = 6;
+    public const FrontKickTabletop = 7;
+    public const WeightedFrontKickTabletop = 8;
+    public const HipExtensionAndCross = 9;
+    public const WeightedHipExtensionAndCross = 10;
+    public const HipRaise = 11;
+    public const WeightedHipRaise = 12;
+    public const HipRaiseWithFeetOnSwissBall = 13;
+    public const WeightedHipRaiseWithFeetOnSwissBall = 14;
+    public const HipRaiseWithHeadOnBosuBall = 15;
+    public const WeightedHipRaiseWithHeadOnBosuBall = 16;
+    public const HipRaiseWithHeadOnSwissBall = 17;
+    public const WeightedHipRaiseWithHeadOnSwissBall = 18;
+    public const HipRaiseWithKneeSqueeze = 19;
+    public const WeightedHipRaiseWithKneeSqueeze = 20;
+    public const InclineRearLegExtension = 21;
+    public const WeightedInclineRearLegExtension = 22;
+    public const KettlebellSwing = 23;
+    public const MarchingHipRaise = 24;
+    public const WeightedMarchingHipRaise = 25;
+    public const MarchingHipRaiseWithFeetOnASwissBall = 26;
+    public const WeightedMarchingHipRaiseWithFeetOnASwissBall = 27;
+    public const ReverseHipRaise = 28;
+    public const WeightedReverseHipRaise = 29;
+    public const SingleLegHipRaise = 30;
+    public const WeightedSingleLegHipRaise = 31;
+    public const SingleLegHipRaiseWithFootOnBench = 32;
+    public const WeightedSingleLegHipRaiseWithFootOnBench = 33;
+    public const SingleLegHipRaiseWithFootOnBosuBall = 34;
+    public const WeightedSingleLegHipRaiseWithFootOnBosuBall = 35;
+    public const SingleLegHipRaiseWithFootOnFoamRoller = 36;
+    public const WeightedSingleLegHipRaiseWithFootOnFoamRoller = 37;
+    public const SingleLegHipRaiseWithFootOnMedicineBall = 38;
+    public const WeightedSingleLegHipRaiseWithFootOnMedicineBall = 39;
+    public const SingleLegHipRaiseWithHeadOnBosuBall = 40;
+    public const WeightedSingleLegHipRaiseWithHeadOnBosuBall = 41;
+    public const WeightedClamBridge = 42;
+    public const SingleLegSwissBallHipRaiseAndLegCurl = 43;
+    public const Clams = 44;
+
+    /**
+     * @deprecated Deprecated do not use
+     */
+    public const InnerThighCircles = 45;
+
+    /**
+     * @deprecated Deprecated do not use
+     */
+    public const InnerThighSideLift = 46;
+    public const LegCircles = 47;
+    public const LegLift = 48;
+    public const LegLiftInExternalRotation = 49;
 }

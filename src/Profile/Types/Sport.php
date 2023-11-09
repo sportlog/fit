@@ -13,61 +13,69 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum Sport: int
+class Sport
 {
-    case Generic = 0;
-    case Running = 1;
-    case Cycling = 2;
-    case Transition = 3;
-    case FitnessEquipment = 4;
-    case Swimming = 5;
-    case Basketball = 6;
-    case Soccer = 7;
-    case Tennis = 8;
-    case AmericanFootball = 9;
-    case Training = 10;
-    case Walking = 11;
-    case CrossCountrySkiing = 12;
-    case AlpineSkiing = 13;
-    case Snowboarding = 14;
-    case Rowing = 15;
-    case Mountaineering = 16;
-    case Hiking = 17;
-    case Multisport = 18;
-    case Paddling = 19;
-    case Flying = 20;
-    case EBiking = 21;
-    case Motorcycling = 22;
-    case Boating = 23;
-    case Driving = 24;
-    case Golf = 25;
-    case HangGliding = 26;
-    case HorsebackRiding = 27;
-    case Hunting = 28;
-    case Fishing = 29;
-    case InlineSkating = 30;
-    case RockClimbing = 31;
-    case Sailing = 32;
-    case IceSkating = 33;
-    case SkyDiving = 34;
-    case Snowshoeing = 35;
-    case Snowmobiling = 36;
-    case StandUpPaddleboarding = 37;
-    case Surfing = 38;
-    case Wakeboarding = 39;
-    case WaterSkiing = 40;
-    case Kayaking = 41;
-    case Rafting = 42;
-    case Windsurfing = 43;
-    case Kitesurfing = 44;
-    case Tactical = 45;
-    case Jumpmaster = 46;
-    case Boxing = 47;
-    case FloorClimbing = 48;
-    case Diving = 53;
-    case Hiit = 62;
-    case Racket = 64;
-    case WaterTubing = 76;
-    case Wakesurfing = 77;
-    case All = 254;
+    public const Generic = 0;
+    public const Running = 1;
+    public const Cycling = 2;
+
+    /**
+     * Mulitsport transition
+     */
+    public const Transition = 3;
+    public const FitnessEquipment = 4;
+    public const Swimming = 5;
+    public const Basketball = 6;
+    public const Soccer = 7;
+    public const Tennis = 8;
+    public const AmericanFootball = 9;
+    public const Training = 10;
+    public const Walking = 11;
+    public const CrossCountrySkiing = 12;
+    public const AlpineSkiing = 13;
+    public const Snowboarding = 14;
+    public const Rowing = 15;
+    public const Mountaineering = 16;
+    public const Hiking = 17;
+    public const Multisport = 18;
+    public const Paddling = 19;
+    public const Flying = 20;
+    public const EBiking = 21;
+    public const Motorcycling = 22;
+    public const Boating = 23;
+    public const Driving = 24;
+    public const Golf = 25;
+    public const HangGliding = 26;
+    public const HorsebackRiding = 27;
+    public const Hunting = 28;
+    public const Fishing = 29;
+    public const InlineSkating = 30;
+    public const RockClimbing = 31;
+    public const Sailing = 32;
+    public const IceSkating = 33;
+    public const SkyDiving = 34;
+    public const Snowshoeing = 35;
+    public const Snowmobiling = 36;
+    public const StandUpPaddleboarding = 37;
+    public const Surfing = 38;
+    public const Wakeboarding = 39;
+    public const WaterSkiing = 40;
+    public const Kayaking = 41;
+    public const Rafting = 42;
+    public const Windsurfing = 43;
+    public const Kitesurfing = 44;
+    public const Tactical = 45;
+    public const Jumpmaster = 46;
+    public const Boxing = 47;
+    public const FloorClimbing = 48;
+    public const Diving = 53;
+    public const Hiit = 62;
+    public const Racket = 64;
+    public const WaterTubing = 76;
+    public const Wakesurfing = 77;
+
+    /**
+     * All is for goals only to include all sports.
+     */
+    public const All = 254;
 }

@@ -13,10 +13,22 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum SessionTrigger: int
+class SessionTrigger
 {
-    case ActivityEnd = 0;
-    case Manual = 1;
-    case AutoMultiSport = 2;
-    case FitnessEquipment = 3;
+    public const ActivityEnd = 0;
+
+    /**
+     * User changed sport.
+     */
+    public const Manual = 1;
+
+    /**
+     * Auto multi-sport feature is enabled and user pressed lap button to advance session.
+     */
+    public const AutoMultiSport = 2;
+
+    /**
+     * Auto sport change caused by user linking to fitness equipment.
+     */
+    public const FitnessEquipment = 3;
 }

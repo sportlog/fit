@@ -13,27 +13,27 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum WeatherStatus: int
+class WeatherStatus
 {
-    case Clear = 0;
-    case PartlyCloudy = 1;
-    case MostlyCloudy = 2;
-    case Rain = 3;
-    case Snow = 4;
-    case Windy = 5;
-    case Thunderstorms = 6;
-    case WintryMix = 7;
-    case Fog = 8;
-    case Hazy = 11;
-    case Hail = 12;
-    case ScatteredShowers = 13;
-    case ScatteredThunderstorms = 14;
-    case UnknownPrecipitation = 15;
-    case LightRain = 16;
-    case HeavyRain = 17;
-    case LightSnow = 18;
-    case HeavySnow = 19;
-    case LightRainSnow = 20;
-    case HeavyRainSnow = 21;
-    case Cloudy = 22;
+    public const Clear = 0;
+    public const PartlyCloudy = 1;
+    public const MostlyCloudy = 2;
+    public const Rain = 3;
+    public const Snow = 4;
+    public const Windy = 5;
+    public const Thunderstorms = 6;
+    public const WintryMix = 7;
+    public const Fog = 8;
+    public const Hazy = 11;
+    public const Hail = 12;
+    public const ScatteredShowers = 13;
+    public const ScatteredThunderstorms = 14;
+    public const UnknownPrecipitation = 15;
+    public const LightRain = 16;
+    public const HeavyRain = 17;
+    public const LightSnow = 18;
+    public const HeavySnow = 19;
+    public const LightRainSnow = 20;
+    public const HeavyRainSnow = 21;
+    public const Cloudy = 22;
 }

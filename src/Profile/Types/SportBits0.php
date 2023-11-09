@@ -13,14 +13,18 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-enum SportBits0: int
+class SportBits0
 {
-    case Generic = 1;
-    case Running = 2;
-    case Cycling = 4;
-    case Transition = 8;
-    case FitnessEquipment = 16;
-    case Swimming = 32;
-    case Basketball = 64;
-    case Soccer = 128;
+    public const Generic = 1;
+    public const Running = 2;
+    public const Cycling = 4;
+
+    /**
+     * Mulitsport transition
+     */
+    public const Transition = 8;
+    public const FitnessEquipment = 16;
+    public const Swimming = 32;
+    public const Basketball = 64;
+    public const Soccer = 128;
 }
