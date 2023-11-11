@@ -41,7 +41,7 @@ final class Field
         private float $offset,
         private string $units,
         private bool $accumulated,
-        private ProfileType $profileType
+        private string $profileType
     ) {
         $this->requiresCalculation = $this->isNumeric() && ($this->getScale() !== self::DEFAULT_SCALE || $this->getOffset() !== self::DEFAULT_OFFSET);
     }
@@ -122,9 +122,9 @@ final class Field
      * PHP return type of the properties in the
      * generated message.
      *
-     * @return ProfileType
+     * @return string
      */
-    public function getProfileType(): ProfileType
+    public function getProfileType(): string
     {
         return $this->profileType;
     }

@@ -75,9 +75,9 @@ class MessageGenerator
 
             $file = $this->createFile();
             $namespace = $file->addNamespace('Sportlog\\FIT\\Profile');
-            $profileType = $namespace->addEnum('ProfileType');
+            $profileType = $namespace->addClass('ProfileType');
             foreach ($profileTypes as $value) {
-                $profileType->addCase(str_replace(',', '', $value), $value);
+                $profileType->addConstant(str_replace(',', '', $value), $value);
             }
             $printer = new PsrPrinter();
             $this->writeFile(join(DIRECTORY_SEPARATOR, [$outputPath, "ProfileType.php"]), $printer->printFile($file));
@@ -383,9 +383,7 @@ class MessageGenerator
 
     private function getPhpTypeFromProfileType(string $profileType, float $scale, float $offset): string
     {
-        $mappedProfileType = ProfileType::tryFrom($profileType);
-
-        switch ($mappedProfileType) {
+        switch ($profileType) {
             case ProfileType::Bool:
                 return Type::Bool;
 
