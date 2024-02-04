@@ -1,20 +1,23 @@
 # FIT
+
 A PHP (>= PHP 8) decoder for FIT files created by Garmin devices.
 The result is a list of all messages decoded from the file. Each message
 is an instance of its underlying message class, so you can easily access
-any (native) fields using intellisense. (FIT SDK 21.115)
+any (native) fields using intellisense. (FIT SDK 21.126)
 
 ## Install via Composer
+
 You can install sportlog/FIT using Composer.
 
-``` bash
+```bash
 $ composer require sportlog/fit
 ```
+
 Minimum PHP version required is 8.
 
 ## How to use
 
-``` php
+```php
 <?php
 
 require 'vendor/autoload.php';
@@ -49,6 +52,8 @@ echo "Total ascent (m): " . $lastRecordMessage->getTotalAscent();
 ```
 
 ## Limitations
+
 Currently not supported
-* Compressed time stamps
-* Components
+
+- Compressed time stamps
+- Components

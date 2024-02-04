@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.115Release
+ * Profile Version = 21.126Release
  */
 
 declare(strict_types=1);
@@ -113,6 +113,7 @@ final class MesgNum
     public const BEAT_INTERVALS = 290;
     public const RESPIRATION_RATE = 297;
     public const SPLIT = 312;
+    public const SPLIT_SUMMARY = 313;
     public const CLIMB_PRO = 317;
     public const TANK_UPDATE = 319;
     public const TANK_SUMMARY = 323;

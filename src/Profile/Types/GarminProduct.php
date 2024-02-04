@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.115Release
+ * Profile Version = 21.126Release
  */
 
 declare(strict_types=1);
@@ -348,6 +348,7 @@ final class GarminProduct
     public const MARQ_GOLFER = 3739;
     public const VENU_DAIMLER = 3740;
     public const FR745_ASIA = 3794;
+    public const VARIA_RCT715 = 3808;
     public const LILY_ASIA = 3809;
     public const EDGE_1030_PLUS_ASIA = 3812;
     public const EDGE_130_PLUS_ASIA = 3813;
@@ -404,6 +405,8 @@ final class GarminProduct
     public const APPROACH_S70 = 4233;
     public const FR265_LARGE = 4257;
     public const FR265_SMALL = 4258;
+    public const VENU3 = 4260;
+    public const VENU3S = 4261;
     public const TACX_NEO_SMART = 4265;
     public const TACX_NEO2_SMART = 4266;
     public const TACX_NEO2_T_SMART = 4267;
@@ -422,9 +425,14 @@ final class GarminProduct
     public const EPIX_GEN2_PRO_51 = 4314;
     public const FR965 = 4315;
     public const ENDURO2 = 4341;
+    public const FENIX7S_PRO_SOLAR = 4374;
     public const FENIX7_PRO_SOLAR = 4375;
+    public const FENIX7X_PRO_SOLAR = 4376;
     public const INSTINCT_2X = 4394;
+    public const VIVOACTIVE5 = 4426;
     public const DESCENT_T2 = 4442;
+    public const MARQ_GEN2_COMMANDER = 4472;
+    public const D2_MACH1_PRO = 4556;
     public const SDM4 = 10007;
     public const EDGE_REMOTE = 10014;
     public const TACX_TRAINING_APP_WIN = 20533;

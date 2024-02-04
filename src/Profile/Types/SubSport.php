@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.115Release
+ * Profile Version = 21.126Release
  */
 
 declare(strict_types=1);
@@ -89,6 +89,9 @@ final class SubSport
     public const TABATA = 75;
     public const PICKLEBALL = 84;
     public const PADEL = 85;
+    public const INDOOR_WHEELCHAIR_WALK = 86;
+    public const INDOOR_WHEELCHAIR_RUN = 87;
+    public const INDOOR_HAND_CYCLING = 88;
     public const FLY_CANOPY = 110;
     public const FLY_PARAGLIDE = 111;
     public const FLY_PARAMOTOR = 112;

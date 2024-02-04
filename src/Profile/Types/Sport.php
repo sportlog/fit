@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.115Release
+ * Profile Version = 21.126Release
  */
 
 declare(strict_types=1);
@@ -70,6 +70,9 @@ final class Sport
     public const DIVING = 53;
     public const HIIT = 62;
     public const RACKET = 64;
+    public const WHEELCHAIR_PUSH_WALK = 65;
+    public const WHEELCHAIR_PUSH_RUN = 66;
+    public const MEDITATION = 67;
     public const WATER_TUBING = 76;
     public const WAKESURFING = 77;
     public const ALL = 254;

@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.115Release
+ * Profile Version = 21.126Release
  */
 
 declare(strict_types=1);
@@ -164,6 +164,8 @@ final class Manufacturer
     public const BLACKBIRD = 146;
     public const MEILAN_BYTE = 147;
     public const EZON = 148;
+    public const LAISI = 149;
+    public const MYZONE = 150;
     public const DEVELOPMENT = 255;
     public const HEALTHANDLIFE = 257;
     public const LEZYNE = 258;
@@ -233,5 +235,8 @@ final class Manufacturer
     public const SHANYUE = 322;
     public const SPINNING_MDA = 323;
     public const HILLDATING = 324;
+    public const AERO_SENSOR = 325;
+    public const NIKE = 326;
+    public const MAGICSHINE = 327;
     public const ACTIGRAPHCORP = 5759;
 }
