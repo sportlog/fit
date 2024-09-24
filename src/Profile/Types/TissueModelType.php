@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.126Release
+ * FIT 21.141 SDK
  */
 
 declare(strict_types=1);
@@ -18,5 +18,5 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class TissueModelType
 {
-    public const ZHL_16C = 0;
+    const ZHL_16C = 0;
 }

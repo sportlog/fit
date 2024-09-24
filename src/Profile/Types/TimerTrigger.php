@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.126Release
+ * FIT 21.141 SDK
  */
 
 declare(strict_types=1);
@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class TimerTrigger
 {
-    public const MANUAL = 0;
-    public const AUTO = 1;
-    public const FITNESS_EQUIPMENT = 2;
+    const MANUAL = 0;
+    const AUTO = 1;
+    const FITNESS_EQUIPMENT = 2;
 }

@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.126Release
+ * FIT 21.141 SDK
  */
 
 declare(strict_types=1);
@@ -18,25 +18,25 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SplitType
 {
-    public const ASCENT_SPLIT = 1;
-    public const DESCENT_SPLIT = 2;
-    public const INTERVAL_ACTIVE = 3;
-    public const INTERVAL_REST = 4;
-    public const INTERVAL_WARMUP = 5;
-    public const INTERVAL_COOLDOWN = 6;
-    public const INTERVAL_RECOVERY = 7;
-    public const INTERVAL_OTHER = 8;
-    public const CLIMB_ACTIVE = 9;
-    public const CLIMB_REST = 10;
-    public const SURF_ACTIVE = 11;
-    public const RUN_ACTIVE = 12;
-    public const RUN_REST = 13;
-    public const WORKOUT_ROUND = 14;
-    public const RWD_RUN = 17;
-    public const RWD_WALK = 18;
-    public const WINDSURF_ACTIVE = 21;
-    public const RWD_STAND = 22;
-    public const TRANSITION = 23;
-    public const SKI_LIFT_SPLIT = 28;
-    public const SKI_RUN_SPLIT = 29;
+    const ASCENT_SPLIT = 1;
+    const DESCENT_SPLIT = 2;
+    const INTERVAL_ACTIVE = 3;
+    const INTERVAL_REST = 4;
+    const INTERVAL_WARMUP = 5;
+    const INTERVAL_COOLDOWN = 6;
+    const INTERVAL_RECOVERY = 7;
+    const INTERVAL_OTHER = 8;
+    const CLIMB_ACTIVE = 9;
+    const CLIMB_REST = 10;
+    const SURF_ACTIVE = 11;
+    const RUN_ACTIVE = 12;
+    const RUN_REST = 13;
+    const WORKOUT_ROUND = 14;
+    const RWD_RUN = 17;
+    const RWD_WALK = 18;
+    const WINDSURF_ACTIVE = 21;
+    const RWD_STAND = 22;
+    const TRANSITION = 23;
+    const SKI_LIFT_SPLIT = 28;
+    const SKI_RUN_SPLIT = 29;
 }

@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.126Release
+ * FIT 21.141 SDK
  */
 
 declare(strict_types=1);
@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class BikeLightNetworkConfigType
 {
-    public const AUTO = 0;
-    public const INDIVIDUAL = 4;
-    public const HIGH_VISIBILITY = 5;
-    public const TRAIL = 6;
+    const AUTO = 0;
+    const INDIVIDUAL = 4;
+    const HIGH_VISIBILITY = 5;
+    const TRAIL = 6;
 }

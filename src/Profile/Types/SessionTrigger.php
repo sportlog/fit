@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.126Release
+ * FIT 21.141 SDK
  */
 
 declare(strict_types=1);
@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SessionTrigger
 {
-    public const ACTIVITY_END = 0;
-    public const MANUAL = 1;
-    public const AUTO_MULTI_SPORT = 2;
-    public const FITNESS_EQUIPMENT = 3;
+    const ACTIVITY_END = 0;
+    const MANUAL = 1;
+    const AUTO_MULTI_SPORT = 2;
+    const FITNESS_EQUIPMENT = 3;
 }

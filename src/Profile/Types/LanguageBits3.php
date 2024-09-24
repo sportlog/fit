@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.126Release
+ * FIT 21.141 SDK
  */
 
 declare(strict_types=1);
@@ -18,12 +18,12 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class LanguageBits3
 {
-    public const BULGARIAN = 1;
-    public const ROMANIAN = 2;
-    public const CHINESE = 4;
-    public const JAPANESE = 8;
-    public const KOREAN = 16;
-    public const TAIWANESE = 32;
-    public const THAI = 64;
-    public const HEBREW = 128;
+    const BULGARIAN = 1;
+    const ROMANIAN = 2;
+    const CHINESE = 4;
+    const JAPANESE = 8;
+    const KOREAN = 16;
+    const TAIWANESE = 32;
+    const THAI = 64;
+    const HEBREW = 128;
 }

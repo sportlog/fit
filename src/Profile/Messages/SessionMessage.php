@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.126Release
+ * FIT 21.141 SDK
  */
 
 declare(strict_types=1);
@@ -168,6 +168,8 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('JumpCount', 183, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('AvgGrit', 186, FitBaseType::FLOAT32, 1.0, 0.0, 'kGrit', false, ProfileType::FLOAT32)]
 #[Field('AvgFlow', 187, FitBaseType::FLOAT32, 1.0, 0.0, 'Flow', false, ProfileType::FLOAT32)]
+#[Field('WorkoutFeel', 192, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('WorkoutRpe', 193, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
 #[Field('AvgSpo2', 194, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
 #[Field('AvgStress', 195, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
 #[Field('SdrrHrv', 197, FitBaseType::UINT8, 1.0, 0.0, 'mS', false, ProfileType::UINT8)]
@@ -1345,6 +1347,22 @@ final class SessionMessage extends Message
     public function getAvgFlow(): float|array|null
     {
         return $this->getFieldValue(187);
+    }
+
+    /**
+     * Gets the workout feel
+     */
+    public function getWorkoutFeel(): int|array|null
+    {
+        return $this->getFieldValue(192);
+    }
+
+    /**
+     * Gets the workout rpe
+     */
+    public function getWorkoutRpe(): int|array|null
+    {
+        return $this->getFieldValue(193);
     }
 
     /**

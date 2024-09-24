@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.126Release
+ * FIT 21.141 SDK
  */
 
 declare(strict_types=1);
@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class ActivityClass
 {
-    public const LEVEL = 127;
-    public const LEVEL_MAX = 100;
-    public const ATHLETE = 128;
+    const LEVEL = 127;
+    const LEVEL_MAX = 100;
+    const ATHLETE = 128;
 }

@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.126Release
+ * FIT 21.141 SDK
  */
 
 declare(strict_types=1);
@@ -18,21 +18,21 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class ShrugExerciseName
 {
-    public const BARBELL_JUMP_SHRUG = 0;
-    public const BARBELL_SHRUG = 1;
-    public const BARBELL_UPRIGHT_ROW = 2;
-    public const BEHIND_THE_BACK_SMITH_MACHINE_SHRUG = 3;
-    public const DUMBBELL_JUMP_SHRUG = 4;
-    public const DUMBBELL_SHRUG = 5;
-    public const DUMBBELL_UPRIGHT_ROW = 6;
-    public const INCLINE_DUMBBELL_SHRUG = 7;
-    public const OVERHEAD_BARBELL_SHRUG = 8;
-    public const OVERHEAD_DUMBBELL_SHRUG = 9;
-    public const SCAPTION_AND_SHRUG = 10;
-    public const SCAPULAR_RETRACTION = 11;
-    public const SERRATUS_CHAIR_SHRUG = 12;
-    public const WEIGHTED_SERRATUS_CHAIR_SHRUG = 13;
-    public const SERRATUS_SHRUG = 14;
-    public const WEIGHTED_SERRATUS_SHRUG = 15;
-    public const WIDE_GRIP_JUMP_SHRUG = 16;
+    const BARBELL_JUMP_SHRUG = 0;
+    const BARBELL_SHRUG = 1;
+    const BARBELL_UPRIGHT_ROW = 2;
+    const BEHIND_THE_BACK_SMITH_MACHINE_SHRUG = 3;
+    const DUMBBELL_JUMP_SHRUG = 4;
+    const DUMBBELL_SHRUG = 5;
+    const DUMBBELL_UPRIGHT_ROW = 6;
+    const INCLINE_DUMBBELL_SHRUG = 7;
+    const OVERHEAD_BARBELL_SHRUG = 8;
+    const OVERHEAD_DUMBBELL_SHRUG = 9;
+    const SCAPTION_AND_SHRUG = 10;
+    const SCAPULAR_RETRACTION = 11;
+    const SERRATUS_CHAIR_SHRUG = 12;
+    const WEIGHTED_SERRATUS_CHAIR_SHRUG = 13;
+    const SERRATUS_SHRUG = 14;
+    const WEIGHTED_SERRATUS_SHRUG = 15;
+    const WIDE_GRIP_JUMP_SHRUG = 16;
 }

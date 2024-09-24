@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.126Release
+ * FIT 21.141 SDK
  */
 
 declare(strict_types=1);
@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class AttitudeStage
 {
-    public const FAILED = 0;
-    public const ALIGNING = 1;
-    public const DEGRADED = 2;
-    public const VALID = 3;
+    const FAILED = 0;
+    const ALIGNING = 1;
+    const DEGRADED = 2;
+    const VALID = 3;
 }

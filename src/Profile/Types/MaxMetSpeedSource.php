@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.126Release
+ * FIT 21.141 SDK
  */
 
 declare(strict_types=1);
@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class MaxMetSpeedSource
 {
-    public const ONBOARD_GPS = 0;
-    public const CONNECTED_GPS = 1;
-    public const CADENCE = 2;
+    const ONBOARD_GPS = 0;
+    const CONNECTED_GPS = 1;
+    const CADENCE = 2;
 }

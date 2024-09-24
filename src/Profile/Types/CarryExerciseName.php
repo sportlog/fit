@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.126Release
+ * FIT 21.141 SDK
  */
 
 declare(strict_types=1);
@@ -18,9 +18,9 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class CarryExerciseName
 {
-    public const BAR_HOLDS = 0;
-    public const FARMERS_WALK = 1;
-    public const FARMERS_WALK_ON_TOES = 2;
-    public const HEX_DUMBBELL_HOLD = 3;
-    public const OVERHEAD_CARRY = 4;
+    const BAR_HOLDS = 0;
+    const FARMERS_WALK = 1;
+    const FARMERS_WALK_ON_TOES = 2;
+    const HEX_DUMBBELL_HOLD = 3;
+    const OVERHEAD_CARRY = 4;
 }

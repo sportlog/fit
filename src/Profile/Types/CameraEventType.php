@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.126Release
+ * FIT 21.141 SDK
  */
 
 declare(strict_types=1);
@@ -18,17 +18,17 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class CameraEventType
 {
-    public const VIDEO_START = 0;
-    public const VIDEO_SPLIT = 1;
-    public const VIDEO_END = 2;
-    public const PHOTO_TAKEN = 3;
-    public const VIDEO_SECOND_STREAM_START = 4;
-    public const VIDEO_SECOND_STREAM_SPLIT = 5;
-    public const VIDEO_SECOND_STREAM_END = 6;
-    public const VIDEO_SPLIT_START = 7;
-    public const VIDEO_SECOND_STREAM_SPLIT_START = 8;
-    public const VIDEO_PAUSE = 11;
-    public const VIDEO_SECOND_STREAM_PAUSE = 12;
-    public const VIDEO_RESUME = 13;
-    public const VIDEO_SECOND_STREAM_RESUME = 14;
+    const VIDEO_START = 0;
+    const VIDEO_SPLIT = 1;
+    const VIDEO_END = 2;
+    const PHOTO_TAKEN = 3;
+    const VIDEO_SECOND_STREAM_START = 4;
+    const VIDEO_SECOND_STREAM_SPLIT = 5;
+    const VIDEO_SECOND_STREAM_END = 6;
+    const VIDEO_SPLIT_START = 7;
+    const VIDEO_SECOND_STREAM_SPLIT_START = 8;
+    const VIDEO_PAUSE = 11;
+    const VIDEO_SECOND_STREAM_PAUSE = 12;
+    const VIDEO_RESUME = 13;
+    const VIDEO_SECOND_STREAM_RESUME = 14;
 }

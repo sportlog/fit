@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.126Release
+ * FIT 21.141 SDK
  */
 
 declare(strict_types=1);
@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class DiveBacklightMode
 {
-    public const AT_DEPTH = 0;
-    public const ALWAYS_ON = 1;
+    const AT_DEPTH = 0;
+    const ALWAYS_ON = 1;
 }

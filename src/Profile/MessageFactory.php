@@ -6,13 +6,14 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.126Release
+ * FIT 21.141 SDK
  */
 
 declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile;
 
+use Sportlog\FIT\Profile\Messages\AadAccelFeaturesMessage;
 use Sportlog\FIT\Profile\Messages\AccelerometerDataMessage;
 use Sportlog\FIT\Profile\Messages\ActivityMessage;
 use Sportlog\FIT\Profile\Messages\AntChannelIdMessage;
@@ -26,6 +27,8 @@ use Sportlog\FIT\Profile\Messages\BloodPressureMessage;
 use Sportlog\FIT\Profile\Messages\CadenceZoneMessage;
 use Sportlog\FIT\Profile\Messages\CameraEventMessage;
 use Sportlog\FIT\Profile\Messages\CapabilitiesMessage;
+use Sportlog\FIT\Profile\Messages\ChronoShotDataMessage;
+use Sportlog\FIT\Profile\Messages\ChronoShotSessionMessage;
 use Sportlog\FIT\Profile\Messages\ClimbProMessage;
 use Sportlog\FIT\Profile\Messages\ConnectivityMessage;
 use Sportlog\FIT\Profile\Messages\CourseMessage;
@@ -58,6 +61,17 @@ use Sportlog\FIT\Profile\Messages\HrmProfileMessage;
 use Sportlog\FIT\Profile\Messages\HrvMessage;
 use Sportlog\FIT\Profile\Messages\HrvStatusSummaryMessage;
 use Sportlog\FIT\Profile\Messages\HrvValueMessage;
+use Sportlog\FIT\Profile\Messages\HsaAccelerometerDataMessage;
+use Sportlog\FIT\Profile\Messages\HsaBodyBatteryDataMessage;
+use Sportlog\FIT\Profile\Messages\HsaConfigurationDataMessage;
+use Sportlog\FIT\Profile\Messages\HsaEventMessage;
+use Sportlog\FIT\Profile\Messages\HsaGyroscopeDataMessage;
+use Sportlog\FIT\Profile\Messages\HsaHeartRateDataMessage;
+use Sportlog\FIT\Profile\Messages\HsaRespirationDataMessage;
+use Sportlog\FIT\Profile\Messages\HsaSpo2DataMessage;
+use Sportlog\FIT\Profile\Messages\HsaStepDataMessage;
+use Sportlog\FIT\Profile\Messages\HsaStressDataMessage;
+use Sportlog\FIT\Profile\Messages\HsaWristTemperatureDataMessage;
 use Sportlog\FIT\Profile\Messages\InvalidMessage;
 use Sportlog\FIT\Profile\Messages\JumpMessage;
 use Sportlog\FIT\Profile\Messages\LapMessage;
@@ -76,6 +90,7 @@ use Sportlog\FIT\Profile\Messages\OhrSettingsMessage;
 use Sportlog\FIT\Profile\Messages\OneDSensorCalibrationMessage;
 use Sportlog\FIT\Profile\Messages\PadMessage;
 use Sportlog\FIT\Profile\Messages\PowerZoneMessage;
+use Sportlog\FIT\Profile\Messages\RawBbiMessage;
 use Sportlog\FIT\Profile\Messages\RecordMessage;
 use Sportlog\FIT\Profile\Messages\RespirationRateMessage;
 use Sportlog\FIT\Profile\Messages\ScheduleMessage;
@@ -87,12 +102,14 @@ use Sportlog\FIT\Profile\Messages\SegmentLeaderboardEntryMessage;
 use Sportlog\FIT\Profile\Messages\SegmentPointMessage;
 use Sportlog\FIT\Profile\Messages\SessionMessage;
 use Sportlog\FIT\Profile\Messages\SetMessage;
+use Sportlog\FIT\Profile\Messages\SkinTempOvernightMessage;
 use Sportlog\FIT\Profile\Messages\SlaveDeviceMessage;
 use Sportlog\FIT\Profile\Messages\SleepAssessmentMessage;
 use Sportlog\FIT\Profile\Messages\SleepLevelMessage;
 use Sportlog\FIT\Profile\Messages\SoftwareMessage;
 use Sportlog\FIT\Profile\Messages\SpeedZoneMessage;
 use Sportlog\FIT\Profile\Messages\SplitMessage;
+use Sportlog\FIT\Profile\Messages\SplitSummaryMessage;
 use Sportlog\FIT\Profile\Messages\Spo2DataMessage;
 use Sportlog\FIT\Profile\Messages\SportMessage;
 use Sportlog\FIT\Profile\Messages\StressLevelMessage;
@@ -190,6 +207,7 @@ class MessageFactory
             MesgNum::SET => new SetMessage(),
             MesgNum::JUMP => new JumpMessage(),
             MesgNum::SPLIT => new SplitMessage(),
+            MesgNum::SPLIT_SUMMARY => new SplitSummaryMessage(),
             MesgNum::CLIMB_PRO => new ClimbProMessage(),
             MesgNum::FIELD_DESCRIPTION => new FieldDescriptionMessage(),
             MesgNum::DEVELOPER_DATA_ID => new DeveloperDataIdMessage(),
@@ -215,6 +233,17 @@ class MessageFactory
             MesgNum::HR => new HrMessage(),
             MesgNum::STRESS_LEVEL => new StressLevelMessage(),
             MesgNum::MAX_MET_DATA => new MaxMetDataMessage(),
+            MesgNum::HSA_BODY_BATTERY_DATA => new HsaBodyBatteryDataMessage(),
+            MesgNum::HSA_EVENT => new HsaEventMessage(),
+            MesgNum::HSA_ACCELEROMETER_DATA => new HsaAccelerometerDataMessage(),
+            MesgNum::HSA_GYROSCOPE_DATA => new HsaGyroscopeDataMessage(),
+            MesgNum::HSA_STEP_DATA => new HsaStepDataMessage(),
+            MesgNum::HSA_SPO2_DATA => new HsaSpo2DataMessage(),
+            MesgNum::HSA_STRESS_DATA => new HsaStressDataMessage(),
+            MesgNum::HSA_RESPIRATION_DATA => new HsaRespirationDataMessage(),
+            MesgNum::HSA_HEART_RATE_DATA => new HsaHeartRateDataMessage(),
+            MesgNum::HSA_CONFIGURATION_DATA => new HsaConfigurationDataMessage(),
+            MesgNum::HSA_WRIST_TEMPERATURE_DATA => new HsaWristTemperatureDataMessage(),
             MesgNum::MEMO_GLOB => new MemoGlobMessage(),
             MesgNum::SLEEP_LEVEL => new SleepLevelMessage(),
             MesgNum::ANT_CHANNEL_ID => new AntChannelIdMessage(),
@@ -224,14 +253,19 @@ class MessageFactory
             MesgNum::EXD_DATA_FIELD_CONFIGURATION => new ExdDataFieldConfigurationMessage(),
             MesgNum::EXD_DATA_CONCEPT_CONFIGURATION => new ExdDataConceptConfigurationMessage(),
             MesgNum::DIVE_SUMMARY => new DiveSummaryMessage(),
+            MesgNum::AAD_ACCEL_FEATURES => new AadAccelFeaturesMessage(),
             MesgNum::HRV => new HrvMessage(),
             MesgNum::BEAT_INTERVALS => new BeatIntervalsMessage(),
             MesgNum::HRV_STATUS_SUMMARY => new HrvStatusSummaryMessage(),
             MesgNum::HRV_VALUE => new HrvValueMessage(),
+            MesgNum::RAW_BBI => new RawBbiMessage(),
             MesgNum::RESPIRATION_RATE => new RespirationRateMessage(),
+            MesgNum::CHRONO_SHOT_SESSION => new ChronoShotSessionMessage(),
+            MesgNum::CHRONO_SHOT_DATA => new ChronoShotDataMessage(),
             MesgNum::TANK_UPDATE => new TankUpdateMessage(),
             MesgNum::TANK_SUMMARY => new TankSummaryMessage(),
             MesgNum::SLEEP_ASSESSMENT => new SleepAssessmentMessage(),
+            MesgNum::SKIN_TEMP_OVERNIGHT => new SkinTempOvernightMessage(),
             MesgNum::PAD => new PadMessage(),
             default => new InvalidMessage()
         };

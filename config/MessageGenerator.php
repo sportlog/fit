@@ -22,13 +22,18 @@ use Sportlog\FIT\Profile\{Types\MesgNum, Field, Message, ProfileType};
  * in the C# source file 'Profile.cs' of the offical FIT SDK.
  * All types are generated from a CSV export of the profile.xls
  * of the offical FIT SDK.
+ * 
+ * How to generate:
+ * - Grab FIT SDK (https://developer.garmin.com/fit/download/)
+ * - Copy new Profile.cs (from cs/Dynastream/Fit) to this folder
+ * - Export Profile.xlsx qs CSV and copy to this folder
  */
 class MessageGenerator
 {
     /**
      * FIT-SDK Version
      */
-    const FIT_SDK_VERSION = '21.126';
+    const FIT_SDK_VERSION = '21.141';
     const MESSAGE_START = "Mesg newMesg = new Mesg(";
     const FIELD_START = "newMesg.SetField(new Field(";
     const MESSAGE_END = "return newMesg";
@@ -241,7 +246,7 @@ class MessageGenerator
 
         $paramName = 'globalMessageNumber';
         $method->addParameter($paramName)
-            ->setType(Type::Int);
+            ->setType(Type::INT);
 
         $method->addBody("return match (\$globalMessageNumber) {");
 
@@ -308,18 +313,23 @@ class MessageGenerator
                 $phpTypes = [];
                 $phpProfileType = $this->getPhpTypeFromProfileType($profileType, $scale, (float)$offset);
                 $phpTypes[] = $phpProfileType;
-                if ($phpProfileType !== Type::Mixed && $phpProfileType !== DateTime::class && $phpProfileType !== Type::String) {
-                    $phpTypes[] = Type::Array;
+                if ($phpProfileType !== Type::MIXED && $phpProfileType !== DateTime::class && $phpProfileType !== Type::STRING) {
+                    $phpTypes[] = Type::ARRAY;
                 }
-                if ($phpProfileType !== Type::Mixed) {
-                    $phpTypes[] = Type::Null;
+                if ($phpProfileType !== Type::MIXED) {
+                    $phpTypes[] = Type::NULL;
                 }
 
                 /** @var ClassType $class */
                 $class->addAttribute(Field::class, [
-                    $name, (int)$num,
-                    new Literal("FitBaseType::" . $fitBaseTypeConstants[(int)$type]), $scale, (float)$offset, $units,
-                    $accumulated === 'true', new Literal("ProfileType::" . strtoupper($profileType))
+                    $name,
+                    (int)$num,
+                    new Literal("FitBaseType::" . $fitBaseTypeConstants[(int)$type]),
+                    $scale,
+                    (float)$offset,
+                    $units,
+                    $accumulated === 'true',
+                    new Literal("ProfileType::" . strtoupper($profileType))
                 ]);
 
                 $splittedName = trim(strtolower(join(" ", preg_split('/(?=[A-Z])/', $name))));
@@ -376,7 +386,7 @@ class MessageGenerator
             ->addComment("@license MIT License")
             ->addComment("")
             ->addComment("****WARNING****  This file is auto-generated! Do NOT edit.")
-            ->addComment(sprintf('Profile Version = %sRelease', self::FIT_SDK_VERSION));
+            ->addComment(sprintf('FIT %s SDK', self::FIT_SDK_VERSION));
 
         return $factory;
     }
@@ -385,7 +395,7 @@ class MessageGenerator
     {
         switch ($profileType) {
             case ProfileType::BOOL:
-                return Type::Bool;
+                return Type::BOOL;
 
             case ProfileType::UINT8:
             case ProfileType::SINT8:
@@ -398,27 +408,27 @@ class MessageGenerator
                 // The raw value will be divided through the scale.
                 // So if scale is not the default (1.0), this might
                 // result in a float.
-                return $scale === 1.0 && $offset === 0.0 ? Type::Int : Type::Float;
+                return $scale === 1.0 && $offset === 0.0 ? Type::INT : Type::FLOAT;
 
             case ProfileType::LOCALDATETIME:
             case ProfileType::DATETIME:
                 return DateTime::class;
 
             case ProfileType::STRING:
-                return Type::String;
+                return Type::STRING;
 
             case ProfileType::SINT64:
             case ProfileType::FLOAT32:
             case ProfileType::FLOAT64:
             case ProfileType::UINT64:
             case ProfileType::UINT64Z:
-                return Type::Float;
+                return Type::FLOAT;
 
             case ProfileType::BYTE:
-                return Type::Mixed;
+                return Type::MIXED;
 
             default:
-                return Type::Int;
+                return Type::INT;
         }
     }
 

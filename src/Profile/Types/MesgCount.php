@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.126Release
+ * FIT 21.141 SDK
  */
 
 declare(strict_types=1);
@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class MesgCount
 {
-    public const NUM_PER_FILE = 0;
-    public const MAX_PER_FILE = 1;
-    public const MAX_PER_FILE_TYPE = 2;
+    const NUM_PER_FILE = 0;
+    const MAX_PER_FILE = 1;
+    const MAX_PER_FILE_TYPE = 2;
 }

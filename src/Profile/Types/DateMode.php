@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.126Release
+ * FIT 21.141 SDK
  */
 
 declare(strict_types=1);
@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class DateMode
 {
-    public const DAY_MONTH = 0;
-    public const MONTH_DAY = 1;
+    const DAY_MONTH = 0;
+    const MONTH_DAY = 1;
 }

@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.126Release
+ * FIT 21.141 SDK
  */
 
 declare(strict_types=1);
@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class DiveGasStatus
 {
-    public const DISABLED = 0;
-    public const ENABLED = 1;
-    public const BACKUP_ONLY = 2;
+    const DISABLED = 0;
+    const ENABLED = 1;
+    const BACKUP_ONLY = 2;
 }

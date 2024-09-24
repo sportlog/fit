@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * Profile Version = 21.126Release
+ * FIT 21.141 SDK
  */
 
 declare(strict_types=1);
@@ -18,12 +18,12 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SportBits3
 {
-    public const DRIVING = 1;
-    public const GOLF = 2;
-    public const HANG_GLIDING = 4;
-    public const HORSEBACK_RIDING = 8;
-    public const HUNTING = 16;
-    public const FISHING = 32;
-    public const INLINE_SKATING = 64;
-    public const ROCK_CLIMBING = 128;
+    const DRIVING = 1;
+    const GOLF = 2;
+    const HANG_GLIDING = 4;
+    const HORSEBACK_RIDING = 8;
+    const HUNTING = 16;
+    const FISHING = 32;
+    const INLINE_SKATING = 64;
+    const ROCK_CLIMBING = 128;
 }
