@@ -39,9 +39,7 @@ class Decoder
      * @param LoggerInterface $logger The logger to write to, or null
      * if logging is disabled.
      */
-    public function __construct(private ?LoggerInterface $logger = null)
-    {
-    }
+    public function __construct(private ?LoggerInterface $logger = null) {}
 
     /**
      * Reads the file/stream and returns the decoded messages.
@@ -189,10 +187,10 @@ class Decoder
             default:
                 $numElements = $size / $fitBaseType->getBytes();
                 if ($numElements === 1) {
-                    $fieldValue = $this->readValue($fitBaseType, $baseType, $bigEndian, $reader);
+                    $fieldValue = $this->readValue($fitBaseType, $bigEndian, $reader);
                 } else {
                     for ($i = 0; $i < $numElements; $i++) {
-                        $tmpValue = $this->readValue($fitBaseType, $baseType, $bigEndian, $reader);
+                        $tmpValue = $this->readValue($fitBaseType, $bigEndian, $reader);
                         if ($tmpValue !== null) {
                             if ($fieldValue === null) {
                                 $fieldValue = [];
@@ -213,14 +211,13 @@ class Decoder
      * Read the value according to it's base type.
      *
      * @param FitBaseTypeDefinition $fitBaseType
-     * @param int $baseType
      * @param bool $bigEndian Indicates if architecture is Big Endian. Little Endian otherwise.
      * @param IOReader $reader
      * @return mixed Returns the read value, or null if the value is invalid.
      */
-    private function readValue(FitBaseTypeDefinition $fitBaseType, int $baseType, bool $bigEndian, IOReader $reader): mixed
+    private function readValue(FitBaseTypeDefinition $fitBaseType, bool $bigEndian, IOReader $reader): mixed
     {
-        $value = match ($baseType) {
+        $value = match ($fitBaseType->getType()) {
             FitBaseType::SINT8 => $reader->readInt8(),
             FitBaseType::ENUM, FitBaseType::UINT8, FitBaseType::UINT8Z => $reader->readUInt8(),
             FitBaseType::SINT16 => $bigEndian ? $reader->readInt16BE() : $reader->readInt16LE(),
@@ -231,7 +228,7 @@ class Decoder
             FitBaseType::SINT64 => $bigEndian ? $reader->readInt64BE() : $reader->readInt64LE(),
             FitBaseType::UINT64, FitBaseType::UINT64Z, FitBaseType::FLOAT64 => $bigEndian ? $reader->readDoubleBE() : $reader->readDoubleLE(),
             FitBaseType::STRING, FitBaseType::BYTE => throw new Exception("Base types 'String|Byte' must be handled separately"),
-            default => throw new FitException(sprintf('unknown fit base type "%s".', $baseType))
+            default => throw new FitException(sprintf('unknown fit base type "%s".', $fitBaseType->getType()))
         };
 
         return !$fitBaseType->isInvalid($value) ? $value : null;
