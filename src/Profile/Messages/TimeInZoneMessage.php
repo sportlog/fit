@@ -47,7 +47,7 @@ final class TimeInZoneMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('TimeInZone', MesgNum::TIME_IN_ZONE);
+        parent::__construct('TimeInZone', MesgNum::TimeInZone->value);
     }
 
     /**

@@ -44,7 +44,7 @@ final class FieldDescriptionMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('FieldDescription', MesgNum::FIELD_DESCRIPTION);
+        parent::__construct('FieldDescription', MesgNum::FieldDescription->value);
     }
 
     /**

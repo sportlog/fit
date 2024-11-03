@@ -13,10 +13,7 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * WorkoutPower constants
- */
-final class WorkoutPower
+enum WorkoutPower: int
 {
-    const WATTS_OFFSET = 1000;
+    case WattsOffset = 1000;
 }

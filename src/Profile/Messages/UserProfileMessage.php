@@ -59,7 +59,7 @@ final class UserProfileMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('UserProfile', MesgNum::USER_PROFILE);
+        parent::__construct('UserProfile', MesgNum::UserProfile->value);
     }
 
     /**

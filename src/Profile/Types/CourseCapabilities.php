@@ -13,21 +13,18 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * CourseCapabilities constants
- */
-final class CourseCapabilities
+enum CourseCapabilities: int
 {
-    const PROCESSED = 1;
-    const VALID = 2;
-    const TIME = 4;
-    const DISTANCE = 8;
-    const POSITION = 16;
-    const HEART_RATE = 32;
-    const POWER = 64;
-    const CADENCE = 128;
-    const TRAINING = 256;
-    const NAVIGATION = 512;
-    const BIKEWAY = 1024;
-    const AVIATION = 4096;
+    case Processed = 1;
+    case Valid = 2;
+    case Time = 4;
+    case Distance = 8;
+    case Position = 16;
+    case HeartRate = 32;
+    case Power = 64;
+    case Cadence = 128;
+    case Training = 256;
+    case Navigation = 512;
+    case Bikeway = 1024;
+    case Aviation = 4096;
 }

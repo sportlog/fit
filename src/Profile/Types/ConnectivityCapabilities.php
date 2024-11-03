@@ -13,41 +13,38 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * ConnectivityCapabilities constants
- */
-final class ConnectivityCapabilities
+enum ConnectivityCapabilities: int
 {
-    const BLUETOOTH = 1;
-    const BLUETOOTH_LE = 2;
-    const ANT = 4;
-    const ACTIVITY_UPLOAD = 8;
-    const COURSE_DOWNLOAD = 16;
-    const WORKOUT_DOWNLOAD = 32;
-    const LIVE_TRACK = 64;
-    const WEATHER_CONDITIONS = 128;
-    const WEATHER_ALERTS = 256;
-    const GPS_EPHEMERIS_DOWNLOAD = 512;
-    const EXPLICIT_ARCHIVE = 1024;
-    const SETUP_INCOMPLETE = 2048;
-    const CONTINUE_SYNC_AFTER_SOFTWARE_UPDATE = 4096;
-    const CONNECT_IQ_APP_DOWNLOAD = 8192;
-    const GOLF_COURSE_DOWNLOAD = 16384;
-    const DEVICE_INITIATES_SYNC = 32768;
-    const CONNECT_IQ_WATCH_APP_DOWNLOAD = 65536;
-    const CONNECT_IQ_WIDGET_DOWNLOAD = 131072;
-    const CONNECT_IQ_WATCH_FACE_DOWNLOAD = 262144;
-    const CONNECT_IQ_DATA_FIELD_DOWNLOAD = 524288;
-    const CONNECT_IQ_APP_MANAGMENT = 1048576;
-    const SWING_SENSOR = 2097152;
-    const SWING_SENSOR_REMOTE = 4194304;
-    const INCIDENT_DETECTION = 8388608;
-    const AUDIO_PROMPTS = 16777216;
-    const WIFI_VERIFICATION = 33554432;
-    const TRUE_UP = 67108864;
-    const FIND_MY_WATCH = 134217728;
-    const REMOTE_MANUAL_SYNC = 268435456;
-    const LIVE_TRACK_AUTO_START = 536870912;
-    const LIVE_TRACK_MESSAGING = 1073741824;
-    const INSTANT_INPUT = 2147483648;
+    case Bluetooth = 1;
+    case BluetoothLe = 2;
+    case Ant = 4;
+    case ActivityUpload = 8;
+    case CourseDownload = 16;
+    case WorkoutDownload = 32;
+    case LiveTrack = 64;
+    case WeatherConditions = 128;
+    case WeatherAlerts = 256;
+    case GpsEphemerisDownload = 512;
+    case ExplicitArchive = 1024;
+    case SetupIncomplete = 2048;
+    case ContinueSyncAfterSoftwareUpdate = 4096;
+    case ConnectIqAppDownload = 8192;
+    case GolfCourseDownload = 16384;
+    case DeviceInitiatesSync = 32768;
+    case ConnectIqWatchAppDownload = 65536;
+    case ConnectIqWidgetDownload = 131072;
+    case ConnectIqWatchFaceDownload = 262144;
+    case ConnectIqDataFieldDownload = 524288;
+    case ConnectIqAppManagment = 1048576;
+    case SwingSensor = 2097152;
+    case SwingSensorRemote = 4194304;
+    case IncidentDetection = 8388608;
+    case AudioPrompts = 16777216;
+    case WifiVerification = 33554432;
+    case TrueUp = 67108864;
+    case FindMyWatch = 134217728;
+    case RemoteManualSync = 268435456;
+    case LiveTrackAutoStart = 536870912;
+    case LiveTrackMessaging = 1073741824;
+    case InstantInput = 2147483648;
 }

@@ -33,7 +33,7 @@ final class NmeaSentenceMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('NmeaSentence', MesgNum::NMEA_SENTENCE);
+        parent::__construct('NmeaSentence', MesgNum::NmeaSentence->value);
     }
 
     /**

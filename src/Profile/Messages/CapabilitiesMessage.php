@@ -34,7 +34,7 @@ final class CapabilitiesMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Capabilities', MesgNum::CAPABILITIES);
+        parent::__construct('Capabilities', MesgNum::Capabilities->value);
     }
 
     /**

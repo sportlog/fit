@@ -13,31 +13,28 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * LegRaiseExerciseName constants
- */
-final class LegRaiseExerciseName
+enum LegRaiseExerciseName: int
 {
-    const HANGING_KNEE_RAISE = 0;
-    const HANGING_LEG_RAISE = 1;
-    const WEIGHTED_HANGING_LEG_RAISE = 2;
-    const HANGING_SINGLE_LEG_RAISE = 3;
-    const WEIGHTED_HANGING_SINGLE_LEG_RAISE = 4;
-    const KETTLEBELL_LEG_RAISES = 5;
-    const LEG_LOWERING_DRILL = 6;
-    const WEIGHTED_LEG_LOWERING_DRILL = 7;
-    const LYING_STRAIGHT_LEG_RAISE = 8;
-    const WEIGHTED_LYING_STRAIGHT_LEG_RAISE = 9;
-    const MEDICINE_BALL_LEG_DROPS = 10;
-    const QUADRUPED_LEG_RAISE = 11;
-    const WEIGHTED_QUADRUPED_LEG_RAISE = 12;
-    const REVERSE_LEG_RAISE = 13;
-    const WEIGHTED_REVERSE_LEG_RAISE = 14;
-    const REVERSE_LEG_RAISE_ON_SWISS_BALL = 15;
-    const WEIGHTED_REVERSE_LEG_RAISE_ON_SWISS_BALL = 16;
-    const SINGLE_LEG_LOWERING_DRILL = 17;
-    const WEIGHTED_SINGLE_LEG_LOWERING_DRILL = 18;
-    const WEIGHTED_HANGING_KNEE_RAISE = 19;
-    const LATERAL_STEPOVER = 20;
-    const WEIGHTED_LATERAL_STEPOVER = 21;
+    case HangingKneeRaise = 0;
+    case HangingLegRaise = 1;
+    case WeightedHangingLegRaise = 2;
+    case HangingSingleLegRaise = 3;
+    case WeightedHangingSingleLegRaise = 4;
+    case KettlebellLegRaises = 5;
+    case LegLoweringDrill = 6;
+    case WeightedLegLoweringDrill = 7;
+    case LyingStraightLegRaise = 8;
+    case WeightedLyingStraightLegRaise = 9;
+    case MedicineBallLegDrops = 10;
+    case QuadrupedLegRaise = 11;
+    case WeightedQuadrupedLegRaise = 12;
+    case ReverseLegRaise = 13;
+    case WeightedReverseLegRaise = 14;
+    case ReverseLegRaiseOnSwissBall = 15;
+    case WeightedReverseLegRaiseOnSwissBall = 16;
+    case SingleLegLoweringDrill = 17;
+    case WeightedSingleLegLoweringDrill = 18;
+    case WeightedHangingKneeRaise = 19;
+    case LateralStepover = 20;
+    case WeightedLateralStepover = 21;
 }

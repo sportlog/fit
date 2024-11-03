@@ -13,10 +13,7 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * LocalDateTime constants
- */
-final class LocalDateTime
+enum LocalDateTime: int
 {
-    const MIN = 268435456;
+    case Min = 268435456;
 }

@@ -34,7 +34,7 @@ final class CourseMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Course', MesgNum::COURSE);
+        parent::__construct('Course', MesgNum::Course->value);
     }
 
     /**

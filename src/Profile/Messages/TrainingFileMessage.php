@@ -36,7 +36,7 @@ final class TrainingFileMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('TrainingFile', MesgNum::TRAINING_FILE);
+        parent::__construct('TrainingFile', MesgNum::TrainingFile->value);
     }
 
     /**

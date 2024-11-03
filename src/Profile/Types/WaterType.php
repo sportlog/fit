@@ -13,13 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * WaterType constants
- */
-final class WaterType
+enum WaterType: int
 {
-    const FRESH = 0;
-    const SALT = 1;
-    const EN13319 = 2;
-    const CUSTOM = 3;
+    case Fresh = 0;
+    case Salt = 1;
+    case En13319 = 2;
+    case Custom = 3;
 }

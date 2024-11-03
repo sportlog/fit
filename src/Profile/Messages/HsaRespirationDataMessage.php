@@ -33,7 +33,7 @@ final class HsaRespirationDataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('HsaRespirationData', MesgNum::HSA_RESPIRATION_DATA);
+        parent::__construct('HsaRespirationData', MesgNum::HsaRespirationData->value);
     }
 
     /**

@@ -37,7 +37,7 @@ final class ThreeDSensorCalibrationMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('ThreeDSensorCalibration', MesgNum::THREE_D_SENSOR_CALIBRATION);
+        parent::__construct('ThreeDSensorCalibration', MesgNum::ThreeDSensorCalibration->value);
     }
 
     /**

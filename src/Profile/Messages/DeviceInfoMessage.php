@@ -49,7 +49,7 @@ final class DeviceInfoMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('DeviceInfo', MesgNum::DEVICE_INFO);
+        parent::__construct('DeviceInfo', MesgNum::DeviceInfo->value);
     }
 
     /**

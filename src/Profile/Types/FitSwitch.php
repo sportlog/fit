@@ -13,12 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * FitSwitch constants
- */
-final class FitSwitch
+enum FitSwitch: int
 {
-    const OFF = 0;
-    const ON = 1;
-    const AUTO = 2;
+    case Off = 0;
+    case On = 1;
+    case Auto = 2;
 }

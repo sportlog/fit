@@ -33,7 +33,7 @@ final class HsaStepDataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('HsaStepData', MesgNum::HSA_STEP_DATA);
+        parent::__construct('HsaStepData', MesgNum::HsaStepData->value);
     }
 
     /**

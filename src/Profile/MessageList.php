@@ -39,7 +39,7 @@ class MessageList implements IteratorAggregate, Countable
      */
     public function getFileType(): ?int
     {
-        $messages = $this->getMessages(MesgNum::FILE_ID);
+        $messages = $this->getMessages(MesgNum::FileId);
         if (count($messages) !== 1) {
             return null;
         }
@@ -62,9 +62,9 @@ class MessageList implements IteratorAggregate, Countable
     /**
      * Gets all messages for the specified message number.
      */
-    public function getMessages(int $messageNumber): array
+    public function getMessages(MesgNum $messageNumber): array
     {
-        return isset($this->messages[$messageNumber]) ? $this->messages[$messageNumber] : [];
+        return isset($this->messages[$messageNumber->value]) ? $this->messages[$messageNumber->value] : [];
     }
 
     /**
@@ -111,7 +111,8 @@ class MessageList implements IteratorAggregate, Countable
      * @param string $file
      * @return void
      */
-    public function saveAsGPX(string $file): void {
+    public function saveAsGPX(string $file): void
+    {
         GPXWriter::write($file, $this);
     }
 }

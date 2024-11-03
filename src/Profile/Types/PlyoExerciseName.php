@@ -13,42 +13,39 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * PlyoExerciseName constants
- */
-final class PlyoExerciseName
+enum PlyoExerciseName: int
 {
-    const ALTERNATING_JUMP_LUNGE = 0;
-    const WEIGHTED_ALTERNATING_JUMP_LUNGE = 1;
-    const BARBELL_JUMP_SQUAT = 2;
-    const BODY_WEIGHT_JUMP_SQUAT = 3;
-    const WEIGHTED_JUMP_SQUAT = 4;
-    const CROSS_KNEE_STRIKE = 5;
-    const WEIGHTED_CROSS_KNEE_STRIKE = 6;
-    const DEPTH_JUMP = 7;
-    const WEIGHTED_DEPTH_JUMP = 8;
-    const DUMBBELL_JUMP_SQUAT = 9;
-    const DUMBBELL_SPLIT_JUMP = 10;
-    const FRONT_KNEE_STRIKE = 11;
-    const WEIGHTED_FRONT_KNEE_STRIKE = 12;
-    const HIGH_BOX_JUMP = 13;
-    const WEIGHTED_HIGH_BOX_JUMP = 14;
-    const ISOMETRIC_EXPLOSIVE_BODY_WEIGHT_JUMP_SQUAT = 15;
-    const WEIGHTED_ISOMETRIC_EXPLOSIVE_JUMP_SQUAT = 16;
-    const LATERAL_LEAP_AND_HOP = 17;
-    const WEIGHTED_LATERAL_LEAP_AND_HOP = 18;
-    const LATERAL_PLYO_SQUATS = 19;
-    const WEIGHTED_LATERAL_PLYO_SQUATS = 20;
-    const LATERAL_SLIDE = 21;
-    const WEIGHTED_LATERAL_SLIDE = 22;
-    const MEDICINE_BALL_OVERHEAD_THROWS = 23;
-    const MEDICINE_BALL_SIDE_THROW = 24;
-    const MEDICINE_BALL_SLAM = 25;
-    const SIDE_TO_SIDE_MEDICINE_BALL_THROWS = 26;
-    const SIDE_TO_SIDE_SHUFFLE_JUMP = 27;
-    const WEIGHTED_SIDE_TO_SIDE_SHUFFLE_JUMP = 28;
-    const SQUAT_JUMP_ONTO_BOX = 29;
-    const WEIGHTED_SQUAT_JUMP_ONTO_BOX = 30;
-    const SQUAT_JUMPS_IN_AND_OUT = 31;
-    const WEIGHTED_SQUAT_JUMPS_IN_AND_OUT = 32;
+    case AlternatingJumpLunge = 0;
+    case WeightedAlternatingJumpLunge = 1;
+    case BarbellJumpSquat = 2;
+    case BodyWeightJumpSquat = 3;
+    case WeightedJumpSquat = 4;
+    case CrossKneeStrike = 5;
+    case WeightedCrossKneeStrike = 6;
+    case DepthJump = 7;
+    case WeightedDepthJump = 8;
+    case DumbbellJumpSquat = 9;
+    case DumbbellSplitJump = 10;
+    case FrontKneeStrike = 11;
+    case WeightedFrontKneeStrike = 12;
+    case HighBoxJump = 13;
+    case WeightedHighBoxJump = 14;
+    case IsometricExplosiveBodyWeightJumpSquat = 15;
+    case WeightedIsometricExplosiveJumpSquat = 16;
+    case LateralLeapAndHop = 17;
+    case WeightedLateralLeapAndHop = 18;
+    case LateralPlyoSquats = 19;
+    case WeightedLateralPlyoSquats = 20;
+    case LateralSlide = 21;
+    case WeightedLateralSlide = 22;
+    case MedicineBallOverheadThrows = 23;
+    case MedicineBallSideThrow = 24;
+    case MedicineBallSlam = 25;
+    case SideToSideMedicineBallThrows = 26;
+    case SideToSideShuffleJump = 27;
+    case WeightedSideToSideShuffleJump = 28;
+    case SquatJumpOntoBox = 29;
+    case WeightedSquatJumpOntoBox = 30;
+    case SquatJumpsInAndOut = 31;
+    case WeightedSquatJumpsInAndOut = 32;
 }

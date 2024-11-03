@@ -46,7 +46,7 @@ final class WeatherConditionsMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('WeatherConditions', MesgNum::WEATHER_CONDITIONS);
+        parent::__construct('WeatherConditions', MesgNum::WeatherConditions->value);
     }
 
     /**

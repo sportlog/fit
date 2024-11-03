@@ -13,16 +13,13 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * Intensity constants
- */
-final class Intensity
+enum Intensity: int
 {
-    const ACTIVE = 0;
-    const REST = 1;
-    const WARMUP = 2;
-    const COOLDOWN = 3;
-    const RECOVERY = 4;
-    const INTERVAL = 5;
-    const OTHER = 6;
+    case Active = 0;
+    case Rest = 1;
+    case Warmup = 2;
+    case Cooldown = 3;
+    case Recovery = 4;
+    case Interval = 5;
+    case Other = 6;
 }

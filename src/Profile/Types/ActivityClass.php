@@ -13,12 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * ActivityClass constants
- */
-final class ActivityClass
+enum ActivityClass: int
 {
-    const LEVEL = 127;
-    const LEVEL_MAX = 100;
-    const ATHLETE = 128;
+    case Level = 127;
+    case LevelMax = 100;
+    case Athlete = 128;
 }

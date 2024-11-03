@@ -59,7 +59,7 @@ final class MonitoringMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Monitoring', MesgNum::MONITORING);
+        parent::__construct('Monitoring', MesgNum::Monitoring->value);
     }
 
     /**

@@ -39,7 +39,7 @@ final class GyroscopeDataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('GyroscopeData', MesgNum::GYROSCOPE_DATA);
+        parent::__construct('GyroscopeData', MesgNum::GyroscopeData->value);
     }
 
     /**

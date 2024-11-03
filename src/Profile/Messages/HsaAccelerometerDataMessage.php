@@ -37,7 +37,7 @@ final class HsaAccelerometerDataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('HsaAccelerometerData', MesgNum::HSA_ACCELEROMETER_DATA);
+        parent::__construct('HsaAccelerometerData', MesgNum::HsaAccelerometerData->value);
     }
 
     /**

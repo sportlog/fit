@@ -33,7 +33,7 @@ final class SpeedZoneMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('SpeedZone', MesgNum::SPEED_ZONE);
+        parent::__construct('SpeedZone', MesgNum::SpeedZone->value);
     }
 
     /**

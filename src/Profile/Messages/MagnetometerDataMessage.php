@@ -39,7 +39,7 @@ final class MagnetometerDataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('MagnetometerData', MesgNum::MAGNETOMETER_DATA);
+        parent::__construct('MagnetometerData', MesgNum::MagnetometerData->value);
     }
 
     /**

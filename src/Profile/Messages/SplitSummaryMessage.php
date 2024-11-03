@@ -44,7 +44,7 @@ final class SplitSummaryMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('SplitSummary', MesgNum::SPLIT_SUMMARY);
+        parent::__construct('SplitSummary', MesgNum::SplitSummary->value);
     }
 
     /**

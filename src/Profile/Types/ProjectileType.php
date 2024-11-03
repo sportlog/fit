@@ -13,15 +13,12 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * ProjectileType constants
- */
-final class ProjectileType
+enum ProjectileType: int
 {
-    const ARROW = 0;
-    const RIFLE_CARTRIDGE = 1;
-    const PISTOL_CARTRIDGE = 2;
-    const SHOTSHELL = 3;
-    const AIR_RIFLE_PELLET = 4;
-    const OTHER = 5;
+    case Arrow = 0;
+    case RifleCartridge = 1;
+    case PistolCartridge = 2;
+    case Shotshell = 3;
+    case AirRiflePellet = 4;
+    case Other = 5;
 }

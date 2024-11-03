@@ -33,7 +33,7 @@ final class HsaWristTemperatureDataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('HsaWristTemperatureData', MesgNum::HSA_WRIST_TEMPERATURE_DATA);
+        parent::__construct('HsaWristTemperatureData', MesgNum::HsaWristTemperatureData->value);
     }
 
     /**

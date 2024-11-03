@@ -139,13 +139,13 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
                 // If scale and/or offset are set, calculate the value.
                 // This changes any values of type int to float.
                 if (is_array($value)) {
-                    $value = array_map(fn ($val) => $field->calculateValue($val), $value);
+                    $value = array_map(fn($val) => $field->calculateValue($val), $value);
                 } else {
                     $value = $field->calculateValue($value);
                 }
             }
         }
-      
+
         $this->values[$fieldNumber] = $value;
     }
 
@@ -241,7 +241,7 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
     {
         switch ($field->getProfileType()) {
             case ProfileType::BOOL:
-                return is_array($value) ? array_map(fn ($val) => $val !== 0, $value) : $value !== 0;
+                return is_array($value) ? array_map(fn($val) => $val !== 0, $value) : $value !== 0;
 
             case ProfileType::LOCALDATETIME:
             case ProfileType::DATETIME:

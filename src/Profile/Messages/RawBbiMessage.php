@@ -36,7 +36,7 @@ final class RawBbiMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('RawBbi', MesgNum::RAW_BBI);
+        parent::__construct('RawBbi', MesgNum::RawBbi->value);
     }
 
     /**

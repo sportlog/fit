@@ -334,11 +334,11 @@ class Decoder
      */
     private function getDeveloperFieldDescription(int $developerDataIndex, int $fieldDefinitionNumber, MessageList $messages): FieldDescriptionMessage
     {
-        $dataIdMessages = $messages->getMessages(MesgNum::DEVELOPER_DATA_ID);
+        $dataIdMessages = $messages->getMessages(MesgNum::DeveloperDataId);
         foreach ($dataIdMessages as $message) {
             /** @var DeveloperDataIdMessage $message */
             if ($message->getDeveloperDataIndex() === $developerDataIndex) {
-                $fieldDescMessages = $messages->getMessages(MesgNum::FIELD_DESCRIPTION);
+                $fieldDescMessages = $messages->getMessages(MesgNum::FieldDescription);
                 foreach ($fieldDescMessages as $fieldDescMessage) {
                     /** @var FieldDescriptionMessage $fieldDescMessage */
                     if (

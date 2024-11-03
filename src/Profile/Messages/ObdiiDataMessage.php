@@ -39,7 +39,7 @@ final class ObdiiDataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('ObdiiData', MesgNum::OBDII_DATA);
+        parent::__construct('ObdiiData', MesgNum::ObdiiData->value);
     }
 
     /**

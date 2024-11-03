@@ -35,7 +35,7 @@ final class HsaBodyBatteryDataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('HsaBodyBatteryData', MesgNum::HSA_BODY_BATTERY_DATA);
+        parent::__construct('HsaBodyBatteryData', MesgNum::HsaBodyBatteryData->value);
     }
 
     /**

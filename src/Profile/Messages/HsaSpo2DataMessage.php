@@ -34,7 +34,7 @@ final class HsaSpo2DataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('HsaSpo2Data', MesgNum::HSA_SPO2_DATA);
+        parent::__construct('HsaSpo2Data', MesgNum::HsaSpo2Data->value);
     }
 
     /**

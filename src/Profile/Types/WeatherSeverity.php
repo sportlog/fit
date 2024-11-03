@@ -13,14 +13,11 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * WeatherSeverity constants
- */
-final class WeatherSeverity
+enum WeatherSeverity: int
 {
-    const UNKNOWN = 0;
-    const WARNING = 1;
-    const WATCH = 2;
-    const ADVISORY = 3;
-    const STATEMENT = 4;
+    case Unknown = 0;
+    case Warning = 1;
+    case Watch = 2;
+    case Advisory = 3;
+    case Statement = 4;
 }

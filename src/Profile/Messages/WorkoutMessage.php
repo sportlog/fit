@@ -38,7 +38,7 @@ final class WorkoutMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Workout', MesgNum::WORKOUT);
+        parent::__construct('Workout', MesgNum::Workout->value);
     }
 
     /**

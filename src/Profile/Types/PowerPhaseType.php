@@ -13,13 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * PowerPhaseType constants
- */
-final class PowerPhaseType
+enum PowerPhaseType: int
 {
-    const POWER_PHASE_START_ANGLE = 0;
-    const POWER_PHASE_END_ANGLE = 1;
-    const POWER_PHASE_ARC_LENGTH = 2;
-    const POWER_PHASE_CENTER = 3;
+    case PowerPhaseStartAngle = 0;
+    case PowerPhaseEndAngle = 1;
+    case PowerPhaseArcLength = 2;
+    case PowerPhaseCenter = 3;
 }

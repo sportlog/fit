@@ -33,7 +33,7 @@ final class VideoFrameMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('VideoFrame', MesgNum::VIDEO_FRAME);
+        parent::__construct('VideoFrame', MesgNum::VideoFrame->value);
     }
 
     /**

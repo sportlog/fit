@@ -34,7 +34,7 @@ final class ExerciseTitleMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('ExerciseTitle', MesgNum::EXERCISE_TITLE);
+        parent::__construct('ExerciseTitle', MesgNum::ExerciseTitle->value);
     }
 
     /**

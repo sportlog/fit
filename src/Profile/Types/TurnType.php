@@ -13,47 +13,44 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * TurnType constants
- */
-final class TurnType
+enum TurnType: int
 {
-    const ARRIVING_IDX = 0;
-    const ARRIVING_LEFT_IDX = 1;
-    const ARRIVING_RIGHT_IDX = 2;
-    const ARRIVING_VIA_IDX = 3;
-    const ARRIVING_VIA_LEFT_IDX = 4;
-    const ARRIVING_VIA_RIGHT_IDX = 5;
-    const BEAR_KEEP_LEFT_IDX = 6;
-    const BEAR_KEEP_RIGHT_IDX = 7;
-    const CONTINUE_IDX = 8;
-    const EXIT_LEFT_IDX = 9;
-    const EXIT_RIGHT_IDX = 10;
-    const FERRY_IDX = 11;
-    const ROUNDABOUT_45_IDX = 12;
-    const ROUNDABOUT_90_IDX = 13;
-    const ROUNDABOUT_135_IDX = 14;
-    const ROUNDABOUT_180_IDX = 15;
-    const ROUNDABOUT_225_IDX = 16;
-    const ROUNDABOUT_270_IDX = 17;
-    const ROUNDABOUT_315_IDX = 18;
-    const ROUNDABOUT_360_IDX = 19;
-    const ROUNDABOUT_NEG_45_IDX = 20;
-    const ROUNDABOUT_NEG_90_IDX = 21;
-    const ROUNDABOUT_NEG_135_IDX = 22;
-    const ROUNDABOUT_NEG_180_IDX = 23;
-    const ROUNDABOUT_NEG_225_IDX = 24;
-    const ROUNDABOUT_NEG_270_IDX = 25;
-    const ROUNDABOUT_NEG_315_IDX = 26;
-    const ROUNDABOUT_NEG_360_IDX = 27;
-    const ROUNDABOUT_GENERIC_IDX = 28;
-    const ROUNDABOUT_NEG_GENERIC_IDX = 29;
-    const SHARP_TURN_LEFT_IDX = 30;
-    const SHARP_TURN_RIGHT_IDX = 31;
-    const TURN_LEFT_IDX = 32;
-    const TURN_RIGHT_IDX = 33;
-    const UTURN_LEFT_IDX = 34;
-    const UTURN_RIGHT_IDX = 35;
-    const ICON_INV_IDX = 36;
-    const ICON_IDX_CNT = 37;
+    case ArrivingIdx = 0;
+    case ArrivingLeftIdx = 1;
+    case ArrivingRightIdx = 2;
+    case ArrivingViaIdx = 3;
+    case ArrivingViaLeftIdx = 4;
+    case ArrivingViaRightIdx = 5;
+    case BearKeepLeftIdx = 6;
+    case BearKeepRightIdx = 7;
+    case ContinueIdx = 8;
+    case ExitLeftIdx = 9;
+    case ExitRightIdx = 10;
+    case FerryIdx = 11;
+    case Roundabout45Idx = 12;
+    case Roundabout90Idx = 13;
+    case Roundabout135Idx = 14;
+    case Roundabout180Idx = 15;
+    case Roundabout225Idx = 16;
+    case Roundabout270Idx = 17;
+    case Roundabout315Idx = 18;
+    case Roundabout360Idx = 19;
+    case RoundaboutNeg45Idx = 20;
+    case RoundaboutNeg90Idx = 21;
+    case RoundaboutNeg135Idx = 22;
+    case RoundaboutNeg180Idx = 23;
+    case RoundaboutNeg225Idx = 24;
+    case RoundaboutNeg270Idx = 25;
+    case RoundaboutNeg315Idx = 26;
+    case RoundaboutNeg360Idx = 27;
+    case RoundaboutGenericIdx = 28;
+    case RoundaboutNegGenericIdx = 29;
+    case SharpTurnLeftIdx = 30;
+    case SharpTurnRightIdx = 31;
+    case TurnLeftIdx = 32;
+    case TurnRightIdx = 33;
+    case UturnLeftIdx = 34;
+    case UturnRightIdx = 35;
+    case IconInvIdx = 36;
+    case IconIdxCnt = 37;
 }

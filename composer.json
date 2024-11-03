@@ -25,9 +25,9 @@
     }
   },
   "require-dev": {
-    "phpstan/phpstan": "^1.10",
-    "phpunit/phpunit": "^9.5",
-    "nette/php-generator": "^3.5"
+    "phpstan/phpstan": ">=1.10",
+    "phpunit/phpunit": ">=9.5",
+    "nette/php-generator": ">=3.5"
   },
   "require": {
     "php": ">=8.0",

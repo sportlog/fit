@@ -37,7 +37,7 @@ final class WorkoutSessionMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('WorkoutSession', MesgNum::WORKOUT_SESSION);
+        parent::__construct('WorkoutSession', MesgNum::WorkoutSession->value);
     }
 
     /**

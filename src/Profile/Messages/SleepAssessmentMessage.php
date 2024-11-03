@@ -44,7 +44,7 @@ final class SleepAssessmentMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('SleepAssessment', MesgNum::SLEEP_ASSESSMENT);
+        parent::__construct('SleepAssessment', MesgNum::SleepAssessment->value);
     }
 
     /**

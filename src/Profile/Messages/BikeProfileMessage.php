@@ -62,7 +62,7 @@ final class BikeProfileMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('BikeProfile', MesgNum::BIKE_PROFILE);
+        parent::__construct('BikeProfile', MesgNum::BikeProfile->value);
     }
 
     /**

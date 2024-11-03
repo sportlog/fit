@@ -34,7 +34,7 @@ final class ExdScreenConfigurationMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('ExdScreenConfiguration', MesgNum::EXD_SCREEN_CONFIGURATION);
+        parent::__construct('ExdScreenConfiguration', MesgNum::ExdScreenConfiguration->value);
     }
 
     /**

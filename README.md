@@ -40,7 +40,7 @@ foreach ($messageList->getMessageNumbers() as $messageNumber) {
 }
 
 // You can also grab specific messages
-$sessionMessages = $messageList->getMessages(MesgNum::SESSION);
+$sessionMessages = $messageList->getMessages(MesgNum::Session);
 
 // There should be one session message (add check!)
 /** @var SessionMessage $sessionMessage */

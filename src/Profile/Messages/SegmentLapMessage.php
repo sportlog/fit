@@ -125,7 +125,7 @@ final class SegmentLapMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('SegmentLap', MesgNum::SEGMENT_LAP);
+        parent::__construct('SegmentLap', MesgNum::SegmentLap->value);
     }
 
     /**

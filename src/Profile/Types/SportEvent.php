@@ -13,18 +13,15 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * SportEvent constants
- */
-final class SportEvent
+enum SportEvent: int
 {
-    const UNCATEGORIZED = 0;
-    const GEOCACHING = 1;
-    const FITNESS = 2;
-    const RECREATION = 3;
-    const RACE = 4;
-    const SPECIAL_EVENT = 5;
-    const TRAINING = 6;
-    const TRANSPORTATION = 7;
-    const TOURING = 8;
+    case Uncategorized = 0;
+    case Geocaching = 1;
+    case Fitness = 2;
+    case Recreation = 3;
+    case Race = 4;
+    case SpecialEvent = 5;
+    case Training = 6;
+    case Transportation = 7;
+    case Touring = 8;
 }

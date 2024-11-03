@@ -39,7 +39,7 @@ final class GpsMetadataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('GpsMetadata', MesgNum::GPS_METADATA);
+        parent::__construct('GpsMetadata', MesgNum::GpsMetadata->value);
     }
 
     /**

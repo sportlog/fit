@@ -13,17 +13,14 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * LocalDeviceType constants
- */
-final class LocalDeviceType
+enum LocalDeviceType: int
 {
-    const GPS = 0;
-    const GLONASS = 1;
-    const GPS_GLONASS = 2;
-    const ACCELEROMETER = 3;
-    const BAROMETER = 4;
-    const TEMPERATURE = 5;
-    const WHR = 10;
-    const SENSOR_HUB = 12;
+    case Gps = 0;
+    case Glonass = 1;
+    case GpsGlonass = 2;
+    case Accelerometer = 3;
+    case Barometer = 4;
+    case Temperature = 5;
+    case Whr = 10;
+    case SensorHub = 12;
 }

@@ -33,7 +33,7 @@ final class HsaStressDataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('HsaStressData', MesgNum::HSA_STRESS_DATA);
+        parent::__construct('HsaStressData', MesgNum::HsaStressData->value);
     }
 
     /**

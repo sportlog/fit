@@ -33,7 +33,7 @@ final class CadenceZoneMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('CadenceZone', MesgNum::CADENCE_ZONE);
+        parent::__construct('CadenceZone', MesgNum::CadenceZone->value);
     }
 
     /**

@@ -65,7 +65,7 @@ final class DiveSettingsMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('DiveSettings', MesgNum::DIVE_SETTINGS);
+        parent::__construct('DiveSettings', MesgNum::DiveSettings->value);
     }
 
     /**

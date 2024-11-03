@@ -41,7 +41,7 @@ final class BloodPressureMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('BloodPressure', MesgNum::BLOOD_PRESSURE);
+        parent::__construct('BloodPressure', MesgNum::BloodPressure->value);
     }
 
     /**

@@ -13,26 +13,23 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * ShrugExerciseName constants
- */
-final class ShrugExerciseName
+enum ShrugExerciseName: int
 {
-    const BARBELL_JUMP_SHRUG = 0;
-    const BARBELL_SHRUG = 1;
-    const BARBELL_UPRIGHT_ROW = 2;
-    const BEHIND_THE_BACK_SMITH_MACHINE_SHRUG = 3;
-    const DUMBBELL_JUMP_SHRUG = 4;
-    const DUMBBELL_SHRUG = 5;
-    const DUMBBELL_UPRIGHT_ROW = 6;
-    const INCLINE_DUMBBELL_SHRUG = 7;
-    const OVERHEAD_BARBELL_SHRUG = 8;
-    const OVERHEAD_DUMBBELL_SHRUG = 9;
-    const SCAPTION_AND_SHRUG = 10;
-    const SCAPULAR_RETRACTION = 11;
-    const SERRATUS_CHAIR_SHRUG = 12;
-    const WEIGHTED_SERRATUS_CHAIR_SHRUG = 13;
-    const SERRATUS_SHRUG = 14;
-    const WEIGHTED_SERRATUS_SHRUG = 15;
-    const WIDE_GRIP_JUMP_SHRUG = 16;
+    case BarbellJumpShrug = 0;
+    case BarbellShrug = 1;
+    case BarbellUprightRow = 2;
+    case BehindTheBackSmithMachineShrug = 3;
+    case DumbbellJumpShrug = 4;
+    case DumbbellShrug = 5;
+    case DumbbellUprightRow = 6;
+    case InclineDumbbellShrug = 7;
+    case OverheadBarbellShrug = 8;
+    case OverheadDumbbellShrug = 9;
+    case ScaptionAndShrug = 10;
+    case ScapularRetraction = 11;
+    case SerratusChairShrug = 12;
+    case WeightedSerratusChairShrug = 13;
+    case SerratusShrug = 14;
+    case WeightedSerratusShrug = 15;
+    case WideGripJumpShrug = 16;
 }

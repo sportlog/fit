@@ -35,7 +35,7 @@ final class SkinTempOvernightMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('SkinTempOvernight', MesgNum::SKIN_TEMP_OVERNIGHT);
+        parent::__construct('SkinTempOvernight', MesgNum::SkinTempOvernight->value);
     }
 
     /**

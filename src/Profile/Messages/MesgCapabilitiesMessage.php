@@ -35,7 +35,7 @@ final class MesgCapabilitiesMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('MesgCapabilities', MesgNum::MESG_CAPABILITIES);
+        parent::__construct('MesgCapabilities', MesgNum::MesgCapabilities->value);
     }
 
     /**

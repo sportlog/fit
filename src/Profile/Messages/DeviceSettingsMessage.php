@@ -54,7 +54,7 @@ final class DeviceSettingsMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('DeviceSettings', MesgNum::DEVICE_SETTINGS);
+        parent::__construct('DeviceSettings', MesgNum::DeviceSettings->value);
     }
 
     /**

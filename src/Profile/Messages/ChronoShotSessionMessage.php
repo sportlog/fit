@@ -37,7 +37,7 @@ final class ChronoShotSessionMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('ChronoShotSession', MesgNum::CHRONO_SHOT_SESSION);
+        parent::__construct('ChronoShotSession', MesgNum::ChronoShotSession->value);
     }
 
     /**

@@ -13,12 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * DisplayMeasure constants
- */
-final class DisplayMeasure
+enum DisplayMeasure: int
 {
-    const METRIC = 0;
-    const STATUTE = 1;
-    const NAUTICAL = 2;
+    case Metric = 0;
+    case Statute = 1;
+    case Nautical = 2;
 }

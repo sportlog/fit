@@ -13,17 +13,14 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * SupportedExdScreenLayouts constants
- */
-final class SupportedExdScreenLayouts
+enum SupportedExdScreenLayouts: int
 {
-    const FULL_SCREEN = 1;
-    const HALF_VERTICAL = 2;
-    const HALF_HORIZONTAL = 4;
-    const HALF_VERTICAL_RIGHT_SPLIT = 8;
-    const HALF_HORIZONTAL_BOTTOM_SPLIT = 16;
-    const FULL_QUARTER_SPLIT = 32;
-    const HALF_VERTICAL_LEFT_SPLIT = 64;
-    const HALF_HORIZONTAL_TOP_SPLIT = 128;
+    case FullScreen = 1;
+    case HalfVertical = 2;
+    case HalfHorizontal = 4;
+    case HalfVerticalRightSplit = 8;
+    case HalfHorizontalBottomSplit = 16;
+    case FullQuarterSplit = 32;
+    case HalfVerticalLeftSplit = 64;
+    case HalfHorizontalTopSplit = 128;
 }

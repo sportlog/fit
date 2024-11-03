@@ -13,11 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * MaxMetCategory constants
- */
-final class MaxMetCategory
+enum MaxMetCategory: int
 {
-    const GENERIC = 0;
-    const CYCLING = 1;
+    case Generic = 0;
+    case Cycling = 1;
 }

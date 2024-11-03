@@ -36,7 +36,7 @@ final class AadAccelFeaturesMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('AadAccelFeatures', MesgNum::AAD_ACCEL_FEATURES);
+        parent::__construct('AadAccelFeatures', MesgNum::AadAccelFeatures->value);
     }
 
     /**

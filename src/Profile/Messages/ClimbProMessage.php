@@ -37,7 +37,7 @@ final class ClimbProMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('ClimbPro', MesgNum::CLIMB_PRO);
+        parent::__construct('ClimbPro', MesgNum::ClimbPro->value);
     }
 
     /**

@@ -37,7 +37,7 @@ final class HsaGyroscopeDataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('HsaGyroscopeData', MesgNum::HSA_GYROSCOPE_DATA);
+        parent::__construct('HsaGyroscopeData', MesgNum::HsaGyroscopeData->value);
     }
 
     /**

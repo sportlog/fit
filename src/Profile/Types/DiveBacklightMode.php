@@ -13,11 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * DiveBacklightMode constants
- */
-final class DiveBacklightMode
+enum DiveBacklightMode: int
 {
-    const AT_DEPTH = 0;
-    const ALWAYS_ON = 1;
+    case AtDepth = 0;
+    case AlwaysOn = 1;
 }

@@ -13,53 +13,50 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * ExdQualifiers constants
- */
-final class ExdQualifiers
+enum ExdQualifiers: int
 {
-    const NO_QUALIFIER = 0;
-    const INSTANTANEOUS = 1;
-    const AVERAGE = 2;
-    const LAP = 3;
-    const MAXIMUM = 4;
-    const MAXIMUM_AVERAGE = 5;
-    const MAXIMUM_LAP = 6;
-    const LAST_LAP = 7;
-    const AVERAGE_LAP = 8;
-    const TO_DESTINATION = 9;
-    const TO_GO = 10;
-    const TO_NEXT = 11;
-    const NEXT_COURSE_POINT = 12;
-    const TOTAL = 13;
-    const THREE_SECOND_AVERAGE = 14;
-    const TEN_SECOND_AVERAGE = 15;
-    const THIRTY_SECOND_AVERAGE = 16;
-    const PERCENT_MAXIMUM = 17;
-    const PERCENT_MAXIMUM_AVERAGE = 18;
-    const LAP_PERCENT_MAXIMUM = 19;
-    const ELAPSED = 20;
-    const SUNRISE = 21;
-    const SUNSET = 22;
-    const COMPARED_TO_VIRTUAL_PARTNER = 23;
-    const MAXIMUM_24H = 24;
-    const MINIMUM_24H = 25;
-    const MINIMUM = 26;
-    const FIRST = 27;
-    const SECOND = 28;
-    const THIRD = 29;
-    const SHIFTER = 30;
-    const LAST_SPORT = 31;
-    const MOVING = 32;
-    const STOPPED = 33;
-    const ESTIMATED_TOTAL = 34;
-    const ZONE_9 = 242;
-    const ZONE_8 = 243;
-    const ZONE_7 = 244;
-    const ZONE_6 = 245;
-    const ZONE_5 = 246;
-    const ZONE_4 = 247;
-    const ZONE_3 = 248;
-    const ZONE_2 = 249;
-    const ZONE_1 = 250;
+    case NoQualifier = 0;
+    case Instantaneous = 1;
+    case Average = 2;
+    case Lap = 3;
+    case Maximum = 4;
+    case MaximumAverage = 5;
+    case MaximumLap = 6;
+    case LastLap = 7;
+    case AverageLap = 8;
+    case ToDestination = 9;
+    case ToGo = 10;
+    case ToNext = 11;
+    case NextCoursePoint = 12;
+    case Total = 13;
+    case ThreeSecondAverage = 14;
+    case TenSecondAverage = 15;
+    case ThirtySecondAverage = 16;
+    case PercentMaximum = 17;
+    case PercentMaximumAverage = 18;
+    case LapPercentMaximum = 19;
+    case Elapsed = 20;
+    case Sunrise = 21;
+    case Sunset = 22;
+    case ComparedToVirtualPartner = 23;
+    case Maximum24h = 24;
+    case Minimum24h = 25;
+    case Minimum = 26;
+    case First = 27;
+    case Second = 28;
+    case Third = 29;
+    case Shifter = 30;
+    case LastSport = 31;
+    case Moving = 32;
+    case Stopped = 33;
+    case EstimatedTotal = 34;
+    case Zone9 = 242;
+    case Zone8 = 243;
+    case Zone7 = 244;
+    case Zone6 = 245;
+    case Zone5 = 246;
+    case Zone4 = 247;
+    case Zone3 = 248;
+    case Zone2 = 249;
+    case Zone1 = 250;
 }

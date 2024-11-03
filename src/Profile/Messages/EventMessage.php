@@ -49,7 +49,7 @@ final class EventMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Event', MesgNum::EVENT);
+        parent::__construct('Event', MesgNum::Event->value);
     }
 
     /**

@@ -13,12 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * AnalogWatchfaceLayout constants
- */
-final class AnalogWatchfaceLayout
+enum AnalogWatchfaceLayout: int
 {
-    const MINIMAL = 0;
-    const TRADITIONAL = 1;
-    const MODERN = 2;
+    case Minimal = 0;
+    case Traditional = 1;
+    case Modern = 2;
 }

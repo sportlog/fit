@@ -37,7 +37,7 @@ final class FileIdMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('FileId', MesgNum::FILE_ID);
+        parent::__construct('FileId', MesgNum::FileId->value);
     }
 
     /**

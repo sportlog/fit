@@ -33,7 +33,7 @@ final class ChronoShotDataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('ChronoShotData', MesgNum::CHRONO_SHOT_DATA);
+        parent::__construct('ChronoShotData', MesgNum::ChronoShotData->value);
     }
 
     /**

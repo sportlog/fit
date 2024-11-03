@@ -37,7 +37,7 @@ final class ScheduleMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Schedule', MesgNum::SCHEDULE);
+        parent::__construct('Schedule', MesgNum::Schedule->value);
     }
 
     /**

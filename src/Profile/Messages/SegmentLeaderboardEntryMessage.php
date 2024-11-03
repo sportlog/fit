@@ -37,7 +37,7 @@ final class SegmentLeaderboardEntryMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('SegmentLeaderboardEntry', MesgNum::SEGMENT_LEADERBOARD_ENTRY);
+        parent::__construct('SegmentLeaderboardEntry', MesgNum::SegmentLeaderboardEntry->value);
     }
 
     /**

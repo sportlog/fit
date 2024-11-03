@@ -43,7 +43,7 @@ final class GoalMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Goal', MesgNum::GOAL);
+        parent::__construct('Goal', MesgNum::Goal->value);
     }
 
     /**

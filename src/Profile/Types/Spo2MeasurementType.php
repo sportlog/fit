@@ -13,13 +13,10 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * Spo2MeasurementType constants
- */
-final class Spo2MeasurementType
+enum Spo2MeasurementType: int
 {
-    const OFF_WRIST = 0;
-    const SPOT_CHECK = 1;
-    const CONTINUOUS_CHECK = 2;
-    const PERIODIC = 3;
+    case OffWrist = 0;
+    case SpotCheck = 1;
+    case ContinuousCheck = 2;
+    case Periodic = 3;
 }

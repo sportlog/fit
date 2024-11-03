@@ -13,49 +13,46 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * BodyLocation constants
- */
-final class BodyLocation
+enum BodyLocation: int
 {
-    const LEFT_LEG = 0;
-    const LEFT_CALF = 1;
-    const LEFT_SHIN = 2;
-    const LEFT_HAMSTRING = 3;
-    const LEFT_QUAD = 4;
-    const LEFT_GLUTE = 5;
-    const RIGHT_LEG = 6;
-    const RIGHT_CALF = 7;
-    const RIGHT_SHIN = 8;
-    const RIGHT_HAMSTRING = 9;
-    const RIGHT_QUAD = 10;
-    const RIGHT_GLUTE = 11;
-    const TORSO_BACK = 12;
-    const LEFT_LOWER_BACK = 13;
-    const LEFT_UPPER_BACK = 14;
-    const RIGHT_LOWER_BACK = 15;
-    const RIGHT_UPPER_BACK = 16;
-    const TORSO_FRONT = 17;
-    const LEFT_ABDOMEN = 18;
-    const LEFT_CHEST = 19;
-    const RIGHT_ABDOMEN = 20;
-    const RIGHT_CHEST = 21;
-    const LEFT_ARM = 22;
-    const LEFT_SHOULDER = 23;
-    const LEFT_BICEP = 24;
-    const LEFT_TRICEP = 25;
-    const LEFT_BRACHIORADIALIS = 26;
-    const LEFT_FOREARM_EXTENSORS = 27;
-    const RIGHT_ARM = 28;
-    const RIGHT_SHOULDER = 29;
-    const RIGHT_BICEP = 30;
-    const RIGHT_TRICEP = 31;
-    const RIGHT_BRACHIORADIALIS = 32;
-    const RIGHT_FOREARM_EXTENSORS = 33;
-    const NECK = 34;
-    const THROAT = 35;
-    const WAIST_MID_BACK = 36;
-    const WAIST_FRONT = 37;
-    const WAIST_LEFT = 38;
-    const WAIST_RIGHT = 39;
+    case LeftLeg = 0;
+    case LeftCalf = 1;
+    case LeftShin = 2;
+    case LeftHamstring = 3;
+    case LeftQuad = 4;
+    case LeftGlute = 5;
+    case RightLeg = 6;
+    case RightCalf = 7;
+    case RightShin = 8;
+    case RightHamstring = 9;
+    case RightQuad = 10;
+    case RightGlute = 11;
+    case TorsoBack = 12;
+    case LeftLowerBack = 13;
+    case LeftUpperBack = 14;
+    case RightLowerBack = 15;
+    case RightUpperBack = 16;
+    case TorsoFront = 17;
+    case LeftAbdomen = 18;
+    case LeftChest = 19;
+    case RightAbdomen = 20;
+    case RightChest = 21;
+    case LeftArm = 22;
+    case LeftShoulder = 23;
+    case LeftBicep = 24;
+    case LeftTricep = 25;
+    case LeftBrachioradialis = 26;
+    case LeftForearmExtensors = 27;
+    case RightArm = 28;
+    case RightShoulder = 29;
+    case RightBicep = 30;
+    case RightTricep = 31;
+    case RightBrachioradialis = 32;
+    case RightForearmExtensors = 33;
+    case Neck = 34;
+    case Throat = 35;
+    case WaistMidBack = 36;
+    case WaistFront = 37;
+    case WaistLeft = 38;
+    case WaistRight = 39;
 }

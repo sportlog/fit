@@ -32,7 +32,7 @@ final class HsaEventMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('HsaEvent', MesgNum::HSA_EVENT);
+        parent::__construct('HsaEvent', MesgNum::HsaEvent->value);
     }
 
     /**

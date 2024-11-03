@@ -43,7 +43,7 @@ final class ConnectivityMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Connectivity', MesgNum::CONNECTIVITY);
+        parent::__construct('Connectivity', MesgNum::Connectivity->value);
     }
 
     /**

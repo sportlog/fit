@@ -13,9 +13,6 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * TimeIntoDay constants
- */
-final class TimeIntoDay
+enum TimeIntoDay
 {
 }

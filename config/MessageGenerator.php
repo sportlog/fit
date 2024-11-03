@@ -80,7 +80,6 @@ class MessageGenerator
 
             $file = $this->createFile();
             $namespace = $file->addNamespace('Sportlog\\FIT\\Profile');
-            //$profileType = $namespace->addEnum('ProfileType');
             $profileType = $namespace->addClass('ProfileType');
             foreach ($profileTypes as $value) {
                 // $profileType->addCase(str_replace(',', '', $value), $value);
@@ -175,16 +174,18 @@ class MessageGenerator
     {
         $file = $this->createFile();
         $namespace = $file->addNamespace('Sportlog\\FIT\\Profile\\Types');
-        $class = $namespace->addClass($classname);
+        $enum = $namespace->addEnum($classname);
 
-        $class->setFinal(true)
-            ->addComment("{$classname} constants");
+        // $class->setFinal(true)
+        //     ->addComment("{$classname} constants");
 
         foreach ($values as $key => $value) {
+            $constName = $this->snakeToPascal($key);
             // Some constants start with a digit, which is not allowed;
             // So prefix those with an underscore
-            $constName = strtoupper(is_numeric(substr($key, 0, 1)) ? "_{$key}" : $key);
-            $class->addConstant($constName, str_starts_with($value, '0x') ? hexdec($value) : intval($value));
+            $constName = is_numeric(substr($constName, 0, 1)) ? "_{$constName}" : $constName;
+            // $class->addConstant($constName, str_starts_with($value, '0x') ? hexdec($value) : intval($value));
+            $enum->addCase($constName, str_starts_with($value, '0x') ? hexdec($value) : intval($value));
         }
 
         return $file;
@@ -246,7 +247,7 @@ class MessageGenerator
 
         $paramName = 'globalMessageNumber';
         $method->addParameter($paramName)
-            ->setType(Type::INT);
+            ->setType(Type::Int);
 
         $method->addBody("return match (\$globalMessageNumber) {");
 
@@ -255,8 +256,7 @@ class MessageGenerator
         foreach ($uses as $use) {
             $file = str_replace('Message', '', $use);
             if ($cnt !== $i) {
-                $underscorize = strtoupper($this->underscorize($file));
-                $method->addBody(str_repeat(" ", 4) . "MesgNum::{$underscorize} => new {$use}(),");
+                $method->addBody(str_repeat(" ", 4) . "MesgNum::{$file}->value => new {$use}(),");
             } else {
                 $method->addBody(str_repeat(" ", 4) . "default => new {$use}()");
             }
@@ -313,11 +313,11 @@ class MessageGenerator
                 $phpTypes = [];
                 $phpProfileType = $this->getPhpTypeFromProfileType($profileType, $scale, (float)$offset);
                 $phpTypes[] = $phpProfileType;
-                if ($phpProfileType !== Type::MIXED && $phpProfileType !== DateTime::class && $phpProfileType !== Type::STRING) {
-                    $phpTypes[] = Type::ARRAY;
+                if ($phpProfileType !== Type::Mixed && $phpProfileType !== DateTime::class && $phpProfileType !== Type::String) {
+                    $phpTypes[] = Type::Array;
                 }
-                if ($phpProfileType !== Type::MIXED) {
-                    $phpTypes[] = Type::NULL;
+                if ($phpProfileType !== Type::Mixed) {
+                    $phpTypes[] = Type::Null;
                 }
 
                 /** @var ClassType $class */
@@ -370,7 +370,7 @@ class MessageGenerator
             ->addComment("Creates a new message instance")
             ->setBody('parent::__construct(?, ?);', [
                 $classId,
-                $classId === self::INVALID_MESSAGE ? -1 : new Literal(sprintf('MesgNum::%s', strtoupper($this->underscorize($classId))))
+                $classId === self::INVALID_MESSAGE ? -1 : new Literal(sprintf('MesgNum::%s->value', $classId))
             ]);
 
         return $class;
@@ -395,7 +395,7 @@ class MessageGenerator
     {
         switch ($profileType) {
             case ProfileType::BOOL:
-                return Type::BOOL;
+                return Type::Bool;
 
             case ProfileType::UINT8:
             case ProfileType::SINT8:
@@ -408,27 +408,27 @@ class MessageGenerator
                 // The raw value will be divided through the scale.
                 // So if scale is not the default (1.0), this might
                 // result in a float.
-                return $scale === 1.0 && $offset === 0.0 ? Type::INT : Type::FLOAT;
+                return $scale === 1.0 && $offset === 0.0 ? Type::Int : Type::Float;
 
             case ProfileType::LOCALDATETIME:
             case ProfileType::DATETIME:
                 return DateTime::class;
 
             case ProfileType::STRING:
-                return Type::STRING;
+                return Type::String;
 
             case ProfileType::SINT64:
             case ProfileType::FLOAT32:
             case ProfileType::FLOAT64:
             case ProfileType::UINT64:
             case ProfileType::UINT64Z:
-                return Type::FLOAT;
+                return Type::Float;
 
             case ProfileType::BYTE:
-                return Type::MIXED;
+                return Type::Mixed;
 
             default:
-                return Type::INT;
+                return Type::Int;
         }
     }
 
@@ -447,5 +447,10 @@ class MessageGenerator
 
         fwrite($handle, $content);
         fclose($handle);
+    }
+
+    private function snakeToPascal(string $input): string
+    {
+        return ucfirst(str_replace(' ', '', ucwords(str_replace('_', ' ', $input))));
     }
 }

@@ -33,7 +33,7 @@ final class SoftwareMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Software', MesgNum::SOFTWARE);
+        parent::__construct('Software', MesgNum::Software->value);
     }
 
     /**

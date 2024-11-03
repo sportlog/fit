@@ -13,12 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * ClimbProEvent constants
- */
-final class ClimbProEvent
+enum ClimbProEvent: int
 {
-    const APPROACH = 0;
-    const START = 1;
-    const COMPLETE = 2;
+    case Approach = 0;
+    case Start = 1;
+    case Complete = 2;
 }

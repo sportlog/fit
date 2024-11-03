@@ -13,12 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * MessageIndex constants
- */
-final class MessageIndex
+enum MessageIndex: int
 {
-    const SELECTED = 32768;
-    const RESERVED = 28672;
-    const MASK = 4095;
+    case Selected = 32768;
+    case Reserved = 28672;
+    case Mask = 4095;
 }

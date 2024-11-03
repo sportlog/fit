@@ -13,11 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * DisplayPower constants
- */
-final class DisplayPower
+enum DisplayPower: int
 {
-    const WATTS = 0;
-    const PERCENT_FTP = 1;
+    case Watts = 0;
+    case PercentFtp = 1;
 }

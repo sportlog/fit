@@ -13,31 +13,28 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * CardioExerciseName constants
- */
-final class CardioExerciseName
+enum CardioExerciseName: int
 {
-    const BOB_AND_WEAVE_CIRCLE = 0;
-    const WEIGHTED_BOB_AND_WEAVE_CIRCLE = 1;
-    const CARDIO_CORE_CRAWL = 2;
-    const WEIGHTED_CARDIO_CORE_CRAWL = 3;
-    const DOUBLE_UNDER = 4;
-    const WEIGHTED_DOUBLE_UNDER = 5;
-    const JUMP_ROPE = 6;
-    const WEIGHTED_JUMP_ROPE = 7;
-    const JUMP_ROPE_CROSSOVER = 8;
-    const WEIGHTED_JUMP_ROPE_CROSSOVER = 9;
-    const JUMP_ROPE_JOG = 10;
-    const WEIGHTED_JUMP_ROPE_JOG = 11;
-    const JUMPING_JACKS = 12;
-    const WEIGHTED_JUMPING_JACKS = 13;
-    const SKI_MOGULS = 14;
-    const WEIGHTED_SKI_MOGULS = 15;
-    const SPLIT_JACKS = 16;
-    const WEIGHTED_SPLIT_JACKS = 17;
-    const SQUAT_JACKS = 18;
-    const WEIGHTED_SQUAT_JACKS = 19;
-    const TRIPLE_UNDER = 20;
-    const WEIGHTED_TRIPLE_UNDER = 21;
+    case BobAndWeaveCircle = 0;
+    case WeightedBobAndWeaveCircle = 1;
+    case CardioCoreCrawl = 2;
+    case WeightedCardioCoreCrawl = 3;
+    case DoubleUnder = 4;
+    case WeightedDoubleUnder = 5;
+    case JumpRope = 6;
+    case WeightedJumpRope = 7;
+    case JumpRopeCrossover = 8;
+    case WeightedJumpRopeCrossover = 9;
+    case JumpRopeJog = 10;
+    case WeightedJumpRopeJog = 11;
+    case JumpingJacks = 12;
+    case WeightedJumpingJacks = 13;
+    case SkiMoguls = 14;
+    case WeightedSkiMoguls = 15;
+    case SplitJacks = 16;
+    case WeightedSplitJacks = 17;
+    case SquatJacks = 18;
+    case WeightedSquatJacks = 19;
+    case TripleUnder = 20;
+    case WeightedTripleUnder = 21;
 }

@@ -41,7 +41,7 @@ final class ExdDataConceptConfigurationMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('ExdDataConceptConfiguration', MesgNum::EXD_DATA_CONCEPT_CONFIGURATION);
+        parent::__construct('ExdDataConceptConfiguration', MesgNum::ExdDataConceptConfiguration->value);
     }
 
     /**

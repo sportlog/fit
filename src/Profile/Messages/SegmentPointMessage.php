@@ -37,7 +37,7 @@ final class SegmentPointMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('SegmentPoint', MesgNum::SEGMENT_POINT);
+        parent::__construct('SegmentPoint', MesgNum::SegmentPoint->value);
     }
 
     /**

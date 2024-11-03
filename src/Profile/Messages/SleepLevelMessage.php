@@ -32,7 +32,7 @@ final class SleepLevelMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('SleepLevel', MesgNum::SLEEP_LEVEL);
+        parent::__construct('SleepLevel', MesgNum::SleepLevel->value);
     }
 
     /**

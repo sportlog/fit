@@ -39,7 +39,7 @@ final class SegmentFileMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('SegmentFile', MesgNum::SEGMENT_FILE);
+        parent::__construct('SegmentFile', MesgNum::SegmentFile->value);
     }
 
     /**

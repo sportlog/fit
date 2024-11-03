@@ -35,7 +35,7 @@ final class ZonesTargetMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('ZonesTarget', MesgNum::ZONES_TARGET);
+        parent::__construct('ZonesTarget', MesgNum::ZonesTarget->value);
     }
 
     /**

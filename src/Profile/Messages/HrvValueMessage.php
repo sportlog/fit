@@ -32,7 +32,7 @@ final class HrvValueMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('HrvValue', MesgNum::HRV_VALUE);
+        parent::__construct('HrvValue', MesgNum::HrvValue->value);
     }
 
     /**

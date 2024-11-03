@@ -13,29 +13,26 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * File constants
- */
-final class File
+enum File: int
 {
-    const DEVICE = 1;
-    const SETTINGS = 2;
-    const SPORT = 3;
-    const ACTIVITY = 4;
-    const WORKOUT = 5;
-    const COURSE = 6;
-    const SCHEDULES = 7;
-    const WEIGHT = 9;
-    const TOTALS = 10;
-    const GOALS = 11;
-    const BLOOD_PRESSURE = 14;
-    const MONITORING_A = 15;
-    const ACTIVITY_SUMMARY = 20;
-    const MONITORING_DAILY = 28;
-    const MONITORING_B = 32;
-    const SEGMENT = 34;
-    const SEGMENT_LIST = 35;
-    const EXD_CONFIGURATION = 40;
-    const MFG_RANGE_MIN = 247;
-    const MFG_RANGE_MAX = 254;
+    case Device = 1;
+    case Settings = 2;
+    case Sport = 3;
+    case Activity = 4;
+    case Workout = 5;
+    case Course = 6;
+    case Schedules = 7;
+    case Weight = 9;
+    case Totals = 10;
+    case Goals = 11;
+    case BloodPressure = 14;
+    case MonitoringA = 15;
+    case ActivitySummary = 20;
+    case MonitoringDaily = 28;
+    case MonitoringB = 32;
+    case Segment = 34;
+    case SegmentList = 35;
+    case ExdConfiguration = 40;
+    case MfgRangeMin = 247;
+    case MfgRangeMax = 254;
 }

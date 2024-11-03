@@ -34,7 +34,7 @@ final class HsaHeartRateDataMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('HsaHeartRateData', MesgNum::HSA_HEART_RATE_DATA);
+        parent::__construct('HsaHeartRateData', MesgNum::HsaHeartRateData->value);
     }
 
     /**

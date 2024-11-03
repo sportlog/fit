@@ -32,7 +32,7 @@ final class OhrSettingsMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('OhrSettings', MesgNum::OHR_SETTINGS);
+        parent::__construct('OhrSettings', MesgNum::OhrSettings->value);
     }
 
     /**

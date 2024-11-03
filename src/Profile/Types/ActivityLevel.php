@@ -13,12 +13,9 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * ActivityLevel constants
- */
-final class ActivityLevel
+enum ActivityLevel: int
 {
-    const LOW = 0;
-    const MEDIUM = 1;
-    const HIGH = 2;
+    case Low = 0;
+    case Medium = 1;
+    case High = 2;
 }

@@ -33,7 +33,7 @@ final class SportMessage extends Message
      */
     public function __construct()
     {
-        parent::__construct('Sport', MesgNum::SPORT);
+        parent::__construct('Sport', MesgNum::Sport->value);
     }
 
     /**

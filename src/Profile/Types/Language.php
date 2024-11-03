@@ -13,48 +13,45 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * Language constants
- */
-final class Language
+enum Language: int
 {
-    const ENGLISH = 0;
-    const FRENCH = 1;
-    const ITALIAN = 2;
-    const GERMAN = 3;
-    const SPANISH = 4;
-    const CROATIAN = 5;
-    const CZECH = 6;
-    const DANISH = 7;
-    const DUTCH = 8;
-    const FINNISH = 9;
-    const GREEK = 10;
-    const HUNGARIAN = 11;
-    const NORWEGIAN = 12;
-    const POLISH = 13;
-    const PORTUGUESE = 14;
-    const SLOVAKIAN = 15;
-    const SLOVENIAN = 16;
-    const SWEDISH = 17;
-    const RUSSIAN = 18;
-    const TURKISH = 19;
-    const LATVIAN = 20;
-    const UKRAINIAN = 21;
-    const ARABIC = 22;
-    const FARSI = 23;
-    const BULGARIAN = 24;
-    const ROMANIAN = 25;
-    const CHINESE = 26;
-    const JAPANESE = 27;
-    const KOREAN = 28;
-    const TAIWANESE = 29;
-    const THAI = 30;
-    const HEBREW = 31;
-    const BRAZILIAN_PORTUGUESE = 32;
-    const INDONESIAN = 33;
-    const MALAYSIAN = 34;
-    const VIETNAMESE = 35;
-    const BURMESE = 36;
-    const MONGOLIAN = 37;
-    const CUSTOM = 254;
+    case English = 0;
+    case French = 1;
+    case Italian = 2;
+    case German = 3;
+    case Spanish = 4;
+    case Croatian = 5;
+    case Czech = 6;
+    case Danish = 7;
+    case Dutch = 8;
+    case Finnish = 9;
+    case Greek = 10;
+    case Hungarian = 11;
+    case Norwegian = 12;
+    case Polish = 13;
+    case Portuguese = 14;
+    case Slovakian = 15;
+    case Slovenian = 16;
+    case Swedish = 17;
+    case Russian = 18;
+    case Turkish = 19;
+    case Latvian = 20;
+    case Ukrainian = 21;
+    case Arabic = 22;
+    case Farsi = 23;
+    case Bulgarian = 24;
+    case Romanian = 25;
+    case Chinese = 26;
+    case Japanese = 27;
+    case Korean = 28;
+    case Taiwanese = 29;
+    case Thai = 30;
+    case Hebrew = 31;
+    case BrazilianPortuguese = 32;
+    case Indonesian = 33;
+    case Malaysian = 34;
+    case Vietnamese = 35;
+    case Burmese = 36;
+    case Mongolian = 37;
+    case Custom = 254;
 }

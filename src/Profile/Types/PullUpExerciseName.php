@@ -13,48 +13,45 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * PullUpExerciseName constants
- */
-final class PullUpExerciseName
+enum PullUpExerciseName: int
 {
-    const BANDED_PULL_UPS = 0;
-    const _30_DEGREE_LAT_PULLDOWN = 1;
-    const BAND_ASSISTED_CHIN_UP = 2;
-    const CLOSE_GRIP_CHIN_UP = 3;
-    const WEIGHTED_CLOSE_GRIP_CHIN_UP = 4;
-    const CLOSE_GRIP_LAT_PULLDOWN = 5;
-    const CROSSOVER_CHIN_UP = 6;
-    const WEIGHTED_CROSSOVER_CHIN_UP = 7;
-    const EZ_BAR_PULLOVER = 8;
-    const HANGING_HURDLE = 9;
-    const WEIGHTED_HANGING_HURDLE = 10;
-    const KNEELING_LAT_PULLDOWN = 11;
-    const KNEELING_UNDERHAND_GRIP_LAT_PULLDOWN = 12;
-    const LAT_PULLDOWN = 13;
-    const MIXED_GRIP_CHIN_UP = 14;
-    const WEIGHTED_MIXED_GRIP_CHIN_UP = 15;
-    const MIXED_GRIP_PULL_UP = 16;
-    const WEIGHTED_MIXED_GRIP_PULL_UP = 17;
-    const REVERSE_GRIP_PULLDOWN = 18;
-    const STANDING_CABLE_PULLOVER = 19;
-    const STRAIGHT_ARM_PULLDOWN = 20;
-    const SWISS_BALL_EZ_BAR_PULLOVER = 21;
-    const TOWEL_PULL_UP = 22;
-    const WEIGHTED_TOWEL_PULL_UP = 23;
-    const WEIGHTED_PULL_UP = 24;
-    const WIDE_GRIP_LAT_PULLDOWN = 25;
-    const WIDE_GRIP_PULL_UP = 26;
-    const WEIGHTED_WIDE_GRIP_PULL_UP = 27;
-    const BURPEE_PULL_UP = 28;
-    const WEIGHTED_BURPEE_PULL_UP = 29;
-    const JUMPING_PULL_UPS = 30;
-    const WEIGHTED_JUMPING_PULL_UPS = 31;
-    const KIPPING_PULL_UP = 32;
-    const WEIGHTED_KIPPING_PULL_UP = 33;
-    const L_PULL_UP = 34;
-    const WEIGHTED_L_PULL_UP = 35;
-    const SUSPENDED_CHIN_UP = 36;
-    const WEIGHTED_SUSPENDED_CHIN_UP = 37;
-    const PULL_UP = 38;
+    case BandedPullUps = 0;
+    case _30DegreeLatPulldown = 1;
+    case BandAssistedChinUp = 2;
+    case CloseGripChinUp = 3;
+    case WeightedCloseGripChinUp = 4;
+    case CloseGripLatPulldown = 5;
+    case CrossoverChinUp = 6;
+    case WeightedCrossoverChinUp = 7;
+    case EzBarPullover = 8;
+    case HangingHurdle = 9;
+    case WeightedHangingHurdle = 10;
+    case KneelingLatPulldown = 11;
+    case KneelingUnderhandGripLatPulldown = 12;
+    case LatPulldown = 13;
+    case MixedGripChinUp = 14;
+    case WeightedMixedGripChinUp = 15;
+    case MixedGripPullUp = 16;
+    case WeightedMixedGripPullUp = 17;
+    case ReverseGripPulldown = 18;
+    case StandingCablePullover = 19;
+    case StraightArmPulldown = 20;
+    case SwissBallEzBarPullover = 21;
+    case TowelPullUp = 22;
+    case WeightedTowelPullUp = 23;
+    case WeightedPullUp = 24;
+    case WideGripLatPulldown = 25;
+    case WideGripPullUp = 26;
+    case WeightedWideGripPullUp = 27;
+    case BurpeePullUp = 28;
+    case WeightedBurpeePullUp = 29;
+    case JumpingPullUps = 30;
+    case WeightedJumpingPullUps = 31;
+    case KippingPullUp = 32;
+    case WeightedKippingPullUp = 33;
+    case LPullUp = 34;
+    case WeightedLPullUp = 35;
+    case SuspendedChinUp = 36;
+    case WeightedSuspendedChinUp = 37;
+    case PullUp = 38;
 }

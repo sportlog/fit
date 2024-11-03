@@ -13,42 +13,39 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * ShoulderStabilityExerciseName constants
- */
-final class ShoulderStabilityExerciseName
+enum ShoulderStabilityExerciseName: int
 {
-    const _90_DEGREE_CABLE_EXTERNAL_ROTATION = 0;
-    const BAND_EXTERNAL_ROTATION = 1;
-    const BAND_INTERNAL_ROTATION = 2;
-    const BENT_ARM_LATERAL_RAISE_AND_EXTERNAL_ROTATION = 3;
-    const CABLE_EXTERNAL_ROTATION = 4;
-    const DUMBBELL_FACE_PULL_WITH_EXTERNAL_ROTATION = 5;
-    const FLOOR_I_RAISE = 6;
-    const WEIGHTED_FLOOR_I_RAISE = 7;
-    const FLOOR_T_RAISE = 8;
-    const WEIGHTED_FLOOR_T_RAISE = 9;
-    const FLOOR_Y_RAISE = 10;
-    const WEIGHTED_FLOOR_Y_RAISE = 11;
-    const INCLINE_I_RAISE = 12;
-    const WEIGHTED_INCLINE_I_RAISE = 13;
-    const INCLINE_L_RAISE = 14;
-    const WEIGHTED_INCLINE_L_RAISE = 15;
-    const INCLINE_T_RAISE = 16;
-    const WEIGHTED_INCLINE_T_RAISE = 17;
-    const INCLINE_W_RAISE = 18;
-    const WEIGHTED_INCLINE_W_RAISE = 19;
-    const INCLINE_Y_RAISE = 20;
-    const WEIGHTED_INCLINE_Y_RAISE = 21;
-    const LYING_EXTERNAL_ROTATION = 22;
-    const SEATED_DUMBBELL_EXTERNAL_ROTATION = 23;
-    const STANDING_L_RAISE = 24;
-    const SWISS_BALL_I_RAISE = 25;
-    const WEIGHTED_SWISS_BALL_I_RAISE = 26;
-    const SWISS_BALL_T_RAISE = 27;
-    const WEIGHTED_SWISS_BALL_T_RAISE = 28;
-    const SWISS_BALL_W_RAISE = 29;
-    const WEIGHTED_SWISS_BALL_W_RAISE = 30;
-    const SWISS_BALL_Y_RAISE = 31;
-    const WEIGHTED_SWISS_BALL_Y_RAISE = 32;
+    case _90DegreeCableExternalRotation = 0;
+    case BandExternalRotation = 1;
+    case BandInternalRotation = 2;
+    case BentArmLateralRaiseAndExternalRotation = 3;
+    case CableExternalRotation = 4;
+    case DumbbellFacePullWithExternalRotation = 5;
+    case FloorIRaise = 6;
+    case WeightedFloorIRaise = 7;
+    case FloorTRaise = 8;
+    case WeightedFloorTRaise = 9;
+    case FloorYRaise = 10;
+    case WeightedFloorYRaise = 11;
+    case InclineIRaise = 12;
+    case WeightedInclineIRaise = 13;
+    case InclineLRaise = 14;
+    case WeightedInclineLRaise = 15;
+    case InclineTRaise = 16;
+    case WeightedInclineTRaise = 17;
+    case InclineWRaise = 18;
+    case WeightedInclineWRaise = 19;
+    case InclineYRaise = 20;
+    case WeightedInclineYRaise = 21;
+    case LyingExternalRotation = 22;
+    case SeatedDumbbellExternalRotation = 23;
+    case StandingLRaise = 24;
+    case SwissBallIRaise = 25;
+    case WeightedSwissBallIRaise = 26;
+    case SwissBallTRaise = 27;
+    case WeightedSwissBallTRaise = 28;
+    case SwissBallWRaise = 29;
+    case WeightedSwissBallWRaise = 30;
+    case SwissBallYRaise = 31;
+    case WeightedSwissBallYRaise = 32;
 }

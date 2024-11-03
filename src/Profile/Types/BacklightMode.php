@@ -13,16 +13,13 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * BacklightMode constants
- */
-final class BacklightMode
+enum BacklightMode: int
 {
-    const OFF = 0;
-    const MANUAL = 1;
-    const KEY_AND_MESSAGES = 2;
-    const AUTO_BRIGHTNESS = 3;
-    const SMART_NOTIFICATIONS = 4;
-    const KEY_AND_MESSAGES_NIGHT = 5;
-    const KEY_AND_MESSAGES_AND_SMART_NOTIFICATIONS = 6;
+    case Off = 0;
+    case Manual = 1;
+    case KeyAndMessages = 2;
+    case AutoBrightness = 3;
+    case SmartNotifications = 4;
+    case KeyAndMessagesNight = 5;
+    case KeyAndMessagesAndSmartNotifications = 6;
 }

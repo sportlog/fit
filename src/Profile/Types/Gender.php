@@ -13,11 +13,8 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT\Profile\Types;
 
-/**
- * Gender constants
- */
-final class Gender
+enum Gender: int
 {
-    const FEMALE = 0;
-    const MALE = 1;
+    case Female = 0;
+    case Male = 1;
 }
