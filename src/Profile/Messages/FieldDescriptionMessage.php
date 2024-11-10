@@ -14,29 +14,29 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * FieldDescriptionMessage message
  */
-#[Field('DeveloperDataIndex', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('FieldDefinitionNumber', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('FitBaseTypeId', 2, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::FITBASETYPE)]
-#[Field('FieldName', 3, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('Array', 4, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('Components', 5, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('Scale', 6, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('Offset', 7, FitBaseType::SINT8, 1.0, 0.0, '', false, ProfileType::SINT8)]
-#[Field('Units', 8, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('Bits', 9, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('Accumulate', 10, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('FitBaseUnitId', 13, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::FITBASEUNIT)]
-#[Field('NativeMesgNum', 14, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESGNUM)]
-#[Field('NativeFieldNum', 15, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('DeveloperDataIndex', 0, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('FieldDefinitionNumber', 1, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('FitBaseTypeId', 2, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::FITBASETYPE)]
+#[Field('FieldName', 3, FitBaseType::String->value, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('Array', 4, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('Components', 5, FitBaseType::String->value, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('Scale', 6, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('Offset', 7, FitBaseType::Sint8->value, 1.0, 0.0, '', false, ProfileType::SINT8)]
+#[Field('Units', 8, FitBaseType::String->value, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('Bits', 9, FitBaseType::String->value, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('Accumulate', 10, FitBaseType::String->value, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('FitBaseUnitId', 13, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::FITBASEUNIT)]
+#[Field('NativeMesgNum', 14, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::MESGNUM)]
+#[Field('NativeFieldNum', 15, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
 final class FieldDescriptionMessage extends Message
 {
     /**

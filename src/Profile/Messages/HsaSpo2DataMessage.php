@@ -14,19 +14,19 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * HsaSpo2DataMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('ProcessingInterval', 0, FitBaseType::UINT16, 1.0, 0.0, 's', false, ProfileType::UINT16)]
-#[Field('ReadingSpo2', 1, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
-#[Field('Confidence', 2, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('Timestamp', 253, FitBaseType::Uint32->value, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
+#[Field('ProcessingInterval', 0, FitBaseType::Uint16->value, 1.0, 0.0, 's', false, ProfileType::UINT16)]
+#[Field('ReadingSpo2', 1, FitBaseType::Uint8->value, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
+#[Field('Confidence', 2, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
 final class HsaSpo2DataMessage extends Message
 {
     /**

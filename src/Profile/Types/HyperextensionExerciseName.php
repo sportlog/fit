@@ -54,5 +54,4 @@ enum HyperextensionExerciseName: int
     case WeightedSwissBallOppositeArmAndLegLift = 36;
     case SupermanOnSwissBall = 37;
     case Cobra = 38;
-    case SupineFloorBarre = 39;
 }

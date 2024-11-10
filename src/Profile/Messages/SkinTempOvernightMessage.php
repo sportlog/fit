@@ -14,20 +14,20 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * SkinTempOvernightMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('LocalTimestamp', 0, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::LOCALDATETIME)]
-#[Field('AverageDeviation', 1, FitBaseType::FLOAT32, 1.0, 0.0, '', false, ProfileType::FLOAT32)]
-#[Field('Average7DayDeviation', 2, FitBaseType::FLOAT32, 1.0, 0.0, '', false, ProfileType::FLOAT32)]
-#[Field('NightlyValue', 4, FitBaseType::FLOAT32, 1.0, 0.0, '', false, ProfileType::FLOAT32)]
+#[Field('Timestamp', 253, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('LocalTimestamp', 0, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::LOCALDATETIME)]
+#[Field('AverageDeviation', 1, FitBaseType::Float32->value, 1.0, 0.0, '', false, ProfileType::FLOAT32)]
+#[Field('Average7DayDeviation', 2, FitBaseType::Float32->value, 1.0, 0.0, '', false, ProfileType::FLOAT32)]
+#[Field('NightlyValue', 4, FitBaseType::Float32->value, 1.0, 0.0, '', false, ProfileType::FLOAT32)]
 final class SkinTempOvernightMessage extends Message
 {
     /**

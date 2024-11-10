@@ -93,7 +93,7 @@ class GPXWriter
     {
         $items = $messages->getMessages($msgNumber);
         if (count($items) !== 1) {
-            throw new Exception("expected exactly one message of type {$msgNumber}");
+            throw new Exception("expected exactly one message of type {$msgNumber->value}");
         }
         return $items[0];
     }

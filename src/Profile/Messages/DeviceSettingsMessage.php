@@ -14,39 +14,48 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * DeviceSettingsMessage message
  */
-#[Field('ActiveTimeZone', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('UtcOffset', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('TimeOffset', 2, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::UINT32)]
-#[Field('TimeMode', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::TIMEMODE)]
-#[Field('TimeZoneOffset', 5, FitBaseType::SINT8, 4.0, 0.0, 'hr', false, ProfileType::SINT8)]
-#[Field('BacklightMode', 12, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BACKLIGHTMODE)]
-#[Field('ActivityTrackerEnabled', 36, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-#[Field('ClockTime', 39, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('PagesEnabled', 40, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('MoveAlertEnabled', 46, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-#[Field('DateMode', 47, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DATEMODE)]
-#[Field('DisplayOrientation', 55, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYORIENTATION)]
-#[Field('MountingSide', 56, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SIDE)]
-#[Field('DefaultPage', 57, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('AutosyncMinSteps', 58, FitBaseType::UINT16, 1.0, 0.0, 'steps', false, ProfileType::UINT16)]
-#[Field('AutosyncMinTime', 59, FitBaseType::UINT16, 1.0, 0.0, 'minutes', false, ProfileType::UINT16)]
-#[Field('LactateThresholdAutodetectEnabled', 80, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-#[Field('BleAutoUploadEnabled', 86, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-#[Field('AutoSyncFrequency', 89, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::AUTOSYNCFREQUENCY)]
-#[Field('AutoActivityDetect', 90, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::AUTOACTIVITYDETECT)]
-#[Field('NumberOfScreens', 94, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('SmartNotificationDisplayOrientation', 95, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYORIENTATION)]
-#[Field('TapInterface', 134, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SWITCH)]
-#[Field('TapSensitivity', 174, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::TAPSENSITIVITY)]
+#[Field('ActiveTimeZone', 0, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('UtcOffset', 1, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('TimeOffset', 2, FitBaseType::Uint32->value, 1.0, 0.0, 's', false, ProfileType::UINT32)]
+#[Field('TimeMode', 4, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::TIMEMODE)]
+#[Field('TimeZoneOffset', 5, FitBaseType::Sint8->value, 4.0, 0.0, 'hr', false, ProfileType::SINT8)]
+#[Field('BacklightMode', 12, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::BACKLIGHTMODE)]
+#[Field('ActivityTrackerEnabled', 36, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::BOOL)]
+#[Field('ClockTime', 39, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('PagesEnabled', 40, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('MoveAlertEnabled', 46, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::BOOL)]
+#[Field('DateMode', 47, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::DATEMODE)]
+#[Field('DisplayOrientation', 55, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::DISPLAYORIENTATION)]
+#[Field('MountingSide', 56, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::SIDE)]
+#[Field('DefaultPage', 57, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('AutosyncMinSteps', 58, FitBaseType::Uint16->value, 1.0, 0.0, 'steps', false, ProfileType::UINT16)]
+#[Field('AutosyncMinTime', 59, FitBaseType::Uint16->value, 1.0, 0.0, 'minutes', false, ProfileType::UINT16)]
+#[Field('LactateThresholdAutodetectEnabled', 80, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::BOOL)]
+#[Field('BleAutoUploadEnabled', 86, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::BOOL)]
+#[Field('AutoSyncFrequency', 89, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::AUTOSYNCFREQUENCY)]
+#[Field('AutoActivityDetect', 90, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::AUTOACTIVITYDETECT)]
+#[Field('NumberOfScreens', 94, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field(
+    'SmartNotificationDisplayOrientation',
+    95,
+    FitBaseType::Enum->value,
+    1.0,
+    0.0,
+    '',
+    false,
+    ProfileType::DISPLAYORIENTATION,
+)]
+#[Field('TapInterface', 134, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::SWITCH)]
+#[Field('TapSensitivity', 174, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::TAPSENSITIVITY)]
 final class DeviceSettingsMessage extends Message
 {
     /**

@@ -14,21 +14,21 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * MonitoringInfoMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('LocalTimestamp', 0, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::LOCALDATETIME)]
-#[Field('ActivityType', 1, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ACTIVITYTYPE)]
-#[Field('CyclesToDistance', 3, FitBaseType::UINT16, 5000.0, 0.0, 'm/cycle', false, ProfileType::UINT16)]
-#[Field('CyclesToCalories', 4, FitBaseType::UINT16, 5000.0, 0.0, 'kcal/cycle', false, ProfileType::UINT16)]
-#[Field('RestingMetabolicRate', 5, FitBaseType::UINT16, 1.0, 0.0, 'kcal / day', false, ProfileType::UINT16)]
+#[Field('Timestamp', 253, FitBaseType::Uint32->value, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
+#[Field('LocalTimestamp', 0, FitBaseType::Uint32->value, 1.0, 0.0, 's', false, ProfileType::LOCALDATETIME)]
+#[Field('ActivityType', 1, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::ACTIVITYTYPE)]
+#[Field('CyclesToDistance', 3, FitBaseType::Uint16->value, 5000.0, 0.0, 'm/cycle', false, ProfileType::UINT16)]
+#[Field('CyclesToCalories', 4, FitBaseType::Uint16->value, 5000.0, 0.0, 'kcal/cycle', false, ProfileType::UINT16)]
+#[Field('RestingMetabolicRate', 5, FitBaseType::Uint16->value, 1.0, 0.0, 'kcal / day', false, ProfileType::UINT16)]
 final class MonitoringInfoMessage extends Message
 {
     /**

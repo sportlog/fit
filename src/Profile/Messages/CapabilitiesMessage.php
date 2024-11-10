@@ -14,19 +14,19 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * CapabilitiesMessage message
  */
-#[Field('Languages', 0, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-#[Field('Sports', 1, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::SPORTBITS0)]
-#[Field('WorkoutsSupported', 21, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::WORKOUTCAPABILITIES)]
-#[Field('ConnectivitySupported', 23, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::CONNECTIVITYCAPABILITIES)]
+#[Field('Languages', 0, FitBaseType::Uint8z->value, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
+#[Field('Sports', 1, FitBaseType::Uint8z->value, 1.0, 0.0, '', false, ProfileType::SPORTBITS0)]
+#[Field('WorkoutsSupported', 21, FitBaseType::Uint32z->value, 1.0, 0.0, '', false, ProfileType::WORKOUTCAPABILITIES)]
+#[Field('ConnectivitySupported', 23, FitBaseType::Uint32z->value, 1.0, 0.0, '', false, ProfileType::CONNECTIVITYCAPABILITIES)]
 final class CapabilitiesMessage extends Message
 {
     /**

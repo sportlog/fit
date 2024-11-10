@@ -14,34 +14,34 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * SplitMessage message
  */
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('SplitType', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SPLITTYPE)]
-#[Field('TotalElapsedTime', 1, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
-#[Field('TotalTimerTime', 2, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
-#[Field('TotalDistance', 3, FitBaseType::UINT32, 100.0, 0.0, 'm', false, ProfileType::UINT32)]
-#[Field('AvgSpeed', 4, FitBaseType::UINT32, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
-#[Field('StartTime', 9, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('TotalAscent', 13, FitBaseType::UINT16, 1.0, 0.0, 'm', false, ProfileType::UINT16)]
-#[Field('TotalDescent', 14, FitBaseType::UINT16, 1.0, 0.0, 'm', false, ProfileType::UINT16)]
-#[Field('StartPositionLat', 21, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32)]
-#[Field('StartPositionLong', 22, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32)]
-#[Field('EndPositionLat', 23, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32)]
-#[Field('EndPositionLong', 24, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32)]
-#[Field('MaxSpeed', 25, FitBaseType::UINT32, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
-#[Field('AvgVertSpeed', 26, FitBaseType::SINT32, 1000.0, 0.0, 'm/s', false, ProfileType::SINT32)]
-#[Field('EndTime', 27, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('TotalCalories', 28, FitBaseType::UINT32, 1.0, 0.0, 'kcal', false, ProfileType::UINT32)]
-#[Field('StartElevation', 74, FitBaseType::UINT32, 5.0, 500.0, 'm', false, ProfileType::UINT32)]
-#[Field('TotalMovingTime', 110, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
+#[Field('MessageIndex', 254, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('SplitType', 0, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::SPLITTYPE)]
+#[Field('TotalElapsedTime', 1, FitBaseType::Uint32->value, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
+#[Field('TotalTimerTime', 2, FitBaseType::Uint32->value, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
+#[Field('TotalDistance', 3, FitBaseType::Uint32->value, 100.0, 0.0, 'm', false, ProfileType::UINT32)]
+#[Field('AvgSpeed', 4, FitBaseType::Uint32->value, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
+#[Field('StartTime', 9, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('TotalAscent', 13, FitBaseType::Uint16->value, 1.0, 0.0, 'm', false, ProfileType::UINT16)]
+#[Field('TotalDescent', 14, FitBaseType::Uint16->value, 1.0, 0.0, 'm', false, ProfileType::UINT16)]
+#[Field('StartPositionLat', 21, FitBaseType::Sint32->value, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32)]
+#[Field('StartPositionLong', 22, FitBaseType::Sint32->value, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32)]
+#[Field('EndPositionLat', 23, FitBaseType::Sint32->value, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32)]
+#[Field('EndPositionLong', 24, FitBaseType::Sint32->value, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32)]
+#[Field('MaxSpeed', 25, FitBaseType::Uint32->value, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
+#[Field('AvgVertSpeed', 26, FitBaseType::Sint32->value, 1000.0, 0.0, 'm/s', false, ProfileType::SINT32)]
+#[Field('EndTime', 27, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('TotalCalories', 28, FitBaseType::Uint32->value, 1.0, 0.0, 'kcal', false, ProfileType::UINT32)]
+#[Field('StartElevation', 74, FitBaseType::Uint32->value, 5.0, 500.0, 'm', false, ProfileType::UINT32)]
+#[Field('TotalMovingTime', 110, FitBaseType::Uint32->value, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
 final class SplitMessage extends Message
 {
     /**

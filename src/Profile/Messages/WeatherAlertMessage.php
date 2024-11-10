@@ -14,21 +14,21 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * WeatherAlertMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('ReportId', 0, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('IssueTime', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('ExpireTime', 2, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('Severity', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WEATHERSEVERITY)]
-#[Field('Type', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WEATHERSEVERETYPE)]
+#[Field('Timestamp', 253, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('ReportId', 0, FitBaseType::String->value, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('IssueTime', 1, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('ExpireTime', 2, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('Severity', 3, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::WEATHERSEVERITY)]
+#[Field('Type', 4, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::WEATHERSEVERETYPE)]
 final class WeatherAlertMessage extends Message
 {
     /**

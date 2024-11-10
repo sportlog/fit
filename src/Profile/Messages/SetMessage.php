@@ -14,26 +14,26 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * SetMessage message
  */
-#[Field('Timestamp', 254, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('Duration', 0, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
-#[Field('Repetitions', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('Weight', 4, FitBaseType::UINT16, 16.0, 0.0, 'kg', false, ProfileType::UINT16)]
-#[Field('SetType', 5, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::SETTYPE)]
-#[Field('StartTime', 6, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('Category', 7, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::EXERCISECATEGORY)]
-#[Field('CategorySubtype', 8, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('WeightDisplayUnit', 9, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::FITBASEUNIT)]
-#[Field('MessageIndex', 10, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('WktStepIndex', 11, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('Timestamp', 254, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('Duration', 0, FitBaseType::Uint32->value, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
+#[Field('Repetitions', 3, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('Weight', 4, FitBaseType::Uint16->value, 16.0, 0.0, 'kg', false, ProfileType::UINT16)]
+#[Field('SetType', 5, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::SETTYPE)]
+#[Field('StartTime', 6, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('Category', 7, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::EXERCISECATEGORY)]
+#[Field('CategorySubtype', 8, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('WeightDisplayUnit', 9, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::FITBASEUNIT)]
+#[Field('MessageIndex', 10, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('WktStepIndex', 11, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
 final class SetMessage extends Message
 {
     /**

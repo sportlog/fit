@@ -12,7 +12,7 @@ namespace Sportlog\FIT\Profile;
 
 use Attribute;
 use Exception;
-use Sportlog\FIT\FitBaseType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 
 /**
  * Describes a message field.
@@ -69,7 +69,7 @@ final class Field
     /**
      * The field type.
      *
-     * @return integer
+     * @return int
      */
     public function getType(): int
     {
@@ -151,10 +151,10 @@ final class Field
     public function isNumeric(): bool
     {
         return match ($this->getType()) {
-            FitBaseType::ENUM, FitBaseType::STRING => false,
-            FitBaseType::SINT8, FitBaseType::UINT8, FitBaseType::UINT8Z, FitBaseType::SINT16, FitBaseType::UINT16,
-            FitBaseType::UINT16Z, FitBaseType::SINT32, FitBaseType::UINT32, FitBaseType::UINT32Z, FitBaseType::FLOAT32,
-            FitBaseType::SINT64, FitBaseType::UINT64, FitBaseType::UINT64Z, FitBaseType::FLOAT64, FitBaseType::BYTE => true,
+            FitBaseType::Enum->value, FitBaseType::String->value => false,
+            FitBaseType::Sint8->value, FitBaseType::Uint8->value, FitBaseType::Uint8z->value, FitBaseType::Sint16->value, FitBaseType::Uint16->value,
+            FitBaseType::Uint16z->value, FitBaseType::Sint32->value, FitBaseType::Uint32->value, FitBaseType::Uint32z->value, FitBaseType::Float32->value,
+            FitBaseType::Sint64->value, FitBaseType::Uint64->value, FitBaseType::Uint64z->value, FitBaseType::Float64->value, FitBaseType::Byte->value => true,
             default => throw new Exception("IsNumeric - Unexpected Fit Type" . $this->getType())
         };
     }

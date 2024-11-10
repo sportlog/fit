@@ -14,23 +14,23 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * SdmProfileMessage message
  */
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('Enabled', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-#[Field('SdmAntId', 1, FitBaseType::UINT16Z, 1.0, 0.0, '', false, ProfileType::UINT16Z)]
-#[Field('SdmCalFactor', 2, FitBaseType::UINT16, 10.0, 0.0, '%', false, ProfileType::UINT16)]
-#[Field('Odometer', 3, FitBaseType::UINT32, 100.0, 0.0, 'm', false, ProfileType::UINT32)]
-#[Field('SpeedSource', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-#[Field('SdmAntIdTransType', 5, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-#[Field('OdometerRollover', 7, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('MessageIndex', 254, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('Enabled', 0, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::BOOL)]
+#[Field('SdmAntId', 1, FitBaseType::Uint16z->value, 1.0, 0.0, '', false, ProfileType::UINT16Z)]
+#[Field('SdmCalFactor', 2, FitBaseType::Uint16->value, 10.0, 0.0, '%', false, ProfileType::UINT16)]
+#[Field('Odometer', 3, FitBaseType::Uint32->value, 100.0, 0.0, 'm', false, ProfileType::UINT32)]
+#[Field('SpeedSource', 4, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::BOOL)]
+#[Field('SdmAntIdTransType', 5, FitBaseType::Uint8z->value, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
+#[Field('OdometerRollover', 7, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
 final class SdmProfileMessage extends Message
 {
     /**

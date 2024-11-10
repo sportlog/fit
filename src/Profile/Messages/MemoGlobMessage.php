@@ -14,21 +14,21 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * MemoGlobMessage message
  */
-#[Field('PartIndex', 250, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('Memo', 0, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-#[Field('MesgNum', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESGNUM)]
-#[Field('ParentIndex', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('FieldNum', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('Data', 4, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
+#[Field('PartIndex', 250, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('Memo', 0, FitBaseType::Byte->value, 1.0, 0.0, '', false, ProfileType::BYTE)]
+#[Field('MesgNum', 1, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::MESGNUM)]
+#[Field('ParentIndex', 2, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('FieldNum', 3, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('Data', 4, FitBaseType::Uint8z->value, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
 final class MemoGlobMessage extends Message
 {
     /**

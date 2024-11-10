@@ -13,9 +13,8 @@ namespace Sportlog\FIT\Generator;
 use DateTime;
 use Exception;
 use Nette\PhpGenerator\{ClassType, Literal, PhpFile, PsrPrinter, Type};
-use ReflectionClass;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\{Types\MesgNum, Field, Message, ProfileType};
+use Sportlog\FIT\Profile\Types\FitBaseType;
 
 /**
  * A quick & dirty, hacky, ugly generator for all messages defined
@@ -131,11 +130,18 @@ class MessageGenerator
             }
 
             if (str_starts_with($line, ",")) {
+                // Value for a type
+
                 if ($currentType === null) {
                     throw new Exception('type missing');
                 }
 
                 $def = explode(",", $line);
+
+                // ,,cable_crunch,1,
+                if (str_starts_with($def[4], "Deprecated")) {
+                    continue;
+                }
 
                 $currentTypeValues[$def[2]] = $def[3];
             } else {
@@ -274,11 +280,11 @@ class MessageGenerator
         $class = null;
         $files = [];
 
-        $fitBaseTypeReflection = new ReflectionClass(FitBaseType::class);
-        $fitBaseTypeConstants = [];
-        foreach ($fitBaseTypeReflection->getReflectionConstants() as $fitBaseTypeReflectionConstant) {
-            $fitBaseTypeConstants[$fitBaseTypeReflectionConstant->getValue()] = $fitBaseTypeReflectionConstant->getName();
-        }
+        // $fitBaseTypeReflection = new ReflectionClass(FitBaseType::class);
+        // $fitBaseTypeConstants = [];
+        // foreach ($fitBaseTypeReflection->getReflectionConstants() as $fitBaseTypeReflectionConstant) {
+        //     $fitBaseTypeConstants[$fitBaseTypeReflectionConstant->getValue()] = $fitBaseTypeReflectionConstant->getName();
+        // }
 
         while (($line = fgets($handle)) !== false) {
             $line = trim($line);
@@ -320,11 +326,13 @@ class MessageGenerator
                     $phpTypes[] = Type::Null;
                 }
 
+                // $fitBaseTypeConstants[(int)$type]
+
                 /** @var ClassType $class */
                 $class->addAttribute(Field::class, [
                     $name,
                     (int)$num,
-                    new Literal("FitBaseType::" . $fitBaseTypeConstants[(int)$type]),
+                    new Literal("FitBaseType::" . FitBaseType::from((int)$type)->name . "->value"),
                     $scale,
                     (float)$offset,
                     $units,

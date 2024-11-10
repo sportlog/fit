@@ -14,26 +14,26 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * BloodPressureMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('SystolicPressure', 0, FitBaseType::UINT16, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16)]
-#[Field('DiastolicPressure', 1, FitBaseType::UINT16, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16)]
-#[Field('MeanArterialPressure', 2, FitBaseType::UINT16, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16)]
-#[Field('Map3SampleMean', 3, FitBaseType::UINT16, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16)]
-#[Field('MapMorningValues', 4, FitBaseType::UINT16, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16)]
-#[Field('MapEveningValues', 5, FitBaseType::UINT16, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16)]
-#[Field('HeartRate', 6, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
-#[Field('HeartRateType', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::HRTYPE)]
-#[Field('Status', 8, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BPSTATUS)]
-#[Field('UserProfileIndex', 9, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('Timestamp', 253, FitBaseType::Uint32->value, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
+#[Field('SystolicPressure', 0, FitBaseType::Uint16->value, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16)]
+#[Field('DiastolicPressure', 1, FitBaseType::Uint16->value, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16)]
+#[Field('MeanArterialPressure', 2, FitBaseType::Uint16->value, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16)]
+#[Field('Map3SampleMean', 3, FitBaseType::Uint16->value, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16)]
+#[Field('MapMorningValues', 4, FitBaseType::Uint16->value, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16)]
+#[Field('MapEveningValues', 5, FitBaseType::Uint16->value, 1.0, 0.0, 'mmHg', false, ProfileType::UINT16)]
+#[Field('HeartRate', 6, FitBaseType::Uint8->value, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
+#[Field('HeartRateType', 7, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::HRTYPE)]
+#[Field('Status', 8, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::BPSTATUS)]
+#[Field('UserProfileIndex', 9, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
 final class BloodPressureMessage extends Message
 {
     /**

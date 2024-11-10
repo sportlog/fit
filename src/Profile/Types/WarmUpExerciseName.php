@@ -31,7 +31,6 @@ enum WarmUpExerciseName: int
     case NeckRotations = 13;
     case OppositeArmAndLegBalance = 14;
     case ReachRollAndLift = 15;
-    case Scorpion = 16;
     case ShoulderCircles = 17;
     case SideToSideLegSwings = 18;
     case SleeperStretch = 19;

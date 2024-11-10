@@ -14,34 +14,34 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * DeviceInfoMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('DeviceIndex', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::DEVICEINDEX)]
-#[Field('DeviceType', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('Manufacturer', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MANUFACTURER)]
-#[Field('SerialNumber', 3, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::UINT32Z)]
-#[Field('Product', 4, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('SoftwareVersion', 5, FitBaseType::UINT16, 100.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('HardwareVersion', 6, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('CumOperatingTime', 7, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::UINT32)]
-#[Field('BatteryVoltage', 10, FitBaseType::UINT16, 256.0, 0.0, 'V', false, ProfileType::UINT16)]
-#[Field('BatteryStatus', 11, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::BATTERYSTATUS)]
-#[Field('SensorPosition', 18, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BODYLOCATION)]
-#[Field('Descriptor', 19, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('AntTransmissionType', 20, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
-#[Field('AntDeviceNumber', 21, FitBaseType::UINT16Z, 1.0, 0.0, '', false, ProfileType::UINT16Z)]
-#[Field('AntNetwork', 22, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ANTNETWORK)]
-#[Field('SourceType', 25, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SOURCETYPE)]
-#[Field('ProductName', 27, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('BatteryLevel', 32, FitBaseType::UINT8, 1.0, 0.0, '%', false, ProfileType::UINT8)]
+#[Field('Timestamp', 253, FitBaseType::Uint32->value, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
+#[Field('DeviceIndex', 0, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::DEVICEINDEX)]
+#[Field('DeviceType', 1, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('Manufacturer', 2, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::MANUFACTURER)]
+#[Field('SerialNumber', 3, FitBaseType::Uint32z->value, 1.0, 0.0, '', false, ProfileType::UINT32Z)]
+#[Field('Product', 4, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('SoftwareVersion', 5, FitBaseType::Uint16->value, 100.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('HardwareVersion', 6, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('CumOperatingTime', 7, FitBaseType::Uint32->value, 1.0, 0.0, 's', false, ProfileType::UINT32)]
+#[Field('BatteryVoltage', 10, FitBaseType::Uint16->value, 256.0, 0.0, 'V', false, ProfileType::UINT16)]
+#[Field('BatteryStatus', 11, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::BATTERYSTATUS)]
+#[Field('SensorPosition', 18, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::BODYLOCATION)]
+#[Field('Descriptor', 19, FitBaseType::String->value, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('AntTransmissionType', 20, FitBaseType::Uint8z->value, 1.0, 0.0, '', false, ProfileType::UINT8Z)]
+#[Field('AntDeviceNumber', 21, FitBaseType::Uint16z->value, 1.0, 0.0, '', false, ProfileType::UINT16Z)]
+#[Field('AntNetwork', 22, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::ANTNETWORK)]
+#[Field('SourceType', 25, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::SOURCETYPE)]
+#[Field('ProductName', 27, FitBaseType::String->value, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('BatteryLevel', 32, FitBaseType::Uint8->value, 1.0, 0.0, '%', false, ProfileType::UINT8)]
 final class DeviceInfoMessage extends Message
 {
     /**

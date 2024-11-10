@@ -14,24 +14,24 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * SegmentFileMessage message
  */
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('FileUuid', 1, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('Enabled', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-#[Field('UserProfilePrimaryKey', 4, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('LeaderType', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SEGMENTLEADERBOARDTYPE)]
-#[Field('LeaderGroupPrimaryKey', 8, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('LeaderActivityId', 9, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('LeaderActivityIdString', 10, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('DefaultRaceLeader', 11, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('MessageIndex', 254, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('FileUuid', 1, FitBaseType::String->value, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('Enabled', 3, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::BOOL)]
+#[Field('UserProfilePrimaryKey', 4, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('LeaderType', 7, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::SEGMENTLEADERBOARDTYPE)]
+#[Field('LeaderGroupPrimaryKey', 8, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('LeaderActivityId', 9, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('LeaderActivityIdString', 10, FitBaseType::String->value, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('DefaultRaceLeader', 11, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
 final class SegmentFileMessage extends Message
 {
     /**

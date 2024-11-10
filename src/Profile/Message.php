@@ -124,7 +124,7 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
         // Store the data anyway even if it's unknown how to interprete it.
         $field = $this->getField($fieldNumber);
         if ($field !== null) {
-            if ($field->getType() !== $fitBaseType->getType()) {
+            if ($field->getType() !== $fitBaseType->getType()->value) {
                 throw new FitException(sprintf(
                     'mismatch between base type in FIT message and base type declared in meta data of property "%s::%s".
                     Base type from FIT file is "%s", base type from property meta is "%s"',

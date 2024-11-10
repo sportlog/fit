@@ -14,50 +14,50 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * DiveSettingsMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('Name', 0, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('Model', 1, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::TISSUEMODELTYPE)]
-#[Field('GfLow', 2, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
-#[Field('GfHigh', 3, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
-#[Field('WaterType', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WATERTYPE)]
-#[Field('WaterDensity', 5, FitBaseType::FLOAT32, 1.0, 0.0, 'kg/m^3', false, ProfileType::FLOAT32)]
-#[Field('Po2Warn', 6, FitBaseType::UINT8, 100.0, 0.0, 'percent', false, ProfileType::UINT8)]
-#[Field('Po2Critical', 7, FitBaseType::UINT8, 100.0, 0.0, 'percent', false, ProfileType::UINT8)]
-#[Field('Po2Deco', 8, FitBaseType::UINT8, 100.0, 0.0, 'percent', false, ProfileType::UINT8)]
-#[Field('SafetyStopEnabled', 9, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-#[Field('BottomDepth', 10, FitBaseType::FLOAT32, 1.0, 0.0, '', false, ProfileType::FLOAT32)]
-#[Field('BottomTime', 11, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('ApneaCountdownEnabled', 12, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-#[Field('ApneaCountdownTime', 13, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('BacklightMode', 14, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DIVEBACKLIGHTMODE)]
-#[Field('BacklightBrightness', 15, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('BacklightTimeout', 16, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::BACKLIGHTTIMEOUT)]
-#[Field('RepeatDiveInterval', 17, FitBaseType::UINT16, 1.0, 0.0, 's', false, ProfileType::UINT16)]
-#[Field('SafetyStopTime', 18, FitBaseType::UINT16, 1.0, 0.0, 's', false, ProfileType::UINT16)]
-#[Field('HeartRateSourceType', 19, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SOURCETYPE)]
-#[Field('HeartRateSource', 20, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('TravelGas', 21, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('CcrLowSetpointSwitchMode', 22, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::CCRSETPOINTSWITCHMODE)]
-#[Field('CcrLowSetpoint', 23, FitBaseType::UINT8, 100.0, 0.0, 'percent', false, ProfileType::UINT8)]
-#[Field('CcrLowSetpointDepth', 24, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32)]
-#[Field('CcrHighSetpointSwitchMode', 25, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::CCRSETPOINTSWITCHMODE)]
-#[Field('CcrHighSetpoint', 26, FitBaseType::UINT8, 100.0, 0.0, 'percent', false, ProfileType::UINT8)]
-#[Field('CcrHighSetpointDepth', 27, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32)]
-#[Field('GasConsumptionDisplay', 29, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::GASCONSUMPTIONRATETYPE)]
-#[Field('UpKeyEnabled', 30, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-#[Field('DiveSounds', 35, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::TONE)]
-#[Field('LastStopMultiple', 36, FitBaseType::UINT8, 10.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('NoFlyTimeMode', 37, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::NOFLYTIMEMODE)]
+#[Field('Timestamp', 253, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('MessageIndex', 254, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('Name', 0, FitBaseType::String->value, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('Model', 1, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::TISSUEMODELTYPE)]
+#[Field('GfLow', 2, FitBaseType::Uint8->value, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
+#[Field('GfHigh', 3, FitBaseType::Uint8->value, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
+#[Field('WaterType', 4, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::WATERTYPE)]
+#[Field('WaterDensity', 5, FitBaseType::Float32->value, 1.0, 0.0, 'kg/m^3', false, ProfileType::FLOAT32)]
+#[Field('Po2Warn', 6, FitBaseType::Uint8->value, 100.0, 0.0, 'percent', false, ProfileType::UINT8)]
+#[Field('Po2Critical', 7, FitBaseType::Uint8->value, 100.0, 0.0, 'percent', false, ProfileType::UINT8)]
+#[Field('Po2Deco', 8, FitBaseType::Uint8->value, 100.0, 0.0, 'percent', false, ProfileType::UINT8)]
+#[Field('SafetyStopEnabled', 9, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::BOOL)]
+#[Field('BottomDepth', 10, FitBaseType::Float32->value, 1.0, 0.0, '', false, ProfileType::FLOAT32)]
+#[Field('BottomTime', 11, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('ApneaCountdownEnabled', 12, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::BOOL)]
+#[Field('ApneaCountdownTime', 13, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('BacklightMode', 14, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::DIVEBACKLIGHTMODE)]
+#[Field('BacklightBrightness', 15, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('BacklightTimeout', 16, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::BACKLIGHTTIMEOUT)]
+#[Field('RepeatDiveInterval', 17, FitBaseType::Uint16->value, 1.0, 0.0, 's', false, ProfileType::UINT16)]
+#[Field('SafetyStopTime', 18, FitBaseType::Uint16->value, 1.0, 0.0, 's', false, ProfileType::UINT16)]
+#[Field('HeartRateSourceType', 19, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::SOURCETYPE)]
+#[Field('HeartRateSource', 20, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('TravelGas', 21, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('CcrLowSetpointSwitchMode', 22, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::CCRSETPOINTSWITCHMODE)]
+#[Field('CcrLowSetpoint', 23, FitBaseType::Uint8->value, 100.0, 0.0, 'percent', false, ProfileType::UINT8)]
+#[Field('CcrLowSetpointDepth', 24, FitBaseType::Uint32->value, 1000.0, 0.0, 'm', false, ProfileType::UINT32)]
+#[Field('CcrHighSetpointSwitchMode', 25, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::CCRSETPOINTSWITCHMODE)]
+#[Field('CcrHighSetpoint', 26, FitBaseType::Uint8->value, 100.0, 0.0, 'percent', false, ProfileType::UINT8)]
+#[Field('CcrHighSetpointDepth', 27, FitBaseType::Uint32->value, 1000.0, 0.0, 'm', false, ProfileType::UINT32)]
+#[Field('GasConsumptionDisplay', 29, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::GASCONSUMPTIONRATETYPE)]
+#[Field('UpKeyEnabled', 30, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::BOOL)]
+#[Field('DiveSounds', 35, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::TONE)]
+#[Field('LastStopMultiple', 36, FitBaseType::Uint8->value, 10.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('NoFlyTimeMode', 37, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::NOFLYTIMEMODE)]
 final class DiveSettingsMessage extends Message
 {
     /**

@@ -14,22 +14,22 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * VideoClipMessage message
  */
-#[Field('ClipNumber', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('StartTimestamp', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('StartTimestampMs', 2, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('EndTimestamp', 3, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('EndTimestampMs', 4, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('ClipStart', 6, FitBaseType::UINT32, 1.0, 0.0, 'ms', false, ProfileType::UINT32)]
-#[Field('ClipEnd', 7, FitBaseType::UINT32, 1.0, 0.0, 'ms', false, ProfileType::UINT32)]
+#[Field('ClipNumber', 0, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('StartTimestamp', 1, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('StartTimestampMs', 2, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('EndTimestamp', 3, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('EndTimestampMs', 4, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('ClipStart', 6, FitBaseType::Uint32->value, 1.0, 0.0, 'ms', false, ProfileType::UINT32)]
+#[Field('ClipEnd', 7, FitBaseType::Uint32->value, 1.0, 0.0, 'ms', false, ProfileType::UINT32)]
 final class VideoClipMessage extends Message
 {
     /**

@@ -14,21 +14,21 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * FileCapabilitiesMessage message
  */
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('Type', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::FILE)]
-#[Field('Flags', 1, FitBaseType::UINT8Z, 1.0, 0.0, '', false, ProfileType::FILEFLAGS)]
-#[Field('Directory', 2, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('MaxCount', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('MaxSize', 4, FitBaseType::UINT32, 1.0, 0.0, 'bytes', false, ProfileType::UINT32)]
+#[Field('MessageIndex', 254, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('Type', 0, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::FILE)]
+#[Field('Flags', 1, FitBaseType::Uint8z->value, 1.0, 0.0, '', false, ProfileType::FILEFLAGS)]
+#[Field('Directory', 2, FitBaseType::String->value, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('MaxCount', 3, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('MaxSize', 4, FitBaseType::Uint32->value, 1.0, 0.0, 'bytes', false, ProfileType::UINT32)]
 final class FileCapabilitiesMessage extends Message
 {
     /**

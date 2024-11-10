@@ -14,22 +14,22 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * ChronoShotSessionMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('MinSpeed', 0, FitBaseType::UINT32, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
-#[Field('MaxSpeed', 1, FitBaseType::UINT32, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
-#[Field('AvgSpeed', 2, FitBaseType::UINT32, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
-#[Field('ShotCount', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('ProjectileType', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::PROJECTILETYPE)]
-#[Field('GrainWeight', 5, FitBaseType::UINT32, 10.0, 0.0, 'gr', false, ProfileType::UINT32)]
+#[Field('Timestamp', 253, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('MinSpeed', 0, FitBaseType::Uint32->value, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
+#[Field('MaxSpeed', 1, FitBaseType::Uint32->value, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
+#[Field('AvgSpeed', 2, FitBaseType::Uint32->value, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
+#[Field('ShotCount', 3, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('ProjectileType', 4, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::PROJECTILETYPE)]
+#[Field('GrainWeight', 5, FitBaseType::Uint32->value, 10.0, 0.0, 'gr', false, ProfileType::UINT32)]
 final class ChronoShotSessionMessage extends Message
 {
     /**

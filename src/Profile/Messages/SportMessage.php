@@ -14,18 +14,18 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * SportMessage message
  */
-#[Field('Sport', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SPORT)]
-#[Field('SubSport', 1, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SUBSPORT)]
-#[Field('Name', 3, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('Sport', 0, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::SPORT)]
+#[Field('SubSport', 1, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::SUBSPORT)]
+#[Field('Name', 3, FitBaseType::String->value, 1.0, 0.0, '', false, ProfileType::STRING)]
 final class SportMessage extends Message
 {
     /**

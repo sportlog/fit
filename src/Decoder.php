@@ -14,6 +14,7 @@ use Exception;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Sportlog\FIT\Profile\{Messages\DeveloperDataIdMessage, Messages\FieldDescriptionMessage, Types\MesgNum, Field, Message, MessageFactory, MessageList, ProfileType};
+use Sportlog\FIT\Profile\Types\FitBaseType;
 
 /**
  * A decoder for FIT files.
@@ -176,11 +177,11 @@ class Decoder
         // For String and Byte data type always read all bytes at once.
         // All other types handle multiple values as arrays of their underlying FIT base type.
         switch ($baseType) {
-            case FitBaseType::STRING:
+            case FitBaseType::String->value:
                 $fieldValue = $reader->readString8($size);
                 break;
 
-            case FitBaseType::BYTE:
+            case FitBaseType::Byte->value:
                 $fieldValue = $reader->read($size);
                 break;
 
@@ -218,17 +219,16 @@ class Decoder
     private function readValue(FitBaseTypeDefinition $fitBaseType, bool $bigEndian, IOReader $reader): mixed
     {
         $value = match ($fitBaseType->getType()) {
-            FitBaseType::SINT8 => $reader->readInt8(),
-            FitBaseType::ENUM, FitBaseType::UINT8, FitBaseType::UINT8Z => $reader->readUInt8(),
-            FitBaseType::SINT16 => $bigEndian ? $reader->readInt16BE() : $reader->readInt16LE(),
-            FitBaseType::UINT16, FitBaseType::UINT16Z => $bigEndian ? $reader->readUInt16BE() : $reader->readUInt16LE(),
-            FitBaseType::SINT32 => $bigEndian ? $reader->readInt32BE() : $reader->readInt32LE(),
-            FitBaseType::UINT32, FitBaseType::UINT32Z => $bigEndian ? $reader->readUInt32BE() : $reader->readUInt32LE(),
-            FitBaseType::FLOAT32 => $bigEndian ? $reader->readFloatBE() : $reader->readFloatLE(),
-            FitBaseType::SINT64 => $bigEndian ? $reader->readInt64BE() : $reader->readInt64LE(),
-            FitBaseType::UINT64, FitBaseType::UINT64Z, FitBaseType::FLOAT64 => $bigEndian ? $reader->readDoubleBE() : $reader->readDoubleLE(),
-            FitBaseType::STRING, FitBaseType::BYTE => throw new Exception("Base types 'String|Byte' must be handled separately"),
-            default => throw new FitException(sprintf('unknown fit base type "%s".', $fitBaseType->getType()))
+            FitBaseType::Sint8 => $reader->readInt8(),
+            FitBaseType::Enum, FitBaseType::Uint8, FitBaseType::Uint8z => $reader->readUInt8(),
+            FitBaseType::Sint16 => $bigEndian ? $reader->readInt16BE() : $reader->readInt16LE(),
+            FitBaseType::Uint16, FitBaseType::Uint16z => $bigEndian ? $reader->readUInt16BE() : $reader->readUInt16LE(),
+            FitBaseType::Sint32 => $bigEndian ? $reader->readInt32BE() : $reader->readInt32LE(),
+            FitBaseType::Uint32, FitBaseType::Uint32z => $bigEndian ? $reader->readUInt32BE() : $reader->readUInt32LE(),
+            FitBaseType::Float32 => $bigEndian ? $reader->readFloatBE() : $reader->readFloatLE(),
+            FitBaseType::Sint64 => $bigEndian ? $reader->readInt64BE() : $reader->readInt64LE(),
+            FitBaseType::Uint64, FitBaseType::Uint64z, FitBaseType::Float64 => $bigEndian ? $reader->readDoubleBE() : $reader->readDoubleLE(),
+            FitBaseType::String, FitBaseType::Byte => throw new Exception("Base types 'String|Byte' must be handled separately")
         };
 
         return !$fitBaseType->isInvalid($value) ? $value : null;

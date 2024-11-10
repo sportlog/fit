@@ -14,23 +14,23 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * WorkoutMessage message
  */
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('Sport', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SPORT)]
-#[Field('Capabilities', 5, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::WORKOUTCAPABILITIES)]
-#[Field('NumValidSteps', 6, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('WktName', 8, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('SubSport', 11, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SUBSPORT)]
-#[Field('PoolLength', 14, FitBaseType::UINT16, 100.0, 0.0, 'm', false, ProfileType::UINT16)]
-#[Field('PoolLengthUnit', 15, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYMEASURE)]
+#[Field('MessageIndex', 254, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('Sport', 4, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::SPORT)]
+#[Field('Capabilities', 5, FitBaseType::Uint32z->value, 1.0, 0.0, '', false, ProfileType::WORKOUTCAPABILITIES)]
+#[Field('NumValidSteps', 6, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('WktName', 8, FitBaseType::String->value, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('SubSport', 11, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::SUBSPORT)]
+#[Field('PoolLength', 14, FitBaseType::Uint16->value, 100.0, 0.0, 'm', false, ProfileType::UINT16)]
+#[Field('PoolLengthUnit', 15, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::DISPLAYMEASURE)]
 final class WorkoutMessage extends Message
 {
     /**

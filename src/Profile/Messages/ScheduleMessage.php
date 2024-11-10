@@ -14,22 +14,22 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * ScheduleMessage message
  */
-#[Field('Manufacturer', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MANUFACTURER)]
-#[Field('Product', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('SerialNumber', 2, FitBaseType::UINT32Z, 1.0, 0.0, '', false, ProfileType::UINT32Z)]
-#[Field('TimeCreated', 3, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('Completed', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-#[Field('Type', 5, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SCHEDULE)]
-#[Field('ScheduledTime', 6, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::LOCALDATETIME)]
+#[Field('Manufacturer', 0, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::MANUFACTURER)]
+#[Field('Product', 1, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('SerialNumber', 2, FitBaseType::Uint32z->value, 1.0, 0.0, '', false, ProfileType::UINT32Z)]
+#[Field('TimeCreated', 3, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('Completed', 4, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::BOOL)]
+#[Field('Type', 5, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::SCHEDULE)]
+#[Field('ScheduledTime', 6, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::LOCALDATETIME)]
 final class ScheduleMessage extends Message
 {
     /**

@@ -14,44 +14,44 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * UserProfileMessage message
  */
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('FriendlyName', 0, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('Gender', 1, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::GENDER)]
-#[Field('Age', 2, FitBaseType::UINT8, 1.0, 0.0, 'years', false, ProfileType::UINT8)]
-#[Field('Height', 3, FitBaseType::UINT8, 100.0, 0.0, 'm', false, ProfileType::UINT8)]
-#[Field('Weight', 4, FitBaseType::UINT16, 10.0, 0.0, 'kg', false, ProfileType::UINT16)]
-#[Field('Language', 5, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::LANGUAGE)]
-#[Field('ElevSetting', 6, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYMEASURE)]
-#[Field('WeightSetting', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYMEASURE)]
-#[Field('RestingHeartRate', 8, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
-#[Field('DefaultMaxRunningHeartRate', 9, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
-#[Field('DefaultMaxBikingHeartRate', 10, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
-#[Field('DefaultMaxHeartRate', 11, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
-#[Field('HrSetting', 12, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYHEART)]
-#[Field('SpeedSetting', 13, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYMEASURE)]
-#[Field('DistSetting', 14, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYMEASURE)]
-#[Field('PowerSetting', 16, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYPOWER)]
-#[Field('ActivityClass', 17, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ACTIVITYCLASS)]
-#[Field('PositionSetting', 18, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYPOSITION)]
-#[Field('TemperatureSetting', 21, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYMEASURE)]
-#[Field('LocalId', 22, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::USERLOCALID)]
-#[Field('GlobalId', 23, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-#[Field('WakeTime', 28, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::LOCALTIMEINTODAY)]
-#[Field('SleepTime', 29, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::LOCALTIMEINTODAY)]
-#[Field('HeightSetting', 30, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYMEASURE)]
-#[Field('UserRunningStepLength', 31, FitBaseType::UINT16, 1000.0, 0.0, 'm', false, ProfileType::UINT16)]
-#[Field('UserWalkingStepLength', 32, FitBaseType::UINT16, 1000.0, 0.0, 'm', false, ProfileType::UINT16)]
-#[Field('DepthSetting', 47, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYMEASURE)]
-#[Field('DiveCount', 49, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('MessageIndex', 254, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('FriendlyName', 0, FitBaseType::String->value, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('Gender', 1, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::GENDER)]
+#[Field('Age', 2, FitBaseType::Uint8->value, 1.0, 0.0, 'years', false, ProfileType::UINT8)]
+#[Field('Height', 3, FitBaseType::Uint8->value, 100.0, 0.0, 'm', false, ProfileType::UINT8)]
+#[Field('Weight', 4, FitBaseType::Uint16->value, 10.0, 0.0, 'kg', false, ProfileType::UINT16)]
+#[Field('Language', 5, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::LANGUAGE)]
+#[Field('ElevSetting', 6, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::DISPLAYMEASURE)]
+#[Field('WeightSetting', 7, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::DISPLAYMEASURE)]
+#[Field('RestingHeartRate', 8, FitBaseType::Uint8->value, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
+#[Field('DefaultMaxRunningHeartRate', 9, FitBaseType::Uint8->value, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
+#[Field('DefaultMaxBikingHeartRate', 10, FitBaseType::Uint8->value, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
+#[Field('DefaultMaxHeartRate', 11, FitBaseType::Uint8->value, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
+#[Field('HrSetting', 12, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::DISPLAYHEART)]
+#[Field('SpeedSetting', 13, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::DISPLAYMEASURE)]
+#[Field('DistSetting', 14, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::DISPLAYMEASURE)]
+#[Field('PowerSetting', 16, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::DISPLAYPOWER)]
+#[Field('ActivityClass', 17, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::ACTIVITYCLASS)]
+#[Field('PositionSetting', 18, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::DISPLAYPOSITION)]
+#[Field('TemperatureSetting', 21, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::DISPLAYMEASURE)]
+#[Field('LocalId', 22, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::USERLOCALID)]
+#[Field('GlobalId', 23, FitBaseType::Byte->value, 1.0, 0.0, '', false, ProfileType::BYTE)]
+#[Field('WakeTime', 28, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::LOCALTIMEINTODAY)]
+#[Field('SleepTime', 29, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::LOCALTIMEINTODAY)]
+#[Field('HeightSetting', 30, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::DISPLAYMEASURE)]
+#[Field('UserRunningStepLength', 31, FitBaseType::Uint16->value, 1000.0, 0.0, 'm', false, ProfileType::UINT16)]
+#[Field('UserWalkingStepLength', 32, FitBaseType::Uint16->value, 1000.0, 0.0, 'm', false, ProfileType::UINT16)]
+#[Field('DepthSetting', 47, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::DISPLAYMEASURE)]
+#[Field('DiveCount', 49, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::UINT32)]
 final class UserProfileMessage extends Message
 {
     /**

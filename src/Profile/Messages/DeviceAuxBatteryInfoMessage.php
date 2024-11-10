@@ -14,20 +14,20 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * DeviceAuxBatteryInfoMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('DeviceIndex', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::DEVICEINDEX)]
-#[Field('BatteryVoltage', 1, FitBaseType::UINT16, 256.0, 0.0, 'V', false, ProfileType::UINT16)]
-#[Field('BatteryStatus', 2, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::BATTERYSTATUS)]
-#[Field('BatteryIdentifier', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('Timestamp', 253, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('DeviceIndex', 0, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::DEVICEINDEX)]
+#[Field('BatteryVoltage', 1, FitBaseType::Uint16->value, 256.0, 0.0, 'V', false, ProfileType::UINT16)]
+#[Field('BatteryStatus', 2, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::BATTERYSTATUS)]
+#[Field('BatteryIdentifier', 3, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
 final class DeviceAuxBatteryInfoMessage extends Message
 {
     /**

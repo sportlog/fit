@@ -14,23 +14,23 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * ActivityMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('TotalTimerTime', 0, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
-#[Field('NumSessions', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('Type', 2, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::ACTIVITY)]
-#[Field('Event', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::EVENT)]
-#[Field('EventType', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::EVENTTYPE)]
-#[Field('LocalTimestamp', 5, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::LOCALDATETIME)]
-#[Field('EventGroup', 6, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('Timestamp', 253, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('TotalTimerTime', 0, FitBaseType::Uint32->value, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
+#[Field('NumSessions', 1, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('Type', 2, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::ACTIVITY)]
+#[Field('Event', 3, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::EVENT)]
+#[Field('EventType', 4, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::EVENTTYPE)]
+#[Field('LocalTimestamp', 5, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::LOCALDATETIME)]
+#[Field('EventGroup', 6, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
 final class ActivityMessage extends Message
 {
     /**

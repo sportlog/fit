@@ -14,18 +14,18 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * HsaConfigurationDataMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('Data', 0, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-#[Field('DataSize', 1, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('Timestamp', 253, FitBaseType::Uint32->value, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
+#[Field('Data', 0, FitBaseType::Byte->value, 1.0, 0.0, '', false, ProfileType::BYTE)]
+#[Field('DataSize', 1, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
 final class HsaConfigurationDataMessage extends Message
 {
     /**

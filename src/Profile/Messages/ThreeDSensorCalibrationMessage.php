@@ -14,22 +14,22 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * ThreeDSensorCalibrationMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('SensorType', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SENSORTYPE)]
-#[Field('CalibrationFactor', 1, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('CalibrationDivisor', 2, FitBaseType::UINT32, 1.0, 0.0, 'counts', false, ProfileType::UINT32)]
-#[Field('LevelShift', 3, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('OffsetCal', 4, FitBaseType::SINT32, 1.0, 0.0, '', false, ProfileType::SINT32)]
-#[Field('OrientationMatrix', 5, FitBaseType::SINT32, 65535.0, 0.0, '', false, ProfileType::SINT32)]
+#[Field('Timestamp', 253, FitBaseType::Uint32->value, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
+#[Field('SensorType', 0, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::SENSORTYPE)]
+#[Field('CalibrationFactor', 1, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('CalibrationDivisor', 2, FitBaseType::Uint32->value, 1.0, 0.0, 'counts', false, ProfileType::UINT32)]
+#[Field('LevelShift', 3, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('OffsetCal', 4, FitBaseType::Sint32->value, 1.0, 0.0, '', false, ProfileType::SINT32)]
+#[Field('OrientationMatrix', 5, FitBaseType::Sint32->value, 65535.0, 0.0, '', false, ProfileType::SINT32)]
 final class ThreeDSensorCalibrationMessage extends Message
 {
     /**

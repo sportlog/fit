@@ -14,17 +14,17 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * StressLevelMessage message
  */
-#[Field('StressLevelValue', 0, FitBaseType::SINT16, 1.0, 0.0, '', false, ProfileType::SINT16)]
-#[Field('StressLevelTime', 1, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
+#[Field('StressLevelValue', 0, FitBaseType::Sint16->value, 1.0, 0.0, '', false, ProfileType::SINT16)]
+#[Field('StressLevelTime', 1, FitBaseType::Uint32->value, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
 final class StressLevelMessage extends Message
 {
     /**

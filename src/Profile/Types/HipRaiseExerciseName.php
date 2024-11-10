@@ -60,8 +60,6 @@ enum HipRaiseExerciseName: int
     case WeightedClamBridge = 42;
     case SingleLegSwissBallHipRaiseAndLegCurl = 43;
     case Clams = 44;
-    case InnerThighCircles = 45;
-    case InnerThighSideLift = 46;
     case LegCircles = 47;
     case LegLift = 48;
     case LegLiftInExternalRotation = 49;

@@ -14,32 +14,32 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * TimeInZoneMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('ReferenceMesg', 0, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESGNUM)]
-#[Field('ReferenceIndex', 1, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('TimeInHrZone', 2, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
-#[Field('TimeInSpeedZone', 3, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
-#[Field('TimeInCadenceZone', 4, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
-#[Field('TimeInPowerZone', 5, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
-#[Field('HrZoneHighBoundary', 6, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
-#[Field('SpeedZoneHighBoundary', 7, FitBaseType::UINT16, 1000.0, 0.0, 'm/s', false, ProfileType::UINT16)]
-#[Field('CadenceZoneHighBondary', 8, FitBaseType::UINT8, 1.0, 0.0, 'rpm', false, ProfileType::UINT8)]
-#[Field('PowerZoneHighBoundary', 9, FitBaseType::UINT16, 1.0, 0.0, 'watts', false, ProfileType::UINT16)]
-#[Field('HrCalcType', 10, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::HRZONECALC)]
-#[Field('MaxHeartRate', 11, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('RestingHeartRate', 12, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('ThresholdHeartRate', 13, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('PwrCalcType', 14, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::PWRZONECALC)]
-#[Field('FunctionalThresholdPower', 15, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('Timestamp', 253, FitBaseType::Uint32->value, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
+#[Field('ReferenceMesg', 0, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::MESGNUM)]
+#[Field('ReferenceIndex', 1, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('TimeInHrZone', 2, FitBaseType::Uint32->value, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
+#[Field('TimeInSpeedZone', 3, FitBaseType::Uint32->value, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
+#[Field('TimeInCadenceZone', 4, FitBaseType::Uint32->value, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
+#[Field('TimeInPowerZone', 5, FitBaseType::Uint32->value, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
+#[Field('HrZoneHighBoundary', 6, FitBaseType::Uint8->value, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
+#[Field('SpeedZoneHighBoundary', 7, FitBaseType::Uint16->value, 1000.0, 0.0, 'm/s', false, ProfileType::UINT16)]
+#[Field('CadenceZoneHighBondary', 8, FitBaseType::Uint8->value, 1.0, 0.0, 'rpm', false, ProfileType::UINT8)]
+#[Field('PowerZoneHighBoundary', 9, FitBaseType::Uint16->value, 1.0, 0.0, 'watts', false, ProfileType::UINT16)]
+#[Field('HrCalcType', 10, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::HRZONECALC)]
+#[Field('MaxHeartRate', 11, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('RestingHeartRate', 12, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('ThresholdHeartRate', 13, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('PwrCalcType', 14, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::PWRZONECALC)]
+#[Field('FunctionalThresholdPower', 15, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::UINT16)]
 final class TimeInZoneMessage extends Message
 {
     /**

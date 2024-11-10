@@ -102,7 +102,6 @@ enum SquatExerciseName: int
     case WideStanceBarbellSquat = 84;
     case WideStanceGobletSquat = 85;
     case ZercherSquat = 86;
-    case KbsOverhead = 87;
     case SquatAndSideKick = 88;
     case SquatJumpsInNOut = 89;
     case PilatesPlieSquatsParallelTurnedOutFlatAndHeels = 90;

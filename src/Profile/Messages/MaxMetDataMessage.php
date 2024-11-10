@@ -14,23 +14,23 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * MaxMetDataMessage message
  */
-#[Field('UpdateTime', 0, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('Vo2Max', 2, FitBaseType::UINT16, 10.0, 0.0, 'mL/kg/min', false, ProfileType::UINT16)]
-#[Field('Sport', 5, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SPORT)]
-#[Field('SubSport', 6, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SUBSPORT)]
-#[Field('MaxMetCategory', 8, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::MAXMETCATEGORY)]
-#[Field('CalibratedData', 9, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::BOOL)]
-#[Field('HrSource', 12, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::MAXMETHEARTRATESOURCE)]
-#[Field('SpeedSource', 13, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::MAXMETSPEEDSOURCE)]
+#[Field('UpdateTime', 0, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('Vo2Max', 2, FitBaseType::Uint16->value, 10.0, 0.0, 'mL/kg/min', false, ProfileType::UINT16)]
+#[Field('Sport', 5, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::SPORT)]
+#[Field('SubSport', 6, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::SUBSPORT)]
+#[Field('MaxMetCategory', 8, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::MAXMETCATEGORY)]
+#[Field('CalibratedData', 9, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::BOOL)]
+#[Field('HrSource', 12, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::MAXMETHEARTRATESOURCE)]
+#[Field('SpeedSource', 13, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::MAXMETSPEEDSOURCE)]
 final class MaxMetDataMessage extends Message
 {
     /**

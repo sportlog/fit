@@ -14,22 +14,22 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * TimestampCorrelationMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('FractionalTimestamp', 0, FitBaseType::UINT16, 32768.0, 0.0, 's', false, ProfileType::UINT16)]
-#[Field('SystemTimestamp', 1, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('FractionalSystemTimestamp', 2, FitBaseType::UINT16, 32768.0, 0.0, 's', false, ProfileType::UINT16)]
-#[Field('LocalTimestamp', 3, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::LOCALDATETIME)]
-#[Field('TimestampMs', 4, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
-#[Field('SystemTimestampMs', 5, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
+#[Field('Timestamp', 253, FitBaseType::Uint32->value, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
+#[Field('FractionalTimestamp', 0, FitBaseType::Uint16->value, 32768.0, 0.0, 's', false, ProfileType::UINT16)]
+#[Field('SystemTimestamp', 1, FitBaseType::Uint32->value, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
+#[Field('FractionalSystemTimestamp', 2, FitBaseType::Uint16->value, 32768.0, 0.0, 's', false, ProfileType::UINT16)]
+#[Field('LocalTimestamp', 3, FitBaseType::Uint32->value, 1.0, 0.0, 's', false, ProfileType::LOCALDATETIME)]
+#[Field('TimestampMs', 4, FitBaseType::Uint16->value, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
+#[Field('SystemTimestampMs', 5, FitBaseType::Uint16->value, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
 final class TimestampCorrelationMessage extends Message
 {
     /**

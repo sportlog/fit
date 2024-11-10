@@ -14,21 +14,21 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * ExdDataFieldConfigurationMessage message
  */
-#[Field('ScreenIndex', 0, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('ConceptField', 1, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
-#[Field('FieldId', 2, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('ConceptCount', 3, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
-#[Field('DisplayType', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::EXDDISPLAYTYPE)]
-#[Field('Title', 5, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('ScreenIndex', 0, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('ConceptField', 1, FitBaseType::Byte->value, 1.0, 0.0, '', false, ProfileType::BYTE)]
+#[Field('FieldId', 2, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('ConceptCount', 3, FitBaseType::Uint8->value, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('DisplayType', 4, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::EXDDISPLAYTYPE)]
+#[Field('Title', 5, FitBaseType::String->value, 1.0, 0.0, '', false, ProfileType::STRING)]
 final class ExdDataFieldConfigurationMessage extends Message
 {
     /**

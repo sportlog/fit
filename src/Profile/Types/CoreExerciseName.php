@@ -62,14 +62,12 @@ enum CoreExerciseName: int
     case Inchworm = 44;
     case WeightedModifiedFrontLever = 45;
     case RussianTwist = 46;
-    case AbdominalLegRotations = 47;
     case ArmAndLegExtensionOnKnees = 48;
     case Bicycle = 49;
     case BicepCurlWithLegExtension = 50;
     case CatCow = 51;
     case Corkscrew = 52;
     case CrissCross = 53;
-    case CrissCrossWithBall = 54;
     case DoubleLegStretch = 55;
     case KneeFolds = 56;
     case LowerLift = 57;
@@ -83,7 +81,6 @@ enum CoreExerciseName: int
     case Scissors = 65;
     case SingleLegCircles = 66;
     case SingleLegStretch = 67;
-    case SnakeTwist1And2 = 68;
     case Swan = 69;
     case Swimming = 70;
     case Teaser = 71;

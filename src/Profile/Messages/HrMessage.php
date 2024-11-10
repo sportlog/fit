@@ -14,21 +14,21 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * HrMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
-#[Field('FractionalTimestamp', 0, FitBaseType::UINT16, 32768.0, 0.0, 's', false, ProfileType::UINT16)]
-#[Field('Time256', 1, FitBaseType::UINT8, 256.0, 0.0, 's', false, ProfileType::UINT8)]
-#[Field('FilteredBpm', 6, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
-#[Field('EventTimestamp', 9, FitBaseType::UINT32, 1024.0, 0.0, 's', true, ProfileType::UINT32)]
-#[Field('EventTimestamp12', 10, FitBaseType::BYTE, 1.0, 0.0, '', false, ProfileType::BYTE)]
+#[Field('Timestamp', 253, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('FractionalTimestamp', 0, FitBaseType::Uint16->value, 32768.0, 0.0, 's', false, ProfileType::UINT16)]
+#[Field('Time256', 1, FitBaseType::Uint8->value, 256.0, 0.0, 's', false, ProfileType::UINT8)]
+#[Field('FilteredBpm', 6, FitBaseType::Uint8->value, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
+#[Field('EventTimestamp', 9, FitBaseType::Uint32->value, 1024.0, 0.0, 's', true, ProfileType::UINT32)]
+#[Field('EventTimestamp12', 10, FitBaseType::Byte->value, 1.0, 0.0, '', false, ProfileType::BYTE)]
 final class HrMessage extends Message
 {
     /**

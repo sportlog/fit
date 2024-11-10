@@ -14,34 +14,34 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * WorkoutStepMessage message
  */
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('WktStepName', 0, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('DurationType', 1, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WKTSTEPDURATION)]
-#[Field('DurationValue', 2, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('TargetType', 3, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WKTSTEPTARGET)]
-#[Field('TargetValue', 4, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('CustomTargetValueLow', 5, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('CustomTargetValueHigh', 6, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('Intensity', 7, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::INTENSITY)]
-#[Field('Notes', 8, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
-#[Field('Equipment', 9, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WORKOUTEQUIPMENT)]
-#[Field('ExerciseCategory', 10, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::EXERCISECATEGORY)]
-#[Field('ExerciseName', 11, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('ExerciseWeight', 12, FitBaseType::UINT16, 100.0, 0.0, 'kg', false, ProfileType::UINT16)]
-#[Field('WeightDisplayUnit', 13, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::FITBASEUNIT)]
-#[Field('SecondaryTargetType', 19, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::WKTSTEPTARGET)]
-#[Field('SecondaryTargetValue', 20, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('SecondaryCustomTargetValueLow', 21, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
-#[Field('SecondaryCustomTargetValueHigh', 22, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('MessageIndex', 254, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('WktStepName', 0, FitBaseType::String->value, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('DurationType', 1, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::WKTSTEPDURATION)]
+#[Field('DurationValue', 2, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('TargetType', 3, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::WKTSTEPTARGET)]
+#[Field('TargetValue', 4, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('CustomTargetValueLow', 5, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('CustomTargetValueHigh', 6, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('Intensity', 7, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::INTENSITY)]
+#[Field('Notes', 8, FitBaseType::String->value, 1.0, 0.0, '', false, ProfileType::STRING)]
+#[Field('Equipment', 9, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::WORKOUTEQUIPMENT)]
+#[Field('ExerciseCategory', 10, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::EXERCISECATEGORY)]
+#[Field('ExerciseName', 11, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('ExerciseWeight', 12, FitBaseType::Uint16->value, 100.0, 0.0, 'kg', false, ProfileType::UINT16)]
+#[Field('WeightDisplayUnit', 13, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::FITBASEUNIT)]
+#[Field('SecondaryTargetType', 19, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::WKTSTEPTARGET)]
+#[Field('SecondaryTargetValue', 20, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('SecondaryCustomTargetValueLow', 21, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::UINT32)]
+#[Field('SecondaryCustomTargetValueHigh', 22, FitBaseType::Uint32->value, 1.0, 0.0, '', false, ProfileType::UINT32)]
 final class WorkoutStepMessage extends Message
 {
     /**

@@ -14,29 +14,29 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Messages;
 
 use DateTime;
-use Sportlog\FIT\FitBaseType;
 use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Profile\Message;
 use Sportlog\FIT\Profile\ProfileType;
+use Sportlog\FIT\Profile\Types\FitBaseType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
  * SplitSummaryMessage message
  */
-#[Field('MessageIndex', 254, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
-#[Field('SplitType', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SPLITTYPE)]
-#[Field('NumSplits', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
-#[Field('TotalTimerTime', 4, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
-#[Field('TotalDistance', 5, FitBaseType::UINT32, 100.0, 0.0, 'm', false, ProfileType::UINT32)]
-#[Field('AvgSpeed', 6, FitBaseType::UINT32, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
-#[Field('MaxSpeed', 7, FitBaseType::UINT32, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
-#[Field('TotalAscent', 8, FitBaseType::UINT16, 1.0, 0.0, 'm', false, ProfileType::UINT16)]
-#[Field('TotalDescent', 9, FitBaseType::UINT16, 1.0, 0.0, 'm', false, ProfileType::UINT16)]
-#[Field('AvgHeartRate', 10, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
-#[Field('MaxHeartRate', 11, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
-#[Field('AvgVertSpeed', 12, FitBaseType::SINT32, 1000.0, 0.0, 'm/s', false, ProfileType::SINT32)]
-#[Field('TotalCalories', 13, FitBaseType::UINT32, 1.0, 0.0, 'kcal', false, ProfileType::UINT32)]
-#[Field('TotalMovingTime', 77, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
+#[Field('MessageIndex', 254, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('SplitType', 0, FitBaseType::Enum->value, 1.0, 0.0, '', false, ProfileType::SPLITTYPE)]
+#[Field('NumSplits', 3, FitBaseType::Uint16->value, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('TotalTimerTime', 4, FitBaseType::Uint32->value, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
+#[Field('TotalDistance', 5, FitBaseType::Uint32->value, 100.0, 0.0, 'm', false, ProfileType::UINT32)]
+#[Field('AvgSpeed', 6, FitBaseType::Uint32->value, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
+#[Field('MaxSpeed', 7, FitBaseType::Uint32->value, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
+#[Field('TotalAscent', 8, FitBaseType::Uint16->value, 1.0, 0.0, 'm', false, ProfileType::UINT16)]
+#[Field('TotalDescent', 9, FitBaseType::Uint16->value, 1.0, 0.0, 'm', false, ProfileType::UINT16)]
+#[Field('AvgHeartRate', 10, FitBaseType::Uint8->value, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
+#[Field('MaxHeartRate', 11, FitBaseType::Uint8->value, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
+#[Field('AvgVertSpeed', 12, FitBaseType::Sint32->value, 1000.0, 0.0, 'm/s', false, ProfileType::SINT32)]
+#[Field('TotalCalories', 13, FitBaseType::Uint32->value, 1.0, 0.0, 'kcal', false, ProfileType::UINT32)]
+#[Field('TotalMovingTime', 77, FitBaseType::Uint32->value, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
 final class SplitSummaryMessage extends Message
 {
     /**

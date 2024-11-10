@@ -16,7 +16,6 @@ namespace Sportlog\FIT\Profile\Types;
 enum WeatherReport: int
 {
     case Current = 0;
-    case Forecast = 1;
     case HourlyForecast = 1;
     case DailyForecast = 2;
 }
