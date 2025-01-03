@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.141 SDK
+ * FIT 21.158 SDK
  */
 
 declare(strict_types=1);
@@ -30,6 +30,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('ShotCount', 3, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('ProjectileType', 4, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::PROJECTILETYPE)]
 #[Field('GrainWeight', 5, FitBaseType::UINT32, 10.0, 0.0, 'gr', false, ProfileType::UINT32)]
+#[Field('StandardDeviation', 6, FitBaseType::UINT32, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
 final class ChronoShotSessionMessage extends Message
 {
     /**
@@ -94,5 +95,13 @@ final class ChronoShotSessionMessage extends Message
     public function getGrainWeight(): float|array|null
     {
         return $this->getFieldValue(5);
+    }
+
+    /**
+     * Gets the standard deviation
+     */
+    public function getStandardDeviation(): float|array|null
+    {
+        return $this->getFieldValue(6);
     }
 }

@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.141 SDK
+ * FIT 21.158 SDK
  */
 
 declare(strict_types=1);
@@ -18,9 +18,9 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class AutoSyncFrequency
 {
-    const NEVER = 0;
-    const OCCASIONALLY = 1;
-    const FREQUENT = 2;
-    const ONCE_A_DAY = 3;
-    const REMOTE = 4;
+    public const NEVER = 0;
+    public const OCCASIONALLY = 1;
+    public const FREQUENT = 2;
+    public const ONCE_A_DAY = 3;
+    public const REMOTE = 4;
 }

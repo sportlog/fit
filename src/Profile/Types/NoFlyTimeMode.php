@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.141 SDK
+ * FIT 21.158 SDK
  */
 
 declare(strict_types=1);
@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class NoFlyTimeMode
 {
-    const STANDARD = 0;
-    const FLAT_24_HOURS = 1;
+    public const STANDARD = 0;
+    public const FLAT_24_HOURS = 1;
 }

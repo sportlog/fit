@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.141 SDK
+ * FIT 21.158 SDK
  */
 
 declare(strict_types=1);
@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class AnalogWatchfaceLayout
 {
-    const MINIMAL = 0;
-    const TRADITIONAL = 1;
-    const MODERN = 2;
+    public const MINIMAL = 0;
+    public const TRADITIONAL = 1;
+    public const MODERN = 2;
 }

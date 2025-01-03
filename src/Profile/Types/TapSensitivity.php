@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.141 SDK
+ * FIT 21.158 SDK
  */
 
 declare(strict_types=1);
@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class TapSensitivity
 {
-    const HIGH = 0;
-    const MEDIUM = 1;
-    const LOW = 2;
+    public const HIGH = 0;
+    public const MEDIUM = 1;
+    public const LOW = 2;
 }

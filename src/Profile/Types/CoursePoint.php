@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.141 SDK
+ * FIT 21.158 SDK
  */
 
 declare(strict_types=1);
@@ -18,57 +18,57 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class CoursePoint
 {
-    const GENERIC = 0;
-    const SUMMIT = 1;
-    const VALLEY = 2;
-    const WATER = 3;
-    const FOOD = 4;
-    const DANGER = 5;
-    const LEFT = 6;
-    const RIGHT = 7;
-    const STRAIGHT = 8;
-    const FIRST_AID = 9;
-    const FOURTH_CATEGORY = 10;
-    const THIRD_CATEGORY = 11;
-    const SECOND_CATEGORY = 12;
-    const FIRST_CATEGORY = 13;
-    const HORS_CATEGORY = 14;
-    const SPRINT = 15;
-    const LEFT_FORK = 16;
-    const RIGHT_FORK = 17;
-    const MIDDLE_FORK = 18;
-    const SLIGHT_LEFT = 19;
-    const SHARP_LEFT = 20;
-    const SLIGHT_RIGHT = 21;
-    const SHARP_RIGHT = 22;
-    const U_TURN = 23;
-    const SEGMENT_START = 24;
-    const SEGMENT_END = 25;
-    const CAMPSITE = 27;
-    const AID_STATION = 28;
-    const REST_AREA = 29;
-    const GENERAL_DISTANCE = 30;
-    const SERVICE = 31;
-    const ENERGY_GEL = 32;
-    const SPORTS_DRINK = 33;
-    const MILE_MARKER = 34;
-    const CHECKPOINT = 35;
-    const SHELTER = 36;
-    const MEETING_SPOT = 37;
-    const OVERLOOK = 38;
-    const TOILET = 39;
-    const SHOWER = 40;
-    const GEAR = 41;
-    const SHARP_CURVE = 42;
-    const STEEP_INCLINE = 43;
-    const TUNNEL = 44;
-    const BRIDGE = 45;
-    const OBSTACLE = 46;
-    const CROSSING = 47;
-    const STORE = 48;
-    const TRANSITION = 49;
-    const NAVAID = 50;
-    const TRANSPORT = 51;
-    const ALERT = 52;
-    const INFO = 53;
+    public const GENERIC = 0;
+    public const SUMMIT = 1;
+    public const VALLEY = 2;
+    public const WATER = 3;
+    public const FOOD = 4;
+    public const DANGER = 5;
+    public const LEFT = 6;
+    public const RIGHT = 7;
+    public const STRAIGHT = 8;
+    public const FIRST_AID = 9;
+    public const FOURTH_CATEGORY = 10;
+    public const THIRD_CATEGORY = 11;
+    public const SECOND_CATEGORY = 12;
+    public const FIRST_CATEGORY = 13;
+    public const HORS_CATEGORY = 14;
+    public const SPRINT = 15;
+    public const LEFT_FORK = 16;
+    public const RIGHT_FORK = 17;
+    public const MIDDLE_FORK = 18;
+    public const SLIGHT_LEFT = 19;
+    public const SHARP_LEFT = 20;
+    public const SLIGHT_RIGHT = 21;
+    public const SHARP_RIGHT = 22;
+    public const U_TURN = 23;
+    public const SEGMENT_START = 24;
+    public const SEGMENT_END = 25;
+    public const CAMPSITE = 27;
+    public const AID_STATION = 28;
+    public const REST_AREA = 29;
+    public const GENERAL_DISTANCE = 30;
+    public const SERVICE = 31;
+    public const ENERGY_GEL = 32;
+    public const SPORTS_DRINK = 33;
+    public const MILE_MARKER = 34;
+    public const CHECKPOINT = 35;
+    public const SHELTER = 36;
+    public const MEETING_SPOT = 37;
+    public const OVERLOOK = 38;
+    public const TOILET = 39;
+    public const SHOWER = 40;
+    public const GEAR = 41;
+    public const SHARP_CURVE = 42;
+    public const STEEP_INCLINE = 43;
+    public const TUNNEL = 44;
+    public const BRIDGE = 45;
+    public const OBSTACLE = 46;
+    public const CROSSING = 47;
+    public const STORE = 48;
+    public const TRANSITION = 49;
+    public const NAVAID = 50;
+    public const TRANSPORT = 51;
+    public const ALERT = 52;
+    public const INFO = 53;
 }

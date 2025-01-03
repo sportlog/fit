@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.141 SDK
+ * FIT 21.158 SDK
  */
 
 declare(strict_types=1);
@@ -18,10 +18,10 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class ProjectileType
 {
-    const ARROW = 0;
-    const RIFLE_CARTRIDGE = 1;
-    const PISTOL_CARTRIDGE = 2;
-    const SHOTSHELL = 3;
-    const AIR_RIFLE_PELLET = 4;
-    const OTHER = 5;
+    public const ARROW = 0;
+    public const RIFLE_CARTRIDGE = 1;
+    public const PISTOL_CARTRIDGE = 2;
+    public const SHOTSHELL = 3;
+    public const AIR_RIFLE_PELLET = 4;
+    public const OTHER = 5;
 }

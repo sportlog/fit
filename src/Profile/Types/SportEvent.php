@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.141 SDK
+ * FIT 21.158 SDK
  */
 
 declare(strict_types=1);
@@ -18,13 +18,13 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SportEvent
 {
-    const UNCATEGORIZED = 0;
-    const GEOCACHING = 1;
-    const FITNESS = 2;
-    const RECREATION = 3;
-    const RACE = 4;
-    const SPECIAL_EVENT = 5;
-    const TRAINING = 6;
-    const TRANSPORTATION = 7;
-    const TOURING = 8;
+    public const UNCATEGORIZED = 0;
+    public const GEOCACHING = 1;
+    public const FITNESS = 2;
+    public const RECREATION = 3;
+    public const RACE = 4;
+    public const SPECIAL_EVENT = 5;
+    public const TRAINING = 6;
+    public const TRANSPORTATION = 7;
+    public const TOURING = 8;
 }

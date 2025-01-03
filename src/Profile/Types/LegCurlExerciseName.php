@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.141 SDK
+ * FIT 21.158 SDK
  */
 
 declare(strict_types=1);
@@ -18,16 +18,16 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class LegCurlExerciseName
 {
-    const LEG_CURL = 0;
-    const WEIGHTED_LEG_CURL = 1;
-    const GOOD_MORNING = 2;
-    const SEATED_BARBELL_GOOD_MORNING = 3;
-    const SINGLE_LEG_BARBELL_GOOD_MORNING = 4;
-    const SINGLE_LEG_SLIDING_LEG_CURL = 5;
-    const SLIDING_LEG_CURL = 6;
-    const SPLIT_BARBELL_GOOD_MORNING = 7;
-    const SPLIT_STANCE_EXTENSION = 8;
-    const STAGGERED_STANCE_GOOD_MORNING = 9;
-    const SWISS_BALL_HIP_RAISE_AND_LEG_CURL = 10;
-    const ZERCHER_GOOD_MORNING = 11;
+    public const LEG_CURL = 0;
+    public const WEIGHTED_LEG_CURL = 1;
+    public const GOOD_MORNING = 2;
+    public const SEATED_BARBELL_GOOD_MORNING = 3;
+    public const SINGLE_LEG_BARBELL_GOOD_MORNING = 4;
+    public const SINGLE_LEG_SLIDING_LEG_CURL = 5;
+    public const SLIDING_LEG_CURL = 6;
+    public const SPLIT_BARBELL_GOOD_MORNING = 7;
+    public const SPLIT_STANCE_EXTENSION = 8;
+    public const STAGGERED_STANCE_GOOD_MORNING = 9;
+    public const SWISS_BALL_HIP_RAISE_AND_LEG_CURL = 10;
+    public const ZERCHER_GOOD_MORNING = 11;
 }

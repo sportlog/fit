@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.141 SDK
+ * FIT 21.158 SDK
  */
 
 declare(strict_types=1);
@@ -18,10 +18,10 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class GoalRecurrence
 {
-    const OFF = 0;
-    const DAILY = 1;
-    const WEEKLY = 2;
-    const MONTHLY = 3;
-    const YEARLY = 4;
-    const CUSTOM = 5;
+    public const OFF = 0;
+    public const DAILY = 1;
+    public const WEEKLY = 2;
+    public const MONTHLY = 3;
+    public const YEARLY = 4;
+    public const CUSTOM = 5;
 }

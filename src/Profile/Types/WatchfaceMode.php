@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.141 SDK
+ * FIT 21.158 SDK
  */
 
 declare(strict_types=1);
@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class WatchfaceMode
 {
-    const DIGITAL = 0;
-    const ANALOG = 1;
-    const CONNECT_IQ = 2;
-    const DISABLED = 3;
+    public const DIGITAL = 0;
+    public const ANALOG = 1;
+    public const CONNECT_IQ = 2;
+    public const DISABLED = 3;
 }

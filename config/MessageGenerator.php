@@ -33,7 +33,7 @@ class MessageGenerator
     /**
      * FIT-SDK Version
      */
-    const FIT_SDK_VERSION = '21.141';
+    const FIT_SDK_VERSION = '21.158';
     const MESSAGE_START = "Mesg newMesg = new Mesg(";
     const FIELD_START = "newMesg.SetField(new Field(";
     const MESSAGE_END = "return newMesg";

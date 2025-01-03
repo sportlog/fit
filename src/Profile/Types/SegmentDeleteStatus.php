@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.141 SDK
+ * FIT 21.158 SDK
  */
 
 declare(strict_types=1);
@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SegmentDeleteStatus
 {
-    const DO_NOT_DELETE = 0;
-    const DELETE_ONE = 1;
-    const DELETE_ALL = 2;
+    public const DO_NOT_DELETE = 0;
+    public const DELETE_ONE = 1;
+    public const DELETE_ALL = 2;
 }

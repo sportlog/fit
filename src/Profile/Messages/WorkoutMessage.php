@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.141 SDK
+ * FIT 21.158 SDK
  */
 
 declare(strict_types=1);
@@ -31,6 +31,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('SubSport', 11, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SUBSPORT)]
 #[Field('PoolLength', 14, FitBaseType::UINT16, 100.0, 0.0, 'm', false, ProfileType::UINT16)]
 #[Field('PoolLengthUnit', 15, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::DISPLAYMEASURE)]
+#[Field('WktDescription', 17, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
 final class WorkoutMessage extends Message
 {
     /**
@@ -103,5 +104,13 @@ final class WorkoutMessage extends Message
     public function getPoolLengthUnit(): int|array|null
     {
         return $this->getFieldValue(15);
+    }
+
+    /**
+     * Gets the wkt description
+     */
+    public function getWktDescription(): string|null
+    {
+        return $this->getFieldValue(17);
     }
 }

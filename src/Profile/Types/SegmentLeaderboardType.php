@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.141 SDK
+ * FIT 21.158 SDK
  */
 
 declare(strict_types=1);
@@ -18,19 +18,19 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SegmentLeaderboardType
 {
-    const OVERALL = 0;
-    const PERSONAL_BEST = 1;
-    const CONNECTIONS = 2;
-    const GROUP = 3;
-    const CHALLENGER = 4;
-    const KOM = 5;
-    const QOM = 6;
-    const PR = 7;
-    const GOAL = 8;
-    const CARROT = 9;
-    const CLUB_LEADER = 10;
-    const RIVAL = 11;
-    const LAST = 12;
-    const RECENT_BEST = 13;
-    const COURSE_RECORD = 14;
+    public const OVERALL = 0;
+    public const PERSONAL_BEST = 1;
+    public const CONNECTIONS = 2;
+    public const GROUP = 3;
+    public const CHALLENGER = 4;
+    public const KOM = 5;
+    public const QOM = 6;
+    public const PR = 7;
+    public const GOAL = 8;
+    public const CARROT = 9;
+    public const CLUB_LEADER = 10;
+    public const RIVAL = 11;
+    public const LAST = 12;
+    public const RECENT_BEST = 13;
+    public const COURSE_RECORD = 14;
 }
