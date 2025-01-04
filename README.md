@@ -46,9 +46,9 @@ $sessionMessages = $messageList->getMessages(MesgNum::SESSION);
 /** @var SessionMessage $sessionMessage */
 $sessionMessage = $sessionMessages[0];
 // get any native fields from the message; use intellisense
-echo "Total time (m): " . $lastRecordMessage->getTotalElapsedTime();
-echo "Total distance (m): " . $lastRecordMessage->getTotalDistance();
-echo "Total ascent (m): " . $lastRecordMessage->getTotalAscent();
+echo "Total time (m): " . $sessionMessage->getTotalElapsedTime();
+echo "Total distance (m): " . $sessionMessage->getTotalDistance();
+echo "Total ascent (m): " . $sessionMessage->getTotalAscent();
 ```
 
 ## Limitations
