@@ -38,8 +38,9 @@ class Decoder
      * 
      * @param LoggerInterface $logger The logger to write to, or null
      * if logging is disabled.
+     * @param DecoderOptions $options Decoder options.
      */
-    public function __construct(private ?LoggerInterface $logger = null) {}
+    public function __construct(private ?LoggerInterface $logger = null, private ?DecoderOptions $options = null) {}
 
     /**
      * Reads the file/stream and returns the decoded messages.
@@ -158,21 +159,33 @@ class Decoder
     {
         $fitBaseType = FitBaseTypeDefinition::fromType($baseType);
         if ($fitBaseType === null) {
+            $this->logger?->warning("no base type definition found for {$baseType}");
             // No valid base type; just read the data to advance the file pointer
             $reader->read($size);
             return;
         }
 
+        // For FIT files written by Coros devices the $size does not always match it's underlying
+        // base type. So if the size is less than defined in the base type, try to get the best
+        // matching base type.
+        $fitBaseTypeSize = $fitBaseType->getBytes();
+        if (!$this->options?->strictMode && $size < $fitBaseTypeSize) {
+            $fitBaseTypeBySize = FitBaseTypeDefinition::matchBySize($fitBaseType, $size);
+            if ($fitBaseTypeBySize !== null) {
+                $this->logger?->warning("size is lower than defined by FIT base type ({$fitBaseType->getName()}). Falling back to best match: {$fitBaseTypeBySize->getName()}");
+                $fitBaseType = $fitBaseTypeBySize;
+                $fitBaseTypeSize = $fitBaseType->getBytes();
+            }
+        }
+
         // The size indicates the size of the defined field in bytes. The size may be a 
         // multiple of the underlying FIT Base Type size indicating the field contains multiple 
         // elements represented as an array.
-        $fitBaseTypeSize = $fitBaseType->getBytes();
         if (($size % $fitBaseTypeSize) !== 0) {
-            throw new FitException('size must be a multiple of fit-base-type size');
+            throw new FitException("size must be a multiple of FIT base-type ({$fitBaseType->getName()}) in message {$message->getMessageName()}");
         }
 
         $fieldValue = null;
-
         // For String and Byte data type always read all bytes at once.
         // All other types handle multiple values as arrays of their underlying FIT base type.
         switch ($baseType) {
@@ -203,7 +216,17 @@ class Decoder
         }
 
         if ($fieldValue !== null) {
-            $message->setFieldValue($fieldNumber, $fieldValue, $fitBaseType);
+            $field = $message->setFieldValue($fieldNumber, $fieldValue);
+            if ($this->options?->strictMode && $field !== null && $field->getType() !== $fitBaseType->getType()) {
+                throw new FitException(sprintf(
+                    'mismatch between base type in FIT message and base type declared in meta data of property "%s::%s".
+                    Base type from FIT file is "%s", base type from property meta is "%s"',
+                    static::class,
+                    $field->getName(),
+                    $fitBaseType->getName(),
+                    FitBaseTypeDefinition::fromType($field->getType())->getName()
+                ));
+            }
         }
     }
 

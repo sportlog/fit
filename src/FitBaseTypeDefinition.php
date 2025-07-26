@@ -27,6 +27,21 @@ class FitBaseTypeDefinition
      */
     public static function fromType(int $baseType): ?self
     {
+        $baseTypeDefinitions = self::getBaseTypeDefinitions();
+        return isset($baseTypeDefinitions[$baseType]) ? $baseTypeDefinitions[$baseType] : null;
+    }
+
+    /**
+     * Get definition from size, based on the family of @param $baseTypeDefinition.
+     */
+    public static function matchBySize(self $baseTypeDefinition, int $size): ?self
+    {
+        $baseTypeDefinitions = self::getBaseTypeDefinitions();
+        return array_find($baseTypeDefinitions, fn(self $btd) => $btd->getFamily() === $baseTypeDefinition->getFamily() && $btd->bytes === $size);
+    }
+
+    private static function getBaseTypeDefinitions(): array
+    {
         if (self::$fieldDefinitions === null) {
             self::$fieldDefinitions = [
                 FitBaseType::ENUM => new self(FitBaseType::ENUM, false, "enum", 1, 0xFF),
@@ -49,11 +64,20 @@ class FitBaseTypeDefinition
             ];
         }
 
-        return isset(self::$fieldDefinitions[$baseType]) ? self::$fieldDefinitions[$baseType] : null;
+        return self::$fieldDefinitions;
     }
 
-    public function __construct(private int $type, private bool $endianAbility, private string $name, private int $bytes, private mixed $invalidValue)
+    public function __construct(private int $type, private bool $endianAbility, private string $name, private int $bytes, private mixed $invalidValue) {}
+
+    public function getFamily(): string
     {
+        return match ($this->getType()) {
+            FitBaseType::SINT8, FitBaseType::SINT16, FitBaseType::SINT32, FitBaseType::SINT64 => 'sint',
+            FitBaseType::UINT8, FitBaseType::UINT16, FitBaseType::UINT32, FitBaseType::UINT64 => 'uint',
+            FitBaseType::UINT8Z, FitBaseType::UINT16Z, FitBaseType::UINT32Z, FitBaseType::UINT64Z => 'uintz',
+            FitBaseType::FLOAT32, FitBaseType::FLOAT64 => 'float',
+            default => $this->getName()
+        };
     }
 
     public function getType(): int
