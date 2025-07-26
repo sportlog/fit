@@ -13,7 +13,7 @@ namespace Sportlog\FIT;
 readonly class DecoderOptions
 {
     /**
-     * @param strictMode Enable strict mode for exact FIT type checking.
+     * @param $strictMode Enable strict mode for exact FIT type checking.
      */
     public function __construct(public ?bool $strictMode) {}
 }
