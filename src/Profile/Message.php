@@ -17,7 +17,6 @@ use Iterator;
 use IteratorAggregate;
 use JsonSerializable;
 use ReflectionClass;
-use Sportlog\FIT\{FitBaseTypeDefinition, FitException};
 use Stringable;
 
 /**
@@ -113,40 +112,25 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
      * @param int $fieldNumber Number of the field to set.
      * @param mixed $value The field value. The value is stored even if the field number does
      * not belong to a native field.
-     * @param FitBaseTypeDefinition $fitBaseType The underlying base type of the value. Must match with the base type
-     * of the native field.
-     * @throws Exception Base type of native field is not identical to the base type from FIT file definition
      */
-    public function setFieldValue(int $fieldNumber, mixed $value, FitBaseTypeDefinition $fitBaseType): void
+    public function setFieldValue(int $fieldNumber, mixed $value): Field | null
     {
         // Get the field.
         // If the field does not exists, the FIT file provides data not specified in the FIT SDK.
         // Store the data anyway even if it's unknown how to interprete it.
         $field = $this->getField($fieldNumber);
-        if ($field !== null) {
-            if ($field->getType() !== $fitBaseType->getType()) {
-                throw new FitException(sprintf(
-                    'mismatch between base type in FIT message and base type declared in meta data of property "%s::%s".
-                    Base type from FIT file is "%s", base type from property meta is "%s"',
-                    static::class,
-                    $field->getName(),
-                    $fitBaseType->getName(),
-                    $field->getType()
-                ));
-            }
-
-            if ($field->requiresCalculation) {
-                // If scale and/or offset are set, calculate the value.
-                // This changes any values of type int to float.
-                if (is_array($value)) {
-                    $value = array_map(fn ($val) => $field->calculateValue($val), $value);
-                } else {
-                    $value = $field->calculateValue($value);
-                }
+        if ($field !== null && $field->requiresCalculation) {
+            // If scale and/or offset are set, calculate the value.
+            // This changes any values of type int to float.
+            if (is_array($value)) {
+                $value = array_map(fn($val) => $field->calculateValue($val), $value);
+            } else {
+                $value = $field->calculateValue($value);
             }
         }
-      
+
         $this->values[$fieldNumber] = $value;
+        return $field;
     }
 
     /**
@@ -241,7 +225,7 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
     {
         switch ($field->getProfileType()) {
             case ProfileType::BOOL:
-                return is_array($value) ? array_map(fn ($val) => $val !== 0, $value) : $value !== 0;
+                return is_array($value) ? array_map(fn($val) => $val !== 0, $value) : $value !== 0;
 
             case ProfileType::LOCALDATETIME:
             case ProfileType::DATETIME:
