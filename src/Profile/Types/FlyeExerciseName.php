@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.158 SDK
+ * FIT 21.171 SDK
  */
 
 declare(strict_types=1);
@@ -18,14 +18,17 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class FlyeExerciseName
 {
-    public const CABLE_CROSSOVER = 0;
-    public const DECLINE_DUMBBELL_FLYE = 1;
-    public const DUMBBELL_FLYE = 2;
-    public const INCLINE_DUMBBELL_FLYE = 3;
-    public const KETTLEBELL_FLYE = 4;
-    public const KNEELING_REAR_FLYE = 5;
-    public const SINGLE_ARM_STANDING_CABLE_REVERSE_FLYE = 6;
-    public const SWISS_BALL_DUMBBELL_FLYE = 7;
-    public const ARM_ROTATIONS = 8;
-    public const HUG_A_TREE = 9;
+    const CABLE_CROSSOVER = 0;
+    const DECLINE_DUMBBELL_FLYE = 1;
+    const DUMBBELL_FLYE = 2;
+    const INCLINE_DUMBBELL_FLYE = 3;
+    const KETTLEBELL_FLYE = 4;
+    const KNEELING_REAR_FLYE = 5;
+    const SINGLE_ARM_STANDING_CABLE_REVERSE_FLYE = 6;
+    const SWISS_BALL_DUMBBELL_FLYE = 7;
+    const ARM_ROTATIONS = 8;
+    const HUG_A_TREE = 9;
+    const FACE_DOWN_INCLINE_REVERSE_FLYE = 10;
+    const INCLINE_REVERSE_FLYE = 11;
+    const REAR_DELT_FLY_WHEELCHAIR = 12;
 }

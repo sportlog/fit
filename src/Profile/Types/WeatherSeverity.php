@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.158 SDK
+ * FIT 21.171 SDK
  */
 
 declare(strict_types=1);
@@ -18,9 +18,9 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class WeatherSeverity
 {
-    public const UNKNOWN = 0;
-    public const WARNING = 1;
-    public const WATCH = 2;
-    public const ADVISORY = 3;
-    public const STATEMENT = 4;
+    const UNKNOWN = 0;
+    const WARNING = 1;
+    const WATCH = 2;
+    const ADVISORY = 3;
+    const STATEMENT = 4;
 }

@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.158 SDK
+ * FIT 21.171 SDK
  */
 
 declare(strict_types=1);
@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SensorType
 {
-    public const ACCELEROMETER = 0;
-    public const GYROSCOPE = 1;
-    public const COMPASS = 2;
-    public const BAROMETER = 3;
+    const ACCELEROMETER = 0;
+    const GYROSCOPE = 1;
+    const COMPASS = 2;
+    const BAROMETER = 3;
 }

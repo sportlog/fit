@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.158 SDK
+ * FIT 21.171 SDK
  */
 
 declare(strict_types=1);
@@ -18,38 +18,57 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class ExerciseCategory
 {
-    public const BENCH_PRESS = 0;
-    public const CALF_RAISE = 1;
-    public const CARDIO = 2;
-    public const CARRY = 3;
-    public const CHOP = 4;
-    public const CORE = 5;
-    public const CRUNCH = 6;
-    public const CURL = 7;
-    public const DEADLIFT = 8;
-    public const FLYE = 9;
-    public const HIP_RAISE = 10;
-    public const HIP_STABILITY = 11;
-    public const HIP_SWING = 12;
-    public const HYPEREXTENSION = 13;
-    public const LATERAL_RAISE = 14;
-    public const LEG_CURL = 15;
-    public const LEG_RAISE = 16;
-    public const LUNGE = 17;
-    public const OLYMPIC_LIFT = 18;
-    public const PLANK = 19;
-    public const PLYO = 20;
-    public const PULL_UP = 21;
-    public const PUSH_UP = 22;
-    public const ROW = 23;
-    public const SHOULDER_PRESS = 24;
-    public const SHOULDER_STABILITY = 25;
-    public const SHRUG = 26;
-    public const SIT_UP = 27;
-    public const SQUAT = 28;
-    public const TOTAL_BODY = 29;
-    public const TRICEPS_EXTENSION = 30;
-    public const WARM_UP = 31;
-    public const RUN = 32;
-    public const UNKNOWN = 65534;
+    const BENCH_PRESS = 0;
+    const CALF_RAISE = 1;
+    const CARDIO = 2;
+    const CARRY = 3;
+    const CHOP = 4;
+    const CORE = 5;
+    const CRUNCH = 6;
+    const CURL = 7;
+    const DEADLIFT = 8;
+    const FLYE = 9;
+    const HIP_RAISE = 10;
+    const HIP_STABILITY = 11;
+    const HIP_SWING = 12;
+    const HYPEREXTENSION = 13;
+    const LATERAL_RAISE = 14;
+    const LEG_CURL = 15;
+    const LEG_RAISE = 16;
+    const LUNGE = 17;
+    const OLYMPIC_LIFT = 18;
+    const PLANK = 19;
+    const PLYO = 20;
+    const PULL_UP = 21;
+    const PUSH_UP = 22;
+    const ROW = 23;
+    const SHOULDER_PRESS = 24;
+    const SHOULDER_STABILITY = 25;
+    const SHRUG = 26;
+    const SIT_UP = 27;
+    const SQUAT = 28;
+    const TOTAL_BODY = 29;
+    const TRICEPS_EXTENSION = 30;
+    const WARM_UP = 31;
+    const RUN = 32;
+    const BIKE = 33;
+    const CARDIO_SENSORS = 34;
+    const MOVE = 35;
+    const POSE = 36;
+    const BANDED_EXERCISES = 37;
+    const BATTLE_ROPE = 38;
+    const ELLIPTICAL = 39;
+    const FLOOR_CLIMB = 40;
+    const INDOOR_BIKE = 41;
+    const INDOOR_ROW = 42;
+    const LADDER = 43;
+    const SANDBAG = 44;
+    const SLED = 45;
+    const SLEDGE_HAMMER = 46;
+    const STAIR_STEPPER = 47;
+    const SUSPENSION = 49;
+    const TIRE = 50;
+    const RUN_INDOOR = 52;
+    const BIKE_OUTDOOR = 53;
+    const UNKNOWN = 65534;
 }

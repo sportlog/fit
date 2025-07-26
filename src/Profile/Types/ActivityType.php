@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.158 SDK
+ * FIT 21.171 SDK
  */
 
 declare(strict_types=1);
@@ -18,13 +18,13 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class ActivityType
 {
-    public const GENERIC = 0;
-    public const RUNNING = 1;
-    public const CYCLING = 2;
-    public const TRANSITION = 3;
-    public const FITNESS_EQUIPMENT = 4;
-    public const SWIMMING = 5;
-    public const WALKING = 6;
-    public const SEDENTARY = 8;
-    public const ALL = 254;
+    const GENERIC = 0;
+    const RUNNING = 1;
+    const CYCLING = 2;
+    const TRANSITION = 3;
+    const FITNESS_EQUIPMENT = 4;
+    const SWIMMING = 5;
+    const WALKING = 6;
+    const SEDENTARY = 8;
+    const ALL = 254;
 }

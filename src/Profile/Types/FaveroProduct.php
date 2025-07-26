@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.158 SDK
+ * FIT 21.171 SDK
  */
 
 declare(strict_types=1);
@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class FaveroProduct
 {
-    public const ASSIOMA_UNO = 10;
-    public const ASSIOMA_DUO = 12;
+    const ASSIOMA_UNO = 10;
+    const ASSIOMA_DUO = 12;
 }

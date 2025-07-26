@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.158 SDK
+ * FIT 21.171 SDK
  */
 
 declare(strict_types=1);
@@ -120,6 +120,7 @@ use Sportlog\FIT\Profile\Messages\TimeInZoneMessage;
 use Sportlog\FIT\Profile\Messages\TimestampCorrelationMessage;
 use Sportlog\FIT\Profile\Messages\TotalsMessage;
 use Sportlog\FIT\Profile\Messages\TrainingFileMessage;
+use Sportlog\FIT\Profile\Messages\TrainingSettingsMessage;
 use Sportlog\FIT\Profile\Messages\UserProfileMessage;
 use Sportlog\FIT\Profile\Messages\VideoClipMessage;
 use Sportlog\FIT\Profile\Messages\VideoDescriptionMessage;
@@ -172,6 +173,7 @@ class MessageFactory
             MesgNum::CADENCE_ZONE => new CadenceZoneMessage(),
             MesgNum::POWER_ZONE => new PowerZoneMessage(),
             MesgNum::MET_ZONE => new MetZoneMessage(),
+            MesgNum::TRAINING_SETTINGS => new TrainingSettingsMessage(),
             MesgNum::DIVE_SETTINGS => new DiveSettingsMessage(),
             MesgNum::DIVE_ALARM => new DiveAlarmMessage(),
             MesgNum::DIVE_APNEA_ALARM => new DiveApneaAlarmMessage(),

@@ -1,0 +1,106 @@
+<?php
+
+/**
+ * FIT decoder
+ *
+ * @license MIT License
+ *
+ * ****WARNING****  This file is auto-generated! Do NOT edit.
+ * FIT 21.171 SDK
+ */
+
+declare(strict_types=1);
+
+namespace Sportlog\FIT\Profile\Types;
+
+/**
+ * MoveExerciseName constants
+ */
+final class MoveExerciseName
+{
+    const ARCH_AND_CURL = 0;
+    const ARM_CIRCLES_WITH_BALL_BAND_AND_WEIGHT = 1;
+    const ARM_STRETCH = 2;
+    const BACK_MASSAGE = 3;
+    const BELLY_BREATHING = 4;
+    const BRIDGE_WITH_BALL = 5;
+    const DIAMOND_LEG_CRUNCH = 6;
+    const DIAMOND_LEG_LIFT = 7;
+    const EIGHT_POINT_SHOULDER_OPENER = 8;
+    const FOOT_ROLLING = 9;
+    const FOOTWORK = 10;
+    const FOOTWORK_ON_DISC = 11;
+    const FORWARD_FOLD = 12;
+    const FROG_WITH_BAND = 13;
+    const HALF_ROLL_UP = 14;
+    const HAMSTRING_CURL = 15;
+    const HAMSTRING_STRETCH = 16;
+    const HIP_STRETCH = 17;
+    const HUG_A_TREE_WITH_BALL_BAND_AND_WEIGHT = 18;
+    const KNEE_CIRCLES = 19;
+    const KNEE_FOLDS_ON_DISC = 20;
+    const LATERAL_FLEXION = 21;
+    const LEG_STRETCH_WITH_BAND = 22;
+    const LEG_STRETCH_WITH_LEG_CIRCLES = 23;
+    const LOWER_LIFT_ON_DISC = 24;
+    const LUNGE_SQUAT = 25;
+    const LUNGES_WITH_KNEE_LIFT = 26;
+    const MERMAID_STRETCH = 27;
+    const NEUTRAL_PELVIC_POSITION = 28;
+    const PELVIC_CLOCKS_ON_DISC = 29;
+    const PILATES_PLIE_SQUATS_PARALLEL_TURNED_OUT_FLAT_AND_HEELS_WITH_CHAIR = 30;
+    const PIRIFORMIS_STRETCH = 31;
+    const PLANK_KNEE_CROSSES = 32;
+    const PLANK_KNEE_PULLS = 33;
+    const PLANK_UP_DOWNS = 34;
+    const PRAYER_MUDRA = 35;
+    const PSOAS_LUNGE_STRETCH = 36;
+    const RIBCAGE_BREATHING = 37;
+    const ROLL_DOWN = 38;
+    const ROLL_UP_WITH_WEIGHT_AND_BAND = 39;
+    const SAW = 40;
+    const SCAPULAR_STABILIZATION = 41;
+    const SCISSORS_ON_DISC = 42;
+    const SEATED_HIP_STRETCHUP = 43;
+    const SEATED_TWIST = 44;
+    const SHAVING_THE_HEAD_WITH_BALL_BAND_AND_WEIGHT = 45;
+    const SPINAL_TWIST = 46;
+    const SPINAL_TWIST_STRETCH = 47;
+    const SPINE_STRETCH_FORWARD = 48;
+    const SQUAT_OPEN_ARM_TWIST_POSE = 49;
+    const SQUATS_WITH_BALL = 50;
+    const STAND_AND_HANG = 51;
+    const STANDING_SIDE_STRETCH = 52;
+    const STANDING_SINGLE_LEG_FORWARD_BEND_WITH_IT_BAND_OPENER = 53;
+    const STRAIGHT_LEG_CRUNCH_WITH_LEG_LIFT = 54;
+    const STRAIGHT_LEG_CRUNCH_WITH_LEG_LIFT_WITH_BALL = 55;
+    const STRAIGHT_LEG_CRUNCH_WITH_LEGS_CROSSED = 56;
+    const STRAIGHT_LEG_CRUNCH_WITH_LEGS_CROSSED_WITH_BALL = 57;
+    const STRAIGHT_LEG_DIAGONAL_CRUNCH = 58;
+    const STRAIGHT_LEG_DIAGONAL_CRUNCH_WITH_BALL = 59;
+    const TAILBONE_CURL = 60;
+    const THROAT_LOCK = 61;
+    const TICK_TOCK_SIDE_ROLL = 62;
+    const TWIST = 63;
+    const V_LEG_CRUNCHES = 64;
+    const V_SIT = 65;
+    const FORWARD_FOLD_WHEELCHAIR = 66;
+    const FORWARD_FOLD_PLUS_WHEELCHAIR = 67;
+    const ARM_CIRCLES_LOW_FORWARD_WHEELCHAIR = 68;
+    const ARM_CIRCLES_MID_FORWARD_WHEELCHAIR = 69;
+    const ARM_CIRCLES_HIGH_FORWARD_WHEELCHAIR = 70;
+    const ARM_CIRCLES_LOW_BACKWARD_WHEELCHAIR = 71;
+    const ARM_CIRCLES_MID_BACKWARD_WHEELCHAIR = 72;
+    const ARM_CIRCLES_HIGH_BACKWARD_WHEELCHAIR = 73;
+    const CORE_TWISTS_WHEELCHAIR = 74;
+    const ARM_RAISE_WHEELCHAIR = 75;
+    const CHEST_EXPAND_WHEELCHAIR = 76;
+    const ARM_EXTEND_WHEELCHAIR = 77;
+    const FORWARD_BEND_WHEELCHAIR = 78;
+    const TOE_TOUCH_WHEELCHAIR = 79;
+    const EXTENDED_TOE_TOUCH_WHEELCHAIR = 80;
+    const SEATED_ARM_CIRCLES = 81;
+    const TRUNK_ROTATIONS = 82;
+    const SEATED_TRUNK_ROTATIONS = 83;
+    const TOE_TOUCH = 84;
+}

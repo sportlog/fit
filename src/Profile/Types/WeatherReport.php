@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.158 SDK
+ * FIT 21.171 SDK
  */
 
 declare(strict_types=1);
@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class WeatherReport
 {
-    public const CURRENT = 0;
-    public const FORECAST = 1;
-    public const HOURLY_FORECAST = 1;
-    public const DAILY_FORECAST = 2;
+    const CURRENT = 0;
+    const FORECAST = 1;
+    const HOURLY_FORECAST = 1;
+    const DAILY_FORECAST = 2;
 }

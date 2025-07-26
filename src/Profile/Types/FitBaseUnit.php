@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.158 SDK
+ * FIT 21.171 SDK
  */
 
 declare(strict_types=1);
@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class FitBaseUnit
 {
-    public const OTHER = 0;
-    public const KILOGRAM = 1;
-    public const POUND = 2;
+    const OTHER = 0;
+    const KILOGRAM = 1;
+    const POUND = 2;
 }

@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.158 SDK
+ * FIT 21.171 SDK
  */
 
 declare(strict_types=1);
@@ -18,12 +18,12 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class BleDeviceType
 {
-    public const CONNECTED_GPS = 0;
-    public const HEART_RATE = 1;
-    public const BIKE_POWER = 2;
-    public const BIKE_SPEED_CADENCE = 3;
-    public const BIKE_SPEED = 4;
-    public const BIKE_CADENCE = 5;
-    public const FOOTPOD = 6;
-    public const BIKE_TRAINER = 7;
+    const CONNECTED_GPS = 0;
+    const HEART_RATE = 1;
+    const BIKE_POWER = 2;
+    const BIKE_SPEED_CADENCE = 3;
+    const BIKE_SPEED = 4;
+    const BIKE_CADENCE = 5;
+    const FOOTPOD = 6;
+    const BIKE_TRAINER = 7;
 }

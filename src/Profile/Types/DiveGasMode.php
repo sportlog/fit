@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.158 SDK
+ * FIT 21.171 SDK
  */
 
 declare(strict_types=1);
@@ -18,6 +18,6 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class DiveGasMode
 {
-    public const OPEN_CIRCUIT = 0;
-    public const CLOSED_CIRCUIT_DILUENT = 1;
+    const OPEN_CIRCUIT = 0;
+    const CLOSED_CIRCUIT_DILUENT = 1;
 }

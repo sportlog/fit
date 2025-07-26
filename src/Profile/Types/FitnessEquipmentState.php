@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.158 SDK
+ * FIT 21.171 SDK
  */
 
 declare(strict_types=1);
@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class FitnessEquipmentState
 {
-    public const READY = 0;
-    public const IN_USE = 1;
-    public const PAUSED = 2;
-    public const UNKNOWN = 3;
+    const READY = 0;
+    const IN_USE = 1;
+    const PAUSED = 2;
+    const UNKNOWN = 3;
 }

@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.158 SDK
+ * FIT 21.171 SDK
  */
 
 declare(strict_types=1);
@@ -18,9 +18,9 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class DisplayOrientation
 {
-    public const AUTO = 0;
-    public const PORTRAIT = 1;
-    public const LANDSCAPE = 2;
-    public const PORTRAIT_FLIPPED = 3;
-    public const LANDSCAPE_FLIPPED = 4;
+    const AUTO = 0;
+    const PORTRAIT = 1;
+    const LANDSCAPE = 2;
+    const PORTRAIT_FLIPPED = 3;
+    const LANDSCAPE_FLIPPED = 4;
 }

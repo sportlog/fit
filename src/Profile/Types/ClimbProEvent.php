@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.158 SDK
+ * FIT 21.171 SDK
  */
 
 declare(strict_types=1);
@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class ClimbProEvent
 {
-    public const APPROACH = 0;
-    public const START = 1;
-    public const COMPLETE = 2;
+    const APPROACH = 0;
+    const START = 1;
+    const COMPLETE = 2;
 }

@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.158 SDK
+ * FIT 21.171 SDK
  */
 
 declare(strict_types=1);
@@ -18,10 +18,10 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class StrokeType
 {
-    public const NO_EVENT = 0;
-    public const OTHER = 1;
-    public const SERVE = 2;
-    public const FOREHAND = 3;
-    public const BACKHAND = 4;
-    public const SMASH = 5;
+    const NO_EVENT = 0;
+    const OTHER = 1;
+    const SERVE = 2;
+    const FOREHAND = 3;
+    const BACKHAND = 4;
+    const SMASH = 5;
 }

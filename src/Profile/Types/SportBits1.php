@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.158 SDK
+ * FIT 21.171 SDK
  */
 
 declare(strict_types=1);
@@ -18,12 +18,12 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SportBits1
 {
-    public const TENNIS = 1;
-    public const AMERICAN_FOOTBALL = 2;
-    public const TRAINING = 4;
-    public const WALKING = 8;
-    public const CROSS_COUNTRY_SKIING = 16;
-    public const ALPINE_SKIING = 32;
-    public const SNOWBOARDING = 64;
-    public const ROWING = 128;
+    const TENNIS = 1;
+    const AMERICAN_FOOTBALL = 2;
+    const TRAINING = 4;
+    const WALKING = 8;
+    const CROSS_COUNTRY_SKIING = 16;
+    const ALPINE_SKIING = 32;
+    const SNOWBOARDING = 64;
+    const ROWING = 128;
 }

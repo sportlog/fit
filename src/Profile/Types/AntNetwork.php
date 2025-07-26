@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.158 SDK
+ * FIT 21.171 SDK
  */
 
 declare(strict_types=1);
@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class AntNetwork
 {
-    public const PUBLIC = 0;
-    public const ANTPLUS = 1;
-    public const ANTFS = 2;
-    public const PRIVATE = 3;
+    const PUBLIC = 0;
+    const ANTPLUS = 1;
+    const ANTFS = 2;
+    const PRIVATE = 3;
 }

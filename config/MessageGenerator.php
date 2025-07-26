@@ -26,14 +26,18 @@ use Sportlog\FIT\Profile\{Types\MesgNum, Field, Message, ProfileType};
  * How to generate:
  * - Grab FIT SDK (https://developer.garmin.com/fit/download/)
  * - Copy new Profile.cs (from cs/Dynastream/Fit) to this folder
- * - Export Profile.xlsx qs CSV and copy to this folder
+ * - Export Profile.xlsx as CSV and copy to this folder
+ * 
+ * After generation:
+ * - Update const "FIT_SDK_VERSION" in this file
+ * - Update FIT SDK Version also in readme.md
  */
 class MessageGenerator
 {
     /**
      * FIT-SDK Version
      */
-    const FIT_SDK_VERSION = '21.158';
+    const FIT_SDK_VERSION = '21.171';
     const MESSAGE_START = "Mesg newMesg = new Mesg(";
     const FIELD_START = "newMesg.SetField(new Field(";
     const MESSAGE_END = "return newMesg";
@@ -440,10 +444,10 @@ class MessageGenerator
         }
         $handle = fopen($filename, 'a') or die("could not create file '{$filename}'");
 
-        if (!$exists) {
-            // Now UTF-8 - Add byte order mark
-            fwrite($handle, pack("CCC", 0xef, 0xbb, 0xbf));
-        }
+        // if (!$exists) {
+        //     // Now UTF-8 - Add byte order mark
+        //     fwrite($handle, pack("CCC", 0xef, 0xbb, 0xbf));
+        // }
 
         fwrite($handle, $content);
         fclose($handle);

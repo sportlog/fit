@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.158 SDK
+ * FIT 21.171 SDK
  */
 
 declare(strict_types=1);
@@ -18,12 +18,12 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SportBits2
 {
-    public const MOUNTAINEERING = 1;
-    public const HIKING = 2;
-    public const MULTISPORT = 4;
-    public const PADDLING = 8;
-    public const FLYING = 16;
-    public const E_BIKING = 32;
-    public const MOTORCYCLING = 64;
-    public const BOATING = 128;
+    const MOUNTAINEERING = 1;
+    const HIKING = 2;
+    const MULTISPORT = 4;
+    const PADDLING = 8;
+    const FLYING = 16;
+    const E_BIKING = 32;
+    const MOTORCYCLING = 64;
+    const BOATING = 128;
 }

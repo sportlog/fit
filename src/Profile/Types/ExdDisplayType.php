@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.158 SDK
+ * FIT 21.171 SDK
  */
 
 declare(strict_types=1);
@@ -18,15 +18,15 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class ExdDisplayType
 {
-    public const NUMERICAL = 0;
-    public const SIMPLE = 1;
-    public const GRAPH = 2;
-    public const BAR = 3;
-    public const CIRCLE_GRAPH = 4;
-    public const VIRTUAL_PARTNER = 5;
-    public const BALANCE = 6;
-    public const STRING_LIST = 7;
-    public const STRING = 8;
-    public const SIMPLE_DYNAMIC_ICON = 9;
-    public const GAUGE = 10;
+    const NUMERICAL = 0;
+    const SIMPLE = 1;
+    const GRAPH = 2;
+    const BAR = 3;
+    const CIRCLE_GRAPH = 4;
+    const VIRTUAL_PARTNER = 5;
+    const BALANCE = 6;
+    const STRING_LIST = 7;
+    const STRING = 8;
+    const SIMPLE_DYNAMIC_ICON = 9;
+    const GAUGE = 10;
 }

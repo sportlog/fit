@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.158 SDK
+ * FIT 21.171 SDK
  */
 
 declare(strict_types=1);
@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class Spo2MeasurementType
 {
-    public const OFF_WRIST = 0;
-    public const SPOT_CHECK = 1;
-    public const CONTINUOUS_CHECK = 2;
-    public const PERIODIC = 3;
+    const OFF_WRIST = 0;
+    const SPOT_CHECK = 1;
+    const CONTINUOUS_CHECK = 2;
+    const PERIODIC = 3;
 }
