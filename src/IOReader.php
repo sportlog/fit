@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -37,7 +38,7 @@ class IOReader
      *
      * @var integer
      */
-    private static $_endianess = 0;
+    private static $_endianess = self::MACHINE_ENDIAN_ORDER;
 
     /**
      * The resource identifier of the stream.
@@ -545,7 +546,7 @@ class IOReader
      * @throws Exception if <var>length</var> attribute is negative or
      *  if an I/O error occurs
      */
-    public final function readString16(int $length, int &$order = null, bool $trimOrder = false): string
+    public final function readString16(int $length, ?int &$order = null, bool $trimOrder = false): string
     {
         $value = $this->read($length);
 
@@ -630,7 +631,7 @@ class IOReader
      */
     private function _getEndianess(): int
     {
-        if (self::$_endianess === 0) {
+        if (self::$_endianess === self::MACHINE_ENDIAN_ORDER) {
             self::$_endianess = $this->_fromInt32("\x01\x00\x00\x00") == 1 ?
                 self::LITTLE_ENDIAN_ORDER : self::BIG_ENDIAN_ORDER;
         }

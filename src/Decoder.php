@@ -198,7 +198,7 @@ class Decoder
                 break;
 
             default:
-                $numElements = $size / $fitBaseType->getBytes();
+                $numElements = $size / $fitBaseTypeSize;
                 if ($numElements === 1) {
                     $fieldValue = $this->readValue($fitBaseType, $bigEndian, $reader);
                 } else {
@@ -386,7 +386,7 @@ class Decoder
             if ($field === null) {
                 throw new FitException(sprintf('invalid native field number %s', $descMessage->getNativeFieldNum()));
             }
-            if ($field->getType() !== $descMessage->getFitBaseTypeId()) {
+            if ($this->options?->strictMode && $field->getType() !== $descMessage->getFitBaseTypeId()) {
                 throw new FitException(sprintf(
                     'mismatch between base type in dev field (%s) and base type of native field (%s)',
                     $descMessage->getFitBaseTypeId(),
