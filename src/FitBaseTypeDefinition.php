@@ -36,8 +36,13 @@ class FitBaseTypeDefinition
      */
     public static function matchBySize(self $baseTypeDefinition, int $size): ?self
     {
-        $baseTypeDefinitions = self::getBaseTypeDefinitions();
-        return array_find($baseTypeDefinitions, fn(self $btd) => $btd->getFamily() === $baseTypeDefinition->getFamily() && $btd->bytes === $size);
+        foreach (self::getBaseTypeDefinitions() as $btd) {
+            if ($btd->getFamily() === $baseTypeDefinition->getFamily() && $btd->bytes === $size) {
+                return $btd;
+            }
+        }
+
+        return null;
     }
 
     private static function getBaseTypeDefinitions(): array
