@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.171 SDK
+ * FIT 21.188 SDK
  */
 
 declare(strict_types=1);
@@ -448,6 +448,7 @@ final class GarminProduct
     const HRM_FIT = 4446;
     const MARQ_GEN2_COMMANDER = 4472;
     const LILY_ATHLETE = 4477;
+    const RALLY_X10 = 4525;
     const FENIX8_SOLAR = 4532;
     const FENIX8_SOLAR_LARGE = 4533;
     const FENIX8_SMALL = 4534;
@@ -460,14 +461,25 @@ final class GarminProduct
     const INSTINCT3_AMOLED_45MM = 4586;
     const INSTINCT3_AMOLED_50MM = 4587;
     const DESCENT_G2 = 4588;
+    const VENU_X1 = 4603;
     const HRM_200 = 4606;
     const VIVOACTIVE6 = 4625;
+    const FENIX8_PRO = 4631;
+    const EDGE_550 = 4633;
+    const EDGE_850 = 4634;
+    const VENU4 = 4643;
+    const VENU4S = 4644;
     const APPROACHS44 = 4647;
+    const EDGE_MTB = 4655;
     const APPROACHS50 = 4656;
     const FENIX_E = 4666;
+    const BOUNCE2 = 4745;
     const INSTINCT3_SOLAR_50MM = 4759;
     const TACTIX8_AMOLED = 4775;
     const TACTIX8_SOLAR = 4776;
+    const D2_MACH2 = 4879;
+    const INSTINCT_CROSSOVER_AMOLED = 4678;
+    const D2_AIR_X15 = 4944;
     const SDM4 = 10007;
     const EDGE_REMOTE = 10014;
     const TACX_TRAINING_APP_WIN = 20533;

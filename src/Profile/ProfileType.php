@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.171 SDK
+ * FIT 21.188 SDK
  */
 
 declare(strict_types=1);
@@ -226,6 +226,7 @@ class ProfileType
     const GASCONSUMPTIONRATETYPE = 'GasConsumptionRateType';
     const TAPSENSITIVITY = 'TapSensitivity';
     const RADARTHREATLEVELTYPE = 'RadarThreatLevelType';
+    const SLEEPDISRUPTIONSEVERITY = 'SleepDisruptionSeverity';
     const MAXMETSPEEDSOURCE = 'MaxMetSpeedSource';
     const MAXMETHEARTRATESOURCE = 'MaxMetHeartRateSource';
     const HRVSTATUS = 'HrvStatus';

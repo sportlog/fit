@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.171 SDK
+ * FIT 21.188 SDK
  */
 
 declare(strict_types=1);
@@ -139,6 +139,8 @@ final class MesgNum
     const DIVE_APNEA_ALARM = 393;
     const SKIN_TEMP_OVERNIGHT = 398;
     const HSA_WRIST_TEMPERATURE_DATA = 409;
+    const SLEEP_DISRUPTION_SEVERITY_PERIOD = 470;
+    const SLEEP_DISRUPTION_OVERNIGHT_SEVERITY = 471;
     const MFG_RANGE_MIN = 65280;
     const MFG_RANGE_MAX = 65534;
 }

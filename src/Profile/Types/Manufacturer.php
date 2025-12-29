@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.171 SDK
+ * FIT 21.188 SDK
  */
 
 declare(strict_types=1);
@@ -249,5 +249,6 @@ final class Manufacturer
     const TEKTRO_RACING_PRODUCTS = 333;
     const DARAD_INNOVATION_CORPORATION = 334;
     const CYCLOPTIM = 335;
+    const RUNNA = 337;
     const ACTIGRAPHCORP = 5759;
 }

@@ -25,7 +25,7 @@ use Sportlog\FIT\Profile\{Types\MesgNum, Field, Message, ProfileType};
  * 
  * How to generate:
  * - Grab FIT SDK (https://developer.garmin.com/fit/download/)
- * - Copy new Profile.cs (from cs/Dynastream/Fit) to this folder
+ * - Copy new Profile.cs (from cs/Dynastream/Fit) to this folder (/cs/Dynastream/Fit/Profile.cs)
  * - Export Profile.xlsx as CSV and copy to this folder
  * 
  * After generation:
@@ -37,7 +37,7 @@ class MessageGenerator
     /**
      * FIT-SDK Version
      */
-    const FIT_SDK_VERSION = '21.171';
+    const FIT_SDK_VERSION = '21.188';
     const MESSAGE_START = "Mesg newMesg = new Mesg(";
     const FIELD_START = "newMesg.SetField(new Field(";
     const MESSAGE_END = "return newMesg";

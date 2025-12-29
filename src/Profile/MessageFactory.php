@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.171 SDK
+ * FIT 21.188 SDK
  */
 
 declare(strict_types=1);
@@ -105,6 +105,8 @@ use Sportlog\FIT\Profile\Messages\SetMessage;
 use Sportlog\FIT\Profile\Messages\SkinTempOvernightMessage;
 use Sportlog\FIT\Profile\Messages\SlaveDeviceMessage;
 use Sportlog\FIT\Profile\Messages\SleepAssessmentMessage;
+use Sportlog\FIT\Profile\Messages\SleepDisruptionOvernightSeverityMessage;
+use Sportlog\FIT\Profile\Messages\SleepDisruptionSeverityPeriodMessage;
 use Sportlog\FIT\Profile\Messages\SleepLevelMessage;
 use Sportlog\FIT\Profile\Messages\SoftwareMessage;
 use Sportlog\FIT\Profile\Messages\SpeedZoneMessage;
@@ -267,6 +269,8 @@ class MessageFactory
             MesgNum::TANK_UPDATE => new TankUpdateMessage(),
             MesgNum::TANK_SUMMARY => new TankSummaryMessage(),
             MesgNum::SLEEP_ASSESSMENT => new SleepAssessmentMessage(),
+            MesgNum::SLEEP_DISRUPTION_SEVERITY_PERIOD => new SleepDisruptionSeverityPeriodMessage(),
+            MesgNum::SLEEP_DISRUPTION_OVERNIGHT_SEVERITY => new SleepDisruptionOvernightSeverityMessage(),
             MesgNum::SKIN_TEMP_OVERNIGHT => new SkinTempOvernightMessage(),
             MesgNum::PAD => new PadMessage(),
             default => new InvalidMessage()

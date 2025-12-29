@@ -21,18 +21,18 @@ use Sportlog\FIT\Profile\ProfileType;
 use Sportlog\FIT\Profile\Types\MesgNum;
 
 /**
- * SleepLevelMessage message
+ * SleepDisruptionOvernightSeverityMessage message
  */
-#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
-#[Field('SleepLevel', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SLEEPLEVEL)]
-final class SleepLevelMessage extends Message
+#[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::DATETIME)]
+#[Field('Severity', 0, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SLEEPDISRUPTIONSEVERITY)]
+final class SleepDisruptionOvernightSeverityMessage extends Message
 {
     /**
      * Creates a new message instance
      */
     public function __construct()
     {
-        parent::__construct('SleepLevel', MesgNum::SLEEP_LEVEL);
+        parent::__construct('SleepDisruptionOvernightSeverity', MesgNum::SLEEP_DISRUPTION_OVERNIGHT_SEVERITY);
     }
 
     /**
@@ -44,9 +44,9 @@ final class SleepLevelMessage extends Message
     }
 
     /**
-     * Gets the sleep level
+     * Gets the severity
      */
-    public function getSleepLevel(): int|array|null
+    public function getSeverity(): int|array|null
     {
         return $this->getFieldValue(0);
     }

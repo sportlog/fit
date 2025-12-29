@@ -14,10 +14,12 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Types;
 
 /**
- * DateMode constants
+ * SleepDisruptionSeverity constants
  */
-final class DateMode
+final class SleepDisruptionSeverity
 {
-    const DAY_MONTH = 0;
-    const MONTH_DAY = 1;
+    const NONE = 0;
+    const LOW = 1;
+    const MEDIUM = 2;
+    const HIGH = 3;
 }
