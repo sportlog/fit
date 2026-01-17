@@ -28,6 +28,7 @@ class MessageList implements IteratorAggregate, Countable
      * Two dimensional array which keeps the messages
      * grouped by their class id. So the key is the class id
      * and the value is an array of messages of that type.
+     * @var array<int, Message[]>
      */
     private array $messages = [];
 
@@ -111,7 +112,8 @@ class MessageList implements IteratorAggregate, Countable
      * @param string $file
      * @return void
      */
-    public function saveAsGPX(string $file): void {
+    public function saveAsGPX(string $file): void
+    {
         GPXWriter::write($file, $this);
     }
 }
