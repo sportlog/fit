@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.188 SDK
+ * FIT 21.201 SDK
  */
 
 declare(strict_types=1);
@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class IndoorBikeExerciseName
 {
-    const AIR_BIKE = 0;
-    const ASSAULT_BIKE = 1;
-    const STATIONARY_BIKE = 3;
+    public const AIR_BIKE = 0;
+    public const ASSAULT_BIKE = 1;
+    public const STATIONARY_BIKE = 3;
 }

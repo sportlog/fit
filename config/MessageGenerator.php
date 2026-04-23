@@ -24,9 +24,8 @@ use Sportlog\FIT\Profile\{Types\MesgNum, Field, Message, ProfileType};
  * of the offical FIT SDK.
  * 
  * How to generate:
- * - Grab FIT SDK (https://developer.garmin.com/fit/download/)
- * - Copy new Profile.cs (from cs/Dynastream/Fit) to this folder (/cs/Dynastream/Fit/Profile.cs)
- * - Export Profile.xlsx as CSV and copy to this folder
+ * - Copy new Profile.cs (https://github.com/garmin/fit-csharp-sdk/blob/main/Dynastream/Fit/Profile.cs) to this folder (/cs/Dynastream/Fit/Profile.cs)
+ * - Export Profile.xlsx (https://github.com/garmin/fit-sdk-tools/blob/main/Profile.xlsx) as CSV and copy to this folder
  * 
  * After generation:
  * - Update const "FIT_SDK_VERSION" in this file
@@ -37,7 +36,7 @@ class MessageGenerator
     /**
      * FIT-SDK Version
      */
-    const FIT_SDK_VERSION = '21.188';
+    const FIT_SDK_VERSION = '21.201';
     const MESSAGE_START = "Mesg newMesg = new Mesg(";
     const FIELD_START = "newMesg.SetField(new Field(";
     const MESSAGE_END = "return newMesg";
@@ -250,7 +249,7 @@ class MessageGenerator
 
         $paramName = 'globalMessageNumber';
         $method->addParameter($paramName)
-            ->setType(Type::INT);
+            ->setType(Type::Int);
 
         $method->addBody("return match (\$globalMessageNumber) {");
 
@@ -317,11 +316,11 @@ class MessageGenerator
                 $phpTypes = [];
                 $phpProfileType = $this->getPhpTypeFromProfileType($profileType, $scale, (float)$offset);
                 $phpTypes[] = $phpProfileType;
-                if ($phpProfileType !== Type::MIXED && $phpProfileType !== DateTime::class && $phpProfileType !== Type::STRING) {
-                    $phpTypes[] = Type::ARRAY;
+                if ($phpProfileType !== Type::Mixed && $phpProfileType !== DateTime::class && $phpProfileType !== Type::String) {
+                    $phpTypes[] = Type::Array;
                 }
-                if ($phpProfileType !== Type::MIXED) {
-                    $phpTypes[] = Type::NULL;
+                if ($phpProfileType !== Type::Mixed) {
+                    $phpTypes[] = Type::Null;
                 }
 
                 /** @var ClassType $class */
@@ -399,7 +398,7 @@ class MessageGenerator
     {
         switch ($profileType) {
             case ProfileType::BOOL:
-                return Type::BOOL;
+                return Type::Bool;
 
             case ProfileType::UINT8:
             case ProfileType::SINT8:
@@ -412,27 +411,27 @@ class MessageGenerator
                 // The raw value will be divided through the scale.
                 // So if scale is not the default (1.0), this might
                 // result in a float.
-                return $scale === 1.0 && $offset === 0.0 ? Type::INT : Type::FLOAT;
+                return $scale === 1.0 && $offset === 0.0 ? Type::Int : Type::Float;
 
             case ProfileType::LOCALDATETIME:
             case ProfileType::DATETIME:
                 return DateTime::class;
 
             case ProfileType::STRING:
-                return Type::STRING;
+                return Type::String;
 
             case ProfileType::SINT64:
             case ProfileType::FLOAT32:
             case ProfileType::FLOAT64:
             case ProfileType::UINT64:
             case ProfileType::UINT64Z:
-                return Type::FLOAT;
+                return Type::Float;
 
             case ProfileType::BYTE:
-                return Type::MIXED;
+                return Type::Mixed;
 
             default:
-                return Type::INT;
+                return Type::Int;
         }
     }
 

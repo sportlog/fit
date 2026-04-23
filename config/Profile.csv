@@ -142,6 +142,7 @@ mesg_num,uint16,,,
 ,,dive_apnea_alarm,393,
 ,,skin_temp_overnight,398,
 ,,hsa_wrist_temperature_data,409,Message number for the HSA wrist temperature data message
+,,nap_event,412,
 ,,sleep_disruption_severity_period,470,
 ,,sleep_disruption_overnight_severity,471,
 ,,mfg_range_min,0xFF00,0xFF00 - 0xFFFE reserved for manufacturer specific messages
@@ -470,12 +471,18 @@ sport,enum,,,
 ,,floor_climbing,48,
 ,,baseball,49,
 ,,diving,53,
+,,shooting,56,"Sport Shooting bits, set here for sport_bits alignment"
+,,winter_sport,58,
+,,grinding,59,"Sailing position, operating manual winches to power boat controls"
 ,,hiit,62,
+,,video_gaming,63,
 ,,racket,64,
 ,,wheelchair_push_walk,65,
 ,,wheelchair_push_run,66,
 ,,meditation,67,
+,,para_sport,68,
 ,,disc_golf,69,
+,,team_sport,70,
 ,,cricket,71,
 ,,rugby,72,
 ,,hockey,73,
@@ -483,10 +490,17 @@ sport,enum,,,
 ,,volleyball,75,
 ,,water_tubing,76,
 ,,wakesurfing,77,
+,,water_sport,78,
+,,archery,79,
 ,,mixed_martial_arts,80,
+,,motor_sports,81,
 ,,snorkeling,82,
 ,,dance,83,
 ,,jump_rope,84,
+,,pool_apnea,85,
+,,mobility,86,
+,,geocaching,87,
+,,canoeing,88,
 ,,all,254,All is for goals only to include all sports.
 sport_bits_0,uint8z,,,Bit field corresponding to sport enum type (1 << sport).
 ,,generic,0x01,
@@ -606,23 +620,40 @@ sub_sport,enum,,,
 ,,virtual_activity,58,
 ,,obstacle,59,"Used for events where participants run, crawl through mud, climb over walls, etc."
 ,,breathing,62,
+,,ccr_diving,63,Diving w/ closed circuit rebreather
 ,,sail_race,65,Sailing
+,,expedition,66,Generic
 ,,ultra,67,Ultramarathon
 ,,indoor_climbing,68,Climbing
 ,,bouldering,69,Climbing
 ,,hiit,70,High Intensity Interval Training
+,,indoor_grinding,71,"Sailing position, operating manual winches to power boat controls"
+,,hunting_with_dogs,72,Hunting
 ,,amrap,73,HIIT
 ,,emom,74,HIIT
 ,,tabata,75,HIIT
+,,esport,77,"Video Gaming, Cycling, etc."
+,,triathlon,78,Multisport
+,,duathlon,79,Multisport
+,,brick,80,Multisport
+,,swim_run,81,Multisport
+,,adventure_race,82,Multisport
+,,trucker_workout,83,DEZL trucker workout training sport
 ,,pickleball,84,Racket
 ,,padel,85,Racket
 ,,indoor_wheelchair_walk,86,
 ,,indoor_wheelchair_run,87,
 ,,indoor_hand_cycling,88,
-,,squash,94,
-,,badminton,95,
-,,racquetball,96,
-,,table_tennis,97,
+,,field,90,Hockey
+,,ice,91,Hockey
+,,ultimate,92,Disc
+,,platform,93,Racket
+,,squash,94,Racket
+,,badminton,95,Racket
+,,racquetball,96,Racket
+,,table_tennis,97,Racket
+,,overland,98,
+,,trolling_motor,99,Generic
 ,,fly_canopy,110,Flying
 ,,fly_paraglide,111,Flying
 ,,fly_paramotor,112,Flying
@@ -633,6 +664,12 @@ sub_sport,enum,,,
 ,,fly_wx,117,Flying
 ,,fly_vfr,118,Flying
 ,,fly_ifr,119,Flying
+,,dynamic_apnea,121,
+,,enduro,123,Cycling
+,,rucking,124,Hiking
+,,rally,125,Motor sports
+,,pool_triathlon,126,Multisport
+,,e_bike_enduro,127,Cycling
 ,,all,254,
 sport_event,enum,,,
 ,,uncategorized,0,
@@ -1144,6 +1181,16 @@ manufacturer,uint16,,,
 ,,darad_innovation_corporation,334,
 ,,cycloptim,335,
 ,,runna,337,
+,,zepp,339,
+,,peloton,340,
+,,carv,341,
+,,tissot,342,
+,,real_velo,345,
+,,wetech,346,
+,,jespr,347,
+,,huawei,348,
+,,gotoes,349,
+,,cadence_app,350,
 ,,actigraphcorp,5759,
 garmin_product,uint16,,,
 ,,hrm1,1,
@@ -1605,6 +1652,7 @@ garmin_product,uint16,,,
 ,,instinct3_solar_50mm,4759,
 ,,tactix8_amoled,4775,
 ,,tactix8_solar,4776,
+,,approach_j1,4825,
 ,,d2_mach2,4879,
 ,,instinct_crossover_amoled,4678,
 ,,d2_air_x15,4944,
@@ -4510,6 +4558,29 @@ sleep_disruption_severity,enum,,,
 ,,low,1,
 ,,medium,2,
 ,,high,3,
+nap_period_feedback,enum,,,
+,,none,0,
+,,multiple_naps_during_day,1,
+,,jetlag_ideal_timing_ideal_duration,2,
+,,jetlag_ideal_timing_long_duration,3,
+,,jetlag_late_timing_ideal_duration,4,
+,,jetlag_late_timing_long_duration,5,
+,,ideal_timing_ideal_duration_low_need,6,
+,,ideal_timing_ideal_duration_high_need,7,
+,,ideal_timing_long_duration_low_need,8,
+,,ideal_timing_long_duration_high_need,9,
+,,late_timing_ideal_duration_low_need,10,
+,,late_timing_ideal_duration_high_need,11,
+,,late_timing_long_duration_low_need,12,
+,,late_timing_long_duration_high_need,13,
+,,ideal_duration_low_need,14,
+,,ideal_duration_high_need,15,
+,,long_duration_low_need,16,
+,,long_duration_high_need,17,
+nap_source,enum,,,
+,,automatic,0,
+,,manual_device,1,
+,,manual_gc,2,
 max_met_speed_source,enum,,,
 ,,onboard_gps,0,
 ,,connected_gps,1,

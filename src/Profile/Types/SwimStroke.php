@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.188 SDK
+ * FIT 21.201 SDK
  */
 
 declare(strict_types=1);
@@ -18,13 +18,13 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SwimStroke
 {
-    const FREESTYLE = 0;
-    const BACKSTROKE = 1;
-    const BREASTSTROKE = 2;
-    const BUTTERFLY = 3;
-    const DRILL = 4;
-    const MIXED = 5;
-    const IM = 6;
-    const IM_BY_ROUND = 7;
-    const RIMO = 8;
+    public const FREESTYLE = 0;
+    public const BACKSTROKE = 1;
+    public const BREASTSTROKE = 2;
+    public const BUTTERFLY = 3;
+    public const DRILL = 4;
+    public const MIXED = 5;
+    public const IM = 6;
+    public const IM_BY_ROUND = 7;
+    public const RIMO = 8;
 }
