@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.188 SDK
+ * FIT 21.201 SDK
  */
 
 declare(strict_types=1);
@@ -18,8 +18,8 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class SleepDisruptionSeverity
 {
-    const NONE = 0;
-    const LOW = 1;
-    const MEDIUM = 2;
-    const HIGH = 3;
+    public const NONE = 0;
+    public const LOW = 1;
+    public const MEDIUM = 2;
+    public const HIGH = 3;
 }

@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.188 SDK
+ * FIT 21.201 SDK
  */
 
 declare(strict_types=1);
@@ -172,6 +172,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('WorkoutRpe', 193, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
 #[Field('AvgSpo2', 194, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
 #[Field('AvgStress', 195, FitBaseType::UINT8, 1.0, 0.0, 'percent', false, ProfileType::UINT8)]
+#[Field('MetabolicCalories', 196, FitBaseType::UINT16, 1.0, 0.0, 'kcal', false, ProfileType::UINT16)]
 #[Field('SdrrHrv', 197, FitBaseType::UINT8, 1.0, 0.0, 'mS', false, ProfileType::UINT8)]
 #[Field('RmssdHrv', 198, FitBaseType::UINT8, 1.0, 0.0, 'mS', false, ProfileType::UINT8)]
 #[Field('TotalFractionalAscent', 199, FitBaseType::UINT8, 100.0, 0.0, 'm', false, ProfileType::UINT8)]
@@ -1379,6 +1380,14 @@ final class SessionMessage extends Message
     public function getAvgStress(): int|array|null
     {
         return $this->getFieldValue(195);
+    }
+
+    /**
+     * Gets the metabolic calories
+     */
+    public function getMetabolicCalories(): int|array|null
+    {
+        return $this->getFieldValue(196);
     }
 
     /**

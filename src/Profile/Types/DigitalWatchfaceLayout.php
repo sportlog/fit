@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.188 SDK
+ * FIT 21.201 SDK
  */
 
 declare(strict_types=1);
@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class DigitalWatchfaceLayout
 {
-    const TRADITIONAL = 0;
-    const MODERN = 1;
-    const BOLD = 2;
+    public const TRADITIONAL = 0;
+    public const MODERN = 1;
+    public const BOLD = 2;
 }

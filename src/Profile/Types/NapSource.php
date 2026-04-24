@@ -14,12 +14,11 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Profile\Types;
 
 /**
- * SensorType constants
+ * NapSource constants
  */
-final class SensorType
+final class NapSource
 {
-    public const ACCELEROMETER = 0;
-    public const GYROSCOPE = 1;
-    public const COMPASS = 2;
-    public const BAROMETER = 3;
+    public const AUTOMATIC = 0;
+    public const MANUAL_DEVICE = 1;
+    public const MANUAL_GC = 2;
 }

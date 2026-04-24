@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.188 SDK
+ * FIT 21.201 SDK
  */
 
 declare(strict_types=1);
@@ -18,5 +18,5 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class WorkoutHr
 {
-    const BPM_OFFSET = 100;
+    public const BPM_OFFSET = 100;
 }

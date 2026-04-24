@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.188 SDK
+ * FIT 21.201 SDK
  */
 
 declare(strict_types=1);
@@ -84,6 +84,7 @@ use Sportlog\FIT\Profile\Messages\MetZoneMessage;
 use Sportlog\FIT\Profile\Messages\MonitoringHrDataMessage;
 use Sportlog\FIT\Profile\Messages\MonitoringInfoMessage;
 use Sportlog\FIT\Profile\Messages\MonitoringMessage;
+use Sportlog\FIT\Profile\Messages\NapEventMessage;
 use Sportlog\FIT\Profile\Messages\NmeaSentenceMessage;
 use Sportlog\FIT\Profile\Messages\ObdiiDataMessage;
 use Sportlog\FIT\Profile\Messages\OhrSettingsMessage;
@@ -271,6 +272,7 @@ class MessageFactory
             MesgNum::SLEEP_ASSESSMENT => new SleepAssessmentMessage(),
             MesgNum::SLEEP_DISRUPTION_SEVERITY_PERIOD => new SleepDisruptionSeverityPeriodMessage(),
             MesgNum::SLEEP_DISRUPTION_OVERNIGHT_SEVERITY => new SleepDisruptionOvernightSeverityMessage(),
+            MesgNum::NAP_EVENT => new NapEventMessage(),
             MesgNum::SKIN_TEMP_OVERNIGHT => new SkinTempOvernightMessage(),
             MesgNum::PAD => new PadMessage(),
             default => new InvalidMessage()

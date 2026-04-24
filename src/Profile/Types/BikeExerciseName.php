@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.188 SDK
+ * FIT 21.201 SDK
  */
 
 declare(strict_types=1);
@@ -18,7 +18,7 @@ namespace Sportlog\FIT\Profile\Types;
  */
 final class BikeExerciseName
 {
-    const BIKE = 0;
-    const RIDE = 1;
-    const SPRINT = 2;
+    public const BIKE = 0;
+    public const RIDE = 1;
+    public const SPRINT = 2;
 }
