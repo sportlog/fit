@@ -51,6 +51,27 @@ class Decoder
      */
     public function read(mixed $fileOrStream): MessageList
     {
+        $messages = new MessageList();
+        $this->decode($fileOrStream, function (Message $message) use ($messages) {
+            $messages->addMessage($message);
+        });
+        return $messages;
+    }
+
+    /**
+     * Reads the file/stream and calls the provided callback for each decoded message.
+     *
+     * @param string|resource $fileOrStream
+     * @param callable $messageHandler  Callback function that is called for each decoded message. The decoded message is passed as parameter to the callback.
+     * @throws Exception 
+     */
+    public function stream(mixed $fileOrStream, callable $messageHandler): void
+    {
+        $this->decode($fileOrStream, $messageHandler);
+    }
+
+    private function decode(mixed $fileOrStream, callable $messageHandler): void
+    {
         $handle = $fileOrStream;
         if (is_string($fileOrStream)) {
             $handle = @fopen($fileOrStream, 'rb');
@@ -60,7 +81,7 @@ class Decoder
         }
 
         try {
-            return $this->readMessages(new IOReader($handle));
+            $this->readMessages(new IOReader($handle), $messageHandler);
         } catch (FitException $fex) {
             $this->logger?->error('Invalid FIT file', ['exception' => $fex]);
             throw $fex;
@@ -72,74 +93,7 @@ class Decoder
         }
     }
 
-    public function stream(mixed $fileOrStream, callable $onMessage): void
-    {
-        $handle = $fileOrStream;
-        if (is_string($fileOrStream)) {
-            $handle = @fopen($fileOrStream, 'rb');
-            if ($handle === false) {
-                throw new InvalidArgumentException("Unable to open file '{$fileOrStream}'.");
-            }
-        }
-
-        try {
-            $this->streamMessages(new IOReader($handle), $onMessage);
-        } catch (FitException $fex) {
-            $this->logger?->error('Invalid FIT file', ['exception' => $fex]);
-            throw $fex;
-        } catch (Exception $ex) {
-            $this->logger?->error('Technical error while decoding', ['exception' => $ex]);
-            throw $ex;
-        } finally {
-            fclose($handle);
-        }
-    }
-
-    private function streamMessages(IOReader $reader, callable $onMessage): void
-    {
-        $header = Header::fromStream($reader);
-        if (!$header->isValid()) {
-            throw new FitException('File has no valid FIT header');
-        }
-
-        $messageTypeDefinitions = [];
-        $devMetadata = new MessageList();
-
-        while ($reader->getOffset() - $header->getHeaderSize() < $header->getDataSize()) {
-            $recordHeader = $this->nextRecordHeader($reader);
-            $localMessagType = $recordHeader['local_message_type'];
-
-            switch ($recordHeader['message_type']) {
-                case self::MESSAGE_TYPE_COMPRESSED_TIMESTAMP:
-                    throw new Exception('compressed timestamps are not implemented yet');
-
-                case self::MESSAGE_TYPE_DEFINITION:
-                    $messageTypeDefinitions[$localMessagType] = $this->nextRecordDefinition(
-                        $recordHeader['has_developer_data'], $reader
-                    );
-                    break;
-
-                case self::MESSAGE_TYPE_DATA:
-                    if (!isset($messageTypeDefinitions[$localMessagType])) {
-                        throw new FitException("No message definition for local message type '{$localMessagType}' found.");
-                    }
-                    $msg = $this->nextRecordData($messageTypeDefinitions[$localMessagType], $reader, $devMetadata);
-
-                    $num = $msg->getGlobalMessageNumber();
-                    if ($num === MesgNum::DEVELOPER_DATA_ID || $num === MesgNum::FIELD_DESCRIPTION) {
-                        $devMetadata->addMessage($msg);
-                    }
-
-                    $onMessage($msg);
-                    break;
-
-                default:
-                    throw new FitException('invalid message type in record header: ' . $recordHeader['message_type']);
-            }
-        }
-    }
-
-    private function readMessages(IOReader $reader): MessageList
+    private function readMessages(IOReader $reader, callable $messageHandler): void
     {
         $header = Header::fromStream($reader);
         if (!$header->isValid()) {
@@ -148,7 +102,7 @@ class Decoder
 
         // Array to store all message definitions
         $messageTypeDefinitions = [];
-        $messages = new MessageList();
+        $devMessages = new MessageList();
         while ($reader->getOffset() - $header->getHeaderSize() < $header->getDataSize()) {
             // Read the record header
             $recordHeader = $this->nextRecordHeader($reader);
@@ -161,8 +115,7 @@ class Decoder
 
                 case self::MESSAGE_TYPE_DEFINITION:
                     // definition message
-                    $def =  $this->nextRecordDefinition($recordHeader['has_developer_data'], $reader);
-                    $messageTypeDefinitions[$localMessagType] = $def;
+                    $messageTypeDefinitions[$localMessagType] = $this->nextRecordDefinition($recordHeader['has_developer_data'], $reader);
                     break;
 
                 case self::MESSAGE_TYPE_DATA:
@@ -171,14 +124,20 @@ class Decoder
                         throw new FitException("No message definition for local message type '{$localMessagType}' found.");
                     }
 
-                    $messages->addMessage($this->nextRecordData($messageTypeDefinitions[$localMessagType], $reader, $messages));
+                    $message = $this->nextRecordData($messageTypeDefinitions[$localMessagType], $reader, $devMessages);
+
+                    $num = $message->getGlobalMessageNumber();
+                    if ($num === MesgNum::DEVELOPER_DATA_ID || $num === MesgNum::FIELD_DESCRIPTION) {
+                        // store developer data id and field description messages to be able to assign developer fields later on
+                        $devMessages->addMessage($message);
+                    }
+                    $messageHandler($message);
                     break;
 
                 default:
                     throw new FitException('invalid message type in record header: ' . $recordHeader['message_type']);
             }
         }
-        return $messages;
     }
 
     /**
