@@ -15,6 +15,11 @@ $ composer require sportlog/fit
 
 Minimum PHP version required is 8.
 
+There are two functions for decoding
+
+- read: requires the file as parameter and returns an instance of MessageList, which holds all decoded messages.
+- stream: requires the file and a callback as parameter, which receives each decoded message. Returns void to reduce memory consumption.
+
 ## How to use
 
 ```php

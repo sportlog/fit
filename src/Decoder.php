@@ -52,9 +52,7 @@ class Decoder
     public function read(mixed $fileOrStream): MessageList
     {
         $messages = new MessageList();
-        $this->decode($fileOrStream, function (Message $message) use ($messages) {
-            $messages->addMessage($message);
-        });
+        $this->decode($fileOrStream, $messages->addMessage(...));
         return $messages;
     }
 
