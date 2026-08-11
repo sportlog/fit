@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.201 SDK
+ * FIT 21.212 SDK
  */
 
 declare(strict_types=1);
@@ -83,6 +83,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('RepetitionNum', 61, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('MinAltitude', 62, FitBaseType::UINT16, 5.0, 500.0, 'm', false, ProfileType::UINT16)]
 #[Field('MinHeartRate', 63, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
+#[Field('ActiveTime', 70, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
 #[Field('WktStepIndex', 71, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
 #[Field('OpponentScore', 74, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('StrokeCount', 75, FitBaseType::UINT16, 1.0, 0.0, 'counts', false, ProfileType::UINT16)]
@@ -634,6 +635,14 @@ final class LapMessage extends Message
     public function getMinHeartRate(): int|array|null
     {
         return $this->getFieldValue(63);
+    }
+
+    /**
+     * Gets the active time
+     */
+    public function getActiveTime(): float|array|null
+    {
+        return $this->getFieldValue(70);
     }
 
     /**

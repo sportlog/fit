@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.201 SDK
+ * FIT 21.212 SDK
  */
 
 declare(strict_types=1);
@@ -25,7 +25,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
  */
 #[Field('Timestamp', 253, FitBaseType::UINT32, 1.0, 0.0, 's', false, ProfileType::DATETIME)]
 #[Field('ProcessingInterval', 0, FitBaseType::UINT16, 1.0, 0.0, 's', false, ProfileType::UINT16)]
-#[Field('Value', 1, FitBaseType::UINT16, 1000.0, 0.0, 'degC', false, ProfileType::UINT16)]
+#[Field('Value', 1, FitBaseType::UINT16, 1000.0, 0.0, 'C', false, ProfileType::UINT16)]
 final class HsaWristTemperatureDataMessage extends Message
 {
     /**

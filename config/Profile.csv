@@ -637,7 +637,7 @@ sub_sport,enum,,,
 ,,duathlon,79,Multisport
 ,,brick,80,Multisport
 ,,swim_run,81,Multisport
-,,adventure_race,82,Multisport
+,,adventure_race,82,Multisport/Running
 ,,trucker_workout,83,DEZL trucker workout training sport
 ,,pickleball,84,Racket
 ,,padel,85,Racket
@@ -1191,6 +1191,7 @@ manufacturer,uint16,,,
 ,,huawei,348,
 ,,gotoes,349,
 ,,cadence_app,350,
+,,una_watch,351,
 ,,actigraphcorp,5759,
 garmin_product,uint16,,,
 ,,hrm1,1,
@@ -1636,6 +1637,7 @@ garmin_product,uint16,,,
 ,,instinct3_amoled_45mm,4586,
 ,,instinct3_amoled_50mm,4587,
 ,,descent_g2,4588,
+,,fenix7_pro_solar_no_wifi,4595,
 ,,venu_x1,4603,
 ,,hrm_200,4606,
 ,,vivoactive6,4625,
@@ -1652,10 +1654,15 @@ garmin_product,uint16,,,
 ,,instinct3_solar_50mm,4759,
 ,,tactix8_amoled,4775,
 ,,tactix8_solar,4776,
+,,fr170_music,4814,
+,,fr170,4815,
 ,,approach_j1,4825,
 ,,d2_mach2,4879,
+,,fr70_2026,4916,
 ,,instinct_crossover_amoled,4678,
 ,,d2_air_x15,4944,
+,,cirqa_smart_band,5019,
+,,d2_mach2_pro,5056,
 ,,sdm4,10007,SDM4 footpod
 ,,edge_remote,10014,
 ,,tacx_training_app_win,20533,
@@ -1776,6 +1783,7 @@ activity_type,enum,,,
 ,,swimming,5,
 ,,walking,6,
 ,,sedentary,8,
+,,wheelchair_pushing,13,
 ,,all,254,All is for goals only to include all sports.
 activity_subtype,enum,,,
 ,,generic,0,

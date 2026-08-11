@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.201 SDK
+ * FIT 21.212 SDK
  */
 
 declare(strict_types=1);
@@ -26,5 +26,6 @@ final class ActivityType
     public const SWIMMING = 5;
     public const WALKING = 6;
     public const SEDENTARY = 8;
+    public const WHEELCHAIR_PUSHING = 13;
     public const ALL = 254;
 }

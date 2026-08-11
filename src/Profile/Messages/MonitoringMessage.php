@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.201 SDK
+ * FIT 21.212 SDK
  */
 
 declare(strict_types=1);
@@ -52,6 +52,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('Descent', 32, FitBaseType::UINT32, 1000.0, 0.0, 'm', false, ProfileType::UINT32)]
 #[Field('ModerateActivityMinutes', 33, FitBaseType::UINT16, 1.0, 0.0, 'minutes', false, ProfileType::UINT16)]
 #[Field('VigorousActivityMinutes', 34, FitBaseType::UINT16, 1.0, 0.0, 'minutes', false, ProfileType::UINT16)]
+#[Field('Pushes', 41, FitBaseType::UINT32, 1.0, 0.0, '', false, ProfileType::UINT32)]
 final class MonitoringMessage extends Message
 {
     /**
@@ -292,5 +293,13 @@ final class MonitoringMessage extends Message
     public function getVigorousActivityMinutes(): int|array|null
     {
         return $this->getFieldValue(34);
+    }
+
+    /**
+     * Gets the pushes
+     */
+    public function getPushes(): int|array|null
+    {
+        return $this->getFieldValue(41);
     }
 }
