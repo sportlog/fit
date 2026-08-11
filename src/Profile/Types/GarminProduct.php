@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.201 SDK
+ * FIT 21.212 SDK
  */
 
 declare(strict_types=1);
@@ -461,6 +461,7 @@ final class GarminProduct
     public const INSTINCT3_AMOLED_45MM = 4586;
     public const INSTINCT3_AMOLED_50MM = 4587;
     public const DESCENT_G2 = 4588;
+    public const FENIX7_PRO_SOLAR_NO_WIFI = 4595;
     public const VENU_X1 = 4603;
     public const HRM_200 = 4606;
     public const VIVOACTIVE6 = 4625;
@@ -477,10 +478,15 @@ final class GarminProduct
     public const INSTINCT3_SOLAR_50MM = 4759;
     public const TACTIX8_AMOLED = 4775;
     public const TACTIX8_SOLAR = 4776;
+    public const FR170_MUSIC = 4814;
+    public const FR170 = 4815;
     public const APPROACH_J1 = 4825;
     public const D2_MACH2 = 4879;
+    public const FR70_2026 = 4916;
     public const INSTINCT_CROSSOVER_AMOLED = 4678;
     public const D2_AIR_X15 = 4944;
+    public const CIRQA_SMART_BAND = 5019;
+    public const D2_MACH2_PRO = 5056;
     public const SDM4 = 10007;
     public const EDGE_REMOTE = 10014;
     public const TACX_TRAINING_APP_WIN = 20533;

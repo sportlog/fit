@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.201 SDK
+ * FIT 21.212 SDK
  */
 
 declare(strict_types=1);
@@ -95,6 +95,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('AvgLapTime', 69, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
 #[Field('BestLapIndex', 70, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('MinAltitude', 71, FitBaseType::UINT16, 5.0, 500.0, 'm', false, ProfileType::UINT16)]
+#[Field('ActiveTime', 78, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
 #[Field('PlayerScore', 82, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('OpponentScore', 83, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('OpponentName', 84, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
@@ -764,6 +765,14 @@ final class SessionMessage extends Message
     public function getMinAltitude(): float|array|null
     {
         return $this->getFieldValue(71);
+    }
+
+    /**
+     * Gets the active time
+     */
+    public function getActiveTime(): float|array|null
+    {
+        return $this->getFieldValue(78);
     }
 
     /**

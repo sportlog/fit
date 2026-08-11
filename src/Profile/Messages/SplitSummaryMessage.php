@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.201 SDK
+ * FIT 21.212 SDK
  */
 
 declare(strict_types=1);
@@ -36,6 +36,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('MaxHeartRate', 11, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
 #[Field('AvgVertSpeed', 12, FitBaseType::SINT32, 1000.0, 0.0, 'm/s', false, ProfileType::SINT32)]
 #[Field('TotalCalories', 13, FitBaseType::UINT32, 1.0, 0.0, 'kcal', false, ProfileType::UINT32)]
+#[Field('ActiveTime', 65, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
 #[Field('TotalMovingTime', 77, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
 final class SplitSummaryMessage extends Message
 {
@@ -149,6 +150,14 @@ final class SplitSummaryMessage extends Message
     public function getTotalCalories(): int|array|null
     {
         return $this->getFieldValue(13);
+    }
+
+    /**
+     * Gets the active time
+     */
+    public function getActiveTime(): float|array|null
+    {
+        return $this->getFieldValue(65);
     }
 
     /**
