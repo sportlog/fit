@@ -13,7 +13,7 @@ You can install sportlog/FIT using Composer.
 $ composer require sportlog/fit
 ```
 
-Minimum PHP version required is 8.
+Minimum PHP version required is 8.0
 
 There are two functions for decoding
 

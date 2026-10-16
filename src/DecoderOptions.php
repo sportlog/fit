@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Sportlog\FIT;
 
-readonly class DecoderOptions
+class DecoderOptions
 {
     /**
      * @param $strictMode Enable strict mode for exact FIT type checking.

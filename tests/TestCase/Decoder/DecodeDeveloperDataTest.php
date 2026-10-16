@@ -11,6 +11,8 @@ declare(strict_types=1);
 namespace Sportlog\FIT\Test\TestCase\Decoder;
 
 use Sportlog\FIT\Decoder;
+use Sportlog\FIT\Profile\Message;
+use Sportlog\FIT\Profile\Field;
 use Sportlog\FIT\Test\TestCase\FilePath;
 use PHPUnit\Framework\TestCase;
 use Sportlog\FIT\Profile\MessageList;
@@ -33,9 +35,9 @@ final class DecodeDeveloperDataTest extends TestCase
         $recordMessages = $messages->getMessages(MesgNum::RECORD);
         $this->assertEquals(3, count($recordMessages));
 
-        $this->assertSame(1, $recordMessages[0]->getFieldValue('doughnuts_earned'));
-        $this->assertSame(2, $recordMessages[1]->getFieldValue('doughnuts_earned'));
-        $this->assertSame(3, $recordMessages[2]->getFieldValue('doughnuts_earned'));
+        $this->assertSame(1, $this->getFieldValue($recordMessages[0], 'doughnuts_earned'));
+        $this->assertSame(2, $this->getFieldValue($recordMessages[1], 'doughnuts_earned'));
+        $this->assertSame(3, $this->getFieldValue($recordMessages[2], 'doughnuts_earned'));
     }
 
     public function testStreamFile(): void
@@ -52,8 +54,20 @@ final class DecodeDeveloperDataTest extends TestCase
         $recordMessages = $messages->getMessages(MesgNum::RECORD);
         $this->assertEquals(3, count($recordMessages));
 
-        $this->assertSame(1, $recordMessages[0]->getFieldValue('doughnuts_earned'));
-        $this->assertSame(2, $recordMessages[1]->getFieldValue('doughnuts_earned'));
-        $this->assertSame(3, $recordMessages[2]->getFieldValue('doughnuts_earned'));
+        $this->assertSame(1, $this->getFieldValue($recordMessages[0], 'doughnuts_earned'));
+        $this->assertSame(2, $this->getFieldValue($recordMessages[1], 'doughnuts_earned'));
+        $this->assertSame(3, $this->getFieldValue($recordMessages[2], 'doughnuts_earned'));
+    }
+
+    private function getFieldValue(Message $message, string $fieldName): mixed
+    {
+        foreach ($message as $key => $value) {
+            /** @var Field $field */
+            $field = $message->getField($key);
+            if ($field->getName() === $fieldName) {
+                return $message->getFieldValue($field->getNumber());
+            }
+        }
+        return null;
     }
 }

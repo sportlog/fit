@@ -29,7 +29,7 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
     /**
      * Fields associated with this message.
      * 
-     * @var Field[]
+     * @var array<int, Field>
      */
     private array $fields = [];
     /**
@@ -37,7 +37,7 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
      * There may be more values stored in the array than fields
      * exist, if the message contains unknown fields.
      * 
-     * @var mixed[]
+     * @var array<int, mixed>
      */
     private array $values = [];
 
@@ -91,14 +91,14 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
     /**
      * Gets a field value.
      */
-    public function getFieldValue(int|string $fieldNumber): mixed
+    public function getFieldValue(int $fieldNumber): mixed
     {
         $field = $this->getField($fieldNumber);
         if ($field === null) {
             throw new Exception("invalid field number {$fieldNumber}");
         }
 
-        $value = isset($this->values[$field->getNumber()]) ? $this->values[$field->getNumber()] : null;
+        $value = $this->values[$field->getNumber()] ?? null;
         if ($value === null) {
             return null;
         }
@@ -156,21 +156,12 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
      * Gets the underlying field. Or null if there is no such
      * field defined.
      *
-     * @param integer|string $fieldId Either the field number or the field name
+     * @param integer $fieldId Either the field number or the field name
      * @return Field|null
      */
-    public function getField(int|string $fieldId): ?Field
+    public function getField(int $fieldId): ?Field
     {
-        if (is_int($fieldId)) {
-            return isset($this->fields[$fieldId]) ? $this->fields[$fieldId] : null;
-        } else {
-            foreach ($this->fields as $field) {
-                if ($field->getName() === $fieldId) {
-                    return $this->getField($field->getNumber());
-                }
-            }
-            return null;
-        }
+        return $this->fields[$fieldId] ?? null;
     }
 
     /**
