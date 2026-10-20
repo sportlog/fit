@@ -31,6 +31,14 @@ class Decoder
     const MESSAGE_TYPE_COMPRESSED_TIMESTAMP = 'compressed_timestamp';
 
     /**
+     * Developer fields already created while decoding the current file, so
+     * that every message sharing a field description shares one Field.
+     * 
+     * @var array<string, Field>
+     */
+    private array $developerFields = [];
+
+    /**
      * Ctor
      * It is intentionally to make the logger nullable (and not to use
      * NullLogger by default) to save time by not generating the log
@@ -100,6 +108,8 @@ class Decoder
 
         // Array to store all message definitions
         $messageTypeDefinitions = [];
+        // Keyed by object ids of this file's messages, which a later file may reuse
+        $this->developerFields = [];
         $devMessages = new MessageList();
         while ($reader->getOffset() - $header->getHeaderSize() < $header->getDataSize()) {
             // Read the record header
@@ -405,6 +415,13 @@ class Decoder
     private function createDeveloperField(int $developerDataIndex, int $fieldDefinitionNumber, MessageList $messages, Message $message): Field
     {
         $descMessage = $this->getDeveloperFieldDescription($developerDataIndex, $fieldDefinitionNumber, $messages);
+        // The field depends on the description and, for a native field it redefines, on the message type
+        $key = spl_object_id($descMessage) . ':' . $message->getGlobalMessageNumber();
+        return $this->developerFields[$key] ??= $this->newDeveloperField($descMessage, $message);
+    }
+
+    private function newDeveloperField(FieldDescriptionMessage $descMessage, Message $message): Field
+    {
         if ($descMessage->getNativeFieldNum() !== null) {
             $field = $message->getField($descMessage->getNativeFieldNum());
             if ($field === null) {

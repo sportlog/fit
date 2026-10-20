@@ -33,6 +33,15 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
      */
     private array $fields = [];
     /**
+     * Developer fields added to this message, by field number. They take
+     * precedence over native fields with the same number. Kept apart from
+     * $fields, which is shared by every message of the class: writing to
+     * it would copy the whole table for each message.
+     * 
+     * @var array<int, Field>
+     */
+    private array $developerFields = [];
+    /**
      * Field values, where the field number is used as index.
      * There may be more values stored in the array than fields
      * exist, if the message contains unknown fields.
@@ -149,7 +158,7 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
             unset($this->values[$field->getNumber()]);
         }
 
-        $this->fields[$field->getNumber()] = $field;
+        $this->developerFields[$field->getNumber()] = $field;
     }
 
     /**
@@ -161,7 +170,7 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
      */
     public function getField(int $fieldId): ?Field
     {
-        return $this->fields[$fieldId] ?? null;
+        return $this->developerFields[$fieldId] ?? $this->fields[$fieldId] ?? null;
     }
 
     /**
