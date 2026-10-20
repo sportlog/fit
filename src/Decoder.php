@@ -93,6 +93,7 @@ class Decoder
 
     private function readMessages(IOReader $reader, callable $messageHandler): void
     {
+        $developerFields = [];
         $header = Header::fromStream($reader);
         if (!$header->isValid()) {
             throw new FitException('File has no valid FIT header');
@@ -122,7 +123,7 @@ class Decoder
                         throw new FitException("No message definition for local message type '{$localMessagType}' found.");
                     }
 
-                    $message = $this->nextRecordData($messageTypeDefinitions[$localMessagType], $reader, $devMessages);
+                    $message = $this->nextRecordData($messageTypeDefinitions[$localMessagType], $reader, $devMessages, $developerFields);
 
                     $num = $message->getGlobalMessageNumber();
                     if ($num === MesgNum::DEVELOPER_DATA_ID || $num === MesgNum::FIELD_DESCRIPTION) {
@@ -146,7 +147,7 @@ class Decoder
      * @param IOReader $reader
      * @return Message
      */
-    private function nextRecordData(array $definition, IOReader $reader, MessageList $messages): Message
+    private function nextRecordData(array $definition, IOReader $reader, MessageList $messages, array &$developerFields): Message
     {
         // Create the message for the global message number
         $message = MessageFactory::createMessage($definition['global_message_number']);
@@ -164,7 +165,7 @@ class Decoder
         }
 
         foreach ($definition['developer_field_definitions'] as $devFieldDefinition) {
-            $field = $this->createDeveloperField($devFieldDefinition['data_index'], $devFieldDefinition['field_definition_number'], $messages, $message);
+            $field = $this->getDeveloperField($devFieldDefinition['data_index'], $devFieldDefinition['field_definition_number'], $messages, $message, $developerFields);
             $message->addField($field);
             $this->assignMessageValue(
                 $field->getNumber(),
@@ -381,13 +382,13 @@ class Decoder
      */
     private function getDeveloperFieldDescription(int $developerDataIndex, int $fieldDefinitionNumber, MessageList $messages): FieldDescriptionMessage
     {
+        /** @var DeveloperDataIdMessage[] $dataIdMessages */
         $dataIdMessages = $messages->getMessages(MesgNum::DEVELOPER_DATA_ID);
         foreach ($dataIdMessages as $message) {
-            /** @var DeveloperDataIdMessage $message */
             if ($message->getDeveloperDataIndex() === $developerDataIndex) {
+                /** @var FieldDescriptionMessage[] $fieldDescMessages */
                 $fieldDescMessages = $messages->getMessages(MesgNum::FIELD_DESCRIPTION);
                 foreach ($fieldDescMessages as $fieldDescMessage) {
-                    /** @var FieldDescriptionMessage $fieldDescMessage */
                     if (
                         $fieldDescMessage->getDeveloperDataIndex() === $developerDataIndex &&
                         $fieldDescMessage->getFieldDefinitionNumber() === $fieldDefinitionNumber
@@ -402,9 +403,15 @@ class Decoder
         throw new FitException("no developer data id message found for index '{$developerDataIndex}'");
     }
 
-    private function createDeveloperField(int $developerDataIndex, int $fieldDefinitionNumber, MessageList $messages, Message $message): Field
+    private function getDeveloperField(int $developerDataIndex, int $fieldDefinitionNumber, MessageList $messages, Message $message, array &$developerFields): Field
     {
         $descMessage = $this->getDeveloperFieldDescription($developerDataIndex, $fieldDefinitionNumber, $messages);
+        $key = sprintf('%s:%s', spl_object_id($descMessage), $message->getGlobalMessageNumber());
+        return $developerFields[$key] ??= $this->createDeveloperField($descMessage, $message);
+    }
+
+    private function createDeveloperField(FieldDescriptionMessage $descMessage, Message $message): Field
+    {
         if ($descMessage->getNativeFieldNum() !== null) {
             $field = $message->getField($descMessage->getNativeFieldNum());
             if ($field === null) {

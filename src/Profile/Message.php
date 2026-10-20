@@ -40,6 +40,12 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
      * @var array<int, mixed>
      */
     private array $values = [];
+    /** 
+     * Developer fields, which take precedence over native 
+     * fields with the same number 
+     * @var array<int, Field> 
+     */
+    private array $developerFields = [];
 
     /**
      * Create new instance and assign fields.
@@ -149,19 +155,19 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
             unset($this->values[$field->getNumber()]);
         }
 
-        $this->fields[$field->getNumber()] = $field;
+        $this->developerFields[$field->getNumber()] = $field;
     }
 
     /**
      * Gets the underlying field. Or null if there is no such
      * field defined.
      *
-     * @param integer $fieldId Either the field number or the field name
+     * @param integer $fieldNumber The field number
      * @return Field|null
      */
-    public function getField(int $fieldId): ?Field
+    public function getField(int $fieldNumber): ?Field
     {
-        return $this->fields[$fieldId] ?? null;
+        return $this->developerFields[$fieldNumber] ?? $this->fields[$fieldNumber] ?? null;
     }
 
     /**
@@ -184,7 +190,7 @@ abstract class Message implements IteratorAggregate, Stringable, JsonSerializabl
         foreach ($this->values as $fieldId => $value) {
             $field = $this->getField($fieldId);
             if ($field === null) {
-                continue;   // data for unknwokn (non-native) $field
+                continue;   // data for unknown (non-native) $field
             }
 
             $result[$field->getName()] = $value;
