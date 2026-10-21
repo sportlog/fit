@@ -31,14 +31,6 @@ class Decoder
     const MESSAGE_TYPE_COMPRESSED_TIMESTAMP = 'compressed_timestamp';
 
     /**
-     * Developer fields already created while decoding the current file, so
-     * that every message sharing a field description shares one Field.
-     * 
-     * @var array<string, Field>
-     */
-    private array $developerFields = [];
-
-    /**
      * Ctor
      * It is intentionally to make the logger nullable (and not to use
      * NullLogger by default) to save time by not generating the log
@@ -108,8 +100,9 @@ class Decoder
 
         // Array to store all message definitions
         $messageTypeDefinitions = [];
-        // Keyed by object ids of this file's messages, which a later file may reuse
-        $this->developerFields = [];
+        // Developer fields created so far, so that every message sharing a
+        // field description shares one Field
+        $developerFields = [];
         $devMessages = new MessageList();
         while ($reader->getOffset() - $header->getHeaderSize() < $header->getDataSize()) {
             // Read the record header
@@ -132,7 +125,7 @@ class Decoder
                         throw new FitException("No message definition for local message type '{$localMessagType}' found.");
                     }
 
-                    $message = $this->nextRecordData($messageTypeDefinitions[$localMessagType], $reader, $devMessages);
+                    $message = $this->nextRecordData($messageTypeDefinitions[$localMessagType], $reader, $devMessages, $developerFields);
 
                     $num = $message->getGlobalMessageNumber();
                     if ($num === MesgNum::DEVELOPER_DATA_ID || $num === MesgNum::FIELD_DESCRIPTION) {
@@ -154,9 +147,10 @@ class Decoder
      *
      * @param array $definition
      * @param IOReader $reader
+     * @param array<string, Field> $developerFields Developer fields created so far, added to as needed
      * @return Message
      */
-    private function nextRecordData(array $definition, IOReader $reader, MessageList $messages): Message
+    private function nextRecordData(array $definition, IOReader $reader, MessageList $messages, array &$developerFields): Message
     {
         // Create the message for the global message number
         $message = MessageFactory::createMessage($definition['global_message_number']);
@@ -174,7 +168,7 @@ class Decoder
         }
 
         foreach ($definition['developer_field_definitions'] as $devFieldDefinition) {
-            $field = $this->createDeveloperField($devFieldDefinition['data_index'], $devFieldDefinition['field_definition_number'], $messages, $message);
+            $field = $this->createDeveloperField($devFieldDefinition['data_index'], $devFieldDefinition['field_definition_number'], $messages, $message, $developerFields);
             $message->addField($field);
             $this->assignMessageValue(
                 $field->getNumber(),
@@ -412,12 +406,15 @@ class Decoder
         throw new FitException("no developer data id message found for index '{$developerDataIndex}'");
     }
 
-    private function createDeveloperField(int $developerDataIndex, int $fieldDefinitionNumber, MessageList $messages, Message $message): Field
+    /**
+     * @param array<string, Field> $developerFields Developer fields created so far, added to as needed
+     */
+    private function createDeveloperField(int $developerDataIndex, int $fieldDefinitionNumber, MessageList $messages, Message $message, array &$developerFields): Field
     {
         $descMessage = $this->getDeveloperFieldDescription($developerDataIndex, $fieldDefinitionNumber, $messages);
         // The field depends on the description and, for a native field it redefines, on the message type
         $key = spl_object_id($descMessage) . ':' . $message->getGlobalMessageNumber();
-        return $this->developerFields[$key] ??= $this->newDeveloperField($descMessage, $message);
+        return $developerFields[$key] ??= $this->newDeveloperField($descMessage, $message);
     }
 
     private function newDeveloperField(FieldDescriptionMessage $descMessage, Message $message): Field
