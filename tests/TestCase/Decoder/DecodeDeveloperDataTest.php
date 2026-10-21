@@ -59,6 +59,20 @@ final class DecodeDeveloperDataTest extends TestCase
         $this->assertSame(3, $this->getFieldValue($recordMessages[2], 'doughnuts_earned'));
     }
 
+    public function testRecordsShareOneFieldPerDeveloperField(): void
+    {
+        // activity_developerdata.fit redefines the native heart rate (field 3) of its records
+        $decoder = new Decoder();
+        $messages = $decoder->read(FilePath::getPathTo('activity_developerdata.fit'));
+        $recordMessages = $messages->getMessages(MesgNum::RECORD);
+
+        $field = $recordMessages[0]->getField(3);
+        $this->assertSame('Heart Rate', $field?->getName());
+        foreach ($recordMessages as $recordMessage) {
+            $this->assertSame($field, $recordMessage->getField(3));
+        }
+    }
+
     private function getFieldValue(Message $message, string $fieldName): mixed
     {
         foreach ($message as $key => $value) {
