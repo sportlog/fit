@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.212 SDK
+ * FIT 21.218 SDK
  */
 
 declare(strict_types=1);
@@ -21,6 +21,7 @@ use Sportlog\FIT\Profile\Messages\AntRxMessage;
 use Sportlog\FIT\Profile\Messages\AntTxMessage;
 use Sportlog\FIT\Profile\Messages\AviationAttitudeMessage;
 use Sportlog\FIT\Profile\Messages\BarometerDataMessage;
+use Sportlog\FIT\Profile\Messages\BatteryMessage;
 use Sportlog\FIT\Profile\Messages\BeatIntervalsMessage;
 use Sportlog\FIT\Profile\Messages\BikeProfileMessage;
 use Sportlog\FIT\Profile\Messages\BloodPressureMessage;
@@ -191,6 +192,7 @@ class MessageFactory
             MesgNum::DEVICE_INFO => new DeviceInfoMessage(),
             MesgNum::DEVICE_AUX_BATTERY_INFO => new DeviceAuxBatteryInfoMessage(),
             MesgNum::TRAINING_FILE => new TrainingFileMessage(),
+            MesgNum::BATTERY => new BatteryMessage(),
             MesgNum::WEATHER_CONDITIONS => new WeatherConditionsMessage(),
             MesgNum::WEATHER_ALERT => new WeatherAlertMessage(),
             MesgNum::GPS_METADATA => new GpsMetadataMessage(),

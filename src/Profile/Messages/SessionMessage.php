@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.212 SDK
+ * FIT 21.218 SDK
  */
 
 declare(strict_types=1);
@@ -96,6 +96,8 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('BestLapIndex', 70, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('MinAltitude', 71, FitBaseType::UINT16, 5.0, 500.0, 'm', false, ProfileType::UINT16)]
 #[Field('ActiveTime', 78, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
+#[Field('AvgStrokesPerLength', 79, FitBaseType::UINT16, 10.0, 0.0, 'strokes/length', false, ProfileType::UINT16)]
+#[Field('AvgSwolf', 80, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('PlayerScore', 82, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('OpponentScore', 83, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('OpponentName', 84, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
@@ -120,6 +122,9 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('AvgLeftPedalSmoothness', 103, FitBaseType::UINT8, 2.0, 0.0, 'percent', false, ProfileType::UINT8)]
 #[Field('AvgRightPedalSmoothness', 104, FitBaseType::UINT8, 2.0, 0.0, 'percent', false, ProfileType::UINT8)]
 #[Field('AvgCombinedPedalSmoothness', 105, FitBaseType::UINT8, 2.0, 0.0, 'percent', false, ProfileType::UINT8)]
+#[Field('NumSegmentLaps', 106, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('FrontGearShiftCount', 107, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('RearGearShiftCount', 108, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('SportProfileName', 110, FitBaseType::STRING, 1.0, 0.0, '', false, ProfileType::STRING)]
 #[Field('SportIndex', 111, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
 #[Field('TimeStanding', 112, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
@@ -181,6 +186,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('AvgCoreTemperature', 208, FitBaseType::UINT16, 100.0, 0.0, 'C', false, ProfileType::UINT16)]
 #[Field('MinCoreTemperature', 209, FitBaseType::UINT16, 100.0, 0.0, 'C', false, ProfileType::UINT16)]
 #[Field('MaxCoreTemperature', 210, FitBaseType::UINT16, 100.0, 0.0, 'C', false, ProfileType::UINT16)]
+#[Field('AvgGradeAdjustedSpeed', 211, FitBaseType::UINT32, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
 final class SessionMessage extends Message
 {
     /**
@@ -776,6 +782,22 @@ final class SessionMessage extends Message
     }
 
     /**
+     * Gets the avg strokes per length
+     */
+    public function getAvgStrokesPerLength(): float|array|null
+    {
+        return $this->getFieldValue(79);
+    }
+
+    /**
+     * Gets the avg swolf
+     */
+    public function getAvgSwolf(): int|array|null
+    {
+        return $this->getFieldValue(80);
+    }
+
+    /**
      * Gets the player score
      */
     public function getPlayerScore(): int|array|null
@@ -965,6 +987,30 @@ final class SessionMessage extends Message
     public function getAvgCombinedPedalSmoothness(): float|array|null
     {
         return $this->getFieldValue(105);
+    }
+
+    /**
+     * Gets the num segment laps
+     */
+    public function getNumSegmentLaps(): int|array|null
+    {
+        return $this->getFieldValue(106);
+    }
+
+    /**
+     * Gets the front gear shift count
+     */
+    public function getFrontGearShiftCount(): int|array|null
+    {
+        return $this->getFieldValue(107);
+    }
+
+    /**
+     * Gets the rear gear shift count
+     */
+    public function getRearGearShiftCount(): int|array|null
+    {
+        return $this->getFieldValue(108);
     }
 
     /**
@@ -1453,5 +1499,13 @@ final class SessionMessage extends Message
     public function getMaxCoreTemperature(): float|array|null
     {
         return $this->getFieldValue(210);
+    }
+
+    /**
+     * Gets the avg grade adjusted speed
+     */
+    public function getAvgGradeAdjustedSpeed(): float|array|null
+    {
+        return $this->getFieldValue(211);
     }
 }

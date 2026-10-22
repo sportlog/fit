@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.212 SDK
+ * FIT 21.218 SDK
  */
 
 declare(strict_types=1);
@@ -27,6 +27,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('TimestampMs', 0, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
 #[Field('SampleTimeOffset', 1, FitBaseType::UINT16, 1.0, 0.0, 'ms', false, ProfileType::UINT16)]
 #[Field('BaroPres', 2, FitBaseType::UINT32, 1.0, 0.0, 'Pa', false, ProfileType::UINT32)]
+#[Field('EnhancedAltitude', 3, FitBaseType::UINT32, 5.0, 500.0, 'm', false, ProfileType::UINT32)]
 final class BarometerDataMessage extends Message
 {
     /**
@@ -67,5 +68,13 @@ final class BarometerDataMessage extends Message
     public function getBaroPres(): int|array|null
     {
         return $this->getFieldValue(2);
+    }
+
+    /**
+     * Gets the enhanced altitude
+     */
+    public function getEnhancedAltitude(): float|array|null
+    {
+        return $this->getFieldValue(3);
     }
 }

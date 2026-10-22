@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.212 SDK
+ * FIT 21.218 SDK
  */
 
 declare(strict_types=1);
@@ -45,6 +45,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('EnhancedMaxRespirationRate', 23, FitBaseType::UINT16, 100.0, 0.0, 'Breaths/min', false, ProfileType::UINT16)]
 #[Field('AvgRespirationRate', 24, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
 #[Field('MaxRespirationRate', 25, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('MetabolicCalories', 26, FitBaseType::UINT16, 1.0, 0.0, 'kcal', false, ProfileType::UINT16)]
 final class LengthMessage extends Message
 {
     /**
@@ -229,5 +230,13 @@ final class LengthMessage extends Message
     public function getMaxRespirationRate(): int|array|null
     {
         return $this->getFieldValue(25);
+    }
+
+    /**
+     * Gets the metabolic calories
+     */
+    public function getMetabolicCalories(): int|array|null
+    {
+        return $this->getFieldValue(26);
     }
 }
