@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.212 SDK
+ * FIT 21.218 SDK
  */
 
 declare(strict_types=1);
@@ -261,5 +261,8 @@ final class Manufacturer
     public const GOTOES = 349;
     public const CADENCE_APP = 350;
     public const UNA_WATCH = 351;
+    public const TYMEWEAR = 352;
+    public const EXPOSURE_LIGHTS = 353;
+    public const FORTO_CYCLING = 354;
     public const ACTIGRAPHCORP = 5759;
 }

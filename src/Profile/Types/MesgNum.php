@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.212 SDK
+ * FIT 21.218 SDK
  */
 
 declare(strict_types=1);
@@ -60,6 +60,7 @@ final class MesgNum
     public const ANT_CHANNEL_ID = 82;
     public const LENGTH = 101;
     public const MONITORING_INFO = 103;
+    public const BATTERY = 104;
     public const PAD = 105;
     public const SLAVE_DEVICE = 106;
     public const CONNECTIVITY = 127;

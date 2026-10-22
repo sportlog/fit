@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.212 SDK
+ * FIT 21.218 SDK
  */
 
 declare(strict_types=1);
@@ -113,6 +113,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('TotalFlow', 85, FitBaseType::FLOAT32, 1.0, 0.0, 'Flow', false, ProfileType::FLOAT32)]
 #[Field('AvgGrit', 86, FitBaseType::FLOAT32, 1.0, 0.0, 'kGrit', false, ProfileType::FLOAT32)]
 #[Field('AvgFlow', 87, FitBaseType::FLOAT32, 1.0, 0.0, 'Flow', false, ProfileType::FLOAT32)]
+#[Field('MetabolicCalories', 88, FitBaseType::UINT16, 1.0, 0.0, 'kcal', false, ProfileType::UINT16)]
 #[Field('TotalFractionalAscent', 89, FitBaseType::UINT8, 100.0, 0.0, 'm', false, ProfileType::UINT8)]
 #[Field('TotalFractionalDescent', 90, FitBaseType::UINT8, 100.0, 0.0, 'm', false, ProfileType::UINT8)]
 #[Field('EnhancedAvgAltitude', 91, FitBaseType::UINT32, 5.0, 500.0, 'm', false, ProfileType::UINT32)]
@@ -846,6 +847,14 @@ final class SegmentLapMessage extends Message
     public function getAvgFlow(): float|array|null
     {
         return $this->getFieldValue(87);
+    }
+
+    /**
+     * Gets the metabolic calories
+     */
+    public function getMetabolicCalories(): int|array|null
+    {
+        return $this->getFieldValue(88);
     }
 
     /**

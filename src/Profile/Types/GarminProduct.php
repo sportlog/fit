@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.212 SDK
+ * FIT 21.218 SDK
  */
 
 declare(strict_types=1);
@@ -454,6 +454,9 @@ final class GarminProduct
     public const FENIX8_SMALL = 4534;
     public const FENIX8 = 4536;
     public const D2_MACH1_PRO = 4556;
+    public const FR970 = 4565;
+    public const FR570_LARGE = 4570;
+    public const FR570_SMALL = 4574;
     public const ENDURO3 = 4575;
     public const INSTINCTE_40MM = 4583;
     public const INSTINCTE_45MM = 4584;
@@ -481,12 +484,22 @@ final class GarminProduct
     public const FR170_MUSIC = 4814;
     public const FR170 = 4815;
     public const APPROACH_J1 = 4825;
+    public const APPROACH_S72_43MM = 4874;
+    public const APPROACH_S72_47MM = 4875;
     public const D2_MACH2 = 4879;
     public const FR70_2026 = 4916;
+    public const FENIX9_PRO_43MM = 4952;
+    public const FENIX9_PRO_47MM = 4953;
+    public const FENIX9_PRO_51MM = 4954;
+    public const FENIX9_PRO_SOLAR_47MM = 4955;
+    public const FENIX9_PRO_SOLAR_51MM = 4956;
+    public const FENIX9_43MM = 5133;
+    public const FENIX9 = 5134;
     public const INSTINCT_CROSSOVER_AMOLED = 4678;
     public const D2_AIR_X15 = 4944;
     public const CIRQA_SMART_BAND = 5019;
     public const D2_MACH2_PRO = 5056;
+    public const ENDURO4 = 5169;
     public const SDM4 = 10007;
     public const EDGE_REMOTE = 10014;
     public const TACX_TRAINING_APP_WIN = 20533;
@@ -496,6 +509,11 @@ final class GarminProduct
     public const TACX_TRAINING_APP_ANDROID = 30045;
     public const TACX_TRAINING_APP_IOS = 30046;
     public const TACX_TRAINING_APP_LEGACY = 30047;
+    public const TRAINING_PEAKS_VIRTUAL_IOS = 30059;
+    public const TRAINING_PEAKS_VIRTUAL_ANDROID = 30060;
+    public const TRAINING_PEAKS_VIRTUAL_WINDOWS = 30061;
+    public const TRAINING_PEAKS_VIRTUAL_MAC_OS = 30062;
+    public const TRAINING_PEAKS_VIRTUAL_APPLE_TV = 30063;
     public const CONNECTIQ_SIMULATOR = 65531;
     public const ANDROID_ANTPLUS_PLUGIN = 65532;
     public const CONNECT = 65534;

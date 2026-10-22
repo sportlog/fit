@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.212 SDK
+ * FIT 21.218 SDK
  */
 
 declare(strict_types=1);
@@ -52,6 +52,10 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('LapTrigger', 24, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::LAPTRIGGER)]
 #[Field('Sport', 25, FitBaseType::ENUM, 1.0, 0.0, '', false, ProfileType::SPORT)]
 #[Field('EventGroup', 26, FitBaseType::UINT8, 1.0, 0.0, '', false, ProfileType::UINT8)]
+#[Field('NecLat', 27, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32)]
+#[Field('NecLong', 28, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32)]
+#[Field('SwcLat', 29, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32)]
+#[Field('SwcLong', 30, FitBaseType::SINT32, 1.0, 0.0, 'semicircles', false, ProfileType::SINT32)]
 #[Field('NumLengths', 32, FitBaseType::UINT16, 1.0, 0.0, 'lengths', false, ProfileType::UINT16)]
 #[Field('NormalizedPower', 33, FitBaseType::UINT16, 1.0, 0.0, 'watts', false, ProfileType::UINT16)]
 #[Field('LeftRightBalance', 34, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::LEFTRIGHTBALANCE100)]
@@ -85,6 +89,7 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('MinHeartRate', 63, FitBaseType::UINT8, 1.0, 0.0, 'bpm', false, ProfileType::UINT8)]
 #[Field('ActiveTime', 70, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
 #[Field('WktStepIndex', 71, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::MESSAGEINDEX)]
+#[Field('AvgSwolf', 73, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('OpponentScore', 74, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('StrokeCount', 75, FitBaseType::UINT16, 1.0, 0.0, 'counts', false, ProfileType::UINT16)]
 #[Field('ZoneCount', 76, FitBaseType::UINT16, 1.0, 0.0, 'counts', false, ProfileType::UINT16)]
@@ -101,11 +106,14 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('AvgSaturatedHemoglobinPercent', 87, FitBaseType::UINT16, 10.0, 0.0, '%', false, ProfileType::UINT16)]
 #[Field('MinSaturatedHemoglobinPercent', 88, FitBaseType::UINT16, 10.0, 0.0, '%', false, ProfileType::UINT16)]
 #[Field('MaxSaturatedHemoglobinPercent', 89, FitBaseType::UINT16, 10.0, 0.0, '%', false, ProfileType::UINT16)]
+#[Field('AvgStrokesPerLength', 90, FitBaseType::UINT16, 10.0, 0.0, 'strokes / length', false, ProfileType::UINT16)]
 #[Field('AvgLeftTorqueEffectiveness', 91, FitBaseType::UINT8, 2.0, 0.0, 'percent', false, ProfileType::UINT8)]
 #[Field('AvgRightTorqueEffectiveness', 92, FitBaseType::UINT8, 2.0, 0.0, 'percent', false, ProfileType::UINT8)]
 #[Field('AvgLeftPedalSmoothness', 93, FitBaseType::UINT8, 2.0, 0.0, 'percent', false, ProfileType::UINT8)]
 #[Field('AvgRightPedalSmoothness', 94, FitBaseType::UINT8, 2.0, 0.0, 'percent', false, ProfileType::UINT8)]
 #[Field('AvgCombinedPedalSmoothness', 95, FitBaseType::UINT8, 2.0, 0.0, 'percent', false, ProfileType::UINT8)]
+#[Field('FrontGearShiftCount', 96, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
+#[Field('RearGearShiftCount', 97, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('TimeStanding', 98, FitBaseType::UINT32, 1000.0, 0.0, 's', false, ProfileType::UINT32)]
 #[Field('StandCount', 99, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('AvgLeftPco', 100, FitBaseType::SINT8, 1.0, 0.0, 'mm', false, ProfileType::SINT8)]
@@ -142,11 +150,13 @@ use Sportlog\FIT\Profile\Types\MesgNum;
 #[Field('JumpCount', 151, FitBaseType::UINT16, 1.0, 0.0, '', false, ProfileType::UINT16)]
 #[Field('AvgGrit', 153, FitBaseType::FLOAT32, 1.0, 0.0, 'kGrit', false, ProfileType::FLOAT32)]
 #[Field('AvgFlow', 154, FitBaseType::FLOAT32, 1.0, 0.0, 'Flow', false, ProfileType::FLOAT32)]
+#[Field('MetabolicCalories', 155, FitBaseType::UINT16, 1.0, 0.0, 'kcal', false, ProfileType::UINT16)]
 #[Field('TotalFractionalAscent', 156, FitBaseType::UINT8, 100.0, 0.0, 'm', false, ProfileType::UINT8)]
 #[Field('TotalFractionalDescent', 157, FitBaseType::UINT8, 100.0, 0.0, 'm', false, ProfileType::UINT8)]
 #[Field('AvgCoreTemperature', 158, FitBaseType::UINT16, 100.0, 0.0, 'C', false, ProfileType::UINT16)]
 #[Field('MinCoreTemperature', 159, FitBaseType::UINT16, 100.0, 0.0, 'C', false, ProfileType::UINT16)]
 #[Field('MaxCoreTemperature', 160, FitBaseType::UINT16, 100.0, 0.0, 'C', false, ProfileType::UINT16)]
+#[Field('AvgGradeAdjustedSpeed', 161, FitBaseType::UINT32, 1000.0, 0.0, 'm/s', false, ProfileType::UINT32)]
 final class LapMessage extends Message
 {
     /**
@@ -387,6 +397,38 @@ final class LapMessage extends Message
     public function getEventGroup(): int|array|null
     {
         return $this->getFieldValue(26);
+    }
+
+    /**
+     * Gets the nec lat
+     */
+    public function getNecLat(): int|array|null
+    {
+        return $this->getFieldValue(27);
+    }
+
+    /**
+     * Gets the nec long
+     */
+    public function getNecLong(): int|array|null
+    {
+        return $this->getFieldValue(28);
+    }
+
+    /**
+     * Gets the swc lat
+     */
+    public function getSwcLat(): int|array|null
+    {
+        return $this->getFieldValue(29);
+    }
+
+    /**
+     * Gets the swc long
+     */
+    public function getSwcLong(): int|array|null
+    {
+        return $this->getFieldValue(30);
     }
 
     /**
@@ -654,6 +696,14 @@ final class LapMessage extends Message
     }
 
     /**
+     * Gets the avg swolf
+     */
+    public function getAvgSwolf(): int|array|null
+    {
+        return $this->getFieldValue(73);
+    }
+
+    /**
      * Gets the opponent score
      */
     public function getOpponentScore(): int|array|null
@@ -782,6 +832,14 @@ final class LapMessage extends Message
     }
 
     /**
+     * Gets the avg strokes per length
+     */
+    public function getAvgStrokesPerLength(): float|array|null
+    {
+        return $this->getFieldValue(90);
+    }
+
+    /**
      * Gets the avg left torque effectiveness
      */
     public function getAvgLeftTorqueEffectiveness(): float|array|null
@@ -819,6 +877,22 @@ final class LapMessage extends Message
     public function getAvgCombinedPedalSmoothness(): float|array|null
     {
         return $this->getFieldValue(95);
+    }
+
+    /**
+     * Gets the front gear shift count
+     */
+    public function getFrontGearShiftCount(): int|array|null
+    {
+        return $this->getFieldValue(96);
+    }
+
+    /**
+     * Gets the rear gear shift count
+     */
+    public function getRearGearShiftCount(): int|array|null
+    {
+        return $this->getFieldValue(97);
     }
 
     /**
@@ -1110,6 +1184,14 @@ final class LapMessage extends Message
     }
 
     /**
+     * Gets the metabolic calories
+     */
+    public function getMetabolicCalories(): int|array|null
+    {
+        return $this->getFieldValue(155);
+    }
+
+    /**
      * Gets the total fractional ascent
      */
     public function getTotalFractionalAscent(): float|array|null
@@ -1147,5 +1229,13 @@ final class LapMessage extends Message
     public function getMaxCoreTemperature(): float|array|null
     {
         return $this->getFieldValue(160);
+    }
+
+    /**
+     * Gets the avg grade adjusted speed
+     */
+    public function getAvgGradeAdjustedSpeed(): float|array|null
+    {
+        return $this->getFieldValue(161);
     }
 }

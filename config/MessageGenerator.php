@@ -36,7 +36,7 @@ class MessageGenerator
     /**
      * FIT-SDK Version
      */
-    const FIT_SDK_VERSION = '21.212';
+    const FIT_SDK_VERSION = '21.218';
     const MESSAGE_START = "Mesg newMesg = new Mesg(";
     const FIELD_START = "newMesg.SetField(new Field(";
     const MESSAGE_END = "return newMesg";
@@ -186,7 +186,7 @@ class MessageGenerator
         foreach ($values as $key => $value) {
             // Some constants start with a digit, which is not allowed;
             // So prefix those with an underscore
-            $constName = strtoupper(is_numeric(substr($key, 0, 1)) ? "_{$key}" : $key);
+            $constName = strtoupper(is_numeric(substr("{$key}", 0, 1)) ? "_{$key}" : $key);
             $class->addConstant($constName, str_starts_with($value, '0x') ? hexdec($value) : intval($value));
         }
 

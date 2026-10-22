@@ -6,7 +6,7 @@
  * @license MIT License
  *
  * ****WARNING****  This file is auto-generated! Do NOT edit.
- * FIT 21.212 SDK
+ * FIT 21.218 SDK
  */
 
 declare(strict_types=1);
@@ -224,6 +224,19 @@ class ProfileType
     public const SPLITTYPE = 'SplitType';
     public const CLIMBPROEVENT = 'ClimbProEvent';
     public const GASCONSUMPTIONRATETYPE = 'GasConsumptionRateType';
+    public const CLIMBGRADINGSCALE = 'ClimbGradingScale';
+    public const YDSGRADINGSCALE = 'YdsGradingScale';
+    public const UIAAGRADINGSCALE = 'UiaaGradingScale';
+    public const FRENCHGRADINGSCALE = 'FrenchGradingScale';
+    public const BRITISHADJECTIVALGRADINGSCALE = 'BritishAdjectivalGradingScale';
+    public const BRITISHTECHNICALGRADINGSCALE = 'BritishTechnicalGradingScale';
+    public const EWBANKGRADINGSCALE = 'EwbankGradingScale';
+    public const BRAZILIANGRADINGSCALE = 'BrazilianGradingScale';
+    public const SAXONGRADINGSCALE = 'SaxonGradingScale';
+    public const VERMINGRADINGSCALE = 'VerminGradingScale';
+    public const FONTGRADINGSCALE = 'FontGradingScale';
+    public const DANKYUGRADINGSCALE = 'DankyuGradingScale';
+    public const SPLITSTATUS = 'SplitStatus';
     public const TAPSENSITIVITY = 'TapSensitivity';
     public const RADARTHREATLEVELTYPE = 'RadarThreatLevelType';
     public const SLEEPDISRUPTIONSEVERITY = 'SleepDisruptionSeverity';
@@ -233,5 +246,7 @@ class ProfileType
     public const MAXMETHEARTRATESOURCE = 'MaxMetHeartRateSource';
     public const HRVSTATUS = 'HrvStatus';
     public const NOFLYTIMEMODE = 'NoFlyTimeMode';
+    public const DIVESECTIONTYPE = 'DiveSectionType';
+    public const APNEADISCIPLINE = 'ApneaDiscipline';
     public const NUMTYPES = 'NumTypes';
 }
